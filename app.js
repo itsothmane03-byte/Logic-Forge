@@ -4,7 +4,7 @@
 var idre = /^prp_[a-z0-9_]+$/;
 
 // Load fallacies from JSON
-async function loadFallacies(url = 'fallacies.json') {
+async function loadFallacies(url = 'data/fallacies.json') {
   const res = await fetch(url, { cache: 'no-store' });
   if (!res.ok) throw new Error('Failed to load ' + url + ': ' + res.status);
   const data = await res.json();
