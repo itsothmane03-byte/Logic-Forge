@@ -1,5 +1,7 @@
 // app.js
 // Minimal loader for fallacies.json
+
+var idre = /^prp_[a-z0-9_]+$/;
 // Usage: loadFallacies().then(({all, byId, aliasIndex}) => console.log(all.length));
 
 async function loadFallacies(url = 'fallacies.json') {
