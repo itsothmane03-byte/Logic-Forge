@@ -1,0 +1,80 @@
+[
+  {
+    "id": "prp_adh_001",
+    "text": "Don't trust her analysis of the budget; she failed high school math.",
+    "fallacyId": "fal_ad_hominem",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": ["business"],
+    "explanation": "Attacks the person, not the reasons.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_straw_001",
+    "text": "You want a smaller marketing budget, so you must want zero customers.",
+    "fallacyId": "fal_straw_man",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": ["business"],
+    "explanation": "Exaggerates the original claim to attack it.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_dich_001",
+    "text": "Either we adopt this tool today or our project will fail.",
+    "fallacyId": "fal_false_dichotomy",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": ["everyday"],
+    "explanation": "Presents only two options when others exist.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_auth_001",
+    "text": "A famous actor says this vitamin cures colds, so it works.",
+    "fallacyId": "fal_appeal_to_authority",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": ["science"],
+    "explanation": "Authority is not relevant evidence.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_slope_001",
+    "text": "If we allow snacks at desks, soon no one will work at all.",
+    "fallacyId": "fal_slippery_slope",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": ["everyday"],
+    "explanation": "Predicts extreme outcome without supported steps.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_sound_adh_001",
+    "text": "Her past mistakes don't prove this claim false; let's check the data.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "beginner",
+    "tags": ["everyday"],
+    "explanation": "Focuses on reasons, not the person.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  }
+]
