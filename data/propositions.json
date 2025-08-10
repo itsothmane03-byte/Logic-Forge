@@ -731,5 +731,57 @@
   "version": "1.0.0",
   "status": "active"
 }
+{
+  "id": "prp_adh_050",
+  "text": "Ignore his scheduling proposal; he dresses too casually.",
+  "fallacyId": "fal_ad_hominem",
+  "isSound": false,
+  "difficulty": "beginner",
+  "tags": ["workplace"],
+  "explanation": "Attacks appearance, not the proposal’s merits.",
+  "notes": "",
+  "duplicateOf": null,
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "prp_stw_050",
+  "text": "People asking for code reviews just want to slow releases to a crawl.",
+  "fallacyId": "fal_straw_man",
+  "isSound": false,
+  "difficulty": "beginner",
+  "tags": ["engineering"],
+  "explanation": "Misrepresents the goal of quality checks as obstruction.",
+  "notes": "",
+  "duplicateOf": null,
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "prp_fdc_sound_050",
+  "text": "We can ship a smaller feature set now and add the rest next sprint.",
+  "fallacyId": null,
+  "isSound": true,
+  "difficulty": "beginner",
+  "tags": ["product"],
+  "explanation": "Shows a middle path rather than a false either–or.",
+  "notes": "",
+  "duplicateOf": null,
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "prp_slp_sound_050",
+  "text": "Allowing one flexible exception doesn’t require approving all future exceptions.",
+  "fallacyId": null,
+  "isSound": true,
+  "difficulty": "beginner",
+  "tags": ["policy"],
+  "explanation": "Bounded policies prevent the feared cascade.",
+  "notes": "",
+  "duplicateOf": null,
+  "version": "1.0.0",
+  "status": "active"
+}
 
 ]
