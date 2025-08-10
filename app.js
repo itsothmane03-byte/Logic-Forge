@@ -63,10 +63,6 @@ async function loadPropositions(url = 'data/propositions.json') {
   return data;
 }
 
-// Quick manual test
-loadFallacies().then(({ all }) => console.log('fallacies:', all.length)).catch(console.error);
-loadPropositions().then((props) => console.log('propositions:', props.length)).catch(console.error);
-
 Promise.all([loadFallacies(), loadPropositions()])
   .then(([f, p]) => {
     console.log('fallacies:', f.all.length);
