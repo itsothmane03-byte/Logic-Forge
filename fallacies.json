@@ -1,0 +1,57 @@
+[
+  {
+    "id": "fal_ad_hominem",
+    "name": "Ad Hominem",
+    "difficulty": "beginner",
+    "definition": "Attacking the person making a claim instead of addressing the claim’s reasons or evidence.",
+    "aliases": ["Personal Attack", "Against the Person"],
+    "confusableWith": ["fal_red_herring", "fal_guilt_by_association"],
+    "rationaleTips": ["Separate the claim from the claimant", "Flag insults or motives replacing reasons", "Ask: would this rebuttal work if a different person said it?"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_straw_man",
+    "name": "Straw Man",
+    "difficulty": "beginner",
+    "definition": "Misrepresenting or oversimplifying an opponent’s claim to make it easier to refute.",
+    "aliases": ["Strawman"],
+    "confusableWith": ["fal_red_herring", "fal_false_dichotomy"],
+    "rationaleTips": ["Compare original wording to the attacked version", "Look for exaggeration or omission of key qualifiers", "Restate the strongest version before critiquing"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_false_dichotomy",
+    "name": "False Dichotomy",
+    "difficulty": "beginner",
+    "definition": "Presenting two options as the only possibilities when other reasonable alternatives exist.",
+    "aliases": ["False Dilemma", "Black-or-White"],
+    "confusableWith": ["fal_middle_ground", "fal_straw_man"],
+    "rationaleTips": ["Search for hidden third options", "Scan for either/or language without justification", "Test by adding a plausible alternative"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_appeal_to_authority",
+    "name": "Appeal to Authority",
+    "difficulty": "beginner",
+    "definition": "Claiming a statement is true because an authority says so, without relevant expertise or supporting evidence.",
+    "aliases": ["Argument from Authority"],
+    "confusableWith": ["fal_appeal_to_popularity", "fal_false_cause"],
+    "rationaleTips": ["Check domain relevance and consensus", "Prefer cited evidence over titles", "Ask for the underlying reasons or data"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_slippery_slope",
+    "name": "Slippery Slope",
+    "difficulty": "beginner",
+    "definition": "Asserting that a proposal will trigger a chain of worsening outcomes without adequately justified links between steps.",
+    "aliases": ["Domino Fallacy"],
+    "confusableWith": ["fal_false_cause", "fal_post_hoc"],
+    "rationaleTips": ["Demand specific mechanisms for each step", "Quantify likelihood instead of assuming inevitability", "Watch for vague escalations"],
+    "version": "1.0.0",
+    "status": "active"
+  }
+]
