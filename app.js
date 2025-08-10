@@ -42,3 +42,26 @@ async function loadFallacies(url = 'fallacies.json') {
 // Example bootstrap
 // loadFallacies().then(({all}) => console.log('fallacies:', all.length)).catch(console.error);
 
+
+async function loadPropositions(url = 'data/propositions.json') {
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
+  const data = await res.json();
+  if (!Array.isArray(data)) throw new Error('propositions.json must be an array');
+   idRe = /^prp_[a-z0-9_]+$/;
+  const diffs = new Set(['beginner','intermediate','advanced']);
+  for (const p of data) {
+    for (const k of ['id','text','isSound','difficulty','explanation']) {
+      if (!(k in p)) throw new Error(`Missing "${k}" on ${p.id || 'item'}`);
+    }
+    if (!idRe.test(p.id)) throw new Error(`Bad id: ${p.id}`);
+    if (!diffs.has(p.difficulty)) throw new Error(`Bad difficulty: ${p.difficulty}`);
+    if (p.isSound && p.fallacyId !== null) throw new Error(`Sound item must have fallacyId=null (${p.id})`);
+    if (!p.isSound && !p.fallacyId) throw new Error(`Fallacious item must set fallacyId (${p.id})`);
+  }
+  return data;
+}
+
+// Quick manual test
+loadFallacies().then(({ all }) => console.log('fallacies:', all.length)).catch(console.error);
+loadPropositions().then((props) => console.log('propositions:', props.length)).catch(console.error);
