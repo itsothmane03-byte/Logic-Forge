@@ -36,6 +36,7 @@ async function loadFallacies(url = 'fallacies.json') {
     }
   }
 
+  
   return { all: data, byId, aliasIndex };
 }
 
