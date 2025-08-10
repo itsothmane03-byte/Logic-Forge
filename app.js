@@ -82,4 +82,21 @@ Promise.all([loadFallacies(), loadPropositions()]).then(function(values) {
   validate(p, f);
 }).catch(function(err) {
   console.error(err);
+  function validate(props, fallacies) {
+  const idRe = /^prp_[a-z0-9_]+$/;
+  const diffs = new Set(['beginner','intermediate','advanced']);
+  const fallacyIds = new Set(fallacies.all.map(f => f.id));
+  let errors = 0, sound = 0;
+  for (const p of props) {
+    if (!idRe.test(p.id)) { console.warn('Bad id', p.id); errors++; }
+    if (!diffs.has(p.difficulty)) { console.warn('Bad difficulty', p.id); errors++; }
+    if (p.isSound && p.fallacyId !== null) { console.warn('Sound needs null fallacyId', p.id); errors++; }
+    if (!p.isSound && !fallacyIds.has(p.fallacyId)) { console.warn('Unknown fallacyId', p.id); errors++; }
+    if (p.isSound) sound++;
+  }
+  const ratio = sound / props.length;
+  console.log('validate', { errors, soundRatio: Number(ratio.toFixed(2)) });
+  return { errors, ratio };
+}
+
 });
