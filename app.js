@@ -332,8 +332,9 @@ async function initGauntlet(){
       const correct = p.isSound ? (v==='sound') : (v===p.fallacyId);
       answers.push({ id:p.id, your:v||'(blank)', correct: p.isSound ? 'sound' : p.fallacyId, ok: !!correct });
       idx++;
-      if (idx < 10) show(idx);
-      else {
+      if (idx < 10) {
+        show(idx);
+      } else {
         const score = answers.filter(a=>a.ok).length;
         const acc = Math.round(100*score/10);
         if (acc >= 80) localStorage.setItem('ff_unlock_intermediate','1');
@@ -354,7 +355,7 @@ async function initGauntlet(){
   };
 }
 
-// kick things off
 initArena().catch(console.error);
 initGauntlet().catch(console.error);
+
 
