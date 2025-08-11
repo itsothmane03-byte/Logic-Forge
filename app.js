@@ -290,7 +290,7 @@ function seededPick(pool, st, rng){
 // Gauntlet init (10 items, seedable)
 async function initGauntlet(){
   const [F, P] = await Promise.all([loadFallacies(), loadPropositions()]);
-  const fallacyById = byIdMap(F.all);
+  const fallacyById = Object.fromEntries(F.all.map(x => [x.id, x]));
   const sel = document.getElementById('g-label');
   sel.innerHTML =
     `<option value="">Choose…</option>` +
@@ -357,5 +357,3 @@ async function initGauntlet(){
 
 initArena().catch(console.error);
 initGauntlet().catch(console.error);
-
-
