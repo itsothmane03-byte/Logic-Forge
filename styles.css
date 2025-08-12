@@ -3,3 +3,4 @@ header { text-align: center; }
 @media (min-width: 360px) { body { max-width: 800px; margin: auto; } }
 .chip{padding:2px 6px;border:1px solid #bbb;border-radius:999px;background:#fff;cursor:pointer}
 .chip:focus{outline:2px solid #333}
+:focus{outline:2px solid #333; outline-offset:2px}
