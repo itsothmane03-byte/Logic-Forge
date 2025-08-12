@@ -202,7 +202,7 @@
     "name": "Circular Reasoning",
     "difficulty": "intermediate",
     "definition": "Using the conclusion as evidence for itself, creating a logical loop without external support.",
-    "aliases": ["Begging the Question", "Circular Logic"],
+    "aliases": ["Begging the Question","Question Begging","Petitio Principii"],
     "confusableWith": ["fal_tautology", "fal_question_begging"],
     "rationaleTips": ["Check if premises depend on the conclusion", "Look for restated claims as evidence", "Trace the logical chain for loops"],
     "version": "1.0.0",
@@ -360,7 +360,7 @@
   "confusableWith": ["fal_begging_question", "fal_circular_reasoning"],
   "rationaleTips": ["Identify concealed conclusion", "Demand independent support", "Map the logic chain"],
   "version": "1.0.0",
-  "status": "active"
+  "status": "deprecated"
 },
 {
   "id": "fal_tautology",
