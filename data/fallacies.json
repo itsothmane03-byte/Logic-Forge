@@ -53,5 +53,170 @@
     "rationaleTips": ["Demand specific mechanisms for each step", "Quantify likelihood instead of assuming inevitability", "Watch for vague escalations"],
     "version": "1.0.0",
     "status": "active"
+  },
+  {
+    "id": "fal_bandwagon",
+    "name": "Bandwagon",
+    "difficulty": "intermediate",
+    "definition": "Claims are accepted as true because many believe them.",
+    "aliases": ["Appeal to Popularity", "Ad Populum"],
+    "confusableWith": ["fal_appeal_to_authority"],
+    "rationaleTips": ["Popularity ≠ evidence", "Check if consensus is based on expertise or mere numbers", "Historical examples show majorities can be wrong"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_red_herring",
+    "name": "Red Herring",
+    "difficulty": "intermediate",
+    "definition": "Introducing irrelevant information to distract from the main argument or issue.",
+    "aliases": ["Distraction", "Irrelevant Thesis"],
+    "confusableWith": ["fal_ad_hominem", "fal_straw_man"],
+    "rationaleTips": ["Ask: does this address the original question?", "Identify when topics suddenly shift", "Redirect back to the core issue"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_false_cause",
+    "name": "False Cause",
+    "difficulty": "intermediate",
+    "definition": "Assuming that because two events occurred together, one must have caused the other.",
+    "aliases": ["Post Hoc", "Correlation ≠ Causation"],
+    "confusableWith": ["fal_slippery_slope", "fal_hasty_generalization"],
+    "rationaleTips": ["Look for alternative explanations", "Check if correlation implies causation", "Consider confounding variables"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_hasty_generalization",
+    "name": "Hasty Generalization",
+    "difficulty": "beginner",
+    "definition": "Drawing broad conclusions from insufficient or unrepresentative examples.",
+    "aliases": ["Overgeneralization", "Faulty Generalization"],
+    "confusableWith": ["fal_false_cause", "fal_confirmation_bias"],
+    "rationaleTips": ["Evaluate sample size and representativeness", "Look for cherry-picked examples", "Ask: is this pattern truly consistent?"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_circular_reasoning",
+    "name": "Circular Reasoning",
+    "difficulty": "intermediate",
+    "definition": "Using the conclusion as evidence for itself, creating a logical loop without external support.",
+    "aliases": ["Begging the Question", "Circular Logic"],
+    "confusableWith": ["fal_tautology", "fal_question_begging"],
+    "rationaleTips": ["Check if premises depend on the conclusion", "Look for restated claims as evidence", "Trace the logical chain for loops"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_tu_quoque",
+    "name": "Tu Quoque",
+    "difficulty": "intermediate",
+    "definition": "Deflecting criticism by pointing out the accuser's hypocrisy instead of addressing the argument.",
+    "aliases": ["You Too", "Appeal to Hypocrisy"],
+    "confusableWith": ["fal_ad_hominem", "fal_red_herring"],
+    "rationaleTips": ["Hypocrisy doesn't invalidate the argument", "Address the claim, not the claimant's consistency", "Two wrongs don't make a right"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_appeal_to_emotion",
+    "name": "Appeal to Emotion",
+    "difficulty": "beginner",
+    "definition": "Using emotional manipulation instead of logical reasoning to persuade or convince.",
+    "aliases": ["Emotional Manipulation", "Playing on Feelings"],
+    "confusableWith": ["fal_appeal_to_pity", "fal_fear_mongering"],
+    "rationaleTips": ["Separate emotional content from logical content", "Ask: what evidence supports this beyond feelings?", "Consider if emotions are relevant to the truth"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_loaded_question",
+    "name": "Loaded Question",
+    "difficulty": "intermediate",
+    "definition": "Asking a question that contains controversial or unjustified assumptions.",
+    "aliases": ["Complex Question", "Trick Question"],
+    "confusableWith": ["fal_false_dichotomy", "fal_begging_question"],
+    "rationaleTips": ["Identify hidden assumptions in the question", "Challenge the premise before answering", "Rephrase to remove bias"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_appeal_to_nature",
+    "name": "Appeal to Nature",
+    "difficulty": "intermediate",
+    "definition": "Arguing that something is good or correct because it is natural, or bad because it is unnatural.",
+    "aliases": ["Natural Fallacy", "Nature = Good"],
+    "confusableWith": ["fal_appeal_to_tradition", "fal_is_ought"],
+    "rationaleTips": ["Natural doesn't always mean beneficial", "Consider that many natural things are harmful", "Evaluate based on evidence, not origin"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_no_true_scotsman",
+    "name": "No True Scotsman",
+    "difficulty": "advanced",
+    "definition": "Dismissing counterexamples by redefining terms to exclude them after the fact.",
+    "aliases": ["Moving Goalposts", "Purity Fallacy"],
+    "confusableWith": ["fal_circular_reasoning", "fal_special_pleading"],
+    "rationaleTips": ["Watch for post-hoc redefinitions", "Check if criteria keep changing", "Hold definitions consistent throughout argument"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_guilt_by_association",
+    "name": "Guilt by Association",
+    "difficulty": "intermediate",
+    "definition": "Rejecting an argument because of negative associations with the person or group presenting it.",
+    "aliases": ["Association Fallacy", "Bad Company"],
+    "confusableWith": ["fal_ad_hominem", "fal_genetic_fallacy"],
+    "rationaleTips": ["Judge arguments on merit, not associations", "Separate ideas from their proponents", "Consider if the connection is actually relevant"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_middle_ground",
+    "name": "Middle Ground",
+    "difficulty": "intermediate",
+    "definition": "Assuming that the truth must lie somewhere between two extreme positions.",
+    "aliases": ["False Compromise", "Golden Mean"],
+    "confusableWith": ["fal_false_dichotomy", "fal_appeal_to_moderation"],
+    "rationaleTips": ["The middle isn't always correct", "Some positions may be objectively better", "Evaluate each position independently"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_confirmation_bias",
+    "name": "Confirmation Bias",
+    "difficulty": "beginner",
+    "definition": "Seeking, interpreting, or recalling information in ways that confirm pre-existing beliefs.",
+    "aliases": ["Cherry-picking", "Selective Evidence"],
+    "confusableWith": ["fal_hasty_generalization", "fal_texas_sharpshooter"],
+    "rationaleTips": ["Actively seek disconfirming evidence", "Consider alternative interpretations", "Question information that perfectly fits your beliefs"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_texas_sharpshooter",
+    "name": "Texas Sharpshooter",
+    "difficulty": "advanced",
+    "definition": "Cherry-picking data clusters to suit an argument while ignoring the broader pattern.",
+    "aliases": ["Data Mining", "Pattern Fabrication"],
+    "confusableWith": ["fal_confirmation_bias", "fal_false_cause"],
+    "rationaleTips": ["Look at the complete dataset", "Check if patterns were predicted beforehand", "Beware of retrofitted explanations"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_appeal_to_consequences",
+    "name": "Appeal to Consequences",
+    "difficulty": "advanced",
+    "definition": "Arguing that a statement must be true or false based on the desirability of its consequences.",
+    "aliases": ["Wishful Thinking", "Consequences ≠ Truth"],
+    "confusableWith": ["fal_appeal_to_emotion", "fal_slippery_slope"],
+    "rationaleTips": ["Truth is independent of consequences", "Distinguish between what we want and what is", "Evaluate evidence, not outcomes"],
+    "version": "1.0.0",
+    "status": "active"
   }
 ]
