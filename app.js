@@ -177,11 +177,45 @@ async function initGauntlet(){
         results.innerHTML = html;
         results.style.display = '';
         run.style.display = 'none';
-      }
+      } 
     };
   };
 }
+async function initLibrary(){
+  const F = await loadFallacies();
+  const q = document.getElementById('lib-q');
+  const d = document.getElementById('lib-diff');
+  const list = document.getElementById('lib-list');
+
+  function render(items){
+    list.innerHTML = items.map(f => `
+      <article style="border:1px solid #ddd;padding:8px;margin:6px 0">
+        <h3 style="margin:0 0 4px 0">${f.name}</h3>
+        <div><b>Aliases:</b> ${(f.aliases||[]).join(', ')||'—'}</div>
+        <div><b>Definition:</b> ${f.definition}</div>
+        <div><b>Confusables:</b> ${(f.confusableWith||[]).map(id=>F.byId[id]?.name||id).join(', ')||'—'}</div>
+      </article>
+    `).join('');
+  }
+
+  function apply(){
+    const term = (q.value||'').toLowerCase();
+    const diff = d.value;
+    const filtered = F.all.filter(f => {
+      const diffOk = diff==='all' || f.difficulty===diff;
+      const hay = [f.name, ...(f.aliases||[])].join(' ').toLowerCase();
+      return diffOk && hay.includes(term);
+    });
+    render(filtered);
+  }
+
+  q.addEventListener('input', apply);
+  d.addEventListener('change', apply);
+  render(F.all);
+}
+initLibrary().catch(console.error);
 
 // --------- Boot
 initArena().catch(console.error);
 initGauntlet().catch(console.error);
+initLibrary().catch(console.error);
