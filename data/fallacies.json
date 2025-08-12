@@ -141,8 +141,7 @@
     "rationaleTips": ["Check if compared items are truly similar", "Look for relevant differences", "Consider if the analogy supports the conclusion"],
     "version": "1.0.0",
     "status": "active"
-  }
-]
+  },
   {
     "id": "fal_slippery_slope",
     "name": "Slippery Slope",
