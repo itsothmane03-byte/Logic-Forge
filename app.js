@@ -187,16 +187,34 @@ async function initLibrary(){
   const d = document.getElementById('lib-diff');
   const list = document.getElementById('lib-list');
 
-  function render(items){
-    list.innerHTML = items.map(f => `
-      <article style="border:1px solid #ddd;padding:8px;margin:6px 0">
+function render(items){
+  list.innerHTML = items.map(f => {
+    const conf = (f.confusableWith||[])
+      .map(id => `<button class="chip" data-go="${id}" title="Open ${id}">${F.byId[id]?.name||id}</button>`)
+      .join(' ') || '—';
+    return `
+      <article class="card" data-id="${f.id}" id="${f.id}" style="border:1px solid #ddd;padding:8px;margin:6px 0">
         <h3 style="margin:0 0 4px 0">${f.name}</h3>
         <div><b>Aliases:</b> ${(f.aliases||[]).join(', ')||'—'}</div>
         <div><b>Definition:</b> ${f.definition}</div>
-        <div><b>Confusables:</b> ${(f.confusableWith||[]).map(id=>F.byId[id]?.name||id).join(', ')||'—'}</div>
+        <div><b>Confusables:</b> ${conf}</div>
       </article>
-    `).join('');
+    `;
+  }).join('');
+}
+
+// delegate clicks on chips
+list.addEventListener('click', (e)=>{
+  const btn = e.target.closest('[data-go]');
+  if (!btn) return;
+  const id = btn.getAttribute('data-go');
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+    el.style.outline = '2px solid #333';
+    setTimeout(()=> el.style.outline = '', 1200);
   }
+});
 
   function apply(){
     const term = (q.value||'').toLowerCase();
