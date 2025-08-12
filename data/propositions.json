@@ -652,7 +652,6 @@
   "version": "1.0.0",
   "status": "active"
 },
-
 {
   "id": "prp_slp_004",
   "text": "If we permit phones during lunch breaks, soon no one will put them away all day.",
@@ -782,6 +781,47 @@
   "duplicateOf": null,
   "version": "1.0.0",
   "status": "active"
-}
+},
+{
+    "id": "prp_bwd_001",
+    "text": "Everyone in our industry is switching to Nimbus CRM, so it must be the best choice.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": ["business"],
+    "explanation": "Popularity is not evidence of superiority.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  { "id":"prp_bwd_002","text":"Thousands of five-star reviews prove this supplement works.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["health","marketing"],"explanation":"Reviews show popularity, not clinical efficacy.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_bwd_003","text":"All my teammates adopted the new framework, so we should migrate immediately.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["engineering"],"explanation":"Team adoption is not proof of fitness for your use case.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_bwd_004","text":"Most investors are buying this stock today; it must be undervalued.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["finance"],"explanation":"Crowd action does not demonstrate intrinsic value.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_bwd_005","text":"The whole city uses this rideshare app, so it’s the safest option.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["everyday","tech"],"explanation":"Usage volume ≠ safety evidence.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_bwd_006","text":"Since most colleagues skip code reviews, they must be a waste of time.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["engineering","process"],"explanation":"Majority behavior is not a quality argument.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
 
+  { "id":"prp_bwd_sound_001","text":"Three independent benchmarks show Nimbus CRM reduces support tickets by 25%.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["business"],"explanation":"Cites evidence, not popularity.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_bwd_sound_002","text":"A meta-analysis of clinical trials shows no effect beyond placebo for the supplement.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["health","science"],"explanation":"Evidence-based conclusion.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+
+  { "id":"prp_red_001","text":"We shouldn’t discuss the budget overrun; what matters is how inspiring our mission is.","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["business"],"explanation":"Shifts away from the budget question.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_red_002","text":"Why debate the drug’s safety when hospital food is terrible?","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["health"],"explanation":"Introduces an irrelevant topic to distract.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_red_003","text":"Instead of addressing the outage, let’s talk about our great culture awards.","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["engineering","ops"],"explanation":"Diverts from the original incident question.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_red_004","text":"Critics say the ad misleads, but our brand has supported charities for years.","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["marketing"],"explanation":"Charity is irrelevant to the charge of misleading content.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_red_005","text":"The proposal might be late, but did you see the client’s rude email?","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["workplace"],"explanation":"Email tone distracts from the lateness issue.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_red_006","text":"You asked about safety certification, but first, look at our stylish design.","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["product"],"explanation":"Design is unrelated to safety certification.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+
+  { "id":"prp_red_sound_001","text":"Before discussing culture awards, we need a root-cause report for the outage.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["ops"],"explanation":"Returns to the original question.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_red_sound_002","text":"Charitable donations do not address whether the ad’s claim is true.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["marketing","logic"],"explanation":"Separates relevance from distraction.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+
+  { "id":"prp_fca_001","text":"After we installed new lights, sales rose, so the lights caused the jump.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["business"],"explanation":"Correlation alone does not show causation.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_fca_002","text":"Our servers crashed after the patch; therefore the patch is the reason.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["engineering","ops"],"explanation":"Temporal order ≠ causal proof.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_fca_003","text":"Every time I carry my lucky mug, the meeting goes well. The mug causes success.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["everyday"],"explanation":"Mistakes coincidence for causation.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_fca_004","text":"Cities with more Wi-Fi have higher crime, so Wi-Fi increases crime.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["statistics"],"explanation":"Likely confounders; correlation not causation.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_fca_005","text":"Our diet plan worked because weight dropped the same month we launched it.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["health"],"explanation":"Other factors may explain the change.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_fca_006","text":"Accidents increased after the new signage; therefore signage is dangerous.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["policy"],"explanation":"Needs analysis beyond timing.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+
+  { "id":"prp_fca_sound_001","text":"A controlled A/B test isolating the lighting change showed no sales effect.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["business","science"],"explanation":"Uses proper causal evidence.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
+  { "id":"prp_fca_sound_002","text":"Crash logs implicate a driver bug introduced in the patch; rollback removes the error.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["engineering"],"explanation":"Direct evidence for causation.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"}
 ]
+
