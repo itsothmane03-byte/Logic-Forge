@@ -393,7 +393,7 @@
   "confusableWith": ["fal_circular_reasoning", "fal_tautology"],
   "rationaleTips": ["Trace premise→conclusion", "Look for restatements", "Request outside evidence"],
   "version": "1.0.0",
-  "status": "active"
+  "status": "deprecated"
 },
 {
   "id": "fal_appeal_to_moderation",
