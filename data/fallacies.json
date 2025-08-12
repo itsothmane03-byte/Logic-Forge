@@ -44,6 +44,106 @@
     "status": "active"
   },
   {
+    "id": "fal_genetic_fallacy",
+    "name": "Genetic Fallacy",
+    "difficulty": "intermediate",
+    "definition": "Evaluating something based on its origin or source rather than its current merit or validity.",
+    "aliases": ["Origin Fallacy", "Source Bias"],
+    "confusableWith": ["fal_ad_hominem", "fal_guilt_by_association"],
+    "rationaleTips": ["Judge ideas by current merit, not origin", "Bad sources can occasionally be right", "Good sources can sometimes be wrong"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_composition",
+    "name": "Composition",
+    "difficulty": "intermediate",
+    "definition": "Assuming that what is true of the parts must be true of the whole.",
+    "aliases": ["Part-to-Whole", "Ecological Fallacy"],
+    "confusableWith": ["fal_division", "fal_hasty_generalization"],
+    "rationaleTips": ["Properties of parts don't always apply to wholes", "Consider emergent properties", "Look for system-level effects"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_division",
+    "name": "Division",
+    "difficulty": "intermediate",
+    "definition": "Assuming that what is true of the whole must be true of its parts.",
+    "aliases": ["Whole-to-Part", "Reverse Composition"],
+    "confusableWith": ["fal_composition", "fal_hasty_generalization"],
+    "rationaleTips": ["Properties of wholes don't always apply to parts", "Consider individual variation", "Look for distribution effects"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_appeal_to_ignorance",
+    "name": "Appeal to Ignorance",
+    "difficulty": "intermediate",
+    "definition": "Claiming something is true because it hasn't been proven false, or false because it hasn't been proven true.",
+    "aliases": ["Argument from Ignorance", "Absence of Evidence"],
+    "confusableWith": ["fal_burden_of_proof", "fal_false_dichotomy"],
+    "rationaleTips": ["Lack of evidence isn't evidence of absence", "Consider who bears burden of proof", "Distinguish between unknown and unknowable"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_special_pleading",
+    "name": "Special Pleading",
+    "difficulty": "advanced",
+    "definition": "Applying standards, principles, or rules to others while making oneself an exception without justification.",
+    "aliases": ["Double Standard", "Exception Without Cause"],
+    "confusableWith": ["fal_no_true_scotsman", "fal_tu_quoque"],
+    "rationaleTips": ["Look for unjustified exceptions", "Check if standards apply consistently", "Ask why this case is different"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_equivocation",
+    "name": "Equivocation",
+    "difficulty": "advanced",
+    "definition": "Using a word with multiple meanings in different senses within the same argument.",
+    "aliases": ["Ambiguity", "Word Play"],
+    "confusableWith": ["fal_loaded_question", "fal_straw_man"],
+    "rationaleTips": ["Track how key terms are used throughout", "Define important terms clearly", "Watch for subtle meaning shifts"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_burden_of_proof",
+    "name": "Burden of Proof",
+    "difficulty": "advanced",
+    "definition": "Shifting the responsibility of providing evidence from the person making a claim to someone else.",
+    "aliases": ["Shifting the Burden", "Prove Me Wrong"],
+    "confusableWith": ["fal_appeal_to_ignorance", "fal_special_pleading"],
+    "rationaleTips": ["The claimant must provide evidence", "You can't prove a negative", "Extraordinary claims require extraordinary evidence"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_appeal_to_pity",
+    "name": "Appeal to Pity",
+    "difficulty": "beginner",
+    "definition": "Attempting to win an argument by exploiting sympathy or pity rather than using evidence.",
+    "aliases": ["Appeal to Sympathy", "Sob Story"],
+    "confusableWith": ["fal_appeal_to_emotion", "fal_red_herring"],
+    "rationaleTips": ["Separate emotional appeals from logical arguments", "Pity doesn't determine truth", "Consider if sympathy is relevant to the claim"],
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "fal_false_analogy",
+    "name": "False Analogy",
+    "difficulty": "intermediate",
+    "definition": "Comparing two things that are not sufficiently similar in relevant ways to support the conclusion.",
+    "aliases": ["Weak Analogy", "Faulty Comparison"],
+    "confusableWith": ["fal_straw_man", "fal_false_equivalence"],
+    "rationaleTips": ["Check if compared items are truly similar", "Look for relevant differences", "Consider if the analogy supports the conclusion"],
+    "version": "1.0.0",
+    "status": "active"
+  }
+]
+  {
     "id": "fal_slippery_slope",
     "name": "Slippery Slope",
     "difficulty": "beginner",
