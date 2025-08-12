@@ -317,5 +317,115 @@
     "rationaleTips": ["Truth is independent of consequences", "Distinguish between what we want and what is", "Evaluate evidence, not outcomes"],
     "version": "1.0.0",
     "status": "active"
-  }
+  },
+  {
+  "id": "fal_appeal_to_popularity",
+  "name": "Appeal to Popularity",
+  "difficulty": "intermediate",
+  "definition": "Claims a view is true or good because many people accept it.",
+  "aliases": ["Ad Populum", "Bandwagon"],
+  "confusableWith": ["fal_bandwagon", "fal_appeal_to_authority"],
+  "rationaleTips": ["Popularity isn’t proof", "Ask for evidence beyond headcount", "Trends can be wrong"],
+  "version": "1.0.0",
+  "status": "active"
+   },
+  {
+  "id": "fal_false_equivalence",
+  "name": "False Equivalence",
+  "difficulty": "intermediate",
+  "definition": "Treats two things as morally or logically equivalent despite relevant differences.",
+  "aliases": ["Faulty Analogy (moral)"],
+  "confusableWith": ["fal_false_dichotomy", "fal_straw_man"],
+  "rationaleTips": ["List relevant similarities/differences", "Check if the comparison is material", "Avoid surface-level parity"],
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "fal_post_hoc",
+  "name": "Post Hoc",
+  "difficulty": "intermediate",
+  "definition": "Assumes that because B followed A, A caused B.",
+  "aliases": ["Post Hoc Ergo Propter Hoc"],
+  "confusableWith": ["fal_false_cause", "fal_texas_sharpshooter"],
+  "rationaleTips": ["Temporal order ≠ causation", "Check for confounders", "Prefer controlled tests"],
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "fal_question_begging",
+  "name": "Question Begging",
+  "difficulty": "advanced",
+  "definition": "Alternate label for Begging the Question; premises presuppose the conclusion.",
+  "aliases": ["Circular Reasoning (alias)"],
+  "confusableWith": ["fal_begging_question", "fal_circular_reasoning"],
+  "rationaleTips": ["Identify concealed conclusion", "Demand independent support", "Map the logic chain"],
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "fal_tautology",
+  "name": "Tautology",
+  "difficulty": "intermediate",
+  "definition": "A claim that is true by definition or repeats itself, adding no informative content.",
+  "aliases": ["Truism"],
+  "confusableWith": ["fal_circular_reasoning", "fal_begging_question"],
+  "rationaleTips": ["Look for rephrased sameness", "Seek testable content", "Ask what would falsify it"],
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "fal_fear_mongering",
+  "name": "Fear Mongering",
+  "difficulty": "beginner",
+  "definition": "Uses fear to persuade rather than relevant reasons or evidence.",
+  "aliases": ["Appeal to Fear", "Scare Tactics"],
+  "confusableWith": ["fal_appeal_to_emotion", "fal_slippery_slope"],
+  "rationaleTips": ["Separate fear from facts", "Ask for actual risk data", "Beware vivid but irrelevant harms"],
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "fal_begging_question",
+  "name": "Begging the Question",
+  "difficulty": "advanced",
+  "definition": "The conclusion is assumed in the premises, providing no independent support.",
+  "aliases": ["Petitio Principii", "Circular Argument"],
+  "confusableWith": ["fal_circular_reasoning", "fal_tautology"],
+  "rationaleTips": ["Trace premise→conclusion", "Look for restatements", "Request outside evidence"],
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "fal_appeal_to_moderation",
+  "name": "Appeal to Moderation",
+  "difficulty": "intermediate",
+  "definition": "Claims the middle position is true simply because it lies between two extremes.",
+  "aliases": ["Golden Mean", "False Compromise"],
+  "confusableWith": ["fal_middle_ground", "fal_false_dichotomy"],
+  "rationaleTips": ["Middle isn’t automatically correct", "Evaluate claims on merits", "Check evidence, not location"],
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "fal_is_ought",
+  "name": "Is–Ought",
+  "difficulty": "intermediate",
+  "definition": "Infers that because something is a certain way, it ought to be that way.",
+  "aliases": ["Appeal to Nature (normative)"],
+  "confusableWith": ["fal_appeal_to_nature", "fal_circular_reasoning"],
+  "rationaleTips": ["Describe vs prescribe", "Add a normative bridge premise", "Evidence, not inertia"],
+  "version": "1.0.0",
+  "status": "active"
+},
+{
+  "id": "fal_appeal_to_tradition",
+  "name": "Appeal to Tradition",
+  "difficulty": "intermediate",
+  "definition": "Argues something is correct or better because it has always been done that way.",
+  "aliases": ["Argument from Tradition", "Status Quo Bias"],
+  "confusableWith": ["fal_appeal_to_nature", "fal_is_ought", "fal_middle_ground"],
+  "rationaleTips": ["Ask for current evidence", "Old ≠ true", "Separate custom from justification"],
+  "version": "1.0.0",
+  "status": "active"
+}
 ]
