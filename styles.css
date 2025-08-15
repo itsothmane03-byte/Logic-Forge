@@ -124,3 +124,6 @@ img{ max-width:100%; height:auto }
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important }
 }
+/* logo sizing */
+.brand-mark{ height:40px; width:auto; display:block }
+@media (max-width:480px){ .brand-mark{ height:34px } }
