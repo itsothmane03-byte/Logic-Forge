@@ -203,7 +203,7 @@
     "difficulty": "intermediate",
     "definition": "Using the conclusion as evidence for itself, creating a logical loop without external support.",
     "aliases": ["Begging the Question","Question Begging","Petitio Principii"],
-    "confusableWith": ["fal_tautology", "fal_question_begging"],
+    "confusableWith": ["fal_tautology", "fal_circular_reasoning"],
     "rationaleTips": ["Check if premises depend on the conclusion", "Look for restated claims as evidence", "Trace the logical chain for loops"],
     "version": "1.0.0",
     "status": "active"
@@ -236,7 +236,7 @@
     "difficulty": "intermediate",
     "definition": "Asking a question that contains controversial or unjustified assumptions.",
     "aliases": ["Complex Question", "Trick Question"],
-    "confusableWith": ["fal_false_dichotomy", "fal_begging_question"],
+    "confusableWith": ["fal_false_dichotomy", "fal_circular_reasoning"],
     "rationaleTips": ["Identify hidden assumptions in the question", "Challenge the premise before answering", "Rephrase to remove bias"],
     "version": "1.0.0",
     "status": "active"
@@ -352,12 +352,12 @@
   "status": "active"
 },
 {
-  "id": "fal_question_begging",
+  "id": "fal_circular_reasoning",
   "name": "Question Begging",
   "difficulty": "advanced",
   "definition": "Alternate label for Begging the Question; premises presuppose the conclusion.",
   "aliases": ["Circular Reasoning (alias)"],
-  "confusableWith": ["fal_begging_question", "fal_circular_reasoning"],
+  "confusableWith": ["fal_circular_reasoning", "fal_circular_reasoning"],
   "rationaleTips": ["Identify concealed conclusion", "Demand independent support", "Map the logic chain"],
   "version": "1.0.0",
   "status": "deprecated"
@@ -368,7 +368,7 @@
   "difficulty": "intermediate",
   "definition": "A claim that is true by definition or repeats itself, adding no informative content.",
   "aliases": ["Truism"],
-  "confusableWith": ["fal_circular_reasoning", "fal_begging_question"],
+  "confusableWith": ["fal_circular_reasoning", "fal_circular_reasoning"],
   "rationaleTips": ["Look for rephrased sameness", "Seek testable content", "Ask what would falsify it"],
   "version": "1.0.0",
   "status": "active"
@@ -385,7 +385,7 @@
   "status": "active"
 },
 {
-  "id": "fal_begging_question",
+  "id": "fal_circular_reasoning",
   "name": "Begging the Question",
   "difficulty": "advanced",
   "definition": "The conclusion is assumed in the premises, providing no independent support.",
