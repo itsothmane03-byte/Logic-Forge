@@ -133,3 +133,7 @@ img[src$="assets/logo-icon.png"]{ display:none }           /* hide stray body fa
   .grid{ gap:12px }
   .card{ padding:12px; border-radius:12px }
 }
+/* Use transparent PNG logo */
+.brand-mark{ display:none }                 /* hide the old inline SVG if present */
+.brand-img{ height:72px; width:auto; display:block }
+@media (min-width:900px){ .brand-img{ height:84px } }
