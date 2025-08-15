@@ -144,3 +144,20 @@ img[src$="assets/logo-icon.png"]{ display:none }
   .grid{ gap:12px }
   .card{ padding:12px; border-radius:12px }
 }
+/* Brand: color follows accent, bigger on desktop */
+.brand { color: var(--accent); }
+.brand-mark { height:56px; width:auto; display:block }
+@media (min-width:900px){ .brand-mark{ height:64px } }
+
+/* Minimal top-right nav (text links with underline on active/hover) */
+.tabs-minimal .tab{
+  padding:0; border:none; border-radius:0; background:transparent; color:var(--fg);
+  opacity:.85;
+}
+.tabs-minimal .tab:hover{ opacity:1; text-decoration:underline; text-underline-offset:6px }
+.tabs-minimal .tab[aria-current="page"], .tabs-minimal .tab.active{
+  font-weight:700; text-decoration:underline; text-underline-offset:6px
+}
+
+/* Hide any stray inline logo-icon image that might be in the body */
+img[src$="assets/logo-icon.png"]{ display:none }
