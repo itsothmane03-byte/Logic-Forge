@@ -1,53 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Fallacy Forge</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧠</text></svg>">
+  <link rel="stylesheet" href="styles.css" />
+</head>
 <body>
-  <link rel="icon" href="data:,">
-  <header>
-    <nav>
-      <a href="#arena" style="position:absolute;left:-9999px;top:-9999px" onfocus="this.style.left='8px';this.style.top='8px'">Skip to content</a>
-      <a href="#practice">Practice Arena</a> |
-      <a href="#gauntlet">Gauntlet</a> |
-      <a href="#library">Reference Library</a>
+  <a class="visually-hidden" href="#arena">Skip to content</a>
+
+  <header class="header container">
+    <div class="brand">Fallacy Forge</div>
+    <nav class="tabs">
+      <a href="#arena" class="tab active" aria-current="page">Arena</a>
+      <a href="#gauntlet" class="tab">Gauntlet</a>
+      <a href="#library" class="tab">Library</a>
     </nav>
   </header>
 
-  <section id="arena" style="margin:16px 0">
-    <h2>Practice Arena</h2>
-    <div id="prop" style="margin:8px 0;font-size:1.1rem"></div>
-    <select id="label" aria-label="Choose label"></select>
-    <button id="submit">Submit</button>
-    <button id="next">Next</button>
-    <div id="fb" role="alert" aria-live="polite" style="margin-top:8px"></div>
-    <div id="similar" class="muted" style="margin-top:6px;font-size:0.9rem"></div>
-  </section>
+  <main class="container grid cols-2">
+    <!-- Practice Arena -->
+    <section id="arena" class="card">
+      <h2>Practice Arena</h2>
+      <p id="prop" class="prop"></p>
+      <div class="controls">
+        <select id="label" class="select" aria-label="Choose label"></select>
+        <button id="submit" class="btn btn-primary">Check</button>
+        <button id="next" class="btn">Next</button>
+      </div>
+      <p id="fb" class="feedback" aria-live="polite"></p>
+      <p id="similar" class="hint"></p>
+      <p class="hint small">Shortcuts: <span class="kbd">Enter</span> check, <span class="kbd">Space</span> next</p>
+    </section>
 
-  <section id="gauntlet" style="margin:24px 0">
-    <h2>Gauntlet</h2>
-    <div>
-      <label>Seed: <input id="g-seed" placeholder="auto" /></label>
-      <button id="g-start">Start</button>
-    </div>
-    <div id="g-run" style="display:none; margin-top:10px">
-      <div id="g-progress"></div>
-      <div id="g-prop" style="margin:8px 0;font-size:1.1rem"></div>
-      <select id="g-label" aria-label="Choose label"></select>
-      <button id="g-submit">Submit</button>
-    </div>
-    <div id="g-results" style="display:none; margin-top:12px"></div>
-  </section>
-  
-<section id="library" style="margin:24px 0">
-  <h2>Reference Library</h2>
-  <input id="lib-q" placeholder="Search name/alias…" />
-  <select id="lib-diff">
-    <option value="all">All</option>
-    <option value="beginner">Beginner</option>
-    <option value="intermediate">Intermediate</option>
-    <option value="advanced">Advanced</option>
-  </select>
-  <div id="lib-list" style="margin-top:10px"></div>
-</section>
+    <!-- Gauntlet -->
+    <section id="gauntlet" class="card">
+      <h2>Gauntlet</h2>
+      <div class="controls">
+        <input id="g-seed" class="input" placeholder="Seed (optional)" />
+        <select id="g-label" class="select" aria-label="Choose label"></select>
+        <button id="g-start" class="btn btn-primary">Start</button>
+        <button id="g-submit" class="btn">Submit</button>
+      </div>
+      <p id="g-progress" class="hint"></p>
+      <p id="g-prop" class="prop"></p>
+      <div id="g-run"></div>
+      <div id="g-results"></div>
+    </section>
 
-  <footer>version 1.0.0</footer>
+    <!-- Library -->
+    <section id="library" class="card">
+      <h2>Library</h2>
+      <div class="controls">
+        <input id="lib-q" class="input" placeholder="Search name or alias" />
+        <select id="lib-diff" class="select">
+          <option value="all">All levels</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+      <div id="lib-list"></div>
+    </section>
+  </main>
 
-  <script src="app.js"></script>
-  <script src="rotation.js"></script>
+  <footer class="container small muted">v1.0.0</footer>
+
+  <script src="rotation.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
+</html>
