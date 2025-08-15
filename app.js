@@ -56,13 +56,11 @@ function similarExamples(current, props) {
 }
 
 async function initArena(){
-  const [F, P] = await Promise.all([loadFallacies(), loadPropositions()]);
-  const fallacyById = byIdMap(F.all);
-  const sel = document.getElementById('label');
-  sel.innerHTML =
-    `<option value="">Choose…</option>` +
-    F.all.map(f => `<option value="${f.id}">${f.name}</option>`).join('') +
-    `<option value="sound">Sound</option><option value="unclear">Unclear</option>`;
+ const byId = fallacies.byId;
+const select = document.getElementById('label');
+const active = fallacies.all.filter(f => f.status !== 'deprecated'); // hide deprecated
+const options = active.map(f=>`<option value="${f.id}">${f.name}</option>`).join('');
+select.innerHTML = `<option value="">Choose…</option>${options}<option value="sound">Sound</option><option value="unclear">Unclear</option>`;
 
   const propEl = document.getElementById('prop');
   const fb = document.getElementById('fb');
@@ -119,10 +117,12 @@ async function initGauntlet(){
   const [F, P] = await Promise.all([loadFallacies(), loadPropositions()]);
   const fallacyById = byIdMap(F.all);
   const sel = document.getElementById('g-label');
-  sel.innerHTML =
-    `<option value="">Choose…</option>` +
-    F.all.map(f => `<option value="${f.id}">${f.name}</option>`).join('') +
-    `<option value="sound">Sound</option><option value="unclear">Unclear</option>`;
+  const active = F.all.filter(f => f.status !== 'deprecated');
+sel.innerHTML =
+  `<option value="">Choose…</option>` +
+  active.map(f => `<option value="${f.id}">${f.name}</option>`).join('') +
+  `<option value="sound">Sound</option><option value="unclear">Unclear</option>`;
+
 
   const startBtn = document.getElementById('g-start');
   const seedEl = document.getElementById('g-seed');
@@ -229,7 +229,7 @@ list.addEventListener('click', (e)=>{
 
   q.addEventListener('input', apply);
   d.addEventListener('change', apply);
-  render(F.all);
+  render(F.active);
 }
 initLibrary().catch(console.error);
 
