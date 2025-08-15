@@ -1,25 +1,13 @@
-/* Fallacy Forge UI v1.2 — hero bg, cards, dark mode, polish */
+/* Fallacy Forge UI v1.4 — hero bg, cards, dark mode, pill nav */
 
 /* ---------- Tokens */
 :root{
-  --bg:#f6fbff;
-  --card:#ffffff;
-  --fg:#111;
-  --muted:#5f6b76;
-  --line:#e6eef5;
-  --accent:#ff6b3d;                 /* warm orange */
-  --accent-weak:rgba(255,107,61,.12);
-  --radius:14px;
-  --shadow:0 1px 2px rgba(0,0,0,.06), 0 10px 28px rgba(0,0,0,.08);
+  --bg:#f6fbff; --card:#ffffff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
+  --accent:#ff6b3d; --accent-weak:rgba(255,107,61,.12);
+  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.06), 0 10px 28px rgba(0,0,0,.08);
   --space:12px;
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-
-  /* background stops */
-  --sky-top:#e8f8ff;
-  --sky-mid:#d8f1fe;
-  --sand-1:#ffebbb;
-  --sand-2:#fada8a;
-  --sand-3:#f2c768;
+  --sky-top:#e8f8ff; --sky-mid:#d8f1fe; --sand-1:#ffebbb; --sand-2:#fada8a; --sand-3:#f2c768;
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -46,13 +34,20 @@ img{ max-width:100%; height:auto }
 /* ---------- Layout */
 .container{ max-width:980px; margin:0 auto; padding:24px 16px }
 .header{ display:flex; gap:10px; align-items:center; justify-content:space-between; margin:8px 0 12px }
-.brand{ display:flex; align-items:center; min-height:44px }
+.brand{ display:flex; align-items:center; min-height:44px; color:var(--accent) }
 .tabs{ display:flex; gap:8px; flex-wrap:wrap }
-.tab{ padding:8px 12px; border-radius:10px; border:1px solid var(--line); color:inherit; background:transparent }
-.tab[aria-current="page"], .tab.active{ background:var(--accent-weak); border-color:transparent }
 
-.grid{ display:grid; gap:16px }
-@media (min-width:900px){ .grid.cols-2{ grid-template-columns:1fr 1fr } }
+/* ---------- Pill nav (right aligned) */
+.tabs-right{ margin-left:auto }
+.tabs-pill{ gap:12px }
+.tabs-pill .tab{
+  padding:8px 12px; border-radius:12px; border:1px solid var(--line);
+  background:rgba(255,255,255,.65); color:var(--fg);
+}
+.tabs-pill .tab:hover{ background:var(--accent-weak) }
+.tabs-pill .tab[aria-current="page"], .tabs-pill .tab.active{
+  background:var(--accent-weak); font-weight:700; border-color:transparent;
+}
 
 /* ---------- Cards */
 .card{
@@ -76,7 +71,6 @@ img{ max-width:100%; height:auto }
 }
 .controls{ display:flex; gap:8px; flex-wrap:wrap }
 .controls .select{ flex:1 1 260px }
-
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   height:42px; padding:0 14px; border-radius:12px; border:1px solid var(--line); background:transparent; color:inherit; cursor:pointer;
@@ -95,8 +89,7 @@ img{ max-width:100%; height:auto }
 /* ---------- Arena */
 .prop{ font-size:1.15rem; margin:6px 0 10px }
 .feedback{ font-weight:700; margin:6px 0 }
-.feedback.ok{ color:#16a34a }    /* green */
-.feedback.bad{ color:#dc2626 }   /* red */
+.feedback.ok{ color:#16a34a } .feedback.bad{ color:#dc2626 }
 
 /* ---------- Table (Gauntlet results) */
 .table{ width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden }
@@ -119,7 +112,6 @@ img{ max-width:100%; height:auto }
     linear-gradient(to bottom, var(--sky-top) 0%, var(--sky-mid) 45%, #fff 58%, var(--sand-1) 60%, var(--sand-2) 100%);
   filter: saturate(1.02);
 }
-
 .hero{ text-align:center; padding:64px 0 24px }
 .hero h1{ margin:0 0 8px; font-size:clamp(28px,5vw,48px); line-height:1.15; letter-spacing:.2px }
 .hero .actions{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:10px }
@@ -130,34 +122,14 @@ img{ max-width:100%; height:auto }
   *{ transition:none !important; scroll-behavior:auto !important }
 }
 
-/* ---------- Fixes from review */
-/* Hide any stray icon image accidentally added in body */
-img[src$="assets/logo-icon.png"]{ display:none }
+/* ---------- Brand + fixes */
+.brand-mark{ height:72px; width:auto; display:block }     /* inline SVG logo size */
+@media (min-width:900px){ .brand-mark{ height:84px } }
+img[src$="assets/logo-icon.png"]{ display:none }           /* hide stray body favicon */
 
-/* Brand image size */
-.brand-mark{ height:44px; width:auto; display:block }
-@media (min-width:900px){ .brand-mark{ height:52px } }
-
-/* Small-screen spacing */
+/* ---------- Small screens */
 @media (max-width:720px){
   .container{ padding:18px 12px }
   .grid{ gap:12px }
   .card{ padding:12px; border-radius:12px }
 }
-/* Brand: color follows accent, bigger on desktop */
-.brand { color: var(--accent); }
-.brand-mark { height:56px; width:auto; display:block }
-@media (min-width:900px){ .brand-mark{ height:64px } }
-
-/* Minimal top-right nav (text links with underline on active/hover) */
-.tabs-minimal .tab{
-  padding:0; border:none; border-radius:0; background:transparent; color:var(--fg);
-  opacity:.85;
-}
-.tabs-minimal .tab:hover{ opacity:1; text-decoration:underline; text-underline-offset:6px }
-.tabs-minimal .tab[aria-current="page"], .tabs-minimal .tab.active{
-  font-weight:700; text-decoration:underline; text-underline-offset:6px
-}
-
-/* Hide any stray inline logo-icon image that might be in the body */
-img[src$="assets/logo-icon.png"]{ display:none }
