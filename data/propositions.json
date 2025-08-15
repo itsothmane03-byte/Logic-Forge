@@ -5,7 +5,9 @@
     "fallacyId": "fal_ad_hominem",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["business"],
+    "tags": [
+      "business"
+    ],
     "explanation": "Attacks the person, not the reasons.",
     "notes": "",
     "duplicateOf": null,
@@ -18,7 +20,9 @@
     "fallacyId": "fal_straw_man",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["business"],
+    "tags": [
+      "business"
+    ],
     "explanation": "Exaggerates the original claim to attack it.",
     "notes": "",
     "duplicateOf": null,
@@ -31,7 +35,9 @@
     "fallacyId": "fal_false_dichotomy",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["everyday"],
+    "tags": [
+      "everyday"
+    ],
     "explanation": "Presents only two options when others exist.",
     "notes": "",
     "duplicateOf": null,
@@ -44,7 +50,9 @@
     "fallacyId": "fal_appeal_to_authority",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["science"],
+    "tags": [
+      "science"
+    ],
     "explanation": "Authority is not relevant evidence.",
     "notes": "",
     "duplicateOf": null,
@@ -57,7 +65,9 @@
     "fallacyId": "fal_slippery_slope",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["everyday"],
+    "tags": [
+      "everyday"
+    ],
     "explanation": "Predicts extreme outcome without supported steps.",
     "notes": "",
     "duplicateOf": null,
@@ -70,7 +80,9 @@
     "fallacyId": null,
     "isSound": true,
     "difficulty": "beginner",
-    "tags": ["everyday"],
+    "tags": [
+      "everyday"
+    ],
     "explanation": "Focuses on reasons, not the person.",
     "notes": "",
     "duplicateOf": null,
@@ -78,12 +90,15 @@
     "status": "active"
   },
   {
-    "id": "prp_adh_001",
+    "id": "prp_adh_051",
     "text": "Dr. Martinez's research is unreliable because she's been married three times.",
     "fallacyId": "fal_ad_hominem",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["personal", "research"],
+    "tags": [
+      "everyday",
+      "science"
+    ],
     "explanation": "Personal life has no bearing on research quality. This attacks the researcher instead of evaluating the research methodology or findings.",
     "notes": "Classic irrelevant personal attack",
     "duplicateOf": null,
@@ -92,11 +107,13 @@
   },
   {
     "id": "prp_stw_001",
-    "text": "Environmentalists want to destroy the economy and force everyone to live in caves.",
+    "text": "Security advocates want to destroy the economy and force everyone to live in caves.",
     "fallacyId": "fal_straw_man",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["politics", "environment"],
+    "tags": [
+      "policy"
+    ],
     "explanation": "Grossly exaggerates environmental positions. Most environmentalists advocate for sustainable practices, not returning to pre-industrial life.",
     "notes": "Extreme misrepresentation",
     "duplicateOf": null,
@@ -109,7 +126,10 @@
     "fallacyId": "fal_false_dichotomy",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["technology", "parenting"],
+    "tags": [
+      "technology",
+      "everyday"
+    ],
     "explanation": "Ignores middle-ground solutions like time limits, age restrictions, educational programs, or supervised usage.",
     "notes": "Classic either/or with missing alternatives",
     "duplicateOf": null,
@@ -122,7 +142,10 @@
     "fallacyId": "fal_appeal_to_authority",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["finance", "family"],
+    "tags": [
+      "finance",
+      "everyday"
+    ],
     "explanation": "Being successful in one area doesn't make someone a financial expert. No evidence of actual investment expertise is provided.",
     "notes": "Irrelevant authority - success ≠ expertise",
     "duplicateOf": null,
@@ -135,7 +158,10 @@
     "fallacyId": "fal_slippery_slope",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["education", "policy"],
+    "tags": [
+      "education",
+      "policy"
+    ],
     "explanation": "Assumes inevitable escalation without justification. Policies can have clear boundaries and exceptions without total collapse.",
     "notes": "Missing intermediate steps and safeguards",
     "duplicateOf": null,
@@ -148,7 +174,10 @@
     "fallacyId": null,
     "isSound": true,
     "difficulty": "beginner",
-    "tags": ["business", "technology"],
+    "tags": [
+      "business",
+      "technology"
+    ],
     "explanation": "This is a sound inductive argument. Empirical evidence from controlled tests provides reasonable grounds for predicting similar results in practice.",
     "notes": "Valid evidence-based reasoning",
     "duplicateOf": null,
@@ -161,7 +190,9 @@
     "fallacyId": "fal_ad_hominem",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["workplace", "safety"],
+    "tags": [
+      "workplace"
+    ],
     "explanation": "Dismisses the proposal based on personality traits rather than evaluating its merits. A complainer could still identify genuine safety issues.",
     "notes": "Character attack avoiding substance",
     "duplicateOf": null,
@@ -169,12 +200,14 @@
     "status": "active"
   },
   {
-    "id": "prp_stw_002", 
-    "text": "Gun control advocates want to confiscate every weapon and leave law-abiding citizens defenseless against criminals.",
+    "id": "prp_stw_002",
+    "text": "Access-control advocates want to confiscate every weapon and leave law-abiding citizens defenseless against criminals.",
     "fallacyId": "fal_straw_man",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["politics", "rights"],
+    "tags": [
+      "policy"
+    ],
     "explanation": "Misrepresents most gun control positions, which typically focus on background checks, waiting periods, or specific weapon types, not total confiscation.",
     "notes": "Extreme interpretation of nuanced positions",
     "duplicateOf": null,
@@ -187,7 +220,9 @@
     "fallacyId": "fal_false_dichotomy",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["workplace", "teamwork"],
+    "tags": [
+      "workplace"
+    ],
     "explanation": "Ignores degrees of commitment and different ways to contribute. Someone could have valid concerns while still being a valuable team member.",
     "notes": "Binary thinking about complex human relationships",
     "duplicateOf": null,
@@ -200,7 +235,10 @@
     "fallacyId": "fal_appeal_to_authority",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["health", "media"],
+    "tags": [
+      "health",
+      "marketing"
+    ],
     "explanation": "TV shows prioritize entertainment and ratings over medical expertise. Being featured on TV doesn't constitute scientific validation.",
     "notes": "False authority - media coverage ≠ medical approval",
     "duplicateOf": null,
@@ -213,7 +251,9 @@
     "fallacyId": "fal_slippery_slope",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["workplace", "remote-work"],
+    "tags": [
+      "workplace"
+    ],
     "explanation": "Assumes escalation without evidence. Many companies successfully implement hybrid policies without losing company culture entirely.",
     "notes": "Ignores management controls and employee motivation",
     "duplicateOf": null,
@@ -226,7 +266,10 @@
     "fallacyId": null,
     "isSound": true,
     "difficulty": "beginner",
-    "tags": ["business", "marketing"],
+    "tags": [
+      "business",
+      "marketing"
+    ],
     "explanation": "Sound inductive reasoning based on consistent evidence. Multiple successes provide reasonable grounds for concluding the strategy works.",
     "notes": "Pattern recognition with adequate sample size",
     "duplicateOf": null,
@@ -239,7 +282,9 @@
     "fallacyId": "fal_ad_hominem",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["education", "economics"],
+    "tags": [
+      "education"
+    ],
     "explanation": "Personal financial choices don't invalidate academic expertise. A professor might choose an old car for environmental, practical, or personal reasons.",
     "notes": "Irrelevant personal circumstances",
     "duplicateOf": null,
@@ -248,11 +293,13 @@
   },
   {
     "id": "prp_stw_003",
-    "text": "People who want prison reform obviously think all criminals should be released immediately without consequences.",
+    "text": "People who want policy reform obviously think all criminals should be released immediately without consequences.",
     "fallacyId": "fal_straw_man",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["justice", "policy"],
+    "tags": [
+      "policy"
+    ],
     "explanation": "Mischaracterizes reform positions, which typically focus on rehabilitation, sentencing guidelines, or addressing systemic issues, not eliminating consequences.",
     "notes": "All-or-nothing misrepresentation",
     "duplicateOf": null,
@@ -261,11 +308,13 @@
   },
   {
     "id": "prp_fdc_003",
-    "text": "We must either cut all government spending or face complete economic collapse.",
+    "text": "We must either cut all project spending or face complete economic collapse.",
     "fallacyId": "fal_false_dichotomy",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["politics", "economics"],
+    "tags": [
+      "policy"
+    ],
     "explanation": "Ignores gradual adjustments, targeted cuts, revenue increases, or mixed approaches. Most economic policy involves nuanced combinations of strategies.",
     "notes": "Extreme binary choice in complex domain",
     "duplicateOf": null,
@@ -278,7 +327,10 @@
     "fallacyId": "fal_appeal_to_authority",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["finance", "celebrity"],
+    "tags": [
+      "finance",
+      "marketing"
+    ],
     "explanation": "Athletic expertise doesn't translate to financial expertise. Celebrity endorsements often involve paid promotions rather than genuine investment advice.",
     "notes": "Irrelevant authority with potential conflicts of interest",
     "duplicateOf": null,
@@ -291,7 +343,10 @@
     "fallacyId": "fal_slippery_slope",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["workplace", "policy"],
+    "tags": [
+      "workplace",
+      "policy"
+    ],
     "explanation": "Assumes uncontrolled escalation. Specific, limited policies can exist without inevitably expanding. Management retains discretion over different requests.",
     "notes": "Assumes policy boundaries cannot be maintained",
     "duplicateOf": null,
@@ -304,7 +359,10 @@
     "fallacyId": null,
     "isSound": true,
     "difficulty": "beginner",
-    "tags": ["health", "research"],
+    "tags": [
+      "health",
+      "science"
+    ],
     "explanation": "Sound statistical reasoning. Clinical trials provide systematic evidence, and 85% effectiveness rate gives reasonable basis for predicting individual outcomes.",
     "notes": "Proper interpretation of statistical evidence",
     "duplicateOf": null,
@@ -317,7 +375,10 @@
     "fallacyId": "fal_ad_hominem",
     "isSound": false,
     "difficulty": "beginner",
-    "tags": ["food", "career"],
+    "tags": [
+      "everyday",
+      "workplace"
+    ],
     "explanation": "Past employment doesn't determine current abilities. Many skilled chefs have diverse backgrounds, and the menu's quality should be judged on its own merits.",
     "notes": "Career history irrelevant to current performance",
     "duplicateOf": null,
@@ -330,7 +391,10 @@
     "fallacyId": null,
     "isSound": true,
     "difficulty": "beginner",
-    "tags": ["policy", "statistics"],
+    "tags": [
+      "policy",
+      "statistics"
+    ],
     "explanation": "Sound reasoning from consistent data trends. While other factors might contribute, sustained improvement provides reasonable evidence for policy effectiveness.",
     "notes": "Appropriate causal inference from sustained trends",
     "duplicateOf": null,
@@ -338,619 +402,2680 @@
     "status": "active"
   },
   {
-  "id": "prp_adh_005",
-  "text": "We shouldn't accept his report on city planning; he doesn't even live in the city.",
-  "fallacyId": "fal_ad_hominem",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["urban-planning"],
-  "explanation": "Attacks where the person lives instead of evaluating the report’s content.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_adh_006",
-  "text": "Ignore Linda's ideas about time management; she's always late to meetings.",
-  "fallacyId": "fal_ad_hominem",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["workplace"],
-  "explanation": "Dismisses the argument by pointing to the arguer’s tardiness.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_adh_007",
-  "text": "Her advice on nutrition is worthless because she eats fast food sometimes.",
-  "fallacyId": "fal_ad_hominem",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["health"],
-  "explanation": "Attacks personal habits rather than addressing the merits of the advice.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_adh_008",
-  "text": "He criticizes the tax policy, but he hasn't filed his taxes on time for years.",
-  "fallacyId": "fal_ad_hominem",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["finance"],
-  "explanation": "Points to personal behaviour rather than addressing his argument.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_adh_009",
-  "text": "Don't believe John's take on energy policy; he drives an old, gas-guzzling truck.",
-  "fallacyId": "fal_ad_hominem",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["energy"],
-  "explanation": "Irrelevant to whether the policy points are correct.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_adh_sound_005",
-  "text": "Her past mistakes don't automatically invalidate her current argument; evaluate the logic on its merits.",
-  "fallacyId": null,
-  "isSound": true,
-  "difficulty": "beginner",
-  "tags": ["reasoning"],
-  "explanation": "Encourages judging arguments on substance rather than personal history.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-
-{
-  "id": "prp_stw_004",
-  "text": "People who want to reduce defense spending just want to leave the country defenseless.",
-  "fallacyId": "fal_straw_man",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["policy"],
-  "explanation": "Misrepresents calls for moderate cuts as calls for no defense at all.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_stw_005",
-  "text": "Proponents of renewable energy want us to go back to the Stone Age.",
-  "fallacyId": "fal_straw_man",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["energy"],
-  "explanation": "Grossly distorts the position of renewable energy advocates.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_stw_006",
-  "text": "Those who propose a curfew think the city should be under martial law.",
-  "fallacyId": "fal_straw_man",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["policy"],
-  "explanation": "Exaggerates a narrow proposal into an extreme position.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_stw_007",
-  "text": "If you support background checks, you want to ban all firearms.",
-  "fallacyId": "fal_straw_man",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["policy"],
-  "explanation": "Distorts a moderate gun-control proposal into a total ban.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_stw_008",
-  "text": "Advocates of data privacy want criminals to hide more easily.",
-  "fallacyId": "fal_straw_man",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["technology"],
-  "explanation": "Misrepresents privacy advocates’ intent as helping criminals.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_stw_sound_004",
-  "text": "Clarifying the original proposal before critiquing prevents misrepresentation.",
-  "fallacyId": null,
-  "isSound": true,
-  "difficulty": "beginner",
-  "tags": ["debate"],
-  "explanation": "Encourages strong-man rather than straw-man engagement.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-
-{
-  "id": "prp_fdc_004",
-  "text": "Either you are part of the solution or part of the problem.",
-  "fallacyId": "fal_false_dichotomy",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["decision"],
-  "explanation": "Ignores neutrality and middle-ground contributions.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_fdc_005",
-  "text": "If we can't hire a full-time specialist, we may as well abandon the initiative.",
-  "fallacyId": "fal_false_dichotomy",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["business"],
-  "explanation": "Ignores hybrid or part-time staffing options.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_fdc_006",
-  "text": "Either we automate everything or we remain stuck in inefficiency.",
-  "fallacyId": "fal_false_dichotomy",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["technology"],
-  "explanation": "False choice between extremes; ignores gradual automation.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_fdc_007",
-  "text": "You either agree with every point or you are against us.",
-  "fallacyId": "fal_false_dichotomy",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["teamwork"],
-  "explanation": "Forces a binary choice in a multi-faceted discussion.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_fdc_008",
-  "text": "You must choose between high profits and ethical practices.",
-  "fallacyId": "fal_false_dichotomy",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["ethics"],
-  "explanation": "Creates a false conflict between profitability and ethics.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_fdc_sound_004",
-  "text": "Decisions are rarely either-or; often a spectrum of options exists.",
-  "fallacyId": null,
-  "isSound": true,
-  "difficulty": "beginner",
-  "tags": ["decision"],
-  "explanation": "Highlights that most choices allow for compromise or hybrid solutions.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-
-{
-  "id": "prp_aut_004",
-  "text": "This software must be secure; a celebrity entrepreneur tweeted about it.",
-  "fallacyId": "fal_appeal_to_authority",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["technology"],
-  "explanation": "A celebrity’s opinion is not relevant evidence for software security.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_aut_005",
-  "text": "My neighbor, who's a lawyer, says this supplement cures migraines.",
-  "fallacyId": "fal_appeal_to_authority",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["health"],
-  "explanation": "Expertise in law does not confer medical authority.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_aut_006",
-  "text": "An online influencer recommends this investment; it must be safe.",
-  "fallacyId": "fal_appeal_to_authority",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["finance"],
-  "explanation": "Influence doesn’t equate to financial expertise.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_aut_007",
-  "text": "A popular fitness blogger insists this diet prevents cancer.",
-  "fallacyId": "fal_appeal_to_authority",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["health"],
-  "explanation": "Fitness blogging doesn’t confer oncology expertise.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_aut_008",
-  "text": "A famous musician said meditation cures depression, so it's medically proven.",
-  "fallacyId": "fal_appeal_to_authority",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["mental-health"],
-  "explanation": "Musical fame does not make one a mental-health authority.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_aut_sound_004",
-  "text": "Citing a peer-reviewed study by experts in the field is relevant authority.",
-  "fallacyId": null,
-  "isSound": true,
-  "difficulty": "beginner",
-  "tags": ["science"],
-  "explanation": "Proper expertise and evidence make for a valid appeal.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_slp_004",
-  "text": "If we permit phones during lunch breaks, soon no one will put them away all day.",
-  "fallacyId": "fal_slippery_slope",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["workplace"],
-  "explanation": "Predicts runaway usage without evidence of escalation.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_slp_005",
-  "text": "If we give one project extra budget, every team will demand the same and bankrupt us.",
-  "fallacyId": "fal_slippery_slope",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["business"],
-  "explanation": "Assumes uncontrollable escalation of exceptions.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_slp_006",
-  "text": "Allowing remote work one day a week will lead to everyone working from home permanently.",
-  "fallacyId": "fal_slippery_slope",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["workplace"],
-  "explanation": "Assumes incremental flexibility inevitably reaches extremes.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_slp_007",
-  "text": "If students choose their own reading material, they'll eventually stop reading altogether.",
-  "fallacyId": "fal_slippery_slope",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["education"],
-  "explanation": "Assumes a policy will spiral without showing causal links.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_slp_008",
-  "text": "If we legalize this substance, the entire country will become addicted to drugs.",
-  "fallacyId": "fal_slippery_slope",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["policy"],
-  "explanation": "Expects total collapse without showing intermediate steps.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_slp_sound_004",
-  "text": "Implementing flexible policies with clear limits doesn't inevitably lead to extremes.",
-  "fallacyId": null,
-  "isSound": true,
-  "difficulty": "beginner",
-  "tags": ["policy"],
-  "explanation": "Shows how boundaries prevent escalation.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_adh_050",
-  "text": "Ignore his scheduling proposal; he dresses too casually.",
-  "fallacyId": "fal_ad_hominem",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["workplace"],
-  "explanation": "Attacks appearance, not the proposal’s merits.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_stw_050",
-  "text": "People asking for code reviews just want to slow releases to a crawl.",
-  "fallacyId": "fal_straw_man",
-  "isSound": false,
-  "difficulty": "beginner",
-  "tags": ["engineering"],
-  "explanation": "Misrepresents the goal of quality checks as obstruction.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_fdc_sound_050",
-  "text": "We can ship a smaller feature set now and add the rest next sprint.",
-  "fallacyId": null,
-  "isSound": true,
-  "difficulty": "beginner",
-  "tags": ["product"],
-  "explanation": "Shows a middle path rather than a false either–or.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
-  "id": "prp_slp_sound_050",
-  "text": "Allowing one flexible exception doesn’t require approving all future exceptions.",
-  "fallacyId": null,
-  "isSound": true,
-  "difficulty": "beginner",
-  "tags": ["policy"],
-  "explanation": "Bounded policies prevent the feared cascade.",
-  "notes": "",
-  "duplicateOf": null,
-  "version": "1.0.0",
-  "status": "active"
-},
-{
+    "id": "prp_adh_005",
+    "text": "We shouldn't accept his report on city planning; he doesn't even live in the city.",
+    "fallacyId": "fal_ad_hominem",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "policy"
+    ],
+    "explanation": "Attacks where the person lives instead of evaluating the report’s content.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_adh_006",
+    "text": "Ignore Linda's ideas about time management; she's always late to meetings.",
+    "fallacyId": "fal_ad_hominem",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Dismisses the argument by pointing to the arguer’s tardiness.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_adh_007",
+    "text": "Her advice on nutrition is worthless because she eats fast food sometimes.",
+    "fallacyId": "fal_ad_hominem",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Attacks personal habits rather than addressing the merits of the advice.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_adh_008",
+    "text": "He criticizes the pricing policy, but he hasn't filed his taxes on time for years.",
+    "fallacyId": "fal_ad_hominem",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Points to personal behaviour rather than addressing his argument.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_adh_009",
+    "text": "Don't believe John's take on energy policy; he drives an old, gas-guzzling truck.",
+    "fallacyId": "fal_ad_hominem",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Irrelevant to whether the policy points are correct.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_adh_sound_005",
+    "text": "Her past mistakes don't automatically invalidate her current argument; evaluate the logic on its merits.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "beginner",
+    "tags": [
+      "everyday"
+    ],
+    "explanation": "Encourages judging arguments on substance rather than personal history.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_stw_004",
+    "text": "People who want to reduce security testing budget just want to leave the company defenseless.",
+    "fallacyId": "fal_straw_man",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "policy"
+    ],
+    "explanation": "Misrepresents calls for moderate cuts as calls for no defense at all.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_stw_005",
+    "text": "Proponents of renewable energy want us to go back to the Stone Age.",
+    "fallacyId": "fal_straw_man",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Grossly distorts the position of renewable energy advocates.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_stw_006",
+    "text": "Those who propose a curfew think the city should be under martial law.",
+    "fallacyId": "fal_straw_man",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "policy"
+    ],
+    "explanation": "Exaggerates a narrow proposal into an extreme position.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_stw_007",
+    "text": "If you support background checks, you want to ban all firearms.",
+    "fallacyId": "fal_straw_man",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "policy"
+    ],
+    "explanation": "Distorts a moderate gun-control proposal into a total ban.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_stw_008",
+    "text": "Advocates of data privacy want criminals to hide more easily.",
+    "fallacyId": "fal_straw_man",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Misrepresents privacy advocates’ intent as helping criminals.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_stw_sound_004",
+    "text": "Clarifying the original proposal before critiquing prevents misrepresentation.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "beginner",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Encourages strong-man rather than straw-man engagement.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fdc_004",
+    "text": "Either you are part of the solution or part of the problem.",
+    "fallacyId": "fal_false_dichotomy",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Ignores neutrality and middle-ground contributions.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fdc_005",
+    "text": "If we can't hire a full-time specialist, we may as well abandon the initiative.",
+    "fallacyId": "fal_false_dichotomy",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Ignores hybrid or part-time staffing options.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fdc_006",
+    "text": "Either we automate everything or we remain stuck in inefficiency.",
+    "fallacyId": "fal_false_dichotomy",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "False choice between extremes; ignores gradual automation.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fdc_007",
+    "text": "You either agree with every point or you are against us.",
+    "fallacyId": "fal_false_dichotomy",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "everyday"
+    ],
+    "explanation": "Forces a binary choice in a multi-faceted discussion.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fdc_008",
+    "text": "You must choose between high profits and ethical practices.",
+    "fallacyId": "fal_false_dichotomy",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "policy"
+    ],
+    "explanation": "Creates a false conflict between profitability and ethics.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fdc_sound_004",
+    "text": "Decisions are rarely either-or; often a spectrum of options exists.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "beginner",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Highlights that most choices allow for compromise or hybrid solutions.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_aut_004",
+    "text": "This software must be secure; a celebrity entrepreneur tweeted about it.",
+    "fallacyId": "fal_appeal_to_authority",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "A celebrity’s opinion is not relevant evidence for software security.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_aut_005",
+    "text": "My neighbor, who's a lawyer, says this supplement cures migraines.",
+    "fallacyId": "fal_appeal_to_authority",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Expertise in law does not confer medical authority.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_aut_006",
+    "text": "An online influencer recommends this investment; it must be safe.",
+    "fallacyId": "fal_appeal_to_authority",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Influence doesn’t equate to financial expertise.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_aut_007",
+    "text": "A popular fitness blogger insists this diet prevents cancer.",
+    "fallacyId": "fal_appeal_to_authority",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Fitness blogging doesn’t confer oncology expertise.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_aut_008",
+    "text": "A famous musician said meditation cures depression, so it's medically proven.",
+    "fallacyId": "fal_appeal_to_authority",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Musical fame does not make one a mental-health authority.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_aut_sound_004",
+    "text": "Citing a peer-reviewed study by experts in the field is relevant authority.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "beginner",
+    "tags": [
+      "science"
+    ],
+    "explanation": "Proper expertise and evidence make for a valid appeal.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_slp_004",
+    "text": "If we permit phones during lunch breaks, soon no one will put them away all day.",
+    "fallacyId": "fal_slippery_slope",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Predicts runaway usage without evidence of escalation.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_slp_005",
+    "text": "If we give one project extra budget, every team will demand the same and bankrupt us.",
+    "fallacyId": "fal_slippery_slope",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Assumes uncontrollable escalation of exceptions.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_slp_006",
+    "text": "Allowing remote work one day a week will lead to everyone working from home permanently.",
+    "fallacyId": "fal_slippery_slope",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Assumes incremental flexibility inevitably reaches extremes.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_slp_007",
+    "text": "If students choose their own reading material, they'll eventually stop reading altogether.",
+    "fallacyId": "fal_slippery_slope",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Assumes a policy will spiral without showing causal links.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_slp_008",
+    "text": "If we allow personal devices at work, the entire company will become addicted to drugs.",
+    "fallacyId": "fal_slippery_slope",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "policy"
+    ],
+    "explanation": "Expects total collapse without showing intermediate steps.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_slp_sound_004",
+    "text": "Implementing flexible policies with clear limits doesn't inevitably lead to extremes.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "beginner",
+    "tags": [
+      "policy"
+    ],
+    "explanation": "Shows how boundaries prevent escalation.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_adh_050",
+    "text": "Ignore his scheduling proposal; he dresses too casually.",
+    "fallacyId": "fal_ad_hominem",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Attacks appearance, not the proposal’s merits.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_stw_050",
+    "text": "People asking for code reviews just want to slow releases to a crawl.",
+    "fallacyId": "fal_straw_man",
+    "isSound": false,
+    "difficulty": "beginner",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Misrepresents the goal of quality checks as obstruction.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fdc_sound_050",
+    "text": "We can ship a smaller feature set now and add the rest next sprint.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "beginner",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Shows a middle path rather than a false either–or.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_slp_sound_050",
+    "text": "Allowing one flexible exception doesn’t require approving all future exceptions.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "beginner",
+    "tags": [
+      "policy"
+    ],
+    "explanation": "Bounded policies prevent the feared cascade.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
     "id": "prp_bwd_001",
     "text": "Everyone in our industry is switching to Nimbus CRM, so it must be the best choice.",
     "fallacyId": "fal_bandwagon",
     "isSound": false,
     "difficulty": "intermediate",
-    "tags": ["business"],
+    "tags": [
+      "business"
+    ],
     "explanation": "Popularity is not evidence of superiority.",
     "notes": "",
     "duplicateOf": null,
     "version": "1.0.0",
     "status": "active"
   },
-  { "id":"prp_bwd_002","text":"Thousands of five-star reviews prove this supplement works.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["health","marketing"],"explanation":"Reviews show popularity, not clinical efficacy.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_bwd_003","text":"All my teammates adopted the new framework, so we should migrate immediately.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["engineering"],"explanation":"Team adoption is not proof of fitness for your use case.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_bwd_004","text":"Most investors are buying this stock today; it must be undervalued.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["finance"],"explanation":"Crowd action does not demonstrate intrinsic value.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_bwd_005","text":"The whole city uses this rideshare app, so it’s the safest option.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["everyday","tech"],"explanation":"Usage volume ≠ safety evidence.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_bwd_006","text":"Since most colleagues skip code reviews, they must be a waste of time.","fallacyId":"fal_bandwagon","isSound":false,"difficulty":"intermediate","tags":["engineering","process"],"explanation":"Majority behavior is not a quality argument.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-
-  { "id":"prp_bwd_sound_001","text":"Three independent benchmarks show Nimbus CRM reduces support tickets by 25%.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["business"],"explanation":"Cites evidence, not popularity.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_bwd_sound_002","text":"A meta-analysis of clinical trials shows no effect beyond placebo for the supplement.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["health","science"],"explanation":"Evidence-based conclusion.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-
-  { "id":"prp_red_001","text":"We shouldn’t discuss the budget overrun; what matters is how inspiring our mission is.","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["business"],"explanation":"Shifts away from the budget question.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_red_002","text":"Why debate the drug’s safety when hospital food is terrible?","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["health"],"explanation":"Introduces an irrelevant topic to distract.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_red_003","text":"Instead of addressing the outage, let’s talk about our great culture awards.","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["engineering","ops"],"explanation":"Diverts from the original incident question.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_red_004","text":"Critics say the ad misleads, but our brand has supported charities for years.","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["marketing"],"explanation":"Charity is irrelevant to the charge of misleading content.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_red_005","text":"The proposal might be late, but did you see the client’s rude email?","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["workplace"],"explanation":"Email tone distracts from the lateness issue.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_red_006","text":"You asked about safety certification, but first, look at our stylish design.","fallacyId":"fal_red_herring","isSound":false,"difficulty":"intermediate","tags":["product"],"explanation":"Design is unrelated to safety certification.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-
-  { "id":"prp_red_sound_001","text":"Before discussing culture awards, we need a root-cause report for the outage.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["ops"],"explanation":"Returns to the original question.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_red_sound_002","text":"Charitable donations do not address whether the ad’s claim is true.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["marketing","logic"],"explanation":"Separates relevance from distraction.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-
-  { "id":"prp_fca_001","text":"After we installed new lights, sales rose, so the lights caused the jump.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["business"],"explanation":"Correlation alone does not show causation.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_fca_002","text":"Our servers crashed after the patch; therefore the patch is the reason.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["engineering","ops"],"explanation":"Temporal order ≠ causal proof.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_fca_003","text":"Every time I carry my lucky mug, the meeting goes well. The mug causes success.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["everyday"],"explanation":"Mistakes coincidence for causation.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_fca_004","text":"Cities with more Wi-Fi have higher crime, so Wi-Fi increases crime.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["statistics"],"explanation":"Likely confounders; correlation not causation.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_fca_005","text":"Our diet plan worked because weight dropped the same month we launched it.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["health"],"explanation":"Other factors may explain the change.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_fca_006","text":"Accidents increased after the new signage; therefore signage is dangerous.","fallacyId":"fal_false_cause","isSound":false,"difficulty":"intermediate","tags":["policy"],"explanation":"Needs analysis beyond timing.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-
-  { "id":"prp_fca_sound_001","text":"A controlled A/B test isolating the lighting change showed no sales effect.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["business","science"],"explanation":"Uses proper causal evidence.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id":"prp_fca_sound_002","text":"Crash logs implicate a driver bug introduced in the patch; rollback removes the error.","fallacyId":null,"isSound":true,"difficulty":"intermediate","tags":["engineering"],"explanation":"Direct evidence for causation.","notes":"","duplicateOf":null,"version":"1.0.0","status":"active"},
-  { "id": "prp_bwd_001", "text": "Nearly every department switched to the new planning app, so it’s the smartest choice.", "fallacyId": "fal_bandwagon", "isSound": false, "difficulty": "intermediate", "tags": ["business"], "explanation": "Appeal to popularity. Adoption rates don’t prove optimality for your needs.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_002", "text": "Thousands registered for the webinar, so the method must be effective.", "fallacyId": "fal_bandwagon", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Popularity is not evidence of efficacy.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_003", "text": "Competitors price at 9.99, so that price is optimal for us too.", "fallacyId": "fal_bandwagon", "isSound": false, "difficulty": "intermediate", "tags": ["marketing"], "explanation": "Copying the crowd assumes they’re right without evidence for your context.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_004", "text": "The forum agrees this library is fastest, so it is fastest.", "fallacyId": "fal_bandwagon", "isSound": false, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Consensus on a forum is not a benchmark result for your workload.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_005", "text": "Millions hold this fund, so its risk must be low.", "fallacyId": "fal_bandwagon", "isSound": false, "difficulty": "intermediate", "tags": ["finance"], "explanation": "Ownership counts don’t determine volatility or drawdown risk.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_006", "text": "Everyone at the gym uses resistance bands, so they’re superior to weights.", "fallacyId": "fal_bandwagon", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Majority behavior doesn’t establish comparative effectiveness or suitability.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_007", "text": "Most coworkers stay late, so staying late must be necessary.", "fallacyId": "fal_bandwagon", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Frequency of a practice doesn’t show necessity or efficiency gains.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_008", "text": "Top schools use this rubric, so it’s the best measure of learning.", "fallacyId": "fal_bandwagon", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Prestige adoption isn’t proof of validity across contexts or subjects.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_009", "text": "Most engineers prefer dark theme, so dark theme increases productivity.", "fallacyId": "fal_bandwagon", "isSound": false, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Preference data isn’t performance evidence without controlled comparisons.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_010", "text": "Benchmarks on varied workloads show the library reduces build time meaningfully.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Sound: cites controlled performance measurements rather than popularity claims.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_011", "text": "A randomized trial found the program improved memory recall versus placebo.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["science"], "explanation": "Sound: randomized evidence supports the claim instead of social proof or trends.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_bwd_012", "text": "Volatility and drawdown statistics, not holder counts, determine portfolio risk.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["statistics"], "explanation": "Sound: appeals to risk metrics rather than the crowd’s behavior.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-
-{ "id": "prp_red_001", "text": "We can’t discuss the missed deadline; let’s celebrate the new logo instead.", "fallacyId": "fal_red_herring", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Red herring. Shifts attention from the deadline issue to branding celebration.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_002", "text": "You asked about safety tests, but notice the device’s sleek finish.", "fallacyId": "fal_red_herring", "isSound": false, "difficulty": "intermediate", "tags": ["product"], "explanation": "Red herring. Aesthetic appeal is irrelevant to safety certification status.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_003", "text": "Instead of the budget variance, consider our inspiring mission statement.", "fallacyId": "fal_red_herring", "isSound": false, "difficulty": "intermediate", "tags": ["business"], "explanation": "Red herring. Mission inspiration doesn’t address the variance question.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_004", "text": "Why talk about the outage when last quarter’s uptime was great?", "fallacyId": "fal_red_herring", "isSound": false, "difficulty": "intermediate", "tags": ["ops"], "explanation": "Red herring. Past metrics distract from the current incident’s analysis.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_005", "text": "The proposal arrived late, but our team volunteered last weekend.", "fallacyId": "fal_red_herring", "isSound": false, "difficulty": "intermediate", "tags": ["marketing"], "explanation": "Red herring. Community service doesn’t excuse or explain lateness reasons.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_006", "text": "Training scores dipped, but the cafeteria menu improved a lot.", "fallacyId": "fal_red_herring", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Red herring. Food changes are irrelevant to learning outcome declines.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_007", "text": "You asked about side effects; let’s focus on patient praise quotes.", "fallacyId": "fal_red_herring", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Red herring. Testimonials don’t answer safety questions about adverse events.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_008", "text": "Sales fell, but our social media mentions skyrocketed.", "fallacyId": "fal_red_herring", "isSound": false, "difficulty": "intermediate", "tags": ["marketing"], "explanation": "Red herring. Mentions don’t speak to revenue drivers or losses directly.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_009", "text": "Yes, the report has errors, yet the author is very experienced.", "fallacyId": "fal_red_herring", "isSound": false, "difficulty": "intermediate", "tags": ["business"], "explanation": "Red herring. Author experience doesn’t fix or analyze the identified errors.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_010", "text": "Return to the question: Were security patches applied before deployment?", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Sound: refocuses on the relevant issue instead of distractions.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_011", "text": "Awards don’t determine whether the ad’s factual claim is accurate.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["marketing"], "explanation": "Sound: separates reputation from truth of the claim under review.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_red_012", "text": "Customer anecdotes don’t answer whether the trial met its endpoints.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["science"], "explanation": "Sound: demands outcome data relevant to the original question, not tangents.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-
-{ "id": "prp_fca_001", "text": "After the office plant arrived, morale rose; the plant caused it.", "fallacyId": "fal_false_cause", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "False cause. Temporal correlation doesn’t prove causation; many factors affect morale.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_002", "text": "The app crashed after I updated fonts, so the font change broke it.", "fallacyId": "fal_false_cause", "isSound": false, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Post hoc fallacy. Sequence alone doesn’t establish a causal link to fonts.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_003", "text": "Cities with more libraries have more theft, so libraries increase theft.", "fallacyId": "fal_false_cause", "isSound": false, "difficulty": "intermediate", "tags": ["statistics"], "explanation": "Confounding likely. Population size or density can drive both variables independently.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_004", "text": "We launched ads and sales grew; ads caused all the growth.", "fallacyId": "fal_false_cause", "isSound": false, "difficulty": "intermediate", "tags": ["marketing"], "explanation": "Over-attribute causation without controls or counterfactuals for seasonality or price changes.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_005", "text": "I drank ginger tea and my cold faded; the tea cured it.", "fallacyId": "fal_false_cause", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Anecdote and natural recovery mistaken for causation without controlled evidence.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_006", "text": "Investors bought after my post, so my account moves markets.", "fallacyId": "fal_false_cause", "isSound": false, "difficulty": "intermediate", "tags": ["finance"], "explanation": "Assumes causation from timing; ignores broader market drivers and randomness.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_007", "text": "Productivity dropped after flexible seating; the chairs are to blame.", "fallacyId": "fal_false_cause", "isSound": false, "difficulty": "intermediate", "tags": ["ops"], "explanation": "Post hoc. Other changes or regression to the mean could explain the drop.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_008", "text": "The alarm sounded before the failure; the alarm caused the failure.", "fallacyId": "fal_false_cause", "isSound": false, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Confuses indicator with cause; alarms often precede faults by design.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_009", "text": "Students who use calendars get higher grades, so calendars create intelligence.", "fallacyId": "fal_false_cause", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Conflates correlation with causation; conscientiousness may drive both habits and grades.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_010", "text": "Interrupted time-series analysis attributes the uplift to seasonality, not the ad.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["statistics"], "explanation": "Sound: employs a causal design to separate timing effects from advertising impact.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_011", "text": "Crash dumps trace a null pointer introduced by the font parser change.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Sound: direct technical evidence links the change to the failure mechanism.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_fca_012", "text": "Randomized assignment of seating showed no effect on output.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["science"], "explanation": "Sound: randomized controls test causation rather than relying on sequence alone.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-
-{ "id": "prp_cir_001", "text": "Our app is superior because it’s the best in its class.", "fallacyId": "fal_circular_reasoning", "isSound": false, "difficulty": "intermediate", "tags": ["product"], "explanation": "Circular reasoning. Conclusion restates the premise using synonyms without support.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_002", "text": "The policy is fair because it’s equitable.", "fallacyId": "fal_circular_reasoning", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Circular reasoning. Uses equivalent terms instead of reasons or evidence of fairness.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_003", "text": "This method is reliable because it never fails.", "fallacyId": "fal_circular_reasoning", "isSound": false, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Begging the question. The premise assumes the very reliability in dispute.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_004", "text": "The diet works because it’s effective.", "fallacyId": "fal_circular_reasoning", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Tautology. Repeats the claim without offering independent support or data.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_005", "text": "The model predicts accurately because it’s precise.", "fallacyId": "fal_circular_reasoning", "isSound": false, "difficulty": "intermediate", "tags": ["statistics"], "explanation": "Equivocation. Precision and accuracy are asserted, not demonstrated with validation results.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_006", "text": "We should trust the roadmap because it’s trustworthy.", "fallacyId": "fal_circular_reasoning", "isSound": false, "difficulty": "intermediate", "tags": ["business"], "explanation": "Circular. The conclusion is smuggled into the premise with no new grounds offered.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_007", "text": "The course is valuable because it’s worth taking.", "fallacyId": "fal_circular_reasoning", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Begging the question. Value is asserted by rephrasing, not by evidence or outcomes.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_008", "text": "The investment is safe because it’s low-risk.", "fallacyId": "fal_circular_reasoning", "isSound": false, "difficulty": "intermediate", "tags": ["finance"], "explanation": "Circular definition. Safety is assumed by labeling without risk metrics or history.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_009", "text": "The patch is necessary because it’s required.", "fallacyId": "fal_circular_reasoning", "isSound": false, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Circular. “Required” just repeats “necessary” without justification like fixes or compliance.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_010", "text": "Adopt the policy because controlled trials reduce processing time significantly.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Sound: gives external evidence for the claim rather than restating it circularly.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_011", "text": "Trust the model because cross-validation shows low out-of-sample error.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["statistics"], "explanation": "Sound: independent validation supports the conclusion without circularity.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_cir_012", "text": "Approve the patch because it fixes a reproducible crash in testing.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["ops"], "explanation": "Sound: cites a concrete effect demonstrated under test, not a rephrased claim.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-
-{ "id": "prp_tuq_001", "text": "You can’t advise sleep hygiene; you stayed up late yesterday.", "fallacyId": "fal_tu_quoque", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Tu quoque. Attempts to dismiss advice by pointing to the speaker’s inconsistency.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_002", "text": "Don’t lecture me on punctuality; you’re often late yourself.", "fallacyId": "fal_tu_quoque", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Tu quoque. Hypocrisy doesn’t show the norm or claim is false or useless.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_003", "text": "Your budgeting tips are invalid; you once overdrafted.", "fallacyId": "fal_tu_quoque", "isSound": false, "difficulty": "intermediate", "tags": ["finance"], "explanation": "Tu quoque. Personal history doesn’t refute the reasoning or evidence offered now.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_004", "text": "We can ignore code style because you broke the guide last week.", "fallacyId": "fal_tu_quoque", "isSound": false, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Tu quoque. Points to past behavior instead of addressing code quality reasons.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_005", "text": "Your presentation advice is worthless; your last talk had typos.", "fallacyId": "fal_tu_quoque", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Tu quoque. A flawed exemplar doesn’t invalidate correct guidance or principles.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_006", "text": "You can’t warn about screen time; you use your phone constantly.", "fallacyId": "fal_tu_quoque", "isSound": false, "difficulty": "intermediate", "tags": ["everyday"], "explanation": "Tu quoque. The claim’s truth isn’t determined by the claimant’s habits.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_007", "text": "Your quality critique fails because your last release had bugs.", "fallacyId": "fal_tu_quoque", "isSound": false, "difficulty": "intermediate", "tags": ["product"], "explanation": "Tu quoque. Attempts to discredit criticism by citing past imperfection, not reasons.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_008", "text": "Your nutrition talk is invalid; you ate cake at lunch.", "fallacyId": "fal_tu_quoque", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Tu quoque. Inconsistency doesn’t show the dietary recommendation is false or harmful.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_009", "text": "Your safety reminder is void; you forgot PPE once.", "fallacyId": "fal_tu_quoque", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Tu quoque. Past lapse doesn’t refute the safety rule’s validity now.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_010", "text": "An argument’s validity doesn’t depend on the speaker’s consistency.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["education"], "explanation": "Sound: separates truth evaluation from the arguer’s personal behavior or hypocrisy.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_011", "text": "Even inconsistent messengers can present correct evidence; assess the reasons.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["science"], "explanation": "Sound: focuses on evidence quality rather than personal consistency attacks.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_tuq_012", "text": "Enforce code standards based on maintainability data, not personal habits.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Sound: grounds the policy in outcomes and evidence, not tu quoque reasoning.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-
-{ "id": "prp_lqd_001", "text": "Have you stopped misreporting your hours?", "fallacyId": "fal_loaded_question", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Loaded question. Presupposes that hours were misreported, forcing a concession either way.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_002", "text": "Which of your shortcuts caused the outage?", "fallacyId": "fal_loaded_question", "isSound": false, "difficulty": "intermediate", "tags": ["ops"], "explanation": "Loaded question. Assumes shortcuts existed and caused the outage without evidence first.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_003", "text": "Why are your lectures always boring?", "fallacyId": "fal_loaded_question", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Loaded framing. Smuggles the assumption that all lectures are boring into the question.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_004", "text": "How often do you ignore safety checks?", "fallacyId": "fal_loaded_question", "isSound": false, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Loaded question. Presumes neglect instead of neutrally asking whether it occurs at all.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_005", "text": "When did you decide the budget was inflated?", "fallacyId": "fal_loaded_question", "isSound": false, "difficulty": "intermediate", "tags": ["business"], "explanation": "Presupposes the budget is inflated rather than asking whether it is inflated first.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_006", "text": "Why do you hide sugar in the meal plan?", "fallacyId": "fal_loaded_question", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Assumes concealment without establishing that sugar is hidden at all.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_007", "text": "Which colleagues did you pressure to leave?", "fallacyId": "fal_loaded_question", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Presupposes coercion occurred, skipping the question of whether it happened.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_008", "text": "When will you admit your product is a copy?", "fallacyId": "fal_loaded_question", "isSound": false, "difficulty": "intermediate", "tags": ["product"], "explanation": "Frames guilt in the question, assuming copying before evidence is discussed.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_009", "text": "How much of the dataset did you fabricate?", "fallacyId": "fal_loaded_question", "isSound": false, "difficulty": "intermediate", "tags": ["science"], "explanation": "Assumes fabrication and asks for degree, biasing any answer toward guilt.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_010", "text": "Did you record your hours accurately this week?", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Sound: neutral question that doesn’t presuppose wrongdoing or force a concession.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_011", "text": "What evidence links the outage to a specific change?", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["ops"], "explanation": "Sound: requests evidence without assuming a cause in the question itself.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_lqd_012", "text": "How did you design blinding to prevent data fabrication?", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["science"], "explanation": "Sound: asks about safeguards procedurally, not presuming misconduct occurred.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-
-{ "id": "prp_nat_001", "text": "This herb is natural, so it’s safer than medicine.", "fallacyId": "fal_appeal_to_nature", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Appeal to nature. Natural origin doesn’t guarantee safety or efficacy without evidence of dose and effects.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_002", "text": "Analog watches are natural, so they’re more reliable than digital ones.", "fallacyId": "fal_appeal_to_nature", "isSound": false, "difficulty": "intermediate", "tags": ["product"], "explanation": "Labels something as natural to claim superiority without performance data or failure rates comparison.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_003", "text": "Unfiltered water is pure, so it’s healthier.", "fallacyId": "fal_appeal_to_nature", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Purity by nature claim ignores contaminants and microbiological risks measurable by tests.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_004", "text": "Handwritten notes are natural, so they improve memory regardless of context.", "fallacyId": "fal_appeal_to_nature", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Assumes naturalness ensures benefit independent of task demands or learner differences.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_005", "text": "Untreated fabrics breathe naturally, so they outperform synthetics in all conditions.", "fallacyId": "fal_appeal_to_nature", "isSound": false, "difficulty": "intermediate", "tags": ["product"], "explanation": "Generalizes from ‘natural’ to universal superiority without property-based comparisons or testing across conditions.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_006", "text": "Manual driving feels natural, hence safer than assisted driving.", "fallacyId": "fal_appeal_to_nature", "isSound": false, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Equates natural feel with safety without crash-rate or hazard-avoidance evidence.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_007", "text": "Raw foods are natural, so they always provide better nutrition.", "fallacyId": "fal_appeal_to_nature", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Assumes natural preparation is superior in every case, ignoring bioavailability and safety tradeoffs.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_008", "text": "Open windows provide natural security, so alarms are unnecessary.", "fallacyId": "fal_appeal_to_nature", "isSound": false, "difficulty": "intermediate", "tags": ["everyday"], "explanation": "Appeal to nature. Natural ventilation doesn’t inherently provide protection against intrusion or hazards.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_009", "text": "Unpainted wood is natural, so it requires less maintenance.", "fallacyId": "fal_appeal_to_nature", "isSound": false, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Claims natural state ensures durability without evidence on moisture, UV, or wear performance.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_010", "text": "Purity doesn’t determine safety; dosage, contaminants, and evidence do.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["health"], "explanation": "Sound: evaluates risk and benefit using testable parameters rather than natural labels.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_011", "text": "Select materials by properties and use case, not by whether they’re ‘natural’.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Sound: focuses on measurable performance and requirements, not nature-based rhetoric.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_nat_012", "text": "Compare cooking methods by nutrients retained and risks, not by labels.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["science"], "explanation": "Sound: grounds evaluation in measurable outcomes rather than ‘natural’ versus ‘artificial’.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-
-{ "id": "prp_gba_001", "text": "That encryption library can’t be trusted; some hackers like it.", "fallacyId": "fal_guilt_by_association", "isSound": false, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Guilt by association. Who uses a tool doesn’t determine its security properties or audits.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_002", "text": "The technique is flawed; a failed startup promoted it.", "fallacyId": "fal_guilt_by_association", "isSound": false, "difficulty": "intermediate", "tags": ["business"], "explanation": "Discredits by association instead of evaluating the method’s evidence or results directly.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_003", "text": "Don’t read that textbook; a controversial blogger recommended it.", "fallacyId": "fal_guilt_by_association", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Rejects content because of an endorser, not because of content quality or accuracy checks.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_004", "text": "This budgeting method is suspect; gamblers use similar systems.", "fallacyId": "fal_guilt_by_association", "isSound": false, "difficulty": "intermediate", "tags": ["finance"], "explanation": "Associative smear. Similarity of use doesn’t demonstrate invalidity in other contexts or designs.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_005", "text": "Avoid the workout; influencers hype it.", "fallacyId": "fal_guilt_by_association", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Rejects by linking to a group rather than assessing safety, form, or outcome data.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_006", "text": "Skip the collaboration tool; spammers also use it.", "fallacyId": "fal_guilt_by_association", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Association fallacy. Overlooks legitimate features because undesirable users exist elsewhere too.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_007", "text": "That hiring practice is risky; a company with lawsuits used it.", "fallacyId": "fal_guilt_by_association", "isSound": false, "difficulty": "intermediate", "tags": ["business"], "explanation": "Condemns by association rather than examining safeguards, context, and outcomes of the practice itself.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_008", "text": "The protocol is unsafe because scammers mention it on forums.", "fallacyId": "fal_guilt_by_association", "isSound": false, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Assumes mention by bad actors makes the protocol unsafe, ignoring technical analysis and proofs.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_009", "text": "The time-tracking policy is bad; micromanagers love it.", "fallacyId": "fal_guilt_by_association", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Dismisses by linking to a disliked group rather than weighing benefits and costs directly.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_010", "text": "Assess the library by audits and tests, not by who uses it.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Sound: evaluates on evidence and verification instead of associative reasoning errors.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_011", "text": "A method’s merits depend on data and results, not endorsements.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["education"], "explanation": "Sound: shifts attention to measurable outcomes rather than associations or reputations alone.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_gba_012", "text": "Judge the policy by outcomes and safeguards, not by who likes it.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Sound: emphasizes impact evaluation rather than guilt-by-association dismissals.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-
-{ "id": "prp_mid_001", "text": "One estimate is zero defects, another is one hundred; the truth is fifty.", "fallacyId": "fal_middle_ground", "isSound": false, "difficulty": "intermediate", "tags": ["statistics"], "explanation": "Middle-ground fallacy. Assumes averaging claims yields truth without evidence on actual defects.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_002", "text": "Some want strong encryption, others weak; half-strength must be best.", "fallacyId": "fal_middle_ground", "isSound": false, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Assumes compromise determines correctness; ignores threat models and requirements analysis.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_003", "text": "Some say stretch, others rest; splitting time evenly cures injuries.", "fallacyId": "fal_middle_ground", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Assumes midpoint is correct regardless of condition specifics or clinical evidence.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_004", "text": "Between firing and a bonus, a small pay cut is automatically fairest.", "fallacyId": "fal_middle_ground", "isSound": false, "difficulty": "intermediate", "tags": ["workplace"], "explanation": "Declares the compromise correct without assessing performance facts or incentives effects.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_005", "text": "Design A and B conflict; combining them guarantees optimal UX.", "fallacyId": "fal_middle_ground", "isSound": false, "difficulty": "intermediate", "tags": ["product"], "explanation": "Assumes blending opposites yields truth, ignoring usability testing or conflicts created.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_006", "text": "Some call the project profitable, others a loss; break-even must be right.", "fallacyId": "fal_middle_ground", "isSound": false, "difficulty": "intermediate", "tags": ["finance"], "explanation": "Averages opinions rather than analyzing cash flows, assumptions, and sensitivity ranges.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_007", "text": "Students want no homework; teachers want lots; moderate load is automatically best.", "fallacyId": "fal_middle_ground", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Declares compromise true without evidence on learning outcomes or constraints involved.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_008", "text": "Some claim the food is spoiled; others say fine; mix plates to be safe.", "fallacyId": "fal_middle_ground", "isSound": false, "difficulty": "intermediate", "tags": ["everyday"], "explanation": "Compromise doesn’t guarantee safety; correct answer may be one side entirely.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_009", "text": "Some say release now, others in a quarter; ship in six weeks, therefore correct.", "fallacyId": "fal_middle_ground", "isSound": false, "difficulty": "intermediate", "tags": ["ops"], "explanation": "Picks the midpoint as truth without risk analysis or readiness criteria evidence.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_010", "text": "Choose the estimate supported by data and models, not by averaging opinions.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["statistics"], "explanation": "Sound: grounds conclusions in evidence, not position balancing for its own sake.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_011", "text": "Sometimes one side is wrong; weigh evidence rather than splitting differences.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["education"], "explanation": "Sound: acknowledges that truth isn’t guaranteed to lie between opposing claims.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_mid_012", "text": "Pick the design after usability tests, not by blending conflicting features.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["product"], "explanation": "Sound: uses empirical testing to decide, avoiding automatic compromises as truth proxies.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-
-{ "id": "prp_apc_001", "text": "The market forecast must be accurate; otherwise we’ll lose funding.", "fallacyId": "fal_appeal_to_consequences", "isSound": false, "difficulty": "intermediate", "tags": ["finance"], "explanation": "Appeal to consequences. Stakes don’t determine the truth of a forecast’s assumptions or model.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_002", "text": "Bugs can’t exist; admitting them would hurt morale.", "fallacyId": "fal_appeal_to_consequences", "isSound": false, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Claims false because of undesirable outcomes, not because of defect evidence evaluation.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_003", "text": "This diet is effective because failure would be discouraging.", "fallacyId": "fal_appeal_to_consequences", "isSound": false, "difficulty": "intermediate", "tags": ["health"], "explanation": "Equates desirability of success with truth; discouragement doesn’t prove effectiveness claims true or false.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_004", "text": "The safety report is correct since a recall would be expensive.", "fallacyId": "fal_appeal_to_consequences", "isSound": false, "difficulty": "intermediate", "tags": ["product"], "explanation": "Cost implications don’t determine whether the report is accurate; tests do.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_005", "text": "Our plan will succeed; if not, we’ll miss the bonus.", "fallacyId": "fal_appeal_to_consequences", "isSound": false, "difficulty": "intermediate", "tags": ["business"], "explanation": "Assumes success because failure is costly, not because evidence predicts success probabilities.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_006", "text": "The algorithm must be fair; unfairness would cause complaints.", "fallacyId": "fal_appeal_to_consequences", "isSound": false, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Predicts bad outcomes if false, but that doesn’t prove the fairness claim true now.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_007", "text": "The training works because the schedule is tight.", "fallacyId": "fal_appeal_to_consequences", "isSound": false, "difficulty": "intermediate", "tags": ["education"], "explanation": "Infers truth from organizational needs rather than evidence of learning outcomes achieved.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_008", "text": "The numbers are right; revising them would delay launch.", "fallacyId": "fal_appeal_to_consequences", "isSound": false, "difficulty": "intermediate", "tags": ["statistics"], "explanation": "Launch timing consequences don’t determine whether figures are accurate or computed correctly.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_009", "text": "The tool is secure since insecurity would be embarrassing.", "fallacyId": "fal_appeal_to_consequences", "isSound": false, "difficulty": "intermediate", "tags": ["technology"], "explanation": "Conflates reputational costs with truth about security; needs audits and tests instead.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_010", "text": "Accuracy isn’t set by consequences; verify forecasts with backtesting.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["finance"], "explanation": "Sound: evaluates predictive accuracy using evidence rather than desired outcomes or fears.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_011", "text": "Assess safety by test results and failure rates, not recall costs.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["product"], "explanation": "Sound: focuses on empirical indicators of safety, avoiding consequence-based truth claims.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" },
-{ "id": "prp_apc_012", "text": "Bug reports are true or false regardless of morale; check repro steps.", "fallacyId": null, "isSound": true, "difficulty": "intermediate", "tags": ["engineering"], "explanation": "Sound: determines truth by replication and diagnostics, not by motivational impact.", "notes": "", "duplicateOf": null, "version": "1.0.0", "status": "active" }
+  {
+    "id": "prp_bwd_002",
+    "text": "Thousands of five-star reviews prove this supplement works.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health",
+      "marketing"
+    ],
+    "explanation": "Reviews show popularity, not clinical efficacy.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_003",
+    "text": "All my teammates adopted the new framework, so we should migrate immediately.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Team adoption is not proof of fitness for your use case.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_004",
+    "text": "Most investors are buying this stock today; it must be undervalued.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Crowd action does not demonstrate intrinsic value.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_005",
+    "text": "The whole city uses this rideshare app, so it’s the safest option.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "everyday",
+      "technology"
+    ],
+    "explanation": "Usage volume ≠ safety evidence.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_006",
+    "text": "Since most colleagues skip code reviews, they must be a waste of time.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering",
+      "ops"
+    ],
+    "explanation": "Majority behavior is not a quality argument.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_sound_001",
+    "text": "Three independent benchmarks show Nimbus CRM reduces support tickets by 25%.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Cites evidence, not popularity.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_sound_002",
+    "text": "A meta-analysis of clinical trials shows no effect beyond placebo for the supplement.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "health",
+      "science"
+    ],
+    "explanation": "Evidence-based conclusion.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_001",
+    "text": "We shouldn’t discuss the budget overrun; what matters is how inspiring our mission is.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Shifts away from the budget question.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_002",
+    "text": "Why debate the drug’s safety when hospital food is terrible?",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Introduces an irrelevant topic to distract.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_003",
+    "text": "Instead of addressing the outage, let’s talk about our great culture awards.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering",
+      "ops"
+    ],
+    "explanation": "Diverts from the original incident question.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_004",
+    "text": "Critics say the ad misleads, but our brand has supported charities for years.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "marketing"
+    ],
+    "explanation": "Charity is irrelevant to the charge of misleading content.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_005",
+    "text": "The proposal might be late, but did you see the client’s rude email?",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Email tone distracts from the lateness issue.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_006",
+    "text": "You asked about safety certification, but first, look at our stylish design.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Design is unrelated to safety certification.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_sound_001",
+    "text": "Before discussing culture awards, we need a root-cause report for the outage.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "ops"
+    ],
+    "explanation": "Returns to the original question.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_sound_002",
+    "text": "Charitable donations do not address whether the ad’s claim is true.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "marketing"
+    ],
+    "explanation": "Separates relevance from distraction.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_001",
+    "text": "After we installed new lights, sales rose, so the lights caused the jump.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Correlation alone does not show causation.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_002",
+    "text": "Our servers crashed after the patch; therefore the patch is the reason.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering",
+      "ops"
+    ],
+    "explanation": "Temporal order ≠ causal proof.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_003",
+    "text": "Every time I carry my lucky mug, the meeting goes well. The mug causes success.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "everyday"
+    ],
+    "explanation": "Mistakes coincidence for causation.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_004",
+    "text": "Cities with more Wi-Fi have higher crime, so Wi-Fi increases crime.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "statistics"
+    ],
+    "explanation": "Likely confounders; correlation not causation.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_005",
+    "text": "Our diet plan worked because weight dropped the same month we launched it.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Other factors may explain the change.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_006",
+    "text": "Accidents increased after the new signage; therefore signage is dangerous.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "policy"
+    ],
+    "explanation": "Needs analysis beyond timing.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_sound_001",
+    "text": "A controlled A/B test isolating the lighting change showed no sales effect.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "business",
+      "science"
+    ],
+    "explanation": "Uses proper causal evidence.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_sound_002",
+    "text": "Crash logs implicate a driver bug introduced in the patch; rollback removes the error.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Direct evidence for causation.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_013",
+    "text": "Nearly every department switched to the new planning app, so it’s the smartest choice.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Appeal to popularity. Adoption rates don’t prove optimality for your needs.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_014",
+    "text": "Thousands registered for the webinar, so the method must be effective.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Popularity is not evidence of efficacy.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_015",
+    "text": "Competitors price at 9.99, so that price is optimal for us too.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "marketing"
+    ],
+    "explanation": "Copying the crowd assumes they’re right without evidence for your context.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_016",
+    "text": "The forum agrees this library is fastest, so it is fastest.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Consensus on a forum is not a benchmark result for your workload.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_017",
+    "text": "Millions hold this fund, so its risk must be low.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Ownership counts don’t determine volatility or drawdown risk.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_018",
+    "text": "Everyone at the gym uses resistance bands, so they’re superior to weights.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Majority behavior doesn’t establish comparative effectiveness or suitability.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_007",
+    "text": "Most coworkers stay late, so staying late must be necessary.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Frequency of a practice doesn’t show necessity or efficiency gains.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_008",
+    "text": "Top schools use this rubric, so it’s the best measure of learning.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Prestige adoption isn’t proof of validity across contexts or subjects.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_009",
+    "text": "Most engineers prefer dark theme, so dark theme increases productivity.",
+    "fallacyId": "fal_bandwagon",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Preference data isn’t performance evidence without controlled comparisons.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_010",
+    "text": "Benchmarks on varied workloads show the library reduces build time meaningfully.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Sound: cites controlled performance measurements rather than popularity claims.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_011",
+    "text": "A randomized trial found the program improved memory recall versus placebo.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "science"
+    ],
+    "explanation": "Sound: randomized evidence supports the claim instead of social proof or trends.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_bwd_012",
+    "text": "Volatility and drawdown statistics, not holder counts, determine portfolio risk.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "statistics"
+    ],
+    "explanation": "Sound: appeals to risk metrics rather than the crowd’s behavior.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_013",
+    "text": "We can’t discuss the missed deadline; let’s celebrate the new logo instead.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Red herring. Shifts attention from the deadline issue to branding celebration.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_014",
+    "text": "You asked about safety tests, but notice the device’s sleek finish.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Red herring. Aesthetic appeal is irrelevant to safety certification status.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_015",
+    "text": "Instead of the budget variance, consider our inspiring mission statement.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Red herring. Mission inspiration doesn’t address the variance question.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_016",
+    "text": "Why talk about the outage when last quarter’s uptime was great?",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "ops"
+    ],
+    "explanation": "Red herring. Past metrics distract from the current incident’s analysis.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_017",
+    "text": "The proposal arrived late, but our team volunteered last weekend.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "marketing"
+    ],
+    "explanation": "Red herring. Community service doesn’t excuse or explain lateness reasons.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_018",
+    "text": "Training scores dipped, but the cafeteria menu improved a lot.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Red herring. Food changes are irrelevant to learning outcome declines.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_007",
+    "text": "You asked about side effects; let’s focus on patient praise quotes.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Red herring. Testimonials don’t answer safety questions about adverse events.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_008",
+    "text": "Sales fell, but our social media mentions skyrocketed.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "marketing"
+    ],
+    "explanation": "Red herring. Mentions don’t speak to revenue drivers or losses directly.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_009",
+    "text": "Yes, the report has errors, yet the author is very experienced.",
+    "fallacyId": "fal_red_herring",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Red herring. Author experience doesn’t fix or analyze the identified errors.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_010",
+    "text": "Return to the question: Were security patches applied before deployment?",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Sound: refocuses on the relevant issue instead of distractions.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_011",
+    "text": "Awards don’t determine whether the ad’s factual claim is accurate.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "marketing"
+    ],
+    "explanation": "Sound: separates reputation from truth of the claim under review.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_red_012",
+    "text": "Customer anecdotes don’t answer whether the trial met its endpoints.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "science"
+    ],
+    "explanation": "Sound: demands outcome data relevant to the original question, not tangents.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_013",
+    "text": "After the office plant arrived, morale rose; the plant caused it.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "False cause. Temporal correlation doesn’t prove causation; many factors affect morale.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_014",
+    "text": "The app crashed after I updated fonts, so the font change broke it.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Post hoc fallacy. Sequence alone doesn’t establish a causal link to fonts.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_015",
+    "text": "Cities with more libraries have more theft, so libraries increase theft.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "statistics"
+    ],
+    "explanation": "Confounding likely. Population size or density can drive both variables independently.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_016",
+    "text": "We launched ads and sales grew; ads caused all the growth.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "marketing"
+    ],
+    "explanation": "Over-attribute causation without controls or counterfactuals for seasonality or price changes.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_017",
+    "text": "I drank ginger tea and my cold faded; the tea cured it.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Anecdote and natural recovery mistaken for causation without controlled evidence.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_018",
+    "text": "Investors bought after my post, so my account moves markets.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Assumes causation from timing; ignores broader market drivers and randomness.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_007",
+    "text": "Productivity dropped after flexible seating; the chairs are to blame.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "ops"
+    ],
+    "explanation": "Post hoc. Other changes or regression to the mean could explain the drop.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_008",
+    "text": "The alarm sounded before the failure; the alarm caused the failure.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Confuses indicator with cause; alarms often precede faults by design.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_009",
+    "text": "Students who use calendars get higher grades, so calendars create intelligence.",
+    "fallacyId": "fal_false_cause",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Conflates correlation with causation; conscientiousness may drive both habits and grades.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_010",
+    "text": "Interrupted time-series analysis attributes the uplift to seasonality, not the ad.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "statistics"
+    ],
+    "explanation": "Sound: employs a causal design to separate timing effects from advertising impact.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_011",
+    "text": "Crash dumps trace a null pointer introduced by the font parser change.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Sound: direct technical evidence links the change to the failure mechanism.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_fca_012",
+    "text": "Randomized assignment of seating showed no effect on output.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "science"
+    ],
+    "explanation": "Sound: randomized controls test causation rather than relying on sequence alone.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_001",
+    "text": "Our app is superior because it’s the best in its class.",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Circular reasoning. Conclusion restates the premise using synonyms without support.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_002",
+    "text": "The policy is fair because it’s equitable.",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Circular reasoning. Uses equivalent terms instead of reasons or evidence of fairness.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_003",
+    "text": "This method is reliable because it never fails.",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Begging the question. The premise assumes the very reliability in dispute.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_004",
+    "text": "The diet works because it’s effective.",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Tautology. Repeats the claim without offering independent support or data.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_005",
+    "text": "The model predicts accurately because it’s precise.",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "statistics"
+    ],
+    "explanation": "Equivocation. Precision and accuracy are asserted, not demonstrated with validation results.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_006",
+    "text": "We should trust the roadmap because it’s trustworthy.",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Circular. The conclusion is smuggled into the premise with no new grounds offered.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_007",
+    "text": "The course is valuable because it’s worth taking.",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Begging the question. Value is asserted by rephrasing, not by evidence or outcomes.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_008",
+    "text": "The investment is safe because it’s low-risk.",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Circular definition. Safety is assumed by labeling without risk metrics or history.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_009",
+    "text": "The patch is necessary because it’s required.",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Circular. “Required” just repeats “necessary” without justification like fixes or compliance.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_010",
+    "text": "Adopt the policy because controlled trials reduce processing time significantly.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Sound: gives external evidence for the claim rather than restating it circularly.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_011",
+    "text": "Trust the model because cross-validation shows low out-of-sample error.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "statistics"
+    ],
+    "explanation": "Sound: independent validation supports the conclusion without circularity.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_cir_012",
+    "text": "Approve the patch because it fixes a reproducible crash in testing.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "ops"
+    ],
+    "explanation": "Sound: cites a concrete effect demonstrated under test, not a rephrased claim.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_001",
+    "text": "You can’t advise sleep hygiene; you stayed up late yesterday.",
+    "fallacyId": "fal_tu_quoque",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Tu quoque. Attempts to dismiss advice by pointing to the speaker’s inconsistency.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_002",
+    "text": "Don’t lecture me on punctuality; you’re often late yourself.",
+    "fallacyId": "fal_tu_quoque",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Tu quoque. Hypocrisy doesn’t show the norm or claim is false or useless.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_003",
+    "text": "Your budgeting tips are invalid; you once overdrafted.",
+    "fallacyId": "fal_tu_quoque",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Tu quoque. Personal history doesn’t refute the reasoning or evidence offered now.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_004",
+    "text": "We can ignore code style because you broke the guide last week.",
+    "fallacyId": "fal_tu_quoque",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Tu quoque. Points to past behavior instead of addressing code quality reasons.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_005",
+    "text": "Your presentation advice is worthless; your last talk had typos.",
+    "fallacyId": "fal_tu_quoque",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Tu quoque. A flawed exemplar doesn’t invalidate correct guidance or principles.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_006",
+    "text": "You can’t warn about screen time; you use your phone constantly.",
+    "fallacyId": "fal_tu_quoque",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "everyday"
+    ],
+    "explanation": "Tu quoque. The claim’s truth isn’t determined by the claimant’s habits.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_007",
+    "text": "Your quality critique fails because your last release had bugs.",
+    "fallacyId": "fal_tu_quoque",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Tu quoque. Attempts to discredit criticism by citing past imperfection, not reasons.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_008",
+    "text": "Your nutrition talk is invalid; you ate cake at lunch.",
+    "fallacyId": "fal_tu_quoque",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Tu quoque. Inconsistency doesn’t show the dietary recommendation is false or harmful.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_009",
+    "text": "Your safety reminder is void; you forgot PPE once.",
+    "fallacyId": "fal_tu_quoque",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Tu quoque. Past lapse doesn’t refute the safety rule’s validity now.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_010",
+    "text": "An argument’s validity doesn’t depend on the speaker’s consistency.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Sound: separates truth evaluation from the arguer’s personal behavior or hypocrisy.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_011",
+    "text": "Even inconsistent messengers can present correct evidence; assess the reasons.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "science"
+    ],
+    "explanation": "Sound: focuses on evidence quality rather than personal consistency attacks.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_tuq_012",
+    "text": "Enforce code standards based on maintainability data, not personal habits.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Sound: grounds the policy in outcomes and evidence, not tu quoque reasoning.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_001",
+    "text": "Have you stopped misreporting your hours?",
+    "fallacyId": "fal_loaded_question",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Loaded question. Presupposes that hours were misreported, forcing a concession either way.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_002",
+    "text": "Which of your shortcuts caused the outage?",
+    "fallacyId": "fal_loaded_question",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "ops"
+    ],
+    "explanation": "Loaded question. Assumes shortcuts existed and caused the outage without evidence first.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_003",
+    "text": "Why are your lectures always boring?",
+    "fallacyId": "fal_loaded_question",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Loaded framing. Smuggles the assumption that all lectures are boring into the question.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_004",
+    "text": "How often do you ignore safety checks?",
+    "fallacyId": "fal_loaded_question",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Loaded question. Presumes neglect instead of neutrally asking whether it occurs at all.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_005",
+    "text": "When did you decide the budget was inflated?",
+    "fallacyId": "fal_loaded_question",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Presupposes the budget is inflated rather than asking whether it is inflated first.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_006",
+    "text": "Why do you hide sugar in the meal plan?",
+    "fallacyId": "fal_loaded_question",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Assumes concealment without establishing that sugar is hidden at all.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_007",
+    "text": "Which colleagues did you pressure to leave?",
+    "fallacyId": "fal_loaded_question",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Presupposes coercion occurred, skipping the question of whether it happened.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_008",
+    "text": "When will you admit your product is a copy?",
+    "fallacyId": "fal_loaded_question",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Frames guilt in the question, assuming copying before evidence is discussed.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_009",
+    "text": "How much of the dataset did you fabricate?",
+    "fallacyId": "fal_loaded_question",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "science"
+    ],
+    "explanation": "Assumes fabrication and asks for degree, biasing any answer toward guilt.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_010",
+    "text": "Did you record your hours accurately this week?",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Sound: neutral question that doesn’t presuppose wrongdoing or force a concession.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_011",
+    "text": "What evidence links the outage to a specific change?",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "ops"
+    ],
+    "explanation": "Sound: requests evidence without assuming a cause in the question itself.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_lqd_012",
+    "text": "How did you design blinding to prevent data fabrication?",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "science"
+    ],
+    "explanation": "Sound: asks about safeguards procedurally, not presuming misconduct occurred.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_001",
+    "text": "This herb is natural, so it’s safer than medicine.",
+    "fallacyId": "fal_appeal_to_nature",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Appeal to nature. Natural origin doesn’t guarantee safety or efficacy without evidence of dose and effects.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_002",
+    "text": "Analog watches are natural, so they’re more reliable than digital ones.",
+    "fallacyId": "fal_appeal_to_nature",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Labels something as natural to claim superiority without performance data or failure rates comparison.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_003",
+    "text": "Unfiltered water is pure, so it’s healthier.",
+    "fallacyId": "fal_appeal_to_nature",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Purity by nature claim ignores contaminants and microbiological risks measurable by tests.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_004",
+    "text": "Handwritten notes are natural, so they improve memory regardless of context.",
+    "fallacyId": "fal_appeal_to_nature",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Assumes naturalness ensures benefit independent of task demands or learner differences.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_005",
+    "text": "Untreated fabrics breathe naturally, so they outperform synthetics in all conditions.",
+    "fallacyId": "fal_appeal_to_nature",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Generalizes from ‘natural’ to universal superiority without property-based comparisons or testing across conditions.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_006",
+    "text": "Manual driving feels natural, hence safer than assisted driving.",
+    "fallacyId": "fal_appeal_to_nature",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Equates natural feel with safety without crash-rate or hazard-avoidance evidence.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_007",
+    "text": "Raw foods are natural, so they always provide better nutrition.",
+    "fallacyId": "fal_appeal_to_nature",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Assumes natural preparation is superior in every case, ignoring bioavailability and safety tradeoffs.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_008",
+    "text": "Open windows provide natural security, so alarms are unnecessary.",
+    "fallacyId": "fal_appeal_to_nature",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "everyday"
+    ],
+    "explanation": "Appeal to nature. Natural ventilation doesn’t inherently provide protection against intrusion or hazards.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_009",
+    "text": "Unpainted wood is natural, so it requires less maintenance.",
+    "fallacyId": "fal_appeal_to_nature",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Claims natural state ensures durability without evidence on moisture, UV, or wear performance.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_010",
+    "text": "Purity doesn’t determine safety; dosage, contaminants, and evidence do.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Sound: evaluates risk and benefit using testable parameters rather than natural labels.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_011",
+    "text": "Select materials by properties and use case, not by whether they’re ‘natural’.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Sound: focuses on measurable performance and requirements, not nature-based rhetoric.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_nat_012",
+    "text": "Compare cooking methods by nutrients retained and risks, not by labels.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "science"
+    ],
+    "explanation": "Sound: grounds evaluation in measurable outcomes rather than ‘natural’ versus ‘artificial’.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_001",
+    "text": "That encryption library can’t be trusted; some hackers like it.",
+    "fallacyId": "fal_guilt_by_association",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Guilt by association. Who uses a tool doesn’t determine its security properties or audits.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_002",
+    "text": "The technique is flawed; a failed startup promoted it.",
+    "fallacyId": "fal_guilt_by_association",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Discredits by association instead of evaluating the method’s evidence or results directly.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_003",
+    "text": "Don’t read that textbook; a controversial blogger recommended it.",
+    "fallacyId": "fal_guilt_by_association",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Rejects content because of an endorser, not because of content quality or accuracy checks.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_004",
+    "text": "This budgeting method is suspect; gamblers use similar systems.",
+    "fallacyId": "fal_guilt_by_association",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Associative smear. Similarity of use doesn’t demonstrate invalidity in other contexts or designs.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_005",
+    "text": "Avoid the workout; influencers hype it.",
+    "fallacyId": "fal_guilt_by_association",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Rejects by linking to a group rather than assessing safety, form, or outcome data.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_006",
+    "text": "Skip the collaboration tool; spammers also use it.",
+    "fallacyId": "fal_guilt_by_association",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Association fallacy. Overlooks legitimate features because undesirable users exist elsewhere too.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_007",
+    "text": "That hiring practice is risky; a company with lawsuits used it.",
+    "fallacyId": "fal_guilt_by_association",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Condemns by association rather than examining safeguards, context, and outcomes of the practice itself.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_008",
+    "text": "The protocol is unsafe because scammers mention it on forums.",
+    "fallacyId": "fal_guilt_by_association",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Assumes mention by bad actors makes the protocol unsafe, ignoring technical analysis and proofs.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_009",
+    "text": "The time-tracking policy is bad; micromanagers love it.",
+    "fallacyId": "fal_guilt_by_association",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Dismisses by linking to a disliked group rather than weighing benefits and costs directly.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_010",
+    "text": "Assess the library by audits and tests, not by who uses it.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Sound: evaluates on evidence and verification instead of associative reasoning errors.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_011",
+    "text": "A method’s merits depend on data and results, not endorsements.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Sound: shifts attention to measurable outcomes rather than associations or reputations alone.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_gba_012",
+    "text": "Judge the policy by outcomes and safeguards, not by who likes it.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Sound: emphasizes impact evaluation rather than guilt-by-association dismissals.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_001",
+    "text": "One estimate is zero defects, another is one hundred; the truth is fifty.",
+    "fallacyId": "fal_middle_ground",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "statistics"
+    ],
+    "explanation": "Middle-ground fallacy. Assumes averaging claims yields truth without evidence on actual defects.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_002",
+    "text": "Some want strong encryption, others weak; half-strength must be best.",
+    "fallacyId": "fal_middle_ground",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Assumes compromise determines correctness; ignores threat models and requirements analysis.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_003",
+    "text": "Some say stretch, others rest; splitting time evenly cures injuries.",
+    "fallacyId": "fal_middle_ground",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Assumes midpoint is correct regardless of condition specifics or clinical evidence.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_004",
+    "text": "Between firing and a bonus, a small pay cut is automatically fairest.",
+    "fallacyId": "fal_middle_ground",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "workplace"
+    ],
+    "explanation": "Declares the compromise correct without assessing performance facts or incentives effects.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_005",
+    "text": "Design A and B conflict; combining them guarantees optimal UX.",
+    "fallacyId": "fal_middle_ground",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Assumes blending opposites yields truth, ignoring usability testing or conflicts created.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_006",
+    "text": "Some call the project profitable, others a loss; break-even must be right.",
+    "fallacyId": "fal_middle_ground",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Averages opinions rather than analyzing cash flows, assumptions, and sensitivity ranges.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_007",
+    "text": "Students want no homework; teachers want lots; moderate load is automatically best.",
+    "fallacyId": "fal_middle_ground",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Declares compromise true without evidence on learning outcomes or constraints involved.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_008",
+    "text": "Some claim the food is spoiled; others say fine; mix plates to be safe.",
+    "fallacyId": "fal_middle_ground",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "everyday"
+    ],
+    "explanation": "Compromise doesn’t guarantee safety; correct answer may be one side entirely.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_009",
+    "text": "Some say release now, others in a quarter; ship in six weeks, therefore correct.",
+    "fallacyId": "fal_middle_ground",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "ops"
+    ],
+    "explanation": "Picks the midpoint as truth without risk analysis or readiness criteria evidence.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_010",
+    "text": "Choose the estimate supported by data and models, not by averaging opinions.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "statistics"
+    ],
+    "explanation": "Sound: grounds conclusions in evidence, not position balancing for its own sake.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_011",
+    "text": "Sometimes one side is wrong; weigh evidence rather than splitting differences.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Sound: acknowledges that truth isn’t guaranteed to lie between opposing claims.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_mid_012",
+    "text": "Pick the design after usability tests, not by blending conflicting features.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Sound: uses empirical testing to decide, avoiding automatic compromises as truth proxies.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_001",
+    "text": "The market forecast must be accurate; otherwise we’ll lose funding.",
+    "fallacyId": "fal_appeal_to_consequences",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Appeal to consequences. Stakes don’t determine the truth of a forecast’s assumptions or model.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_002",
+    "text": "Bugs can’t exist; admitting them would hurt morale.",
+    "fallacyId": "fal_appeal_to_consequences",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Claims false because of undesirable outcomes, not because of defect evidence evaluation.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_003",
+    "text": "This diet is effective because failure would be discouraging.",
+    "fallacyId": "fal_appeal_to_consequences",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "health"
+    ],
+    "explanation": "Equates desirability of success with truth; discouragement doesn’t prove effectiveness claims true or false.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_004",
+    "text": "The safety report is correct since a recall would be expensive.",
+    "fallacyId": "fal_appeal_to_consequences",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Cost implications don’t determine whether the report is accurate; tests do.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_005",
+    "text": "Our plan will succeed; if not, we’ll miss the bonus.",
+    "fallacyId": "fal_appeal_to_consequences",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "business"
+    ],
+    "explanation": "Assumes success because failure is costly, not because evidence predicts success probabilities.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_006",
+    "text": "The algorithm must be fair; unfairness would cause complaints.",
+    "fallacyId": "fal_appeal_to_consequences",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Predicts bad outcomes if false, but that doesn’t prove the fairness claim true now.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_007",
+    "text": "The training works because the schedule is tight.",
+    "fallacyId": "fal_appeal_to_consequences",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "education"
+    ],
+    "explanation": "Infers truth from organizational needs rather than evidence of learning outcomes achieved.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_008",
+    "text": "The numbers are right; revising them would delay launch.",
+    "fallacyId": "fal_appeal_to_consequences",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "statistics"
+    ],
+    "explanation": "Launch timing consequences don’t determine whether figures are accurate or computed correctly.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_009",
+    "text": "The tool is secure since insecurity would be embarrassing.",
+    "fallacyId": "fal_appeal_to_consequences",
+    "isSound": false,
+    "difficulty": "intermediate",
+    "tags": [
+      "technology"
+    ],
+    "explanation": "Conflates reputational costs with truth about security; needs audits and tests instead.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_010",
+    "text": "Accuracy isn’t set by consequences; verify forecasts with backtesting.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "finance"
+    ],
+    "explanation": "Sound: evaluates predictive accuracy using evidence rather than desired outcomes or fears.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_011",
+    "text": "Assess safety by test results and failure rates, not recall costs.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "product"
+    ],
+    "explanation": "Sound: focuses on empirical indicators of safety, avoiding consequence-based truth claims.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  },
+  {
+    "id": "prp_apc_012",
+    "text": "Bug reports are true or false regardless of morale; check repro steps.",
+    "fallacyId": null,
+    "isSound": true,
+    "difficulty": "intermediate",
+    "tags": [
+      "engineering"
+    ],
+    "explanation": "Sound: determines truth by replication and diagnostics, not by motivational impact.",
+    "notes": "",
+    "duplicateOf": null,
+    "version": "1.0.0",
+    "status": "active"
+  }
 ]
-
