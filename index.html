@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Fallacy Forge</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧠</text></svg>">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="stylesheet" href="styles.css?v=1.1">
 </head>
 <body>
-  <!-- Decorative background -->
   <div class="bg" aria-hidden="true"></div>
 
   <header class="header container">
-    <div class="brand">Fallacy Forge</div>
+    <div class="brand">
+      <img src="assets/logo.png" alt="Fallacy Forge" class="brand-mark">
+    </div>
     <nav class="tabs">
       <a href="#arena" class="tab active" aria-current="page">Arena</a>
       <a href="#gauntlet" class="tab">Gauntlet</a>
@@ -21,7 +22,6 @@
     </nav>
   </header>
 
-  <!-- Hero band -->
   <section class="hero container">
     <h1>Sharpen your reasoning.</h1>
     <p class="muted">Fast drills. Clean feedback. No accounts.</p>
@@ -32,7 +32,6 @@
   </section>
 
   <main class="container grid cols-2">
-    <!-- Practice Arena -->
     <section id="arena" class="card">
       <h2>Practice Arena</h2>
       <p id="prop" class="prop"></p>
@@ -46,7 +45,6 @@
       <p class="hint small">Shortcuts: <span class="kbd">Enter</span> check, <span class="kbd">Space</span> next</p>
     </section>
 
-    <!-- Gauntlet -->
     <section id="gauntlet" class="card">
       <h2>Gauntlet</h2>
       <div class="controls">
@@ -61,7 +59,6 @@
       <div id="g-results"></div>
     </section>
 
-    <!-- Library -->
     <section id="library" class="card">
       <h2>Library</h2>
       <div class="controls">
