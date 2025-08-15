@@ -1,4 +1,4 @@
-/* Fallacy Forge UI v1.1 — playful hero, cards, dark mode */
+/* Fallacy Forge UI v1.2 — hero bg, cards, dark mode, polish */
 
 /* ---------- Tokens */
 :root{
@@ -46,7 +46,7 @@ img{ max-width:100%; height:auto }
 /* ---------- Layout */
 .container{ max-width:980px; margin:0 auto; padding:24px 16px }
 .header{ display:flex; gap:10px; align-items:center; justify-content:space-between; margin:8px 0 12px }
-.brand{ font-weight:700; letter-spacing:.2px }
+.brand{ display:flex; align-items:center; min-height:44px }
 .tabs{ display:flex; gap:8px; flex-wrap:wrap }
 .tab{ padding:8px 12px; border-radius:10px; border:1px solid var(--line); color:inherit; background:transparent }
 .tab[aria-current="page"], .tab.active{ background:var(--accent-weak); border-color:transparent }
@@ -62,11 +62,16 @@ img{ max-width:100%; height:auto }
 .card h2{ margin:0 0 8px 0; font-size:1.1rem }
 
 /* ---------- Controls */
-.input,.select{ width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:transparent; color:inherit }
+.input,.select{
+  width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:transparent; color:inherit;
+  min-height:42px;
+}
 .select{
-  appearance:none;
-  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
-  background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px);
+  -webkit-appearance:none; -moz-appearance:none; appearance:none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
   background-size: 5px 5px, 5px 5px; background-repeat:no-repeat;
 }
 .controls{ display:flex; gap:8px; flex-wrap:wrap }
@@ -74,7 +79,7 @@ img{ max-width:100%; height:auto }
 
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  padding:10px 14px; border-radius:12px; border:1px solid var(--line); background:transparent; color:inherit; cursor:pointer;
+  height:42px; padding:0 14px; border-radius:12px; border:1px solid var(--line); background:transparent; color:inherit; cursor:pointer;
 }
 .btn:hover{ border-color:var(--accent) }
 .btn-primary{ background:var(--accent); color:#fff; border-color:transparent }
@@ -124,6 +129,18 @@ img{ max-width:100%; height:auto }
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important }
 }
-/* clamp header logo size */
-.brand-mark{ height:32px; width:auto; display:block }
-@media (min-width:900px){ .brand-mark{ height:36px } }
+
+/* ---------- Fixes from review */
+/* Hide any stray icon image accidentally added in body */
+img[src$="assets/logo-icon.png"]{ display:none }
+
+/* Brand image size */
+.brand-mark{ height:44px; width:auto; display:block }
+@media (min-width:900px){ .brand-mark{ height:52px } }
+
+/* Small-screen spacing */
+@media (max-width:720px){
+  .container{ padding:18px 12px }
+  .grid{ gap:12px }
+  .card{ padding:12px; border-radius:12px }
+}
