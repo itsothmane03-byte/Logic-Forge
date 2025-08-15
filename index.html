@@ -6,10 +6,11 @@
   <meta name="color-scheme" content="light dark" />
   <title>Fallacy Forge</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧠</text></svg>">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=1.1">
 </head>
 <body>
-  <a class="visually-hidden" href="#arena">Skip to content</a>
+  <!-- Decorative background -->
+  <div class="bg" aria-hidden="true"></div>
 
   <header class="header container">
     <div class="brand">Fallacy Forge</div>
@@ -19,6 +20,16 @@
       <a href="#library" class="tab">Library</a>
     </nav>
   </header>
+
+  <!-- Hero band -->
+  <section class="hero container">
+    <h1>Sharpen your reasoning.</h1>
+    <p class="muted">Fast drills. Clean feedback. No accounts.</p>
+    <div class="actions">
+      <a href="#arena" class="btn btn-primary">Start Practicing</a>
+      <a href="#library" class="btn">Browse Library</a>
+    </div>
+  </section>
 
   <main class="container grid cols-2">
     <!-- Practice Arena -->
@@ -66,7 +77,7 @@
     </section>
   </main>
 
-  <footer class="container small muted">v1.0.0</footer>
+  <footer class="container small muted">v1.1.0</footer>
 
   <script src="rotation.js" defer></script>
   <script src="app.js" defer></script>
