@@ -6,7 +6,80 @@
   <meta name="color-scheme" content="light dark" />
   <title> </title>
   <link rel="icon" type="image/png" href="assets/logo-mark.png?v=2" />
-  <link rel="stylesheet" href="./styles.css?v=1.5" />
+
+  <!-- INLINE CSS so the page works even if styles.css is mislinked -->
+  <style>
+  /* Fallacy Forge UI v1.5 — hero bg, cards, dark mode, pill nav */
+  :root{
+    --bg:#f6fbff; --card:#ffffff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
+    --accent:#ff6b3d; --accent-weak:rgba(255,107,61,.12);
+    --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.06), 0 10px 28px rgba(0,0,0,.08);
+    --space:12px;
+    --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    --sky-top:#e8f8ff; --sky-mid:#d8f1fe; --sand-1:#ffebbb; --sand-2:#fada8a; --sand-3:#f2c768;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0b0f14; --card:#121821; --fg:#eaeef3; --muted:#9aa7b3; --line:#1f2a36;
+      --accent:#ff915f; --accent-weak:rgba(255,145,95,.15);
+      --sky-top:#0f1822; --sky-mid:#0d2231; --sand-1:#1b1f29; --sand-2:#222839; --sand-3:#283048; }
+  }
+  *{box-sizing:border-box} html,body{height:100%} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+  .visually-hidden{position:absolute!important;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}
+  img{max-width:100%;height:auto}
+
+  .container{max-width:980px;margin:0 auto;padding:24px 16px}
+  .header{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:8px 0 12px}
+  .brand{display:flex;align-items:center;min-height:44px;color:var(--accent)}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap}
+  .tabs-right{margin-left:auto}
+  .tabs-pill{gap:12px}
+  .tabs-pill .tab{padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.65);color:var(--fg)}
+  .tabs-pill .tab:hover{background:var(--accent-weak)}
+  .tabs-pill .tab[aria-current="page"],.tabs-pill .tab.active{background:var(--accent-weak);font-weight:700;border-color:transparent}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+  .card h2{margin:0 0 8px 0;font-size:1.1rem}
+  .grid{display:grid;gap:16px}
+  @media (min-width:900px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+
+  .input,.select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:transparent;color:inherit;min-height:42px}
+  .select{-webkit-appearance:none;-moz-appearance:none;appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+    background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+  .controls{display:flex;gap:8px;flex-wrap:wrap}
+  .controls .select{flex:1 1 260px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer}
+  .btn:hover{border-color:var(--accent)} .btn-primary{background:var(--accent);color:#fff;border-color:transparent}
+  .btn:disabled{opacity:.55;cursor:not-allowed}
+  .chip{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:transparent;font-size:.9rem;cursor:pointer}
+  .hint{color:var(--muted);font-size:.92rem} .muted{color:var(--muted)} .small{font-size:.9rem}
+  .kbd{padding:2px 6px;border:1px solid var(--line);border-radius:6px;background:var(--card);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .prop{font-size:1.15rem;margin:6px 0 10px} .feedback{font-weight:700;margin:6px 0}
+  .feedback.ok{color:#16a34a} .feedback.bad{color:#dc2626}
+  .table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .table th,.table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  .table tr:hover td{background:var(--accent-weak)} .table th{font-size:.92rem;color:var(--muted);font-weight:600}
+  .card .aliases{margin:4px 0} .card .definition{margin:6px 0 8px}
+
+  .bg{position:fixed;inset:0;z-index:-1;background:
+    radial-gradient(60% 35% at 50% 10%,rgba(255,255,255,.9),rgba(255,255,255,0) 60%),
+    radial-gradient(70% 30% at 15% 100%,var(--sand-2) 0 60%,transparent 61%),
+    radial-gradient(65% 28% at 85% 100%,var(--sand-3) 0 60%,transparent 61%),
+    radial-gradient(90% 40% at 55% 100%,var(--sand-1) 0 55%,transparent 56%),
+    linear-gradient(to bottom,var(--sky-top) 0%,var(--sky-mid) 45%,#fff 58%,var(--sand-1) 60%,var(--sand-2) 100%);
+    filter:saturate(1.02)}
+  .hero{text-align:center;padding:64px 0 24px}
+  .hero h1{margin:0 0 8px;font-size:clamp(28px,5vw,48px);line-height:1.15;letter-spacing:.2px}
+  .hero .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  *{transition:background-color .2s,border-color .2s,color .2s,box-shadow .2s}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  .brand-img{height:72px;width:auto;display:block}
+  @media (min-width:900px){.brand-img{height:84px}}
+  @media (max-width:720px){.container{padding:18px 12px}.grid{gap:12px}.card{padding:12px;border-radius:12px}}
+  </style>
 </head>
 <body>
   <div class="bg" aria-hidden="true"></div>
