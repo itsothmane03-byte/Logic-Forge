@@ -1,4 +1,4 @@
-/* Fallacy Forge UI v1.4 — hero bg, cards, dark mode, pill nav */
+/* Fallacy Forge UI v1.5 — hero bg, cards, dark mode, pill nav */
 
 /* ---------- Tokens */
 :root{
@@ -122,10 +122,9 @@ img{ max-width:100%; height:auto }
   *{ transition:none !important; scroll-behavior:auto !important }
 }
 
-/* ---------- Brand + fixes */
-.brand-mark{ height:72px; width:auto; display:block }     /* inline SVG logo size */
-@media (min-width:900px){ .brand-mark{ height:84px } }
-img[src$="assets/logo-icon.png"]{ display:none }           /* hide stray body favicon */
+/* ---------- Brand (PNG logo) */
+.brand-img{ height:72px; width:auto; display:block }
+@media (min-width:900px){ .brand-img{ height:84px } }
 
 /* ---------- Small screens */
 @media (max-width:720px){
@@ -133,7 +132,3 @@ img[src$="assets/logo-icon.png"]{ display:none }           /* hide stray body fa
   .grid{ gap:12px }
   .card{ padding:12px; border-radius:12px }
 }
-/* Use transparent PNG logo */
-.brand-mark{ display:none }                 /* hide the old inline SVG if present */
-.brand-img{ height:72px; width:auto; display:block }
-@media (min-width:900px){ .brand-img{ height:84px } }
