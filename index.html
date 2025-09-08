@@ -4,199 +4,228 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <title> </title>
-  <link rel="icon" type="image/png" href="assets/logo-mark.png?v=2" />
+  <title>Fallacy Forge · Logical fallacy drills</title>
 
-  <!-- INLINE CSS so the page works even if styles.css is mislinked -->
+  <!-- Favicon: icon-only works in both themes -->
+  <link rel="icon" type="image/png" href="assets/logo-icon.png" />
+
+  <!-- Prevent theme flash: apply saved theme before first paint -->
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem('ff-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- ================== UI (vanilla CSS) ================== -->
   <style>
-  /* Fallacy Forge UI v1.5 — hero bg, cards, dark mode, pill nav */
-  :root{
-    --bg:#f6fbff; --card:#ffffff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
-    --accent:#ff6b3d; --accent-weak:rgba(255,107,61,.12);
-    --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.06), 0 10px 28px rgba(0,0,0,.08);
-    --space:12px;
-    --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    --sky-top:#e8f8ff; --sky-mid:#d8f1fe; --sand-1:#ffebbb; --sand-2:#fada8a; --sand-3:#f2c768;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#0b0f14; --card:#121821; --fg:#eaeef3; --muted:#9aa7b3; --line:#1f2a36;
-      --accent:#ff915f; --accent-weak:rgba(255,145,95,.15);
-      --sky-top:#0f1822; --sky-mid:#0d2231; --sand-1:#1b1f29; --sand-2:#222839; --sand-3:#283048; }
-  }
-  *{box-sizing:border-box} html,body{height:100%} html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
-  .visually-hidden{position:absolute!important;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}
-  img{max-width:100%;height:auto}
+    /* Fallacy Forge UI — cards, tabs, hero, dark mode */
 
-  .container{max-width:980px;margin:0 auto;padding:24px 16px}
-  .header{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:8px 0 12px}
-  .brand{display:flex;align-items:center;min-height:44px;color:var(--accent)}
-  .tabs{display:flex;gap:8px;flex-wrap:wrap}
-  .tabs-right{margin-left:auto}
-  .tabs-pill{gap:12px}
-  .tabs-pill .tab{padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.65);color:var(--fg)}
-  .tabs-pill .tab:hover{background:var(--accent-weak)}
-  .tabs-pill .tab[aria-current="page"],.tabs-pill .tab.active{background:var(--accent-weak);font-weight:700;border-color:transparent}
+    :root{
+      --radius:14px;
+      --shadow:0 1px 2px rgba(0,0,0,.06), 0 10px 28px rgba(0,0,0,.08);
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+              "Apple Color Emoji","Segoe UI Emoji";
+      --space:12px;
+      --accent:#FF6B3D;
+      --accent-weak:rgba(255,107,61,.12);
+    }
 
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
-  .card h2{margin:0 0 8px 0;font-size:1.1rem}
-  .grid{display:grid;gap:16px}
-  @media (min-width:900px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    /* Light */
+    html[data-theme="light"]{
+      --bg:#f6fbff; --card:#ffffff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
+      --sky-top:#e8f8ff; --sky-mid:#d8f1fe;
+      --sand-1:#ffebbb; --sand-2:#ffd88b; --sand-3:#f2c768;
+      --tab-bg: rgba(255,255,255,.65); --tab-text: var(--fg); --tab-border: rgba(0,0,0,.15);
+      --active-bg: var(--accent); --active-text:#fff;
+    }
+    /* Dark */
+    html[data-theme="dark"]{
+      --bg:#0b1720; --card:#0f2230; --fg:#EAEFF3; --muted:#A1B1BD; --line:#23313B;
+      --sky-top:#0f1a25; --sky-mid:#102330;
+      --sand-1:#17232f; --sand-2:#121e2a; --sand-3:#0b1621;
+      --tab-bg: rgba(255,255,255,.08); --tab-text: var(--fg); --tab-border: rgba(255,255,255,.18);
+      --active-bg: var(--accent); --active-text:#fff;
+    }
 
-  .input,.select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:transparent;color:inherit;min-height:42px}
-  .select{-webkit-appearance:none;-moz-appearance:none;appearance:none;
-    background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
-    background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
-  .controls{display:flex;gap:8px;flex-wrap:wrap}
-  .controls .select{flex:1 1 260px}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer}
-  .btn:hover{border-color:var(--accent)} .btn-primary{background:var(--accent);color:#fff;border-color:transparent}
-  .btn:disabled{opacity:.55;cursor:not-allowed}
-  .chip{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:transparent;font-size:.9rem;cursor:pointer}
-  .hint{color:var(--muted);font-size:.92rem} .muted{color:var(--muted)} .small{font-size:.9rem}
-  .kbd{padding:2px 6px;border:1px solid var(--line);border-radius:6px;background:var(--card);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-  .prop{font-size:1.15rem;margin:6px 0 10px} .feedback{font-weight:700;margin:6px 0}
-  .feedback.ok{color:#16a34a} .feedback.bad{color:#dc2626}
-  .table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  .table th,.table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-  .table tr:hover td{background:var(--accent-weak)} .table th{font-size:.92rem;color:var(--muted);font-weight:600}
-  .card .aliases{margin:4px 0} .card .definition{margin:6px 0 8px}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:var(--font); color:var(--fg);
+      background: var(--bg);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    .container{max-width:980px;margin:0 auto;padding:24px 16px}
 
-  .bg{position:fixed;inset:0;z-index:-1;background:
-    radial-gradient(60% 35% at 50% 10%,rgba(255,255,255,.9),rgba(255,255,255,0) 60%),
-    radial-gradient(70% 30% at 15% 100%,var(--sand-2) 0 60%,transparent 61%),
-    radial-gradient(65% 28% at 85% 100%,var(--sand-3) 0 60%,transparent 61%),
-    radial-gradient(90% 40% at 55% 100%,var(--sand-1) 0 55%,transparent 56%),
-    linear-gradient(to bottom,var(--sky-top) 0%,var(--sky-mid) 45%,#fff 58%,var(--sand-1) 60%,var(--sand-2) 100%);
-    filter:saturate(1.02)}
-  .hero{text-align:center;padding:64px 0 24px}
-  .hero h1{margin:0 0 8px;font-size:clamp(28px,5vw,48px);line-height:1.15;letter-spacing:.2px}
-  .hero .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
-  *{transition:background-color .2s,border-color .2s,color .2s,box-shadow .2s}
-  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
-  .brand-img{height:72px;width:auto;display:block}
-  @media (min-width:900px){.brand-img{height:84px}}
-  @media (max-width:720px){.container{padding:18px 12px}.grid{gap:12px}.card{padding:12px;border-radius:12px}}
+    /* Hero sky/sand backdrop */
+    .bg{
+      position:fixed; inset:0; z-index:-1;
+      background:
+        radial-gradient(60% 35% at 50% 10%, rgba(255,255,255,.20) 0, rgba(255,255,255,0) 60%),
+        linear-gradient(to bottom,var(--sky-top) 0%,var(--sky-mid) 45%,#fff0 45%),
+        radial-gradient(100% 80% at 50% 100%, var(--sand-1) 0, var(--sand-2) 50%, var(--sand-3) 60%);
+    }
+
+    /* Header */
+    .header{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:8px 0 12px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand-icon{height:32px;width:auto;display:block}
+    .brand-text{font-weight:800;letter-spacing:.2px;color:var(--fg)}
+
+    /* Tabs */
+    .tabs{display:flex;gap:8px;flex-wrap:wrap}
+    .tabs .tab{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:8px 12px;border-radius:12px;background:var(--tab-bg);color:var(--tab-text);
+      border:1px solid var(--tab-border);font-weight:700;text-decoration:none;min-width:84px;
+      transition:background .15s,color .15s,border-color .15s,box-shadow .15s;
+    }
+    .tabs .tab:hover{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .tabs .tab.active,[aria-current="page"]{background:var(--active-bg);color:var(--active-text);border-color:transparent}
+
+    /* Chips/Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);
+      color:var(--fg); box-shadow:var(--shadow); font-weight:700; cursor:pointer; text-decoration:none}
+    .btn-primary{background:var(--active-bg);color:#fff;border-color:transparent}
+    .chip{padding:6px 10px;border-radius:999px;border:1px solid var(--tab-border);background:var(--tab-bg);cursor:pointer}
+
+    /* Cards */
+    .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px}
+    .muted{color:var(--muted)}
+
+    /* Inputs */
+    .input,.select{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);
+      background:rgba(255,255,255,.65);color:var(--fg);outline:none}
+    .input:focus,.select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-weak)}
+
+    /* Layout helpers */
+    .grid{display:grid;gap:16px}
+    @media (min-width:900px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+
+    /* Headline */
+    h1{font-size:clamp(28px,5vw,48px);margin:0 0 12px}
+    p{margin:0 0 12px}
   </style>
-  <!-- AFTER your current <style> block -->
-<style>
-  /* Theme overrides: ignore OS unless user toggles */
-  html[data-theme="light"]{
-    --bg:#f6fbff; --card:#fff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
-    --accent:#FF6B3D; --accent-weak:rgba(255,107,61,.12);
-    --sky-top:#e8f8ff; --sky-mid:#d8f1fe; --sand-1:#ffebbb; --sand-2:#ffd88b; --sand-3:#f2c768;
-  }
-  html[data-theme="dark"]{
-    /* copy of your dark vars (kept saturated) */
-    --bg:#0b1720; --card:#0f2230; --fg:#EAEFF3; --muted:#A1B1BD; --line:#23313B;
-    --accent:#FF6B3D; --accent-weak:rgba(255,107,61,.18);
-    --sky-top:#0f1a25; --sky-mid:#102330; --sand-1:#17232f; --sand-2:#121e2a; --sand-3:#0b1621;
-  }
-</style>
-
-<!-- INSIDE header (left or right, wherever you like) -->
-<button id="theme-toggle" class="btn" style="margin-left:8px">🌓</button>
-
-<!-- BEFORE </body> -->
-<script>
-(() => {
-  const KEY = 'ff-theme';
-  const apply = (t) => {
-    document.documentElement.setAttribute('data-theme', t);
-    localStorage.setItem(KEY, t);
-  };
-  const init = () => apply(localStorage.getItem(KEY) || 'light');
-
-  addEventListener('DOMContentLoaded', () => {
-    init();
-    const btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    const label = () => btn.title = btn.ariaLabel = 
-      'Switch to ' + (document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') + ' theme';
-    label();
-    btn.addEventListener('click', () => {
-      const cur = document.documentElement.getAttribute('data-theme') || 'light';
-      apply(cur === 'dark' ? 'light' : 'dark');
-      label();
-    });
-    // test hook
-    window.__FF_theme = { apply };
-  });
-})();
-</script>
-
 </head>
+
 <body>
   <div class="bg" aria-hidden="true"></div>
 
   <header class="header container">
     <div class="brand">
-      <img src="assets/logo-mark.png?v=2" alt="Fallacy Forge" class="brand-img" />
+      <img class="brand-icon" src="assets/logo-icon.png" alt="Fallacy Forge icon" />
+      <span class="brand-text">Fallacy Forge</span>
     </div>
-    <nav class="tabs tabs-pill tabs-right">
+
+    <nav class="tabs tabs-pill tabs-right" role="tablist" aria-label="Primary">
       <a href="#arena" class="tab active" aria-current="page">Arena</a>
       <a href="#gauntlet" class="tab">Gauntlet</a>
       <a href="#library" class="tab">Library</a>
+      <button id="theme-toggle" class="chip" title="Switch theme" aria-label="Switch theme">🌓</button>
     </nav>
   </header>
 
-  <section class="hero container">
-    <h1>Sharpen your reasoning.</h1>
-    <p class="muted">Fast drills. Clean feedback. No accounts.</p>
-    <div class="actions">
-      <a href="#arena" class="btn btn-primary">Start Practicing</a>
-      <a href="#library" class="btn">Browse Library</a>
-    </div>
-  </section>
-
-  <main class="container grid cols-2">
-    <section id="arena" class="card">
-      <h2>Practice Arena</h2>
-      <p id="prop" class="prop"></p>
-      <div class="controls">
-        <select id="label" class="select" aria-label="Choose label"></select>
-        <button id="submit" class="btn btn-primary">Check</button>
-        <button id="next" class="btn">Next</button>
+  <main class="container">
+    <section class="hero">
+      <h1>Sharpen your reasoning.</h1>
+      <p class="muted">Fast drills. Clean feedback. No accounts.</p>
+      <div class="actions" style="display:flex;gap:12px;margin:12px 0 24px">
+        <a href="#arena" class="btn btn-primary">Start Practicing</a>
+        <a href="#library" class="btn">Browse Library</a>
       </div>
-      <p id="fb" class="feedback" aria-live="polite"></p>
-      <p id="similar" class="hint"></p>
-      <p class="hint small">Shortcuts: <span class="kbd">Enter</span> check, <span class="kbd">Space</span> next</p>
     </section>
 
-    <section id="gauntlet" class="card">
-      <h2>Gauntlet</h2>
-      <div class="controls">
-        <input id="g-seed" class="input" placeholder="Seed (optional)" />
-        <select id="g-label" class="select" aria-label="Choose label"></select>
-        <button id="g-start" class="btn btn-primary">Start</button>
-        <button id="g-submit" class="btn">Submit</button>
-      </div>
-      <p id="g-progress" class="hint"></p>
-      <p id="g-prop" class="prop"></p>
-      <div id="g-run"></div>
-      <div id="g-results"></div>
-    </section>
-
-    <section id="library" class="card">
-      <h2>Library</h2>
-      <div class="controls">
-        <input id="lib-q" class="input" placeholder="Search name or alias" />
-        <select id="lib-diff" class="select">
-          <option value="all">All levels</option>
-          <option value="beginner">Beginner</option>
-          <option value="intermediate">Intermediate</option>
-          <option value="advanced">Advanced</option>
+    <section class="grid cols-2" id="arena">
+      <div class="card">
+        <h3>Practice Arena</h3>
+        <p class="muted" style="margin-bottom:8px">Pick a fallacy, get an example, decide if it fits.</p>
+        <label class="visually-hidden" for="arena-select">Choose fallacy</label>
+        <select id="arena-select" class="select">
+          <option selected disabled>Choose...</option>
         </select>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button id="arena-check" class="btn">Check</button>
+          <button id="arena-next" class="btn">Next</button>
+        </div>
+        <p class="muted" style="margin-top:8px">Shortcuts: <kbd>Enter</kbd> check, <kbd>Space</kbd> next</p>
       </div>
-      <div id="lib-list"></div>
+
+      <div class="card" id="gauntlet">
+        <h3>Gauntlet</h3>
+        <input id="seed" class="input" placeholder="Seed (optional)" />
+        <label class="visually-hidden" for="gauntlet-level">Level</label>
+        <select id="gauntlet-level" class="select" style="margin-top:8px">
+          <option selected disabled>Choose...</option>
+        </select>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button id="gauntlet-start" class="btn btn-primary">Start</button>
+          <button id="gauntlet-submit" class="btn">Submit</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="library" class="card" style="margin-top:16px">
+      <h3>Library</h3>
+      <input id="search" class="input" placeholder="Search name or alias" />
+      <select id="level" class="select" style="margin-top:8px">
+        <option selected>All levels</option>
+        <option>Beginner</option><option>Intermediate</option><option>Advanced</option>
+      </select>
+      <div id="library-list" style="margin-top:12px;display:grid;gap:12px"></div>
     </section>
   </main>
 
-  <footer class="container small muted">v1.5.0</footer>
+  <!-- ================== Minimal behavior ================== -->
+  <script>
+    // Theme toggle (MDN: localStorage / dataset) — https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+    (() => {
+      const KEY='ff-theme';
+      const apply = t => { document.documentElement.setAttribute('data-theme', t); localStorage.setItem(KEY, t); };
+      addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        const relabel = () => btn.title = btn.ariaLabel = 'Switch to ' +
+          (document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') + ' theme';
+        relabel();
+        btn.addEventListener('click', () => {
+          const cur = document.documentElement.getAttribute('data-theme') || 'light';
+          apply(cur === 'dark' ? 'light' : 'dark'); relabel();
+        });
+        // test hook
+        window.__FF_theme = { apply };
+      });
+    })();
 
-  <script src="rotation.js" defer></script>
+    // Basic boot: hydrate selects from window.FF_DATA if app.js not loaded yet
+    (function bootstrap(){
+      const fallback = [
+        { id:'ad_hominem', name:'Ad Hominem', level:'Beginner' },
+        { id:'straw_man', name:'Straw Man', level:'Beginner' },
+        { id:'false_cause', name:'False Cause', level:'Intermediate' }
+      ];
+      const data = (window.FF_DATA && window.FF_DATA.fallacies) || fallback;
+
+      const arenaSel = document.getElementById('arena-select');
+      const gauntletSel = document.getElementById('gauntlet-level');
+      const lib = document.getElementById('library-list');
+
+      data.forEach(f => {
+        const o = new Option(f.name, f.id); arenaSel.add(o.cloneNode(true));
+      });
+      ['Beginner','Intermediate','Advanced'].forEach(l => gauntletSel.add(new Option(l,l)));
+
+      lib.innerHTML = data.map(f => `
+        <div class="card" data-id="${f.id}">
+          <strong>${f.name}</strong>
+          <p class="muted" style="margin:6px 0 0">Level: ${f.level}</p>
+        </div>`).join('');
+    })();
+  </script>
+
+  <!-- Your real logic if present (safe to keep) -->
   <script src="app.js" defer></script>
 </body>
 </html>
