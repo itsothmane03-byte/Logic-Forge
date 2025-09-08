@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light dark" />
   <title>Fallacy Forge · Logical fallacy drills</title>
 
-  <!-- Favicon: icon-only works in both themes -->
+  <!-- Favicon: icon-only; works for both themes -->
   <link rel="icon" type="image/png" href="assets/logo-icon.png" />
 
   <!-- Prevent theme flash: apply saved theme before first paint -->
@@ -15,19 +15,15 @@
       try {
         const t = localStorage.getItem('ff-theme') || 'light';
         document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
+      } catch(e){}
     })();
   </script>
 
-  <!-- ================== UI (vanilla CSS) ================== -->
   <style>
-    /* Fallacy Forge UI — cards, tabs, hero, dark mode */
-
     :root{
       --radius:14px;
       --shadow:0 1px 2px rgba(0,0,0,.06), 0 10px 28px rgba(0,0,0,.08);
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-              "Apple Color Emoji","Segoe UI Emoji";
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       --space:12px;
       --accent:#FF6B3D;
       --accent-weak:rgba(255,107,61,.12);
@@ -35,7 +31,7 @@
 
     /* Light */
     html[data-theme="light"]{
-      --bg:#f6fbff; --card:#ffffff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
+      --bg:#f6fbff; --card:#fff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
       --sky-top:#e8f8ff; --sky-mid:#d8f1fe;
       --sand-1:#ffebbb; --sand-2:#ffd88b; --sand-3:#f2c768;
       --tab-bg: rgba(255,255,255,.65); --tab-text: var(--fg); --tab-border: rgba(0,0,0,.15);
@@ -53,59 +49,62 @@
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:var(--font); color:var(--fg);
-      background: var(--bg);
+      margin:0; font-family:var(--font); color:var(--fg); background:var(--bg);
       -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
     .container{max-width:980px;margin:0 auto;padding:24px 16px}
 
-    /* Hero sky/sand backdrop */
+    /* ===== Hero backdrop: original image + gradient fallback =====
+       Put your original background at assets/hero.jpg (or hero.png). */
     .bg{
       position:fixed; inset:0; z-index:-1;
       background:
+        image-set(url('assets/hero.jpg') type('image/jpeg') 1x,
+                  url('assets/hero.png') type('image/png') 1x)
+          center/cover no-repeat,
         radial-gradient(60% 35% at 50% 10%, rgba(255,255,255,.20) 0, rgba(255,255,255,0) 60%),
-        linear-gradient(to bottom,var(--sky-top) 0%,var(--sky-mid) 45%,#fff0 45%),
+        linear-gradient(to bottom,var(--sky-top) 0%,var(--sky-mid) 45%,#0000 45%),
         radial-gradient(100% 80% at 50% 100%, var(--sand-1) 0, var(--sand-2) 50%, var(--sand-3) 60%);
     }
 
-    /* Header */
-    .header{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:8px 0 12px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand-icon{height:32px;width:auto;display:block}
+    /* ===== Header layout: brand left, tabs centered, toggle far right ===== */
+    .header{
+      display:grid; grid-template-columns: 1fr auto 1fr; align-items:center;
+      gap:10px; margin:8px 0 12px;
+    }
+    .brand{display:flex;align-items:center;gap:10px; justify-self:start}
+    .brand-icon{
+      height:32px; width:auto; display:block; background:transparent; /* ensure no white box */
+    }
     .brand-text{font-weight:800;letter-spacing:.2px;color:var(--fg)}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap; justify-self:center}
+    #theme-toggle{justify-self:end}
 
-    /* Tabs */
-    .tabs{display:flex;gap:8px;flex-wrap:wrap}
+    /* Tabs style */
     .tabs .tab{
       display:inline-flex;align-items:center;justify-content:center;
-      padding:8px 12px;border-radius:12px;background:var(--tab-bg);color:var(--tab-text);
+      padding:8px 12px;border-radius:12px;background:var(--tab-bg);color:var(--tab-text)!important;
       border:1px solid var(--tab-border);font-weight:700;text-decoration:none;min-width:84px;
       transition:background .15s,color .15s,border-color .15s,box-shadow .15s;
     }
     .tabs .tab:hover{box-shadow:0 2px 8px rgba(0,0,0,.08)}
-    .tabs .tab.active,[aria-current="page"]{background:var(--active-bg);color:var(--active-text);border-color:transparent}
+    .tabs .tab.active,[aria-current="page"]{background:var(--active-bg);color:var(--active-text)!important;border-color:transparent}
 
-    /* Chips/Buttons */
+    /* Buttons / chips */
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
       padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);
       color:var(--fg); box-shadow:var(--shadow); font-weight:700; cursor:pointer; text-decoration:none}
     .btn-primary{background:var(--active-bg);color:#fff;border-color:transparent}
     .chip{padding:6px 10px;border-radius:999px;border:1px solid var(--tab-border);background:var(--tab-bg);cursor:pointer}
 
-    /* Cards */
+    /* Cards / inputs */
     .card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px}
     .muted{color:var(--muted)}
-
-    /* Inputs */
     .input,.select{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);
-      background:rgba(255,255,255,.65);color:var(--fg);outline:none}
+      background:rgba(255,255,255,.65);color:var(--fg)}
     .input:focus,.select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-weak)}
-
-    /* Layout helpers */
     .grid{display:grid;gap:16px}
     @media (min-width:900px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
-
-    /* Headline */
     h1{font-size:clamp(28px,5vw,48px);margin:0 0 12px}
     p{margin:0 0 12px}
   </style>
@@ -115,17 +114,21 @@
   <div class="bg" aria-hidden="true"></div>
 
   <header class="header container">
+    <!-- 1) Brand: icon (transparent) + text; NO wordmark PNG with white box -->
     <div class="brand">
       <img class="brand-icon" src="assets/logo-icon.png" alt="Fallacy Forge icon" />
       <span class="brand-text">Fallacy Forge</span>
     </div>
 
-    <nav class="tabs tabs-pill tabs-right" role="tablist" aria-label="Primary">
+    <!-- 3) Tabs centered -->
+    <nav class="tabs" role="tablist" aria-label="Primary">
       <a href="#arena" class="tab active" aria-current="page">Arena</a>
       <a href="#gauntlet" class="tab">Gauntlet</a>
       <a href="#library" class="tab">Library</a>
-      <button id="theme-toggle" class="chip" title="Switch theme" aria-label="Switch theme">🌓</button>
     </nav>
+
+    <!-- 2) Toggle on extreme right -->
+    <button id="theme-toggle" class="chip" title="Switch theme" aria-label="Switch theme">🌓</button>
   </header>
 
   <main class="container">
@@ -142,7 +145,7 @@
       <div class="card">
         <h3>Practice Arena</h3>
         <p class="muted" style="margin-bottom:8px">Pick a fallacy, get an example, decide if it fits.</p>
-        <label class="visually-hidden" for="arena-select">Choose fallacy</label>
+        <label for="arena-select" class="visually-hidden">Choose fallacy</label>
         <select id="arena-select" class="select">
           <option selected disabled>Choose...</option>
         </select>
@@ -156,7 +159,7 @@
       <div class="card" id="gauntlet">
         <h3>Gauntlet</h3>
         <input id="seed" class="input" placeholder="Seed (optional)" />
-        <label class="visually-hidden" for="gauntlet-level">Level</label>
+        <label for="gauntlet-level" class="visually-hidden">Level</label>
         <select id="gauntlet-level" class="select" style="margin-top:8px">
           <option selected disabled>Choose...</option>
         </select>
@@ -178,28 +181,26 @@
     </section>
   </main>
 
-  <!-- ================== Minimal behavior ================== -->
   <script>
-    // Theme toggle (MDN: localStorage / dataset) — https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+    // Theme toggle
     (() => {
       const KEY='ff-theme';
       const apply = t => { document.documentElement.setAttribute('data-theme', t); localStorage.setItem(KEY, t); };
       addEventListener('DOMContentLoaded', () => {
         const btn = document.getElementById('theme-toggle');
         if (!btn) return;
-        const relabel = () => btn.title = btn.ariaLabel = 'Switch to ' +
-          (document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') + ' theme';
+        const relabel = () => btn.title = btn.ariaLabel =
+          'Switch to ' + (document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') + ' theme';
         relabel();
         btn.addEventListener('click', () => {
           const cur = document.documentElement.getAttribute('data-theme') || 'light';
           apply(cur === 'dark' ? 'light' : 'dark'); relabel();
         });
-        // test hook
-        window.__FF_theme = { apply };
+        window.__FF_theme = { apply }; // test hook
       });
     })();
 
-    // Basic boot: hydrate selects from window.FF_DATA if app.js not loaded yet
+    // Minimal data boot so UI isn't empty if app.js isn't loaded yet
     (function bootstrap(){
       const fallback = [
         { id:'ad_hominem', name:'Ad Hominem', level:'Beginner' },
@@ -212,11 +213,8 @@
       const gauntletSel = document.getElementById('gauntlet-level');
       const lib = document.getElementById('library-list');
 
-      data.forEach(f => {
-        const o = new Option(f.name, f.id); arenaSel.add(o.cloneNode(true));
-      });
+      data.forEach(f => arenaSel.add(new Option(f.name, f.id)));
       ['Beginner','Intermediate','Advanced'].forEach(l => gauntletSel.add(new Option(l,l)));
-
       lib.innerHTML = data.map(f => `
         <div class="card" data-id="${f.id}">
           <strong>${f.name}</strong>
@@ -225,7 +223,7 @@
     })();
   </script>
 
-  <!-- Your real logic if present (safe to keep) -->
+  <!-- Keep if you have real logic -->
   <script src="app.js" defer></script>
 </body>
 </html>
