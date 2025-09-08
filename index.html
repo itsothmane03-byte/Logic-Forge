@@ -80,6 +80,53 @@
   @media (min-width:900px){.brand-img{height:84px}}
   @media (max-width:720px){.container{padding:18px 12px}.grid{gap:12px}.card{padding:12px;border-radius:12px}}
   </style>
+  <!-- AFTER your current <style> block -->
+<style>
+  /* Theme overrides: ignore OS unless user toggles */
+  html[data-theme="light"]{
+    --bg:#f6fbff; --card:#fff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
+    --accent:#FF6B3D; --accent-weak:rgba(255,107,61,.12);
+    --sky-top:#e8f8ff; --sky-mid:#d8f1fe; --sand-1:#ffebbb; --sand-2:#ffd88b; --sand-3:#f2c768;
+  }
+  html[data-theme="dark"]{
+    /* copy of your dark vars (kept saturated) */
+    --bg:#0b1720; --card:#0f2230; --fg:#EAEFF3; --muted:#A1B1BD; --line:#23313B;
+    --accent:#FF6B3D; --accent-weak:rgba(255,107,61,.18);
+    --sky-top:#0f1a25; --sky-mid:#102330; --sand-1:#17232f; --sand-2:#121e2a; --sand-3:#0b1621;
+  }
+</style>
+
+<!-- INSIDE header (left or right, wherever you like) -->
+<button id="theme-toggle" class="btn" style="margin-left:8px">🌓</button>
+
+<!-- BEFORE </body> -->
+<script>
+(() => {
+  const KEY = 'ff-theme';
+  const apply = (t) => {
+    document.documentElement.setAttribute('data-theme', t);
+    localStorage.setItem(KEY, t);
+  };
+  const init = () => apply(localStorage.getItem(KEY) || 'light');
+
+  addEventListener('DOMContentLoaded', () => {
+    init();
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    const label = () => btn.title = btn.ariaLabel = 
+      'Switch to ' + (document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') + ' theme';
+    label();
+    btn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme') || 'light';
+      apply(cur === 'dark' ? 'light' : 'dark');
+      label();
+    });
+    // test hook
+    window.__FF_theme = { apply };
+  });
+})();
+</script>
+
 </head>
 <body>
   <div class="bg" aria-hidden="true"></div>
