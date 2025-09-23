@@ -31,11 +31,12 @@
 
     /* Light */
     html[data-theme="light"]{
-      --bg:#f6fbff; --card:#fff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
-      --sky-top:#e8f8ff; --sky-mid:#d8f1fe;
-      --sand-1:#ffebbb; --sand-2:#ffd88b; --sand-3:#f2c768;
+      --bgnd-3:#f2c768;
       --tab-bg: rgba(255,255,255,.65); --tab-text: var(--fg); --tab-border: rgba(0,0,0,.15);
-      --active-bg: var(--accent); --active-text:#fff;
+      --active-bg: var(--accent); --active-text:#fff;:#f6fbff; --card:#fff; --fg:#111; --muted:#5f6b76; --line:#e6eef5;
+ 
+      --sky-top:#e8f8ff; --sky-mid:#d8f1fe;
+      --sand-1:#ffebbb; --sand-2:#ffd88b; --sa
     }
     /* Dark */
     html[data-theme="dark"]{
@@ -67,7 +68,8 @@
         radial-gradient(100% 80% at 50% 100%, var(--sand-1) 0, var(--sand-2) 50%, var(--sand-3) 60%);
     }
 
-    /* ===== Header layout: brand left, tabs centered, toggle far right ===== */
+    /* 
+    ===== Header layout: brand left, tabs centered, toggle far right ===== */
     .header{
       display:grid; grid-template-columns: 1fr auto 1fr; align-items:center;
       gap:10px; margin:8px 0 12px;
