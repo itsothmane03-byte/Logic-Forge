@@ -66,6 +66,45 @@
         linear-gradient(to bottom,var(--sky-top) 0%,var(--sky-mid) 45%,#0000 45%),
         radial-gradient(100% 80% at 50% 100%, var(--sand-1) 0, var(--sand-2) 50%, var(--sand-3) 60%);
     }
+<!-- Place right after <body> -->
+<div class="bg" aria-hidden="true"></div>
+
+<style>
+/* ---- Tokens for the backdrop ---- */
+:root{
+  --sky-top:#eaf6ff;
+  --sky-mid:#dff1ff;
+  --sand-1:#ffe6b3; --sand-2:#ffd082; --sand-3:#f2c36a;
+}
+html[data-theme="dark"]{
+  --sky-top:#0f1a25; --sky-mid:#102330;
+  --sand-1:#17232f; --sand-2:#121e2a; --sand-3:#0b1621;
+}
+
+/* ---- Hero background: photo with gradient fallback ---- */
+.bg{
+  position:fixed; inset:0; z-index:-1;
+
+  /* Fallback if image-set is unsupported */
+  background:
+    url('assets/hero.jpg') center/cover no-repeat,
+    radial-gradient(60% 35% at 50% 10%, rgba(255,255,255,.20) 0, rgba(255,255,255,0) 60%),
+    linear-gradient(to bottom,var(--sky-top) 0%,var(--sky-mid) 45%,#0000 45%),
+    radial-gradient(100% 80% at 50% 100%, var(--sand-1) 0, var(--sand-2) 50%, var(--sand-3) 60%);
+
+  /* Preferred: WebP/JPEG selection */
+  background:
+    image-set(
+      url('assets/hero.webp') type('image/webp') 1x,
+      url('assets/hero.jpg')  type('image/jpeg') 1x
+    ) center/cover no-repeat,
+    radial-gradient(60% 35% at 50% 10%, rgba(255,255,255,.20) 0, rgba(255,255,255,0) 60%),
+    linear-gradient(to bottom,var(--sky-top) 0%,var(--sky-mid) 45%,#0000 45%),
+    radial-gradient(100% 80% at 50% 100%, var(--sand-1) 0, var(--sand-2) 50%, var(--sand-3) 60%);
+}
+
+/* Optional: if you want only colors, comment out the two url/image-set lines above. */
+</style>
 
     /* ===== Header layout: brand left, tabs centered, toggle far right ===== */
     .header{
