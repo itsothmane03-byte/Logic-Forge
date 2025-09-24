@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Fallacy Forge</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css"/>
+
 <style>
+/* ---- Base tokens ---- */
 :root{
   --bg:#f7faff;
   --card:#ffffff;
@@ -13,147 +15,92 @@
   --muted:#64748b;
   --line:#e2e8f0;
   --accent:#4f56ff;
+  --accent-2:#8f94fb;
   --radius:12px;
-}
 
-body {
-  margin:0;
-  font-family: system-ui, sans-serif;
-  color: var(--fg);
-  background: var(--bg);
+  /* hero “dawn” surface */
+  --sky-top:#eaf6ff;
+  --sky-mid:#dff1ff;
 }
+html,body{height:100%;}
+body{margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif; color:var(--fg); background:var(--bg);}
 
+/* ---- Header ---- */
 header{
-  padding:1rem 2rem;
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
-  background: var(--bg);
+  padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; background:var(--bg);
 }
-
 header nav a{
-  margin-right:1rem;
-  text-decoration:none;
-  color: var(--fg);
-  font-weight:600;
+  margin-right:1rem; text-decoration:none; color:var(--fg); font-weight:600;
 }
+header nav a:hover{ color:var(--accent); }
 
-header nav a:hover {
-  color: var(--accent);
-}
-
+/* ---- Hero with curved separator + light texture ---- */
 #hero{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-  padding:4rem 2rem;
-  background: linear-gradient(to bottom,var(--sky-top,#b4d4ff),var(--sky-mid,#eaf3ff) 60%, var(--bg) 100%);
-  position: relative;
+  position:relative; padding:4rem 2rem; display:flex; flex-wrap:wrap; align-items:center; gap:2rem;
+  background:
+    radial-gradient(60% 35% at 50% 8%, rgba(255,255,255,.25) 0, rgba(255,255,255,0) 60%),
+    linear-gradient(to bottom, var(--sky-top) 0%, var(--sky-mid) 55%, var(--bg) 100%);
 }
-
 #hero::after{
-  content:'';
-  position:absolute;
-  bottom: -1px;
-  left:0;
-  width:100%;
-  height:120px;
-  background: radial-gradient(80% 140% at 50% 100%, #ffffff 0%, #ffffff 60%, transparent 80%);
+  /* soft downward curve */
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:120px;
+  background: radial-gradient(120% 100% at 50% -10%, #ffffff 55%, rgba(255,255,255,0) 60%);
 }
-
-.hero-left{
-  flex:1 1 300px;
-  padding-right:2rem;
-}
-
-.hero-left h1{
-  margin-top:0;
-  font-size:2.4rem;
-  line-height:1.2;
-}
-
-.hero-left p{
-  font-size:1.1rem;
-  color: var(--muted);
-}
-
-.hero-cta{
-  margin-top:1.5rem;
-}
+.hero-left{flex:1 1 420px; max-width:720px}
+.hero-left h1{margin:0 0 .5rem; font-size:2.6rem; line-height:1.15;}
+.hero-left p{margin:0; font-size:1.1rem; color:var(--muted);}
+.hero-cta{margin-top:1.25rem; display:flex; gap:.75rem; flex-wrap:wrap;}
 
 .btn{
-  display:inline-block;
-  padding:0.75rem 1.5rem;
-  border-radius:0.75rem;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  transition:transform 0.25s ease, box-shadow 0.25s ease;
+  display:inline-block; padding:.75rem 1.2rem; border-radius:.75rem; border:1px solid transparent;
+  font-weight:650; cursor:pointer; transition:transform .22s ease, box-shadow .22s ease, background .22s;
 }
+.btn-primary{color:#fff; background:linear-gradient(135deg,var(--accent) 0%, var(--accent-2) 100%); box-shadow:0 6px 18px rgba(0,0,0,.12);}
+.btn-primary:hover{transform:translateY(-2px) scale(1.02);}
+.btn-secondary{color:var(--accent); background:#fff; border-color:var(--accent);}
+.btn-secondary:hover{background:#f5f7ff}
 
-.btn-primary{
-  color:#fff;
-  background: linear-gradient(135deg, #4f56ff 0%, #8f94fb 100%);
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  margin-right:1rem;
-}
+/* ---- Layout cards ---- */
+#features{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.5rem; padding:2rem;}
+.card{background:var(--card); border:1px solid var(--line); border-radius:.9rem; box-shadow:0 4px 12px rgba(0,0,0,.05); padding:1.5rem 1.5rem;}
+.card h2{margin:.25rem 0 1rem; font-size:1.4rem;}
+.card input, .card select{width:100%; padding:.6rem .7rem; border:1px solid var(--line); border-radius:.6rem; font:inherit; margin:.35rem 0 1rem;}
+.card .btn{margin-right:.5rem}
 
-.btn-primary:hover{
-  transform:translateY(-2px) scale(1.03);
-  box-shadow:0 6px 18px rgba(0,0,0,0.15);
-}
-
-.btn-primary:active{
-  transform:scale(0.97);
-  box-shadow:0 2px 6px rgba(0,0,0,0.08);
-}
-
-.btn-secondary{
-  color: var(--accent);
-  background:#fff;
-  border:1px solid var(--accent);
-}
-
-.btn-secondary:hover{
-  background: #f5f7ff;
-}
-
-#features{
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap:1.5rem;
-  padding:2rem;
-}
-
-.card{
-  background: var(--card);
-  border:1px solid var(--line);
-  border-radius:0.75rem;
-  box-shadow:0 4px 12px rgba(0,0,0,0.05);
-  padding:2rem;
-}
-
-.card h2{
-  margin-top:0;
-  font-size:1.5rem;
-}
-
-.card select,
-.card input[type="search"],
-.card input[type="text"]{
-  width:100%;
-  padding:0.5rem;
-  border-radius:0.5rem;
-  border:1px solid var(--line);
-  margin-bottom:1rem;
-}
-
-.card button{
-  margin-right:0.5rem;
-}
+/* ---- Library UI ---- */
+.lib-controls{display:grid; grid-template-columns:1fr; gap:.7rem; margin-bottom:1rem;}
+.lib-input{padding:.7rem 1rem; border:1px solid var(--line); border-radius:.7rem; font:inherit;}
+.lib-filters{display:flex; gap:.5rem; flex-wrap:wrap;}
+.lib-pill{border:1px solid var(--line); background:#fff; border-radius:999px; padding:.35rem .8rem; font-size:.88rem; cursor:pointer; transition:.15s}
+.lib-pill.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+.lib-stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:.75rem; margin:.3rem 0 1rem;}
+.lib-stat{border:1px solid var(--line); border-radius:12px; padding:.8rem; background:#fff}
+.lib-stat .v{font-weight:700; font-size:1.2rem; color:var(--accent)}
+.lib-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem}
+.f-card{border:1px solid var(--line); border-radius:16px; padding:1rem; background:#fff; transition:transform .18s, box-shadow .18s; will-change:transform}
+.f-card:hover{transform:translateY(-3px); box-shadow:0 10px 22px rgba(0,0,0,.08)}
+.f-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#cbd5ff,#e9ecff);color:#1f2937;font-weight:750; font-size:1.1rem}
+.f-title{margin:.6rem 0 0; font-weight:750}
+.f-latin{margin:.15rem 0 .55rem; font-style:italic; color:#475569; font-size:.92rem}
+.f-desc{color:#475569; font-size:.96rem; line-height:1.5}
+.f-foot{display:flex; justify-content:space-between; align-items:center; margin-top:.7rem}
+.badge{font-size:.7rem;border-radius:10px;padding:.2rem .5rem;border:1px solid #e2e8f0;text-transform:capitalize}
+.badge.formal{color:#334155;background:#eef2ff;border-color:#c7d2fe}
+.badge.informal{color:#3f6212;background:#ecfccb;border-color:#bef264}
+.badge.cognitive{color:#7c2d12;background:#ffedd5;border-color:#fdba74}
+.dots{display:flex; gap:4px}
+.dot{width:6px;height:6px;border-radius:50%;background:#e2e8f0}
+.dot.on{background:var(--accent)}
+.btnrow{display:flex; gap:.5rem; margin-top:.75rem}
+.btn-min{border:1px solid var(--line); background:#fff; border-radius:8px; padding:.45rem .65rem; font-size:.85rem; cursor:pointer}
+.btn-min.primary{background:var(--accent); color:#fff; border-color:var(--accent)}
+/* ---- Reveal on scroll ---- */
+.reveal{opacity:0; transform:translateY(12px); transition:opacity .45s ease, transform .45s ease;}
+.reveal.on{opacity:1; transform:none;}
 </style>
 </head>
+
 <body>
 <header>
   <nav>
@@ -162,20 +109,23 @@ header nav a:hover {
     <a href="#library">Library</a>
   </nav>
 </header>
-<section id="hero">
+
+<section id="hero" class="reveal on"><!-- on for first paint -->
   <div class="hero-left">
     <h1>Sharpen your reasoning.</h1>
-    <p>Practice drills, instant feedback and no accounts. Master logical fallacies with Fallacy Forge.</p>
+    <p>Fast drills. Clear feedback. No accounts.</p>
     <div class="hero-cta">
       <button class="btn btn-primary" onclick="document.getElementById('arena').scrollIntoView({behavior:'smooth'})">Start practicing</button>
       <button class="btn btn-secondary" onclick="document.getElementById('library').scrollIntoView({behavior:'smooth'})">Browse library</button>
     </div>
   </div>
 </section>
+
 <div id="features">
-  <section id="arena" class="card">
+  <!-- Arena -->
+  <section id="arena" class="card reveal">
     <h2>Practice Arena</h2>
-    <p>Pick a fallacy, get an example and decide if it fits.</p>
+    <p>Pick a fallacy, get an example, decide if it fits.</p>
     <label for="label" class="sr-only">Choose fallacy</label>
     <select id="label"></select>
     <p id="prop"></p>
@@ -184,13 +134,15 @@ header nav a:hover {
     <p id="fb"></p>
     <p id="similar"></p>
   </section>
-  <section id="gauntlet" class="card">
+
+  <!-- Gauntlet -->
+  <section id="gauntlet" class="card reveal">
     <h2>Gauntlet</h2>
-    <p>Test yourself with a 10‑question gauntlet. Questions are randomised each time.</p>
-    <input id="g-seed" type="hidden">
-    <label for="g-label" style="margin-top:1rem;">Level</label>
+    <p>Ten questions. Increasing difficulty. Fresh each run.</p>
+    <input id="g-seed" type="hidden" />
+    <label for="g-label">Level</label>
     <select id="g-label"></select>
-    <button id="g-start" class="btn btn-primary" style="margin-top:0.5rem;">Start</button>
+    <button id="g-start" class="btn btn-primary" style="margin-top:.5rem">Start</button>
     <div id="g-run" style="display:none;">
       <p id="g-progress"></p>
       <p id="g-prop"></p>
@@ -198,26 +150,147 @@ header nav a:hover {
     </div>
     <div id="g-results" style="display:none;"></div>
   </section>
-  <section id="library" class="card">
+
+  <!-- Library (new) -->
+  <section id="library" class="card reveal">
     <h2>Library</h2>
-    <input id="lib-q" type="search" placeholder="Search fallacies...">
-    <select id="lib-level">
-      <option value="all">All levels</option>
-      <option value="beginner">Beginner</option>
-      <option value="intermediate">Intermediate</option>
-      <option value="advanced">Advanced</option>
-    </select>
-    <div id="lib-list"></div>
+    <div class="lib-controls">
+      <input id="lib-search" class="lib-input" type="search" placeholder="Search fallacies…"/>
+      <div id="lib-filters" class="lib-filters"></div>
+    </div>
+    <div id="lib-stats" class="lib-stats"></div>
+    <div id="lib-grid" class="lib-grid"></div>
   </section>
 </div>
+
+<!-- keep your existing logic -->
 <script src="rotation.js"></script>
 <script src="app.js"></script>
+
 <script>
-// automatically set a random seed for Gauntlet
-document.addEventListener('DOMContentLoaded', () => {
+/* ========= Small integration layer: no framework, just DOM ========= */
+
+/* 1) Hide seed and auto-randomize */
+(function(){
   const seedEl = document.getElementById('g-seed');
-  if(seedEl) seedEl.value = Date.now().toString();
-});
+  if (!seedEl) return;
+  try {
+    seedEl.value = String(crypto.getRandomValues(new Uint32Array(1))[0]);
+  } catch { seedEl.value = String(Date.now()); }
+  seedEl.type = 'hidden';
+})();
+
+/* 2) Force Gauntlet select to show difficulty levels (not fallacies) */
+(function(){
+  const sel = document.getElementById('g-label');
+  if(!sel) return;
+  const opts = [
+    {v:'beginner', t:'Beginner'},
+    {v:'intermediate', t:'Intermediate'},
+    {v:'advanced', t:'Advanced'}
+  ];
+  sel.innerHTML = '';
+  for (const o of opts) {
+    const el = document.createElement('option'); el.value = o.v; el.textContent = o.t; sel.appendChild(el);
+  }
+})();
+
+/* 3) Library builder. Expects global F[] from app.js */
+(function(){
+  if (!Array.isArray(window.F)) return; // safety
+  const F = window.F;
+
+  // Build category pills from data
+  const counts = F.reduce((m,f)=>{m[f.category]=(m[f.category]||0)+1; return m;}, {});
+  const filters = [{key:'all',label:'All',count:F.length}]
+    .concat(Object.keys(counts).map(k=>({key:k,label:k[0].toUpperCase()+k.slice(1),count:counts[k]})));
+
+  const $filters = document.getElementById('lib-filters');
+  const $stats   = document.getElementById('lib-stats');
+  const $grid    = document.getElementById('lib-grid');
+  const $q       = document.getElementById('lib-search');
+
+  // Category pills
+  filters.forEach((f,i)=>{
+    const b = document.createElement('button');
+    b.className = 'lib-pill' + (i===0 ? ' active':'');
+    b.dataset.k = f.key;
+    b.innerHTML = `${f.label} <span class="count">(${f.count})</span>`;
+    b.onclick = () => { document.querySelectorAll('.lib-pill').forEach(p=>p.classList.remove('active')); b.classList.add('active'); render(); };
+    $filters.appendChild(b);
+  });
+
+  // Stats from localStorage
+  const mastery = parseInt(localStorage.getItem('mastery')||'0',10);
+  const quizzes = parseInt(localStorage.getItem('quizzes')||'0',10);
+  const streak  = parseInt(localStorage.getItem('streak') ||'0',10);
+  $stats.innerHTML = [
+    {k:'Total Fallacies', v:F.length},
+    {k:'Mastery Progress', v: mastery+'%'},
+    {k:'Completed Quizzes', v: quizzes},
+    {k:'Streak Days', v: streak},
+  ].map(s=>`<div class="lib-stat"><div class="v">${s.v}</div><div>${s.k}</div></div>`).join('');
+
+  // Academic glyphs, not emojis
+  const glyph = (cat)=>({formal:'∴',informal:'≠',cognitive:'∵'}[cat]||'∴');
+
+  // Buttons wire-up: sets Arena select then scrolls
+  function studyOrPractice(idOrName){
+    const sel = document.getElementById('label');
+    if (!sel) return;
+    const matchIdx = [...sel.options].findIndex(o => o.value===idOrName || o.textContent===idOrName);
+    if (matchIdx >= 0) sel.selectedIndex = matchIdx;
+    document.getElementById('arena').scrollIntoView({behavior:'smooth'});
+  }
+
+  function card(f){
+    const lvl = Math.max(0, Math.min(3, f.level|0));
+    const id  = f.id || f.name;
+    return `
+      <div class="f-card">
+        <div class="f-icon">${glyph(f.category)}</div>
+        <div class="f-title">${f.name}</div>
+        <div class="f-latin">${f.latin||''}</div>
+        <div class="f-desc">${f.description}</div>
+        <div class="f-foot">
+          <span class="badge ${f.category}">${f.category}</span>
+          <div class="dots">
+            <span class="dot ${lvl>0?'on':''}"></span>
+            <span class="dot ${lvl>1?'on':''}"></span>
+            <span class="dot ${lvl>2?'on':''}"></span>
+          </div>
+        </div>
+        <div class="btnrow">
+          <button class="btn-min primary" onclick="(${studyOrPractice})('${id}')">Study</button>
+          <button class="btn-min" onclick="(${studyOrPractice})('${id}')">Practice</button>
+        </div>
+      </div>`;
+  }
+
+  function render(){
+    const active = (document.querySelector('.lib-pill.active')?.dataset.k) || 'all';
+    const term = ($q.value||'').trim().toLowerCase();
+    const list = F.filter(f=>{
+      const catOk = active==='all' || f.category===active;
+      const qOk = !term || (f.name + (f.latin||'') + f.description + (f.example||'')).toLowerCase().includes(term);
+      return catOk && qOk;
+    });
+    $grid.innerHTML = list.map(card).join('');
+  }
+
+  $q.addEventListener('input', render);
+  render();
+})();
+
+/* 4) Subtle scroll-reveal */
+(function(){
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { items.forEach(i=>i.classList.add('on')); return; }
+  const io = new IntersectionObserver((entries)=>{
+    for (const e of entries){ if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }
+  }, {threshold:.12});
+  items.forEach(el=>io.observe(el));
+})();
 </script>
 </body>
 </html>
