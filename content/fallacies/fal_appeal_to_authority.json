@@ -1,0 +1,21 @@
+{
+  "id": "fal_appeal_to_authority",
+  "name": "Appeal to Authority",
+  "aliases": ["Argument from authority", "False authority"],
+  "family": "appeals",
+  "difficulty": "beginner",
+  "shortDef": "Treating someone's say-so as proof, especially outside their expertise.",
+  "definition": "Accepting a claim because an authority figure endorses it when that person lacks expertise in the topic, speaks against the consensus of their field, or offers nothing beyond their status.",
+  "howToSpot": [
+    "Is the authority an expert in this specific topic?",
+    "Do other experts in that field agree, or is this one voice?",
+    "Is there evidence behind the endorsement, or just a title or fame?"
+  ],
+  "classicExample": "A famous quarterback swears by these magnetic insoles, so they must fix back pain.",
+  "legitimateVersion": "Relying on experts is reasonable when they speak within their field and reflect its consensus, like trusting independent structural engineers about a crack in your foundation.",
+  "confusableWith": ["fal_bandwagon", "fal_genetic_fallacy"],
+  "contrast": {
+    "fal_bandwagon": "Appeal to authority leans on one esteemed source; bandwagon leans on how many people believe or do something.",
+    "fal_genetic_fallacy": "Appeal to authority accepts a claim because of who vouches for it; the genetic fallacy judges a claim by its origin or history."
+  }
+}

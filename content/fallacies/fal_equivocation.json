@@ -1,0 +1,21 @@
+{
+  "id": "fal_equivocation",
+  "name": "Equivocation",
+  "aliases": ["Shifting meaning", "Ambiguous term"],
+  "family": "language",
+  "difficulty": "advanced",
+  "shortDef": "Shifting between two meanings of the same word within one argument.",
+  "definition": "Using a key word or phrase in one sense in one part of an argument and a different sense in another, so the conclusion seems to follow when it only follows because the word sounds the same.",
+  "howToSpot": [
+    "Find the key word and ask what it means each time it appears.",
+    "Swap in a precise synonym each time: does the argument still work?",
+    "Watch technical words with everyday meanings, like 'significant' or 'theory'."
+  ],
+  "classicExample": "The sign said 'fine for parking here,' so I figured parking there was fine.",
+  "legitimateVersion": "Using a word with several meanings is fine when its sense stays fixed throughout, or when the speaker spells out which meaning applies and reasons from that one.",
+  "confusableWith": ["fal_straw_man", "fal_false_analogy"],
+  "contrast": {
+    "fal_straw_man": "A straw man distorts someone else's position; equivocation shifts the meaning of a word inside the argument itself.",
+    "fal_false_analogy": "A false analogy compares two things that differ in key ways; equivocation treats two meanings of one word as if they were the same."
+  }
+}

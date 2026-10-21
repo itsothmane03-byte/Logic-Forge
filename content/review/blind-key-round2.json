@@ -1,0 +1,212 @@
+{
+ "r001": {
+  "id": "itm_bandwagon_06",
+  "isSound": false,
+  "fallacyId": "fal_bandwagon",
+  "resembles": null,
+  "changed": true
+ },
+ "r002": {
+  "id": "itm_appeal_to_emotion_03",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_emotion",
+  "resembles": null,
+  "changed": true
+ },
+ "r003": {
+  "id": "itm_appeal_to_consequences_06",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_consequences",
+  "resembles": null,
+  "changed": true
+ },
+ "r004": {
+  "id": "itm_bandwagon_04",
+  "isSound": false,
+  "fallacyId": "fal_bandwagon",
+  "resembles": null,
+  "changed": true
+ },
+ "r005": {
+  "id": "itm_tu_quoque_01",
+  "isSound": false,
+  "fallacyId": "fal_tu_quoque",
+  "resembles": null,
+  "changed": false
+ },
+ "r006": {
+  "id": "itm_cherry_picking_03",
+  "isSound": false,
+  "fallacyId": "fal_cherry_picking",
+  "resembles": null,
+  "changed": true
+ },
+ "r007": {
+  "id": "itm_slippery_slope_06",
+  "isSound": false,
+  "fallacyId": "fal_slippery_slope",
+  "resembles": null,
+  "changed": false
+ },
+ "r008": {
+  "id": "itm_moving_the_goalposts_02",
+  "isSound": false,
+  "fallacyId": "fal_moving_the_goalposts",
+  "resembles": null,
+  "changed": true
+ },
+ "r009": {
+  "id": "itm_snd_circular_reasoning_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_circular_reasoning",
+  "changed": true
+ },
+ "r010": {
+  "id": "itm_texas_sharpshooter_04",
+  "isSound": false,
+  "fallacyId": "fal_texas_sharpshooter",
+  "resembles": null,
+  "changed": true
+ },
+ "r011": {
+  "id": "itm_false_equivalence_05",
+  "isSound": false,
+  "fallacyId": "fal_false_equivalence",
+  "resembles": null,
+  "changed": false
+ },
+ "r012": {
+  "id": "itm_is_ought_03",
+  "isSound": false,
+  "fallacyId": "fal_is_ought",
+  "resembles": null,
+  "changed": true
+ },
+ "r013": {
+  "id": "itm_texas_sharpshooter_03",
+  "isSound": false,
+  "fallacyId": "fal_texas_sharpshooter",
+  "resembles": null,
+  "changed": true
+ },
+ "r014": {
+  "id": "itm_appeal_to_consequences_05",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_consequences",
+  "resembles": null,
+  "changed": true
+ },
+ "r015": {
+  "id": "itm_snd_moving_the_goalposts_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_moving_the_goalposts",
+  "changed": true
+ },
+ "r016": {
+  "id": "itm_appeal_to_nature_02",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_nature",
+  "resembles": null,
+  "changed": true
+ },
+ "r017": {
+  "id": "itm_appeal_to_emotion_01",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_emotion",
+  "resembles": null,
+  "changed": false
+ },
+ "r018": {
+  "id": "itm_appeal_to_tradition_04",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_tradition",
+  "resembles": null,
+  "changed": true
+ },
+ "r019": {
+  "id": "itm_false_equivalence_04",
+  "isSound": false,
+  "fallacyId": "fal_false_equivalence",
+  "resembles": null,
+  "changed": true
+ },
+ "r020": {
+  "id": "itm_false_equivalence_03",
+  "isSound": false,
+  "fallacyId": "fal_false_equivalence",
+  "resembles": null,
+  "changed": false
+ },
+ "r021": {
+  "id": "itm_moving_the_goalposts_04",
+  "isSound": false,
+  "fallacyId": "fal_moving_the_goalposts",
+  "resembles": null,
+  "changed": true
+ },
+ "r022": {
+  "id": "itm_guilt_by_association_02",
+  "isSound": false,
+  "fallacyId": "fal_guilt_by_association",
+  "resembles": null,
+  "changed": true
+ },
+ "r023": {
+  "id": "itm_snd_hasty_generalization_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_hasty_generalization",
+  "changed": false
+ },
+ "r024": {
+  "id": "itm_snd_false_equivalence_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_false_equivalence",
+  "changed": false
+ },
+ "r025": {
+  "id": "itm_is_ought_05",
+  "isSound": false,
+  "fallacyId": "fal_is_ought",
+  "resembles": null,
+  "changed": true
+ },
+ "r026": {
+  "id": "itm_genetic_fallacy_01",
+  "isSound": false,
+  "fallacyId": "fal_genetic_fallacy",
+  "resembles": null,
+  "changed": true
+ },
+ "r027": {
+  "id": "itm_snd_appeal_to_consequences_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_consequences",
+  "changed": false
+ },
+ "r028": {
+  "id": "itm_snd_no_true_scotsman_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_no_true_scotsman",
+  "changed": false
+ },
+ "r029": {
+  "id": "itm_moving_the_goalposts_05",
+  "isSound": false,
+  "fallacyId": "fal_moving_the_goalposts",
+  "resembles": null,
+  "changed": true
+ },
+ "r030": {
+  "id": "itm_post_hoc_04",
+  "isSound": false,
+  "fallacyId": "fal_post_hoc",
+  "resembles": null,
+  "changed": true
+ }
+}

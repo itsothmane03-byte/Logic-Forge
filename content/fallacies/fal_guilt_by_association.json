@@ -1,0 +1,21 @@
+{
+  "id": "fal_guilt_by_association",
+  "name": "Guilt by Association",
+  "aliases": ["Association fallacy", "Bad company fallacy"],
+  "family": "distraction",
+  "difficulty": "intermediate",
+  "shortDef": "Rejecting a claim or person because of who they're linked with.",
+  "definition": "Judging a claim, product or person as bad because of a link to a disliked person or group, such as a shared supporter, user or venue, instead of evaluating it on its own merits.",
+  "howToSpot": [
+    "Is the claim judged on its reasons, or on who else backs it?",
+    "Ask whether the idea would look fine if someone you liked endorsed it",
+    "Watch for a disliked group or person dropped in where evidence should be"
+  ],
+  "classicExample": "The rival club across town supports the new bike lanes, so they must be a bad idea.",
+  "legitimateVersion": "Associations can be fair evidence about risk, like a repeated partnership with people caught misreporting, but they justify a closer look at the evidence, not a verdict on the claim.",
+  "confusableWith": ["fal_ad_hominem", "fal_genetic_fallacy"],
+  "contrast": {
+    "fal_ad_hominem": "Guilt by association taints a claim through someone else it's linked to; ad hominem attacks the person making the claim directly.",
+    "fal_genetic_fallacy": "Guilt by association points to disliked supporters or users now; the genetic fallacy points to where the idea originally came from."
+  }
+}

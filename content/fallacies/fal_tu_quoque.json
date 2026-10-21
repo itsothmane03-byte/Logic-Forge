@@ -1,0 +1,21 @@
+{
+  "id": "fal_tu_quoque",
+  "name": "Tu Quoque",
+  "aliases": ["Whataboutism", "Appeal to hypocrisy", "You too"],
+  "family": "distraction",
+  "difficulty": "intermediate",
+  "shortDef": "Dodging a criticism by pointing out that the critic does it too.",
+  "definition": "Rejecting a criticism or argument by claiming the person making it is inconsistent or guilty of the same thing, instead of addressing whether the criticism itself is correct.",
+  "howToSpot": [
+    "Does the reply answer the criticism, or turn it back on the critic?",
+    "Would the point be wrong even if the critic behaved perfectly?",
+    "Watch for the critic's own behavior showing up right where an answer should be"
+  ],
+  "classicExample": "You're telling me to stop texting while driving? I've seen you check your phone at red lights.",
+  "legitimateVersion": "Pointing out inconsistency is fair when the question is someone's credibility or fairness, like rule-makers exempting themselves, as long as the original point is still judged on its merits.",
+  "confusableWith": ["fal_ad_hominem", "fal_red_herring"],
+  "contrast": {
+    "fal_ad_hominem": "Tu quoque deflects by saying the critic does it too; ad hominem attacks the critic's character, traits or motives in general.",
+    "fal_red_herring": "Tu quoque turns attention to the critic's own behavior; a red herring shifts to any other topic that dodges the question."
+  }
+}

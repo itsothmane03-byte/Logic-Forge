@@ -1,0 +1,161 @@
+[
+  {
+    "id": "itm_moving_the_goalposts_01",
+    "fallacyId": "fal_moving_the_goalposts",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 1,
+    "format": "chat",
+    "source": "Family chat",
+    "title": null,
+    "passage": "Zara: You said if I got at least a B on the chemistry final, I'd get my phone back. I got a B+!\nDad: Great job, honey, really. Now let's see you keep that up through the end of the semester.\nZara: That was not the deal!!",
+    "cue": "Now let's see you keep that up through the end of the semester.",
+    "explanation": "Dad set a clear bar, at least a B on the final, and Zara cleared it. Instead of keeping his word, he adds a new condition after the fact.",
+    "whyNot": {
+      "fal_special_pleading": "Dad isn't exempting himself from a rule; he swaps in a tougher condition once the first one was met."
+    },
+    "tags": [
+      "parenting",
+      "school"
+    ]
+  },
+  {
+    "id": "itm_moving_the_goalposts_02",
+    "fallacyId": "fal_moving_the_goalposts",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 1,
+    "format": "post",
+    "source": "Tamika Rowe · @tamika_declutters",
+    "title": null,
+    "passage": "Couch update, since people asked: the buyer said he'd pay my $300 asking price if I delivered it. I borrowed my brother's truck and got it to his building. Then it was 'only if you can carry it up to the fourth floor.' Did that too. Now, standing in his living room, he says the cushions are softer than he expected and offers $220.",
+    "cue": "Then it was 'only if you can carry it up to the fourth floor.'",
+    "explanation": "The buyer agreed to $300 with delivery. Each time Tamika met his condition, he set a new one: first the stairs, then a lower price once the couch was already in his living room.",
+    "whyNot": {
+      "fal_special_pleading": "The buyer isn't exempting himself from a rule; he keeps setting a new condition each time Tamika meets the last one."
+    },
+    "tags": [
+      "shopping",
+      "money"
+    ]
+  },
+  {
+    "id": "itm_moving_the_goalposts_03",
+    "fallacyId": "fal_moving_the_goalposts",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 2,
+    "format": "email",
+    "source": "Harriet Quist (Team lead)",
+    "title": "Re: Promotion conversation",
+    "passage": "Hi Tariq, congratulations again on the Larkin launch. In March we agreed that leading a client project end to end, with strong feedback, would make your case, and the client's feedback was glowing. Before I put your name forward, though, I'd like to see you lead a second project and present it at the spring all-hands. Let's revisit in the fall. Best, Harriet",
+    "cue": "Before I put your name forward, though, I'd like to see you lead a second project",
+    "explanation": "Harriet confirms the agreed bar from March and that Tariq met it, then adds two new conditions anyway. The warm tone doesn't change that the target moved after he hit it.",
+    "whyNot": {
+      "fal_no_true_scotsman": "Harriet doesn't redefine who counts as a real leader; she adds new conditions after Tariq met the one they agreed on."
+    },
+    "tags": [
+      "workplace"
+    ]
+  },
+  {
+    "id": "itm_moving_the_goalposts_04",
+    "fallacyId": "fal_moving_the_goalposts",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 2,
+    "format": "headline",
+    "source": "The Harrowby Herald",
+    "title": "Food truck owners say city changed permit rules mid-review",
+    "passage": "Fourteen vendors submitted applications in August that met every item on the city's posted permit checklist. In September, the licensing office quietly updated the online checklist to add a $2 million insurance minimum, then rejected all fourteen. A spokesperson said the applicants \"simply don't meet the current requirements.\"",
+    "cue": "quietly updated the online checklist to add a $2 million insurance minimum, then rejected all fourteen",
+    "explanation": "The vendors met the checklist as it was written when they applied. The office then rewrote it and judged them against the new version, so the bar moved after they had cleared it.",
+    "whyNot": {
+      "fal_special_pleading": "The office isn't exempting a favored applicant; it raises the standard after these vendors had already met the original one."
+    },
+    "tags": [
+      "local-news",
+      "food"
+    ]
+  },
+  {
+    "id": "itm_moving_the_goalposts_05",
+    "fallacyId": "fal_moving_the_goalposts",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 3,
+    "format": "quote",
+    "source": "Commissioner Arturo Benn · Marrowdale Basketball League press conference",
+    "title": null,
+    "passage": "I understand the frustration from Ms. Ortega's camp. Our written criteria for the Rookie of the Year shortlist are 15 starts and a top-ten finish in assists, and yes, she met both. But the selection committee feels a shortlist spot should reflect a full season's body of work, so we've asked that nominees also have 25 starts. She has 21.",
+    "cue": "so we've asked that nominees also have 25 starts",
+    "explanation": "Ortega met both written criteria. The committee's appeal to a \"full season's body of work\" sounds principled, but it appears only after she qualified and is applied to her right away.",
+    "whyNot": {
+      "fal_no_true_scotsman": "The committee doesn't declare Ortega not a \"real\" rookie; it adds a requirement after she met the written criteria."
+    },
+    "tags": [
+      "sports",
+      "media"
+    ]
+  },
+  {
+    "id": "itm_moving_the_goalposts_06",
+    "fallacyId": "fal_moving_the_goalposts",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 3,
+    "format": "review",
+    "source": "Farid N.",
+    "title": "Update: battery fixed, still three stars",
+    "passage": "Update: the firmware patch fixed the battery drain, just like support promised, and the watch now lasts the full three days. I said I'd bump this to five stars if they fixed it. But honestly, a bug like that should have been caught in testing, so I'm holding at three until the next model proves they've sorted out their QA.",
+    "cue": "I'm holding at three until the next model proves they've sorted out their QA",
+    "explanation": "Farid's worry about testing sounds reasonable, but he named the condition for five stars himself, the battery fix, and it was met. He then sets a new test the current product can never pass.",
+    "whyNot": {
+      "fal_special_pleading": "Farid isn't exempting himself from a rule; he set the bar for five stars, saw it met, and swapped in a new one."
+    },
+    "tags": [
+      "tech",
+      "shopping"
+    ]
+  },
+  {
+    "id": "itm_snd_moving_the_goalposts_01",
+    "fallacyId": null,
+    "isSound": true,
+    "resembles": "fal_moving_the_goalposts",
+    "difficulty": 2,
+    "format": "email",
+    "source": "Luisa Marchetti (Hollow Creek Youth Baseball board)",
+    "title": "Re: Treasurer's statements",
+    "passage": "Hi Pat, thank you for sending the bank statements so quickly. One thing: they run through August, but the shortfall we flagged at the meeting is from September to November. Since those are the months in question, I'd ask for just those three statements, and then I'm happy to close this out. Thanks, Luisa",
+    "cue": "the shortfall we flagged at the meeting is from September to November",
+    "explanation": "Luisa asks for more because the original request wasn't actually met: the statements Pat sent stop before the months under question. She also says what would settle it.",
+    "whyNot": {
+      "fal_moving_the_goalposts": "Luisa's standard hasn't changed; the documents sent simply didn't cover the period she asked about in the first place."
+    },
+    "tags": [
+      "money",
+      "sports"
+    ]
+  },
+  {
+    "id": "itm_snd_moving_the_goalposts_02",
+    "fallacyId": null,
+    "isSound": true,
+    "resembles": "fal_moving_the_goalposts",
+    "difficulty": 3,
+    "format": "chat",
+    "source": "IT team · #security",
+    "title": null,
+    "passage": "Noor: You said we'd switch to the new antivirus if it passed the independent lab test. It scored 99%.\nFelix: It did, and I meant it. But yesterday the lab withdrew that report: the vendor had sent them a special build, not the version customers get.\nNoor: Oh, I hadn't seen that.\nFelix: Same deal as before, then. If the retest on the public version holds up, I'm in.",
+    "cue": "the lab withdrew that report: the vendor had sent them a special build",
+    "explanation": "Felix keeps exactly the same standard, an independent lab test. The lab itself withdrew the result because it tested a special build, so the condition was never really met by the product they'd buy.",
+    "whyNot": {
+      "fal_moving_the_goalposts": "Felix's bar hasn't moved: the evidence that seemed to meet it was withdrawn, and he asks for the same test on the real product."
+    },
+    "tags": [
+      "tech",
+      "workplace"
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "id": "fal_is_ought",
+  "name": "Is–Ought Fallacy",
+  "aliases": ["Naturalistic fallacy", "Is–ought gap", "Hume's guillotine"],
+  "family": "language",
+  "difficulty": "advanced",
+  "shortDef": "Concluding what should be done purely from facts about what is.",
+  "definition": "Moving from a description of how things are (what's legal, typical, profitable or possible) to a claim about how they ought to be, without stating or defending the value premise that would connect them.",
+  "howToSpot": [
+    "Do the premises only describe facts, while the conclusion says 'should' or 'fair'?",
+    "What value premise is missing, and would people actually agree with it?",
+    "Does 'can', 'does' or 'is allowed' quietly become 'ought to' or 'it's fine'?"
+  ],
+  "classicExample": "Our software can record every keystroke employees make, so we should be recording them.",
+  "legitimateVersion": "Facts belong in moral and policy arguments. The step to 'should' is fair when the value premise is stated openly, like 'we've committed to protecting student health', and the facts are applied to it.",
+  "confusableWith": ["fal_appeal_to_nature", "fal_appeal_to_tradition"],
+  "contrast": {
+    "fal_appeal_to_nature": "Appeal to nature says natural means good; the is–ought fallacy slides from any kind of fact (legal, typical, profitable) to a 'should'.",
+    "fal_appeal_to_tradition": "Appeal to tradition says it's right because it's always been done; is–ought jumps from how things currently are to how they ought to be."
+  }
+}

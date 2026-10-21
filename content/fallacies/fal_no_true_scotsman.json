@@ -1,0 +1,21 @@
+{
+  "id": "fal_no_true_scotsman",
+  "name": "No True Scotsman",
+  "aliases": ["Purity test", "Ad hoc redefinition"],
+  "family": "framing",
+  "difficulty": "advanced",
+  "shortDef": "Redefining a group to exclude a counterexample instead of revising the claim.",
+  "definition": "Defending a sweeping claim about a group by declaring, once a counterexample appears, that the counterexample was never a \"real\" or \"true\" member, so that nothing could ever count against the claim.",
+  "howToSpot": [
+    "Did a counterexample appear just before the group got redefined?",
+    "Was the \"real member\" condition stated beforehand, or invented on the spot?",
+    "Is membership now defined by fitting the claim itself?"
+  ],
+  "classicExample": "No real fan leaves before the final whistle. Your brother left early? Then he was never a real fan.",
+  "legitimateVersion": "Excluding a case is fair when it fails a definition that was set beforehand and is widely agreed, like pointing out that a \"vegan\" cupcake made with butter isn't vegan.",
+  "confusableWith": ["fal_special_pleading", "fal_moving_the_goalposts"],
+  "contrast": {
+    "fal_special_pleading": "No true Scotsman changes who counts as a member; special pleading keeps the rule but exempts one case from it.",
+    "fal_moving_the_goalposts": "No true Scotsman redefines a group to dodge a counterexample; moving the goalposts raises the bar for proof after it was met."
+  }
+}

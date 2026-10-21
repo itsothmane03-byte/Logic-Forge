@@ -1,0 +1,21 @@
+{
+  "id": "fal_appeal_to_nature",
+  "name": "Appeal to Nature",
+  "aliases": ["Natural fallacy", "Argument from nature"],
+  "family": "appeals",
+  "difficulty": "intermediate",
+  "shortDef": "Assuming something is good because it's natural, or bad because it isn't.",
+  "definition": "Arguing that something is healthy, safe or better because it is natural, or harmful because it is artificial, synthetic or processed, without evidence about its actual effects.",
+  "howToSpot": [
+    "Is 'natural', 'chemical' or 'lab-made' doing the work of evidence?",
+    "Remember many natural things are harmful and many synthetic ones help",
+    "Ask what the evidence says about effects, not about origins"
+  ],
+  "classicExample": "These herbal sleep drops are 100% plant-based, so they must be safer than anything from a pharmacy.",
+  "legitimateVersion": "'Natural' is fair as a description, or when backed by evidence about effects, like choosing a mineral sunscreen because it irritates sensitive skin less.",
+  "confusableWith": ["fal_appeal_to_tradition", "fal_is_ought"],
+  "contrast": {
+    "fal_appeal_to_tradition": "Appeal to nature prizes what's natural or unprocessed; appeal to tradition prizes what's old or customary.",
+    "fal_is_ought": "Appeal to nature says natural means good or safe; is-ought jumps from any fact about how things are to how they should be."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "fal_special_pleading",
+  "name": "Special Pleading",
+  "aliases": ["Double standard", "Unjustified exception"],
+  "family": "framing",
+  "difficulty": "advanced",
+  "shortDef": "Exempting yourself or a favorite from a rule without a relevant reason.",
+  "definition": "Applying a rule or standard to others while carving out an exception for oneself, one's group or a favored case, without giving a difference that is actually relevant to the purpose of the rule.",
+  "howToSpot": [
+    "Is a rule applied to others but waived for the speaker or a favorite?",
+    "What makes this case different, and is that difference relevant to the rule?",
+    "Would the speaker accept the same excuse from someone else?"
+  ],
+  "classicExample": "Everyone should pay their parking tickets on time. Mine are different, though; I was only running in for a minute.",
+  "legitimateVersion": "An exception is fair when there's a stated difference that's relevant to the rule's purpose and would apply to anyone in the same spot, like waiving late fees because the payment system was down.",
+  "confusableWith": ["fal_no_true_scotsman", "fal_moving_the_goalposts"],
+  "contrast": {
+    "fal_no_true_scotsman": "Special pleading exempts a case from a rule; no true Scotsman redefines a group so a counterexample no longer counts as a member.",
+    "fal_moving_the_goalposts": "Special pleading carves out an exception to a standard; moving the goalposts raises the standard after someone has met it."
+  }
+}

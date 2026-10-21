@@ -1,0 +1,21 @@
+{
+  "id": "fal_loaded_question",
+  "name": "Loaded Question",
+  "aliases": ["Complex question", "Presumptive question"],
+  "family": "framing",
+  "difficulty": "intermediate",
+  "shortDef": "Asking a question that presumes something unproven, so any answer concedes it.",
+  "definition": "Building a disputed or unproven assumption into a question, so that answering it directly seems to accept the assumption. The question does the arguing, and the hidden claim never gets supported.",
+  "howToSpot": [
+    "What must already be true for this question to make sense?",
+    "Would a direct answer admit something you never agreed to?",
+    "Is the assumption supported anywhere, or only implied by the wording?"
+  ],
+  "classicExample": "Have you stopped wasting the team's budget on that software yet?",
+  "legitimateVersion": "A question with a built-in assumption is fine when the assumption is established or agreed, like asking \"When did the leak start?\" after everyone has seen the water damage.",
+  "confusableWith": ["fal_false_dichotomy", "fal_circular_reasoning"],
+  "contrast": {
+    "fal_false_dichotomy": "A loaded question hides an assumption inside a question; a false dichotomy openly limits you to two options.",
+    "fal_circular_reasoning": "A loaded question presumes a claim while asking; circular reasoning offers a conclusion as the proof of itself."
+  }
+}

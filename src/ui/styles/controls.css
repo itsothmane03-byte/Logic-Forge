@@ -1,0 +1,411 @@
+/* Controls: tactile buttons, chips, tags, badges, mastery bar, streak chip. */
+
+/* ---------- Buttons (tactile: darker bottom edge that compresses) ---------- */
+
+.btn {
+  --btn-bg: var(--surface);
+  --btn-fg: var(--ink);
+  --btn-border: var(--line-strong);
+  --btn-edge: var(--line-strong);
+  --btn-hover: var(--surface-2);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1.5px solid var(--btn-border);
+  border-radius: var(--r-control);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.1;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 0 0 var(--btn-edge);
+  transition:
+    transform 110ms var(--ease),
+    box-shadow 110ms var(--ease),
+    background-color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+  text-decoration: none;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 0 var(--btn-edge);
+}
+
+.btn:focus-visible {
+  box-shadow:
+    0 2px 0 0 var(--btn-edge),
+    0 0 0 6px var(--accent-soft);
+}
+
+.btn--primary {
+  --btn-bg: var(--accent);
+  --btn-fg: var(--accent-ink);
+  --btn-border: var(--accent-edge);
+  --btn-edge: var(--accent-edge);
+  --btn-hover: color-mix(in oklab, var(--accent) 86%, white);
+}
+
+.btn--ink {
+  --btn-bg: var(--ink);
+  --btn-fg: var(--bg);
+  --btn-border: var(--ink);
+  --btn-edge: color-mix(in oklab, var(--ink) 60%, var(--bg));
+  --btn-hover: color-mix(in oklab, var(--ink) 88%, var(--bg));
+}
+
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  --btn-edge: transparent;
+  box-shadow: none;
+}
+
+.btn--danger {
+  --btn-fg: var(--bad);
+}
+
+.btn--lg {
+  min-height: 56px;
+  padding: 0 26px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  border-radius: 12px;
+}
+
+.btn--sm {
+  min-height: 44px;
+  padding: 0 14px;
+  font-size: 0.9375rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn:disabled {
+  --btn-bg: var(--surface-2);
+  --btn-fg: var(--ink-3);
+  --btn-border: var(--line);
+  --btn-edge: var(--line);
+  cursor: not-allowed;
+}
+
+.btn__kbd {
+  margin-left: 2px;
+  padding: 2px 6px;
+  border: 1px solid color-mix(in srgb, currentColor 45%, transparent);
+  border-radius: 6px;
+  font-size: 0.6875rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+@media (hover: none), (max-width: 767px) {
+  .btn__kbd {
+    display: none;
+  }
+}
+
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.icon-btn:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+.icon-btn--glyph span {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 2px;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+  cursor: pointer;
+}
+
+.text-link:hover {
+  text-decoration-thickness: 3px;
+}
+
+.text-link--strong {
+  font-size: 1.0625rem;
+}
+
+/* ---------- Chips, tags, badges ---------- */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    background-color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.chip--link:hover,
+.chip--filter:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+}
+
+.chip--filter {
+  cursor: pointer;
+}
+
+.chip--filter.is-on {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.chip--filter.is-on .family-dot {
+  box-shadow: 0 0 0 2px var(--bg);
+}
+
+.chip--up {
+  border-color: color-mix(in srgb, var(--good) 35%, var(--line));
+  background: var(--good-soft);
+  color: var(--good);
+}
+
+.chip--down {
+  border-color: color-mix(in srgb, var(--bad) 30%, var(--line));
+  background: var(--bad-soft);
+  color: var(--bad);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  color: var(--ink-2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.tag__bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 10px;
+}
+
+.tag__bars i {
+  width: 3px;
+  border-radius: 1px;
+  background: var(--ink-2);
+}
+
+.tag__bars i:nth-child(1) {
+  height: 4px;
+}
+
+.tag__bars i:nth-child(2) {
+  height: 7px;
+}
+
+.tag__bars i:nth-child(3) {
+  height: 10px;
+}
+
+.tag__bars i:not(:first-child):not(.on) {
+  background: var(--line-strong);
+}
+
+.family-dot {
+  --fam-color: var(--ink-3);
+  display: inline-block;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--fam-color);
+}
+
+.family-dot--distraction { --fam-color: var(--fam-distraction); }
+.family-dot--emotion { --fam-color: var(--fam-emotion); }
+.family-dot--appeals { --fam-color: var(--fam-appeals); }
+.family-dot--evidence { --fam-color: var(--fam-evidence); }
+.family-dot--framing { --fam-color: var(--fam-framing); }
+.family-dot--language { --fam-color: var(--fam-language); }
+
+.family-dot-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.family-dot__label {
+  font-size: 0.8125rem;
+  font-weight: 650;
+  color: var(--ink-2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+  font-size: 0.75rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.badge--correct {
+  background: var(--good-soft);
+  color: var(--good);
+}
+
+.badge--partial {
+  background: var(--warn-soft);
+  color: var(--warn);
+}
+
+.badge--wrong {
+  background: var(--bad-soft);
+  color: var(--bad);
+}
+
+.kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 2px;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font: 650 0.8125rem/1 var(--font-mono);
+}
+
+/* ---------- Mastery bar ---------- */
+
+.mastery {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.mastery__track {
+  position: relative;
+  flex: 1;
+  height: 8px;
+  overflow: hidden;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.mastery__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.mastery__text {
+  min-width: 3.2ch;
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.mastery--new .mastery__text {
+  color: var(--ink-3);
+}
+
+.mastery--compact .mastery__track {
+  height: 6px;
+}
+
+/* ---------- Streak chip ---------- */
+
+.streak-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: var(--r-pill);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.9375rem;
+  font-weight: 750;
+}
+
+.streak-chip .icon {
+  color: var(--accent);
+}

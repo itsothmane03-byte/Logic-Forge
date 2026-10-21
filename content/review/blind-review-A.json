@@ -1,0 +1,1376 @@
+[
+  {
+    "q": "q001",
+    "verdict": "flawed",
+    "top1": "fal_false_equivalence",
+    "runnerUp": "fal_red_herring",
+    "confidence": 3,
+    "flags": [],
+    "note": "A 1% fee is 20x the 0.05% fee; calling the gap a rounding error equates them. The pivot to 'staying invested' is a secondary dodge."
+  },
+  {
+    "q": "q002",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_authority",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A dentist's say-so on phone software: authority outside his expertise, trusted explicitly because he is 'a doctor'."
+  },
+  {
+    "q": "q003",
+    "verdict": "flawed",
+    "top1": "fal_special_pleading",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Dev endorses quiet hours, then exempts his own party because it's his birthday, an irrelevant reason."
+  },
+  {
+    "q": "q004",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the waiver serves the fee's own purpose; paying on time was impossible during the outage, and the rule resumes next month."
+  },
+  {
+    "q": "q005",
+    "verdict": "flawed",
+    "top1": "fal_false_equivalence",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Equal duration is treated as equal calorie burn; strolling and HIIT differ greatly in intensity, the factor that matters."
+  },
+  {
+    "q": "q006",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_emotion",
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "A real reason is given, but loyalty/guilt ('nobody will let the others down') does the persuading. Mild; could read as ordinary morale talk."
+  },
+  {
+    "q": "q007",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_tradition",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The batter is judged wrong solely because the recipe dates to 1958; he didn't even taste the new version."
+  },
+  {
+    "q": "q008",
+    "verdict": "flawed",
+    "top1": "fal_cherry_picking",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The ad headlines one 31% year; its own fine print shows -8%, 2%, -4% and 5% for the other years."
+  },
+  {
+    "q": "q009",
+    "verdict": "flawed",
+    "top1": "fal_composition",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Each supplement being safe alone doesn't make the combination safe; interactions (e.g. St. John's wort) are the risk."
+  },
+  {
+    "q": "q010",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: absence of gluten does carry from certified ingredients to the cake, and the dedicated kitchen rules out cross-contact."
+  },
+  {
+    "q": "q011",
+    "verdict": "flawed",
+    "top1": "fal_burden_of_proof",
+    "runnerUp": "fal_appeal_to_ignorance",
+    "confidence": 3,
+    "flags": [],
+    "note": "He asserts deliberate throttling, offers no evidence, and demands the company disprove it. The ignorance label also fits."
+  },
+  {
+    "q": "q012",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: three experts, including the defenders' own, converge on drill data; relying on that agreement is warranted."
+  },
+  {
+    "q": "q013",
+    "verdict": "flawed",
+    "top1": "fal_moving_the_goalposts",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The agreed criterion (lead a project, strong feedback) was met; a second project and a presentation are added afterward."
+  },
+  {
+    "q": "q014",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: Keon checks the actual payout terms rather than relying on reputation; a 90-day hold is a relevant timing risk."
+  },
+  {
+    "q": "q015",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Sound: forward-looking costs ($4,600) exceed the car's value. Slightly thin, since replacement cost isn't priced, but adequate."
+  },
+  {
+    "q": "q016",
+    "verdict": "flawed",
+    "top1": "fal_sunk_cost",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "They refuse to sell below the $480k they paid. The past price is irrelevant to current value, yet they accept two mortgages to avoid 'a loss'."
+  },
+  {
+    "q": "q017",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Sound: a direct trial with measured results backs the old oven, not tradition. One winter month is limited evidence."
+  },
+  {
+    "q": "q018",
+    "verdict": "flawed",
+    "top1": "fal_composition",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Wholesome ingredients don't guarantee a healthy whole; honey, dates and coconut oil make a calorie- and sugar-dense bar."
+  },
+  {
+    "q": "q019",
+    "verdict": "flawed",
+    "top1": "fal_anecdotal_evidence",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "One man's injury-free commute is used to dismiss the head-injury studies."
+  },
+  {
+    "q": "q020",
+    "verdict": "flawed",
+    "top1": "fal_burden_of_proof",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "She asserts certainty about the cause, declines to give numbers, and tells the council to disprove it."
+  },
+  {
+    "q": "q021",
+    "verdict": "flawed",
+    "top1": "fal_composition",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sixteen parts in series at 99% each give roughly 85% overall (0.99^16); the parts' reliability isn't the system's."
+  },
+  {
+    "q": "q022",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: mechanism, relevant pediatric advice and an observed result support a modest claim limited to her daughter."
+  },
+  {
+    "q": "q023",
+    "verdict": "flawed",
+    "top1": "fal_division",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The region's 120% result is used to rate every individual as exceeding; team success doesn't show each member's performance."
+  },
+  {
+    "q": "q024",
+    "verdict": "flawed",
+    "top1": "fal_middle_ground",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Splits the difference between two conflicting studies into 'mildly risky' without weighing their quality."
+  },
+  {
+    "q": "q025",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: a definitional argument. Vegan excludes animal products; butter and honey are animal products, so the label is wrong."
+  },
+  {
+    "q": "q026",
+    "verdict": "flawed",
+    "top1": "fal_middle_ground",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Assumes the truth lies between residents' anecdotes and measured data; it also treats the two as equally weighty."
+  },
+  {
+    "q": "q027",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_fear",
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Valid reasons (warranty, version history) are present, but compliance is pushed with an exaggerated job-loss threat."
+  },
+  {
+    "q": "q028",
+    "verdict": "flawed",
+    "top1": "fal_texas_sharpshooter",
+    "runnerUp": "fal_false_cause",
+    "confidence": 2,
+    "flags": [],
+    "note": "The circle's radius is chosen after mapping, with no baseline for where reports cluster. Its center is set in advance, so false cause also fits."
+  },
+  {
+    "q": "q029",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_ignorance",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "After only three months, 'no evidence it works' is taken as proof that it doesn't work."
+  },
+  {
+    "q": "q030",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_ignorance",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Treats the lack of a disproof as proof that the creature is real."
+  },
+  {
+    "q": "q031",
+    "verdict": "flawed",
+    "top1": "fal_division",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The best phone overall needn't be best at every component, such as the selfie camera."
+  },
+  {
+    "q": "q032",
+    "verdict": "flawed",
+    "top1": "fal_special_pleading",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "His stated rule is that excuses don't count, then he accepts excuses for his favorite restaurant."
+  },
+  {
+    "q": "q033",
+    "verdict": "flawed",
+    "top1": "fal_hasty_generalization",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "One night and two harbor restaurants are generalized to the whole town."
+  },
+  {
+    "q": "q034",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_fear",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A vague 'strangers' threat and the image of an eight-year-old alone replace any evidence of danger."
+  },
+  {
+    "q": "q035",
+    "verdict": "flawed",
+    "top1": "fal_hasty_generalization",
+    "runnerUp": "fal_anecdotal_evidence",
+    "confidence": 3,
+    "flags": [],
+    "note": "Three self-selected complaining parents are taken to represent all families."
+  },
+  {
+    "q": "q036",
+    "verdict": "flawed",
+    "top1": "fal_post_hoc",
+    "runnerUp": "fal_anecdotal_evidence",
+    "confidence": 3,
+    "flags": [],
+    "note": "Recovery followed the lozenges, but colds typically clear up within a week anyway."
+  },
+  {
+    "q": "q037",
+    "verdict": "flawed",
+    "top1": "fal_false_dichotomy",
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Ignores options such as staffing, triage changes or urgent-care diversion. The budget framing is plausible, so it's moderately subtle."
+  },
+  {
+    "q": "q038",
+    "verdict": "flawed",
+    "top1": "fal_circular_reasoning",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "'Worth it' is supported by 'time well spent', which just restates the conclusion."
+  },
+  {
+    "q": "q039",
+    "verdict": "flawed",
+    "top1": "fal_gamblers_fallacy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Each birth's sex is roughly independent; three boys don't make a girl more likely next time."
+  },
+  {
+    "q": "q040",
+    "verdict": "flawed",
+    "top1": "fal_guilt_by_association",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Rejects a publicly funded trial because chair makers applaud it, not because of its methods."
+  },
+  {
+    "q": "q041",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: a random sample across all wards, high response, majorities in each ward and a stated margin of error support the claim."
+  },
+  {
+    "q": "q042",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_fear",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A vague 'radiation scrambles your food' threat and a 'nobody is talking about it' insinuation, with no evidence of harm."
+  },
+  {
+    "q": "q043",
+    "verdict": "flawed",
+    "top1": "fal_post_hoc",
+    "runnerUp": "fal_false_cause",
+    "confidence": 2,
+    "flags": [],
+    "note": "The worst branches improving next quarter is expected regression to the mean, and there's no comparison group. Post hoc and false cause overlap."
+  },
+  {
+    "q": "q044",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: on-call duty is a relevant reason for an exception, and she extends it to anyone on call. Not special pleading."
+  },
+  {
+    "q": "q045",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: her own use agrees with a standardized independent test, and the conclusion is hedged and limited to office work."
+  },
+  {
+    "q": "q046",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_pity",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Hardship and the need for a scholarship are offered instead of reasons the work earned a higher grade."
+  },
+  {
+    "q": "q047",
+    "verdict": "flawed",
+    "top1": "fal_red_herring",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A question about exposed customer emails is answered with a slogan and a pivot to new features."
+  },
+  {
+    "q": "q048",
+    "verdict": "flawed",
+    "top1": "fal_equivocation",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Shifts from statistically 'significant' (4 minutes) to practically 'significant' (a large health effect)."
+  },
+  {
+    "q": "q049",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the ought follows from an adopted standard (the normative premise) plus measured CO2 and the vendor's fix. Not is-ought."
+  },
+  {
+    "q": "q050",
+    "verdict": "flawed",
+    "top1": "fal_cherry_picking",
+    "runnerUp": "fal_hasty_generalization",
+    "confidence": 2,
+    "flags": [
+      "ambiguous"
+    ],
+    "note": "One grade's gain is spotlighted and the grade 4-5 dips waved off. But the dips are disclosed, so generalizing from one grade fits as well."
+  },
+  {
+    "q": "q051",
+    "verdict": "flawed",
+    "top1": "fal_guilt_by_association",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "She distrusts the tool because the Ostrander team likes it, despite having noted its real merits."
+  },
+  {
+    "q": "q052",
+    "verdict": "flawed",
+    "top1": "fal_moving_the_goalposts",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "He promised five stars if it was fixed; once fixed, he requires the next model to prove its QA."
+  },
+  {
+    "q": "q053",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: a documented hospitalization, a syllabus rule that allows the extension, and a feasible plan. A contrast to appeal to pity."
+  },
+  {
+    "q": "q054",
+    "verdict": "flawed",
+    "top1": "fal_tu_quoque",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Callum deflects the rota complaint by citing Noor's old soaking pot; that doesn't address today's dishes."
+  },
+  {
+    "q": "q055",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_tradition",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Clipboards are defended only because they've been used for three generations."
+  },
+  {
+    "q": "q056",
+    "verdict": "flawed",
+    "top1": "fal_sunk_cost",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Despite $30M more and a decade of losses, the $14M already spent drives the decision."
+  },
+  {
+    "q": "q057",
+    "verdict": "flawed",
+    "top1": "fal_equivocation",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "'Unlimited' shifts from unlimited usable data to merely never being cut off."
+  },
+  {
+    "q": "q058",
+    "verdict": "flawed",
+    "top1": "fal_tu_quoque",
+    "runnerUp": "fal_ad_hominem",
+    "confidence": 3,
+    "flags": [],
+    "note": "Dismisses the energy complaint by pointing to the critic's idling SUV, which is also a personal jab."
+  },
+  {
+    "q": "q059",
+    "verdict": "flawed",
+    "top1": "fal_texas_sharpshooter",
+    "runnerUp": "fal_circular_reasoning",
+    "confidence": 2,
+    "flags": [],
+    "note": "The weights were tuned until the model fit past data, then that fit is cited as a track record (overfitting)."
+  },
+  {
+    "q": "q060",
+    "verdict": "flawed",
+    "top1": "fal_cherry_picking",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Highlights 2,000 five-star reviews while the overall rating fell from 4.6 to 3.1."
+  },
+  {
+    "q": "q061",
+    "verdict": "flawed",
+    "top1": "fal_red_herring",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The coach diverts from water breaks in the heat to unpaid uniform fees."
+  },
+  {
+    "q": "q062",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_nature",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Caffeine is the same molecule whatever its source; a 'natural' origin doesn't make it gentler on the heart."
+  },
+  {
+    "q": "q063",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the statements sent miss the months in question, so asking for those months is not moving the goalposts."
+  },
+  {
+    "q": "q064",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: an unverifiable screenshot is weighed against two official sources. Source reliability is relevant, so no genetic fallacy."
+  },
+  {
+    "q": "q065",
+    "verdict": "flawed",
+    "top1": "fal_red_herring",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A concern about homework load is answered by praising math scores."
+  },
+  {
+    "q": "q066",
+    "verdict": "flawed",
+    "top1": "fal_special_pleading",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "She mandates office days for the sake of handoffs, then exempts herself for 'focused planning' with no reason her handoffs differ."
+  },
+  {
+    "q": "q067",
+    "verdict": "flawed",
+    "top1": "fal_composition",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Five cuts that are each unnoticeable can add up to a noticeable decline."
+  },
+  {
+    "q": "q068",
+    "verdict": "flawed",
+    "top1": "fal_no_true_scotsman",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Counterexamples are dismissed as not using the desk 'the right way', which makes the claim unfalsifiable."
+  },
+  {
+    "q": "q069",
+    "verdict": "flawed",
+    "top1": "fal_hasty_generalization",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A self-selected poll of tech-magazine readers is taken to represent the mainstream market."
+  },
+  {
+    "q": "q070",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_consequences",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Concludes the injury 'has to be minor' because a serious one would wreck the marathon plans."
+  },
+  {
+    "q": "q071",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_ignorance",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Scores haven't been measured, yet the absence of contrary evidence is taken as grounds for confidence that it works."
+  },
+  {
+    "q": "q072",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_nature",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Herbs are presented as better than 'synthetic' sleep aids purely because they weren't made in a lab."
+  },
+  {
+    "q": "q073",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: correctly separates statistical significance from effect size and weighs a 1.5-point gain against the cost."
+  },
+  {
+    "q": "q074",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_authority",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A novelist's opinion on math teaching is treated as decisive, although it's outside her expertise."
+  },
+  {
+    "q": "q075",
+    "verdict": "flawed",
+    "top1": "fal_hasty_generalization",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "50 market tasters' preference is stretched into 'customers want to drop dairy'; the sample doesn't match the conclusion."
+  },
+  {
+    "q": "q076",
+    "verdict": "flawed",
+    "top1": "fal_texas_sharpshooter",
+    "runnerUp": "fal_false_cause",
+    "confidence": 2,
+    "flags": [],
+    "note": "Several factors were checked and the one hit (4 of 6, a tiny sample) is treated as meaningful. False cause is also defensible."
+  },
+  {
+    "q": "q077",
+    "verdict": "flawed",
+    "top1": "fal_no_true_scotsman",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "To save the claim, the sister who is a counterexample is redefined as 'not a serious runner'."
+  },
+  {
+    "q": "q078",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the analogy holds on the relevant feature (spaced practice), is backed by research, and draws a modest conclusion."
+  },
+  {
+    "q": "q079",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: closure and a weight limit are weighed on ambulance access and the source of wear. A reasoned choice, not a split-the-difference."
+  },
+  {
+    "q": "q080",
+    "verdict": "flawed",
+    "top1": "fal_burden_of_proof",
+    "runnerUp": "fal_appeal_to_ignorance",
+    "confidence": 3,
+    "flags": [],
+    "note": "The claimant demands that critics disprove design, and 'equal footing' shifts the burden. The ignorance label is close."
+  },
+  {
+    "q": "q081",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Sound: exposes the inconsistency of exempting leadership. The either/or misses that leaders might have other relevant reasons."
+  },
+  {
+    "q": "q082",
+    "verdict": "flawed",
+    "top1": "fal_circular_reasoning",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "'Best' is supported by 'no one comes close to our quality', which restates it."
+  },
+  {
+    "q": "q083",
+    "verdict": "flawed",
+    "top1": "fal_red_herring",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The range complaints are answered with the factory's solar power and tree planting."
+  },
+  {
+    "q": "q084",
+    "verdict": "flawed",
+    "top1": "fal_ad_hominem",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Rejects the dietitian's claim because of his physique."
+  },
+  {
+    "q": "q085",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_fear",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A 12-minute difference in a 40-family survey becomes 'gambling with your child's developing brain'."
+  },
+  {
+    "q": "q086",
+    "verdict": "flawed",
+    "top1": "fal_tu_quoque",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Deflects the deadline reminder by citing Joanne's own slow approvals."
+  },
+  {
+    "q": "q087",
+    "verdict": "flawed",
+    "top1": "fal_middle_ground",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Splits the engineer's data-based 6 weeks and a sales rep's 2, though the two estimates aren't equally credible."
+  },
+  {
+    "q": "q088",
+    "verdict": "flawed",
+    "top1": "fal_false_cause",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A correlational survey with limited adjustment (no diet, exercise; self-reported colds) is taken to show the tea causes immunity."
+  },
+  {
+    "q": "q089",
+    "verdict": "flawed",
+    "top1": "fal_post_hoc",
+    "runnerUp": "fal_false_cause",
+    "confidence": 3,
+    "flags": [],
+    "note": "Faster loads followed the change; she notes the lighter traffic yet still credits caching with the full 40%."
+  },
+  {
+    "q": "q090",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_nature",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [
+      "giveaway"
+    ],
+    "note": "'It's natural, so it's obviously safer' practically states the fallacy, leaving little for the learner to spot."
+  },
+  {
+    "q": "q091",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Sound: when testimony is the only evidence, the witness's track record is relevant, and she asks for documents. Close to ad hominem."
+  },
+  {
+    "q": "q092",
+    "verdict": "flawed",
+    "top1": "fal_burden_of_proof",
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "She asserts bias without evidence and asks the school to prove a negative. The school holds the data, which softens it."
+  },
+  {
+    "q": "q093",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the prediction was published in advance and met, and a control route was unchanged. A contrast to post hoc."
+  },
+  {
+    "q": "q094",
+    "verdict": "flawed",
+    "top1": "fal_ad_hominem",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Lena's lease comparison is dismissed because of what she wore to a lunch."
+  },
+  {
+    "q": "q095",
+    "verdict": "flawed",
+    "top1": "fal_bandwagon",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Popularity and growth are offered as the reasons to buy."
+  },
+  {
+    "q": "q096",
+    "verdict": "flawed",
+    "top1": "fal_false_analogy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Business borrowing funds growth that produces revenue; a vacation on credit has no such return."
+  },
+  {
+    "q": "q097",
+    "verdict": "flawed",
+    "top1": "fal_post_hoc",
+    "runnerUp": "fal_false_cause",
+    "confidence": 3,
+    "flags": [],
+    "note": "Burglaries fell after the LEDs went in, with no comparison area or seasonal check."
+  },
+  {
+    "q": "q098",
+    "verdict": "flawed",
+    "top1": "fal_is_ought",
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Infers 'fair, no adjustment' from the fact that the gap tracks what people asked for; the normative premise is missing."
+  },
+  {
+    "q": "q099",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: a chain of documented clauses (policy 4.2, lease 11) supports the breach conclusion. Not a slippery slope."
+  },
+  {
+    "q": "q100",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the leak and the promise are documented, so asking when the repair is booked isn't a loaded question."
+  },
+  {
+    "q": "q101",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Sound: quotes the worry fairly and cites a relevantly similar case (the same commuter problem). It's one comparison, so modest."
+  },
+  {
+    "q": "q102",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the rule's original reason is gone (new equipment, per the spec sheet) and a search found no other reason."
+  },
+  {
+    "q": "q103",
+    "verdict": "flawed",
+    "top1": "fal_straw_man",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A two-day plan based on collaboration is recast as 'remote staff can't be trusted and need watching'."
+  },
+  {
+    "q": "q104",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_emotion",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Feelings of insult and loyalty replace any engagement with the vendors' reasons (cash-handling cost, 94% card sales)."
+  },
+  {
+    "q": "q105",
+    "verdict": "flawed",
+    "top1": "fal_genetic_fallacy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "HRV is dismissed because it was first used in fetal monitoring, not on whether it's valid for adults."
+  },
+  {
+    "q": "q106",
+    "verdict": "flawed",
+    "top1": "fal_slippery_slope",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A first phone is said to lead inevitably to strangers and failing grades, with no support for any step."
+  },
+  {
+    "q": "q107",
+    "verdict": "flawed",
+    "top1": "fal_false_dichotomy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Ignores camera-based (vSLAM) and gyroscope navigation, which work without a lidar turret."
+  },
+  {
+    "q": "q108",
+    "verdict": "flawed",
+    "top1": "fal_anecdotal_evidence",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "One family's good health is set against the county's well-testing data."
+  },
+  {
+    "q": "q109",
+    "verdict": "flawed",
+    "top1": "fal_loaded_question",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Asks when screen time shortened kids' attention spans, presupposing that it does."
+  },
+  {
+    "q": "q110",
+    "verdict": "flawed",
+    "top1": "fal_false_equivalence",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [
+      "unrealistic"
+    ],
+    "note": "Equates bedbugs with a squeaky door. A front desk volunteering bedbugs in your room, then a 4-star review, strains belief."
+  },
+  {
+    "q": "q111",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: two independent experts who inspected the wall agree, with separate written reports."
+  },
+  {
+    "q": "q112",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: a stated goal (reach the most families) plus a 220-family survey supports the Saturday slot."
+  },
+  {
+    "q": "q113",
+    "verdict": "flawed",
+    "top1": "fal_straw_man",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Swapping a couple of sodas is exaggerated into banning snacks and handing out celery."
+  },
+  {
+    "q": "q114",
+    "verdict": "flawed",
+    "top1": "fal_genetic_fallacy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The plan is rejected for its developer origin despite the crash data and the county's later revisions."
+  },
+  {
+    "q": "q115",
+    "verdict": "flawed",
+    "top1": "fal_post_hoc",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A win followed wearing the scarf, so the scarf gets the credit."
+  },
+  {
+    "q": "q116",
+    "verdict": "flawed",
+    "top1": "fal_false_analogy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Passwords don't wear out with use the way toothbrushes do; the comparison fails on the point that matters."
+  },
+  {
+    "q": "q117",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the same dose of the same active ingredient, plus bioequivalence standards, supports 'the same thing for less'."
+  },
+  {
+    "q": "q118",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Sound: a 30-day check against a calibrated gauge. Nitpick: rainfall varies over 2 miles, so 'within 2% daily' is implausibly tight."
+  },
+  {
+    "q": "q119",
+    "verdict": "flawed",
+    "top1": "fal_is_ought",
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Moves from 'the policy permits it' to 'nothing wrong with it'; being permitted isn't the same as being right."
+  },
+  {
+    "q": "q120",
+    "verdict": "flawed",
+    "top1": "fal_division",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The restaurant's Best Burger Joint award is taken to mean every item, the fries included, is good."
+  },
+  {
+    "q": "q121",
+    "verdict": "flawed",
+    "top1": "fal_tu_quoque",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The 18% overrun concern is deflected by citing Mbeki's own past pool overrun."
+  },
+  {
+    "q": "q122",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the claim is backed by data and replications, so asking the critic to name the specific flaw is legitimate."
+  },
+  {
+    "q": "q123",
+    "verdict": "flawed",
+    "top1": "fal_false_cause",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Teams chose whether to adopt the tool, so the 30% gap may reflect who adopts it, not the tool."
+  },
+  {
+    "q": "q124",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_emotion",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Deservingness and feelings stand in for the annuity's merits, and the fees are brushed aside."
+  },
+  {
+    "q": "q125",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: one documented counterexample refutes the universal claim 'fits every phone'."
+  },
+  {
+    "q": "q126",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the emotional anecdote is explicitly set aside; cost and graduation-credit reasons carry the argument."
+  },
+  {
+    "q": "q127",
+    "verdict": "flawed",
+    "top1": "fal_division",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A district-wide average gain is taken to mean every student at her school benefited."
+  },
+  {
+    "q": "q128",
+    "verdict": "flawed",
+    "top1": "fal_division",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The school's ranking is assumed to apply to a brand-new teacher who didn't contribute to it."
+  },
+  {
+    "q": "q129",
+    "verdict": "flawed",
+    "top1": "fal_false_dichotomy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Heavy barbell work or stagnation ignores many other effective ways to train."
+  },
+  {
+    "q": "q130",
+    "verdict": "flawed",
+    "top1": "fal_circular_reasoning",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The advice is sound because the author has good judgment, which is shown by the advice being sound."
+  },
+  {
+    "q": "q131",
+    "verdict": "flawed",
+    "top1": "fal_gamblers_fallacy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "41 weeks without a winner doesn't make the next draw more likely to hit."
+  },
+  {
+    "q": "q132",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: Jess notes the seller's interest and checks independent data instead of dismissing him."
+  },
+  {
+    "q": "q133",
+    "verdict": "flawed",
+    "top1": "fal_guilt_by_association",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The proposal is rejected unread because the group backing it once opposed leaf blowers."
+  },
+  {
+    "q": "q134",
+    "verdict": "flawed",
+    "top1": "fal_sunk_cost",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "He pays $2,500 to fix a $2,000 car because $3,000 has already gone into it."
+  },
+  {
+    "q": "q135",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the rules guarantee a win or a loss (draws go to penalties), so the two-outcome framing is genuine."
+  },
+  {
+    "q": "q136",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: misreporting at her own companies is a relevant risk signal; she disclaims guilt and asks for an audit."
+  },
+  {
+    "q": "q137",
+    "verdict": "flawed",
+    "top1": "fal_texas_sharpshooter",
+    "runnerUp": "fal_false_cause",
+    "confidence": 3,
+    "flags": [],
+    "note": "About 720 month-job comparisons make some chance 'hit' likely, and the March result is singled out after the fact."
+  },
+  {
+    "q": "q138",
+    "verdict": "flawed",
+    "top1": "fal_gamblers_fallacy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "With a fresh 10% lottery each quarter, being picked in Q1 doesn't lower her odds later."
+  },
+  {
+    "q": "q139",
+    "verdict": "flawed",
+    "top1": "fal_straw_man",
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "The book's narrow claim (late-night scrolling and sleep) is recast as 'screens are simply bad for kids'."
+  },
+  {
+    "q": "q140",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_emotion",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Disgust at 'ground-up bugs' is set against the panel's findings on safety, protein and cost."
+  },
+  {
+    "q": "q141",
+    "verdict": "flawed",
+    "top1": "fal_false_equivalence",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A 2,000-person trial and a blogger's poll of her followers are treated as equally weighty evidence."
+  },
+  {
+    "q": "q142",
+    "verdict": "flawed",
+    "top1": "fal_no_true_scotsman",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "The father's counterexample is dismissed as not 'truly' following the diet."
+  },
+  {
+    "q": "q143",
+    "verdict": "flawed",
+    "top1": "fal_no_true_scotsman",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A student with full attendance is ruled not 'fully committed' to protect the claim."
+  },
+  {
+    "q": "q144",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the failures are documented in logs, so moving on to why they fail is not a loaded question."
+  },
+  {
+    "q": "q145",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: sets aside the $40k sunk cost and decides on the $4k cost versus the $15k gain."
+  },
+  {
+    "q": "q146",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: a comparable city's result, a local survey and per-rider grant funding each support the warning about riders."
+  },
+  {
+    "q": "q147",
+    "verdict": "flawed",
+    "top1": "fal_ad_hominem",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Independent decibel readings are dismissed by pointing to the petitioner's self-interest."
+  },
+  {
+    "q": "q148",
+    "verdict": "flawed",
+    "top1": "fal_burden_of_proof",
+    "runnerUp": "fal_appeal_to_ignorance",
+    "confidence": 3,
+    "flags": [],
+    "note": "She asserts that copper eases pain and demands that critics find a study disproving it."
+  },
+  {
+    "q": "q149",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Sound: the portal opens once a year, so 'submit by Friday or wait until next fall' is a genuine two-option choice."
+  },
+  {
+    "q": "q150",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_tradition",
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Keeps the code because it dates to 1984. Chesterton's fence warrants asking why it exists, not keeping it unexamined."
+  },
+  {
+    "q": "q151",
+    "verdict": "flawed",
+    "top1": "fal_straw_man",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A limit only in school zones during school hours is recast as every driver crawling at 20 all day."
+  },
+  {
+    "q": "q152",
+    "verdict": "flawed",
+    "top1": "fal_slippery_slope",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Two Saturday food trucks are said to lead inevitably to a strip-mall parking lot."
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "id": "fal_false_dichotomy",
+  "name": "False Dichotomy",
+  "aliases": ["False dilemma", "Either/or fallacy", "Black-and-white thinking"],
+  "family": "framing",
+  "difficulty": "beginner",
+  "shortDef": "Presenting two options as the only ones when others exist.",
+  "definition": "Framing a decision as either/or, so that rejecting one option seems to force the other, when reasonable alternatives, combinations or in-between paths have been left out.",
+  "howToSpot": [
+    "Can you name a realistic third option the speaker skipped?",
+    "Does rejecting one choice really force you into the other?",
+    "Ask whether both options could be combined, delayed or done partly."
+  ],
+  "classicExample": "Either we ban phones in class completely, or we accept that students will never pay attention again.",
+  "legitimateVersion": "It's fair when the two options truly exhaust the possibilities, like a motion that either passes or fails, or when the other options have already been ruled out with stated reasons.",
+  "confusableWith": ["fal_middle_ground", "fal_loaded_question"],
+  "contrast": {
+    "fal_middle_ground": "A false dichotomy hides the other options; middle ground assumes the option between two extremes must be the right one.",
+    "fal_loaded_question": "A false dichotomy offers too few choices; a loaded question slips an unproven assumption into the question itself."
+  }
+}

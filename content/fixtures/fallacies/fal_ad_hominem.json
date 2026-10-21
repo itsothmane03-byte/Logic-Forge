@@ -1,0 +1,22 @@
+{
+  "id": "fal_ad_hominem",
+  "name": "Ad Hominem",
+  "aliases": ["Personal attack"],
+  "family": "distraction",
+  "difficulty": "beginner",
+  "shortDef": "Attacking the person instead of their argument.",
+  "definition": "Rejecting a claim because of who makes it (their character, motives or traits) instead of engaging with the reasons or evidence behind it.",
+  "howToSpot": [
+    "Is the reply about the person, or about the point?",
+    "Would the rebuttal still work if someone else made the same claim?",
+    "Insults, motives or traits standing in for counter-evidence."
+  ],
+  "classicExample": "You can't trust Dana's budget plan. She can't even keep her own desk tidy.",
+  "legitimateVersion": "Pointing out a real conflict of interest is fair when we rely on someone's testimony. It's a reason to check the evidence more carefully, not to reject the claim.",
+  "confusableWith": ["fal_tu_quoque", "fal_guilt_by_association", "fal_genetic_fallacy"],
+  "contrast": {
+    "fal_tu_quoque": "Ad hominem attacks the person's character or traits; tu quoque deflects by saying they do the same thing themselves.",
+    "fal_guilt_by_association": "Ad hominem targets the person directly; guilt by association discredits them through the people or groups they're linked with.",
+    "fal_genetic_fallacy": "Ad hominem targets the person arguing; the genetic fallacy dismisses an idea because of where or how it originated."
+  }
+}

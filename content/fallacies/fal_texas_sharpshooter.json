@@ -1,0 +1,21 @@
+{
+  "id": "fal_texas_sharpshooter",
+  "name": "Texas Sharpshooter",
+  "aliases": ["Painting the target afterward", "Clustering illusion"],
+  "family": "evidence",
+  "difficulty": "advanced",
+  "shortDef": "Spotting a pattern or 'hit' after the fact and treating it as meaningful.",
+  "definition": "Sifting through data or events until a cluster or match appears, then treating it as a real pattern or a successful prediction, ignoring that the target was drawn around the hits and that chance alone produces clusters.",
+  "howToSpot": [
+    "Was the pattern predicted beforehand, or found by looking afterward?",
+    "How many other patterns, places or variables were checked along the way?",
+    "Would a vague prediction have 'come true' whatever happened?"
+  ],
+  "classicExample": "A man fires at a barn, then paints a bullseye around the tightest group of holes and calls himself a sharpshooter.",
+  "legitimateVersion": "Spotting a cluster is a fair starting point. It becomes evidence when the hypothesis is stated in advance and then tested on new data, or when chance is properly accounted for.",
+  "confusableWith": ["fal_cherry_picking", "fal_false_cause"],
+  "contrast": {
+    "fal_cherry_picking": "Cherry picking leaves out unfavorable evidence; the sharpshooter draws the target around whatever cluster turned up after looking.",
+    "fal_false_cause": "False cause misreads a genuine correlation as cause; the sharpshooter's 'pattern' may be nothing more than chance found by searching."
+  }
+}

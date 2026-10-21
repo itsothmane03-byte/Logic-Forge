@@ -1,0 +1,21 @@
+{
+  "id": "fal_appeal_to_tradition",
+  "name": "Appeal to Tradition",
+  "aliases": ["Appeal to antiquity", "Argumentum ad antiquitatem"],
+  "family": "appeals",
+  "difficulty": "intermediate",
+  "shortDef": "Assuming something is right or better because it's always been done that way.",
+  "definition": "Arguing that a practice or belief is correct, or should continue, simply because it is old or long established, without showing that the reasons behind it still hold today.",
+  "howToSpot": [
+    "Is age or habit the main reason given?",
+    "Ask why the practice started, and whether that reason still applies",
+    "Watch for years, generations or founding dates standing in for results"
+  ],
+  "classicExample": "We've posted paper flyers for every bake sale since 1987, so there's no reason to try social media.",
+  "legitimateVersion": "Long use can be evidence when it reflects a tested track record, and it's fair to find out why a rule exists before scrapping it. Age alone just isn't a reason.",
+  "confusableWith": ["fal_appeal_to_nature", "fal_bandwagon"],
+  "contrast": {
+    "fal_appeal_to_nature": "Appeal to tradition prizes what's old or customary; appeal to nature prizes what's natural or unprocessed.",
+    "fal_bandwagon": "Appeal to tradition says it's always been done; bandwagon says lots of people do it right now."
+  }
+}

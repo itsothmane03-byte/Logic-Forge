@@ -1,0 +1,1376 @@
+[
+ {
+  "q": "q153",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Pre-registered exclusion rule, both figures disclosed, conclusion holds either way and is suitably hedged."
+ },
+ {
+  "q": "q154",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_authority",
+  "runnerUp": "fal_anecdotal_evidence",
+  "confidence": 3,
+  "flags": [],
+  "note": "Sprint champion's endorsement is outside his expertise; a single testimonial also fits anecdotal evidence."
+ },
+ {
+  "q": "q155",
+  "verdict": "flawed",
+  "top1": "fal_composition",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q156",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Wear-out failure is not independent; manufacturer data plus own logs support rising risk. Not gambler's fallacy."
+ },
+ {
+  "q": "q157",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_ignorance",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q158",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Every unit's tap passed, so the building passing follows; here the property aggregates validly. Composition decoy."
+ },
+ {
+  "q": "q159",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Explicitly sets sunk cost aside; forward-looking comparison ($500k vs ~$360k savings) supports stopping."
+ },
+ {
+  "q": "q160",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_tradition",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q161",
+  "verdict": "flawed",
+  "top1": "fal_ad_hominem",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q162",
+  "verdict": "flawed",
+  "top1": "fal_hasty_generalization",
+  "runnerUp": "fal_anecdotal_evidence",
+  "confidence": 3,
+  "flags": [],
+  "note": "Two cancellations generalized to all app sitters; the personal-story framing also fits anecdotal evidence."
+ },
+ {
+  "q": "q163",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_ignorance",
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "No reported breach treated as proof of complete security."
+ },
+ {
+  "q": "q164",
+  "verdict": "flawed",
+  "top1": "fal_gamblers_fallacy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q165",
+  "verdict": "flawed",
+  "top1": "fal_genetic_fallacy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q166",
+  "verdict": "flawed",
+  "top1": "fal_false_dichotomy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q167",
+  "verdict": "flawed",
+  "top1": "fal_tu_quoque",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q168",
+  "verdict": "flawed",
+  "top1": "fal_hasty_generalization",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q169",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_fear",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q170",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Mechanism (low pressure, groundwater intrusion) and precaution until tests clear are well supported."
+ },
+ {
+  "q": "q171",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Verified-purchase rule and outside audit are relevant reasons; conclusion is hedged ('weigh them more')."
+ },
+ {
+  "q": "q172",
+  "verdict": "flawed",
+  "top1": "fal_slippery_slope",
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "One precedent is cited, but the chain to on-call collapse and multi-day outages is unsupported."
+ },
+ {
+  "q": "q173",
+  "verdict": "flawed",
+  "top1": "fal_no_true_scotsman",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q174",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Checks the defined meaning of 'order total'; no shift in meaning. Equivocation decoy that resolves correctly."
+ },
+ {
+  "q": "q175",
+  "verdict": "flawed",
+  "top1": "fal_division",
+  "runnerUp": "fal_is_ought",
+  "confidence": 1,
+  "flags": [
+   "ambiguous"
+  ],
+  "note": "Neighborhood average applied to this unit is subtle; reads as ordinary market-rate logic. 'Only fair' from 'rents rose' fits is-ought too."
+ },
+ {
+  "q": "q176",
+  "verdict": "flawed",
+  "top1": "fal_false_equivalence",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q177",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_ignorance",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q178",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Follows directly from the definition of a marathon plus a certified remeasurement."
+ },
+ {
+  "q": "q179",
+  "verdict": "flawed",
+  "top1": "fal_moving_the_goalposts",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q180",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "Nostalgic hook, but the claim rests on an independent lab comparison with a specific result."
+ },
+ {
+  "q": "q181",
+  "verdict": "flawed",
+  "top1": "fal_loaded_question",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q182",
+  "verdict": "flawed",
+  "top1": "fal_ad_hominem",
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "Dismisses a well-documented ticket over one past false alarm instead of examining its evidence."
+ },
+ {
+  "q": "q183",
+  "verdict": "flawed",
+  "top1": "fal_equivocation",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q184",
+  "verdict": "flawed",
+  "top1": "fal_false_cause",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q185",
+  "verdict": "flawed",
+  "top1": "fal_circular_reasoning",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q186",
+  "verdict": "flawed",
+  "top1": "fal_genetic_fallacy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q187",
+  "verdict": "flawed",
+  "top1": "fal_straw_man",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q188",
+  "verdict": "flawed",
+  "top1": "fal_gamblers_fallacy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q189",
+  "verdict": "flawed",
+  "top1": "fal_false_equivalence",
+  "runnerUp": "fal_false_analogy",
+  "confidence": 3,
+  "flags": [],
+  "note": "Equates texting with tuning the radio; the comparison framing also fits false analogy."
+ },
+ {
+  "q": "q190",
+  "verdict": "flawed",
+  "top1": "fal_red_herring",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q191",
+  "verdict": "flawed",
+  "top1": "fal_genetic_fallacy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q192",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Explicitly rejects tu quoque and gives first-hand reasons (breathing, cough, cost) for quitting."
+ },
+ {
+  "q": "q193",
+  "verdict": "flawed",
+  "top1": "fal_burden_of_proof",
+  "runnerUp": "fal_appeal_to_ignorance",
+  "confidence": 3,
+  "flags": [],
+  "note": "Hugo demands disproof of his own claim; inferring copying from lack of disproof also fits appeal to ignorance."
+ },
+ {
+  "q": "q194",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Gas furnaces plus odorless, colorless CO make working detectors the practical warning; conclusion follows."
+ },
+ {
+  "q": "q195",
+  "verdict": "flawed",
+  "top1": "fal_sunk_cost",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q196",
+  "verdict": "flawed",
+  "top1": "fal_equivocation",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q197",
+  "verdict": "flawed",
+  "top1": "fal_guilt_by_association",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q198",
+  "verdict": "flawed",
+  "top1": "fal_false_analogy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q199",
+  "verdict": "flawed",
+  "top1": "fal_loaded_question",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q200",
+  "verdict": "flawed",
+  "top1": "fal_anecdotal_evidence",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q201",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Supplies the normative premise (board's health commitment) linking facts to the 'ought'. Is-ought decoy done right."
+ },
+ {
+  "q": "q202",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Each item is individually scheduled, so coverage of the vase is established directly. Division decoy."
+ },
+ {
+  "q": "q203",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "Split justified by reasons (fence due anyway, on the shared line, shared benefit), not by splitting the difference."
+ },
+ {
+  "q": "q204",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_pity",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q205",
+  "verdict": "flawed",
+  "top1": "fal_special_pleading",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q206",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_pity",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q207",
+  "verdict": "flawed",
+  "top1": "fal_cherry_picking",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q208",
+  "verdict": "flawed",
+  "top1": "fal_ad_hominem",
+  "runnerUp": "fal_genetic_fallacy",
+  "confidence": 2,
+  "flags": [
+   "ambiguous"
+  ],
+  "note": "Rejects advice because of the messenger's quiz record; 'judging a claim by its source' fits genetic fallacy about as well."
+ },
+ {
+  "q": "q209",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_authority",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q210",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Survey result corroborated by the attendance drop; fee freeze is a reasonable response."
+ },
+ {
+  "q": "q211",
+  "verdict": "flawed",
+  "top1": "fal_loaded_question",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q212",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Thorough search where evidence would be expected; absence of signs supports the limited claim. Not appeal to ignorance."
+ },
+ {
+  "q": "q213",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_tradition",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q214",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Compares capacity and cost with numbers; conclusion scoped to those criteria. Appeal-to-nature decoy."
+ },
+ {
+  "q": "q215",
+  "verdict": "flawed",
+  "top1": "fal_slippery_slope",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q216",
+  "verdict": "flawed",
+  "top1": "fal_false_analogy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q217",
+  "verdict": "flawed",
+  "top1": "fal_composition",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q218",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Complete authentication logs searched; no logins is strong evidence. Not appeal to ignorance."
+ },
+ {
+  "q": "q219",
+  "verdict": "flawed",
+  "top1": "fal_genetic_fallacy",
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "Origin of QWERTY used to dismiss touch-typing today; the jump to tablet swiping adds a non sequitur."
+ },
+ {
+  "q": "q220",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_nature",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q221",
+  "verdict": "flawed",
+  "top1": "fal_false_dichotomy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q222",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Randomized assignment, sizeable sample, clear effect; causal conclusion warranted."
+ },
+ {
+  "q": "q223",
+  "verdict": "flawed",
+  "top1": "fal_cherry_picking",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q224",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Plans identical on every relevant feature checked; treating them as equivalent is justified."
+ },
+ {
+  "q": "q225",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "Comparison town and spatial gradient support a hedged 'likely contributor'; more than mere post hoc."
+ },
+ {
+  "q": "q226",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_fear",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q227",
+  "verdict": "flawed",
+  "top1": "fal_middle_ground",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q228",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Pre-set exclusion rule applied; remaining RCTs summarized honestly; hedged conclusion. Cherry-picking decoy."
+ },
+ {
+  "q": "q229",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_authority",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q230",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_authority",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q231",
+  "verdict": "flawed",
+  "top1": "fal_slippery_slope",
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "Four-step chain to budget cuts asserted without evidence that fines drive returns."
+ },
+ {
+  "q": "q232",
+  "verdict": "flawed",
+  "top1": "fal_moving_the_goalposts",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q233",
+  "verdict": "flawed",
+  "top1": "fal_moving_the_goalposts",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q234",
+  "verdict": "flawed",
+  "top1": "fal_is_ought",
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "The fact that impressions form fast is turned into a norm that you are right to act on them."
+ },
+ {
+  "q": "q235",
+  "verdict": "flawed",
+  "top1": "fal_bandwagon",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q236",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Every muffin is traced to the recalled lot, so the recall applies to each one. Division decoy done right."
+ },
+ {
+  "q": "q237",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Recommendation rests explicitly on the fund's documented criteria; sympathy is disclaimed. Appeal-to-pity decoy."
+ },
+ {
+  "q": "q238",
+  "verdict": "flawed",
+  "top1": "fal_circular_reasoning",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q239",
+  "verdict": "flawed",
+  "top1": "fal_special_pleading",
+  "runnerUp": "fal_appeal_to_tradition",
+  "confidence": 3,
+  "flags": [],
+  "note": "Golf course exempted with no relevant reason; the stated justification leans on fifty years of tradition."
+ },
+ {
+  "q": "q240",
+  "verdict": "flawed",
+  "top1": "fal_sunk_cost",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q241",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Correctly puts the burden on the vendor's claim and asks for evidence before spending. Burden-of-proof decoy."
+ },
+ {
+  "q": "q242",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Analogy holds on the relevant features (layout, shelving, volume) and the prediction will be measured."
+ },
+ {
+  "q": "q243",
+  "verdict": "flawed",
+  "top1": "fal_false_analogy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q244",
+  "verdict": "flawed",
+  "top1": "fal_special_pleading",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q245",
+  "verdict": "flawed",
+  "top1": "fal_texas_sharpshooter",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q246",
+  "verdict": "flawed",
+  "top1": "fal_straw_man",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q247",
+  "verdict": "flawed",
+  "top1": "fal_anecdotal_evidence",
+  "runnerUp": "fal_hasty_generalization",
+  "confidence": 3,
+  "flags": [],
+  "note": "One person's decade overrides the research; generalizing from a single case also fits hasty generalization."
+ },
+ {
+  "q": "q248",
+  "verdict": "flawed",
+  "top1": "fal_false_analogy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q249",
+  "verdict": "flawed",
+  "top1": "fal_sunk_cost",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q250",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_consequences",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q251",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_nature",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q252",
+  "verdict": "flawed",
+  "top1": "fal_tu_quoque",
+  "runnerUp": "fal_ad_hominem",
+  "confidence": 3,
+  "flags": [],
+  "note": "Deflects by saying the critic does the same; questioning its standing to 'lecture' also reads as ad hominem."
+ },
+ {
+  "q": "q253",
+  "verdict": "flawed",
+  "top1": "fal_equivocation",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q254",
+  "verdict": "flawed",
+  "top1": "fal_red_herring",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q255",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_pity",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q256",
+  "verdict": "flawed",
+  "top1": "fal_is_ought",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q257",
+  "verdict": "flawed",
+  "top1": "fal_is_ought",
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "Longer viewing time (is) taken as proof autoplay serves viewers and is right (ought)."
+ },
+ {
+  "q": "q258",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Rule defended by its original reason, which still applies. Appeal-to-tradition decoy done right."
+ },
+ {
+  "q": "q259",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_pity",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q260",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_emotion",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q261",
+  "verdict": "flawed",
+  "top1": "fal_bandwagon",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q262",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Draws without replacement are dependent; 4 aces in 20 cards = 1/5 is correct. Gambler's-fallacy decoy."
+ },
+ {
+  "q": "q263",
+  "verdict": "flawed",
+  "top1": "fal_false_cause",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q264",
+  "verdict": "flawed",
+  "top1": "fal_ad_hominem",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q265",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_consequences",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q266",
+  "verdict": "flawed",
+  "top1": "fal_post_hoc",
+  "runnerUp": "fal_false_cause",
+  "confidence": 3,
+  "flags": [],
+  "note": "Bill rose after install; a colder December is the obvious confound. Generic false cause also fits."
+ },
+ {
+  "q": "q267",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": "fal_moving_the_goalposts",
+  "confidence": 2,
+  "flags": [],
+  "note": "New request has a relevant reason (test excluded Mac, half the team) and a fixed condition; some will read goalposts."
+ },
+ {
+  "q": "q268",
+  "verdict": "flawed",
+  "top1": "fal_bandwagon",
+  "runnerUp": null,
+  "confidence": 1,
+  "flags": [
+   "ambiguous"
+  ],
+  "note": "Consultant's $180k savings estimate is a real reason; trend framing dominates. Borderline between sound and bandwagon."
+ },
+ {
+  "q": "q269",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_nature",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q270",
+  "verdict": "flawed",
+  "top1": "fal_texas_sharpshooter",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q271",
+  "verdict": "flawed",
+  "top1": "fal_loaded_question",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q272",
+  "verdict": "flawed",
+  "top1": "fal_bandwagon",
+  "runnerUp": "fal_false_cause",
+  "confidence": 2,
+  "flags": [],
+  "note": "Popularity among fast growers taken as proof it's better; also implies the policy drives their growth."
+ },
+ {
+  "q": "q273",
+  "verdict": "flawed",
+  "top1": "fal_guilt_by_association",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q274",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_tradition",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q275",
+  "verdict": "flawed",
+  "top1": "fal_equivocation",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q276",
+  "verdict": "flawed",
+  "top1": "fal_bandwagon",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q277",
+  "verdict": "flawed",
+  "top1": "fal_slippery_slope",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q278",
+  "verdict": "flawed",
+  "top1": "fal_anecdotal_evidence",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q279",
+  "verdict": "flawed",
+  "top1": "fal_loaded_question",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q280",
+  "verdict": "flawed",
+  "top1": "fal_moving_the_goalposts",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q281",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Five random units from five boxes all failing is strong evidence of a lot-wide defect. Hasty-generalization decoy."
+ },
+ {
+  "q": "q282",
+  "verdict": "flawed",
+  "top1": "fal_division",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q283",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "For comfort, thousands of wearer ratings are relevant evidence and the known caveat is handled. Bandwagon decoy."
+ },
+ {
+  "q": "q284",
+  "verdict": "flawed",
+  "top1": "fal_false_dichotomy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q285",
+  "verdict": "flawed",
+  "top1": "fal_middle_ground",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q286",
+  "verdict": "flawed",
+  "top1": "fal_circular_reasoning",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q287",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Restates Luis's rule accurately, confirms it, then tests it against real data. Straw-man decoy done right."
+ },
+ {
+  "q": "q288",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_consequences",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q289",
+  "verdict": "flawed",
+  "top1": "fal_middle_ground",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q290",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_consequences",
+  "runnerUp": "fal_appeal_to_emotion",
+  "confidence": 2,
+  "flags": [],
+  "note": "Rejects the trial because accepting it would feel cruel; the hope/cruelty framing also fits appeal to emotion."
+ },
+ {
+  "q": "q291",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_consequences",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q292",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Timing backed by rollback, staging reproduction and stack traces; causal claim warranted. Post hoc decoy."
+ },
+ {
+  "q": "q293",
+  "verdict": "flawed",
+  "top1": "fal_cherry_picking",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q294",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_emotion",
+  "runnerUp": null,
+  "confidence": 2,
+  "flags": [],
+  "note": "Hometown pride offered as the reason the team is the league's best."
+ },
+ {
+  "q": "q295",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Repeated dechallenge/rechallenge supports a causal link; confirmatory testing is the next step. Post hoc decoy."
+ },
+ {
+  "q": "q296",
+  "verdict": "flawed",
+  "top1": "fal_anecdotal_evidence",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q297",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Case-control comparison plus lab match of bacteria; conclusion about the source is warranted."
+ },
+ {
+  "q": "q298",
+  "verdict": "flawed",
+  "top1": "fal_gamblers_fallacy",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q299",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Middle setting was tested and measured, not assumed correct. Middle-ground decoy done right."
+ },
+ {
+  "q": "q300",
+  "verdict": "flawed",
+  "top1": "fal_no_true_scotsman",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q301",
+  "verdict": "flawed",
+  "top1": "fal_false_cause",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q302",
+  "verdict": "flawed",
+  "top1": "fal_appeal_to_pity",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q303",
+  "verdict": "flawed",
+  "top1": "fal_false_cause",
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": ""
+ },
+ {
+  "q": "q304",
+  "verdict": "sound",
+  "top1": null,
+  "runnerUp": null,
+  "confidence": 3,
+  "flags": [],
+  "note": "Staffing gap tied to pay via comparison wages and applicant reports; a wage increase follows as the direct fix."
+ }
+]

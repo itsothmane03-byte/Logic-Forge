@@ -1,0 +1,21 @@
+{
+  "id": "fal_false_equivalence",
+  "name": "False Equivalence",
+  "aliases": ["False balance", "Apples and oranges"],
+  "family": "framing",
+  "difficulty": "intermediate",
+  "shortDef": "Treating two things as equal when they differ greatly in a way that matters.",
+  "definition": "Presenting two things as the same, or as equally bad, risky, costly or credible, because they share some feature, while ignoring large differences in scale, severity or strength of evidence that matter to the conclusion.",
+  "howToSpot": [
+    "What do the two things share, and is that the part that matters here?",
+    "Check the scale: are they really similar in size, severity or evidence?",
+    "Put rough numbers on each side and see whether \"the same\" still holds."
+  ],
+  "classicExample": "Sure, he emptied the club's bank account, but she once took printer paper home from the office. We all cut corners.",
+  "legitimateVersion": "Calling two things equivalent is fair when they really match on the dimension that matters, like two phone plans with the same price, data and coverage, or two generic pills with the same active dose.",
+  "confusableWith": ["fal_false_analogy", "fal_middle_ground"],
+  "contrast": {
+    "fal_false_analogy": "False equivalence declares two unequal things the same; a false analogy draws a conclusion from a comparison that breaks on the relevant point.",
+    "fal_middle_ground": "False equivalence gives two sides equal weight; middle ground goes further and assumes the answer lies halfway between them."
+  }
+}

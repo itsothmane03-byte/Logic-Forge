@@ -1,0 +1,21 @@
+{
+  "id": "fal_division",
+  "name": "Division",
+  "aliases": ["Whole-to-part fallacy"],
+  "family": "language",
+  "difficulty": "advanced",
+  "shortDef": "Assuming that what's true of the whole must be true of each of its parts.",
+  "definition": "Concluding that a part or member has a property because the whole or group it belongs to has it. A top-ranked school, a winning team or a high average can still contain weak or struggling parts.",
+  "howToSpot": [
+    "Is a trait of a group, team or total being pinned on one member?",
+    "Is an average or overall result treated as true of every individual?",
+    "Could the whole have the trait while some of its parts lack it?"
+  ],
+  "classicExample": "Ashford is a wealthy town, so everyone who lives there must be wealthy.",
+  "legitimateVersion": "Some traits do pass from whole to parts, such as a recall covering a whole batch or a rule covering every unit. It's fair when the trait applies to each part by its nature or by definition.",
+  "confusableWith": ["fal_composition", "fal_hasty_generalization"],
+  "contrast": {
+    "fal_composition": "Division goes from the whole down to its parts; composition goes from the parts up to the whole.",
+    "fal_hasty_generalization": "Division assumes a part shares the group's overall trait; hasty generalization builds a claim about the group from too few members."
+  }
+}

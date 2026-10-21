@@ -1,0 +1,206 @@
+/* App chrome: desktop top bar, mobile header, bottom tab bar, footer. */
+
+/* ---------- Top bar (desktop) ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: calc(var(--content-max) + 2 * var(--gutter));
+  height: var(--topbar-h);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding-right: 4px;
+  border-radius: 8px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.topbar__wordmark {
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 2px;
+  margin-left: 12px;
+}
+
+.topbar__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 10px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.topbar__link:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+.topbar__link.is-active {
+  color: var(--ink);
+}
+
+.topbar__link.is-active::after {
+  content: '';
+  position: absolute;
+  right: 14px;
+  bottom: 3px;
+  left: 14px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.topbar__actions {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+/* ---------- Mobile header + tab bar ---------- */
+
+.mobile-header,
+.tabbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .topbar {
+    display: none;
+  }
+
+  .mobile-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 6px 0 var(--gutter);
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    backdrop-filter: saturate(1.4) blur(14px);
+  }
+
+  .mobile-header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .mobile-header__name {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .mobile-header__actions {
+    display: flex;
+  }
+
+  .tabbar {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: calc(var(--tabbar-h) + var(--safe-bottom));
+    padding-bottom: var(--safe-bottom);
+    border-top: 1px solid var(--line);
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    backdrop-filter: saturate(1.4) blur(14px);
+  }
+
+  .tabbar__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: var(--ink-2);
+    font-size: 0.75rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .tabbar__icon {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 28px;
+    border-radius: var(--r-pill);
+    transition: background-color var(--dur) var(--ease);
+  }
+
+  .tabbar__link.is-active {
+    color: var(--ink);
+  }
+
+  .tabbar__link.is-active .tabbar__icon {
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+  }
+}
+
+/* ---------- Footer ---------- */
+
+.app-footer {
+  border-top: 1px solid var(--line);
+}
+
+.app-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 22px;
+  max-width: calc(var(--content-max) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 12px var(--gutter);
+  color: var(--ink-2);
+  font-size: 0.875rem;
+}
+
+.app-footer__inner a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ink);
+  font-weight: 600;
+}

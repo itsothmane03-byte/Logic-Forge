@@ -1,0 +1,161 @@
+[
+  {
+    "id": "itm_circular_reasoning_01",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 1,
+    "format": "ad",
+    "source": "Brambleworth Roasters",
+    "title": "Small batches. Big flavor.",
+    "passage": "Our single-origin beans are roasted in small batches every Tuesday and shipped within 48 hours. Why do we call it the best coffee in Calder County? Because no other roaster around here comes close to our quality. Try a bag risk-free: if you don't love it, we'll refund you, no questions asked.",
+    "cue": "Because no other roaster around here comes close to our quality",
+    "explanation": "Brambleworth's reason for \"the best coffee\" is that no one else matches its quality, which is just \"the best\" said again. The batch and shipping details don't touch that claim.",
+    "whyNot": {
+      "fal_loaded_question": "The ad asks a question, but the question doesn't presume anything; the flaw is the answer, which just restates the claim."
+    },
+    "tags": [
+      "shopping",
+      "food"
+    ]
+  },
+  {
+    "id": "itm_circular_reasoning_02",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 1,
+    "format": "chat",
+    "source": "Thursday book club",
+    "title": null,
+    "passage": "Mina: Is the new Halloran thriller worth the hardcover price? Reviews seem pretty split.\nJasper: Definitely. It's the best thing she's ever written.\nMina: What makes it better than her last one, though?\nJasper: It's just a better book, honestly. That's why it's her best.",
+    "cue": "It's just a better book, honestly. That's why it's her best.",
+    "explanation": "When Mina asks why the book is better, Jasper answers that it's better. His reason and his conclusion are the same claim, so Mina learns nothing new.",
+    "whyNot": {
+      "fal_no_true_scotsman": "Jasper isn't redefining a group to exclude a counterexample; he simply repeats his conclusion as the reason for it."
+    },
+    "tags": [
+      "everyday",
+      "shopping"
+    ]
+  },
+  {
+    "id": "itm_circular_reasoning_03",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 2,
+    "format": "email",
+    "source": "Dmitri Volkov (Engineering manager)",
+    "title": "Re: Do we still need weekly status reports?",
+    "passage": "Hi Ana, thanks for raising this in the retro, and I know the reports eat into Friday afternoons. I read the survey comments too. My view is that the weekly reports are worth it, because the hour we put into them every Friday is time well spent. Let's keep them through Q2 and revisit in July. Thanks, Dmitri",
+    "cue": "the weekly reports are worth it, because the hour we put into them every Friday is time well spent",
+    "explanation": "Dmitri is polite and open to revisiting, but his only reason, that the hour is \"time well spent,\" is another way of saying the reports are worth it.",
+    "whyNot": {
+      "fal_loaded_question": "Dmitri isn't asking anything with a hidden assumption; he argues for \"worth it\" by restating it as \"time well spent.\""
+    },
+    "tags": [
+      "workplace"
+    ]
+  },
+  {
+    "id": "itm_circular_reasoning_04",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 2,
+    "format": "post",
+    "source": "Gwen Achebe · @gwen.wellnessjourney",
+    "title": null,
+    "passage": "People keep asking whether my magnesium sleep gummies are \"proven.\" Fair question! Here's how I look at it: this brand only sells formulas that work, and I know these work because the brand wouldn't sell them otherwise. I've linked the ingredient list in my bio if you're curious. Sleep well, friends!",
+    "cue": "I know these work because the brand wouldn't sell them otherwise",
+    "explanation": "Gwen says the gummies work because the brand only sells what works, and the brand only sells what works because it sells these. The two claims prop each other up.",
+    "whyNot": {
+      "fal_appeal_to_authority": "Gwen isn't deferring to an outside expert; her two reasons support each other in a loop with nothing outside it."
+    },
+    "tags": [
+      "health",
+      "shopping"
+    ]
+  },
+  {
+    "id": "itm_circular_reasoning_05",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 3,
+    "format": "speech",
+    "source": "Ilse Navarro, Chief People Officer · Quillmark Analytics all-hands",
+    "title": null,
+    "passage": "A few of you asked whether our interview loop is too long. I get it; five rounds is a lot. But look at what it produces. The people in this room are the strongest engineers I've worked with anywhere, and we know they're the strongest because they cleared the toughest hiring bar in the industry. The loop works.",
+    "cue": "we know they're the strongest because they cleared the toughest hiring bar in the industry",
+    "explanation": "Ilse defends the interview loop by pointing to how strong the hires are, but her only evidence that they're strong is that they passed the loop.",
+    "whyNot": {
+      "fal_no_true_scotsman": "Ilse isn't redefining \"strong engineer\" to dodge a counterexample; she uses the loop's own results as proof the loop works."
+    },
+    "tags": [
+      "tech",
+      "workplace"
+    ]
+  },
+  {
+    "id": "itm_circular_reasoning_06",
+    "fallacyId": "fal_circular_reasoning",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 3,
+    "format": "review",
+    "source": "Marguerite D.",
+    "title": "The first diet book I actually finished",
+    "passage": "I've tried four diet books and this is the first one I made it through. The meal plans are realistic and the shopping lists save me time every week. As for whether the advice is sound: the author clearly has excellent judgment about nutrition, which you can see from how sensible the advice in this book is.",
+    "cue": "excellent judgment about nutrition, which you can see from how sensible the advice in this book is",
+    "explanation": "Marguerite's practical praise is fair, but she says the advice is sound because the author's judgment is good, and the author's judgment is good because the advice is sound.",
+    "whyNot": {
+      "fal_appeal_to_authority": "Marguerite isn't relying on outside credentials; the author's judgment is vouched for only by the very advice in question."
+    },
+    "tags": [
+      "food",
+      "health"
+    ]
+  },
+  {
+    "id": "itm_snd_circular_reasoning_01",
+    "fallacyId": null,
+    "isSound": true,
+    "resembles": "fal_circular_reasoning",
+    "difficulty": 2,
+    "format": "chat",
+    "source": "Wexbridge garden club",
+    "title": null,
+    "passage": "Kenji: How do we know the new rain gauge is accurate enough for the watering log?\nSofia: I mounted it right next to the extension office's calibrated gauge for a month. On all nine rainy days, the two readings were within a millimeter of each other.\nKenji: Okay, that's a real check. Let's start using it.",
+    "cue": "I mounted it right next to the extension office's calibrated gauge for a month",
+    "explanation": "Sofia tested the new gauge side by side with a calibrated one, so both caught the same rain. Close agreement on every rainy day is independent evidence that the new gauge is accurate.",
+    "whyNot": {
+      "fal_circular_reasoning": "Sofia checks the gauge against a separate, calibrated instrument rather than against its own readings, so nothing loops back on itself."
+    },
+    "tags": [
+      "environment",
+      "science"
+    ]
+  },
+  {
+    "id": "itm_snd_circular_reasoning_02",
+    "fallacyId": null,
+    "isSound": true,
+    "resembles": "fal_circular_reasoning",
+    "difficulty": 3,
+    "format": "post",
+    "source": "Lucia Ferreira · @lucia_buysmart",
+    "title": null,
+    "passage": "People ask why I trust the reviews on the marketplace I use more than on other shopping sites. Two reasons: you can only review an item after a verified purchase, and last year an outside audit flagged fewer than 1% of its reviews as fake. That doesn't make every review right, but it's why I weigh them more.",
+    "cue": "you can only review an item after a verified purchase",
+    "explanation": "Lucia backs the reviews' trustworthiness with two independent facts, purchase verification and an outside audit, rather than with the reviews themselves, and she keeps her conclusion modest.",
+    "whyNot": {
+      "fal_circular_reasoning": "Lucia's reasons come from outside the reviews (purchase checks and an audit), so her conclusion isn't assumed in her premises."
+    },
+    "tags": [
+      "shopping",
+      "tech"
+    ]
+  }
+]

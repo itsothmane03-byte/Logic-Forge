@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Typecheck, content, test, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck (strict)
+        run: npm run typecheck
+
+      - name: Validate content and build the bank (strict, no partial flag)
+        run: npm run content
+
+      - name: Test
+        run: npm test
+
+      - name: Build and check the bundle budget
+        run: npm run build

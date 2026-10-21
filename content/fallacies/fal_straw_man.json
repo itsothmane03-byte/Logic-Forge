@@ -1,0 +1,21 @@
+{
+  "id": "fal_straw_man",
+  "name": "Straw Man",
+  "aliases": ["Strawman", "Misrepresentation"],
+  "family": "distraction",
+  "difficulty": "beginner",
+  "shortDef": "Distorting someone's position into a weaker one, then attacking that.",
+  "definition": "Restating someone's argument in an exaggerated, oversimplified or extreme form, then refuting that distorted version as if it were what they actually said.",
+  "howToSpot": [
+    "Compare what was actually said with the version being attacked",
+    "Look for dropped qualifiers: 'some' becomes 'all', 'less' becomes 'none'",
+    "Ask whether the original speaker would accept this summary of their view"
+  ],
+  "classicExample": "Jen wants to cut the snack budget by 10%. So she wants everyone starving at their desks?",
+  "legitimateVersion": "Summarizing someone's view and showing where it leads is fair when the summary is accurate and they'd recognize it, ideally checked with them or quoted in their own words.",
+  "confusableWith": ["fal_red_herring", "fal_false_dichotomy"],
+  "contrast": {
+    "fal_red_herring": "A straw man distorts the opponent's actual position; a red herring drops the topic and brings in a different one.",
+    "fal_false_dichotomy": "A straw man misrepresents one side's view; a false dichotomy pretends there are only two options to choose from."
+  }
+}

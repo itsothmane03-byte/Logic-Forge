@@ -1,0 +1,21 @@
+{
+  "id": "fal_middle_ground",
+  "name": "Middle Ground",
+  "aliases": ["Argument to moderation", "Splitting the difference", "False compromise"],
+  "family": "framing",
+  "difficulty": "intermediate",
+  "shortDef": "Assuming a compromise between two positions must be the correct answer.",
+  "definition": "Concluding that the truth or the best choice lies between two positions simply because it is in the middle, without showing that the middle is better supported. Sometimes one side is just right, or both are wrong.",
+  "howToSpot": [
+    "Is the middle option defended on its merits, or only for being in the middle?",
+    "Could one side simply be right, or both be wrong?",
+    "Would splitting the difference still make sense if one position were absurd?"
+  ],
+  "classicExample": "One mechanic says the brakes are fine and another says they're shot, so they're probably about half worn.",
+  "legitimateVersion": "A compromise is reasonable when it's justified on its own merits, such as evidence that the moderate option works better, or when splitting a shared cost is fair because both sides benefit equally.",
+  "confusableWith": ["fal_false_dichotomy", "fal_false_equivalence"],
+  "contrast": {
+    "fal_false_dichotomy": "Middle ground assumes the in-between option is right; a false dichotomy pretends there are only two options at all.",
+    "fal_false_equivalence": "Middle ground splits the difference between positions; false equivalence treats two very unequal things as if they were the same."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "fal_anecdotal_evidence",
+  "name": "Anecdotal Evidence",
+  "aliases": ["Argument from anecdote", "Proof by anecdote"],
+  "family": "evidence",
+  "difficulty": "beginner",
+  "shortDef": "Letting a personal story outweigh broader, systematic evidence.",
+  "definition": "Using a vivid personal experience, or a friend's, to dismiss or outweigh systematic evidence such as studies, surveys or large datasets. One case can be real and still tell you little about what usually happens.",
+  "howToSpot": [
+    "Is a single story being set against studies, surveys or larger data?",
+    "Would one exception really change what's true on average?",
+    "Is the story's vividness doing the work that evidence should do?"
+  ],
+  "classicExample": "My grandfather smoked every day and lived to 95, so the health risks of smoking are exaggerated.",
+  "legitimateVersion": "Personal experience is fair as one data point, a reason to look closer, or a counterexample to an absolute 'always' or 'never' claim, as long as it isn't treated as outweighing the larger evidence.",
+  "confusableWith": ["fal_hasty_generalization", "fal_cherry_picking"],
+  "contrast": {
+    "fal_hasty_generalization": "Anecdotal evidence sets a personal story against systematic data; hasty generalization builds a broad claim from too few cases.",
+    "fal_cherry_picking": "Anecdotal evidence leans on one personal story; cherry picking selects the favorable data points from a larger set."
+  }
+}

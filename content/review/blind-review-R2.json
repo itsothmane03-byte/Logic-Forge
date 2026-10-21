@@ -1,0 +1,272 @@
+[
+  {
+    "q": "r001",
+    "verdict": "flawed",
+    "top1": "fal_bandwagon",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Popularity among firms (71%) is taken as proof the policy is better; no outcome evidence is offered."
+  },
+  {
+    "q": "r002",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_emotion",
+    "runnerUp": "fal_red_herring",
+    "confidence": 2,
+    "flags": [],
+    "note": "Team pride and guilt replace answers on QA timing and overtime; the dodge itself makes red herring defensible."
+  },
+  {
+    "q": "r003",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_consequences",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "'So I'm calling it' rests on how good it would be if true; one dark, unconfirmed photo is the only evidence."
+  },
+  {
+    "q": "r004",
+    "verdict": "flawed",
+    "top1": "fal_bandwagon",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Count of towns switching and fear of being last replace reasons about Ferncliff's own costs or service."
+  },
+  {
+    "q": "r005",
+    "verdict": "flawed",
+    "top1": "fal_tu_quoque",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Callum deflects the rota complaint by citing Noor's past lapse; textbook but realistic, with a good reply."
+  },
+  {
+    "q": "r006",
+    "verdict": "flawed",
+    "top1": "fal_cherry_picking",
+    "runnerUp": "fal_post_hoc",
+    "confidence": 3,
+    "flags": [],
+    "note": "Reports only grade 3 while burying grades 4-5; crediting the program for the rise also invites post hoc."
+  },
+  {
+    "q": "r007",
+    "verdict": "flawed",
+    "top1": "fal_slippery_slope",
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Unsupported chain from no fines to budget cuts. A news summary may compress his evidence, but as written each link is merely asserted."
+  },
+  {
+    "q": "r008",
+    "verdict": "flawed",
+    "top1": "fal_moving_the_goalposts",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Buyer adds a new condition after each agreed one is met, then a fresh objection to cut the price."
+  },
+  {
+    "q": "r009",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A month beside a calibrated gauge, nine rain days within 1 mm: an adequate check for a garden watering log."
+  },
+  {
+    "q": "r010",
+    "verdict": "flawed",
+    "top1": "fal_texas_sharpshooter",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Densest cluster picked after the fact, then called non-random; no baseline for reporting density near Millpond Rd."
+  },
+  {
+    "q": "r011",
+    "verdict": "flawed",
+    "top1": "fal_false_equivalence",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Equal duration treated as equal intensity; strolling and HIIT differ greatly in energy use."
+  },
+  {
+    "q": "r012",
+    "verdict": "flawed",
+    "top1": "fal_is_ought",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Moves from where pay ended up to where it should be, ignoring the acknowledged negotiation gap."
+  },
+  {
+    "q": "r013",
+    "verdict": "flawed",
+    "top1": "fal_texas_sharpshooter",
+    "runnerUp": "fal_false_cause",
+    "confidence": 2,
+    "flags": [],
+    "note": "Tested ~8 variables on 6 outages and kept the one that lined up; treating a 4/6 overlap as the cause also fits false cause."
+  },
+  {
+    "q": "r014",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_consequences",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Rejects the birth-month finding because believing it might discourage kids, not on any evidence."
+  },
+  {
+    "q": "r015",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Original condition was never truly met (report withdrawn); Felix keeps the same standard. Good goalposts contrast."
+  },
+  {
+    "q": "r016",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_nature",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Apple origin taken as proof of safety and efficacy; Kemi's question rightly flags the unsupported germ claim."
+  },
+  {
+    "q": "r017",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_emotion",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Tender imagery and parental guilt stand in for any reason the $1,249 stroller is better for the child."
+  },
+  {
+    "q": "r018",
+    "verdict": "flawed",
+    "top1": "fal_appeal_to_tradition",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Docks the diner for changing a 1958 recipe he did not even taste; the recipe's age is the only reason."
+  },
+  {
+    "q": "r019",
+    "verdict": "flawed",
+    "top1": "fal_false_equivalence",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Shared ANC feature treated as equal performance despite the reviewer's own note that it is much weaker."
+  },
+  {
+    "q": "r020",
+    "verdict": "flawed",
+    "top1": "fal_false_equivalence",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "A 2,000-person trial and a blogger's follower poll on a different outcome are given equal weight: false balance."
+  },
+  {
+    "q": "r021",
+    "verdict": "flawed",
+    "top1": "fal_moving_the_goalposts",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Requirement added after compliant applications were submitted, then used to reject all of them."
+  },
+  {
+    "q": "r022",
+    "verdict": "flawed",
+    "top1": "fal_guilt_by_association",
+    "runnerUp": "fal_genetic_fallacy",
+    "confidence": 3,
+    "flags": [],
+    "note": "Rejects the advice because a disreputable group backs it; judging it by its perceived source also fits genetic fallacy."
+  },
+  {
+    "q": "r023",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Random sample across all wards, ~69% response, MOE checks out (~2.2 pts at n=1,650); conclusion is scoped properly."
+  },
+  {
+    "q": "r024",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Same dose and ingredient plus bioequivalence standards support the scoped claim; reasons given, not bare authority."
+  },
+  {
+    "q": "r025",
+    "verdict": "flawed",
+    "top1": "fal_is_ought",
+    "runnerUp": "fal_red_herring",
+    "confidence": 1,
+    "flags": ["ambiguous"],
+    "note": "Can-pay-so-fair fits is-ought, but swapping 'why 15%?' for 'you can afford it' is red herring; 'fair' also slides. Rewrite."
+  },
+  {
+    "q": "r026",
+    "verdict": "flawed",
+    "top1": "fal_genetic_fallacy",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Dismisses the method for its humble origin (one student, a kitchen timer), not on evidence about whether it works."
+  },
+  {
+    "q": "r027",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 2,
+    "flags": [],
+    "note": "Weighs ambulance delay against wear with concrete figures; would be stronger with an engineer's load rating for the deck."
+  },
+  {
+    "q": "r028",
+    "verdict": "sound",
+    "top1": null,
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Applies the standard definition of vegan to the listed ingredients; a valid deduction, not No True Scotsman."
+  },
+  {
+    "q": "r029",
+    "verdict": "flawed",
+    "top1": "fal_moving_the_goalposts",
+    "runnerUp": null,
+    "confidence": 3,
+    "flags": [],
+    "note": "Adds a 25-start rule after she met the written criteria; the 'full season' rationale does not excuse the timing."
+  },
+  {
+    "q": "r030",
+    "verdict": "flawed",
+    "top1": "fal_post_hoc",
+    "runnerUp": "fal_false_cause",
+    "confidence": 3,
+    "flags": [],
+    "note": "Burglary drop after install credited to LEDs over a short window; false cause overlaps. Energy savings alone were a valid reason."
+  }
+]

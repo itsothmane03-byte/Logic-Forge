@@ -1,0 +1,21 @@
+{
+  "id": "fal_hasty_generalization",
+  "name": "Hasty Generalization",
+  "aliases": ["Overgeneralization", "Insufficient sample"],
+  "family": "evidence",
+  "difficulty": "beginner",
+  "shortDef": "Drawing a broad conclusion from a sample that's too small or unrepresentative.",
+  "definition": "Generalizing about a whole group from a few cases, or from a sample that doesn't reflect the group, such as one visit, a handful of people or a self-selected crowd of fans or complainers.",
+  "howToSpot": [
+    "How many cases is the claim based on, and how big is the group it's about?",
+    "Were the cases picked in a way that skews them, like volunteers or fans?",
+    "Does the conclusion say 'all' or 'always' when the evidence says 'some'?"
+  ],
+  "classicExample": "The two people I met from Port Ellis were rude, so people from Port Ellis are rude.",
+  "legitimateVersion": "Generalizing is fine when the sample is large and representative, like a random survey, or when a small random sample shows a result so extreme that chance can't explain it.",
+  "confusableWith": ["fal_anecdotal_evidence", "fal_composition"],
+  "contrast": {
+    "fal_anecdotal_evidence": "Hasty generalization leaps from too few cases; anecdotal evidence lets a personal story outweigh systematic data that already exists.",
+    "fal_composition": "Hasty generalization goes from some members to all members; composition goes from the parts to the whole thing they make up."
+  }
+}

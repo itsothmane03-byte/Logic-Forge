@@ -1,0 +1,21 @@
+{
+  "id": "fal_moving_the_goalposts",
+  "name": "Moving the Goalposts",
+  "aliases": ["Shifting the goalposts", "Raising the bar"],
+  "family": "framing",
+  "difficulty": "intermediate",
+  "shortDef": "Raising or changing the standard of proof after the original one has been met.",
+  "definition": "Demanding new or tougher evidence once the evidence originally asked for has been provided, so the claim never has to be accepted. The bar keeps shifting instead of the conclusion being reconsidered.",
+  "howToSpot": [
+    "What standard did the speaker set at the start?",
+    "Was that standard met before the new demand appeared?",
+    "Would any evidence ever be enough, or does the bar keep moving?"
+  ],
+  "classicExample": "Show me one study that says it works. Okay, that's one; show me ten. Fine, but were any of them done in this country?",
+  "legitimateVersion": "Asking for more is fair when the original request wasn't actually met, or when new information reveals a real gap, like a test that didn't cover the case you care about.",
+  "confusableWith": ["fal_no_true_scotsman", "fal_special_pleading"],
+  "contrast": {
+    "fal_no_true_scotsman": "Moving the goalposts raises the bar for proof; no true Scotsman redefines a group so a counterexample stops counting.",
+    "fal_special_pleading": "Moving the goalposts shifts a standard after it's met; special pleading exempts one case from a standard that still applies to others."
+  }
+}

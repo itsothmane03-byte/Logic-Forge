@@ -1,0 +1,21 @@
+{
+  "id": "fal_red_herring",
+  "name": "Red Herring",
+  "aliases": ["Changing the subject", "Irrelevant thesis"],
+  "family": "distraction",
+  "difficulty": "beginner",
+  "shortDef": "Changing the subject to dodge the real question.",
+  "definition": "Introducing a different topic that may sound related but doesn't bear on the question at hand, so attention drifts away and the original issue goes unanswered.",
+  "howToSpot": [
+    "Restate the original question; does the reply actually answer it?",
+    "Notice when the topic shifts to something easier, nicer or more exciting",
+    "Ask whether the new point would change the answer to the old question"
+  ],
+  "classicExample": "Asked why rent went up 20%, the landlord talked about the beautiful new art in the lobby.",
+  "legitimateVersion": "Raising a new point is fair when it bears on the question, like a mechanic noting other needed repairs, or when you answer the original question first and then add context.",
+  "confusableWith": ["fal_straw_man", "fal_tu_quoque"],
+  "contrast": {
+    "fal_straw_man": "A red herring changes the subject; a straw man stays on the subject but distorts the other side's position.",
+    "fal_tu_quoque": "A red herring shifts to any unrelated issue; tu quoque shifts specifically to the critic's own behavior."
+  }
+}

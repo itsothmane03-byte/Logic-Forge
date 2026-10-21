@@ -1,0 +1,21 @@
+{
+  "id": "fal_appeal_to_consequences",
+  "name": "Appeal to Consequences",
+  "aliases": ["Wishful thinking", "Argument from consequences"],
+  "family": "emotion",
+  "difficulty": "advanced",
+  "shortDef": "Judging whether a claim is true by whether we'd like its consequences.",
+  "definition": "Arguing that a factual claim must be true because believing it leads to good outcomes, or false because accepting it would be unpleasant, when those outcomes say nothing about what is actually the case.",
+  "howToSpot": [
+    "Is the question what's true, or what we should do about it?",
+    "Ask whether the facts would change if the outcome were different",
+    "Watch for a finding rejected because accepting it would be painful or costly"
+  ],
+  "classicExample": "The bridge can't be unsafe. Closing it would wreck the downtown shops.",
+  "legitimateVersion": "Consequences are the right test for decisions, like whether to close the bridge or limit its traffic. They just can't settle facts, like whether the bridge is actually safe.",
+  "confusableWith": ["fal_appeal_to_emotion", "fal_slippery_slope"],
+  "contrast": {
+    "fal_appeal_to_emotion": "Appeal to consequences ties truth to good or bad outcomes; appeal to emotion stirs feelings without needing any claim about outcomes.",
+    "fal_slippery_slope": "Appeal to consequences rejects a claim because its results would be bad; slippery slope predicts an unsupported chain of events from one step."
+  }
+}

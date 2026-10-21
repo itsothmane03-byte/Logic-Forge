@@ -1,0 +1,21 @@
+{
+  "id": "fal_slippery_slope",
+  "name": "Slippery Slope",
+  "aliases": ["Domino fallacy", "Thin end of the wedge"],
+  "family": "evidence",
+  "difficulty": "beginner",
+  "shortDef": "Claiming a small step will inevitably snowball into disaster, without support.",
+  "definition": "Arguing that a modest first step will lead, link by link, to an extreme outcome, while giving no real evidence that each link is likely. The chain is presented as inevitable instead of being shown.",
+  "howToSpot": [
+    "Count the links: is each step supported, or just asserted?",
+    "Watch for 'next it'll be', 'then', 'before you know it' piling up.",
+    "Could an ordinary decision stop the chain at any step along the way?"
+  ],
+  "classicExample": "If we let students redo one quiz, soon they'll expect to redo every test, and grades will mean nothing.",
+  "legitimateVersion": "Predicting a chain of consequences is fair when each link is backed by evidence, such as a contract clause, a precedent or data, and the likelihood is stated honestly rather than as inevitable.",
+  "confusableWith": ["fal_appeal_to_fear", "fal_false_cause"],
+  "contrast": {
+    "fal_appeal_to_fear": "A slippery slope lays out a chain of steps to a bad end; an appeal to fear just stirs up dread, with or without a chain.",
+    "fal_false_cause": "False cause misreads one link from a correlation; a slippery slope stacks a series of unsupported links into a runaway chain."
+  }
+}

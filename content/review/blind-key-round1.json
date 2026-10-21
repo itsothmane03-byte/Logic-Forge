@@ -1,0 +1,2130 @@
+{
+ "q001": {
+  "id": "itm_false_equivalence_06",
+  "isSound": false,
+  "fallacyId": "fal_false_equivalence",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q002": {
+  "id": "itm_appeal_to_authority_02",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_authority",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q003": {
+  "id": "itm_special_pleading_01",
+  "isSound": false,
+  "fallacyId": "fal_special_pleading",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q004": {
+  "id": "itm_snd_special_pleading_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_special_pleading",
+  "difficulty": 2
+ },
+ "q005": {
+  "id": "itm_false_equivalence_05",
+  "isSound": false,
+  "fallacyId": "fal_false_equivalence",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q006": {
+  "id": "itm_appeal_to_emotion_03",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_emotion",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q007": {
+  "id": "itm_appeal_to_tradition_04",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_tradition",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q008": {
+  "id": "itm_cherry_picking_02",
+  "isSound": false,
+  "fallacyId": "fal_cherry_picking",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q009": {
+  "id": "itm_composition_06",
+  "isSound": false,
+  "fallacyId": "fal_composition",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q010": {
+  "id": "itm_snd_composition_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_composition",
+  "difficulty": 2
+ },
+ "q011": {
+  "id": "itm_burden_of_proof_06",
+  "isSound": false,
+  "fallacyId": "fal_burden_of_proof",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q012": {
+  "id": "itm_snd_appeal_to_authority_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_authority",
+  "difficulty": 3
+ },
+ "q013": {
+  "id": "itm_moving_the_goalposts_03",
+  "isSound": false,
+  "fallacyId": "fal_moving_the_goalposts",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q014": {
+  "id": "itm_snd_guilt_by_association_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_guilt_by_association",
+  "difficulty": 2
+ },
+ "q015": {
+  "id": "itm_snd_red_herring_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_red_herring",
+  "difficulty": 2
+ },
+ "q016": {
+  "id": "itm_sunk_cost_06",
+  "isSound": false,
+  "fallacyId": "fal_sunk_cost",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q017": {
+  "id": "itm_snd_appeal_to_tradition_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_tradition",
+  "difficulty": 2
+ },
+ "q018": {
+  "id": "itm_composition_02",
+  "isSound": false,
+  "fallacyId": "fal_composition",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q019": {
+  "id": "itm_anecdotal_evidence_01",
+  "isSound": false,
+  "fallacyId": "fal_anecdotal_evidence",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q020": {
+  "id": "itm_burden_of_proof_04",
+  "isSound": false,
+  "fallacyId": "fal_burden_of_proof",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q021": {
+  "id": "itm_composition_05",
+  "isSound": false,
+  "fallacyId": "fal_composition",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q022": {
+  "id": "itm_snd_appeal_to_nature_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_nature",
+  "difficulty": 2
+ },
+ "q023": {
+  "id": "itm_division_06",
+  "isSound": false,
+  "fallacyId": "fal_division",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q024": {
+  "id": "itm_middle_ground_06",
+  "isSound": false,
+  "fallacyId": "fal_middle_ground",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q025": {
+  "id": "itm_snd_no_true_scotsman_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_no_true_scotsman",
+  "difficulty": 2
+ },
+ "q026": {
+  "id": "itm_middle_ground_03",
+  "isSound": false,
+  "fallacyId": "fal_middle_ground",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q027": {
+  "id": "itm_appeal_to_fear_03",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_fear",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q028": {
+  "id": "itm_texas_sharpshooter_04",
+  "isSound": false,
+  "fallacyId": "fal_texas_sharpshooter",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q029": {
+  "id": "itm_appeal_to_ignorance_05",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_ignorance",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q030": {
+  "id": "itm_appeal_to_ignorance_01",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_ignorance",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q031": {
+  "id": "itm_division_03",
+  "isSound": false,
+  "fallacyId": "fal_division",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q032": {
+  "id": "itm_special_pleading_06",
+  "isSound": false,
+  "fallacyId": "fal_special_pleading",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q033": {
+  "id": "itm_hasty_generalization_01",
+  "isSound": false,
+  "fallacyId": "fal_hasty_generalization",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q034": {
+  "id": "itm_appeal_to_fear_04",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_fear",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q035": {
+  "id": "itm_hasty_generalization_04",
+  "isSound": false,
+  "fallacyId": "fal_hasty_generalization",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q036": {
+  "id": "itm_post_hoc_01",
+  "isSound": false,
+  "fallacyId": "fal_post_hoc",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q037": {
+  "id": "itm_false_dichotomy_06",
+  "isSound": false,
+  "fallacyId": "fal_false_dichotomy",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q038": {
+  "id": "itm_circular_reasoning_03",
+  "isSound": false,
+  "fallacyId": "fal_circular_reasoning",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q039": {
+  "id": "itm_gamblers_fallacy_01",
+  "isSound": false,
+  "fallacyId": "fal_gamblers_fallacy",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q040": {
+  "id": "itm_guilt_by_association_06",
+  "isSound": false,
+  "fallacyId": "fal_guilt_by_association",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q041": {
+  "id": "itm_snd_hasty_generalization_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_hasty_generalization",
+  "difficulty": 2
+ },
+ "q042": {
+  "id": "itm_appeal_to_fear_02",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_fear",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q043": {
+  "id": "itm_post_hoc_05",
+  "isSound": false,
+  "fallacyId": "fal_post_hoc",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q044": {
+  "id": "itm_snd_special_pleading_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_special_pleading",
+  "difficulty": 3
+ },
+ "q045": {
+  "id": "itm_snd_anecdotal_evidence_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_anecdotal_evidence",
+  "difficulty": 2
+ },
+ "q046": {
+  "id": "itm_appeal_to_pity_01",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_pity",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q047": {
+  "id": "itm_red_herring_04",
+  "isSound": false,
+  "fallacyId": "fal_red_herring",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q048": {
+  "id": "itm_equivocation_05",
+  "isSound": false,
+  "fallacyId": "fal_equivocation",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q049": {
+  "id": "itm_snd_is_ought_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_is_ought",
+  "difficulty": 2
+ },
+ "q050": {
+  "id": "itm_cherry_picking_03",
+  "isSound": false,
+  "fallacyId": "fal_cherry_picking",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q051": {
+  "id": "itm_guilt_by_association_03",
+  "isSound": false,
+  "fallacyId": "fal_guilt_by_association",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q052": {
+  "id": "itm_moving_the_goalposts_06",
+  "isSound": false,
+  "fallacyId": "fal_moving_the_goalposts",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q053": {
+  "id": "itm_snd_appeal_to_pity_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_pity",
+  "difficulty": 2
+ },
+ "q054": {
+  "id": "itm_tu_quoque_01",
+  "isSound": false,
+  "fallacyId": "fal_tu_quoque",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q055": {
+  "id": "itm_appeal_to_tradition_01",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_tradition",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q056": {
+  "id": "itm_sunk_cost_04",
+  "isSound": false,
+  "fallacyId": "fal_sunk_cost",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q057": {
+  "id": "itm_equivocation_02",
+  "isSound": false,
+  "fallacyId": "fal_equivocation",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q058": {
+  "id": "itm_tu_quoque_04",
+  "isSound": false,
+  "fallacyId": "fal_tu_quoque",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q059": {
+  "id": "itm_texas_sharpshooter_06",
+  "isSound": false,
+  "fallacyId": "fal_texas_sharpshooter",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q060": {
+  "id": "itm_cherry_picking_04",
+  "isSound": false,
+  "fallacyId": "fal_cherry_picking",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q061": {
+  "id": "itm_red_herring_01",
+  "isSound": false,
+  "fallacyId": "fal_red_herring",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q062": {
+  "id": "itm_appeal_to_nature_03",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_nature",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q063": {
+  "id": "itm_snd_moving_the_goalposts_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_moving_the_goalposts",
+  "difficulty": 2
+ },
+ "q064": {
+  "id": "itm_snd_genetic_fallacy_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_genetic_fallacy",
+  "difficulty": 2
+ },
+ "q065": {
+  "id": "itm_red_herring_03",
+  "isSound": false,
+  "fallacyId": "fal_red_herring",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q066": {
+  "id": "itm_special_pleading_03",
+  "isSound": false,
+  "fallacyId": "fal_special_pleading",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q067": {
+  "id": "itm_composition_03",
+  "isSound": false,
+  "fallacyId": "fal_composition",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q068": {
+  "id": "itm_no_true_scotsman_05",
+  "isSound": false,
+  "fallacyId": "fal_no_true_scotsman",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q069": {
+  "id": "itm_hasty_generalization_03",
+  "isSound": false,
+  "fallacyId": "fal_hasty_generalization",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q070": {
+  "id": "itm_appeal_to_consequences_01",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_consequences",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q071": {
+  "id": "itm_appeal_to_ignorance_03",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_ignorance",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q072": {
+  "id": "itm_appeal_to_nature_01",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_nature",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q073": {
+  "id": "itm_snd_equivocation_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_equivocation",
+  "difficulty": 2
+ },
+ "q074": {
+  "id": "itm_appeal_to_authority_03",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_authority",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q075": {
+  "id": "itm_hasty_generalization_06",
+  "isSound": false,
+  "fallacyId": "fal_hasty_generalization",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q076": {
+  "id": "itm_texas_sharpshooter_03",
+  "isSound": false,
+  "fallacyId": "fal_texas_sharpshooter",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q077": {
+  "id": "itm_no_true_scotsman_01",
+  "isSound": false,
+  "fallacyId": "fal_no_true_scotsman",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q078": {
+  "id": "itm_snd_false_analogy_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_false_analogy",
+  "difficulty": 3
+ },
+ "q079": {
+  "id": "itm_snd_appeal_to_consequences_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_consequences",
+  "difficulty": 2
+ },
+ "q080": {
+  "id": "itm_burden_of_proof_05",
+  "isSound": false,
+  "fallacyId": "fal_burden_of_proof",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q081": {
+  "id": "itm_snd_tu_quoque_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_tu_quoque",
+  "difficulty": 2
+ },
+ "q082": {
+  "id": "itm_circular_reasoning_01",
+  "isSound": false,
+  "fallacyId": "fal_circular_reasoning",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q083": {
+  "id": "itm_red_herring_06",
+  "isSound": false,
+  "fallacyId": "fal_red_herring",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q084": {
+  "id": "itm_ad_hominem_02",
+  "isSound": false,
+  "fallacyId": "fal_ad_hominem",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q085": {
+  "id": "itm_appeal_to_fear_05",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_fear",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q086": {
+  "id": "itm_tu_quoque_03",
+  "isSound": false,
+  "fallacyId": "fal_tu_quoque",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q087": {
+  "id": "itm_middle_ground_05",
+  "isSound": false,
+  "fallacyId": "fal_middle_ground",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q088": {
+  "id": "itm_false_cause_05",
+  "isSound": false,
+  "fallacyId": "fal_false_cause",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q089": {
+  "id": "itm_post_hoc_06",
+  "isSound": false,
+  "fallacyId": "fal_post_hoc",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q090": {
+  "id": "itm_appeal_to_nature_02",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_nature",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q091": {
+  "id": "itm_snd_ad_hominem_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_ad_hominem",
+  "difficulty": 3
+ },
+ "q092": {
+  "id": "itm_burden_of_proof_03",
+  "isSound": false,
+  "fallacyId": "fal_burden_of_proof",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q093": {
+  "id": "itm_snd_texas_sharpshooter_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_texas_sharpshooter",
+  "difficulty": 2
+ },
+ "q094": {
+  "id": "itm_ad_hominem_01",
+  "isSound": false,
+  "fallacyId": "fal_ad_hominem",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q095": {
+  "id": "itm_bandwagon_01",
+  "isSound": false,
+  "fallacyId": "fal_bandwagon",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q096": {
+  "id": "itm_false_analogy_01",
+  "isSound": false,
+  "fallacyId": "fal_false_analogy",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q097": {
+  "id": "itm_post_hoc_04",
+  "isSound": false,
+  "fallacyId": "fal_post_hoc",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q098": {
+  "id": "itm_is_ought_03",
+  "isSound": false,
+  "fallacyId": "fal_is_ought",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q099": {
+  "id": "itm_snd_slippery_slope_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_slippery_slope",
+  "difficulty": 2
+ },
+ "q100": {
+  "id": "itm_snd_loaded_question_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_loaded_question",
+  "difficulty": 2
+ },
+ "q101": {
+  "id": "itm_snd_straw_man_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_straw_man",
+  "difficulty": 3
+ },
+ "q102": {
+  "id": "itm_snd_genetic_fallacy_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_genetic_fallacy",
+  "difficulty": 3
+ },
+ "q103": {
+  "id": "itm_straw_man_03",
+  "isSound": false,
+  "fallacyId": "fal_straw_man",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q104": {
+  "id": "itm_appeal_to_emotion_06",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_emotion",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q105": {
+  "id": "itm_genetic_fallacy_04",
+  "isSound": false,
+  "fallacyId": "fal_genetic_fallacy",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q106": {
+  "id": "itm_slippery_slope_01",
+  "isSound": false,
+  "fallacyId": "fal_slippery_slope",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q107": {
+  "id": "itm_false_dichotomy_05",
+  "isSound": false,
+  "fallacyId": "fal_false_dichotomy",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q108": {
+  "id": "itm_anecdotal_evidence_06",
+  "isSound": false,
+  "fallacyId": "fal_anecdotal_evidence",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q109": {
+  "id": "itm_loaded_question_06",
+  "isSound": false,
+  "fallacyId": "fal_loaded_question",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q110": {
+  "id": "itm_false_equivalence_04",
+  "isSound": false,
+  "fallacyId": "fal_false_equivalence",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q111": {
+  "id": "itm_snd_appeal_to_authority_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_authority",
+  "difficulty": 2
+ },
+ "q112": {
+  "id": "itm_snd_bandwagon_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_bandwagon",
+  "difficulty": 3
+ },
+ "q113": {
+  "id": "itm_straw_man_01",
+  "isSound": false,
+  "fallacyId": "fal_straw_man",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q114": {
+  "id": "itm_genetic_fallacy_05",
+  "isSound": false,
+  "fallacyId": "fal_genetic_fallacy",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q115": {
+  "id": "itm_post_hoc_02",
+  "isSound": false,
+  "fallacyId": "fal_post_hoc",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q116": {
+  "id": "itm_false_analogy_06",
+  "isSound": false,
+  "fallacyId": "fal_false_analogy",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q117": {
+  "id": "itm_snd_false_equivalence_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_false_equivalence",
+  "difficulty": 3
+ },
+ "q118": {
+  "id": "itm_snd_circular_reasoning_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_circular_reasoning",
+  "difficulty": 2
+ },
+ "q119": {
+  "id": "itm_is_ought_01",
+  "isSound": false,
+  "fallacyId": "fal_is_ought",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q120": {
+  "id": "itm_division_02",
+  "isSound": false,
+  "fallacyId": "fal_division",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q121": {
+  "id": "itm_tu_quoque_05",
+  "isSound": false,
+  "fallacyId": "fal_tu_quoque",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q122": {
+  "id": "itm_snd_burden_of_proof_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_burden_of_proof",
+  "difficulty": 3
+ },
+ "q123": {
+  "id": "itm_false_cause_03",
+  "isSound": false,
+  "fallacyId": "fal_false_cause",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q124": {
+  "id": "itm_appeal_to_emotion_05",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_emotion",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q125": {
+  "id": "itm_snd_anecdotal_evidence_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_anecdotal_evidence",
+  "difficulty": 3
+ },
+ "q126": {
+  "id": "itm_snd_appeal_to_emotion_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_emotion",
+  "difficulty": 2
+ },
+ "q127": {
+  "id": "itm_division_05",
+  "isSound": false,
+  "fallacyId": "fal_division",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q128": {
+  "id": "itm_division_01",
+  "isSound": false,
+  "fallacyId": "fal_division",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q129": {
+  "id": "itm_false_dichotomy_01",
+  "isSound": false,
+  "fallacyId": "fal_false_dichotomy",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q130": {
+  "id": "itm_circular_reasoning_06",
+  "isSound": false,
+  "fallacyId": "fal_circular_reasoning",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q131": {
+  "id": "itm_gamblers_fallacy_03",
+  "isSound": false,
+  "fallacyId": "fal_gamblers_fallacy",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q132": {
+  "id": "itm_snd_ad_hominem_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_ad_hominem",
+  "difficulty": 2
+ },
+ "q133": {
+  "id": "itm_guilt_by_association_01",
+  "isSound": false,
+  "fallacyId": "fal_guilt_by_association",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q134": {
+  "id": "itm_sunk_cost_05",
+  "isSound": false,
+  "fallacyId": "fal_sunk_cost",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q135": {
+  "id": "itm_snd_false_dichotomy_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_false_dichotomy",
+  "difficulty": 3
+ },
+ "q136": {
+  "id": "itm_snd_guilt_by_association_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_guilt_by_association",
+  "difficulty": 3
+ },
+ "q137": {
+  "id": "itm_texas_sharpshooter_05",
+  "isSound": false,
+  "fallacyId": "fal_texas_sharpshooter",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q138": {
+  "id": "itm_gamblers_fallacy_06",
+  "isSound": false,
+  "fallacyId": "fal_gamblers_fallacy",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q139": {
+  "id": "itm_straw_man_05",
+  "isSound": false,
+  "fallacyId": "fal_straw_man",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q140": {
+  "id": "itm_appeal_to_emotion_04",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_emotion",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q141": {
+  "id": "itm_false_equivalence_03",
+  "isSound": false,
+  "fallacyId": "fal_false_equivalence",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q142": {
+  "id": "itm_no_true_scotsman_04",
+  "isSound": false,
+  "fallacyId": "fal_no_true_scotsman",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q143": {
+  "id": "itm_no_true_scotsman_06",
+  "isSound": false,
+  "fallacyId": "fal_no_true_scotsman",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q144": {
+  "id": "itm_snd_loaded_question_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_loaded_question",
+  "difficulty": 3
+ },
+ "q145": {
+  "id": "itm_snd_sunk_cost_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_sunk_cost",
+  "difficulty": 3
+ },
+ "q146": {
+  "id": "itm_snd_slippery_slope_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_slippery_slope",
+  "difficulty": 3
+ },
+ "q147": {
+  "id": "itm_ad_hominem_05",
+  "isSound": false,
+  "fallacyId": "fal_ad_hominem",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q148": {
+  "id": "itm_burden_of_proof_01",
+  "isSound": false,
+  "fallacyId": "fal_burden_of_proof",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q149": {
+  "id": "itm_snd_false_dichotomy_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_false_dichotomy",
+  "difficulty": 2
+ },
+ "q150": {
+  "id": "itm_appeal_to_tradition_06",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_tradition",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q151": {
+  "id": "itm_straw_man_04",
+  "isSound": false,
+  "fallacyId": "fal_straw_man",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q152": {
+  "id": "itm_slippery_slope_02",
+  "isSound": false,
+  "fallacyId": "fal_slippery_slope",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q153": {
+  "id": "itm_snd_cherry_picking_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_cherry_picking",
+  "difficulty": 2
+ },
+ "q154": {
+  "id": "itm_appeal_to_authority_01",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_authority",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q155": {
+  "id": "itm_composition_01",
+  "isSound": false,
+  "fallacyId": "fal_composition",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q156": {
+  "id": "itm_snd_gamblers_fallacy_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_gamblers_fallacy",
+  "difficulty": 3
+ },
+ "q157": {
+  "id": "itm_appeal_to_ignorance_02",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_ignorance",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q158": {
+  "id": "itm_snd_composition_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_composition",
+  "difficulty": 3
+ },
+ "q159": {
+  "id": "itm_snd_sunk_cost_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_sunk_cost",
+  "difficulty": 2
+ },
+ "q160": {
+  "id": "itm_appeal_to_tradition_03",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_tradition",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q161": {
+  "id": "itm_ad_hominem_04",
+  "isSound": false,
+  "fallacyId": "fal_ad_hominem",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q162": {
+  "id": "itm_hasty_generalization_02",
+  "isSound": false,
+  "fallacyId": "fal_hasty_generalization",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q163": {
+  "id": "itm_appeal_to_ignorance_06",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_ignorance",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q164": {
+  "id": "itm_gamblers_fallacy_05",
+  "isSound": false,
+  "fallacyId": "fal_gamblers_fallacy",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q165": {
+  "id": "itm_genetic_fallacy_06",
+  "isSound": false,
+  "fallacyId": "fal_genetic_fallacy",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q166": {
+  "id": "itm_false_dichotomy_03",
+  "isSound": false,
+  "fallacyId": "fal_false_dichotomy",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q167": {
+  "id": "itm_tu_quoque_02",
+  "isSound": false,
+  "fallacyId": "fal_tu_quoque",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q168": {
+  "id": "itm_hasty_generalization_05",
+  "isSound": false,
+  "fallacyId": "fal_hasty_generalization",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q169": {
+  "id": "itm_appeal_to_fear_01",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_fear",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q170": {
+  "id": "itm_snd_appeal_to_fear_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_fear",
+  "difficulty": 3
+ },
+ "q171": {
+  "id": "itm_snd_circular_reasoning_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_circular_reasoning",
+  "difficulty": 3
+ },
+ "q172": {
+  "id": "itm_slippery_slope_05",
+  "isSound": false,
+  "fallacyId": "fal_slippery_slope",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q173": {
+  "id": "itm_no_true_scotsman_02",
+  "isSound": false,
+  "fallacyId": "fal_no_true_scotsman",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q174": {
+  "id": "itm_snd_equivocation_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_equivocation",
+  "difficulty": 3
+ },
+ "q175": {
+  "id": "itm_is_ought_05",
+  "isSound": false,
+  "fallacyId": "fal_is_ought",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q176": {
+  "id": "itm_false_equivalence_01",
+  "isSound": false,
+  "fallacyId": "fal_false_equivalence",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q177": {
+  "id": "itm_appeal_to_ignorance_04",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_ignorance",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q178": {
+  "id": "itm_snd_no_true_scotsman_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_no_true_scotsman",
+  "difficulty": 3
+ },
+ "q179": {
+  "id": "itm_moving_the_goalposts_02",
+  "isSound": false,
+  "fallacyId": "fal_moving_the_goalposts",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q180": {
+  "id": "itm_snd_appeal_to_emotion_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_emotion",
+  "difficulty": 3
+ },
+ "q181": {
+  "id": "itm_loaded_question_04",
+  "isSound": false,
+  "fallacyId": "fal_loaded_question",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q182": {
+  "id": "itm_ad_hominem_06",
+  "isSound": false,
+  "fallacyId": "fal_ad_hominem",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q183": {
+  "id": "itm_equivocation_03",
+  "isSound": false,
+  "fallacyId": "fal_equivocation",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q184": {
+  "id": "itm_false_cause_02",
+  "isSound": false,
+  "fallacyId": "fal_false_cause",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q185": {
+  "id": "itm_circular_reasoning_05",
+  "isSound": false,
+  "fallacyId": "fal_circular_reasoning",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q186": {
+  "id": "itm_genetic_fallacy_03",
+  "isSound": false,
+  "fallacyId": "fal_genetic_fallacy",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q187": {
+  "id": "itm_straw_man_02",
+  "isSound": false,
+  "fallacyId": "fal_straw_man",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q188": {
+  "id": "itm_gamblers_fallacy_04",
+  "isSound": false,
+  "fallacyId": "fal_gamblers_fallacy",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q189": {
+  "id": "itm_false_equivalence_02",
+  "isSound": false,
+  "fallacyId": "fal_false_equivalence",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q190": {
+  "id": "itm_red_herring_05",
+  "isSound": false,
+  "fallacyId": "fal_red_herring",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q191": {
+  "id": "itm_genetic_fallacy_02",
+  "isSound": false,
+  "fallacyId": "fal_genetic_fallacy",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q192": {
+  "id": "itm_snd_tu_quoque_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_tu_quoque",
+  "difficulty": 3
+ },
+ "q193": {
+  "id": "itm_burden_of_proof_02",
+  "isSound": false,
+  "fallacyId": "fal_burden_of_proof",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q194": {
+  "id": "itm_snd_appeal_to_fear_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_fear",
+  "difficulty": 2
+ },
+ "q195": {
+  "id": "itm_sunk_cost_01",
+  "isSound": false,
+  "fallacyId": "fal_sunk_cost",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q196": {
+  "id": "itm_equivocation_01",
+  "isSound": false,
+  "fallacyId": "fal_equivocation",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q197": {
+  "id": "itm_guilt_by_association_04",
+  "isSound": false,
+  "fallacyId": "fal_guilt_by_association",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q198": {
+  "id": "itm_false_analogy_02",
+  "isSound": false,
+  "fallacyId": "fal_false_analogy",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q199": {
+  "id": "itm_loaded_question_03",
+  "isSound": false,
+  "fallacyId": "fal_loaded_question",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q200": {
+  "id": "itm_anecdotal_evidence_05",
+  "isSound": false,
+  "fallacyId": "fal_anecdotal_evidence",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q201": {
+  "id": "itm_snd_is_ought_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_is_ought",
+  "difficulty": 3
+ },
+ "q202": {
+  "id": "itm_snd_division_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_division",
+  "difficulty": 3
+ },
+ "q203": {
+  "id": "itm_snd_middle_ground_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_middle_ground",
+  "difficulty": 3
+ },
+ "q204": {
+  "id": "itm_appeal_to_pity_06",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_pity",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q205": {
+  "id": "itm_special_pleading_02",
+  "isSound": false,
+  "fallacyId": "fal_special_pleading",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q206": {
+  "id": "itm_appeal_to_pity_02",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_pity",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q207": {
+  "id": "itm_cherry_picking_06",
+  "isSound": false,
+  "fallacyId": "fal_cherry_picking",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q208": {
+  "id": "itm_guilt_by_association_02",
+  "isSound": false,
+  "fallacyId": "fal_guilt_by_association",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q209": {
+  "id": "itm_appeal_to_authority_06",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_authority",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q210": {
+  "id": "itm_snd_appeal_to_consequences_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_consequences",
+  "difficulty": 3
+ },
+ "q211": {
+  "id": "itm_loaded_question_02",
+  "isSound": false,
+  "fallacyId": "fal_loaded_question",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q212": {
+  "id": "itm_snd_appeal_to_ignorance_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_ignorance",
+  "difficulty": 2
+ },
+ "q213": {
+  "id": "itm_appeal_to_tradition_02",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_tradition",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q214": {
+  "id": "itm_snd_appeal_to_nature_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_nature",
+  "difficulty": 3
+ },
+ "q215": {
+  "id": "itm_slippery_slope_03",
+  "isSound": false,
+  "fallacyId": "fal_slippery_slope",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q216": {
+  "id": "itm_false_analogy_04",
+  "isSound": false,
+  "fallacyId": "fal_false_analogy",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q217": {
+  "id": "itm_composition_04",
+  "isSound": false,
+  "fallacyId": "fal_composition",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q218": {
+  "id": "itm_snd_appeal_to_ignorance_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_ignorance",
+  "difficulty": 3
+ },
+ "q219": {
+  "id": "itm_genetic_fallacy_01",
+  "isSound": false,
+  "fallacyId": "fal_genetic_fallacy",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q220": {
+  "id": "itm_appeal_to_nature_05",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_nature",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q221": {
+  "id": "itm_false_dichotomy_02",
+  "isSound": false,
+  "fallacyId": "fal_false_dichotomy",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q222": {
+  "id": "itm_snd_false_cause_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_false_cause",
+  "difficulty": 2
+ },
+ "q223": {
+  "id": "itm_cherry_picking_01",
+  "isSound": false,
+  "fallacyId": "fal_cherry_picking",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q224": {
+  "id": "itm_snd_false_equivalence_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_false_equivalence",
+  "difficulty": 2
+ },
+ "q225": {
+  "id": "itm_snd_false_cause_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_false_cause",
+  "difficulty": 3
+ },
+ "q226": {
+  "id": "itm_appeal_to_fear_06",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_fear",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q227": {
+  "id": "itm_middle_ground_04",
+  "isSound": false,
+  "fallacyId": "fal_middle_ground",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q228": {
+  "id": "itm_snd_cherry_picking_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_cherry_picking",
+  "difficulty": 3
+ },
+ "q229": {
+  "id": "itm_appeal_to_authority_04",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_authority",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q230": {
+  "id": "itm_appeal_to_authority_05",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_authority",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q231": {
+  "id": "itm_slippery_slope_06",
+  "isSound": false,
+  "fallacyId": "fal_slippery_slope",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q232": {
+  "id": "itm_moving_the_goalposts_01",
+  "isSound": false,
+  "fallacyId": "fal_moving_the_goalposts",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q233": {
+  "id": "itm_moving_the_goalposts_05",
+  "isSound": false,
+  "fallacyId": "fal_moving_the_goalposts",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q234": {
+  "id": "itm_is_ought_02",
+  "isSound": false,
+  "fallacyId": "fal_is_ought",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q235": {
+  "id": "itm_bandwagon_05",
+  "isSound": false,
+  "fallacyId": "fal_bandwagon",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q236": {
+  "id": "itm_snd_division_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_division",
+  "difficulty": 2
+ },
+ "q237": {
+  "id": "itm_snd_appeal_to_pity_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_pity",
+  "difficulty": 3
+ },
+ "q238": {
+  "id": "itm_circular_reasoning_04",
+  "isSound": false,
+  "fallacyId": "fal_circular_reasoning",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q239": {
+  "id": "itm_special_pleading_04",
+  "isSound": false,
+  "fallacyId": "fal_special_pleading",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q240": {
+  "id": "itm_sunk_cost_02",
+  "isSound": false,
+  "fallacyId": "fal_sunk_cost",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q241": {
+  "id": "itm_snd_burden_of_proof_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_burden_of_proof",
+  "difficulty": 2
+ },
+ "q242": {
+  "id": "itm_snd_false_analogy_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_false_analogy",
+  "difficulty": 2
+ },
+ "q243": {
+  "id": "itm_false_analogy_05",
+  "isSound": false,
+  "fallacyId": "fal_false_analogy",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q244": {
+  "id": "itm_special_pleading_05",
+  "isSound": false,
+  "fallacyId": "fal_special_pleading",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q245": {
+  "id": "itm_texas_sharpshooter_02",
+  "isSound": false,
+  "fallacyId": "fal_texas_sharpshooter",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q246": {
+  "id": "itm_straw_man_06",
+  "isSound": false,
+  "fallacyId": "fal_straw_man",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q247": {
+  "id": "itm_anecdotal_evidence_03",
+  "isSound": false,
+  "fallacyId": "fal_anecdotal_evidence",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q248": {
+  "id": "itm_false_analogy_03",
+  "isSound": false,
+  "fallacyId": "fal_false_analogy",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q249": {
+  "id": "itm_sunk_cost_03",
+  "isSound": false,
+  "fallacyId": "fal_sunk_cost",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q250": {
+  "id": "itm_appeal_to_consequences_02",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_consequences",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q251": {
+  "id": "itm_appeal_to_nature_04",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_nature",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q252": {
+  "id": "itm_tu_quoque_06",
+  "isSound": false,
+  "fallacyId": "fal_tu_quoque",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q253": {
+  "id": "itm_equivocation_06",
+  "isSound": false,
+  "fallacyId": "fal_equivocation",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q254": {
+  "id": "itm_red_herring_02",
+  "isSound": false,
+  "fallacyId": "fal_red_herring",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q255": {
+  "id": "itm_appeal_to_pity_05",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_pity",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q256": {
+  "id": "itm_is_ought_04",
+  "isSound": false,
+  "fallacyId": "fal_is_ought",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q257": {
+  "id": "itm_is_ought_06",
+  "isSound": false,
+  "fallacyId": "fal_is_ought",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q258": {
+  "id": "itm_snd_appeal_to_tradition_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_appeal_to_tradition",
+  "difficulty": 3
+ },
+ "q259": {
+  "id": "itm_appeal_to_pity_04",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_pity",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q260": {
+  "id": "itm_appeal_to_emotion_01",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_emotion",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q261": {
+  "id": "itm_bandwagon_03",
+  "isSound": false,
+  "fallacyId": "fal_bandwagon",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q262": {
+  "id": "itm_snd_gamblers_fallacy_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_gamblers_fallacy",
+  "difficulty": 2
+ },
+ "q263": {
+  "id": "itm_false_cause_06",
+  "isSound": false,
+  "fallacyId": "fal_false_cause",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q264": {
+  "id": "itm_ad_hominem_03",
+  "isSound": false,
+  "fallacyId": "fal_ad_hominem",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q265": {
+  "id": "itm_appeal_to_consequences_04",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_consequences",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q266": {
+  "id": "itm_post_hoc_03",
+  "isSound": false,
+  "fallacyId": "fal_post_hoc",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q267": {
+  "id": "itm_snd_moving_the_goalposts_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_moving_the_goalposts",
+  "difficulty": 3
+ },
+ "q268": {
+  "id": "itm_bandwagon_04",
+  "isSound": false,
+  "fallacyId": "fal_bandwagon",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q269": {
+  "id": "itm_appeal_to_nature_06",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_nature",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q270": {
+  "id": "itm_texas_sharpshooter_01",
+  "isSound": false,
+  "fallacyId": "fal_texas_sharpshooter",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q271": {
+  "id": "itm_loaded_question_01",
+  "isSound": false,
+  "fallacyId": "fal_loaded_question",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q272": {
+  "id": "itm_bandwagon_06",
+  "isSound": false,
+  "fallacyId": "fal_bandwagon",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q273": {
+  "id": "itm_guilt_by_association_05",
+  "isSound": false,
+  "fallacyId": "fal_guilt_by_association",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q274": {
+  "id": "itm_appeal_to_tradition_05",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_tradition",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q275": {
+  "id": "itm_equivocation_04",
+  "isSound": false,
+  "fallacyId": "fal_equivocation",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q276": {
+  "id": "itm_bandwagon_02",
+  "isSound": false,
+  "fallacyId": "fal_bandwagon",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q277": {
+  "id": "itm_slippery_slope_04",
+  "isSound": false,
+  "fallacyId": "fal_slippery_slope",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q278": {
+  "id": "itm_anecdotal_evidence_02",
+  "isSound": false,
+  "fallacyId": "fal_anecdotal_evidence",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q279": {
+  "id": "itm_loaded_question_05",
+  "isSound": false,
+  "fallacyId": "fal_loaded_question",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q280": {
+  "id": "itm_moving_the_goalposts_04",
+  "isSound": false,
+  "fallacyId": "fal_moving_the_goalposts",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q281": {
+  "id": "itm_snd_hasty_generalization_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_hasty_generalization",
+  "difficulty": 3
+ },
+ "q282": {
+  "id": "itm_division_04",
+  "isSound": false,
+  "fallacyId": "fal_division",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q283": {
+  "id": "itm_snd_bandwagon_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_bandwagon",
+  "difficulty": 2
+ },
+ "q284": {
+  "id": "itm_false_dichotomy_04",
+  "isSound": false,
+  "fallacyId": "fal_false_dichotomy",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q285": {
+  "id": "itm_middle_ground_02",
+  "isSound": false,
+  "fallacyId": "fal_middle_ground",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q286": {
+  "id": "itm_circular_reasoning_02",
+  "isSound": false,
+  "fallacyId": "fal_circular_reasoning",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q287": {
+  "id": "itm_snd_straw_man_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_straw_man",
+  "difficulty": 2
+ },
+ "q288": {
+  "id": "itm_appeal_to_consequences_03",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_consequences",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q289": {
+  "id": "itm_middle_ground_01",
+  "isSound": false,
+  "fallacyId": "fal_middle_ground",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q290": {
+  "id": "itm_appeal_to_consequences_06",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_consequences",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q291": {
+  "id": "itm_appeal_to_consequences_05",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_consequences",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q292": {
+  "id": "itm_snd_post_hoc_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_post_hoc",
+  "difficulty": 3
+ },
+ "q293": {
+  "id": "itm_cherry_picking_05",
+  "isSound": false,
+  "fallacyId": "fal_cherry_picking",
+  "resembles": null,
+  "difficulty": 3
+ },
+ "q294": {
+  "id": "itm_appeal_to_emotion_02",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_emotion",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q295": {
+  "id": "itm_snd_post_hoc_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_post_hoc",
+  "difficulty": 2
+ },
+ "q296": {
+  "id": "itm_anecdotal_evidence_04",
+  "isSound": false,
+  "fallacyId": "fal_anecdotal_evidence",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q297": {
+  "id": "itm_snd_texas_sharpshooter_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_texas_sharpshooter",
+  "difficulty": 3
+ },
+ "q298": {
+  "id": "itm_gamblers_fallacy_02",
+  "isSound": false,
+  "fallacyId": "fal_gamblers_fallacy",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q299": {
+  "id": "itm_snd_middle_ground_01",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_middle_ground",
+  "difficulty": 2
+ },
+ "q300": {
+  "id": "itm_no_true_scotsman_03",
+  "isSound": false,
+  "fallacyId": "fal_no_true_scotsman",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q301": {
+  "id": "itm_false_cause_04",
+  "isSound": false,
+  "fallacyId": "fal_false_cause",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q302": {
+  "id": "itm_appeal_to_pity_03",
+  "isSound": false,
+  "fallacyId": "fal_appeal_to_pity",
+  "resembles": null,
+  "difficulty": 2
+ },
+ "q303": {
+  "id": "itm_false_cause_01",
+  "isSound": false,
+  "fallacyId": "fal_false_cause",
+  "resembles": null,
+  "difficulty": 1
+ },
+ "q304": {
+  "id": "itm_snd_red_herring_02",
+  "isSound": true,
+  "fallacyId": null,
+  "resembles": "fal_red_herring",
+  "difficulty": 3
+ }
+}

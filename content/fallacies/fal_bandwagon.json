@@ -1,0 +1,21 @@
+{
+  "id": "fal_bandwagon",
+  "name": "Bandwagon",
+  "aliases": ["Appeal to popularity", "Ad populum"],
+  "family": "appeals",
+  "difficulty": "beginner",
+  "shortDef": "Treating something as true or good because many people believe or do it.",
+  "definition": "Concluding that a claim is true, or a choice is right, because it's popular, trending or what most people do, when popularity isn't evidence about the question being asked.",
+  "howToSpot": [
+    "Is the main reason how many people believe, buy or do it?",
+    "Ask what evidence those people had, and whether it applies to you",
+    "Watch for sales figures, trends or lines out the door standing in for reasons"
+  ],
+  "classicExample": "Three million people have downloaded this diet app, so it must actually work.",
+  "legitimateVersion": "Popularity is fair evidence when the question is about popularity itself, like which time slot most families prefer, or when many users report on something they judge directly, like comfort.",
+  "confusableWith": ["fal_appeal_to_authority", "fal_appeal_to_tradition"],
+  "contrast": {
+    "fal_appeal_to_authority": "Bandwagon leans on how many people agree; appeal to authority leans on one esteemed source.",
+    "fal_appeal_to_tradition": "Bandwagon says lots of people do it now; appeal to tradition says it's always been done that way."
+  }
+}

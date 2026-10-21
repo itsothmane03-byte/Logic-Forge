@@ -1,0 +1,21 @@
+{
+  "id": "fal_appeal_to_fear",
+  "name": "Appeal to Fear",
+  "aliases": ["Fear-mongering", "Scare tactics"],
+  "family": "emotion",
+  "difficulty": "beginner",
+  "shortDef": "Using scary, exaggerated or unsupported threats to push a conclusion.",
+  "definition": "Pushing a belief or action by making people afraid of a danger that is exaggerated, unsupported or unrelated to the choice, so fear does the persuading instead of evidence about the real risk.",
+  "howToSpot": [
+    "Is the danger backed by evidence, or just vividly described?",
+    "Ask how likely the threat is, and whether the choice actually prevents it",
+    "Watch for urgency and worst cases standing in for numbers"
+  ],
+  "classicExample": "Buy our premium alarm today. Burglars could be watching your street right now, and next time your kids might be home.",
+  "legitimateVersion": "Warning about danger is fair when the risk is real, sized honestly and actually reduced by the action, like urging carbon monoxide detectors in homes with gas furnaces.",
+  "confusableWith": ["fal_slippery_slope", "fal_appeal_to_emotion"],
+  "contrast": {
+    "fal_slippery_slope": "Appeal to fear scares you with a threat; slippery slope claims one step will trigger an unsupported chain of further steps.",
+    "fal_appeal_to_emotion": "Appeal to fear works through dread of danger; appeal to emotion covers any feeling, like pride, guilt or disgust."
+  }
+}

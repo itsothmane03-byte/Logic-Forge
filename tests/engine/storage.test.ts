@@ -1,0 +1,147 @@
+import { describe, expect, it, vi } from 'vitest';
+import {
+  defaultProgress,
+  loadProgress,
+  MAX_ATTEMPTS,
+  MAX_SESSIONS,
+  parseImport,
+  sanitizeProgress,
+  saveProgress,
+  serializeExport,
+  STORAGE_KEY,
+} from '../../src/engine/storage';
+import type { Progress } from '../../src/engine/types';
+
+function memoryStorage(initial?: string) {
+  const data = new Map<string, string>();
+  if (initial !== undefined) data.set(STORAGE_KEY, initial);
+  return {
+    data,
+    getItem: (key: string) => data.get(key) ?? null,
+    setItem: (key: string, value: string) => void data.set(key, value),
+  };
+}
+
+function sample(): Progress {
+  return {
+    ...defaultProgress(),
+    settings: { theme: 'dark', showDefinitions: false },
+    onboarded: true,
+    boxes: { fal_straw_man: 3, fal_ad_hominem: 5 },
+    stats: { fal_straw_man: { seen: 6, correct: 4 } },
+    soundStats: { seen: 3, correct: 2 },
+    attempts: [{ itemId: 'itm_straw_man_01', outcome: 'partial', at: 1_760_000_000_000, mode: 'daily' }],
+    days: { '2026-10-20': 10 },
+    daily: { '2026-10-20': { itemIds: ['a', 'b'], answers: ['correct'], done: false } },
+    sessions: [{ mode: 'daily', at: 1_760_000_000_000, total: 10, correct: 7 }],
+    bestStreak: 4,
+  };
+}
+
+describe('loadProgress', () => {
+  it('returns defaults when storage is missing, empty or unreadable', () => {
+    expect(loadProgress(null)).toEqual(defaultProgress());
+    expect(loadProgress(undefined)).toEqual(defaultProgress());
+    expect(loadProgress(memoryStorage())).toEqual(defaultProgress());
+    const throwing = { getItem: () => { throw new Error('SecurityError'); } };
+    expect(loadProgress(throwing)).toEqual(defaultProgress());
+  });
+
+  it('falls back to defaults on corrupt JSON without crashing', () => {
+    expect(loadProgress(memoryStorage('{not json'))).toEqual(defaultProgress());
+    expect(loadProgress(memoryStorage('"just a string"'))).toEqual(defaultProgress());
+    expect(loadProgress(memoryStorage('[1,2,3]'))).toEqual(defaultProgress());
+    expect(loadProgress(memoryStorage('null'))).toEqual(defaultProgress());
+  });
+
+  it('falls back to defaults for an unknown version', () => {
+    expect(loadProgress(memoryStorage(JSON.stringify({ ...sample(), version: 2 })))).toEqual(defaultProgress());
+  });
+
+  it('round-trips a valid save', () => {
+    const storage = memoryStorage();
+    expect(saveProgress(storage, sample())).toBe(true);
+    expect(loadProgress(storage)).toEqual(sample());
+  });
+
+  it('drops invalid entries but keeps the valid ones', () => {
+    const raw = {
+      ...sample(),
+      settings: { theme: 'neon', showDefinitions: 'yes' },
+      boxes: { fal_straw_man: 3, fal_bad: 9, __proto__: 1, 'not a key': 2 },
+      stats: { fal_straw_man: { seen: 2, correct: 5 }, fal_x: { seen: -1, correct: 0 } },
+      attempts: [
+        { itemId: 'ok', outcome: 'correct', at: 1, mode: 'daily' },
+        { itemId: 'bad', outcome: 'meh', at: 2, mode: 'daily' },
+        'garbage',
+      ],
+      days: { '2026-10-20': 3, '2026-13-40': 2, '2026-10-21': -4 },
+      daily: { '2026-10-20': { itemIds: ['a'], answers: ['correct', 'wrong'], done: true } },
+      sessions: [{ mode: 'daily', at: 1, total: 10, correct: 11 }],
+      bestStreak: 'lots',
+    };
+    const clean = sanitizeProgress(JSON.parse(JSON.stringify(raw)))!;
+    expect(clean.settings).toEqual({ theme: 'system', showDefinitions: true });
+    expect(clean.boxes).toEqual({ fal_straw_man: 3 });
+    expect(Object.getPrototypeOf(clean.boxes)).toBe(Object.prototype);
+    expect(clean.stats).toEqual({ fal_straw_man: { seen: 2, correct: 2 } });
+    expect(clean.attempts).toEqual([{ itemId: 'ok', outcome: 'correct', at: 1, mode: 'daily' }]);
+    expect(clean.days).toEqual({ '2026-10-20': 3 });
+    expect(clean.daily).toEqual({});
+    expect(clean.sessions).toEqual([]);
+    expect(clean.bestStreak).toBe(0);
+  });
+
+  it('keeps only the last 500 attempts and 60 sessions', () => {
+    const many = {
+      ...sample(),
+      attempts: Array.from({ length: 620 }, (_, i) => ({ itemId: `i${i}`, outcome: 'correct', at: i, mode: 'practice' })),
+      sessions: Array.from({ length: 75 }, (_, i) => ({ mode: 'practice', at: i, total: 10, correct: 5 })),
+    };
+    const clean = sanitizeProgress(many)!;
+    expect(clean.attempts).toHaveLength(MAX_ATTEMPTS);
+    expect(clean.attempts[0]!.itemId).toBe('i120');
+    expect(clean.sessions).toHaveLength(MAX_SESSIONS);
+    expect(clean.sessions[0]!.at).toBe(15);
+  });
+});
+
+describe('saveProgress', () => {
+  it('returns false instead of throwing when storage is full or blocked', () => {
+    const full = { getItem: () => null, setItem: vi.fn(() => { throw new Error('QuotaExceededError'); }) };
+    expect(saveProgress(full, sample())).toBe(false);
+    expect(saveProgress(null, sample())).toBe(false);
+  });
+});
+
+describe('import / export', () => {
+  it('accepts its own export', () => {
+    const result = parseImport(serializeExport(sample()));
+    expect(result).toEqual({ ok: true, progress: sample() });
+  });
+
+  it('rejects files that are not JSON or not an object', () => {
+    expect(parseImport('hello')).toMatchObject({ ok: false });
+    expect(parseImport('[]')).toMatchObject({ ok: false });
+    expect(parseImport('42')).toMatchObject({ ok: false });
+  });
+
+  it('rejects the wrong version with a clear message', () => {
+    const result = parseImport(JSON.stringify({ ...sample(), version: 3 }));
+    expect(result.ok).toBe(false);
+    if (!result.ok) expect(result.error).toMatch(/version/i);
+  });
+
+  it('rejects missing or mistyped fields before replacing anything', () => {
+    const { attempts: _a, days: _d, ...missing } = sample();
+    const result = parseImport(JSON.stringify(missing));
+    expect(result.ok).toBe(false);
+    if (!result.ok) expect(result.error).toContain('attempts');
+    const wrong = parseImport(JSON.stringify({ ...sample(), boxes: [], bestStreak: -2 }));
+    expect(wrong.ok).toBe(false);
+    if (!wrong.ok) {
+      expect(wrong.error).toContain('boxes');
+      expect(wrong.error).toContain('bestStreak');
+    }
+  });
+});

@@ -1,0 +1,21 @@
+{
+  "id": "fal_genetic_fallacy",
+  "name": "Genetic Fallacy",
+  "aliases": ["Fallacy of origins", "Origin fallacy"],
+  "family": "distraction",
+  "difficulty": "intermediate",
+  "shortDef": "Judging a claim or practice by where it came from, not by its merits.",
+  "definition": "Accepting or rejecting a claim, idea or practice because of its origin or history, such as who first proposed it, where it began or why it started, instead of how well it holds up now.",
+  "howToSpot": [
+    "Is the idea judged by its origin story rather than by current evidence?",
+    "Ask whether a good idea could come from a bad source, or the reverse",
+    "Watch for 'it started as...' offered as the whole case"
+  ],
+  "classicExample": "Handshakes began as a way to show you weren't holding a weapon, so they're pointless now.",
+  "legitimateVersion": "Origin matters when the source is the only evidence, like an anonymous rumor. Once independent evidence exists, or the original reason is checked against today's facts, judge that evidence.",
+  "confusableWith": ["fal_ad_hominem", "fal_guilt_by_association"],
+  "contrast": {
+    "fal_ad_hominem": "The genetic fallacy dismisses a claim by its origin or history; ad hominem attacks the person currently making the argument.",
+    "fal_guilt_by_association": "The genetic fallacy looks at where an idea came from; guilt by association looks at who supports or is linked to it now."
+  }
+}

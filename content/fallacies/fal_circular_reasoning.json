@@ -1,0 +1,21 @@
+{
+  "id": "fal_circular_reasoning",
+  "name": "Circular Reasoning",
+  "aliases": ["Begging the question", "Circular argument"],
+  "family": "framing",
+  "difficulty": "intermediate",
+  "shortDef": "Supporting a claim with a reason that already assumes the claim is true.",
+  "definition": "Offering reasons that only work if the conclusion is already accepted, often by restating it in other words or by letting two claims vouch for each other. The argument loops and gives no independent reason to believe it.",
+  "howToSpot": [
+    "Strip the wording: is the reason just the conclusion said differently?",
+    "Would someone who doubts the claim accept the reason?",
+    "Trace the support: does it eventually point back to the original claim?"
+  ],
+  "classicExample": "The reviews on this site are trustworthy because the site only publishes trustworthy reviews.",
+  "legitimateVersion": "Restating a claim to clarify it is fine, and so is stating a definition. It only becomes a fallacy when the restatement is offered as evidence for the claim.",
+  "confusableWith": ["fal_loaded_question", "fal_no_true_scotsman"],
+  "contrast": {
+    "fal_loaded_question": "Circular reasoning argues for a claim by assuming it; a loaded question tucks the assumption into a question instead.",
+    "fal_no_true_scotsman": "Circular reasoning assumes its own conclusion; no true Scotsman redefines a group after the fact to exclude a counterexample."
+  }
+}

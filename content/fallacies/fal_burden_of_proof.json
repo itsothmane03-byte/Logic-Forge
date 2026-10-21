@@ -1,0 +1,21 @@
+{
+  "id": "fal_burden_of_proof",
+  "name": "Burden of Proof",
+  "aliases": ["Shifting the burden of proof", "Prove me wrong"],
+  "family": "framing",
+  "difficulty": "advanced",
+  "shortDef": "Making a claim and demanding that others disprove it instead of supporting it.",
+  "definition": "Putting forward a claim and then insisting that doubters prove it false, instead of giving evidence for it. Whoever makes a claim owes the reasons; skeptics don't have to disprove it first.",
+  "howToSpot": [
+    "Who made the claim, and have they offered any evidence for it?",
+    "Is the speaker asking critics to disprove something they never supported?",
+    "Does doubting the claim get treated as if it were a rival claim needing proof?"
+  ],
+  "classicExample": "My lucky socks help the team win. If you think they don't, prove it.",
+  "legitimateVersion": "Asking critics for counter-evidence is fair once you've already supported your claim, or when the critic is making a claim of their own, like asserting a well-tested product is dangerous.",
+  "confusableWith": ["fal_appeal_to_ignorance", "fal_moving_the_goalposts"],
+  "contrast": {
+    "fal_appeal_to_ignorance": "Burden of proof hands the job of proving to critics; appeal to ignorance concludes a claim is true (or false) because it hasn't been disproven.",
+    "fal_moving_the_goalposts": "Burden of proof dodges supporting a claim at all; moving the goalposts raises the bar after evidence has been provided."
+  }
+}

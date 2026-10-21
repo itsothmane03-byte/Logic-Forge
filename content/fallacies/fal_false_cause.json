@@ -1,0 +1,21 @@
+{
+  "id": "fal_false_cause",
+  "name": "False Cause",
+  "aliases": ["Correlation ≠ causation", "Cum hoc"],
+  "family": "evidence",
+  "difficulty": "intermediate",
+  "shortDef": "Treating a correlation between two things as proof one causes the other.",
+  "definition": "Concluding that A causes B because the two tend to occur together, without ruling out a third factor that drives both, the cause running the other way, or plain coincidence.",
+  "howToSpot": [
+    "Is the evidence just that two things go together across people, places or times?",
+    "Could a third factor explain both, or could the cause run the other way?",
+    "Was anything assigned at random or compared with a fair control group?"
+  ],
+  "classicExample": "Towns that sell more ice cream have more drownings, so ice cream must make swimming dangerous.",
+  "legitimateVersion": "A correlation is a fair clue worth investigating. It becomes good evidence of cause when a randomized trial or a careful comparison rules out hidden factors and reverse causation.",
+  "confusableWith": ["fal_post_hoc", "fal_texas_sharpshooter"],
+  "contrast": {
+    "fal_post_hoc": "False cause reads cause into things that go together across many cases; post hoc reads cause into one thing simply following another in time.",
+    "fal_texas_sharpshooter": "False cause misreads a real correlation; the sharpshooter hunts through data for a cluster and then treats it as meaningful."
+  }
+}

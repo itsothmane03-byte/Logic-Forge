@@ -1,0 +1,21 @@
+{
+  "id": "fal_cherry_picking",
+  "name": "Cherry Picking",
+  "aliases": ["Suppressed evidence", "Selective evidence"],
+  "family": "evidence",
+  "difficulty": "intermediate",
+  "shortDef": "Citing only the evidence that supports you and ignoring the rest.",
+  "definition": "Presenting the data points, studies, quotes or time periods that favor a conclusion while leaving out or waving away the available evidence that cuts against it, so the case looks stronger than it is.",
+  "howToSpot": [
+    "Is this all the evidence, or just the best-looking slice of it?",
+    "Why does the time period, group or sample start and stop where it does?",
+    "What would the full dataset, average or overall rating show?"
+  ],
+  "classicExample": "Our fund returned 31% last year! (The small print: losses in two of the four years before that.)",
+  "legitimateVersion": "Focusing on a subset is fair when the rule for choosing it is set in advance and applied evenly, such as excluding low-quality studies, and when including everything wouldn't change the conclusion.",
+  "confusableWith": ["fal_texas_sharpshooter", "fal_hasty_generalization"],
+  "contrast": {
+    "fal_texas_sharpshooter": "Cherry picking hides or ignores unfavorable evidence; the sharpshooter finds a cluster after the fact and treats it as the target all along.",
+    "fal_hasty_generalization": "Cherry picking chooses the favorable cases from many available; hasty generalization leans on too few cases to begin with."
+  }
+}

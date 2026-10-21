@@ -1,0 +1,1261 @@
+{
+ "instructions": "See the reviewer brief. Judge each passage on its own.",
+ "fallacies": [
+  {
+   "id": "fal_ad_hominem",
+   "name": "Ad Hominem",
+   "shortDef": "Attacking the person instead of their argument."
+  },
+  {
+   "id": "fal_anecdotal_evidence",
+   "name": "Anecdotal Evidence",
+   "shortDef": "Letting a personal story outweigh broader, systematic evidence."
+  },
+  {
+   "id": "fal_appeal_to_authority",
+   "name": "Appeal to Authority",
+   "shortDef": "Treating someone's say-so as proof, especially outside their expertise."
+  },
+  {
+   "id": "fal_appeal_to_consequences",
+   "name": "Appeal to Consequences",
+   "shortDef": "Judging whether a claim is true by whether we'd like its consequences."
+  },
+  {
+   "id": "fal_appeal_to_emotion",
+   "name": "Appeal to Emotion",
+   "shortDef": "Using stirred-up feelings in place of reasons to win agreement."
+  },
+  {
+   "id": "fal_appeal_to_fear",
+   "name": "Appeal to Fear",
+   "shortDef": "Using scary, exaggerated or unsupported threats to push a conclusion."
+  },
+  {
+   "id": "fal_appeal_to_ignorance",
+   "name": "Appeal to Ignorance",
+   "shortDef": "Concluding a claim is true because it hasn't been proven false, or the reverse."
+  },
+  {
+   "id": "fal_appeal_to_nature",
+   "name": "Appeal to Nature",
+   "shortDef": "Assuming something is good because it's natural, or bad because it isn't."
+  },
+  {
+   "id": "fal_appeal_to_pity",
+   "name": "Appeal to Pity",
+   "shortDef": "Asking for sympathy instead of giving reasons a claim is true or fair."
+  },
+  {
+   "id": "fal_appeal_to_tradition",
+   "name": "Appeal to Tradition",
+   "shortDef": "Assuming something is right or better because it's always been done that way."
+  },
+  {
+   "id": "fal_bandwagon",
+   "name": "Bandwagon",
+   "shortDef": "Treating something as true or good because many people believe or do it."
+  },
+  {
+   "id": "fal_burden_of_proof",
+   "name": "Burden of Proof",
+   "shortDef": "Making a claim and demanding that others disprove it instead of supporting it."
+  },
+  {
+   "id": "fal_cherry_picking",
+   "name": "Cherry Picking",
+   "shortDef": "Citing only the evidence that supports you and ignoring the rest."
+  },
+  {
+   "id": "fal_circular_reasoning",
+   "name": "Circular Reasoning",
+   "shortDef": "Supporting a claim with a reason that already assumes the claim is true."
+  },
+  {
+   "id": "fal_composition",
+   "name": "Composition",
+   "shortDef": "Assuming that what's true of the parts must be true of the whole."
+  },
+  {
+   "id": "fal_division",
+   "name": "Division",
+   "shortDef": "Assuming that what's true of the whole must be true of each of its parts."
+  },
+  {
+   "id": "fal_equivocation",
+   "name": "Equivocation",
+   "shortDef": "Shifting between two meanings of the same word within one argument."
+  },
+  {
+   "id": "fal_false_analogy",
+   "name": "False Analogy",
+   "shortDef": "Drawing a conclusion from a comparison that fails on the point that matters."
+  },
+  {
+   "id": "fal_false_cause",
+   "name": "False Cause",
+   "shortDef": "Treating a correlation between two things as proof one causes the other."
+  },
+  {
+   "id": "fal_false_dichotomy",
+   "name": "False Dichotomy",
+   "shortDef": "Presenting two options as the only ones when others exist."
+  },
+  {
+   "id": "fal_false_equivalence",
+   "name": "False Equivalence",
+   "shortDef": "Treating two things as equal when they differ greatly in a way that matters."
+  },
+  {
+   "id": "fal_gamblers_fallacy",
+   "name": "Gambler's Fallacy",
+   "shortDef": "Believing past random outcomes change the odds of independent future ones."
+  },
+  {
+   "id": "fal_genetic_fallacy",
+   "name": "Genetic Fallacy",
+   "shortDef": "Judging a claim or practice by where it came from, not by its merits."
+  },
+  {
+   "id": "fal_guilt_by_association",
+   "name": "Guilt by Association",
+   "shortDef": "Rejecting a claim or person because of who they're linked with."
+  },
+  {
+   "id": "fal_hasty_generalization",
+   "name": "Hasty Generalization",
+   "shortDef": "Drawing a broad conclusion from a sample that's too small or unrepresentative."
+  },
+  {
+   "id": "fal_is_ought",
+   "name": "Is–Ought Fallacy",
+   "shortDef": "Concluding what should be done purely from facts about what is."
+  },
+  {
+   "id": "fal_loaded_question",
+   "name": "Loaded Question",
+   "shortDef": "Asking a question that presumes something unproven, so any answer concedes it."
+  },
+  {
+   "id": "fal_middle_ground",
+   "name": "Middle Ground",
+   "shortDef": "Assuming a compromise between two positions must be the correct answer."
+  },
+  {
+   "id": "fal_moving_the_goalposts",
+   "name": "Moving the Goalposts",
+   "shortDef": "Raising or changing the standard of proof after the original one has been met."
+  },
+  {
+   "id": "fal_no_true_scotsman",
+   "name": "No True Scotsman",
+   "shortDef": "Redefining a group to exclude a counterexample instead of revising the claim."
+  },
+  {
+   "id": "fal_post_hoc",
+   "name": "Post Hoc",
+   "shortDef": "Assuming that because B followed A, A must have caused B."
+  },
+  {
+   "id": "fal_red_herring",
+   "name": "Red Herring",
+   "shortDef": "Changing the subject to dodge the real question."
+  },
+  {
+   "id": "fal_slippery_slope",
+   "name": "Slippery Slope",
+   "shortDef": "Claiming a small step will inevitably snowball into disaster, without support."
+  },
+  {
+   "id": "fal_special_pleading",
+   "name": "Special Pleading",
+   "shortDef": "Exempting yourself or a favorite from a rule without a relevant reason."
+  },
+  {
+   "id": "fal_straw_man",
+   "name": "Straw Man",
+   "shortDef": "Distorting someone's position into a weaker one, then attacking that."
+  },
+  {
+   "id": "fal_sunk_cost",
+   "name": "Sunk Cost Fallacy",
+   "shortDef": "Continuing something because of what's already been spent, not what's ahead."
+  },
+  {
+   "id": "fal_texas_sharpshooter",
+   "name": "Texas Sharpshooter",
+   "shortDef": "Spotting a pattern or 'hit' after the fact and treating it as meaningful."
+  },
+  {
+   "id": "fal_tu_quoque",
+   "name": "Tu Quoque",
+   "shortDef": "Dodging a criticism by pointing out that the critic does it too."
+  }
+ ],
+ "items": [
+  {
+   "q": "q153",
+   "format": "email",
+   "source": "Dana Whitcombe, People Analytics",
+   "title": "Engagement survey: final numbers",
+   "passage": "Hi all, final numbers are in. Following the rule we agreed on before launch, I removed 14 responses completed in under 30 seconds. With them excluded, 62% of staff rate their workload as manageable; with them included, it's 61%. Either way the conclusion holds: most staff say their workload is manageable, though a sizable minority don't."
+  },
+  {
+   "q": "q154",
+   "format": "ad",
+   "source": "Magnara",
+   "title": "The recovery secret of a champion",
+   "passage": "Three-time national sprint champion Dez Calloway wears Magnara copper bands every single day. 'They've completely changed my recovery,' he says. If they work for one of the fastest men alive, imagine what they'll do for your sore knees. Two bands for $39, free shipping this week only."
+  },
+  {
+   "q": "q155",
+   "format": "post",
+   "source": "Coach Tariq Nasser · @coachtariq_fc",
+   "title": null,
+   "passage": "Huge offseason for the Ridgeback Rovers! We signed the top scorer from the Valley League, the best goalkeeper in the county and two all-star midfielders. With the best player we could find at every position, this has to be our championship year. Rec league, consider yourselves warned. First match is Sunday at 10."
+  },
+  {
+   "q": "q156",
+   "format": "email",
+   "source": "Kwame Asante, Plant Maintenance",
+   "title": "Schedule pump 3 seal replacement",
+   "passage": "Pump 3 has run 5,400 hours since its seals were last replaced. The manufacturer's data shows seal failure rates climb sharply after 5,000 hours of use, and our own logs show pumps 1 and 2 both failed between 5,200 and 5,800 hours. It's increasingly likely to fail soon, so I'd like to replace the seals during next week's shutdown."
+  },
+  {
+   "q": "q157",
+   "format": "chat",
+   "source": "Engineering leads",
+   "title": null,
+   "passage": "Priyanka: It's been a month since we switched to the four-day sprint cycle. Any feedback from your teams?\nByron: Nobody's complained, so I think it's safe to say everyone loves it.\nJi-ho: To be fair, the feedback form link was broken until yesterday."
+  },
+  {
+   "q": "q158",
+   "format": "email",
+   "source": "Hollis Park Tenants' Association",
+   "title": "Lead test results for our building",
+   "passage": "Good news, neighbors. The city tested the kitchen tap in every one of our 48 units, and all 48 came back below the lead action level. The building's service line was also replaced with copper last year. Since every unit's tap tested below the limit, we can say the building's tap water passed the city's lead test."
+  },
+  {
+   "q": "q159",
+   "format": "email",
+   "source": "Ingrid Solberg (Finance)",
+   "title": "Recommendation on the warehouse robot pilot",
+   "passage": "Hi all, I know we've already spent $200,000 on the robot pilot, and that's painful. But that money is gone whichever way we decide. Finishing would cost another $500,000 for about $120,000 a year in savings, and the hardware lasts about three years. That doesn't pay back, so my recommendation is to stop here. Ingrid"
+  },
+  {
+   "q": "q160",
+   "format": "email",
+   "source": "Deborah Lin, PTA president",
+   "title": "Re: Spring fundraiser ideas",
+   "passage": "Hi everyone, a few parents suggested replacing the wrapping-paper sale with an online donation drive, and I appreciate the thought. Online would save volunteer hours, that's true. But the wrapping-paper sale has been how Maple Ridge raises money for nearly thirty years, and I don't see a reason to drop something that's part of who we are. Deb"
+  },
+  {
+   "q": "q161",
+   "format": "review",
+   "source": "Harold Vinton",
+   "title": "Decent worksheets, skip the rest",
+   "passage": "The budgeting worksheets in chapter 3 are genuinely useful, and the tone is friendly without being preachy. But the book's big argument, that most people do better with low-cost index funds than picking stocks, is pushed by a guy who dropped out of business school and still drives a 15-year-old hatchback. Hardly a winner. Two stars."
+  },
+  {
+   "q": "q162",
+   "format": "chat",
+   "source": "Group chat · Oak Lane parents",
+   "title": null,
+   "passage": "Rachel: Our sitter from the Hatchsit app canceled an hour before date night. Again.\nBen: Ugh, sorry. That's the worst.\nRachel: That's both sitters we've booked through it, and both bailed. App sitters are just unreliable. I'm only asking the neighbors' teenagers from now on."
+  },
+  {
+   "q": "q163",
+   "format": "ad",
+   "source": "Thriftwren",
+   "title": "Five years. Zero breaches.",
+   "passage": "Thriftwren has helped families track their spending since 2021. In five years, we've never had a single reported data breach, which tells you everything you need to know: your information is completely secure with us. Link your bank accounts in under two minutes and finally see where your money goes."
+  },
+  {
+   "q": "q164",
+   "format": "post",
+   "source": "Wes Abara · @wesoutdoors",
+   "title": null,
+   "passage": "The forecast has said 30% chance of rain every single day this week, and we haven't had a drop. Five 'maybes' in a row that never happened. At this point today's 30% is practically guaranteed, the odds have to catch up eventually. Moving the picnic to Sunday and packing the big umbrella for work."
+  },
+  {
+   "q": "q165",
+   "format": "headline",
+   "source": "Brindle Creek Courier",
+   "title": "Second trial backs afternoon naps for memory in older adults",
+   "passage": "An independently funded trial at Marrowfield University has confirmed earlier findings that a 20-minute afternoon nap improved recall in adults over 60. Sleep coach Martin Feld isn't persuaded: 'This whole line of research was started by a mattress company looking for a marketing hook. I don't care how many times they rerun it.'"
+  },
+  {
+   "q": "q166",
+   "format": "email",
+   "source": "Hana Kim (parent)",
+   "title": "Re: Grade 7 math placement",
+   "passage": "Hi Ms. Adeyemi, thanks for the detailed placement report. I agree Noor's quiz scores dropped this term, and I appreciate you flagging it early. That said, I don't want her moved. As I see it, she stays in accelerated math, or she decides she's 'not a math person' for good. We'd like to keep her where she is. Best, Hana"
+  },
+  {
+   "q": "q167",
+   "format": "quote",
+   "source": "Teen to parent · car ride home",
+   "title": null,
+   "passage": "Mom, you can't tell me to put my phone away at dinner. You answered work emails through Grandma's entire birthday party. So honestly, I don't think screens at the table are that big a deal. Can we stop for tacos?"
+  },
+  {
+   "q": "q168",
+   "format": "speech",
+   "source": "CEO Lauren Mbeki · Fernwood all-hands meeting",
+   "title": null,
+   "passage": "Six weeks ago our design team, all eight of them, piloted a four-day week. Output held steady, deadlines were met and satisfaction scores jumped. I want to thank them for being our guinea pigs. Results like that tell us the four-day week will work across Fernwood, so support, sales and the warehouse will switch over in January."
+  },
+  {
+   "q": "q169",
+   "format": "ad",
+   "source": "Shroudline VPN",
+   "title": "Is someone reading this right now?",
+   "passage": "Every time you join café Wi-Fi, hackers can see your passwords, your bank balance, even your private photos. It happens to millions of people every day, and most never find out until it's too late. Don't be next. Protect every device in your home with Shroudline for $11.99 a month."
+  },
+  {
+   "q": "q170",
+   "format": "headline",
+   "source": "Halverton Tribune",
+   "title": "Boil-water advisory issued after north-side main break",
+   "passage": "Halverton Water says pressure in the north district fell below 20 psi for six hours after Tuesday's main break. Low pressure can let groundwater seep into pipes, so the utility says tap water there may not be safe to drink until two rounds of bacteria tests come back clean, likely by Friday. Boiling water for one minute kills the bacteria of concern."
+  },
+  {
+   "q": "q171",
+   "format": "post",
+   "source": "Lucia Ferreira · @lucia_buysmart",
+   "title": null,
+   "passage": "People ask why I trust the reviews on the marketplace I use more than on other shopping sites. Two reasons: you can only review an item after a verified purchase, and last year an outside audit flagged fewer than 1% of its reviews as fake. That doesn't make every review right, but it's why I weigh them more."
+  },
+  {
+   "q": "q172",
+   "format": "chat",
+   "source": "Team chat · #platform-team",
+   "title": null,
+   "passage": "Marco: Can my team use our own deploy script for the mobile release? The shared pipeline doesn't support the new signing step yet.\nLiz: If we make an exception for you, every team will want one. That's how the logging rules fell apart last year. Then nobody can cover anyone's on-call, and the first big outage takes days to fix."
+  },
+  {
+   "q": "q173",
+   "format": "post",
+   "source": "Hollie Brandt · @hollie_bakes",
+   "title": null,
+   "passage": "Every week someone says I'm wrong about this, so let's settle it: homemade bread stays fresh for a full week on the counter. Yes, Marco, I saw your comment about your loaf going stale in two days. Respectfully, if it went stale that fast, it wasn't real homemade bread."
+  },
+  {
+   "q": "q174",
+   "format": "chat",
+   "source": "Group chat · Roommates",
+   "title": null,
+   "passage": "Ngozi: The site says free shipping on orders over $35. My cart was $38, but with the coupon it's $31.\nAlex: Doesn't the $38 count as the order?\nNgozi: I checked the terms: they define the order total as the amount after discounts. So I'm under the threshold and won't get free shipping."
+  },
+  {
+   "q": "q175",
+   "format": "chat",
+   "source": "Text thread · Unit 4B and landlord",
+   "title": null,
+   "passage": "Mr. Castillo: Heads up that your rent will go from $1,600 to $1,840 when the lease renews in June.\nTasha: That's 15%! We've never missed a payment.\nMr. Castillo: I know, and I appreciate it. But rents in the neighborhood rose 15% this year, so 15% is only fair. That's what the apartment is worth now."
+  },
+  {
+   "q": "q176",
+   "format": "chat",
+   "source": "Team chat · #office-ops",
+   "title": null,
+   "passage": "Lin: IT says the server room door was propped open all weekend. They're running a full audit.\nGus: Honestly, that's no worse than someone leaving their laptop unlocked while they grab a coffee. A lapse is a lapse.\nLin: That room holds the payroll and customer databases, Gus."
+  },
+  {
+   "q": "q177",
+   "format": "headline",
+   "source": "Grantmere Daily Post",
+   "title": "Parks director: new field infill is safe",
+   "passage": "Asked about residents' questions over the rubber infill on the new Nettlefield Park sports fields, the parks director said no study has ever found the product harmful, so families can be confident it's safe. The infill, introduced by its manufacturer last year, has not yet been the subject of any published research."
+  },
+  {
+   "q": "q178",
+   "format": "headline",
+   "source": "Pell County Register",
+   "title": "Gullhaven marathon course found 2.1 miles short",
+   "passage": "A certified remeasurement found that Sunday's route was only 24.1 miles. Because a marathon is defined as 26.2 miles, race officials say finish times can't be listed as marathon results or used to qualify for other races, though every finisher will still receive a medal."
+  },
+  {
+   "q": "q179",
+   "format": "post",
+   "source": "Rob Kowalczyk · @robk_says",
+   "title": null,
+   "passage": "Last spring I said I'd believe the city's new recycling program works when they publish actual tonnage numbers. Well, they published them: 18% less going to the landfill. Okay, but until they prove every single bin is actually getting recycled and not shipped off somewhere, I'm still not buying it."
+  },
+  {
+   "q": "q180",
+   "format": "ad",
+   "source": "Auralis Hearing",
+   "title": "Hear every word at the dinner table again",
+   "passage": "Remember catching every joke at family dinners? Auralis dual-microphone aids were tested by the independent Halden Audiology Lab, where wearers understood 34% more words in noisy rooms than with standard single-mic aids. That's the difference between nodding along and joining in. Try a pair free for 45 days."
+  },
+  {
+   "q": "q181",
+   "format": "headline",
+   "source": "Fernhallow Weekly",
+   "title": "Downtown meters: three months in",
+   "passage": "Main Street's $2-an-hour parking meters went live in June, and the city says revenue is on target. So why are the new fees driving shoppers out of downtown? We asked three shop owners and a parking consultant. Foot-traffic counts from the business association won't be released until September."
+  },
+  {
+   "q": "q182",
+   "format": "quote",
+   "source": "Engineering lead · sprint planning",
+   "title": null,
+   "passage": "Look, I appreciate that Mei filed the ticket with repro steps and a screen recording. But this is the same Mei who flagged a 'critical' memory leak in March that turned out to be her own test config. I'm not pulling two people off the release for this one. Let's keep moving."
+  },
+  {
+   "q": "q183",
+   "format": "email",
+   "source": "Grant Hollis, Editor, Bayside Beacon",
+   "title": "Re: Should we run the Delmar story?",
+   "passage": "Thanks for flagging the concerns, Pia. I agree the restaurant-review angle is weak and the photos need work. But the teaser about Chef Delmar's divorce got 40,000 clicks in an hour. When the public is this interested, running it is in the public interest. Let's publish at noon."
+  },
+  {
+   "q": "q184",
+   "format": "headline",
+   "source": "Millbrook Ledger",
+   "title": "Councillor says more cafés could make Millbrook wealthier",
+   "passage": "Presenting a regional comparison on Tuesday, Councillor Dana Whitfield noted that the five towns with the most independent coffee shops per resident also have the highest median household incomes. She proposed rent relief to attract new cafés, arguing that more coffee shops would help lift local wages."
+  },
+  {
+   "q": "q185",
+   "format": "speech",
+   "source": "Ilse Navarro, Chief People Officer · Quillmark Analytics all-hands",
+   "title": null,
+   "passage": "A few of you asked whether our interview loop is too long. I get it; five rounds is a lot. But look at what it produces. The people in this room are the strongest engineers I've worked with anywhere, and we know they're the strongest because they cleared the toughest hiring bar in the industry. The loop works."
+  },
+  {
+   "q": "q186",
+   "format": "email",
+   "source": "Hana Kobayashi",
+   "title": "Re: No-meeting Wednesdays",
+   "passage": "Hi all, I'm open to fewer meetings, and Felipe's survey (68% of us say meetings break up deep work) deserves a real look. But I should mention that this whole idea started as a joke slide at last year's offsite. I'm wary of reorganizing our week around something that began as a punchline. Maybe we revisit next quarter? Hana"
+  },
+  {
+   "q": "q187",
+   "format": "post",
+   "source": "Kay Ramos · @kayramosruns",
+   "title": null,
+   "passage": "Saw a physio post that runners should add two short strength sessions a week to cut injury risk. Sorry, but I'm not giving up running to become a gym rat. Some of us actually like being outside. Ten miles along the river this morning and it was glorious."
+  },
+  {
+   "q": "q188",
+   "format": "headline",
+   "source": "Riverside Weekly",
+   "title": "Official says town is safe from major flooding for decades",
+   "passage": "With repairs to the east levee now on schedule, Riverside's emergency manager told residents Thursday that the 2024 flood was the area's 'hundred-year flood.' Since that one has now happened, he said, another flood that size is very unlikely for several generations, and the flood insurance program can wind down."
+  },
+  {
+   "q": "q189",
+   "format": "quote",
+   "source": "Student driver to his instructor · Hollowmere Driving School",
+   "title": null,
+   "passage": "I know, I know, no phone while driving. But honestly, reading a text while you're driving is no worse than reaching over to change the radio station. Either way your eyes leave the road for a second. I'll keep my replies short, I promise."
+  },
+  {
+   "q": "q190",
+   "format": "speech",
+   "source": "HOA president Glen Moritz · Cedarline Commons annual meeting",
+   "title": null,
+   "passage": "Several of you have asked whether the 12% fee increase was passed without the member vote our bylaws require. I understand the frustration. Let me tell you what that money is doing: the pool filters are twenty years old, the clubhouse roof leaks every spring, and our reserve fund was dangerously low. These repairs can't wait, and I think most of you agree."
+  },
+  {
+   "q": "q191",
+   "format": "chat",
+   "source": "Mensah family chat",
+   "title": null,
+   "passage": "Sofia: Feeling rough. Making Grandma's ginger-lemon tea and staying in tonight.\nLeo: That tea thing is just village folklore from before anyone knew what germs were. Hard to take seriously.\nSofia: The warm drink is soothing my throat right now, Leo.\nLeo: Folklore is folklore."
+  },
+  {
+   "q": "q192",
+   "format": "post",
+   "source": "Jonah Reyes · @jonahreyes",
+   "title": null,
+   "passage": "My brother told me to quit vaping. He still smokes a pack a week, which is honestly kind of funny. But his point stands: I get winded on two flights of stairs now, my cough hangs around for weeks, and I'm spending about $90 a month on pods. Him not following his own advice doesn't make any of that less true. Day 3 without it."
+  },
+  {
+   "q": "q193",
+   "format": "chat",
+   "source": "Design team · #general",
+   "title": null,
+   "passage": "Hugo: Quinlet's new app is copying our onboarding screens. We should have legal send a letter.\nAmina: Do we have anything showing that? Screenshots, a timeline, anything?\nHugo: Can you show me they didn't copy us? You're the one doubting it."
+  },
+  {
+   "q": "q194",
+   "format": "email",
+   "source": "Rhea Banerjee, building manager",
+   "title": "CO detectors: replacing expired units this week",
+   "passage": "Hi residents, our annual inspection found expired carbon monoxide detectors in 6 of our 40 units. Every unit here has a gas furnace, and carbon monoxide has no smell or color, so a working detector is the only practical warning if a furnace malfunctions. That's why replacing the expired ones matters, and we'll install new units free this Thursday."
+  },
+  {
+   "q": "q195",
+   "format": "chat",
+   "source": "Lena & Corbin",
+   "title": null,
+   "passage": "Lena: I'm so full I can barely move. That last plate was a mistake.\nCorbin: We paid $42 each for this buffet. Go get one more plate so we at least get our money's worth.\nLena: Making myself sick isn't going to get the $42 back, Corbin."
+  },
+  {
+   "q": "q196",
+   "format": "post",
+   "source": "Jaylen Brooks · @jaylenb_writes",
+   "title": null,
+   "passage": "My English teacher keeps writing 'be more critical' on my essays. Fine. My next essay on the assigned novel trashes it from the first page to the last: boring plot, flat characters, terrible ending. Being critical is literally what she asked for, so this one better get an A."
+  },
+  {
+   "q": "q197",
+   "format": "review",
+   "source": "Carmen Ruiz",
+   "title": "Good food, but I'm out",
+   "passage": "Three weeks in: the produce shows up fresh, portions are generous, and the Thai basil chicken is a weeknight hero. Then I learned the founder spoke at the same wellness summit as the guy selling 'detox' foot pads. That told me what kind of company this is, so I've canceled. Two stars for the food."
+  },
+  {
+   "q": "q198",
+   "format": "chat",
+   "source": "Product team · #planning",
+   "title": null,
+   "passage": "Rhea: Can we cap the planning meeting at 30 minutes? Last week's ran two hours.\nTomasz: Think of it like the gym. Nobody gets stronger from a 10-minute workout. The more time we put in, the more we get out of it.\nRhea: We spent 40 minutes on the font for one slide."
+  },
+  {
+   "q": "q199",
+   "format": "email",
+   "source": "Ngozi Eze (Tenants' committee, Unit 4B)",
+   "title": "One-question survey before our meeting",
+   "passage": "Hi neighbors, the tenants' committee meets with the management company next month about the overnight concierge, which they plan to cut in January. Please answer one quick question by Sunday: How much safer do you feel with a concierge on duty overnight? (Much safer / Somewhat safer / Slightly safer) Thanks so much, Ngozi"
+  },
+  {
+   "q": "q200",
+   "format": "chat",
+   "source": "Group chat · Lakeview PTA",
+   "title": null,
+   "passage": "Ji-woo: The district report is out: across three years, kids in the ReadUp program gained about 1.5 grade levels on average.\nMaria: That's encouraging!\nJi-woo: Maybe. Daniel did a full year of it and his reading didn't budge. Honestly, I'm not convinced it does much, and I'd rather the PTA funded something else."
+  },
+  {
+   "q": "q201",
+   "format": "speech",
+   "source": "Dr. Kenji Watanabe, pediatrician · Halden school board",
+   "title": null,
+   "passage": "During puberty, teens' sleep cycles shift later, so many can't fall asleep before 11 p.m. With our 7:20 a.m. start, most of our students get under seven hours a night, well short of what pediatric guidelines recommend. This board has said its schedule should support students' health and learning. Given that commitment, we ought to move the start to 8:30."
+  },
+  {
+   "q": "q202",
+   "format": "chat",
+   "source": "Group chat · Nakamura siblings",
+   "title": null,
+   "passage": "Aiko: The movers chipped Grandma's blue vase. Is it covered?\nKen: Her collection is insured under one policy, and the policy schedule lists every item individually, the vase included, at appraised value.\nAiko: So the vase itself is covered, not just the collection overall. I'll file the claim tonight."
+  },
+  {
+   "q": "q203",
+   "format": "chat",
+   "source": "Abebe & Wren (neighbors)",
+   "title": null,
+   "passage": "Abebe: The quote for the new fence is $1,800. I was hoping you'd cover it, since Biscuit knocked the old one down.\nWren: Fair, but that fence was 25 years old and already leaning, and the survey puts it exactly on our property line.\nAbebe: True. It was due anyway and we both get the same fence, so $900 each seems fair."
+  },
+  {
+   "q": "q204",
+   "format": "post",
+   "source": "Gail Moreno · @gailmoreno_bc",
+   "title": null,
+   "passage": "People are tearing apart Dr. Aldana's report on the Brindle River cleanup, and it's hard to watch. Her funding was cut in the spring, she's been caring for her mother on top of running the lab, and she still got this done. The least we can do is give her findings the benefit of the doubt instead of nitpicking her sampling methods."
+  },
+  {
+   "q": "q205",
+   "format": "post",
+   "source": "Coach Marisa Delgado · @coachmarisa_fit",
+   "title": null,
+   "passage": "Real talk for my coaching clients: if you want results, you log every single bite, weekends included. No excuses, no \"I'll remember it later.\" (I don't track on weekends myself, but weekends are family time for me, so that's a different situation.) Consistency is everything!"
+  },
+  {
+   "q": "q206",
+   "format": "quote",
+   "source": "Junior player to the line judge · Kestrel Point Open",
+   "title": null,
+   "passage": "Come on, that ball was in! I've lost five matches in a row, my dad drove all night to get me here, and I've been playing through a sore wrist all week. Please, just give me this one point. I really need it."
+  },
+  {
+   "q": "q207",
+   "format": "post",
+   "source": "Coach Rafael Ibarra · @ibarra_nutrition",
+   "title": null,
+   "passage": "People keep asking if keto beats low-fat for weight loss. I've linked three trials below where keto groups lost noticeably more weight at six months. Yes, the 12-month follow-ups mostly found no real difference, but almost nobody sticks to a diet for a full year anyway. The six-month data is what counts, and it's clear: keto wins."
+  },
+  {
+   "q": "q208",
+   "format": "chat",
+   "source": "Bio 201 study group",
+   "title": null,
+   "passage": "Ines: The review sheet says to focus on chapters 6 and 7. Want to split them?\nRavi: Wait, Derek was telling people to focus on 6 and 7. Derek has failed every quiz this term. I'm putting my time into chapter 9.\nInes: Derek got it from the review sheet. The professor wrote it."
+  },
+  {
+   "q": "q209",
+   "format": "headline",
+   "source": "Circuit & Signal",
+   "title": "Analysts raise battery outlook after Kaplan's bold forecast",
+   "passage": "Venture investor Sloane Kaplan, whose early bets on three software giants made her a billionaire, told a conference Thursday that solid-state home batteries will halve household electricity bills within five years. Analysts at Grayfield Research raised their sector forecast the next morning, citing her unmatched record of spotting winners."
+  },
+  {
+   "q": "q210",
+   "format": "post",
+   "source": "Fenmoor Saturday Market · @fenmoormarket",
+   "title": null,
+   "passage": "Our shopper survey is in, and it's not what we hoped: 41% say the market is too expensive to visit weekly. We'd love to call that a fluke, but it matches the 18% drop in attendance since spring. Raising stall fees again would push prices even higher, so we're freezing fees for next season and inviting more budget-friendly vendors."
+  },
+  {
+   "q": "q211",
+   "format": "speech",
+   "source": "Resident Owen Tremblay · Thornvale school board, public comment",
+   "title": null,
+   "passage": "Good evening. I've had two kids at Thornvale Elementary, and I want to thank the teachers, who have been wonderful. But I have one question for the board tonight, and I'd like a straight answer: why did you keep the mold problem in the east wing hidden from parents for a whole year?"
+  },
+  {
+   "q": "q212",
+   "format": "email",
+   "source": "Keisha Morrow (Buyer's agent)",
+   "title": "Inspection results",
+   "passage": "Hi Daniel and Sofia, good news from this morning. The inspector spent two hours probing every accessible beam in the basement, crawlspace and attic and found no termite damage, droppings or mud tubes. If termites were active, those are exactly the signs she'd expect to see, so I'm comfortable saying there's no sign of an active infestation. Keisha"
+  },
+  {
+   "q": "q213",
+   "format": "post",
+   "source": "Earl Haskins · @earlhaskins62",
+   "title": null,
+   "passage": "Westbrook football has been played on Friday nights under the lights since 1962. My dad played on that field, I played on it, my son plays on it now. Moving games to Saturday afternoons to save on 'electricity costs' is ridiculous. Some things you just don't change. Go Herons!"
+  },
+  {
+   "q": "q214",
+   "format": "speech",
+   "source": "City engineer Mehmet Aydin · Fenmoor flood forum",
+   "title": null,
+   "passage": "Restoring the 40-acre marsh along Fen Creek sounds like a feel-good idea, so here are the numbers. Our model shows it would hold about 30 million gallons in a 100-year storm, roughly what the proposed concrete basin holds, at a third of the cost and with lower upkeep. On capacity and cost, restoration is simply the better flood plan for Fenmoor."
+  },
+  {
+   "q": "q215",
+   "format": "email",
+   "source": "Harriet Cole, Client Services Director",
+   "title": "Re: Early-finish Fridays",
+   "passage": "Thanks for putting the proposal together, Sam. I agree morale has been low, and I support flexibility in principle. My concern is where it leads: leave at 3 on Fridays, and soon Thursdays go the same way, then clients notice nobody picks up after lunch, and we lose the Hartley account. Can we talk Monday?"
+  },
+  {
+   "q": "q216",
+   "format": "review",
+   "source": "Sunita R.",
+   "title": "Cute kit, but it didn't survive",
+   "passage": "The jar is sturdy and the flour it came with is lovely. The instructions say to feed the starter twice a day, but I figured a starter is basically a houseplant, and my houseplants do fine with a weekly watering, so I fed it on Sundays. It was dead by week two. Two stars."
+  },
+  {
+   "q": "q217",
+   "format": "speech",
+   "source": "Developer Rob Kessler · Ashford planning hearing",
+   "title": null,
+   "passage": "I've heard the concerns about traffic, and I take them seriously; we've added a turn lane to the plan. But let's be realistic. Each new home adds maybe two cars to the road. Two cars is nothing on a street like Elm. So the 200-home development as a whole won't make a meaningful difference to traffic."
+  },
+  {
+   "q": "q218",
+   "format": "chat",
+   "source": "Security team · #incident-412",
+   "title": null,
+   "passage": "Ola: The leaked password belonged to an old admin account. Did anyone actually use it?\nKwame: I went through every authentication log since the account was created. Every login attempt is recorded, and there's not one from that account in two years.\nOla: Then it hasn't been used to get in. Let's disable it and close the ticket."
+  },
+  {
+   "q": "q219",
+   "format": "post",
+   "source": "Theo Marsh · @theotypes",
+   "title": null,
+   "passage": "Fun fact: the QWERTY layout was arranged in the 1870s so typewriter keys wouldn't jam. So anyone still drilling touch-typing on it is training for a machine that hasn't existed in a century. I've switched my kids' typing lessons to tablet swiping. You're welcome."
+  },
+  {
+   "q": "q220",
+   "format": "speech",
+   "source": "Parent rep Sunita Varma · Brookside school board",
+   "title": null,
+   "passage": "The proposal before us replaces the artificially sweetened yogurt in our cafeterias with versions sweetened with honey and fruit concentrate, and I think that's the right call. Whatever the lab reports say about the sweetener, children's bodies are built for real food, not compounds engineered in a factory. Real ingredients are always the healthier choice."
+  },
+  {
+   "q": "q221",
+   "format": "chat",
+   "source": "Team chat · #launch-planning",
+   "title": null,
+   "passage": "Marisol: QA found two bugs in checkout. Small, but customers will definitely hit them.\nKofi: Then we have a choice. We ship Thursday as announced, or we tell the whole company this team can't deliver.\nInes: How long would the fixes actually take?"
+  },
+  {
+   "q": "q222",
+   "format": "email",
+   "source": "Dr. Leila Haddad, Brookside Family Clinic",
+   "title": "Results of our reminder-text pilot",
+   "passage": "Hi everyone, here are the pilot results. For three months, patients booking appointments were randomly assigned to get a text reminder the day before or no reminder. The no-show rate was 8% with texts and 14% without, across about 1,900 appointments. Since the groups were split by chance, the texts are the likely reason for the drop, so I suggest we keep them."
+  },
+  {
+   "q": "q223",
+   "format": "chat",
+   "source": "Group chat · Sunday league banter",
+   "title": null,
+   "passage": "Mateo: Kowalski is the best keeper in the league, end of discussion. Three clean sheets in his last five games!\nInes: He's let in 41 goals this season, more than any other starting keeper.\nMateo: Those last five games show who he really is. The rest is noise."
+  },
+  {
+   "q": "q224",
+   "format": "chat",
+   "source": "Marta & Femi",
+   "title": null,
+   "passage": "Marta: Plan A is $35 a month with 20GB. Plan B is also $35 with 20GB, same contract length, same overage fee.\nFemi: And the coverage maps look identical for our street. I checked both.\nMarta: Then they're basically the same deal, so let's just pick whichever store is closer."
+  },
+  {
+   "q": "q225",
+   "format": "headline",
+   "source": "Carver Valley Tribune",
+   "title": "Asthma ER visits fell along electric bus routes, study finds",
+   "passage": "After Dunmore replaced its diesel buses with electric ones in 2024, asthma-related ER visits fell 11% the next year, while neighboring Carver, which kept its diesel fleet, saw no change. The drop was largest in blocks along bus routes. Researchers say the pattern points to cleaner air from the new buses as a likely contributor."
+  },
+  {
+   "q": "q226",
+   "format": "chat",
+   "source": "Family money chat",
+   "title": null,
+   "passage": "Lucia: Finally opening a high-yield savings account for the house fund. 4.1% at Thimble Bay Bank.\nUncle Desmond: Banks fail more often than they let on. One bad week and your account is frozen and you're standing outside a locked door while your down payment disappears. I keep mine in a safe at home.\nLucia: Isn't the account insured, though?"
+  },
+  {
+   "q": "q227",
+   "format": "post",
+   "source": "Tasha Greenleaf · @tasha_pays_it_off",
+   "title": null,
+   "passage": "My DMs are split: half of you say kill the credit card first, half say max out retirement savings first. Both camps are so confident that the smart move must be doing a bit of each. So the plan is a 50/50 split of every extra dollar starting this month. (Card is at 24% APR, for anyone wondering.)"
+  },
+  {
+   "q": "q228",
+   "format": "post",
+   "source": "Sam Adeyemi · @samreadsstudies",
+   "title": null,
+   "passage": "Lots of you asked whether the Mindloom app improves concentration. I found 20 studies. Fourteen had no control group, so I set those aside, following my usual rule. The six randomized trials found small or no effects, averaging out to almost nothing. So my honest answer: the app probably doesn't do much for focus, whatever its ads claim."
+  },
+  {
+   "q": "q229",
+   "format": "post",
+   "source": "Nadia Park · @nadiaparklifts",
+   "title": null,
+   "passage": "Day 12 of cold plunges after my morning lift. The first minute is brutal, I won't lie, and my towel budget has doubled. Grandmaster Viktor Sandor, one of the greatest chess minds alive, does it every morning and says cold water 'resets your immune system.' If a mind like that swears by it, that's good enough for me."
+  },
+  {
+   "q": "q230",
+   "format": "speech",
+   "source": "Board chair Leonard Fitch · Halverton school board",
+   "title": null,
+   "passage": "We've heard a lot tonight about sleep studies supporting a later start, and I've read some of them. But I'd remind everyone that Dr. Anjali Rao, a cardiologist who has practiced in this county for thirty years, told us last month that a 45-minute shift makes no real difference to teenagers' health. If anyone understands health, it's her. I'm comfortable keeping our schedule."
+  },
+  {
+   "q": "q231",
+   "format": "headline",
+   "source": "Brookfield Gazette",
+   "title": "Trustee warns fine-free plan could unravel library lending",
+   "passage": "Library trustee Hal Benedetti opposed the proposal to scrap overdue fines at Tuesday's meeting. Without fines, he argued, fewer books will come back, waitlists will grow, frustrated patrons will stop visiting, and falling visits will hand the county a reason to cut the library's budget. The board votes next month."
+  },
+  {
+   "q": "q232",
+   "format": "chat",
+   "source": "Family chat",
+   "title": null,
+   "passage": "Zara: You said if I got at least a B on the chemistry final, I'd get my phone back. I got a B+!\nDad: Great job, honey, really. Now let's see you keep that up through the end of the semester.\nZara: That was not the deal!!"
+  },
+  {
+   "q": "q233",
+   "format": "quote",
+   "source": "Host Brody Castellano · Kestrel Bay Sports Radio call-in show",
+   "title": null,
+   "passage": "Look, I'll own it: back in August I said Tomas Reyes-Hart wasn't elite until he scored 20 goals in a season. He's at 23 with two games left. Credit to him. But 23 goals against this schedule? Half of those came against bottom-table teams. Show me 15 against the top four and then we'll talk about elite."
+  },
+  {
+   "q": "q234",
+   "format": "post",
+   "source": "Derek Vance · @derekvance_coach",
+   "title": null,
+   "passage": "Psychologists have found that people form a first impression of someone within a few seconds of meeting them. Seconds! So stop feeling guilty about judging people fast. If someone gives you a bad vibe in the first ten seconds, you're right to write them off. Trust the first impression."
+  },
+  {
+   "q": "q235",
+   "format": "post",
+   "source": "Ji-woo Han · @jiwooeatswrenford",
+   "title": null,
+   "passage": "The line outside Halmeoni's Table has gone around the block every single day since it opened two weeks ago. Thirty-minute waits, sold out by 2. I haven't actually made it in yet, but at this point it's clearly the best Korean food in Wrenford. Sorry to every other spot in town."
+  },
+  {
+   "q": "q236",
+   "format": "email",
+   "source": "Hector Alvarado, Kitchen Manager",
+   "title": "Pull all of this week's muffins",
+   "passage": "Our flour supplier just recalled lot 4471 because it may be contaminated with E. coli. I checked the logs: every muffin we've baked since Monday used flour from that lot. So every one of this week's muffins is covered by the recall, including the ones already wrapped for the café. Please pull them all and set them aside for disposal."
+  },
+  {
+   "q": "q237",
+   "format": "speech",
+   "source": "Caseworker Imani Carter · Wrenford housing committee",
+   "title": null,
+   "passage": "The emergency rent fund is for households facing eviction after a sudden loss of income. The Abebe family meets both conditions: Mr. Abebe was laid off in August, with the letter on file, and they received a notice to vacate on October 2. Their story is hard to hear, but that's not why I'm recommending approval. It's because they meet the fund's criteria."
+  },
+  {
+   "q": "q238",
+   "format": "post",
+   "source": "Gwen Achebe · @gwen.wellnessjourney",
+   "title": null,
+   "passage": "People keep asking whether my magnesium sleep gummies are \"proven.\" Fair question! Here's how I look at it: this brand only sells formulas that work, and I know these work because the brand wouldn't sell them otherwise. I've linked the ingredient list in my bio if you're curious. Sleep well, friends!"
+  },
+  {
+   "q": "q239",
+   "format": "speech",
+   "source": "Mayor Constance Ilori · Dunmarrow drought briefing",
+   "title": null,
+   "passage": "The reservoir is at 31%, its lowest level in fifteen years, so starting Monday, residential lawn watering is limited to one day a week. I know that's hard. The one exception will be the Copperbeck golf course, which keeps its daily schedule. That course has been the pride of this town for fifty years, and I won't see it go brown."
+  },
+  {
+   "q": "q240",
+   "format": "post",
+   "source": "Jules Barros · @julesonthemove",
+   "title": null,
+   "passage": "Confession: I can't stand spin class. The music gives me a headache and my knees ache for days afterward. But I prepaid $900 for a full year of classes in January, so I'm dragging myself there four mornings a week until December. Not letting that money go to waste!"
+  },
+  {
+   "q": "q241",
+   "format": "chat",
+   "source": "Office ops · #purchasing",
+   "title": null,
+   "passage": "Hamza: The vendor says this water filter removes 99% of microplastics. Want to order one for the office?\nAmira: Did they share any test results? It's $3,000.\nHamza: Not yet.\nAmira: Since it's their claim and real money, let's ask for the lab report before we buy."
+  },
+  {
+   "q": "q242",
+   "format": "email",
+   "source": "Hyun-woo Park (Operations)",
+   "title": "Rolling out the new picking route at Corrow Hill",
+   "passage": "Hi all, the new picking route cut walking time by 20% at the Brennick warehouse over the past quarter. Corrow Hill has the same floor layout, the same shelving system and similar daily order volume, so I expect a comparable improvement there. We'll measure the first month to confirm. Thanks, Hyun-woo"
+  },
+  {
+   "q": "q243",
+   "format": "email",
+   "source": "Ravi Kapoor (parent)",
+   "title": "Re: AI policy for the persuasive essay",
+   "passage": "Hi Ms. Lindgren, thanks for sending the essay guidelines home. I respect that you want original work, but I'd push back on the chatbot ban. Thirty years ago people worried calculators would ruin math, and now every student uses one in class. A chatbot is just the next calculator, so it belongs in the essay assignment too. Best, Ravi"
+  },
+  {
+   "q": "q244",
+   "format": "quote",
+   "source": "Lars Whitfield, senior engineer · Tuesday standup",
+   "title": null,
+   "passage": "Quick reminder, everyone: two approvals on every pull request, no exceptions, because that's how we catch the bugs we can't see in our own code. For tonight's billing hotfix I'm going to merge on my own review, though. I wrote that module, so I know it better than anyone who'd be reviewing it."
+  },
+  {
+   "q": "q245",
+   "format": "post",
+   "source": "The Glass Orchards Fan Page · @glassorchardsfans",
+   "title": null,
+   "passage": "OK, look at the new album's tracklist. Take the first letter of tracks 2, 5, 7 and 11: T, O, U, R. TOUR! They hid the announcement right in front of us. I've been refreshing their site all morning. Fall tour dates incoming, calling it now."
+  },
+  {
+   "q": "q246",
+   "format": "headline",
+   "source": "The Halverton Ledger",
+   "title": "Swap some city lawns for native plants, researchers urge",
+   "passage": "A Pellham Institute study recommends converting 20% of city-owned lawns in parks and medians to native plantings, which it estimates would cut municipal irrigation by 15%. Landscaping association head Rob Kessler pushed back Monday, saying residents 'shouldn't be told to tear out the yards their kids play in.'"
+  },
+  {
+   "q": "q247",
+   "format": "post",
+   "source": "Kara Lindgren · @karaonthemove",
+   "title": null,
+   "passage": "Every article says adults need 7-9 hours of sleep. I've slept about five hours a night for a decade, I run marathons and I manage a team of twelve. To be fair, people really do differ, and that research describes averages. But in my experience, you can train your body to need less, so stop stressing about the eight-hour rule."
+  },
+  {
+   "q": "q248",
+   "format": "speech",
+   "source": "Trustee Gordon Abernathy · Fennwick Public Library board meeting",
+   "title": null,
+   "passage": "Our acquisitions budget is down 12% this year, so we have to make choices, and I appreciate the staff report. My view is simple. A library works like a grocery store: when a product doesn't move, you clear the shelf for something that will. Poetry has our lowest checkout rate, so it should be the first section we cut."
+  },
+  {
+   "q": "q249",
+   "format": "email",
+   "source": "Graham Okonedo (CTO)",
+   "title": "Re: Should we switch CRMs?",
+   "passage": "Hi Noemi, thanks for the comparison sheet. You're right that the off-the-shelf option covers nearly everything we need for about $40k a year. Still, we've put eighteen months and $1.2 million into our in-house system. Walking away now would mean all of that was wasted, so I want to push on and finish it. Let's discuss Monday. Graham"
+  },
+  {
+   "q": "q250",
+   "format": "quote",
+   "source": "Car buyer to a friend · dealership lot",
+   "title": null,
+   "passage": "The dealer swears it's never been in an accident, and honestly, it can't have been. We've promised the whole family a lake trip in it on Friday, and I'm not telling the kids it's off. So no, I'm not spending $40 on a history report. Help me pick seat covers?"
+  },
+  {
+   "q": "q251",
+   "format": "post",
+   "source": "Marco Bellamy · @marcorunsfree",
+   "title": null,
+   "passage": "Switched from cushioned trainers to barefoot shoes in January. My calves screamed for a month, so ease in if you try it. But our feet evolved to run on bare ground, so all that foam is just a crutch that weakens them. No more padding for me, ever. Ten-miler this weekend!"
+  },
+  {
+   "q": "q252",
+   "format": "headline",
+   "source": "The Kestrel Point Gazette",
+   "title": "Running app maker hits back at privacy watchdog",
+   "passage": "Strydo, whose running app was found sharing users' location history with advertisers, responded Tuesday by noting that the watchdog behind the report, the Clearfield Privacy Project, 'tracks its own website visitors with third-party ad cookies' and questioned whether the group should 'lecture anyone on data.' Strydo said it would review its settings."
+  },
+  {
+   "q": "q253",
+   "format": "chat",
+   "source": "Team chat · Account managers",
+   "title": null,
+   "passage": "Corinne: The Halcyon invoice went out two weeks late. Finance says their billing system was down.\nMark: Lena's responsible for the Halcyon account, right?\nCorinne: Yes, since March.\nMark: Then she's responsible for the late invoice. I'll note it in her review."
+  },
+  {
+   "q": "q254",
+   "format": "quote",
+   "source": "Building manager · tenant meeting",
+   "title": null,
+   "passage": "You're asking why the heat was out for six days in January. What I'd like everyone to appreciate is that we just repainted the entire lobby and installed new mailboxes. Honestly, this building has never looked better. Okay, next question?"
+  },
+  {
+   "q": "q255",
+   "format": "speech",
+   "source": "Builder Samuel Okoro · Larkmoor zoning hearing",
+   "title": null,
+   "passage": "Before you vote on the variance, I want you to know who's behind this project. My family has run Okoro Builders for three generations. The last two years have been brutal: we laid off half our crew, and my father's health is failing. Yes, the building sits four feet closer to the creek than the floodplain rule allows. This variance is the difference between finishing and losing everything."
+  },
+  {
+   "q": "q256",
+   "format": "speech",
+   "source": "Trustee Marion Feld · Lakeshore school board",
+   "title": null,
+   "passage": "The new student laptops are a great investment, and teachers tell me they're already using them well. They also come with software that can log every website a student visits, around the clock. That capability is right there on every machine. So yes, I believe staff should review every student's browsing history each week."
+  },
+  {
+   "q": "q257",
+   "format": "headline",
+   "source": "Streamwatch Daily",
+   "title": "Flickwell defends autoplay, including on kids' profiles",
+   "passage": "Asked about criticism of autoplay at an industry conference, Flickwell product chief Harold Banks said viewers watch about 40% longer when the next episode starts automatically, including on children's profiles. 'The data tells us what serves our viewers,' he said, adding that keeping autoplay on by default is the right thing to do."
+  },
+  {
+   "q": "q258",
+   "format": "email",
+   "source": "Sgt. Maya Torres, traffic division",
+   "title": "Re: Removing the Dover St. turn restriction",
+   "passage": "Before we remove the 'no left turn, 7 to 9 a.m.' sign on Dover Street because it 'has been there forever,' I pulled the history. It was added in 1998 after five crashes in two years at that corner, all during school drop-off. The school is still there and morning traffic has grown. The reason for the rule still holds, so I'd keep it."
+  },
+  {
+   "q": "q259",
+   "format": "chat",
+   "source": "Dev team · #release-review",
+   "title": null,
+   "passage": "Pavel: Your PR fails the checkout tests and has no handling for expired cards. I can't approve it yet.\nNia: The expired-card path is maybe 1% of orders. And I've been here until 10 every night this week, and I just found out my lease isn't being renewed. Can we please merge it? I really need a win right now."
+  },
+  {
+   "q": "q260",
+   "format": "ad",
+   "source": "Pellora",
+   "title": "Because they're only little once",
+   "passage": "Those first walks to the park. Tiny fingers curled around yours. Moments like these deserve the Pellora Glide, with hand-stitched trim and our signature champagne finish. You'd never give them less than your best. Don't start with their stroller. From $1,249."
+  },
+  {
+   "q": "q261",
+   "format": "review",
+   "source": "Paul Delacroix",
+   "title": "Buggy, but there's a reason it's #1",
+   "passage": "Setup took most of an afternoon, and the mobile app crashes whenever I attach large files. Support took four days to reply. That said, this has been the most downloaded productivity app on the store for three years running, so whatever problems it has can't be that serious. Four stars."
+  },
+  {
+   "q": "q262",
+   "format": "chat",
+   "source": "Group chat · Friday card club",
+   "title": null,
+   "passage": "Lou: 20 cards left in the deck and none of the four aces have shown up yet.\nGrace: We're not reshuffling until the deck runs out, right?\nLou: Right, so all four aces are somewhere in those 20 cards. That's a 1-in-5 shot at an ace on the next draw, way better than the 1-in-13 we started with."
+  },
+  {
+   "q": "q263",
+   "format": "chat",
+   "source": "Group chat · Side hustle crew",
+   "title": null,
+   "passage": "Imani: Went through my shop stats last night. Listings with 8+ photos sell about twice as often as the ones with 3 or 4.\nTheo: makes sense, people want to see what they're buying\nImani: Right?? So I'm reshooting all my cheap listings with 8 photos each. That should double their sales.\nTheo: worth a weekend for sure"
+  },
+  {
+   "q": "q264",
+   "format": "email",
+   "source": "Gordon Pike",
+   "title": "Re: Later start time proposal",
+   "passage": "Thanks, Amara, for the research packet. I agree teen sleep matters, and before any vote I'd want to see what a revised bus schedule would cost. That said, Amara has pushed a pet cause at nearly every council meeting this year, so I'd weigh her conclusions accordingly. Happy to discuss Thursday. Gordon"
+  },
+  {
+   "q": "q265",
+   "format": "post",
+   "source": "Shore Road Business Association · @shoreroadkp",
+   "title": null,
+   "passage": "Seeing chatter about the university report saying algae levels in Kestrel Lake are unsafe for swimming. Our town runs on summer visitors. If that report were right, half the shops on Shore Road would be shuttered by August, so no, we're not buying it. Lifeguards are on duty all weekend and the ice cream stand opens at 10!"
+  },
+  {
+   "q": "q266",
+   "format": "chat",
+   "source": "Group chat · Maple St housemates",
+   "title": null,
+   "passage": "Nadia: We put the Thermalyn smart thermostat in at the start of November, and December's heating bill was the biggest we've ever had.\nOwen: Ugh. Those things aren't cheap either.\nNadia: Exactly. It's obviously costing us money, so it's going back while we're still inside the return window."
+  },
+  {
+   "q": "q267",
+   "format": "chat",
+   "source": "IT team · #security",
+   "title": null,
+   "passage": "Noor: You said we'd switch to the new antivirus if it passed the independent lab test. It scored 99%.\nFelix: I saw, nice. But the lab report says they only tested the Windows version, and half our team is on Mac. Can we get the Mac results first? If those hold up, I'm in."
+  },
+  {
+   "q": "q268",
+   "format": "speech",
+   "source": "Councillor Rafael Soto · Ferncliff council",
+   "title": null,
+   "passage": "Thirty-eight towns in the region have switched to every-other-week trash pickup in the last two years. Our own consultant estimates it would save Ferncliff about $180,000 a year. I think it's clear which way the region is heading, and I don't want Ferncliff to be the last town still paying for weekly pickup out of stubbornness."
+  },
+  {
+   "q": "q269",
+   "format": "headline",
+   "source": "Larkmoor Gazette",
+   "title": "Community garden votes to allow only plant-derived pesticides",
+   "passage": "Members of the Larkmoor community garden voted 23-9 to ban synthetic pesticides from the plots this spring. Member Imogen Tate, who proposed the change, said sprays 'derived from plants work with the garden's ecosystem instead of against it.' The new rule allows pyrethrin and neem-based products, which members say they will apply more often to compensate."
+  },
+  {
+   "q": "q270",
+   "format": "quote",
+   "source": "Big Mike Danvers · Harbor City sports radio",
+   "title": null,
+   "passage": "Folks, back in August I told you this would be a season of surprises, and look what happened. A rookie scored a hat trick in his first start, the coach got fired in October, and we beat the defending champs on the road. I called it, plain and simple. Next week I'll give you my playoff predictions, so stay tuned."
+  },
+  {
+   "q": "q271",
+   "format": "chat",
+   "source": "Warehouse ops · #standup",
+   "title": null,
+   "passage": "Leah: Morning! Inventory sync finished overnight with no errors.\nDarnell: Nice. Bilal, why do you keep ignoring the reorder alerts?\nBilal: I've acknowledged every alert in the queue this week. Happy to share the log if that helps."
+  },
+  {
+   "q": "q272",
+   "format": "email",
+   "source": "Monique Bassett, People Ops",
+   "title": "Proposal: unlimited PTO starting in Q1",
+   "passage": "Hi leadership team, our current accrual system is hard to track, and two candidates this quarter turned down offers citing time off. I'd like us to move to unlimited PTO. Seven of the ten fastest-growing companies in our sector now offer it, according to the Larchmont Talent Survey, which tells me it's simply the better model. Happy to share a draft policy."
+  },
+  {
+   "q": "q273",
+   "format": "speech",
+   "source": "Trustee Holloway · Fenmoor school board",
+   "title": null,
+   "passage": "The Lantern Phonics program has solid pilot numbers; I've read them. What gives me pause is who has lined up behind it. It's the flagship curriculum at Corvane Academies, the chain fined last year for inflating graduation rates. When an organization like that champions a program, I think parents deserve better, and I can't support it for Fenmoor."
+  },
+  {
+   "q": "q274",
+   "format": "speech",
+   "source": "Hal Brunner · Osterbrook garden club talk",
+   "title": null,
+   "passage": "Folks ask whether planting by the moon's phases actually works. My family has farmed this valley for four generations, and every one of them sowed root crops on the waning moon. That kind of knowledge, tested season after season, doesn't need a lab study to back it up. I'll be handing out this year's planting calendar at the door."
+  },
+  {
+   "q": "q275",
+   "format": "ad",
+   "source": "Kickwell Fizz",
+   "title": "Beat the 3 p.m. slump",
+   "passage": "Feeling drained by mid-afternoon? Each can of Kickwell Fizz delivers 210 calories of pure energy, more energy than four cups of black coffee combined. Lightly sparkling, real citrus flavor, no artificial colors. When you need energy to finish the day strong, why settle for less?"
+  },
+  {
+   "q": "q276",
+   "format": "chat",
+   "source": "Chem 110 study group",
+   "title": null,
+   "passage": "Owen: Is the take-home quiz open-book? The syllabus says all quizzes are closed-book.\nLeila: Literally the whole class is using their notes. If that many people are doing it, it's obviously allowed.\nOwen: Or a lot of people are about to lose points."
+  },
+  {
+   "q": "q277",
+   "format": "post",
+   "source": "Ms. Farrah Iqbal · @msiqbalteaches",
+   "title": null,
+   "passage": "Our department is debating whether to allow spellcheck on in-class essays. I get the case for it, especially for students with dyslexia, and that matters. But once spellcheck is in, students stop learning to spell, then they stop proofreading altogether, and in a few years we'll have graduates who can't write a sentence without an app."
+  },
+  {
+   "q": "q278",
+   "format": "review",
+   "source": "Tom Becker",
+   "title": "Ignore the ratings, this car is bulletproof",
+   "passage": "Every reliability survey out there puts the Vantessa sedan near the bottom of its class, and I honestly don't get it. Mine has 140,000 miles and has never needed anything but oil changes and tires. Comfortable seats, decent mileage, roomy trunk. Don't let the ratings scare you off: this car is built to last."
+  },
+  {
+   "q": "q279",
+   "format": "quote",
+   "source": "Corinne Vasquez · hosting the Quiet Variables podcast",
+   "title": null,
+   "passage": "Thanks for joining us, Dr. Pell. Your team's sweetener study got a lot of attention this spring, and it's already been cited in two follow-up papers. So let's start right there, because I think listeners are curious: when did your lab first realize the results were flawed?"
+  },
+  {
+   "q": "q280",
+   "format": "speech",
+   "source": "Councillor Ambrose Tull · Ferris Road crosswalk hearing",
+   "title": null,
+   "passage": "Two years ago, when Ferris Road residents first asked for a crosswalk, I told them: bring me a traffic study showing a real hazard, and I'll support it. They raised the money, and the study shows forty near-misses a month. I appreciate that work. But a few months of data isn't a pattern. I'd want three full years of counts before committing $60,000."
+  },
+  {
+   "q": "q281",
+   "format": "chat",
+   "source": "Team chat · Warehouse receiving",
+   "title": null,
+   "passage": "Jae: That cable shipment from Quorvex came in. I pulled 5 cables at random from five different boxes and tested them.\nRenee: And?\nJae: All 5 failed the charge test. If only a few in the shipment were bad, hitting five failures in a row would be really unlikely. I'm rejecting the whole lot and filing a return."
+  },
+  {
+   "q": "q282",
+   "format": "speech",
+   "source": "Board member Carl Hughes · Ridgeview HOA meeting",
+   "title": null,
+   "passage": "I know a $1,200 special assessment for the new roof isn't welcome news, and we're offering a payment plan. But look at the numbers: Ridgeview's median household income is over $110,000, one of the highest in the county. Our residents can clearly afford this, including the folks in the Maple Court units who've been calling."
+  },
+  {
+   "q": "q283",
+   "format": "review",
+   "source": "Tobias Wren",
+   "title": "Trusted the reviews, no regrets",
+   "passage": "I was torn between two hiking boots. The Cairnstep has 4,800 reviews averaging 4.7 stars, and the main complaint is that it runs small, which I handled by going up half a size. For something like comfort, thousands of people actually wearing a boot tell me more than any spec sheet. Fifty trail miles in, zero blisters."
+  },
+  {
+   "q": "q284",
+   "format": "speech",
+   "source": "Councillor Rina Castellanos · Millcaster council meeting",
+   "title": null,
+   "passage": "Thank you all for coming out tonight. The Harlow Street pool is sixty years old, and the engineers' report confirms the filtration system is failing. I won't pretend that's cheap to fix. But let's be honest about what's in front of us: we approve the full $4 million rebuild this spring, or Millcaster kids spend their summers without a pool."
+  },
+  {
+   "q": "q285",
+   "format": "quote",
+   "source": "A dad at family movie night",
+   "title": null,
+   "passage": "Okay, okay, both of you stop. Lena says the movie is rated for teens and up, Marcus says it's fine for everyone. I'm not looking it up again. Let's just say it's somewhere in the middle, like ten and up, so Marcus can watch the first half and we'll see how it goes."
+  },
+  {
+   "q": "q286",
+   "format": "chat",
+   "source": "Thursday book club",
+   "title": null,
+   "passage": "Mina: Is the new Halloran thriller worth the hardcover price? Reviews seem pretty split.\nJasper: Definitely. It's the best thing she's ever written.\nMina: What makes it better than her last one, though?\nJasper: It's just a better book, honestly. That's why it's her best."
+  },
+  {
+   "q": "q287",
+   "format": "chat",
+   "source": "Studio Fern · #planning",
+   "title": null,
+   "passage": "Luis: I think we should only take clients with budgets over $20k from now on.\nYasmin: Just so I've got it right: no projects under $20k at all? Last year 9 of our 14 projects were under that, and they covered most of summer payroll. So that rule would have cut most of our income in our slowest season.\nLuis: Hm. Fair."
+  },
+  {
+   "q": "q288",
+   "format": "email",
+   "source": "Graham Lau, CFO",
+   "title": "Re: FY27 revenue forecast",
+   "passage": "Thanks for the review, Adaeze. You're right that Q3 bookings came in below plan, and I've trimmed the marketing line to reflect that. But I can't accept a forecast showing a 15% revenue decline next year. A number like that would mean closing the Ashby office and telling the board we've lost a year. Our forecast has to show growth, and I'm confident it's there."
+  },
+  {
+   "q": "q289",
+   "format": "chat",
+   "source": "Maple St. housemates",
+   "title": null,
+   "passage": "Callum: Thermometer says the chicken's at 130°F. The recipe says it needs to hit 165°F.\nAiyana: I always pull mine at 120. It stays way juicier.\nCallum: Okay, let's compromise and take it out at 145. Somewhere between the two has to be about right."
+  },
+  {
+   "q": "q290",
+   "format": "headline",
+   "source": "The Wellbeing Ledger",
+   "title": "Large trial finds popular joint supplement no better than placebo",
+   "passage": "In a 1,200-patient trial, people taking Flexmerin for knee arthritis reported the same pain levels after six months as those given a placebo. Support group leader Joan Pettit rejected the findings: 'For many of my members, Flexmerin is the only thing that gives them hope. Saying it doesn't work would be cruel, and I don't believe it.'"
+  },
+  {
+   "q": "q291",
+   "format": "speech",
+   "source": "Superintendent Ayana Brooks · Brindle Creek district forum",
+   "title": null,
+   "passage": "I've read the independent evaluation, and I respect the team that wrote it. But I don't accept its conclusion that LitLadder isn't improving reading. Telling four hundred teachers that three years of their work made no difference would devastate morale, and we can't afford to lose good people. I believe this program is working, and I'll keep saying so."
+  },
+  {
+   "q": "q292",
+   "format": "email",
+   "source": "Arjun Mehta, Site Reliability",
+   "title": "Root cause of Thursday's checkout errors",
+   "passage": "Errors started at 14:02, the minute release 2.3 went live. Timing alone wouldn't settle it, so we checked: rolling back at 14:40 stopped the errors immediately, redeploying 2.3 to staging reproduced them, and the stack traces all point to its new address parser. We're confident 2.3 caused the outage and have a fix in review."
+  },
+  {
+   "q": "q293",
+   "format": "chat",
+   "source": "Text thread · Lena (agent) and the Okonkwos",
+   "title": null,
+   "passage": "Lena: Seven similar homes sold on Alder Street this year. The three nicest went for $610k to $640k.\nChidi: So where should we list?\nLena: Those three are what buyers will compare yours to, so $650k is realistic. No need to get hung up on the others."
+  },
+  {
+   "q": "q294",
+   "format": "post",
+   "source": "Ray Dunmore · @raydunmore_kp",
+   "title": null,
+   "passage": "Did you SEE what the Fenmoor Gazette wrote about our Kestrels? After everything this team has given Kestrel Point? I've never been so proud to wear the purple. Anyone with an ounce of hometown pride knows they're the best team in the league, period. Game day Saturday, be loud!"
+  },
+  {
+   "q": "q295",
+   "format": "post",
+   "source": "Rosa Delgado · @rosabakes",
+   "title": null,
+   "passage": "Update on my stomach cramps: they showed up after dinner most days for a month. My doctor suggested cutting dairy for three weeks, and they stopped. Then I added it back and they returned within two days. Cut it again, gone again. One coincidence I'd doubt, but on-off-on-off is pretty convincing. Getting tested for lactose intolerance next week."
+  },
+  {
+   "q": "q296",
+   "format": "email",
+   "source": "Victor Osei, Customer Support Lead",
+   "title": "Re: Remote connection program",
+   "passage": "Thanks for sharing the engagement results. I know the survey of 430 staff found remote employees feel less connected, and I'm not dismissing it. But my remote team is the closest group I've ever managed; we do video coffee every Friday and nobody's quit in two years. Honestly, I don't think the connection program is needed."
+  },
+  {
+   "q": "q297",
+   "format": "email",
+   "source": "Dr. Imogen Clarke, Westvale Health Department",
+   "title": "Update: stomach illness cluster",
+   "passage": "Last week we flagged a cluster of 12 stomach illness cases. Rather than assume a source, we interviewed every case and a matched group of healthy residents: 11 of the 12 sick people had eaten at the Ferry Street food stall, versus 2 of 40 healthy people. The lab then matched patients' bacteria to samples from the stall, so we're confident it's the source."
+  },
+  {
+   "q": "q298",
+   "format": "post",
+   "source": "Jess Moreau · @jessplaysgames",
+   "title": null,
+   "passage": "Board game night update: I have rolled exactly zero sixes in fifteen turns of Harbor Barons. Fifteen! Everyone else is building cities while I'm stuck with two roads and a sheep. The dice owe me at this point, so next round I'm going all in on the strategy that needs a six. Wish me luck."
+  },
+  {
+   "q": "q299",
+   "format": "email",
+   "source": "Gloria Mendes (Office manager)",
+   "title": "Thermostat update",
+   "passage": "Hi everyone, after the thermostat back-and-forth, we ran a two-week test at 71°F instead of 68 or 74. In the follow-up survey, 82% of you said you were comfortable, up from 41% before the test. Since the middle setting actually worked better for most people, we'll keep it at 71. Thanks for your patience! Gloria"
+  },
+  {
+   "q": "q300",
+   "format": "email",
+   "source": "Bettina Kwan (Process coach)",
+   "title": "Re: Q3 delivery review",
+   "passage": "Hi Omar, thanks for pulling the delivery numbers together; that's really useful. On the Harbor project slipping three weeks: I'd gently push back on reading that as a knock on the framework. Teams that genuinely run our sprint process don't miss dates like that, so if Harbor slipped, they weren't truly running it. Happy to talk Thursday. Bettina"
+  },
+  {
+   "q": "q301",
+   "format": "speech",
+   "source": "Principal Ortega · Westfield High parent evening",
+   "title": null,
+   "passage": "We looked closely at last year's report cards, and one pattern stood out: students who sat in the first two rows averaged almost a full letter grade higher than students at the back. Our teachers work hard to reach every row, and they'll keep doing that. But starting this term, we'll seat students who are struggling up front so they get the same boost."
+  },
+  {
+   "q": "q302",
+   "format": "review",
+   "source": "Linnea Berg",
+   "title": "Give this family a break",
+   "passage": "Service was slow and my pasta arrived lukewarm. But the owner told us his wife has been ill and he's running the kitchen alone most nights. Honestly, given what this family is going through, the food is better than the other reviews are saying. Four stars, and please go support them."
+  },
+  {
+   "q": "q303",
+   "format": "post",
+   "source": "Brandon Okafor · @okaforlifts",
+   "title": null,
+   "passage": "Pulled the numbers from our gym's check-in app this month. Members who train before 7 a.m. have the lowest average body fat of any time slot, and it's not close. Early sessions just burn more fat, simple as that. Stuck on a plateau? Move your workouts to the morning and watch what happens. 5:30 crew, see you tomorrow."
+  },
+  {
+   "q": "q304",
+   "format": "email",
+   "source": "Marcus Bell, Parks & Recreation director",
+   "title": "Why the Westside pool closed early this summer",
+   "passage": "The pool closed in early August because we couldn't staff it: we needed 14 certified lifeguards and had 8. Pay was the main reason. Neighboring towns pay $4 more an hour, and three of our applicants told us they took those jobs. Raising lifeguard wages is therefore the most direct way to keep the pool open all summer next year."
+  }
+ ]
+}

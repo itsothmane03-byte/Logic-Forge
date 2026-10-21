@@ -1,0 +1,21 @@
+{
+  "id": "fal_sunk_cost",
+  "name": "Sunk Cost Fallacy",
+  "aliases": ["Sunk cost", "Concorde fallacy", "Throwing good money after bad"],
+  "family": "framing",
+  "difficulty": "intermediate",
+  "shortDef": "Continuing something because of what's already been spent, not what's ahead.",
+  "definition": "Letting money, time or effort that is already spent and can't be recovered drive a decision about the future, instead of weighing only the costs and benefits still to come.",
+  "howToSpot": [
+    "Is the main reason to continue what has already been spent?",
+    "If you were starting fresh today, would you still choose this?",
+    "Does continuing recover the past investment, or is it gone either way?"
+  ],
+  "classicExample": "This movie is awful, but we paid $18 a ticket, so we're staying until the end.",
+  "legitimateVersion": "Continuing is reasonable when the remaining benefits outweigh the remaining costs, like finishing a nearly done renovation because the last step adds more value than it costs.",
+  "confusableWith": ["fal_appeal_to_tradition", "fal_appeal_to_consequences"],
+  "contrast": {
+    "fal_appeal_to_tradition": "Sunk cost keeps going because of what has been invested; appeal to tradition keeps going because it has always been done that way.",
+    "fal_appeal_to_consequences": "Sunk cost looks back at what was spent; appeal to consequences judges a claim by whether its outcome would be pleasant."
+  }
+}

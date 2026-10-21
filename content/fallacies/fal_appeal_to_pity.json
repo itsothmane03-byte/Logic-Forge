@@ -1,0 +1,21 @@
+{
+  "id": "fal_appeal_to_pity",
+  "name": "Appeal to Pity",
+  "aliases": ["Appeal to sympathy", "Sob story", "Ad misericordiam"],
+  "family": "emotion",
+  "difficulty": "intermediate",
+  "shortDef": "Asking for sympathy instead of giving reasons a claim is true or fair.",
+  "definition": "Arguing that a claim should be accepted, or a judgment changed, because someone's hardship makes us feel sorry for them, when that hardship doesn't bear on the question being decided.",
+  "howToSpot": [
+    "Ask what is being decided, and whether the hardship changes that answer",
+    "Separate 'I feel for them' from 'they're right' or 'they met the standard'",
+    "Watch for a sad story arriving right where evidence should be"
+  ],
+  "classicExample": "I know my essay is two weeks late and has no conclusion, but I've had such a rough semester that I deserve an A.",
+  "legitimateVersion": "Hardship is relevant when the decision is about need or fairness, like an extension for a documented illness, or when the rules explicitly make room for circumstances.",
+  "confusableWith": ["fal_appeal_to_emotion", "fal_red_herring"],
+  "contrast": {
+    "fal_appeal_to_emotion": "Appeal to pity relies on sympathy for someone's hardship; appeal to emotion can use any feeling, like pride, guilt or outrage.",
+    "fal_red_herring": "Appeal to pity swaps reasons for sympathy; a red herring swaps the topic for an unrelated one."
+  }
+}

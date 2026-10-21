@@ -1,0 +1,21 @@
+{
+  "id": "fal_false_analogy",
+  "name": "False Analogy",
+  "aliases": ["Weak analogy", "Faulty comparison"],
+  "family": "framing",
+  "difficulty": "intermediate",
+  "shortDef": "Drawing a conclusion from a comparison that fails on the point that matters.",
+  "definition": "Arguing that because two things are alike in some ways, what is true of one must be true of the other, when they differ in exactly the way that matters for the conclusion.",
+  "howToSpot": [
+    "What property is being carried over from one thing to the other?",
+    "Are the two alike in the way that actually produces that property?",
+    "Name one relevant difference, then check whether the conclusion survives it."
+  ],
+  "classicExample": "A company is like a ship, and a ship has one captain whose word is final, so employees should never question the CEO.",
+  "legitimateVersion": "An analogy is fair when the two cases share the feature that drives the conclusion, like predicting results at one warehouse from another with the same layout, shelving and order volume.",
+  "confusableWith": ["fal_false_equivalence", "fal_composition"],
+  "contrast": {
+    "fal_false_equivalence": "A false analogy infers a conclusion from a flawed comparison; false equivalence simply declares two unequal things the same.",
+    "fal_composition": "A false analogy compares two separate things; composition assumes a whole has a property because its parts have it."
+  }
+}

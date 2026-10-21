@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dev-dist/
+coverage/
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# Local development screenshots (README images live in docs/screenshots/*.png)
+docs/screenshots/dev/

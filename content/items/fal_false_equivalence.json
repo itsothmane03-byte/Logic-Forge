@@ -1,0 +1,163 @@
+[
+  {
+    "id": "itm_false_equivalence_01",
+    "fallacyId": "fal_false_equivalence",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 1,
+    "format": "chat",
+    "source": "Team chat · #office-ops",
+    "title": null,
+    "passage": "Lin: IT says the server room door was propped open all weekend. They're running a full audit.\nGus: Honestly, that's no worse than someone leaving their laptop unlocked while they grab a coffee. A lapse is a lapse.\nLin: That room holds the payroll and customer databases, Gus.",
+    "cue": "that's no worse than someone leaving their laptop unlocked while they grab a coffee",
+    "explanation": "Gus treats a weekend-long open door to the payroll and customer servers as equal to a laptop left unlocked for a few minutes. Both are lapses, but the risk is nowhere near the same.",
+    "whyNot": {
+      "fal_false_analogy": "Gus isn't drawing a new conclusion from a comparison; he flatly declares two very differently sized lapses equally serious."
+    },
+    "tags": [
+      "workplace",
+      "tech"
+    ]
+  },
+  {
+    "id": "itm_false_equivalence_02",
+    "fallacyId": "fal_false_equivalence",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 1,
+    "format": "quote",
+    "source": "Student driver to his instructor · Hollowmere Driving School",
+    "title": null,
+    "passage": "I know, I know, no phone while driving. But honestly, reading a text while you're driving is no worse than reaching over to change the radio station. Either way your eyes leave the road for a second. I'll keep my replies short, I promise.",
+    "cue": "reading a text while you're driving is no worse than reaching over to change the radio station",
+    "explanation": "The student equates reading a text with tapping a radio button. Both take your attention off the road, but reading and replying usually takes far longer than a quick tap.",
+    "whyNot": {
+      "fal_false_analogy": "He isn't transferring a conclusion from one case to another; he claims two very different distractions are equally risky."
+    },
+    "tags": [
+      "everyday",
+      "travel"
+    ]
+  },
+  {
+    "id": "itm_false_equivalence_03",
+    "fallacyId": "fal_false_equivalence",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 2,
+    "format": "headline",
+    "source": "Marrowdale Gazette",
+    "title": "Do cold plunges ward off colds? The evidence is split",
+    "passage": "A two-year trial of 2,000 adults found that daily cold-water immersion made no difference to how many colds participants caught. Meanwhile, a poll by wellness blogger Saffi Lund found that 70% of her followers feel healthier since they started plunging. With evidence pointing both ways, it may be a while before we know for sure.",
+    "cue": "With evidence pointing both ways, it may be a while before we know for sure",
+    "explanation": "The article gives a large two-year trial and a follower poll equal weight, as if they were comparable evidence. They aren't: one measured colds carefully, the other asked fans how they feel.",
+    "whyNot": {
+      "fal_middle_ground": "The article doesn't settle on a halfway answer; it treats a large trial and an informal poll as equally strong evidence."
+    },
+    "tags": [
+      "health",
+      "science",
+      "media"
+    ]
+  },
+  {
+    "id": "itm_false_equivalence_04",
+    "fallacyId": "fal_false_equivalence",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 2,
+    "format": "review",
+    "source": "Odette P.",
+    "title": "Great value for commuters",
+    "passage": "Bought these to replace the $350 pair I left on a train. The battery easily lasts the advertised 30 hours and they fold up small. The noise canceling is a lot weaker (I can still hear the bus engine and people talking), but both have active noise canceling, so these are basically the same as headphones four times the price. Five stars.",
+    "cue": "both have active noise canceling, so these are basically the same as headphones four times the price",
+    "explanation": "Odette notices the noise canceling is much weaker, then calls these the same as a pair four times the price because both list the feature. Sharing a feature doesn't make them equal at it.",
+    "whyNot": {
+      "fal_false_analogy": "Odette isn't carrying a conclusion over from a different case; she declares two very unequal products the same because they share a feature."
+    },
+    "tags": [
+      "shopping",
+      "tech"
+    ]
+  },
+  {
+    "id": "itm_false_equivalence_05",
+    "fallacyId": "fal_false_equivalence",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 3,
+    "format": "post",
+    "source": "Bea Lindqvist · @bea_walks_everywhere",
+    "title": null,
+    "passage": "Day 212 of my walking streak! A few people asked why I skip the HIIT classes at my gym. Honestly, 30 minutes of strolling and 30 minutes of HIIT are both 30 minutes of movement, so the calorie burn ends up about the same. I'll take the version where I can finish my podcast, thanks.",
+    "cue": "30 minutes of strolling and 30 minutes of HIIT are both 30 minutes of movement",
+    "explanation": "Bea treats a gentle stroll and a high-intensity session as equal because they last the same time, but intensity changes calories burned a lot. Walking is great; it just isn't the same workout.",
+    "whyNot": {
+      "fal_false_analogy": "Bea isn't carrying a conclusion over from a comparison; she declares two very unequal workouts the same because they share a duration."
+    },
+    "tags": [
+      "fitness",
+      "health"
+    ]
+  },
+  {
+    "id": "itm_false_equivalence_06",
+    "fallacyId": "fal_false_equivalence",
+    "isSound": false,
+    "resembles": null,
+    "difficulty": 3,
+    "format": "email",
+    "source": "Warren Oduya (Fairhollow Wealth Partners)",
+    "title": "Re: Question about my fund fees",
+    "passage": "Hi Grace, great question, and I'm glad you're reading your statements. Our managed fund charges 1% a year; the index fund you mentioned charges 0.05%. Honestly, at that level the difference is a rounding error, since both are low-cost by any reasonable standard. What matters most is staying invested. Best, Warren",
+    "cue": "at that level the difference is a rounding error, since both are low-cost",
+    "explanation": "Warren lumps 1% and 0.05% together as \"low-cost,\" but one fee is twenty times the other. Over decades of compounding, that gap can add up to a big share of someone's savings.",
+    "whyNot": {
+      "fal_false_analogy": "Warren isn't reasoning from a comparison to some other case; he simply declares two very different fees equivalent."
+    },
+    "tags": [
+      "money"
+    ]
+  },
+  {
+    "id": "itm_snd_false_equivalence_01",
+    "fallacyId": null,
+    "isSound": true,
+    "resembles": "fal_false_equivalence",
+    "difficulty": 2,
+    "format": "chat",
+    "source": "Marta & Femi",
+    "title": null,
+    "passage": "Marta: Plan A is $35 a month with 20GB. Plan B is also $35 with 20GB, same contract length, same overage fee.\nFemi: And the coverage maps look identical for our street. I checked both.\nMarta: Then they're basically the same deal, so let's just pick whichever store is closer.",
+    "cue": "the coverage maps look identical for our street. I checked both",
+    "explanation": "Marta and Femi compare the plans on everything that matters to them (price, data, contract, fees and coverage) before calling them the same deal.",
+    "whyNot": {
+      "fal_false_equivalence": "The two plans really do match on every relevant point they checked, so treating them as equivalent is accurate."
+    },
+    "tags": [
+      "money",
+      "tech"
+    ]
+  },
+  {
+    "id": "itm_snd_false_equivalence_02",
+    "fallacyId": null,
+    "isSound": true,
+    "resembles": "fal_false_equivalence",
+    "difficulty": 3,
+    "format": "post",
+    "source": "Nadia Oyelaran, PharmD · @nadia_behind_the_counter",
+    "title": null,
+    "passage": "Quick one from behind the counter: the store-brand ibuprofen on the bottom shelf has the same 200 mg of the same active ingredient as the name-brand box, and generics have to meet the same standards for how the drug is absorbed. So for the active ingredient, you're getting the same thing for about a third of the price.",
+    "cue": "generics have to meet the same standards for how the drug is absorbed",
+    "explanation": "Nadia calls the two pills equivalent on the point that matters, the active dose, and backs it with the absorption standards generics must meet. She doesn't claim every detail is identical.",
+    "whyNot": {
+      "fal_false_equivalence": "The products match in dose and in the required absorption standards, so the parity Nadia claims is real, not a surface resemblance."
+    },
+    "tags": [
+      "health",
+      "shopping",
+      "money"
+    ]
+  }
+]

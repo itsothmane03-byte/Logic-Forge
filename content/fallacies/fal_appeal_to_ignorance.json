@@ -1,0 +1,21 @@
+{
+  "id": "fal_appeal_to_ignorance",
+  "name": "Appeal to Ignorance",
+  "aliases": ["Argument from ignorance", "Ad ignorantiam"],
+  "family": "framing",
+  "difficulty": "intermediate",
+  "shortDef": "Concluding a claim is true because it hasn't been proven false, or the reverse.",
+  "definition": "Treating a lack of evidence as if it were evidence: deciding something is true because no one has disproven it, or false because no one has proven it, when nobody has looked hard enough for the gap to mean much.",
+  "howToSpot": [
+    "Is \"no one has shown otherwise\" doing the work that real evidence should do?",
+    "Has anyone looked in a way that would have found evidence if it existed?",
+    "Could the honest answer simply be \"we don't know yet\"?"
+  ],
+  "classicExample": "No one has ever proven that ghosts don't exist, so they must be real.",
+  "legitimateVersion": "Absence of evidence counts when a thorough search would have found something if it were there, like a full inspection that finds no termite signs in any beam.",
+  "confusableWith": ["fal_burden_of_proof", "fal_false_dichotomy"],
+  "contrast": {
+    "fal_burden_of_proof": "Appeal to ignorance draws a conclusion from missing evidence; burden of proof demands that others do the disproving.",
+    "fal_false_dichotomy": "Appeal to ignorance treats \"not proven false\" as \"true\"; it's like a false dichotomy that leaves out the option \"we don't know yet.\""
+  }
+}

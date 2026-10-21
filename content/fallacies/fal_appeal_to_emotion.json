@@ -1,0 +1,21 @@
+{
+  "id": "fal_appeal_to_emotion",
+  "name": "Appeal to Emotion",
+  "aliases": ["Emotional appeal", "Playing on feelings"],
+  "family": "emotion",
+  "difficulty": "beginner",
+  "shortDef": "Using stirred-up feelings in place of reasons to win agreement.",
+  "definition": "Trying to make a claim seem true or a choice seem right by provoking feelings such as pride, guilt, disgust, outrage or loyalty, when those feelings don't bear on whether the claim holds up.",
+  "howToSpot": [
+    "Strip out the emotional words; is there still a reason left?",
+    "Ask what evidence would support this if you felt nothing about it",
+    "Notice vivid imagery, guilt or pride doing the work that facts should do"
+  ],
+  "classicExample": "Picture your daughter's face on her birthday. You can't put a price on that, so the deluxe package it is.",
+  "legitimateVersion": "Emotion is fair when it's proportionate and rides on real reasons, like telling one student's story alongside the cost data, so the feeling motivates the argument instead of replacing it.",
+  "confusableWith": ["fal_appeal_to_pity", "fal_appeal_to_fear"],
+  "contrast": {
+    "fal_appeal_to_pity": "Appeal to emotion can use any feeling; appeal to pity specifically asks for sympathy for someone's hardship.",
+    "fal_appeal_to_fear": "Appeal to emotion covers pride, guilt, disgust and more; appeal to fear works by making you afraid of a threat."
+  }
+}

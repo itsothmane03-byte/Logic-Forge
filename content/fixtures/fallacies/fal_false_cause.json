@@ -1,0 +1,21 @@
+{
+  "id": "fal_false_cause",
+  "name": "False Cause",
+  "aliases": ["Correlation ≠ causation", "Cum hoc"],
+  "family": "evidence",
+  "difficulty": "intermediate",
+  "shortDef": "Assuming that because two things go together, one causes the other.",
+  "definition": "Concluding that one thing causes another just because they occur or trend together, without ruling out coincidence, reverse causation or a third factor driving both.",
+  "howToSpot": [
+    "Could a third factor be driving both things?",
+    "Could the cause run the other way around?",
+    "Is there evidence beyond the two things moving together?"
+  ],
+  "classicExample": "Towns with more coffee shops have higher incomes, so opening coffee shops will make a town richer.",
+  "legitimateVersion": "A causal claim is reasonable when an experiment or careful comparison rules out obvious third factors, or when a plausible mechanism is backed by evidence.",
+  "confusableWith": ["fal_post_hoc", "fal_texas_sharpshooter"],
+  "contrast": {
+    "fal_post_hoc": "False cause infers causation from things occurring together; post hoc infers it from one event simply coming before another.",
+    "fal_texas_sharpshooter": "False cause reads causation into a correlation; the Texas sharpshooter picks a pattern out of random data after the fact."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "fal_gamblers_fallacy",
+  "name": "Gambler's Fallacy",
+  "aliases": ["Monte Carlo fallacy", "Law of averages fallacy"],
+  "family": "evidence",
+  "difficulty": "intermediate",
+  "shortDef": "Believing past random outcomes change the odds of independent future ones.",
+  "definition": "Thinking that a run of one outcome makes a different outcome 'due', or a repeat less likely, when each event is independent, like coin flips, dice rolls or fresh random draws. Chance has no memory.",
+  "howToSpot": [
+    "Is each event truly independent, like a fresh roll, flip or random pick?",
+    "Is someone saying an outcome is 'due', 'owed' or that luck must even out?",
+    "Do past results actually change the physical odds of the next one?"
+  ],
+  "classicExample": "Red has come up seven times in a row at the roulette table, so black is bound to hit next.",
+  "legitimateVersion": "Past outcomes do matter when events are dependent, such as cards drawn without reshuffling or parts that wear out with use. Then the odds really do shift with history.",
+  "confusableWith": ["fal_false_cause", "fal_hasty_generalization"],
+  "contrast": {
+    "fal_false_cause": "False cause invents a causal link between things; the gambler's fallacy imagines past random results pushing future ones to even out.",
+    "fal_hasty_generalization": "Hasty generalization draws a broad rule from few cases; the gambler's fallacy expects a short run of luck to reverse itself."
+  }
+}

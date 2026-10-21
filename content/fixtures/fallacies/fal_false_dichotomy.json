@@ -1,0 +1,21 @@
+{
+  "id": "fal_false_dichotomy",
+  "name": "False Dichotomy",
+  "aliases": ["False dilemma", "Black-or-white thinking"],
+  "family": "framing",
+  "difficulty": "beginner",
+  "shortDef": "Presenting two options as the only ones when others exist.",
+  "definition": "Framing a choice as if only two options exist, often one of them obviously bad, when there are other reasonable alternatives or ways to combine the options.",
+  "howToSpot": [
+    "Can you name a third option, or a mix of the two?",
+    "Watch for \"either... or\" framing that isn't backed up.",
+    "Could both options be true, or both false, at the same time?"
+  ],
+  "classicExample": "Either we cancel the school play or we accept that the whole arts budget will collapse.",
+  "legitimateVersion": "Some choices really are binary, like a yes-or-no decision or a road that forks two ways. Narrowing to two is fair once you've shown the others don't work.",
+  "confusableWith": ["fal_middle_ground", "fal_loaded_question"],
+  "contrast": {
+    "fal_middle_ground": "A false dichotomy hides the middle options; the middle ground fallacy assumes the middle option must be the right one.",
+    "fal_loaded_question": "A false dichotomy offers too few options; a loaded question smuggles a disputed assumption into the question itself."
+  }
+}

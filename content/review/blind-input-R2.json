@@ -1,0 +1,407 @@
+{
+ "instructions": "See the reviewer brief. Judge each passage on its own.",
+ "fallacies": [
+  {
+   "id": "fal_ad_hominem",
+   "name": "Ad Hominem",
+   "shortDef": "Attacking the person instead of their argument."
+  },
+  {
+   "id": "fal_anecdotal_evidence",
+   "name": "Anecdotal Evidence",
+   "shortDef": "Letting a personal story outweigh broader, systematic evidence."
+  },
+  {
+   "id": "fal_appeal_to_authority",
+   "name": "Appeal to Authority",
+   "shortDef": "Treating someone's say-so as proof, especially outside their expertise."
+  },
+  {
+   "id": "fal_appeal_to_consequences",
+   "name": "Appeal to Consequences",
+   "shortDef": "Judging whether a claim is true by whether we'd like its consequences."
+  },
+  {
+   "id": "fal_appeal_to_emotion",
+   "name": "Appeal to Emotion",
+   "shortDef": "Using stirred-up feelings in place of reasons to win agreement."
+  },
+  {
+   "id": "fal_appeal_to_fear",
+   "name": "Appeal to Fear",
+   "shortDef": "Using scary, exaggerated or unsupported threats to push a conclusion."
+  },
+  {
+   "id": "fal_appeal_to_ignorance",
+   "name": "Appeal to Ignorance",
+   "shortDef": "Concluding a claim is true because it hasn't been proven false, or the reverse."
+  },
+  {
+   "id": "fal_appeal_to_nature",
+   "name": "Appeal to Nature",
+   "shortDef": "Assuming something is good because it's natural, or bad because it isn't."
+  },
+  {
+   "id": "fal_appeal_to_pity",
+   "name": "Appeal to Pity",
+   "shortDef": "Asking for sympathy instead of giving reasons a claim is true or fair."
+  },
+  {
+   "id": "fal_appeal_to_tradition",
+   "name": "Appeal to Tradition",
+   "shortDef": "Assuming something is right or better because it's always been done that way."
+  },
+  {
+   "id": "fal_bandwagon",
+   "name": "Bandwagon",
+   "shortDef": "Treating something as true or good because many people believe or do it."
+  },
+  {
+   "id": "fal_burden_of_proof",
+   "name": "Burden of Proof",
+   "shortDef": "Making a claim and demanding that others disprove it instead of supporting it."
+  },
+  {
+   "id": "fal_cherry_picking",
+   "name": "Cherry Picking",
+   "shortDef": "Citing only the evidence that supports you and ignoring the rest."
+  },
+  {
+   "id": "fal_circular_reasoning",
+   "name": "Circular Reasoning",
+   "shortDef": "Supporting a claim with a reason that already assumes the claim is true."
+  },
+  {
+   "id": "fal_composition",
+   "name": "Composition",
+   "shortDef": "Assuming that what's true of the parts must be true of the whole."
+  },
+  {
+   "id": "fal_division",
+   "name": "Division",
+   "shortDef": "Assuming that what's true of the whole must be true of each of its parts."
+  },
+  {
+   "id": "fal_equivocation",
+   "name": "Equivocation",
+   "shortDef": "Shifting between two meanings of the same word within one argument."
+  },
+  {
+   "id": "fal_false_analogy",
+   "name": "False Analogy",
+   "shortDef": "Drawing a conclusion from a comparison that fails on the point that matters."
+  },
+  {
+   "id": "fal_false_cause",
+   "name": "False Cause",
+   "shortDef": "Treating a correlation between two things as proof one causes the other."
+  },
+  {
+   "id": "fal_false_dichotomy",
+   "name": "False Dichotomy",
+   "shortDef": "Presenting two options as the only ones when others exist."
+  },
+  {
+   "id": "fal_false_equivalence",
+   "name": "False Equivalence",
+   "shortDef": "Treating two things as equal when they differ greatly in a way that matters."
+  },
+  {
+   "id": "fal_gamblers_fallacy",
+   "name": "Gambler's Fallacy",
+   "shortDef": "Believing past random outcomes change the odds of independent future ones."
+  },
+  {
+   "id": "fal_genetic_fallacy",
+   "name": "Genetic Fallacy",
+   "shortDef": "Judging a claim or practice by where it came from, not by its merits."
+  },
+  {
+   "id": "fal_guilt_by_association",
+   "name": "Guilt by Association",
+   "shortDef": "Rejecting a claim or person because of who they're linked with."
+  },
+  {
+   "id": "fal_hasty_generalization",
+   "name": "Hasty Generalization",
+   "shortDef": "Drawing a broad conclusion from a sample that's too small or unrepresentative."
+  },
+  {
+   "id": "fal_is_ought",
+   "name": "Is–Ought Fallacy",
+   "shortDef": "Concluding what should be done purely from facts about what is."
+  },
+  {
+   "id": "fal_loaded_question",
+   "name": "Loaded Question",
+   "shortDef": "Asking a question that presumes something unproven, so any answer concedes it."
+  },
+  {
+   "id": "fal_middle_ground",
+   "name": "Middle Ground",
+   "shortDef": "Assuming a compromise between two positions must be the correct answer."
+  },
+  {
+   "id": "fal_moving_the_goalposts",
+   "name": "Moving the Goalposts",
+   "shortDef": "Raising or changing the standard of proof after the original one has been met."
+  },
+  {
+   "id": "fal_no_true_scotsman",
+   "name": "No True Scotsman",
+   "shortDef": "Redefining a group to exclude a counterexample instead of revising the claim."
+  },
+  {
+   "id": "fal_post_hoc",
+   "name": "Post Hoc",
+   "shortDef": "Assuming that because B followed A, A must have caused B."
+  },
+  {
+   "id": "fal_red_herring",
+   "name": "Red Herring",
+   "shortDef": "Changing the subject to dodge the real question."
+  },
+  {
+   "id": "fal_slippery_slope",
+   "name": "Slippery Slope",
+   "shortDef": "Claiming a small step will inevitably snowball into disaster, without support."
+  },
+  {
+   "id": "fal_special_pleading",
+   "name": "Special Pleading",
+   "shortDef": "Exempting yourself or a favorite from a rule without a relevant reason."
+  },
+  {
+   "id": "fal_straw_man",
+   "name": "Straw Man",
+   "shortDef": "Distorting someone's position into a weaker one, then attacking that."
+  },
+  {
+   "id": "fal_sunk_cost",
+   "name": "Sunk Cost Fallacy",
+   "shortDef": "Continuing something because of what's already been spent, not what's ahead."
+  },
+  {
+   "id": "fal_texas_sharpshooter",
+   "name": "Texas Sharpshooter",
+   "shortDef": "Spotting a pattern or 'hit' after the fact and treating it as meaningful."
+  },
+  {
+   "id": "fal_tu_quoque",
+   "name": "Tu Quoque",
+   "shortDef": "Dodging a criticism by pointing out that the critic does it too."
+  }
+ ],
+ "items": [
+  {
+   "q": "r001",
+   "format": "email",
+   "source": "Monique Bassett, People Ops",
+   "title": "Proposal: unlimited PTO starting in Q1",
+   "passage": "Hi leadership team, as we plan for Q1, I'd like us to move to unlimited PTO. The Larchmont Talent Survey shows 71% of companies in our sector now offer it, up from 30% just three years ago. That tells me the industry has settled the question, and unlimited PTO is simply the better model. I've attached a draft policy for Thursday's meeting."
+  },
+  {
+   "q": "r002",
+   "format": "email",
+   "source": "Kara Lindgren",
+   "title": "Re: Saturday launch support",
+   "passage": "Hi Joaquin, fair questions about whether QA could wait until Monday morning and whether Saturday counts as overtime. The client did move the launch up, so the pressure is real. But remember how this team pulled together when the Ferris account nearly walked? That's who we are. I'd hate for anyone to be the one counting hours when this team needs them. So I'm counting on all of you at 9 Saturday. Kara"
+  },
+  {
+   "q": "r003",
+   "format": "headline",
+   "source": "The Marsh Country Chronicle",
+   "title": "Rare heron sighting at Fen Marsh sparks celebration, and caution",
+   "passage": "A single photo taken at dusk has Fen Marsh volunteers convinced the great white heron is nesting there for the first time in 30 years. 'If she's back, it means the restoration worked and every muddy Saturday was worth it,' said volunteer chair Silas Pryce. 'So I'm calling it: she's back.' County biologists say the photo is too dark to confirm the species."
+  },
+  {
+   "q": "r004",
+   "format": "speech",
+   "source": "Councillor Rafael Soto · Ferncliff council",
+   "title": null,
+   "passage": "I've heard from residents on both sides of this, and I know change is never comfortable. But thirty-eight towns in the region have switched to every-other-week trash pickup in the last two years, and more sign on every month. It's clear which way the region is heading, and I don't want Ferncliff to be the last town left behind."
+  },
+  {
+   "q": "r005",
+   "format": "chat",
+   "source": "Flat 4B",
+   "title": null,
+   "passage": "Noor: Can we stick to the cleaning rota? There have been dishes in the sink since Sunday and the kitchen is starting to smell.\nCallum: You left a pot soaking for three days last month, so I'm not taking a lecture on dishes from you.\nNoor: Fair, and I cleaned it. The pans in there now are still yours though."
+  },
+  {
+   "q": "r006",
+   "format": "email",
+   "source": "Principal Mark Lindahl, Hillcrest Elementary",
+   "title": "Great news from our spring results!",
+   "passage": "Dear families, our spring reading results are in! Grade 3 scores rose 9 points, the biggest jump in the district. That tells us the new literacy approach we introduced in grades 3 to 5 this year is working, and we'll expand it next fall. Thank you, teachers! (Grade 4 and 5 numbers are in the full report on the portal; new tests always take a year to settle.)"
+  },
+  {
+   "q": "r007",
+   "format": "headline",
+   "source": "Brookfield Gazette",
+   "title": "Trustee warns fine-free plan could unravel library lending",
+   "passage": "Library trustee Hal Benedetti opposed the proposal to scrap overdue fines at Tuesday's meeting. Without fines, he argued, fewer books will come back, waitlists will grow, frustrated patrons will stop visiting, and falling visits will hand the county a reason to cut the library's budget. The board votes next month."
+  },
+  {
+   "q": "r008",
+   "format": "post",
+   "source": "Tamika Rowe · @tamika_declutters",
+   "title": null,
+   "passage": "Couch update, since people asked: the buyer said he'd pay my $300 asking price if I delivered it. I borrowed my brother's truck and got it to his building. Then it was 'only if you can carry it up to the fourth floor.' Did that too. Now, standing in his living room, he says the cushions are softer than he expected and offers $220."
+  },
+  {
+   "q": "r009",
+   "format": "chat",
+   "source": "Wexbridge garden club",
+   "title": null,
+   "passage": "Kenji: How do we know the new rain gauge is accurate enough for the watering log?\nSofia: I mounted it right next to the extension office's calibrated gauge for a month. On all nine rainy days, the two readings were within a millimeter of each other.\nKenji: Okay, that's a real check. Let's start using it."
+  },
+  {
+   "q": "r010",
+   "format": "post",
+   "source": "Fenwick Birders · @fenwickbirders",
+   "title": null,
+   "passage": "We mapped all 40 dead songbirds reported in Fenwick County this spring, then circled the tightest bunch on the map: twelve birds in the northeast corner, around Millpond Road. Twelve in one small patch is way too many to be chance. Something there is harming birds, and we've asked the county to test the soil. Volunteers welcome for weekend counts!"
+  },
+  {
+   "q": "r011",
+   "format": "post",
+   "source": "Bea Lindqvist · @bea_walks_everywhere",
+   "title": null,
+   "passage": "Day 212 of my walking streak! A few people asked why I skip the HIIT classes at my gym. Honestly, 30 minutes of strolling and 30 minutes of HIIT are both 30 minutes of movement, so the calorie burn ends up about the same. I'll take the version where I can finish my podcast, thanks."
+  },
+  {
+   "q": "r012",
+   "format": "email",
+   "source": "Bruce Whitman, HR Director",
+   "title": "Re: Starting salary gap",
+   "passage": "Thanks for raising this, Aaliyah. You're right that new hires who negotiated earn about 7% more than those who took our first offer for the same role, and I'd encourage everyone to negotiate. But that's simply where everyone's pay ended up, and where it ended up is where it should be. I don't see a reason to adjust anyone's pay."
+  },
+  {
+   "q": "r013",
+   "format": "chat",
+   "source": "Team chat · #ops-leads",
+   "title": null,
+   "passage": "Asha: I went through all six outages this year and tried every angle I could think of: weekday, time of day, deploys, weather, traffic, data center, vendor, who was on call.\nRyan: And?\nAsha: Nothing lined up until on-call: four of the six were in Dmitri's weeks. That's our pattern. He's the common thread, and I'm flagging it to his manager."
+  },
+  {
+   "q": "r014",
+   "format": "speech",
+   "source": "Coach Rory Webb · Wrenford Youth Soccer parent night",
+   "title": null,
+   "passage": "Some of you sent me that article saying kids born in the first few months of the year are far more likely to be picked for elite youth teams. I don't believe it. If a kid born in November thinks his birthday decides his future, he'll quit before he starts, and I won't have that. Hard work is what gets players picked, full stop."
+  },
+  {
+   "q": "r015",
+   "format": "chat",
+   "source": "IT team · #security",
+   "title": null,
+   "passage": "Noor: You said we'd switch to the new antivirus if it passed the independent lab test. It scored 99%.\nFelix: It did, and I meant it. But yesterday the lab withdrew that report: the vendor had sent them a special build, not the version customers get.\nNoor: Oh, I hadn't seen that.\nFelix: Same deal as before, then. If the retest on the public version holds up, I'm in."
+  },
+  {
+   "q": "r016",
+   "format": "chat",
+   "source": "Hartwell Apartments tenants",
+   "title": null,
+   "passage": "Kemi: Heads up, the cleaning crew is starting to use a hospital-grade disinfectant in the hallways and laundry room.\nBjorn: Ugh. I'm asking them to switch to plain vinegar. Something that starts out as apples isn't going to hurt anyone, and it'll handle germs as well as anything mixed in a factory.\nKemi: Is that true about the germs, though?"
+  },
+  {
+   "q": "r017",
+   "format": "ad",
+   "source": "Pellora",
+   "title": "Because they're only little once",
+   "passage": "Those first walks to the park. Tiny fingers curled around yours. Moments like these deserve the Pellora Glide, with hand-stitched trim and our signature champagne finish. You'd never give them less than your best. Don't start with their stroller. From $1,249."
+  },
+  {
+   "q": "r018",
+   "format": "review",
+   "source": "Clement Yarrow",
+   "title": "Some recipes shouldn't be touched",
+   "passage": "The new owners at Odile's Diner added oat milk, a veggie hash and online ordering. Food came out fast and the hash was honestly tasty. But they've changed the pancake batter, which has been on this menu since 1958. I didn't even order them. You don't mess with a recipe that's lasted that long. Three stars."
+  },
+  {
+   "q": "r019",
+   "format": "review",
+   "source": "Odette P.",
+   "title": "Great value for commuters",
+   "passage": "Bought these to replace the $350 pair I left on a train. The battery easily lasts the advertised 30 hours and they fold up small. The noise canceling is a lot weaker (I can still hear the bus engine and people talking), but both have active noise canceling, so these are basically the same as headphones four times the price. Five stars."
+  },
+  {
+   "q": "r020",
+   "format": "headline",
+   "source": "Marrowdale Gazette",
+   "title": "Do cold plunges ward off colds? The evidence is split",
+   "passage": "A two-year trial of 2,000 adults found that daily cold-water immersion made no difference to how many colds participants caught. Meanwhile, a poll by wellness blogger Saffi Lund found that 70% of her followers feel healthier since they started plunging. With evidence pointing both ways, it may be a while before we know for sure."
+  },
+  {
+   "q": "r021",
+   "format": "headline",
+   "source": "The Harrowby Herald",
+   "title": "Food truck owners say city changed permit rules mid-review",
+   "passage": "Fourteen vendors submitted applications in August that met every item on the city's posted permit checklist. In September, the licensing office quietly updated the online checklist to add a $2 million insurance minimum, then rejected all fourteen. A spokesperson said the applicants \"simply don't meet the current requirements.\""
+  },
+  {
+   "q": "r022",
+   "format": "chat",
+   "source": "Bio 201 study group",
+   "title": null,
+   "passage": "Ines: The review sheet says to focus on chapters 6 and 7. Want to split them?\nRavi: Isn't that what the Thursday-night group keeps telling everyone? The crew that got caught sharing quiz answers last term? If they're on board, I'm out. Chapter 9 for me.\nInes: Ravi, it's on the professor's sheet."
+  },
+  {
+   "q": "r023",
+   "format": "headline",
+   "source": "Eastbrook Courier",
+   "title": "Most residents back longer library hours, city survey finds",
+   "passage": "The city mailed surveys to 2,400 randomly selected households across all 12 wards and received 1,650 responses. Of those, 68% supported extending weekday library hours to 9 p.m., with majorities in every ward. With a margin of error of about 2 points, staff told council most residents favor the change."
+  },
+  {
+   "q": "r024",
+   "format": "post",
+   "source": "Nadia Oyelaran, PharmD · @nadia_behind_the_counter",
+   "title": null,
+   "passage": "Quick one from behind the counter: the store-brand ibuprofen on the bottom shelf has the same 200 mg of the same active ingredient as the name-brand box, and generics have to meet the same standards for how the drug is absorbed. So for the active ingredient, you're getting the same thing for about a third of the price."
+  },
+  {
+   "q": "r025",
+   "format": "chat",
+   "source": "Text thread · Unit 4B and landlord",
+   "title": null,
+   "passage": "Tasha: Got the renewal notice: $1,600 to $1,840. We've never missed a payment. How is a 15% jump fair?\nMr. Castillo: I appreciate you both, truly. But your application showed you both earn well, and $1,840 is still under a third of your take-home pay.\nMr. Castillo: You can comfortably pay it, so it's a fair rent to charge."
+  },
+  {
+   "q": "r026",
+   "format": "post",
+   "source": "Maddie Kerr · @maddiekerrstudies",
+   "title": null,
+   "passage": "My study group keeps pushing that timer method: 25 minutes of work, a 5-minute break, repeat. I looked it up, and it started with one university student and a tomato-shaped kitchen timer. That's a dorm-room hack, not a real study method, so I'm not reorganizing finals week around it. Back to the library."
+  },
+  {
+   "q": "r027",
+   "format": "chat",
+   "source": "Public works · #mill-st-bridge",
+   "title": null,
+   "passage": "Tomasz: Inspection rated the Mill St bridge deck 'poor', with spalling on two spans.\nRenee: Agreed, it's in bad shape. A full closure adds about 15 minutes to east-side ambulance runs. A 10-ton limit keeps ambulances (around 6 tons) moving while banning the gravel trucks that cause most of the wear, so a weight limit is the better call until repairs."
+  },
+  {
+   "q": "r028",
+   "format": "review",
+   "source": "Tamar Weiss",
+   "title": "Delicious, but please fix the label",
+   "passage": "The texture is great and the frosting isn't too sweet. But the \"vegan\" label needs to go: the ingredient card at the counter lists butter and honey. Vegan means no animal products, and both of those come from animals, so this cupcake doesn't qualify, however tasty it is. Please relabel it for those of us who check."
+  },
+  {
+   "q": "r029",
+   "format": "quote",
+   "source": "Commissioner Arturo Benn · Marrowdale Basketball League press conference",
+   "title": null,
+   "passage": "I understand the frustration from Ms. Ortega's camp. Our written criteria for the Rookie of the Year shortlist are 15 starts and a top-ten finish in assists, and yes, she met both. But the selection committee feels a shortlist spot should reflect a full season's body of work, so we've asked that nominees also have 25 starts. She has 21."
+  },
+  {
+   "q": "r030",
+   "format": "speech",
+   "source": "Councillor Teodora Quintero · Eastbrook town hall",
+   "title": null,
+   "passage": "In March we finished installing the new LED streetlights along Harbor Road. By the end of June, reported burglaries in the area were down by a third. The energy savings alone justify the project, and our maintenance crews love them. But that burglary number tells you the lights work, and I'll be asking council to fund LEDs across the entire east side."
+  }
+ ]
+}

@@ -1,0 +1,149 @@
+// App shell: skip link, landmarks, chrome, routed screen, toast, shortcuts.
+
+import type { JSX } from 'preact';
+import { useEffect, useMemo } from 'preact/hooks';
+import { navigate, route, type Route } from './router';
+import { session, sessionKey } from './state/session';
+import { fallacyById, progress, welcomeShown } from './state/store';
+import { AppFooter, MobileHeader, TabBar, TopBar } from './ui/components/Nav';
+import { ShortcutsDialog, shortcutsOpen, Toast } from './ui/components/Overlays';
+import { isShortcutEvent, useKeydown } from './ui/hooks';
+import { AboutScreen } from './ui/screens/About';
+import { FallacyDetailScreen } from './ui/screens/FallacyDetail';
+import { LibraryScreen } from './ui/screens/Library';
+import { ProgressScreen } from './ui/screens/Progress';
+import { SessionScreen, sessionTitle } from './ui/screens/Session';
+import { SummaryScreen } from './ui/screens/Summary';
+import { TodayScreen } from './ui/screens/Today';
+import { WelcomeScreen } from './ui/screens/Welcome';
+import { cx } from './ui/util';
+import { dateKey } from './engine/dates';
+
+const SUFFIX = 'Fallacy Forge';
+
+function titleFor(r: Route, welcome: boolean): string {
+  switch (r.name) {
+    case 'today':
+      return welcome ? `Welcome · ${SUFFIX}` : `Today · ${SUFFIX}`;
+    case 'welcome':
+      return `Welcome · ${SUFFIX}`;
+    case 'play':
+      return `${sessionTitle(session.peek(), r)} · ${SUFFIX}`;
+    case 'summary':
+      return `Summary · ${SUFFIX}`;
+    case 'library':
+      return `Library · ${SUFFIX}`;
+    case 'fallacy':
+      return `${fallacyById.get(r.fallacyId)?.name ?? 'Fallacy'} · ${SUFFIX}`;
+    case 'progress':
+      return `Progress · ${SUFFIX}`;
+    case 'about':
+      return `About · ${SUFFIX}`;
+  }
+}
+
+/** Same-hash link clicks don't fire hashchange; refresh the route instead. */
+function useSameHashLinks(): void {
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = event.target instanceof Element ? event.target.closest('a[href^="#/"]') : null;
+      const href = link?.getAttribute('href');
+      if (!href) return;
+      const current = location.hash || '#/';
+      if (href === current) {
+        event.preventDefault();
+        navigate(href);
+      }
+    };
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
+}
+
+export function App(): JSX.Element {
+  const r = route.value;
+  const p = progress.value;
+  // Decided once per navigation, so showing the Welcome page doesn't flip itself off.
+  const showWelcome = useMemo(
+    () => r.name === 'welcome' || (r.name === 'today' && !welcomeShown.peek() && p.attempts.length === 0 && !p.onboarded),
+    [r],
+  );
+  const inSession = r.name === 'play';
+  const playKey = r.name === 'play' ? sessionKey(r, dateKey()) : '';
+  const key = showWelcome ? 'welcome' : r.name === 'play' ? `play:${playKey}` : r.name === 'fallacy' ? `fallacy:${r.fallacyId}` : r.name;
+
+  useSameHashLinks();
+
+  useEffect(() => {
+    document.title = titleFor(r, showWelcome);
+    window.scrollTo(0, 0);
+    const heading = document.querySelector<HTMLElement>('#main h1');
+    if (heading) {
+      if (!heading.hasAttribute('tabindex')) heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll: true });
+    }
+  }, [r]);
+
+  useKeydown((event) => {
+    if (event.key === '?' && isShortcutEvent(event)) {
+      event.preventDefault();
+      shortcutsOpen.value = true;
+    }
+  });
+
+  let screen: JSX.Element;
+  if (showWelcome) screen = <WelcomeScreen />;
+  else {
+    switch (r.name) {
+      case 'play':
+        screen = <SessionScreen key={playKey} route={r} />;
+        break;
+      case 'summary':
+        screen = <SummaryScreen />;
+        break;
+      case 'library':
+        screen = <LibraryScreen />;
+        break;
+      case 'fallacy':
+        screen = <FallacyDetailScreen key={r.fallacyId} id={r.fallacyId} />;
+        break;
+      case 'progress':
+        screen = <ProgressScreen />;
+        break;
+      case 'about':
+        screen = <AboutScreen />;
+        break;
+      default:
+        screen = <TodayScreen />;
+    }
+  }
+
+  return (
+    <div class={cx('app', !inSession && 'app--tabs')}>
+      <a
+        class="skip-link"
+        href="#main"
+        onClick={(event) => {
+          event.preventDefault();
+          const main = document.getElementById('main');
+          const target = main?.querySelector<HTMLElement>('h1') ?? main;
+          target?.focus();
+        }}
+      >
+        Skip to content
+      </a>
+      {!inSession && <TopBar route={r} />}
+      {!inSession && <MobileHeader />}
+      <main id="main" class="app-main" tabIndex={-1}>
+        <div class={cx('route', inSession && 'route--session')} key={key}>
+          {screen}
+        </div>
+      </main>
+      {!inSession && !showWelcome && <AppFooter />}
+      {!inSession && <TabBar route={r} />}
+      <Toast />
+      <ShortcutsDialog />
+    </div>
+  );
+}

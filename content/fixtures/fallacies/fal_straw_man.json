@@ -1,0 +1,21 @@
+{
+  "id": "fal_straw_man",
+  "name": "Straw Man",
+  "aliases": ["Strawman"],
+  "family": "distraction",
+  "difficulty": "beginner",
+  "shortDef": "Distorting someone's view so it's easier to knock down.",
+  "definition": "Replacing someone's actual position with an exaggerated, oversimplified or extreme version, then attacking that version as if it were what they said.",
+  "howToSpot": [
+    "Compare what was actually said with the version being attacked.",
+    "Look for dropped qualifiers like \"some\", \"sometimes\" or \"for now\".",
+    "Would the original speaker accept this summary of their view?"
+  ],
+  "classicExample": "She wants fewer cars downtown, so apparently she wants to ban driving and make everyone walk to work.",
+  "legitimateVersion": "Spelling out the realistic consequences of someone's actual proposal is fair, as long as you describe it accurately and they would recognize your summary.",
+  "confusableWith": ["fal_red_herring", "fal_false_dichotomy"],
+  "contrast": {
+    "fal_red_herring": "A straw man distorts the other side's position; a red herring changes the subject to something else entirely.",
+    "fal_false_dichotomy": "A straw man misrepresents one view; a false dichotomy pretends only two options exist."
+  }
+}

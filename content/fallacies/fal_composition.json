@@ -1,0 +1,21 @@
+{
+  "id": "fal_composition",
+  "name": "Composition",
+  "aliases": ["Part-to-whole fallacy"],
+  "family": "language",
+  "difficulty": "intermediate",
+  "shortDef": "Assuming that what's true of the parts must be true of the whole.",
+  "definition": "Concluding that a whole has a property because each of its parts has it, when the property may not carry over: small effects can add up, parts can interact, and a whole can behave differently from its pieces.",
+  "howToSpot": [
+    "Is a trait of each part being stamped onto the whole?",
+    "Could the parts add up, clash or interact once they're combined?",
+    "Does the trait depend on scale, like 'small', 'safe' or 'unnoticeable'?"
+  ],
+  "classicExample": "Every player on our team is a star, so we'll obviously be the best team in the league.",
+  "legitimateVersion": "Some traits do pass from parts to whole, like 'made entirely of steel', or 'gluten-free' when every ingredient is and nothing else gets in. It's fair when the trait truly transfers.",
+  "confusableWith": ["fal_division", "fal_hasty_generalization"],
+  "contrast": {
+    "fal_division": "Composition goes from the parts up to the whole; division goes from the whole down to its parts.",
+    "fal_hasty_generalization": "Composition stamps the parts' traits onto the whole they form; hasty generalization stretches a few members' traits to all members."
+  }
+}

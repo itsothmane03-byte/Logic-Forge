@@ -1,0 +1,21 @@
+{
+  "id": "fal_post_hoc",
+  "name": "Post Hoc",
+  "aliases": ["Post hoc ergo propter hoc", "After this, therefore because of this"],
+  "family": "evidence",
+  "difficulty": "intermediate",
+  "shortDef": "Assuming that because B followed A, A must have caused B.",
+  "definition": "Concluding that one event caused another simply because it came first. Timing alone can't rule out coincidence, a shared cause, or a change that would have happened anyway, like a cold clearing up on its own.",
+  "howToSpot": [
+    "Is the only evidence that one thing happened right after another?",
+    "Would the outcome have happened anyway, through recovery, seasons or a bounce back?",
+    "Did anything else change around the same time?"
+  ],
+  "classicExample": "I started wearing my lucky socks on Monday and we've won every game since. The socks are working.",
+  "legitimateVersion": "Timing is a fair first clue. It becomes good evidence when the effect repeats, appears and disappears with the suspected cause, or holds up against a comparison group.",
+  "confusableWith": ["fal_false_cause", "fal_anecdotal_evidence"],
+  "contrast": {
+    "fal_false_cause": "Post hoc relies on one thing following another in time; false cause relies on two things going together across many cases.",
+    "fal_anecdotal_evidence": "Post hoc infers cause from timing; anecdotal evidence lets a personal story outweigh broader data, whatever the timing."
+  }
+}
