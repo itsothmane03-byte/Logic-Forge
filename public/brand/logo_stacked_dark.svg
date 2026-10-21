@@ -1,24 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 520" role="img" aria-label="Fallacy Forge logo stacked">
-  <defs>
-    <symbol id="ff-mark" viewBox="0 0 512 512">
-      
-    <!-- Anvil top -->
-    <rect x="107" y="174" width="298" height="62" rx="28" fill="#FF6B3D"/>
-    <!-- Horn -->
-    <polygon points="372,186 418,207 372,224" fill="#FF6B3D"/>
-    <!-- Neck -->
-    <rect x="206" y="238" width="100" height="38" rx="14" fill="#FF6B3D"/>
-    <!-- Base -->
-    <polygon points="151,278 361,278 324,328 188,328" fill="#FF6B3D"/>
-    <!-- Foot -->
-    <polygon points="182,346 330,346 310,374 202,374" fill="#FF6B3D"/>
-    <!-- Check -->
-    <path d="M 270 282 L 200 352 L 340 190" fill="none" stroke="#EAEFF3" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
-  
-    </symbol>
-  </defs>
-  <g>
-    <use href="#ff-mark" x="54" y="0" width="312" height="312"/>
-    <text x="50%" y="380" text-anchor="middle" style="font: 700 64px system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; letter-spacing: .5px;" fill="#EAEFF3">Fallacy Forge</text>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" color="#FAF8F4">
+<title>Fallacy Forge</title><g transform="translate(176 24)">
+  <path d="M56 4Q60 1 60 7V29Q60 33 57 35L28 52L53 67H61Q63 67 65 69L73 78H48Q45 78 42 76L8 57Q5 55 5 51V46Q5 43 8 41Z" fill="#FF6B3D"/>
+  <path d="M65 26H88Q91 26 94 28L120 45Q123 47 123 51V57Q123 60 120 62L82 99Q78 103 78 97V77Q78 73 81 71L103 53L74 36Z" fill="#FF6B3D"/>
+  <rect x="55" y="44" width="18" height="18" rx="2" transform="rotate(45 64 53)" fill="currentColor"/>
+</g>
+<text x="240" y="214" text-anchor="middle" fill="#FAF8F4" font-family="Bricolage Grotesque,Arial,sans-serif" font-size="58" font-weight="800" letter-spacing="-2">Fallacy Forge</text></svg>

@@ -232,11 +232,6 @@ export function WelcomeScreen(): JSX.Element {
                 Browse the {count} fallacies
               </a>
             </div>
-            <ul class="hero__facts">
-              <li>Free</li>
-              <li>No account</li>
-              <li>Works offline</li>
-            </ul>
           </div>
           {demo && (
             <div class="hero__demo">

@@ -102,30 +102,6 @@
   margin-top: 28px;
 }
 
-.hero__facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  margin-top: 24px;
-  color: var(--ink-2);
-  font-size: 0.875rem;
-  font-weight: 650;
-}
-
-.hero__facts li {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.hero__facts li::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
 /* ---------- Live mini-demo ---------- */
 
 .hero__demo {
