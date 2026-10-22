@@ -1,6 +1,8 @@
-/* Today: greeting, first-run card, Daily Forge hero, secondary tiles. */
+/* Today: greeting, optional how-to, Daily Forge hero, review banner and the
+   activity tiles (the Practice hub reuses the tiles). Base .tile rules come
+   before their variants so a variant's layout always wins. */
 
-/* ---------- Today ---------- */
+/* ---------- Header ---------- */
 
 .today-head {
   display: flex;
@@ -23,31 +25,55 @@
   font-weight: 500;
 }
 
+/* ---------- How it works (collapsed by default) ---------- */
+
 .howto {
   margin-bottom: 20px;
-  padding: 18px 20px 20px;
-  border: 1.5px dashed var(--line-strong);
+  border: 1px solid var(--line);
   border-radius: var(--r-card);
   background: var(--surface);
 }
 
-.howto__head {
+.howto__summary {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-right: -8px;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: var(--r-card);
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
 }
 
-.howto__title {
-  font-size: 1.25rem;
-  font-weight: 750;
+.howto__summary::-webkit-details-marker {
+  display: none;
+}
+
+.howto__icon {
+  flex: none;
+  color: var(--accent-strong);
+}
+
+.howto__chev {
+  flex: none;
+  margin-left: auto;
+  color: var(--ink-3);
+  transition: transform var(--dur) var(--ease);
+}
+
+.howto[open] .howto__chev {
+  transform: rotate(180deg);
+}
+
+.howto__body {
+  padding: 2px 16px 16px;
 }
 
 .howto__steps {
   display: grid;
   gap: 10px;
-  margin: 10px 0 16px;
+  margin-bottom: 14px;
 }
 
 @media (min-width: 768px) {
@@ -77,56 +103,28 @@
   font-weight: 800;
 }
 
+.howto__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+/* ---------- Grid: hero and review span the row; tiles form a 2 x 2 ---------- */
+
 .today-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
 }
 
-/* Desktop: Practice runs wide beside Fallacy of the day; Review (when there
-   are misses) becomes a slim full-width banner underneath. */
-@media (min-width: 900px) {
+@media (min-width: 720px) {
   .today-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-auto-flow: row dense;
-  }
-
-  .tile--practice {
-    grid-column: span 2;
-  }
-
-  .tile--review {
-    display: grid;
-    grid-column: 1 / -1;
-    grid-template-areas:
-      'icon title cta'
-      'icon sub cta';
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 2px 16px;
-    padding: 18px 22px;
-  }
-
-  .tile--review .tile__icon {
-    grid-area: icon;
-    margin: 0;
-  }
-
-  .tile--review .tile__title {
-    grid-area: title;
-    font-size: 1.25rem;
-  }
-
-  .tile--review .tile__sub {
-    grid-area: sub;
-  }
-
-  .tile--review > .tile__cta {
-    grid-area: cta;
-    align-self: center;
-    margin: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* ---------- Daily Forge hero ---------- */
 
 .daily-hero {
   --hero-good: #4cc38a;
@@ -266,10 +264,13 @@
   }
 }
 
+/* ---------- Tiles: activities and fallacy of the day ---------- */
+
 .tile {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 6px;
   padding: 22px;
   border: 1px solid var(--line);
@@ -281,22 +282,28 @@
 .tile__icon {
   display: grid;
   place-items: center;
+  flex: none;
   width: 44px;
   height: 44px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   border-radius: 12px;
   background: var(--surface-2);
   color: var(--ink);
 }
 
-.tile--practice .tile__icon {
+.tile--spot .tile__icon {
   background: var(--accent-soft);
   color: var(--accent-strong);
 }
 
-.tile--review .tile__icon {
-  background: var(--warn-soft);
-  color: var(--warn);
+.tile--repair .tile__icon {
+  background: var(--good-soft);
+  color: var(--good);
+}
+
+.tile--logic .tile__icon {
+  background: color-mix(in srgb, var(--fam-framing) 14%, var(--surface));
+  color: var(--fam-framing);
 }
 
 .tile__title {
@@ -304,40 +311,18 @@
   font-weight: 750;
 }
 
-.tile__title--big {
-  font-size: 1.75rem;
-  font-weight: 800;
-}
-
-.tile__count {
+.tile__count,
+.tile__sub {
   color: var(--ink-2);
 }
 
-.tile__sub,
-.tile__text {
-  color: var(--ink-2);
-}
-
-.tile__chips {
-  margin: 10px 0 4px;
-}
-
-.tile__chips-label {
-  margin-bottom: 8px;
-  color: var(--ink-3);
-  font-size: 0.75rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.tile__cta {
-  align-self: flex-start;
+.tile__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 20px;
   margin-top: auto;
-}
-
-.tile > .tile__cta {
-  margin-top: max(14px, auto);
+  padding-top: 12px;
 }
 
 .tile--fotd {
@@ -348,5 +333,50 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+}
+
+/* ---------- Review banner: slim row on wide screens, stacked on phones ---------- */
+
+.tile--review {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-areas:
+    'icon body'
+    'cta cta';
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px 14px;
+  padding: 16px;
+}
+
+.tile--review .tile__icon {
+  grid-area: icon;
+  margin: 0;
+  background: var(--warn-soft);
+  color: var(--warn);
+}
+
+.tile--review .tile__body {
+  display: grid;
+  grid-area: body;
+  gap: 2px;
+}
+
+.tile--review .tile__title {
+  font-size: 1.1875rem;
+}
+
+.tile--review .tile__cta {
+  grid-area: cta;
+  justify-self: start;
+}
+
+@media (min-width: 720px) {
+  .tile--review {
+    grid-template-areas: 'icon body cta';
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 4px 16px;
+    padding: 14px 20px;
+  }
 }

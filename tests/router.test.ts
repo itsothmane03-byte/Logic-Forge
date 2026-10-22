@@ -8,6 +8,7 @@ describe('hash router', () => {
     expect(parseHash('#/welcome')).toEqual({ name: 'welcome' });
     expect(parseHash('#/practice')).toEqual({ name: 'practice' });
     expect(parseHash('#/repair')).toEqual({ name: 'repair' });
+    expect(parseHash('#/logic')).toEqual({ name: 'logic' });
     expect(parseHash('#/play/daily')).toEqual({ name: 'play', mode: 'daily' });
     expect(parseHash('#/play/practice')).toEqual({ name: 'play', mode: 'practice' });
     expect(parseHash('#/play/review')).toEqual({ name: 'play', mode: 'review' });
@@ -26,12 +27,24 @@ describe('hash router', () => {
     }
   });
 
+  it('recovers from malformed percent escapes instead of crashing on navigation', () => {
+    for (const hash of ['#/%', '#/%ZZ', '#/library/%E0%A4%A', '#/play/focus/%C0%AF', '#/library/%ED%A0%80']) {
+      expect(matchHash(hash)).toBeNull();
+      expect(parseHash(hash)).toEqual({ name: 'today' });
+    }
+  });
+
+  it('still accepts correctly encoded route segments', () => {
+    expect(parseHash('#/library/fal_straw%5Fman')).toEqual({ name: 'fallacy', fallacyId: 'fal_straw_man' });
+  });
+
   it('round-trips through hrefFor', () => {
     const routes: Route[] = [
       { name: 'today' },
       { name: 'welcome' },
       { name: 'practice' },
       { name: 'repair' },
+      { name: 'logic' },
       { name: 'play', mode: 'daily' },
       { name: 'play', mode: 'focus', fallacyId: 'fal_sunk_cost' },
       { name: 'summary' },

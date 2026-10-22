@@ -1,8 +1,8 @@
 {
   "name": "fallacy-forge",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": true,
-  "description": "Learn to spot bad arguments in five minutes a day. Realistic passages, sound near-misses and spaced repetition, all in the browser.",
+  "description": "Spot weak arguments, choose stronger revisions, and practice deduction. Free reasoning activities, all in the browser.",
   "license": "MIT",
   "author": "itsothmane03-byte",
   "homepage": "https://itsothmane03-byte.github.io/Logic-Forge/",

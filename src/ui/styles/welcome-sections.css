@@ -1,6 +1,6 @@
-/* Welcome sections: how it works, real-world formats, features bento, final call to action, footer. */
+/* Welcome sections: three ways to practice, real-world formats, features bento, final call to action, footer. */
 
-/* ---------- How it works ---------- */
+/* ---------- Three ways to practice ---------- */
 
 .how {
   border-top: 1px solid var(--line);
@@ -16,49 +16,36 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
   }
-
-  .step-card:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 72px;
-    right: -16px;
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid var(--line-strong);
-    border-right: 2px solid var(--line-strong);
-    transform: rotate(45deg);
-  }
 }
 
 .step-card {
   position: relative;
-  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 22px;
   border: 1px solid var(--line);
   border-radius: 20px;
   background: var(--surface);
   box-shadow: var(--shadow-2);
 }
 
-.step-card__n {
-  margin-top: 20px;
-  color: var(--accent-strong);
-  font-family: var(--font-display);
-  font-size: 0.875rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
 .step-card__title {
-  margin-top: 2px;
-  font-size: 1.75rem;
+  margin-top: 18px;
+  font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.03em;
 }
 
 .step-card__text {
-  margin-top: 8px;
+  margin-top: 6px;
   color: var(--ink-2);
   line-height: 1.55;
+}
+
+.step-card__link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 .step-visual {
@@ -94,18 +81,10 @@
   box-shadow: 0 2px 0 var(--accent-edge);
 }
 
-.step-visual--name {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-}
-
 .sv-opt {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 4px;
-  padding: 8px 10px;
+  padding: 6px 10px;
   border: 1.5px solid var(--line-strong);
   border-radius: 10px;
   background: var(--surface);
@@ -120,17 +99,63 @@
   color: var(--good);
 }
 
-.step-visual--learn p {
-  font-family: var(--font-serif);
-  font-size: 1.0625rem;
-  line-height: 1.55;
+/* Fix the argument: a weak line struck through, a stronger one checked.
+   What follows?: two facts, a claim and the three verdicts. */
+.step-visual--fix,
+.step-visual--logic {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
 }
 
-.step-visual--learn mark {
-  padding: 0 2px;
-  border-radius: 3px;
-  background: var(--accent-soft);
-  box-shadow: inset 0 -2px 0 var(--accent);
+.sv-line {
+  padding: 7px 10px;
+  border-radius: 10px;
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.sv-line--weak {
+  color: var(--ink-3);
+  text-decoration: line-through;
+  text-decoration-color: var(--bad);
+}
+
+.sv-line--strong {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  border: 1.5px solid var(--good);
+  background: var(--good-soft);
+}
+
+.sv-line--strong .icon {
+  flex: none;
+  margin-top: 3px;
+  color: var(--good);
+}
+
+.sv-facts,
+.sv-claim {
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.sv-facts {
+  font-family: var(--font-serif);
+}
+
+.sv-claim {
+  font-weight: 750;
+}
+
+.sv-verdicts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
 }
 
 /* ---------- Real-world formats (fanned stack) ---------- */
@@ -240,13 +265,11 @@
   gap: 14px;
 }
 
+/* Four tiles: 2 x 2 on tablets; on desktop Daily is a 2 x 2 block beside
+   Adaptive (wide) above Library and Progress. */
 @media (min-width: 720px) {
   .bento {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .bento__tile--daily {
-    grid-row: span 2;
   }
 }
 
@@ -261,9 +284,7 @@
     grid-row: span 2;
   }
 
-  .bento__tile--adaptive,
-  .bento__tile--offline,
-  .bento__tile--open {
+  .bento__tile--adaptive {
     grid-column: span 2;
   }
 }
@@ -328,12 +349,6 @@
 .bento__tile--progress .bento__icon {
   background: var(--accent-soft);
   color: var(--accent-strong);
-}
-
-.bento__tile--open .bento__icon,
-.bento__tile--offline .bento__icon {
-  background: var(--good-soft);
-  color: var(--good);
 }
 
 .fv-share {
@@ -413,30 +428,6 @@
   background: var(--surface-2);
   font-size: 0.6875rem;
   font-weight: 650;
-}
-
-.fv-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 12px;
-}
-
-.fv-pills li {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-pill);
-  background: var(--surface-2);
-  color: var(--ink-2);
-  font-size: 0.8125rem;
-  font-weight: 650;
-}
-
-.fv-pills .icon {
-  color: var(--good);
 }
 
 .fv-heat {

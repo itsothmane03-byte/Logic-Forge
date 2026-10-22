@@ -7,8 +7,7 @@ import { accuracy, accuracyTrend, familyMastery, heatmap, masteredCount, totalAn
 import { parseImport, serializeExport } from '../../engine/storage';
 import { currentStreak } from '../../engine/streak';
 import type { Progress, ThemeSetting } from '../../engine/types';
-import { bank, commit, progress, resetProgress, setShowDefinitions, setTheme, showToast, storageOk } from '../../state/store';
-import { clearRepairSession } from '../../state/repair';
+import { bank, progress, replaceProgress, resetProgress, setShowDefinitions, setTheme, showToast, storageOk } from '../../state/store';
 import { Button, ButtonLink } from '../components/Button';
 import { Heatmap, Sparkline } from '../components/Charts';
 import { SegmentedControl, Switch } from '../components/Controls';
@@ -103,8 +102,7 @@ function DataSettings() {
         confirmLabel="Replace"
         onConfirm={() => {
           if (pending) {
-            commit(pending);
-            clearRepairSession();
+            replaceProgress(pending);
           }
           setPending(null);
           showToast('Progress imported');
@@ -114,12 +112,11 @@ function DataSettings() {
       <ConfirmDialog
         open={confirmReset}
         title="Reset all progress?"
-        message="This clears your quiz answers, mastery, streaks, Daily history and repair progress in this browser. It can't be undone."
+        message="This clears your answers, mastery, streaks and all activity progress in this browser. It can't be undone."
         confirmLabel="Reset everything"
         danger
         onConfirm={() => {
           resetProgress();
-          clearRepairSession();
           setConfirmReset(false);
           showToast('Progress reset');
         }}
@@ -141,20 +138,31 @@ export function ProgressScreen(): JSX.Element {
         <h1 class="page-title" tabIndex={-1}>
           Progress
         </h1>
-        <p class="lead">Small daily reps add up. Here's what yours look like.</p>
+        <p class="lead">Your practice, saved on this device.</p>
       </header>
 
       <StatRow p={p} today={today} />
 
       <section class="panel repair-progress" aria-labelledby="repair-progress-title">
         <h2 id="repair-progress-title" class="panel__title">Fix the argument</h2>
-        <p class="panel__sub">Choosing better reasoning is a separate skill. These scores do not change your quiz mastery.</p>
+        <p class="panel__sub">Saved separately from quiz mastery.</p>
         <dl class="repair-progress__stats">
           <div><dt>exercises answered</dt><dd>{p.repair.answered}</dd></div>
           <div><dt>best repairs chosen</dt><dd>{p.repair.correct}</dd></div>
           <div><dt>sets completed</dt><dd>{p.repair.sets}</dd></div>
         </dl>
         <ButtonLink href="#/repair" variant="secondary" iconRight="arrow-right">Practice repairs</ButtonLink>
+      </section>
+
+      <section class="panel repair-progress" aria-labelledby="logic-progress-title">
+        <h2 id="logic-progress-title" class="panel__title">What follows?</h2>
+        <p class="panel__sub">Deductions from the given facts.</p>
+        <dl class="repair-progress__stats">
+          <div><dt>puzzles answered</dt><dd>{p.logic.answered}</dd></div>
+          <div><dt>correct deductions</dt><dd>{p.logic.correct}</dd></div>
+          <div><dt>sets completed</dt><dd>{p.logic.sets}</dd></div>
+        </dl>
+        <ButtonLink href="#/logic" variant="secondary" iconRight="arrow-right">Practice logic</ButtonLink>
       </section>
 
       <div class="progress-grid">

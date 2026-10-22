@@ -12,6 +12,7 @@ export type Route =
   | { name: 'welcome' }
   | { name: 'practice' }
   | { name: 'repair' }
+  | { name: 'logic' }
   | { name: 'play'; mode: PlayMode }
   | { name: 'play'; mode: 'focus'; fallacyId: string }
   | { name: 'summary' }
@@ -28,13 +29,20 @@ const ID = /^[a-z0-9_]+$/;
 /** Parses a location hash. Returns null for unknown routes. */
 export function matchHash(hash: string): Route | null {
   const path = hash.replace(/^#/, '').replace(/^\/+/, '').replace(/\/+$/, '');
-  const parts = path === '' ? [] : path.split('/').map((p) => decodeURIComponent(p));
+  let parts: string[];
+  try {
+    parts = path === '' ? [] : path.split('/').map((p) => decodeURIComponent(p));
+  } catch {
+    // A malformed shared URL should fall back like any other unknown route.
+    return null;
+  }
   const [head, a, b] = parts;
   if (parts.length === 0) return { name: 'today' };
   if (parts.length === 1) {
     if (head === 'welcome') return { name: 'welcome' };
     if (head === 'practice') return { name: 'practice' };
     if (head === 'repair') return { name: 'repair' };
+    if (head === 'logic') return { name: 'logic' };
     if (head === 'summary') return { name: 'summary' };
     if (head === 'library') return { name: 'library' };
     if (head === 'progress') return { name: 'progress' };
@@ -59,6 +67,7 @@ export function hrefFor(route: Route): string {
     case 'welcome': return '#/welcome';
     case 'practice': return '#/practice';
     case 'repair': return '#/repair';
+    case 'logic': return '#/logic';
     case 'play': return route.mode === 'focus' ? `#/play/focus/${route.fallacyId}` : `#/play/${route.mode}`;
     case 'summary': return '#/summary';
     case 'library': return '#/library';

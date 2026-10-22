@@ -1,47 +1,71 @@
+// Practice hub (#/practice): the three practice activities. ACTIVITIES and
+// ActivityCard are shared with Today and Welcome, so the copy lives here once.
+
 import type { JSX } from 'preact';
-import { repairs } from '../../data/repairs';
+import { logicSession } from '../../state/logic';
 import { repairSession } from '../../state/repair';
-import { progress } from '../../state/store';
+import { session } from '../../state/session';
 import { ButtonLink } from '../components/Button';
-import { Icon } from '../components/Icon';
-import { Reveal } from '../components/Primitives';
+import { Icon, type IconName } from '../components/Icon';
+
+export type ActivityId = 'spot' | 'repair' | 'logic';
+
+export interface Activity {
+  id: ActivityId;
+  title: string;
+  text: string;
+  href: string;
+  icon: IconName;
+}
+
+export const ACTIVITIES: readonly Activity[] = [
+  { id: 'spot', title: 'Spot the flaw', text: 'Decide if an argument holds up, then name the flaw.', href: '#/play/practice', icon: 'target' },
+  { id: 'repair', title: 'Fix the argument', text: 'Choose the rewrite that fixes a weak argument.', href: '#/repair', icon: 'scale' },
+  { id: 'logic', title: 'What follows?', text: 'Given a few facts, judge whether a claim must follow.', href: '#/logic', icon: 'layers' },
+];
+
+/** True while a set of this activity is open but not finished. */
+export function inProgress(id: ActivityId): boolean {
+  if (id === 'repair') return Boolean(repairSession.value && !repairSession.value.finished);
+  if (id === 'logic') return Boolean(logicSession.value && !logicSession.value.finished);
+  const current = session.value;
+  return Boolean(current && current.key === 'practice' && !current.finished);
+}
+
+export function ActivityCard({ activity }: { activity: Activity }): JSX.Element {
+  const titleId = `activity-${activity.id}`;
+  return (
+    <section class={`tile tile--${activity.id}`} aria-labelledby={titleId}>
+      <span class="tile__icon" aria-hidden="true">
+        <Icon name={activity.icon} size={22} />
+      </span>
+      <h2 id={titleId} class="tile__title">
+        {activity.title}
+      </h2>
+      <p class="tile__sub">{activity.text}</p>
+      <div class="tile__foot">
+        <ButtonLink href={activity.href} variant="secondary" iconRight="arrow-right">
+          {inProgress(activity.id) ? 'Resume' : 'Start'}
+          <span class="sr-only"> {activity.title}</span>
+        </ButtonLink>
+      </div>
+    </section>
+  );
+}
 
 export function PracticeScreen(): JSX.Element {
-  const p = progress.value;
   return (
     <div class="page practice-hub">
       <header class="page-head">
-        <p class="eyebrow">A little clearer, every day</p>
-        <h1 class="page-title" tabIndex={-1}>Practice thinking clearly.</h1>
-        <p class="lead">Spot a weak argument. Then learn to make it stronger.</p>
+        <h1 class="page-title" tabIndex={-1}>
+          Choose your practice.
+        </h1>
       </header>
       <div class="practice-hub__grid">
-        <Reveal as="section" class="practice-card" aria-labelledby="spot-title">
-          <span class="practice-card__icon" aria-hidden="true"><Icon name="target" size={28} /></span>
-          <p class="eyebrow">Notice the problem</p>
-          <h2 id="spot-title">Spot the flaw</h2>
-          <p>Read an everyday argument. Decide whether it holds up, then name the flaw.</p>
-          <ul class="practice-card__skills">
-            <li>Tell sound reasoning from a convincing mistake</li>
-            <li>Learn the difference between similar fallacies</li>
-          </ul>
-          <p class="practice-card__meta">10 questions · about 5 min</p>
-          <ButtonLink href="#/play/practice" variant="secondary" iconRight="arrow-right">Spot the flaw</ButtonLink>
-        </Reveal>
-        <Reveal as="section" index={1} class="practice-card practice-card--repair" aria-labelledby="repair-title">
-          <span class="practice-card__icon" aria-hidden="true"><Icon name="scale" size={28} /></span>
-          <p class="eyebrow">Take the next step</p>
-          <h2 id="repair-title">Fix the argument</h2>
-          <p>The argument has a problem. Choose the revision that best addresses it.</p>
-          <ul class="practice-card__skills">
-            <li>Find the missing evidence or hidden assumption</li>
-            <li>Make a claim the evidence can actually support</li>
-          </ul>
-          <p class="practice-card__meta">5 exercises · about 5 min · {repairs.length} in the collection</p>
-          <ButtonLink href="#/repair" variant="primary" iconRight="arrow-right">{repairSession.value && !repairSession.value.finished ? 'Resume repairs' : p.repair.answered ? 'Practice repairs' : 'Try a repair'}</ButtonLink>
-        </Reveal>
+        {ACTIVITIES.map((activity) => (
+          <ActivityCard key={activity.id} activity={activity} />
+        ))}
       </div>
-      <p class="practice-hub__note">A better argument still depends on good evidence. Each activity explains your choice, so a missed answer is useful too.</p>
     </div>
   );
 }

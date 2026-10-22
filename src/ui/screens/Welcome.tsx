@@ -14,6 +14,7 @@ import { LogoMark } from '../components/Logo';
 import { PassageCard } from '../components/PassageCard';
 import { Reveal } from '../components/Primitives';
 import { cx, FORMAT_ICONS, FORMAT_LABELS } from '../util';
+import { ACTIVITIES, type ActivityId } from './Practice';
 
 function MiniDemo({ item }: { item: Item }) {
   const [choice, setChoice] = useState<SpotChoice | null>(null);
@@ -90,14 +91,9 @@ function MiniDemo({ item }: { item: Item }) {
   );
 }
 
-const STEPS: Array<{ title: string; text: string; visual: 'spot' | 'name' | 'learn' }> = [
-  { title: 'Spot', text: 'Read a short, real-world passage and decide: is the reasoning sound or flawed?', visual: 'spot' },
-  { title: 'Name', text: "If it's flawed, name it. The wrong options are its closest look-alikes, so guessing won't cut it.", visual: 'name' },
-  { title: 'Learn', text: 'See the exact phrase that breaks the argument, and why it isn’t the fallacy it resembles.', visual: 'learn' },
-];
-
-function StepVisual({ kind }: { kind: 'spot' | 'name' | 'learn' }) {
-  if (kind === 'spot') {
+/** Decorative previews; each card's text carries the meaning. */
+function ActivityVisual({ id }: { id: ActivityId }) {
+  if (id === 'spot') {
     return (
       <div class="step-visual step-visual--spot" aria-hidden="true">
         <span class="sv-pill">
@@ -109,34 +105,35 @@ function StepVisual({ kind }: { kind: 'spot' | 'name' | 'learn' }) {
       </div>
     );
   }
-  if (kind === 'name') {
+  if (id === 'repair') {
     return (
-      <div class="step-visual step-visual--name" aria-hidden="true">
-        <span class="sv-opt">Red Herring</span>
-        <span class="sv-opt sv-opt--on">
-          Straw Man <Icon name="check" size={14} strokeWidth={3} />
-        </span>
-        <span class="sv-opt">False Dichotomy</span>
-        <span class="sv-opt">Tu Quoque</span>
+      <div class="step-visual step-visual--fix" aria-hidden="true">
+        <p class="sv-line sv-line--weak">Two recipes flopped, so the book is useless.</p>
+        <p class="sv-line sv-line--strong">
+          <Icon name="check" size={14} strokeWidth={3} />
+          Two tries are too few to judge the book.
+        </p>
       </div>
     );
   }
   return (
-    <div class="step-visual step-visual--learn" aria-hidden="true">
-      <p>
-        "So now we're supposed to <mark>sort every scrap of food we eat</mark>?"
-      </p>
+    <div class="step-visual step-visual--logic" aria-hidden="true">
+      <p class="sv-facts">Every cat naps. Tom is a cat.</p>
+      <p class="sv-claim">Claim: Tom naps.</p>
+      <span class="sv-verdicts">
+        <span class="sv-opt sv-opt--on">Must be true</span>
+        <span class="sv-opt">Must be false</span>
+        <span class="sv-opt">Could be either</span>
+      </span>
     </div>
   );
 }
 
 const FEATURES: Array<{ id: string; icon: IconName; title: string; text: string }> = [
-  { id: 'daily', icon: 'calendar', title: 'A Daily Forge for everyone', text: 'The same ten questions for everyone, every day. Share your grid, never the answers.' },
-  { id: 'adaptive', icon: 'layers', title: 'Practice that adapts', text: 'Every fallacy has its own Leitner box. Mistakes come back sooner; mastered ones fade out.' },
-  { id: 'library', icon: 'book', title: 'The library', text: 'How to spot each one, a classic example, and when the move is actually fair.' },
-  { id: 'progress', icon: 'flame', title: 'Progress and streaks', text: 'Mastery per fallacy, a practice heatmap and an accuracy trend.' },
-  { id: 'offline', icon: 'phone', title: 'Works offline', text: 'Install it like an app. After the first visit it runs without a connection.' },
-  { id: 'open', icon: 'code', title: 'Free and open source', text: 'MIT licensed. No accounts, no ads, no tracking.' },
+  { id: 'daily', icon: 'calendar', title: 'One Daily Forge for everyone', text: 'The same ten questions for everyone each day. Share your grid, never the answers.' },
+  { id: 'adaptive', icon: 'repeat', title: 'Practice that adapts', text: 'Mistakes come back sooner; mastered fallacies fade out.' },
+  { id: 'library', icon: 'book', title: 'The library', text: 'How to spot each fallacy, and when the move is actually fair.' },
+  { id: 'progress', icon: 'flame', title: 'Progress and streaks', text: 'Mastery per fallacy, streaks and a practice heatmap.' },
 ];
 
 function FeatureVisual({ id, count }: { id: string; count: number }) {
@@ -182,22 +179,6 @@ function FeatureVisual({ id, count }: { id: string; count: number }) {
       </div>
     );
   }
-  if (id === 'offline' || id === 'open') {
-    const pills: Array<[IconName, string]> =
-      id === 'offline'
-        ? [['download', 'Install'], ['check', 'Offline ready'], ['phone', 'Phone to desktop']]
-        : [['shield', 'No tracking'], ['check', 'No account'], ['code', 'MIT license']];
-    return (
-      <ul class="fv-pills" aria-hidden="true">
-        {pills.map(([icon, text]) => (
-          <li key={text}>
-            <Icon name={icon} size={14} />
-            {text}
-          </li>
-        ))}
-      </ul>
-    );
-  }
   return null;
 }
 
@@ -222,7 +203,7 @@ export function WelcomeScreen(): JSX.Element {
               Spot bad arguments in five minutes a day.
             </h1>
             <p class="hero__sub">
-              Realistic posts, emails and headlines with the flaw hidden among ordinary sentences, plus sound arguments that only look broken.
+              Practice on short, realistic arguments: spot the flaw, fix the argument, and work out what follows.
             </p>
             <div class="hero__ctas">
               <ButtonLink href="#/play/daily" variant="primary" size="lg" iconRight="arrow-right">
@@ -244,36 +225,32 @@ export function WelcomeScreen(): JSX.Element {
       <section class="w-section how" aria-labelledby="how-title">
         <div class="w-inner">
           <Reveal class="w-head">
-            <p class="eyebrow">How it works</p>
             <h2 id="how-title" class="w-title">
-              Two small steps, then the lesson.
+              Three ways to practice.
             </h2>
           </Reveal>
-          <ol class="steps">
-            {STEPS.map((step, i) => (
-              <Reveal as="li" key={step.title} index={i} class="step-card">
-                <StepVisual kind={step.visual} />
-                <p class="step-card__n" aria-hidden="true">
-                  0{i + 1}
-                </p>
-                <h3 class="step-card__title">{step.title}</h3>
-                <p class="step-card__text">{step.text}</p>
+          <ul class="steps">
+            {ACTIVITIES.map((activity, i) => (
+              <Reveal as="li" key={activity.id} index={i} class="step-card">
+                <ActivityVisual id={activity.id} />
+                <h3 class="step-card__title">{activity.title}</h3>
+                <p class="step-card__text">{activity.text}</p>
+                <a class="text-link step-card__link" href={activity.href}>
+                  Try it<span class="sr-only">: {activity.title}</span>
+                  <Icon name="arrow-right" size={18} />
+                </a>
               </Reveal>
             ))}
-          </ol>
+          </ul>
         </div>
       </section>
 
       <section class="w-section formats" aria-labelledby="formats-title">
         <div class="w-inner formats__grid">
           <Reveal class="formats__copy">
-            <p class="eyebrow">Real-world formats</p>
             <h2 id="formats-title" class="w-title">
               Practice on what you actually read.
             </h2>
-            <p class="w-lead">
-              Posts, emails, group chats, headlines, ads, reviews and speeches. The flaw sits among ordinary, often reasonable sentences, the way it does in real life.
-            </p>
             <ul class="format-list">
               {(Object.keys(FORMAT_LABELS) as Array<keyof typeof FORMAT_LABELS>).map((format) => (
                 <li key={format}>
@@ -296,7 +273,6 @@ export function WelcomeScreen(): JSX.Element {
       <section class="w-section features" aria-labelledby="features-title">
         <div class="w-inner">
           <Reveal class="w-head">
-            <p class="eyebrow">What's inside</p>
             <h2 id="features-title" class="w-title">
               Built for a five‑minute habit.
             </h2>
@@ -316,24 +292,13 @@ export function WelcomeScreen(): JSX.Element {
         </div>
       </section>
 
-      <section class="w-section" aria-labelledby="repair-discover-title">
-        <div class="w-inner">
-          <Reveal class="repair-discover">
-            <p class="eyebrow">From spotting to improving</p>
-            <h2 id="repair-discover-title" class="w-title">Found the flaw? Try fixing it.</h2>
-            <p class="w-lead">Choose a better version of an everyday argument. Practice finding missing evidence, checking assumptions, and making fairer claims.</p>
-            <ButtonLink href="#/practice" variant="secondary" iconRight="arrow-right">Explore the activities</ButtonLink>
-          </Reveal>
-        </div>
-      </section>
-
       <section class="w-section final-cta" aria-labelledby="final-title">
         <Reveal class="final-cta__inner">
           <LogoMark size={56} />
           <h2 id="final-title" class="final-cta__title">
             Five minutes. One sharper eye.
           </h2>
-          <p class="final-cta__text">No account, no ads, nothing to install.</p>
+          <p class="final-cta__text">Free and open source. No account, no ads, and it works offline.</p>
           <ButtonLink href="#/play/daily" variant="primary" size="lg" iconRight="arrow-right">
             Start today's forge
           </ButtonLink>

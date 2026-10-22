@@ -5705,7 +5705,7 @@
       "cue": "randomly assigned to get a text reminder the day before or no reminder",
       "explanation": "Dr. Haddad's groups were split at random, so other differences between patients should even out. That makes the reminders a fair explanation for the lower no-show rate.",
       "whyNot": {
-        "fal_false_cause": "This isn't a bare correlation: random assignment rules out the usual hidden third factors, so crediting the texts is reasonable."
+        "fal_false_cause": "Random assignment reduces systematic differences between groups, so the results support a causal explanation. Chance variation and study limitations remain possible."
       },
       "tags": [
         "health",
@@ -5965,7 +5965,7 @@
       "cue": "If only a few in the shipment were bad, hitting five failures in a row would be really unlikely",
       "explanation": "Five is a small sample, but Jae picked at random from different boxes, and every one failed. If defects were rare, that result would be very unlikely, so concluding the shipment is badly flawed is reasonable.",
       "whyNot": {
-        "fal_hasty_generalization": "The sample is small but random, and five out of five failures is too extreme to blame on chance, so rejecting the lot is justified."
+        "fal_hasty_generalization": "Five randomly chosen failures are strong evidence against a low defect rate. That supports rejecting the lot, without showing every cable is faulty."
       },
       "tags": [
         "workplace",

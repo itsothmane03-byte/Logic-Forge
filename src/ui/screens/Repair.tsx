@@ -1,7 +1,7 @@
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef } from 'preact/hooks';
 import { repairOptions } from '../../engine/repair';
-import { checkRepair, nextRepair, repairSession, selectRepairOption, startRepair } from '../../state/repair';
+import { checkRepair, nextRepair, repairSession, retryRepairMisses, selectRepairOption, startRepair } from '../../state/repair';
 import { fallacyName, storageOk } from '../../state/store';
 import { Button, ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
@@ -41,7 +41,7 @@ export function RepairScreen(): JSX.Element {
       selectRepairOption(option.id);
       document.querySelector<HTMLInputElement>(`input[data-repair-index="${event.key}"]`)?.focus();
     } else if (event.key === 'Enter' && !(event.target instanceof HTMLButtonElement)
-      && !(event.target instanceof HTMLAnchorElement)) {
+      && !(event.target instanceof HTMLAnchorElement) && !(event.target instanceof HTMLElement && event.target.closest('summary'))) {
       event.preventDefault();
       if (state.checked) nextRepair();
       else checkRepair();
@@ -61,7 +61,8 @@ export function RepairScreen(): JSX.Element {
         <p class="lead">{total ? 'You practiced choosing evidence, checking assumptions, and making fairer claims.' : 'Visit the library while we prepare the next set.'}</p>
         <p>Your repair scores are saved separately from quiz mastery.</p>
         <div class="repair-result__actions">
-          <Button variant="primary" icon="refresh" onClick={() => startRepair()}>Try another set</Button>
+          {score < total && <Button variant="primary" icon="repeat" onClick={retryRepairMisses}>Retry missed arguments</Button>}
+          <Button variant={score < total ? 'secondary' : 'primary'} icon="refresh" onClick={() => startRepair()}>Try another set</Button>
           <ButtonLink href="#/practice" variant="secondary">Back to practice</ButtonLink>
         </div>
         <ButtonLink href="#/progress" variant="ghost" iconRight="arrow-right">See your progress</ButtonLink>
@@ -115,9 +116,13 @@ export function RepairScreen(): JSX.Element {
             role="status" ref={feedbackRef} tabIndex={-1} aria-labelledby="repair-feedback-title">
             <h2 id="repair-feedback-title"><Icon name={selected.correct ? 'check' : 'refresh'} size={22} />{selected.correct ? 'That makes it stronger.' : 'This still leaves a problem.'}</h2>
             <p>{selected.explanation}</p>
-            {!selected.correct && correct && <div class="repair-feedback__better"><h3>A stronger revision</h3><p>{correct.text}</p><p>{correct.explanation}</p></div>}
-            <p class="repair-feedback__principle">{item.principle}</p>
-            <a class="text-link" href={`#/library/${item.fallacyId}`}>Explore {fallacyName(item.fallacyId)} <Icon name="arrow-right" size={16} /></a>
+            {!selected.correct && correct && <div class="repair-feedback__better"><h3>A stronger revision</h3><p>{correct.text}</p></div>}
+            <details class="activity-details" key={item.id}>
+              <summary>Why this repair helps</summary>
+              {!selected.correct && correct && <p>{correct.explanation}</p>}
+              <p class="repair-feedback__principle">{item.principle}</p>
+              <a class="text-link" href={`#/library/${item.fallacyId}`}>Explore {fallacyName(item.fallacyId)} <Icon name="arrow-right" size={16} /></a>
+            </details>
             <Button variant="primary" size="lg" block kbd="Enter" onClick={nextRepair}>{state.index === total - 1 ? 'See results' : 'Next argument'}</Button>
           </div>
         )}

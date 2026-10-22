@@ -75,6 +75,7 @@ describe('argument repair flow', () => {
       fireEvent.click(screen.getByRole('button', { name: index === 4 ? /^See results/ : /^Next argument/ }));
     }
     expect(screen.getByRole('heading', { name: 'A little more thoughtful.' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /^Retry missed arguments/ })).toBeNull();
     expect(progress.peek().repair).toEqual({ recent: ids, answered: 5, correct: 5, sets: 1 });
     const { repair: _originalRepairs, ...originalQuiz } = original;
     const { repair: _newRepairs, ...newQuiz } = progress.peek();
@@ -83,6 +84,48 @@ describe('argument repair flow', () => {
     expect(repairSession.peek()!.answers).toHaveLength(0);
     if (repairs.length >= 10) expect(repairSession.peek()!.items.every((item) => !ids.includes(item.id))).toBe(true);
     expect(progress.peek().repair.sets).toBe(1);
+  });
+
+  it('retries only missed arguments and counts progress only when they are checked again', () => {
+    startRepair('retry-mixed-set');
+    const originalItems = repairSession.peek()!.items;
+    const missedIds = [originalItems[1]!.id, originalItems[3]!.id];
+    render(<RepairScreen />);
+    for (let index = 0; index < originalItems.length; index += 1) {
+      const item = originalItems[index]!;
+      const shouldMiss = missedIds.includes(item.id);
+      const option = item.options.find((candidate) => candidate.correct !== shouldMiss)!;
+      fireEvent.click(screen.getByRole('radio', { name: option.text }));
+      fireEvent.click(screen.getByRole('button', { name: /^Check my revision/ }));
+      fireEvent.click(screen.getByRole('button', { name: index === originalItems.length - 1 ? /^See results/ : /^Next argument/ }));
+    }
+    const beforeRetry = progress.peek();
+    expect(beforeRetry.repair).toEqual({
+      recent: originalItems.map((item) => item.id), answered: 5, correct: 3, sets: 1,
+    });
+
+    fireEvent.click(screen.getByRole('button', { name: /^Retry missed arguments/ }));
+    expect(repairSession.peek()!.items.map((item) => item.id)).toEqual(missedIds);
+    expect(repairSession.peek()).toMatchObject({ index: 0, selected: null, checked: false, finished: false, answers: [] });
+    expect(screen.getByText('1 / 2')).toBeTruthy();
+    expect(progress.peek()).toBe(beforeRetry);
+
+    for (let index = 0; index < missedIds.length; index += 1) {
+      const item = repairSession.peek()!.items[index]!;
+      const correct = item.options.find((option) => option.correct)!;
+      const beforeSelection = progress.peek();
+      fireEvent.click(screen.getByRole('radio', { name: correct.text }));
+      expect(progress.peek()).toBe(beforeSelection);
+      fireEvent.click(screen.getByRole('button', { name: /^Check my revision/ }));
+      expect(progress.peek().repair.answered).toBe(6 + index);
+      expect(progress.peek().repair.correct).toBe(4 + index);
+      fireEvent.click(screen.getByRole('button', { name: index === missedIds.length - 1 ? /^See results/ : /^Next argument/ }));
+    }
+    expect(progress.peek().repair).toEqual({
+      recent: [...beforeRetry.repair.recent, ...missedIds], answered: 7, correct: 5, sets: 2,
+    });
+    expect(screen.getByRole('heading', { name: 'A little more thoughtful.' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /^Retry missed arguments/ })).toBeNull();
   });
 
   it('stays usable when browser storage rejects a save', () => {

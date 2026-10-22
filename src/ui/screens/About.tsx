@@ -13,7 +13,7 @@ export function AboutScreen(): JSX.Element {
         <h1 class="page-title" tabIndex={-1}>
           About Fallacy Forge
         </h1>
-        <p class="lead">Short activities for spotting weak reasoning and building stronger arguments. Version {APP_VERSION}.</p>
+        <p class="lead">Short activities for clearer thinking. Version {APP_VERSION}.</p>
       </header>
 
       <section class="about-block" aria-labelledby="about-what">
@@ -26,9 +26,10 @@ export function AboutScreen(): JSX.Element {
       </section>
 
       <section class="about-block" aria-labelledby="about-activities">
-        <h2 id="about-activities">Two ways to practice</h2>
+        <h2 id="about-activities">Three ways to practice</h2>
         <p><strong>Spot the flaw</strong> asks whether an argument holds up and, if it does not, which fallacy it contains. <strong>Fix the argument</strong> asks you to choose a revision that addresses the problem: better evidence, a fairer claim, or a missing assumption made clear.</p>
-        <p>Repair scores and question history save separately from quiz mastery. A stronger argument can still need more evidence.</p>
+        <p><strong>What follows?</strong> gives you a few facts and a claim. Decide whether the claim must be true, must be false, or could be either. Treat the facts as given; everyday likelihood is a different question.</p>
+        <p>Repair and deduction scores save separately from quiz mastery. A stronger argument can still need more evidence.</p>
       </section>
 
       <section class="about-block" aria-labelledby="about-scoring">
@@ -58,7 +59,7 @@ export function AboutScreen(): JSX.Element {
         <div>
           <h2 id="about-privacy">Your progress never leaves this browser.</h2>
           <p>
-            No accounts, no analytics, no network calls. Everything is stored locally on your device; you can export it or reset
+            No accounts, analytics, or progress uploads. Your answers are stored locally on your device; you can export them or reset
             it from the Progress page.
           </p>
         </div>
@@ -68,7 +69,7 @@ export function AboutScreen(): JSX.Element {
         <h2 id="about-open">Open source</h2>
         <p>
           Fallacy Forge is free and MIT licensed. All scenarios are fictional. The original quiz bank has automated validation
-          and documented independent AI blind reviews. Repair exercises are checked separately. Built by {AUTHOR}.
+          and documented independent AI blind reviews. Repair exercises are checked separately; deduction answers are computed from every situation allowed by their facts. Built by {AUTHOR}.
         </p>
         <div class="about-actions">
           <ButtonLink href={REPO_URL} variant="secondary" icon="code" rel="noopener">

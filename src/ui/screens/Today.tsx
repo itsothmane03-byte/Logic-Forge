@@ -1,23 +1,25 @@
-// Home: greeting + streak, first-run card, the Daily Forge hero, secondary cards.
+// Home: greeting + streak, an optional how-to, the Daily Forge hero, review
+// mistakes, and the three practice activities beside the fallacy of the day.
 
 import type { JSX } from 'preact';
 import { DAILY_SIZE, dailyNumber } from '../../engine/daily';
 import { dateKey, msUntilMidnight } from '../../engine/dates';
 import { sessionScore } from '../../engine/score';
 import { reviewQueue } from '../../engine/select';
-import { fallacyOfTheDay, weakestFallacies } from '../../engine/stats';
+import { fallacyOfTheDay } from '../../engine/stats';
 import { currentStreak } from '../../engine/streak';
-import type { Outcome } from '../../engine/types';
+import type { Fallacy, Outcome } from '../../engine/types';
 import { navigate } from '../../router';
 import { dailySummary, summary } from '../../state/session';
 import { bank, bankItemIds, markOnboarded, progress } from '../../state/store';
-import { Button, ButtonLink, IconButton } from '../components/Button';
+import { Button, ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
 import { LogoMark } from '../components/Logo';
 import { FamilyDot, StreakChip } from '../components/Primitives';
 import { ShareButton } from '../components/Share';
 import { useNow } from '../hooks';
 import { countdown, cx, greeting, longDate, plural } from '../util';
+import { ACTIVITIES, ActivityCard } from './Practice';
 
 function DailyPips({ answers, total }: { answers: readonly Outcome[]; total: number }) {
   return (
@@ -29,39 +31,51 @@ function DailyPips({ answers, total }: { answers: readonly Outcome[]; total: num
   );
 }
 
+/** First-run help, collapsed so it never pushes the Daily Forge down. */
 function HowItWorks() {
+  const hide = () => {
+    markOnboarded();
+    document.querySelector<HTMLElement>('#main h1')?.focus();
+  };
+
   return (
-    <section class="howto" aria-labelledby="howto-title">
-      <div class="howto__head">
-        <h2 id="howto-title" class="howto__title">
-          How it works
-        </h2>
-        <IconButton icon="x" label="Dismiss How it works" onClick={markOnboarded} />
+    <details class="howto">
+      <summary class="howto__summary">
+        <Icon name="info" size={18} class="howto__icon" />
+        New here? See how it works
+        <Icon name="chevron-down" size={18} class="howto__chev" />
+      </summary>
+      <div class="howto__body">
+        <ol class="howto__steps">
+          <li>
+            <span class="howto__n" aria-hidden="true">1</span>
+            <span>
+              <strong>Spot.</strong> Is the reasoning sound or flawed?
+            </span>
+          </li>
+          <li>
+            <span class="howto__n" aria-hidden="true">2</span>
+            <span>
+              <strong>Name.</strong> Pick the fallacy from four look-alikes.
+            </span>
+          </li>
+          <li>
+            <span class="howto__n" aria-hidden="true">3</span>
+            <span>
+              <strong>Learn.</strong> See the phrase that gives it away.
+            </span>
+          </li>
+        </ol>
+        <div class="howto__actions">
+          <ButtonLink href="#/play/demo" variant="secondary" size="sm" icon="sparkle">
+            Try one
+          </ButtonLink>
+          <Button variant="ghost" size="sm" onClick={hide}>
+            Got it, hide this
+          </Button>
+        </div>
       </div>
-      <ol class="howto__steps">
-        <li>
-          <span class="howto__n" aria-hidden="true">1</span>
-          <span>
-            <strong>Spot.</strong> Is the reasoning sound or flawed?
-          </span>
-        </li>
-        <li>
-          <span class="howto__n" aria-hidden="true">2</span>
-          <span>
-            <strong>Name.</strong> Pick the fallacy from four look-alikes.
-          </span>
-        </li>
-        <li>
-          <span class="howto__n" aria-hidden="true">3</span>
-          <span>
-            <strong>Learn.</strong> See the exact phrase that gives it away.
-          </span>
-        </li>
-      </ol>
-      <ButtonLink href="#/play/demo" variant="secondary" icon="sparkle">
-        Try one
-      </ButtonLink>
-    </section>
+    </details>
   );
 }
 
@@ -131,15 +145,56 @@ function DailyHero({ now }: { now: number }) {
   );
 }
 
+/** A slim full-width banner on wide screens; stacked and roomy on phones. */
+function ReviewBanner({ count }: { count: number }) {
+  return (
+    <section class="tile tile--review" aria-labelledby="review-title">
+      <span class="tile__icon" aria-hidden="true">
+        <Icon name="refresh" size={22} />
+      </span>
+      <div class="tile__body">
+        <h2 id="review-title" class="tile__title">
+          Review mistakes <span class="tile__count">({count})</span>
+        </h2>
+        <p class="tile__sub">{plural(count, 'recent miss', 'recent misses')}, newest first.</p>
+      </div>
+      <ButtonLink href="#/play/review" variant="secondary" iconRight="arrow-right" class="tile__cta">
+        Review
+      </ButtonLink>
+    </section>
+  );
+}
+
+function FallacyOfTheDay({ fallacy }: { fallacy: Fallacy }) {
+  return (
+    <section class="tile tile--fotd" aria-labelledby="fotd-title">
+      <p class="eyebrow tile__eyebrow">
+        <FamilyDot family={fallacy.family} />
+        Fallacy of the day
+      </p>
+      <h2 id="fotd-title" class="tile__title">
+        {fallacy.name}
+      </h2>
+      <p class="tile__sub">{fallacy.shortDef}</p>
+      <div class="tile__foot">
+        <a class="text-link" href={`#/library/${fallacy.id}`}>
+          Learn it <Icon name="arrow-right" size={18} />
+        </a>
+        <a class="text-link" href="#/library">
+          All {bank.fallacies.length} fallacies
+        </a>
+      </div>
+    </section>
+  );
+}
+
 export function TodayScreen(): JSX.Element {
   const now = useNow(30_000);
   const today = dateKey(now);
   const p = progress.value;
   const streak = currentStreak(p.days, today);
-  const weakest = weakestFallacies(bank.fallacies, p, 3);
   const reviewCount = reviewQueue(p.attempts, bankItemIds).length;
   const fotd = fallacyOfTheDay(bank.fallacies, today);
-  const practiced = p.attempts.length > 0;
 
   return (
     <div class="page today">
@@ -157,73 +212,11 @@ export function TodayScreen(): JSX.Element {
 
       <div class="today-grid">
         <DailyHero now={now} />
-
-        <section class="tile tile--practice" aria-labelledby="practice-title">
-          <span class="tile__icon" aria-hidden="true">
-            <Icon name="target" size={22} />
-          </span>
-          <h2 id="practice-title" class="tile__title">
-            Spot the flaw
-          </h2>
-          <p class="tile__sub">Adaptive · your weak spots first</p>
-          {weakest.length > 0 && (
-            <div class="tile__chips">
-              <p class="tile__chips-label">{practiced ? 'Needs work' : 'Good places to start'}</p>
-              <ul class="chip-row">
-                {weakest.map((f) => (
-                  <li key={f.id}>
-                    <a class="chip chip--link" href={`#/library/${f.id}`}>
-                      <FamilyDot family={f.family} />
-                      {f.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          <ButtonLink href="#/play/practice" variant="secondary" iconRight="arrow-right" class="tile__cta">
-            Spot the flaw
-          </ButtonLink>
-        </section>
-
-        <section class="tile tile--repair" aria-labelledby="today-repair-title">
-          <span class="tile__icon" aria-hidden="true"><Icon name="scale" size={22} /></span>
-          <h2 id="today-repair-title" class="tile__title">Fix the argument</h2>
-          <p class="tile__sub">Go beyond spotting the problem. Choose a better way to make the point.</p>
-          <p class="tile__text">5 exercises · about 5 min</p>
-          <ButtonLink href="#/repair" variant="secondary" iconRight="arrow-right" class="tile__cta">Try a repair</ButtonLink>
-        </section>
-
-        {reviewCount > 0 && (
-          <section class="tile tile--review" aria-labelledby="review-title">
-            <span class="tile__icon" aria-hidden="true">
-              <Icon name="refresh" size={22} />
-            </span>
-            <h2 id="review-title" class="tile__title">
-              Review mistakes <span class="tile__count">({reviewCount})</span>
-            </h2>
-            <p class="tile__sub">{plural(reviewCount, 'recent miss', 'recent misses')}, newest first.</p>
-            <ButtonLink href="#/play/review" variant="secondary" iconRight="arrow-right" class="tile__cta">
-              Review
-            </ButtonLink>
-          </section>
-        )}
-
-        {fotd && (
-          <section class="tile tile--fotd" aria-labelledby="fotd-title">
-            <p class="eyebrow tile__eyebrow">
-              <FamilyDot family={fotd.family} />
-              Fallacy of the day
-            </p>
-            <h2 id="fotd-title" class="tile__title tile__title--big">
-              {fotd.name}
-            </h2>
-            <p class="tile__text">{fotd.shortDef}</p>
-            <a class="text-link tile__cta" href={`#/library/${fotd.id}`}>
-              Learn it <Icon name="arrow-right" size={18} />
-            </a>
-          </section>
-        )}
+        {reviewCount > 0 && <ReviewBanner count={reviewCount} />}
+        {ACTIVITIES.map((activity) => (
+          <ActivityCard key={activity.id} activity={activity} />
+        ))}
+        {fotd && <FallacyOfTheDay fallacy={fotd} />}
       </div>
     </div>
   );

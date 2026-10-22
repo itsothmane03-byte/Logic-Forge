@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import {
   defaultProgress,
   loadProgress,
+  MAX_ACTIVITY_RECENT,
   MAX_ATTEMPTS,
   MAX_SESSIONS,
   parseImport,
@@ -143,5 +144,59 @@ describe('import / export', () => {
       expect(wrong.error).toContain('boxes');
       expect(wrong.error).toContain('bestStreak');
     }
+  });
+});
+
+describe('activity progress compatibility', () => {
+  it('loads pre-activity saves and exports without losing any existing quiz progress', () => {
+    const { repair: _repair, logic: _logic, ...legacy } = sample();
+    const expected = { ...legacy, repair: defaultProgress().repair, logic: defaultProgress().logic };
+    expect(loadProgress(memoryStorage(JSON.stringify(legacy)))).toEqual(expected);
+    expect(parseImport(JSON.stringify(legacy))).toEqual({ ok: true, progress: expected });
+  });
+
+  it('round-trips distinct activity histories and counters alongside quiz data', () => {
+    const current: Progress = {
+      ...sample(),
+      repair: { recent: ['repair_one', 'repair_two'], answered: 12, correct: 8, sets: 2 },
+      logic: { recent: ['logic_ten', 'logic_eleven', 'logic_twelve'], answered: 27, correct: 19, sets: 5 },
+    };
+    const imported = parseImport(serializeExport(current));
+    expect(imported).toEqual({ ok: true, progress: current });
+    const storage = memoryStorage();
+    expect(saveProgress(storage, current)).toBe(true);
+    expect(loadProgress(storage)).toEqual(current);
+  });
+
+  it('filters invalid logic IDs, keeps the latest 100, and clamps impossible scores', () => {
+    const ids = Array.from({ length: 130 }, (_, index) => `logic_${index}`);
+    const raw = {
+      ...sample(),
+      repair: { recent: ['repair_kept'], answered: 15, correct: 10, sets: 3 },
+      logic: {
+        recent: [null, {}, 4, ...ids, '', '<script>', 'HAS CAPITALS', 'a'.repeat(101)],
+        answered: 3,
+        correct: 99,
+        sets: -1,
+      },
+    };
+    const imported = parseImport(JSON.stringify(raw));
+    expect(imported.ok).toBe(true);
+    if (!imported.ok) throw new Error(imported.error);
+    expect(imported.progress.logic).toEqual({ recent: ids.slice(-100), answered: 3, correct: 3, sets: 0 });
+    expect(imported.progress.logic.recent).toHaveLength(MAX_ACTIVITY_RECENT);
+    expect(imported.progress.repair).toEqual(raw.repair);
+    expect(imported.progress.boxes).toEqual(raw.boxes);
+    expect(imported.progress.attempts).toEqual(raw.attempts);
+  });
+
+  it('defaults malformed logic data and invalid counts without replacing valid quiz data', () => {
+    for (const logic of ['corrupt', null, [], { recent: 'bad', answered: -2, correct: 1.5, sets: 'many' }]) {
+      const clean = sanitizeProgress({ ...sample(), logic })!;
+      expect(clean).toEqual(sample());
+    }
+    const clean = sanitizeProgress({ ...sample(), logic: { recent: ['logic_kept'], answered: 1.5, correct: 4, sets: 2 } })!;
+    expect(clean.logic).toEqual({ recent: ['logic_kept'], answered: 0, correct: 0, sets: 2 });
+    expect(clean.daily).toEqual(sample().daily);
   });
 });
