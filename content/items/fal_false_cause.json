@@ -101,7 +101,7 @@
     "passage": "Hi everyone, here are the pilot results. For three months, patients booking appointments were randomly assigned to get a text reminder the day before or no reminder. The no-show rate was 8% with texts and 14% without, across about 1,900 appointments. Since the groups were split by chance, the texts are the likely reason for the drop, so I suggest we keep them.",
     "cue": "randomly assigned to get a text reminder the day before or no reminder",
     "explanation": "Dr. Haddad's groups were split at random, so other differences between patients should even out. That makes the reminders a fair explanation for the lower no-show rate.",
-    "whyNot": { "fal_false_cause": "This isn't a bare correlation: random assignment rules out the usual hidden third factors, so crediting the texts is reasonable." },
+    "whyNot": { "fal_false_cause": "Random assignment reduces systematic differences between groups, so the results support a causal explanation. Chance variation and study limitations remain possible." },
     "tags": ["health", "workplace"]
   },
   {

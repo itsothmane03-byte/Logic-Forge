@@ -23,6 +23,7 @@ function sectionOf(route: Route): Section | null {
       return route.mode === 'practice' ? 'practice' : null;
     case 'practice':
     case 'repair':
+    case 'logic':
       return 'practice';
     case 'library':
     case 'fallacy':

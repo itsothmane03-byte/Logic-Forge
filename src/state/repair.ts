@@ -5,6 +5,7 @@ import { repairs } from '../data/repairs';
 import { selectRepairs, type RepairItem } from '../engine/repair';
 import { MAX_REPAIR_RECENT } from '../engine/storage';
 import { progress, updateProgress } from './store';
+import { registerSessionInvalidator } from './lifecycle';
 
 export interface RepairAnswer {
   itemId: string;
@@ -34,6 +35,20 @@ export function startRepair(seed = `${Date.now()}:${Math.random()}`): void {
 
 export function clearRepairSession(): void {
   repairSession.value = null;
+}
+
+registerSessionInvalidator(clearRepairSession);
+
+export function retryRepairMisses(): void {
+  const previous = repairSession.peek();
+  if (!previous?.finished) return;
+  const missed = new Set(previous.answers.filter((answer) => !answer.correct).map((answer) => answer.itemId));
+  const items = previous.items.filter((item) => missed.has(item.id));
+  if (items.length === 0) return;
+  repairSession.value = {
+    seed: `${Date.now()}:${Math.random()}`, items,
+    index: 0, selected: null, checked: false, finished: false, answers: [],
+  };
 }
 
 export function selectRepairOption(id: string): void {

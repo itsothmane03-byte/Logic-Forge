@@ -11,6 +11,7 @@ import { pickDemoItem, selectFocus, selectPractice, selectReview } from '../engi
 import * as S from '../engine/session';
 import type { Item, Mode, Outcome, SpotChoice } from '../engine/types';
 import type { PlayRoute } from '../router';
+import { registerSessionInvalidator } from './lifecycle';
 import { bank, bankItemIds, commit, fallacyById, itemById, markOnboarded, progress } from './store';
 
 export const session = signal<S.SessionState | null>(null);
@@ -109,10 +110,20 @@ export function optionsFor(state: S.SessionState, item: Item): string[] {
 }
 
 function settle(state: S.SessionState, item: Item, outcome: Outcome): void {
+  const at = Date.now();
   const daily = state.mode === 'daily' && state.dateKey
     ? { key: state.dateKey, itemIds: state.itemIds, outcomes: state.outcomes }
     : undefined;
-  commit(S.recordAnswer(progress.value, item, outcome, { mode: state.mode, at: Date.now(), daily }));
+  const answered = S.recordAnswer(progress.value, item, outcome, { mode: state.mode, at, daily });
+  // Completion must survive closing the final feedback without pressing Continue.
+  // The answer state machine only settles each question once.
+  const completed = state.mode !== 'demo' && state.outcomes.length === state.itemIds.length;
+  commit(completed ? S.recordSession(answered, {
+    mode: state.mode,
+    at,
+    total: state.itemIds.length,
+    correct: sessionScore(state.outcomes),
+  }) : answered);
 }
 
 export function spot(choice: SpotChoice): void {
@@ -170,12 +181,6 @@ export function next(): 'next' | 'finished' | 'none' {
     markOnboarded();
     return 'finished';
   }
-  commit(S.recordSession(progress.value, {
-    mode: advanced.mode,
-    at: Date.now(),
-    total: advanced.itemIds.length,
-    correct: sessionScore(advanced.outcomes),
-  }));
   summary.value = summarize(advanced);
   return 'finished';
 }
@@ -188,6 +193,12 @@ export function wouldLoseAnswers(state: S.SessionState | null = session.value): 
 
 export function endSession(): void {
   session.value = null;
+}
+
+/** Discards cached quiz state when saved progress is replaced or reset. */
+export function clearQuizSession(): void {
+  session.value = null;
+  summary.value = null;
 }
 
 /** Summary for today's (or another day's) finished Daily, rebuilt from progress. */
@@ -205,3 +216,5 @@ export function dailySummary(key: string): SummaryData | null {
     changes: [],
   };
 }
+
+registerSessionInvalidator(clearQuizSession);

@@ -14,7 +14,7 @@ export default defineConfig({
       manifest: {
         name: 'Fallacy Forge',
         short_name: 'Fallacy Forge',
-        description: 'Learn to spot bad arguments in five minutes a day.',
+        description: 'Spot weak arguments, make them stronger, and practice deduction.',
         lang: 'en',
         theme_color: '#FAF8F4',
         background_color: '#FAF8F4',

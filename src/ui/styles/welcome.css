@@ -270,10 +270,3 @@
   font-weight: 800;
   letter-spacing: -0.035em;
 }
-
-.w-lead {
-  margin-top: 14px;
-  color: var(--ink-2);
-  font-size: 1.125rem;
-  line-height: 1.6;
-}

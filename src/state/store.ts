@@ -1,6 +1,7 @@
 // App state (signals): the question bank, persisted progress, toasts.
 
-import { signal } from '@preact/signals';
+import { batch, signal } from '@preact/signals';
+import { invalidateSessionCaches } from './lifecycle';
 import bankJson from '../data/bank.json';
 import { defaultProgress, loadProgress, saveProgress, STORAGE_KEY } from '../engine/storage';
 import type { Bank, Family, Fallacy, Item, Progress, ThemeSetting } from '../engine/types';
@@ -43,6 +44,14 @@ export function updateProgress(fn: (p: Progress) => Progress): void {
   commit(fn(progress.value));
 }
 
+/** Replace a save and its transient sessions together (reset and import). */
+export function replaceProgress(next: Progress): void {
+  batch(() => {
+    commit(next);
+    invalidateSessionCaches();
+  });
+}
+
 export function setTheme(theme: ThemeSetting): void {
   updateProgress((p) => ({ ...p, settings: { ...p.settings, theme } }));
 }
@@ -57,13 +66,24 @@ export function markOnboarded(): void {
 
 /** Clears all progress but keeps display settings. */
 export function resetProgress(): void {
-  commit({ ...defaultProgress(), settings: progress.value.settings, onboarded: true });
+  replaceProgress({ ...defaultProgress(), settings: progress.value.settings, onboarded: true });
+}
+
+function learningSnapshot(p: Progress): string {
+  return JSON.stringify([p.boxes, p.stats, p.soundStats, p.attempts, p.days, p.daily, p.sessions, p.bestStreak, p.repair, p.logic]);
 }
 
 /** Keeps several open tabs in sync. */
 export function watchOtherTabs(): () => void {
   const onStorage = (event: StorageEvent) => {
-    if (event.key === STORAGE_KEY) progress.value = loadProgress(storage());
+    if (event.key !== STORAGE_KEY && event.key !== null) return;
+    const next = loadProgress(storage());
+    const changed = learningSnapshot(progress.peek()) !== learningSnapshot(next);
+    batch(() => {
+      progress.value = next;
+      if (changed) invalidateSessionCaches();
+    });
+    if (changed) showToast('Progress updated in another tab.');
   };
   window.addEventListener('storage', onStorage);
   return () => window.removeEventListener('storage', onStorage);

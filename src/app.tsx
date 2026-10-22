@@ -18,6 +18,8 @@ import { TodayScreen } from './ui/screens/Today';
 import { WelcomeScreen } from './ui/screens/Welcome';
 import { PracticeScreen } from './ui/screens/Practice';
 import { RepairScreen } from './ui/screens/Repair';
+import { LogicScreen } from './ui/screens/Logic';
+import { dataEpoch } from './state/lifecycle';
 import { cx } from './ui/util';
 import { dateKey } from './engine/dates';
 
@@ -33,6 +35,8 @@ function titleFor(r: Route, welcome: boolean): string {
       return `Practice · ${SUFFIX}`;
     case 'repair':
       return `Fix the argument · ${SUFFIX}`;
+    case 'logic':
+      return `What follows? · ${SUFFIX}`;
     case 'play':
       return `${sessionTitle(session.peek(), r)} · ${SUFFIX}`;
     case 'summary':
@@ -72,12 +76,14 @@ export function App(): JSX.Element {
   const p = progress.value;
   // Decided once per navigation, so showing the Welcome page doesn't flip itself off.
   const showWelcome = useMemo(
-    () => r.name === 'welcome' || (r.name === 'today' && !welcomeShown.peek() && p.attempts.length === 0 && !p.onboarded),
+    () => r.name === 'welcome' || (r.name === 'today' && !welcomeShown.peek()
+      && p.attempts.length === 0 && p.repair.answered === 0 && p.logic.answered === 0 && !p.onboarded),
     [r],
   );
-  const inSession = r.name === 'play' || r.name === 'repair';
+  const epoch = dataEpoch.value;
+  const inSession = r.name === 'play' || r.name === 'repair' || r.name === 'logic';
   const playKey = r.name === 'play' ? sessionKey(r, dateKey()) : '';
-  const key = showWelcome ? 'welcome' : r.name === 'play' ? `play:${playKey}` : r.name === 'fallacy' ? `fallacy:${r.fallacyId}` : r.name;
+  const key = `${showWelcome ? 'welcome' : r.name === 'play' ? `play:${playKey}` : r.name === 'fallacy' ? `fallacy:${r.fallacyId}` : r.name}:${epoch}`;
 
   useSameHashLinks();
 
@@ -89,7 +95,7 @@ export function App(): JSX.Element {
       if (!heading.hasAttribute('tabindex')) heading.setAttribute('tabindex', '-1');
       heading.focus({ preventScroll: true });
     }
-  }, [r]);
+  }, [r, epoch]);
 
   useKeydown((event) => {
     if (event.key === '?' && isShortcutEvent(event)) {
@@ -107,6 +113,9 @@ export function App(): JSX.Element {
         break;
       case 'repair':
         screen = <RepairScreen />;
+        break;
+      case 'logic':
+        screen = <LogicScreen />;
         break;
       case 'play':
         screen = <SessionScreen key={playKey} route={r} />;

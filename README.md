@@ -11,13 +11,13 @@
 
 ![The Welcome page: headline, call to action and a live question you can answer](docs/screenshots/welcome.png)
 
-Fallacy Forge offers two ways to practice clear thinking. **Spot the flaw** uses short, realistic passages (posts, emails, group chats, headlines, ads, reviews, speeches), mixed with **sound near-misses**: arguments that only look broken. **Fix the argument** asks you to choose a revision that addresses the reasoning problem, with an explanation for your actual choice.
+Fallacy Forge offers three ways to practice clear thinking. **Spot the flaw** uses short, realistic passages mixed with **sound near-misses**: arguments that only look broken. **Fix the argument** asks you to choose a stronger revision. **What follows?** gives you facts and a claim: must it be true, must it be false, or could it be either?
 
 ## Screenshots
 
-| Choose an activity | Fix the argument |
-| --- | --- |
-| ![Practice hub with Spot the flaw and Fix the argument](docs/screenshots/practice.jpg) | ![An argument and three possible repairs](docs/screenshots/repair.jpg) |
+| Choose an activity | Fix the argument | What follows? |
+| --- | --- | --- |
+| ![Practice hub with three activities](docs/screenshots/practice.png) | ![An argument and three possible repairs](docs/screenshots/repair.jpg) | ![Facts, a claim, and three deduction choices](docs/screenshots/logic.png) |
 
 | Today | Spot the flaw | Learn from the answer |
 | --- | --- | --- |
@@ -39,18 +39,23 @@ Scoring is honest about near-misses: **correct** (right call, right name), **rig
 
 In **Fix the argument**, read a fictional argument, choose one of three revisions, and check why that revision helps or leaves a problem unresolved. Five exercises make a set. Options are shuffled, exercises do not repeat within a set, and unseen exercises come before recently answered ones. A stronger revision can still need more evidence; the exercise does not establish a real-world claim as true.
 
+In **What follows?**, treat a few facts as given and classify a claim. Every allowed combination of facts is checked to compute the answer. Optional examples show situations that fit, including a true and a false case when both are possible. “Could be either” makes no probability claim. Five unique puzzles make a set; unseen puzzles come first, then the least recently answered.
+
+Both activities offer a missed-only retry after a set. Retries count as new attempts in that activity’s scores. Checked answers save immediately; unfinished sets resume during navigation, while refreshing starts a new set.
+
 ## Features
 
-- **Practice hub.** Choose between identifying a flaw and repairing an argument. Both are available from Today; the original practice URL still works.
+- **Practice hub.** Three short activity cards: spot a flaw, repair an argument, or practice deduction. All are available from Today; the original practice URL still works.
 - **Argument repair.** 15 exercises across 15 fallacies in all six families. Short sets of five, feedback for each selected revision, library links, and separate local scores/history. Repairs do not change quiz mastery, quiz accuracy, or Daily streaks.
+- **Deduction.** 18 exercises with computed answers, optional help and examples, separate scores, and missed-only retries. Deduction does not change quiz mastery or Daily streaks.
 - **Daily Forge.** The same ten questions for everyone each day (seeded by date: 8 flawed from 8 different fallacies across three difficulty levels, plus 2 sound), resumable, with a Wordle-style share grid.
 - **Adaptive practice.** One Leitner box (1 to 5) per fallacy. Mistakes come back sooner, recently seen items are held back, and the same fallacy never appears twice in a row.
 - **Focus mode.** Ten questions on one fallacy, mixed with its look-alikes so it can't be pattern-matched.
 - **Review mistakes.** Your recent misses, newest first.
 - **The library.** All 38 fallacies: definition, how to spot it, a classic example, **when the move is actually legitimate**, contrasts with its look-alikes, and two passages "in the wild" with a reveal toggle.
-- **Progress.** Mastery by family, current and best streak, a 20-week practice heatmap, an accuracy trend, and export, import or reset of your data.
-- **Private by design.** No accounts, analytics or network calls. Progress lives in your browser's local storage.
-- **Works everywhere.** Installable PWA that works offline after the first visit, phones from 320px to wide desktops, light and dark themes, full keyboard control (`S` / `F`, `1`–`4`, `Enter`, `/`, `?`), built to WCAG 2.2 AA.
+- **Progress.** Mastery by family, current and best streak, a 20-week practice heatmap, an accuracy trend, separate activity counters, and export, import or reset of your data. Completed quiz history saves with the final answer. Reset/import or a learning change in another tab clears stale active sessions; settings-only changes preserve them.
+- **Private by design.** No accounts, analytics, or progress uploads. Progress lives in your browser's local storage.
+- **Works everywhere.** Installable PWA that works offline after the first visit, phones from 320px to wide desktops, light and dark themes, keyboard shortcuts (`S` / `F`, `1`–`4`, `Enter`, `/`, `?`), with WCAG 2.2 AA as the accessibility target.
 
 ## Content quality
 
@@ -60,6 +65,7 @@ Content is the product, so it goes through two gates before it ships:
 - **Automated validator** (`npm run content`). Enforces the schema and every length limit, exact verbatim cues, the canonical "confusable with" lists, required titles, unique ids and the 6 + 2 composition per fallacy, then prints distribution stats (formats, tags, difficulty, passage-length percentiles).
 - **Independent AI blind review of the quiz bank.** All 304 quiz questions were labelled blind by an independent AI reviewer: 302/304 (99.3%) agreement in round 1; all 21 revised questions confirmed in round 2. See [content/review/README.md](content/review/README.md). Those results apply to the identification quiz, not the new repair collection, and are not human expert validation.
 - **Repair collection.** Authored separately in `src/data/repairs.ts`, with a single best revision, explanations for all three choices, and content/selection tests. See the [separate AI content check](content/review/repairs-2026-10-22.md) for scope and corrections. History and scores use the same local export/import/reset controls; older progress exports remain compatible.
+- **Deduction collection.** Authored in `src/data/logic.ts`; a small exhaustive evaluator checks each permitted assignment. Tests cover answer classification, example validity, consistent facts, unique IDs, and selection. A separate AI read-through found no text/expression mismatch; this is not human expert validation. See [the review scope](content/review/logic-2026-10-22.md).
 
 The full writing standard is in [`docs/CONTENT-SPEC.md`](docs/CONTENT-SPEC.md).
 
@@ -74,17 +80,17 @@ The full writing standard is in [`docs/CONTENT-SPEC.md`](docs/CONTENT-SPEC.md).
 | Tests | Vitest + jsdom + Testing Library |
 | CI / hosting | GitHub Actions, GitHub Pages |
 
-The app's JavaScript has a **150 KB gzip budget**, checked during each build; the identification question bank loads as its own chunk. Engine logic (seeded RNG, Daily selection, adaptive practice, repair selection, distractors, scoring, mastery, streaks, storage and sharing) is pure TypeScript with unit tests.
+The app's JavaScript has a **150 KB gzip budget**, checked during each build; the identification question bank loads as its own chunk. Selection, deduction evaluation, scoring, mastery, streaks, storage and sharing use pure TypeScript with unit tests.
 
 ```
 content/      fallacies/ and items/ (authored JSON), fixtures/ (dev only), source/ (v0 reference)
 scripts/      canonical.mjs, validate-content.mjs, build-bank.mjs, check-bundle.mjs, dev/ (browser checks)
 src/
-  data/       bank.json (generated by `npm run content`, committed), repairs.ts (authored)
-  engine/     pure logic: rng, daily, select, distractors, score, mastery, streak, storage, share, stats
+  data/       bank.json (generated and committed), repairs.ts, logic.ts (authored)
+  engine/     pure logic: rng, daily, select, repair, logic, distractors, score, mastery, streak, storage, share, stats
   state/      signals: progress, settings, current session
   ui/         components/, screens/, styles/
-tests/        engine/*.test.ts, content.test.ts, session/repair flows, feedback regressions
+tests/        engine/*.test.ts, content.test.ts, activity flows, lifecycle/feedback regressions
 ```
 
 ## Development

@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## 2.2.0 — 2026-10-22
+
+- **What follows?** 18 fictional deduction puzzles in sets of five. Classify a claim as necessarily true, necessarily false, or possible either way. Answers are checked across every permitted combination of facts, with optional concrete examples.
+- **Less reading before practice.** Three compact activity cards, shorter Today and Welcome pages, and expandable help. Fixed the desktop Review card layout.
+- **Retry missed exercises.** Revisit only the arguments or deduction puzzles missed in the set you just finished. Checked attempts count in each activity’s separate local scores.
+- **Reliable progress.** Completed quiz history saves with the last answer, even if the page closes before Continue. Reset/import and learning changes from another tab discard stale sessions in all three activities. Old exports remain compatible.
+- **Corrections.** Malformed URL escapes recover safely. Two quiz explanations now describe sampling and randomized evidence without overstating certainty.
+
 ## 2.1.0 — 2026-10-22
 
 - **Fix the argument.** 15 fictional exercises across 15 fallacies for choosing a better revision of an everyday argument. Five-exercise sets, shuffled choices, specific feedback for each choice, results, and recency-based selection without repeats within a set.

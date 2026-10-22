@@ -116,7 +116,7 @@
     "passage": "Jae: That cable shipment from Quorvex came in. I pulled 5 cables at random from five different boxes and tested them.\nRenee: And?\nJae: All 5 failed the charge test. If only a few in the shipment were bad, hitting five failures in a row would be really unlikely. I'm rejecting the whole lot and filing a return.",
     "cue": "If only a few in the shipment were bad, hitting five failures in a row would be really unlikely",
     "explanation": "Five is a small sample, but Jae picked at random from different boxes, and every one failed. If defects were rare, that result would be very unlikely, so concluding the shipment is badly flawed is reasonable.",
-    "whyNot": { "fal_hasty_generalization": "The sample is small but random, and five out of five failures is too extreme to blame on chance, so rejecting the lot is justified." },
+    "whyNot": { "fal_hasty_generalization": "Five randomly chosen failures are strong evidence against a low defect rate. That supports rejecting the lot, without showing every cable is faulty." },
     "tags": ["workplace", "shopping"]
   }
 ]

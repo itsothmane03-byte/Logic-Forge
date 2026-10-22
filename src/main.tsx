@@ -15,6 +15,7 @@ import './ui/styles/pages.css';
 import './ui/styles/welcome.css';
 import './ui/styles/welcome-sections.css';
 import './ui/styles/repair.css';
+import './ui/styles/logic.css';
 
 import { effect, untracked } from '@preact/signals';
 import { render } from 'preact';
@@ -23,6 +24,7 @@ import { dateKey } from './engine/dates';
 import { replaceRoute, route, startRouter } from './router';
 import { dailySummary, prepareSession, summary } from './state/session';
 import { progress, watchOtherTabs } from './state/store';
+import { dataEpoch } from './state/lifecycle';
 import { initReveal } from './ui/reveal';
 import { playFallback } from './ui/screens/Session';
 import { applyTheme, watchSystemTheme } from './ui/theme';
@@ -34,6 +36,7 @@ watchSystemTheme(() => progress.peek().settings.theme);
 // Play routes create or resume their session before the screen renders.
 effect(() => {
   const current = route.value;
+  dataEpoch.value;
   if (current.name !== 'play') return;
   untracked(() => {
     const result = prepareSession(current);
