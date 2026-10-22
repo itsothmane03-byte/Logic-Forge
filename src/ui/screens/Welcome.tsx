@@ -316,6 +316,17 @@ export function WelcomeScreen(): JSX.Element {
         </div>
       </section>
 
+      <section class="w-section" aria-labelledby="repair-discover-title">
+        <div class="w-inner">
+          <Reveal class="repair-discover">
+            <p class="eyebrow">From spotting to improving</p>
+            <h2 id="repair-discover-title" class="w-title">Found the flaw? Try fixing it.</h2>
+            <p class="w-lead">Choose a better version of an everyday argument. Practice finding missing evidence, checking assumptions, and making fairer claims.</p>
+            <ButtonLink href="#/practice" variant="secondary" iconRight="arrow-right">Explore the activities</ButtonLink>
+          </Reveal>
+        </div>
+      </section>
+
       <section class="w-section final-cta" aria-labelledby="final-title">
         <Reveal class="final-cta__inner">
           <LogoMark size={56} />

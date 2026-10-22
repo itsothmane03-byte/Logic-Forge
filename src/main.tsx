@@ -14,6 +14,7 @@ import './ui/styles/detail.css';
 import './ui/styles/pages.css';
 import './ui/styles/welcome.css';
 import './ui/styles/welcome-sections.css';
+import './ui/styles/repair.css';
 
 import { effect, untracked } from '@preact/signals';
 import { render } from 'preact';

@@ -1,6 +1,6 @@
 // Tiny hash router (GitHub Pages friendly).
 //   #/  #/welcome  #/play/daily|practice|review|demo  #/play/focus/:id
-//   #/summary  #/library  #/library/:id  #/progress  #/about
+//   #/practice  #/repair  #/summary  #/library  #/library/:id  #/progress  #/about
 // Unknown routes go to Today.
 
 import { signal } from '@preact/signals';
@@ -10,6 +10,8 @@ export type PlayMode = 'daily' | 'practice' | 'review' | 'demo';
 export type Route =
   | { name: 'today' }
   | { name: 'welcome' }
+  | { name: 'practice' }
+  | { name: 'repair' }
   | { name: 'play'; mode: PlayMode }
   | { name: 'play'; mode: 'focus'; fallacyId: string }
   | { name: 'summary' }
@@ -31,6 +33,8 @@ export function matchHash(hash: string): Route | null {
   if (parts.length === 0) return { name: 'today' };
   if (parts.length === 1) {
     if (head === 'welcome') return { name: 'welcome' };
+    if (head === 'practice') return { name: 'practice' };
+    if (head === 'repair') return { name: 'repair' };
     if (head === 'summary') return { name: 'summary' };
     if (head === 'library') return { name: 'library' };
     if (head === 'progress') return { name: 'progress' };
@@ -53,6 +57,8 @@ export function hrefFor(route: Route): string {
   switch (route.name) {
     case 'today': return '#/';
     case 'welcome': return '#/welcome';
+    case 'practice': return '#/practice';
+    case 'repair': return '#/repair';
     case 'play': return route.mode === 'focus' ? `#/play/focus/${route.fallacyId}` : `#/play/${route.mode}`;
     case 'summary': return '#/summary';
     case 'library': return '#/library';

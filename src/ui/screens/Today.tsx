@@ -163,7 +163,7 @@ export function TodayScreen(): JSX.Element {
             <Icon name="target" size={22} />
           </span>
           <h2 id="practice-title" class="tile__title">
-            Practice
+            Spot the flaw
           </h2>
           <p class="tile__sub">Adaptive · your weak spots first</p>
           {weakest.length > 0 && (
@@ -182,8 +182,16 @@ export function TodayScreen(): JSX.Element {
             </div>
           )}
           <ButtonLink href="#/play/practice" variant="secondary" iconRight="arrow-right" class="tile__cta">
-            Start practice
+            Spot the flaw
           </ButtonLink>
+        </section>
+
+        <section class="tile tile--repair" aria-labelledby="today-repair-title">
+          <span class="tile__icon" aria-hidden="true"><Icon name="scale" size={22} /></span>
+          <h2 id="today-repair-title" class="tile__title">Fix the argument</h2>
+          <p class="tile__sub">Go beyond spotting the problem. Choose a better way to make the point.</p>
+          <p class="tile__text">5 exercises · about 5 min</p>
+          <ButtonLink href="#/repair" variant="secondary" iconRight="arrow-right" class="tile__cta">Try a repair</ButtonLink>
         </section>
 
         {reviewCount > 0 && (

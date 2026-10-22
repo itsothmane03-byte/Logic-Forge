@@ -84,6 +84,14 @@ export interface SessionRecord {
   correct: number;
 }
 
+/** Argument repair is a separate skill from identifying a fallacy. */
+export interface RepairProgress {
+  recent: string[];
+  answered: number;
+  correct: number;
+  sets: number;
+}
+
 /** Persisted progress (localStorage key `fallacyforge:v1`). */
 export interface Progress {
   version: 1;
@@ -97,6 +105,7 @@ export interface Progress {
   daily: Record<string, DailyRecord>;
   sessions: SessionRecord[];
   bestStreak: number;
+  repair: RepairProgress;
 }
 
 export type SpotChoice = 'sound' | 'flawed';

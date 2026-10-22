@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## 2.1.0 — 2026-10-22
+
+- **Fix the argument.** 15 fictional exercises across 15 fallacies for choosing a better revision of an everyday argument. Five-exercise sets, shuffled choices, specific feedback for each choice, results, and recency-based selection without repeats within a set.
+- **Practice hub.** Choose between Spot the flaw and Fix the argument, with entry points from Today and Welcome.
+- **Separate repair progress.** Scores and history save locally alongside existing data, with export/import/reset and compatibility with older exports. Identification mastery, quiz accuracy and Daily streaks keep their existing meaning.
+- **Honest quiz feedback.** "Why not X?" now refers only to a fallacy the learner actually selected and for which a written comparison exists. Sound choices and unrelated wrong names no longer receive an unrelated comparison.
+- **Verification.** Added regression tests for answer-specific feedback, repair flows, selection and saved-data compatibility. Clarified that the documented AI blind reviews cover the original quiz bank.
+
 ## 2.0.0 — 2026-10-20
 
 Rebuilt as Fallacy Forge: a full rewrite of the 2025 MVP, from one-line flashcards into a real-world reasoning trainer.

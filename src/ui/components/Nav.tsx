@@ -21,6 +21,9 @@ function sectionOf(route: Route): Section | null {
       return 'today';
     case 'play':
       return route.mode === 'practice' ? 'practice' : null;
+    case 'practice':
+    case 'repair':
+      return 'practice';
     case 'library':
     case 'fallacy':
       return 'library';
@@ -33,7 +36,7 @@ function sectionOf(route: Route): Section | null {
 
 const LINKS: Array<{ id: Section; href: string; label: string; icon: IconName }> = [
   { id: 'today', href: '#/', label: 'Today', icon: 'home' },
-  { id: 'practice', href: '#/play/practice', label: 'Practice', icon: 'target' },
+  { id: 'practice', href: '#/practice', label: 'Practice', icon: 'target' },
   { id: 'library', href: '#/library', label: 'Library', icon: 'book' },
   { id: 'progress', href: '#/progress', label: 'Progress', icon: 'chart' },
 ];

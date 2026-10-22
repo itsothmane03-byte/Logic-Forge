@@ -13,7 +13,7 @@ export function AboutScreen(): JSX.Element {
         <h1 class="page-title" tabIndex={-1}>
           About Fallacy Forge
         </h1>
-        <p class="lead">A five-minute daily practice for reading arguments more sharply. Version {APP_VERSION}.</p>
+        <p class="lead">Short activities for spotting weak reasoning and building stronger arguments. Version {APP_VERSION}.</p>
       </header>
 
       <section class="about-block" aria-labelledby="about-what">
@@ -23,6 +23,12 @@ export function AboutScreen(): JSX.Element {
           conclusion. Fallacies hide in ordinary posts, emails and headlines, usually next to perfectly reasonable sentences.
           Learning to name them helps you notice when you're being persuaded by something other than good reasons.
         </p>
+      </section>
+
+      <section class="about-block" aria-labelledby="about-activities">
+        <h2 id="about-activities">Two ways to practice</h2>
+        <p><strong>Spot the flaw</strong> asks whether an argument holds up and, if it does not, which fallacy it contains. <strong>Fix the argument</strong> asks you to choose a revision that addresses the problem: better evidence, a fairer claim, or a missing assumption made clear.</p>
+        <p>Repair scores and question history save separately from quiz mastery. A stronger argument can still need more evidence.</p>
       </section>
 
       <section class="about-block" aria-labelledby="about-scoring">
@@ -61,8 +67,8 @@ export function AboutScreen(): JSX.Element {
       <section class="about-block" aria-labelledby="about-open">
         <h2 id="about-open">Open source</h2>
         <p>
-          Fallacy Forge is free and MIT licensed. Every question is fictional, checked by an automated validator, and labeled in
-          a blind review before it ships. Built by {AUTHOR}.
+          Fallacy Forge is free and MIT licensed. All scenarios are fictional. The original quiz bank has automated validation
+          and documented independent AI blind reviews. Repair exercises are checked separately. Built by {AUTHOR}.
         </p>
         <div class="about-actions">
           <ButtonLink href={REPO_URL} variant="secondary" icon="code" rel="noopener">

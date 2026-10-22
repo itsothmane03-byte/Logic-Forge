@@ -34,16 +34,14 @@ function copyFor(item: Item, outcome: Outcome, pick: AnswerPick | null): Copy {
   return { title: "There's a flaw here.", icon: 'x', lead: 'The flaw:', nameId: truth };
 }
 
-/** "Why not X?": the picked look-alike when we have a contrast for it, else the item's whyNot. */
+/** Only compare a fallacy the learner actually chose and we can explain. */
 function whyNotFor(item: Item, outcome: Outcome, pick: AnswerPick | null): { id: string; text: string } | null {
+  if (outcome !== 'partial' || !pick?.named || pick.spot !== 'flawed') return null;
+  const specific = item.whyNot[pick.named];
+  if (specific) return { id: pick.named, text: specific };
   const truth = item.fallacyId ? fallacyById.get(item.fallacyId) : undefined;
-  if (outcome === 'partial' && pick?.named && truth) {
-    if (item.whyNot[pick.named]) return { id: pick.named, text: item.whyNot[pick.named] ?? '' };
-    const contrast = truth.contrast[pick.named];
-    if (contrast) return { id: pick.named, text: contrast };
-  }
-  const [id] = Object.keys(item.whyNot);
-  return id ? { id, text: item.whyNot[id] ?? '' } : null;
+  const contrast = truth?.contrast[pick.named];
+  return contrast ? { id: pick.named, text: contrast } : null;
 }
 
 interface SheetProps {

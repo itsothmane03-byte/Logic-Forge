@@ -1,6 +1,6 @@
 # Fallacy Forge
 
-**Learn to spot bad arguments in five minutes a day.**
+**Spot weak reasoning. Practice making it stronger.**
 
 [**Try it live →**](https://itsothmane03-byte.github.io/Logic-Forge/) · Free · No account · Works offline
 
@@ -11,9 +11,13 @@
 
 ![The Welcome page: headline, call to action and a live question you can answer](docs/screenshots/welcome.png)
 
-Most fallacy quizzes are flashcards: one line that announces its own flaw. Fallacy Forge trains the real skill, **discrimination**. You read short, realistic passages (posts, emails, group chats, headlines, ads, reviews, speeches) where the flawed move hides among ordinary sentences, mixed with **sound near-misses**: arguments that only look broken.
+Fallacy Forge offers two ways to practice clear thinking. **Spot the flaw** uses short, realistic passages (posts, emails, group chats, headlines, ads, reviews, speeches), mixed with **sound near-misses**: arguments that only look broken. **Fix the argument** asks you to choose a revision that addresses the reasoning problem, with an explanation for your actual choice.
 
 ## Screenshots
+
+| Choose an activity | Fix the argument |
+| --- | --- |
+| ![Practice hub with Spot the flaw and Fix the argument](docs/screenshots/practice.jpg) | ![An argument and three possible repairs](docs/screenshots/repair.jpg) |
 
 | Today | Spot the flaw | Learn from the answer |
 | --- | --- | --- |
@@ -25,16 +29,20 @@ Most fallacy quizzes are flashcards: one line that announces its own flaw. Falla
 
 ## How it works
 
-Every question is two small steps, then the lesson:
+In **Spot the flaw**, each question is two small steps, then the lesson:
 
 1. **Spot.** Is the reasoning sound or flawed?
 2. **Name.** If it's flawed, which fallacy? Four options, and the wrong ones are deliberately its closest look-alikes.
-3. **Learn.** The flawed phrase lights up in the passage, with a one-line explanation and "why it's not" the nearest confusable.
+3. **Learn.** The flawed phrase lights up in the passage, with an explanation of the answer. A "Why not X?" comparison appears only when you actually picked X and a written comparison exists for it.
 
 Scoring is honest about near-misses: **correct** (right call, right name), **right instinct** (you saw the flaw but picked the wrong name) or **missed**.
 
+In **Fix the argument**, read a fictional argument, choose one of three revisions, and check why that revision helps or leaves a problem unresolved. Five exercises make a set. Options are shuffled, exercises do not repeat within a set, and unseen exercises come before recently answered ones. A stronger revision can still need more evidence; the exercise does not establish a real-world claim as true.
+
 ## Features
 
+- **Practice hub.** Choose between identifying a flaw and repairing an argument. Both are available from Today; the original practice URL still works.
+- **Argument repair.** 15 exercises across 15 fallacies in all six families. Short sets of five, feedback for each selected revision, library links, and separate local scores/history. Repairs do not change quiz mastery, quiz accuracy, or Daily streaks.
 - **Daily Forge.** The same ten questions for everyone each day (seeded by date: 8 flawed from 8 different fallacies across three difficulty levels, plus 2 sound), resumable, with a Wordle-style share grid.
 - **Adaptive practice.** One Leitner box (1 to 5) per fallacy. Mistakes come back sooner, recently seen items are held back, and the same fallacy never appears twice in a row.
 - **Focus mode.** Ten questions on one fallacy, mixed with its look-alikes so it can't be pattern-matched.
@@ -50,7 +58,8 @@ Content is the product, so it goes through two gates before it ships:
 
 - **38 fallacies in 6 families, 304 questions.** Each fallacy has 6 flawed passages (two at each difficulty level) and 2 sound near-misses. People, companies, towns and outlets are fictional, and partisan hot-button topics are off-limits.
 - **Automated validator** (`npm run content`). Enforces the schema and every length limit, exact verbatim cues, the canonical "confusable with" lists, required titles, unique ids and the 6 + 2 composition per fallacy, then prints distribution stats (formats, tags, difficulty, passage-length percentiles).
-- **Blind review.** Every question was labelled blind by an independent reviewer: 302/304 (99.3%) agreement in round 1; all 21 revised questions confirmed in round 2. See [content/review/README.md](content/review/README.md).
+- **Independent AI blind review of the quiz bank.** All 304 quiz questions were labelled blind by an independent AI reviewer: 302/304 (99.3%) agreement in round 1; all 21 revised questions confirmed in round 2. See [content/review/README.md](content/review/README.md). Those results apply to the identification quiz, not the new repair collection, and are not human expert validation.
+- **Repair collection.** Authored separately in `src/data/repairs.ts`, with a single best revision, explanations for all three choices, and content/selection tests. See the [separate AI content check](content/review/repairs-2026-10-22.md) for scope and corrections. History and scores use the same local export/import/reset controls; older progress exports remain compatible.
 
 The full writing standard is in [`docs/CONTENT-SPEC.md`](docs/CONTENT-SPEC.md).
 
@@ -65,17 +74,17 @@ The full writing standard is in [`docs/CONTENT-SPEC.md`](docs/CONTENT-SPEC.md).
 | Tests | Vitest + jsdom + Testing Library |
 | CI / hosting | GitHub Actions, GitHub Pages |
 
-The app ships about **37 KB of gzipped JavaScript** (budget: 150 KB); the question bank loads as its own chunk. All engine logic (seeded RNG, Daily selection, adaptive practice, distractors, scoring, mastery, streaks, storage and sharing) is pure TypeScript with unit tests.
+The app's JavaScript has a **150 KB gzip budget**, checked during each build; the identification question bank loads as its own chunk. Engine logic (seeded RNG, Daily selection, adaptive practice, repair selection, distractors, scoring, mastery, streaks, storage and sharing) is pure TypeScript with unit tests.
 
 ```
 content/      fallacies/ and items/ (authored JSON), fixtures/ (dev only), source/ (v0 reference)
 scripts/      canonical.mjs, validate-content.mjs, build-bank.mjs, check-bundle.mjs, dev/ (browser checks)
 src/
-  data/       bank.json (generated by `npm run content`, committed)
+  data/       bank.json (generated by `npm run content`, committed), repairs.ts (authored)
   engine/     pure logic: rng, daily, select, distractors, score, mastery, streak, storage, share, stats
   state/      signals: progress, settings, current session
   ui/         components/, screens/, styles/
-tests/        engine/*.test.ts, content.test.ts, session.flow.test.tsx
+tests/        engine/*.test.ts, content.test.ts, session/repair flows, feedback regressions
 ```
 
 ## Development

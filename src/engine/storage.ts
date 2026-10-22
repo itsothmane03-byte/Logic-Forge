@@ -3,12 +3,13 @@
 
 import { isDateKey } from './dates';
 import type {
-  Attempt, Box, DailyRecord, Outcome, Progress, SessionRecord, Settings, Tally, ThemeSetting,
+  Attempt, Box, DailyRecord, Outcome, Progress, RepairProgress, SessionRecord, Settings, Tally, ThemeSetting,
 } from './types';
 
 export const STORAGE_KEY = 'fallacyforge:v1';
 export const MAX_ATTEMPTS = 500;
 export const MAX_SESSIONS = 60;
+export const MAX_REPAIR_RECENT = 100;
 
 const OUTCOMES: readonly Outcome[] = ['correct', 'partial', 'wrong'];
 const THEMES: readonly ThemeSetting[] = ['system', 'light', 'dark'];
@@ -33,6 +34,7 @@ export function defaultProgress(): Progress {
     daily: {},
     sessions: [],
     bestStreak: 0,
+    repair: { recent: [], answered: 0, correct: 0, sets: 0 },
   };
 }
 
@@ -121,6 +123,17 @@ function cleanSessions(raw: unknown): SessionRecord[] {
   return out.slice(-MAX_SESSIONS);
 }
 
+function cleanRepair(raw: unknown): RepairProgress {
+  if (!isRecord(raw)) return defaultProgress().repair;
+  const answered = isCount(raw.answered) ? raw.answered : 0;
+  const correct = isCount(raw.correct) ? Math.min(raw.correct, answered) : 0;
+  const sets = isCount(raw.sets) ? raw.sets : 0;
+  const recent = Array.isArray(raw.recent)
+    ? raw.recent.filter((id): id is string => typeof id === 'string' && /^[a-z0-9_]{1,100}$/.test(id)).slice(-MAX_REPAIR_RECENT)
+    : [];
+  return { recent, answered, correct, sets };
+}
+
 /**
  * Coerces untrusted data into a valid Progress. Returns null when the data is
  * not a version-1 progress object at all; otherwise drops invalid entries.
@@ -139,6 +152,7 @@ export function sanitizeProgress(raw: unknown): Progress | null {
     daily: cleanDaily(raw.daily),
     sessions: cleanSessions(raw.sessions),
     bestStreak: isCount(raw.bestStreak) ? raw.bestStreak : 0,
+    repair: cleanRepair(raw.repair),
   };
 }
 
@@ -170,6 +184,7 @@ export function trimProgress(progress: Progress): Progress {
     ...progress,
     attempts: progress.attempts.slice(-MAX_ATTEMPTS),
     sessions: progress.sessions.slice(-MAX_SESSIONS),
+    repair: { ...progress.repair, recent: progress.repair.recent.slice(-MAX_REPAIR_RECENT) },
   };
 }
 

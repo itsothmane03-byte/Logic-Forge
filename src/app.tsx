@@ -16,6 +16,8 @@ import { SessionScreen, sessionTitle } from './ui/screens/Session';
 import { SummaryScreen } from './ui/screens/Summary';
 import { TodayScreen } from './ui/screens/Today';
 import { WelcomeScreen } from './ui/screens/Welcome';
+import { PracticeScreen } from './ui/screens/Practice';
+import { RepairScreen } from './ui/screens/Repair';
 import { cx } from './ui/util';
 import { dateKey } from './engine/dates';
 
@@ -27,6 +29,10 @@ function titleFor(r: Route, welcome: boolean): string {
       return welcome ? `Welcome · ${SUFFIX}` : `Today · ${SUFFIX}`;
     case 'welcome':
       return `Welcome · ${SUFFIX}`;
+    case 'practice':
+      return `Practice · ${SUFFIX}`;
+    case 'repair':
+      return `Fix the argument · ${SUFFIX}`;
     case 'play':
       return `${sessionTitle(session.peek(), r)} · ${SUFFIX}`;
     case 'summary':
@@ -69,7 +75,7 @@ export function App(): JSX.Element {
     () => r.name === 'welcome' || (r.name === 'today' && !welcomeShown.peek() && p.attempts.length === 0 && !p.onboarded),
     [r],
   );
-  const inSession = r.name === 'play';
+  const inSession = r.name === 'play' || r.name === 'repair';
   const playKey = r.name === 'play' ? sessionKey(r, dateKey()) : '';
   const key = showWelcome ? 'welcome' : r.name === 'play' ? `play:${playKey}` : r.name === 'fallacy' ? `fallacy:${r.fallacyId}` : r.name;
 
@@ -96,6 +102,12 @@ export function App(): JSX.Element {
   if (showWelcome) screen = <WelcomeScreen />;
   else {
     switch (r.name) {
+      case 'practice':
+        screen = <PracticeScreen />;
+        break;
+      case 'repair':
+        screen = <RepairScreen />;
+        break;
       case 'play':
         screen = <SessionScreen key={playKey} route={r} />;
         break;

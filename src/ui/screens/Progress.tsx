@@ -8,7 +8,8 @@ import { parseImport, serializeExport } from '../../engine/storage';
 import { currentStreak } from '../../engine/streak';
 import type { Progress, ThemeSetting } from '../../engine/types';
 import { bank, commit, progress, resetProgress, setShowDefinitions, setTheme, showToast, storageOk } from '../../state/store';
-import { Button } from '../components/Button';
+import { clearRepairSession } from '../../state/repair';
+import { Button, ButtonLink } from '../components/Button';
 import { Heatmap, Sparkline } from '../components/Charts';
 import { SegmentedControl, Switch } from '../components/Controls';
 import { ConfirmDialog } from '../components/Dialog';
@@ -27,8 +28,8 @@ function StatRow({ p, today }: { p: Progress; today: string }) {
   const acc = accuracy(p);
   const mastered = masteredCount(p.boxes, bank.fallacies.map((f) => f.id));
   const stats: Array<{ value: string; label: string }> = [
-    { value: String(totalAnswered(p.days)), label: 'questions answered' },
-    { value: acc === null ? '—' : `${Math.round(acc * 100)}%`, label: 'accuracy' },
+    { value: String(totalAnswered(p.days)), label: 'quiz questions answered' },
+    { value: acc === null ? '—' : `${Math.round(acc * 100)}%`, label: 'quiz accuracy' },
     { value: `${currentStreak(p.days, today)} / ${Math.max(p.bestStreak, currentStreak(p.days, today))}`, label: 'current / best streak' },
     { value: `${mastered} / ${bank.fallacies.length}`, label: 'fallacies mastered' },
   ];
@@ -101,7 +102,10 @@ function DataSettings() {
         message="The imported file will replace everything currently saved in this browser."
         confirmLabel="Replace"
         onConfirm={() => {
-          if (pending) commit(pending);
+          if (pending) {
+            commit(pending);
+            clearRepairSession();
+          }
           setPending(null);
           showToast('Progress imported');
         }}
@@ -110,11 +114,12 @@ function DataSettings() {
       <ConfirmDialog
         open={confirmReset}
         title="Reset all progress?"
-        message="This clears your answers, mastery, streaks and Daily history in this browser. It can't be undone."
+        message="This clears your quiz answers, mastery, streaks, Daily history and repair progress in this browser. It can't be undone."
         confirmLabel="Reset everything"
         danger
         onConfirm={() => {
           resetProgress();
+          clearRepairSession();
           setConfirmReset(false);
           showToast('Progress reset');
         }}
@@ -140,6 +145,17 @@ export function ProgressScreen(): JSX.Element {
       </header>
 
       <StatRow p={p} today={today} />
+
+      <section class="panel repair-progress" aria-labelledby="repair-progress-title">
+        <h2 id="repair-progress-title" class="panel__title">Fix the argument</h2>
+        <p class="panel__sub">Choosing better reasoning is a separate skill. These scores do not change your quiz mastery.</p>
+        <dl class="repair-progress__stats">
+          <div><dt>exercises answered</dt><dd>{p.repair.answered}</dd></div>
+          <div><dt>best repairs chosen</dt><dd>{p.repair.correct}</dd></div>
+          <div><dt>sets completed</dt><dd>{p.repair.sets}</dd></div>
+        </dl>
+        <ButtonLink href="#/repair" variant="secondary" iconRight="arrow-right">Practice repairs</ButtonLink>
+      </section>
 
       <div class="progress-grid">
         <Reveal as="section" class="panel panel--heatmap" aria-labelledby="heat-title">
