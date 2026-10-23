@@ -206,8 +206,8 @@ export function WelcomeScreen(): JSX.Element {
               Practice on short, realistic arguments: spot the flaw, fix the argument, and work out what follows.
             </p>
             <div class="hero__ctas">
-              <ButtonLink href="#/setup" variant="primary" size="lg" iconRight="arrow-right">
-                Make it yours
+              <ButtonLink href="#/practice" variant="primary" size="lg" iconRight="arrow-right">
+                Choose practice
               </ButtonLink>
               <a class="text-link text-link--strong" href="#/library">
                 Browse the {count} fallacies
@@ -298,7 +298,7 @@ export function WelcomeScreen(): JSX.Element {
           <h2 id="final-title" class="final-cta__title">
             Five minutes. One sharper eye.
           </h2>
-          <p class="final-cta__text">Free and open source. No account, no ads, and it works offline.</p>
+          <p class="final-cta__text">Free and open source.</p>
           <ButtonLink href="#/play/daily" variant="primary" size="lg" iconRight="arrow-right">
             Start today's forge
           </ButtonLink>

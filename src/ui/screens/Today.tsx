@@ -14,7 +14,6 @@ import { dailySummary, summary } from '../../state/session';
 import { bank, bankItemIds, markOnboarded, progress } from '../../state/store';
 import { Button, ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
-import { LogoMark } from '../components/Logo';
 import { FamilyDot, StreakChip } from '../components/Primitives';
 import { ShareButton } from '../components/Share';
 import { useNow } from '../hooks';
@@ -103,7 +102,7 @@ function DailyHero({ now }: { now: number }) {
         <h2 id="daily-title" class="daily-hero__title">
           Daily Forge <span class="daily-hero__num">#{number}</span>
         </h2>
-        <p class="daily-hero__meta">{total} questions · about 5 min</p>
+        <p class="daily-hero__meta">Same {total} questions for everyone today · about 5 min</p>
         <DailyPips answers={answers} total={total} />
         <div class="daily-hero__actions">
           {answers.length === 0 && (
@@ -131,15 +130,6 @@ function DailyHero({ now }: { now: number }) {
             Next forge in {countdown(msUntilMidnight(new Date(now)))}
           </p>
         )}
-      </div>
-      <div class="daily-hero__art" aria-hidden="true">
-        <span class="daily-hero__spark daily-hero__spark--a">
-          <Icon name="spark" size={22} />
-        </span>
-        <span class="daily-hero__spark daily-hero__spark--b">
-          <Icon name="spark" size={14} />
-        </span>
-        <LogoMark size={190} class="daily-hero__mark" />
       </div>
     </section>
   );

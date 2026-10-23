@@ -52,15 +52,16 @@ export function AboutScreen(): JSX.Element {
         </p>
       </section>
 
-      <section class="about-block about-block--privacy" aria-labelledby="about-privacy">
+      <section class="about-block about-block--privacy" aria-labelledby="about-storage">
         <span class="about-block__icon" aria-hidden="true">
-          <Icon name="shield" size={24} />
+          <Icon name="download" size={24} />
         </span>
         <div>
-          <h2 id="about-privacy">Your progress never leaves this browser.</h2>
+          <h2 id="about-storage">Where your progress is saved</h2>
           <p>
-            No accounts, analytics, or progress uploads. Your answers are stored locally on your device; you can export them or reset
-            it from the Progress page.
+            Your answers and settings are saved only in this browser; there is no server or account that stores them. To back them up
+            or move them to another device, export a file from the Progress page and import it there. Clearing this browser's site
+            data removes them. Once the app has loaded, it also works offline.
           </p>
         </div>
       </section>

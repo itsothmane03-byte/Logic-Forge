@@ -5,7 +5,7 @@ import { useState } from 'preact/hooks';
 import { dateKey } from '../../engine/dates';
 import { BAND_MESSAGES, scoreBand, sessionScore } from '../../engine/score';
 import type { Item, Outcome } from '../../engine/types';
-import { dailySummary, summary, type SummaryData } from '../../state/session';
+import { dailySummary, session, summary, type SummaryData } from '../../state/session';
 import { fallacyName, itemById } from '../../state/store';
 import { ButtonLink } from '../components/Button';
 import { ProgressRing } from '../components/Charts';
@@ -65,6 +65,8 @@ function Content({ data }: { data: SummaryData }) {
   const band = scoreBand(correct, total);
   const title = sessionTitle({ mode: data.mode, dateKey: data.dateKey, focusId: data.focusId });
   const items = data.itemIds.map((id) => itemById.get(id));
+  const current = session.value;
+  const resumePractice = current?.key === 'practice' && !current.finished;
 
   return (
     <div class="page page--narrow summary">
@@ -118,7 +120,7 @@ function Content({ data }: { data: SummaryData }) {
 
       <div class="summary-actions">
         <ButtonLink href="#/play/practice" variant="primary" size="lg" icon="target">
-          Practice weak spots
+          {resumePractice ? 'Resume practice' : 'Practice 10 more'}
         </ButtonLink>
         <ButtonLink href="#/" variant="secondary" size="lg">
           Back to Today

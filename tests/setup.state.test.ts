@@ -6,7 +6,7 @@ import type { Progress } from '../src/engine/types';
 import { replaceRoute, route } from '../src/router';
 import { invalidateSessionCaches } from '../src/state/lifecycle';
 import { logicSession, selectLogicVerdict, startLogic } from '../src/state/logic';
-import { cancelSetup, finishSetup, hasActivePractice, shouldOfferSetup, skipSetup } from '../src/state/onboarding';
+import { cancelSetup, finishSetup, hasActivePractice, saveSetup } from '../src/state/onboarding';
 import { repairSession, selectRepairOption, startRepair } from '../src/state/repair';
 import { next, session, spot, startCustomSession, summary } from '../src/state/session';
 import { bank, commit, progress, setTheme, storageOk, welcomeShown } from '../src/state/store';
@@ -40,39 +40,21 @@ function startQuiz(mode: 'practice' | 'daily' | 'focus' | 'review' | 'demo' = 'p
   spot('flawed'); // A live Name-step draft must survive setup.
 }
 
-const histories: Array<[string, (p: Progress) => void]> = [
-  ['completed onboarding', (p) => { p.onboarded = true; }],
-  ['demo answer', (p) => { p.attempts.push({ itemId: sound.id, outcome: 'correct', at: AT, mode: 'demo' }); }],
-  ['mastery box', (p) => { p.boxes[flawed.fallacyId!] = 2; }],
-  ['fallacy statistics', (p) => { p.stats[flawed.fallacyId!] = { seen: 1, correct: 0 }; }],
-  ['sound statistics', (p) => { p.soundStats = { seen: 1, correct: 0 }; }],
-  ['practice day', (p) => { p.days['2026-10-22'] = 1; }],
-  ['Daily answer', (p) => { p.daily['2026-10-22'] = { itemIds: [sound.id], answers: ['correct'], done: true }; }],
-  ['session history', (p) => { p.sessions.push({ mode: 'practice', at: AT, total: 5, correct: 3 }); }],
-  ['previous streak', (p) => { p.bestStreak = 1; }],
-  ['repair answer', (p) => { p.repair.answered = 1; }],
-  ['repair set', (p) => { p.repair.sets = 1; }],
-  ['repair recent item', (p) => { p.repair.recent = ['repair_previous']; }],
-  ['logic answer', (p) => { p.logic.answered = 1; }],
-  ['logic set', (p) => { p.logic.sets = 1; }],
-  ['logic recent item', (p) => { p.logic.recent = ['logic_previous']; }],
-];
-
-describe('setup eligibility', () => {
-  it('offers setup on a clean save even if display and topic preferences were already changed', () => {
-    const p = defaultProgress();
-    p.settings = { ...p.settings, theme: 'dark', interests: ['tech'] };
-    expect(shouldOfferSetup(p)).toBe(true);
+describe('optional practice preferences', () => {
+  it('saves choices once without starting an exercise or changing learning data', () => {
+    setTheme('dark');
+    const before = learning(progress.peek());
+    const save = vi.spyOn(Storage.prototype, 'setItem');
+    saveSetup({ interests: ['work'], experience: 'comfortable' });
+    expect(save).toHaveBeenCalledTimes(1);
+    expect(progress.peek().settings).toMatchObject({ theme: 'dark', interests: ['work'], startingExperience: 'comfortable' });
+    expect(progress.peek().onboarded).toBe(true);
+    expect(learning(progress.peek())).toEqual(before);
+    expect(loadProgress(localStorage)).toEqual(progress.peek());
+    expect(session.peek()).toBeNull();
+    expect(route.peek()).toEqual({ name: 'practice' });
   });
 
-  it.each(histories)('keeps returning users with %s out of automatic setup', (_, addHistory) => {
-    const p = defaultProgress();
-    addHistory(p);
-    expect(shouldOfferSetup(p)).toBe(false);
-  });
-});
-
-describe('setup completion and cancellation', () => {
   it('saves the choices once, preserves the latest theme, and starts five questions without crediting self-reported skill', () => {
     setTheme('dark');
     const before = learning(progress.peek());
@@ -93,16 +75,16 @@ describe('setup completion and cancellation', () => {
     expect(new Set(session.peek()!.itemIds).size).toBe(5);
   });
 
-  it('allows skipping the experience question and starts with no invented mastery', () => {
+  it('lets automatic comfort replace an old self-report without inventing mastery', () => {
     progress.value = { ...defaultProgress(), settings: { ...defaultProgress().settings, startingExperience: 'some' } };
-    finishSetup({ interests: [], experience: null });
+    saveSetup({ interests: [], experience: null });
     expect(progress.peek().settings.interests).toEqual([]);
     expect(Object.hasOwn(progress.peek().settings, 'startingExperience')).toBe(false);
     expect(Object.hasOwn(loadProgress(localStorage).settings, 'startingExperience')).toBe(false);
     expect(progress.peek().boxes).toEqual({});
     expect(progress.peek().stats).toEqual({});
     expect(progress.peek().attempts).toEqual([]);
-    expect(session.peek()!.itemIds).toHaveLength(5);
+    expect(session.peek()).toBeNull();
   });
 
   it.each(['practice', 'daily', 'focus', 'review', 'demo'] as const)('saves preferences without replacing an unfinished %s quiz', (mode) => {
@@ -143,7 +125,7 @@ describe('setup completion and cancellation', () => {
     selectLogicVerdict('cannot');
     const cached = [session.peek(), repairSession.peek(), logicSession.peek(), summary.peek()];
     const before = learning(progress.peek());
-    finishSetup({ interests: ['tech'], experience: 'comfortable' });
+    saveSetup({ interests: ['tech'], experience: 'comfortable' });
     [session.peek(), repairSession.peek(), logicSession.peek(), summary.peek()]
       .forEach((value, index) => expect(value).toBe(cached[index]));
     expect(learning(progress.peek())).toEqual(before);
@@ -161,19 +143,6 @@ describe('setup completion and cancellation', () => {
     expect(session.peek()!.itemIds).toHaveLength(5);
     expect(summary.peek()).toBe(previousSummary);
     expect(route.peek()).toEqual({ name: 'play', mode: 'practice' });
-  });
-
-  it('Skip marks onboarding complete while leaving settings and an active draft untouched', () => {
-    commit({ ...defaultProgress(), settings: { ...defaultProgress().settings, theme: 'dark', interests: ['work'] } });
-    startQuiz();
-    const before = progress.peek();
-    const draft = session.peek();
-    skipSetup();
-    expect(progress.peek()).toEqual({ ...before, onboarded: true });
-    expect(session.peek()).toBe(draft);
-    expect(welcomeShown.peek()).toBe(true);
-    expect(route.peek()).toEqual({ name: 'today' });
-    expect(loadProgress(localStorage)).toEqual(progress.peek());
   });
 
   it('Cancel returns to practice without writing anything', () => {
@@ -198,5 +167,14 @@ describe('setup completion and cancellation', () => {
     expect(progress.peek().onboarded).toBe(true);
     expect(session.peek()!.itemIds).toHaveLength(5);
     expect(route.peek()).toEqual({ name: 'play', mode: 'practice' });
+  });
+
+  it('keeps a failed preferences-only save usable without unexpectedly starting questions', () => {
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new DOMException('Quota exceeded', 'QuotaExceededError'); });
+    expect(() => saveSetup({ interests: ['tech'], experience: null })).not.toThrow();
+    expect(storageOk.peek()).toBe(false);
+    expect(progress.peek().settings.interests).toEqual(['tech']);
+    expect(session.peek()).toBeNull();
+    expect(route.peek()).toEqual({ name: 'practice' });
   });
 });

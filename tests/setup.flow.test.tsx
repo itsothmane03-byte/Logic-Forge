@@ -37,72 +37,65 @@ afterEach(() => {
   vi.useRealTimers();
 });
 
-describe('two-step personal setup', () => {
-  it('keeps both drafts through Back and Continue without saving or adding browser history entries', () => {
+describe('optional practice preferences', () => {
+  it('shows both sets of optional choices together and keeps edits unsaved until an action is chosen', () => {
     replaceRoute('#/setup');
-    const pushed = vi.spyOn(history, 'pushState');
     const save = vi.spyOn(Storage.prototype, 'setItem');
     render(<SetupScreen />);
-    expect(screen.getByRole('heading', { name: 'What interests you?' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Practice preferences' })).toBeTruthy();
+    expect(screen.getByRole('group', { name: 'Topics' })).toBeTruthy();
+    expect(screen.getByRole('group', { name: 'Five-question warm-up' })).toBeTruthy();
+    expect(screen.getAllByRole('radio')).toHaveLength(4);
+    expect(radio('Let the app choose').checked).toBe(true);
     fireEvent.click(checkbox('Everyday life'));
     fireEvent.click(checkbox('Technology'));
-    click('Continue');
-    expect(screen.getByRole('heading', { name: 'How would you like to start?' })).toBeTruthy();
     fireEvent.click(radio('Some experience'));
-    click('Back');
     expect(checkbox('Everyday life').checked).toBe(true);
     expect(checkbox('Technology').checked).toBe(true);
-    expect(checkbox('Work').checked).toBe(false);
-    click('Continue');
     expect(radio('Some experience').checked).toBe(true);
     expect(save).not.toHaveBeenCalled();
-    expect(pushed).not.toHaveBeenCalled();
-    expect(location.hash).toBe('#/setup');
     expect(progress.peek()).toEqual(defaultProgress());
+    expect(location.hash).toBe('#/setup');
+    expect(screen.queryByRole('button', { name: /Continue|Skip setup/ })).toBeNull();
   });
 
-  it('lets both questions remain optional and starts five questions with one final action', () => {
+  it('saves the choices with the latest theme without starting an exercise or crediting self-reported skill', () => {
+    render(<SetupScreen />);
+    fireEvent.click(checkbox('Technology'));
+    fireEvent.click(radio('Comfortable'));
+    act(() => setTheme('dark'));
+    click('Save preferences');
+    expect(progress.peek().settings).toMatchObject({ theme: 'dark', interests: ['tech'], startingExperience: 'comfortable' });
+    expect(progress.peek().boxes).toEqual({});
+    expect(progress.peek().stats).toEqual({});
+    expect(progress.peek().attempts).toEqual([]);
+    expect(loadProgress(localStorage)).toEqual(progress.peek());
+    expect(session.peek()).toBeNull();
+    expect(route.peek()).toEqual({ name: 'practice' });
+  });
+
+  it('starts five questions only through the separate explicit warm-up action', () => {
     render(<SetupScreen />);
     expect(screen.getByRole('button', { name: /^Mix everything/ }).getAttribute('aria-pressed')).toBe('true');
-    click('Continue');
-    expect(screen.getAllByRole('radio').every((input) => !(input as HTMLInputElement).checked)).toBe(true);
-    expect((screen.getByRole('button', { name: 'Start 5 questions' }) as HTMLButtonElement).disabled).toBe(false);
-    click('Start 5 questions');
+    expect(radio('Let the app choose').checked).toBe(true);
+    click('Try 5 questions');
     expect(route.peek()).toEqual({ name: 'play', mode: 'practice' });
     expect(session.peek()!.itemIds).toHaveLength(5);
     expect(progress.peek().onboarded).toBe(true);
     expect(progress.peek().settings.interests).toEqual([]);
     expect(progress.peek().attempts).toEqual([]);
-    expect(loadProgress(localStorage)).toEqual(progress.peek());
   });
 
-  it('discards unfinished choices when a new visitor skips from the second step', () => {
-    commit({ ...defaultProgress(), settings: { ...defaultProgress().settings, theme: 'dark', interests: ['work'] } });
-    const savedSettings = progress.peek().settings;
-    render(<SetupScreen />);
-    fireEvent.click(checkbox('Technology'));
-    click('Continue');
-    fireEvent.click(radio('Comfortable'));
-    click('Skip setup');
-    expect(progress.peek().settings).toEqual(savedSettings);
-    expect(progress.peek().onboarded).toBe(true);
-    expect(session.peek()).toBeNull();
-    expect(route.peek()).toEqual({ name: 'today' });
-    expect(loadProgress(localStorage).settings).toEqual(savedSettings);
-  });
-
-  it('prefills a returning visitor, permits changes, and Cancel discards them without writing', () => {
-    commit({ ...defaultProgress(), onboarded: true,
+  it.each([false, true])('prefills preferences and lets Cancel discard edits when onboarded is %s', (onboarded) => {
+    commit({ ...defaultProgress(), onboarded,
       settings: { ...defaultProgress().settings, interests: ['work'], startingExperience: 'comfortable' } });
     const before = progress.peek();
     const serialized = localStorage.getItem(STORAGE_KEY);
     const save = vi.spyOn(Storage.prototype, 'setItem');
     render(<SetupScreen />);
     expect(checkbox('Work').checked).toBe(true);
-    expect(screen.queryByRole('button', { name: 'Skip setup' })).toBeNull();
-    fireEvent.click(checkbox('Technology'));
-    click('Continue');
     expect(radio('Comfortable').checked).toBe(true);
+    fireEvent.click(checkbox('Technology'));
     fireEvent.click(radio('New to this'));
     click('Cancel');
     expect(progress.peek()).toBe(before);
@@ -111,30 +104,27 @@ describe('two-step personal setup', () => {
     expect(route.peek()).toEqual({ name: 'practice' });
   });
 
-  it('finishes with the latest theme rather than restoring the setting from when setup opened', () => {
+  it('lets Mix everything and automatic comfort clear saved choices', () => {
+    progress.value = { ...defaultProgress(), settings: { ...defaultProgress().settings,
+      interests: ['work', 'tech'], startingExperience: 'some' } };
     render(<SetupScreen />);
-    fireEvent.click(checkbox('Technology'));
-    click('Continue');
-    fireEvent.click(radio('Comfortable'));
-    act(() => setTheme('dark'));
-    click('Start 5 questions');
-    expect(progress.peek().settings.theme).toBe('dark');
-    expect(progress.peek().settings.interests).toEqual(['tech']);
-    expect(progress.peek().boxes).toEqual({});
-    expect(progress.peek().stats).toEqual({});
-    expect(loadProgress(localStorage).settings.theme).toBe('dark');
+    click(/^Mix everything/);
+    fireEvent.click(radio('Let the app choose'));
+    expect(screen.getAllByRole('checkbox').every((input) => !(input as HTMLInputElement).checked)).toBe(true);
+    click('Save preferences');
+    expect(progress.peek().settings.interests).toEqual([]);
+    expect(Object.hasOwn(progress.peek().settings, 'startingExperience')).toBe(false);
+    expect(loadProgress(localStorage).settings.interests).toEqual([]);
   });
 
-  it('offers Save and return when a current exercise must be preserved', () => {
-    progress.value = { ...defaultProgress(), onboarded: true };
+  it('hides the warm-up action during an active Daily and saves preferences without replacing it', () => {
     startCustomSession({ key: 'daily:2026-10-23', mode: 'daily', dateKey: '2026-10-23',
-      itemIds: [flawed.id, sound.id], seed: 'setup-save-return' });
+      itemIds: [flawed.id, sound.id], seed: 'preferences-save-return' });
     const active = session.peek();
     render(<SetupScreen />);
     fireEvent.click(checkbox('Work'));
-    click('Continue');
-    expect(screen.queryByRole('button', { name: 'Start 5 questions' })).toBeNull();
-    click('Save and return');
+    expect(screen.queryByRole('button', { name: 'Try 5 questions' })).toBeNull();
+    click('Save preferences');
     expect(session.peek()).toBe(active);
     expect(progress.peek().settings.interests).toEqual(['work']);
     expect(route.peek()).toEqual({ name: 'practice' });
@@ -147,65 +137,70 @@ describe('two-step personal setup', () => {
   });
 });
 
-describe('setup routing and data replacement', () => {
-  it('offers the first setup step on a genuinely new home visit', () => {
+describe('open home and optional preferences routing', () => {
+  it('shows Today immediately for a new visitor with normal navigation and no setup gate', () => {
     render(<App />);
-    expect(screen.getByRole('heading', { name: 'What interests you?' })).toBeTruthy();
-    expect(screen.queryByRole('heading', { name: /^Daily Forge/ })).toBeNull();
+    expect(screen.getByRole('heading', { name: /^Daily Forge/ })).toBeTruthy();
+    expect(screen.queryByRole('heading', { name: 'Practice preferences' })).toBeNull();
+    expect(screen.getAllByRole('navigation', { name: 'Primary' })).toHaveLength(2);
+    expect(progress.peek()).toEqual(defaultProgress());
   });
 
   const legacyVisitors: Array<[string, (p: Progress) => void]> = [
     ['old demo answer', (p) => { p.attempts = [{ itemId: sound.id, mode: 'demo', at: Date.now(), outcome: 'correct' }]; }],
     ['old repair use', (p) => { p.repair.answered = 1; }],
     ['old logic use', (p) => { p.logic.answered = 1; }],
-    ['old mastery data', (p) => { p.boxes[flawed.fallacyId!] = 3; }],
-    ['old saved daily', (p) => { p.daily['2026-10-22'] = { itemIds: [sound.id], answers: ['correct'], done: true }; }],
   ];
-
-  it.each(legacyVisitors)('shows Today for a returning visitor with %s even without the onboarding flag', (_, addHistory) => {
+  it.each(legacyVisitors)('continues to show Today for a returning visitor with %s', (_, addHistory) => {
     const p = defaultProgress();
     addHistory(p);
     progress.value = p;
     render(<App />);
-    expect(screen.queryByRole('heading', { name: 'What interests you?' })).toBeNull();
     expect(screen.getByRole('heading', { name: /^Daily Forge/ })).toBeTruthy();
+    expect(screen.queryByRole('heading', { name: 'Practice preferences' })).toBeNull();
   });
 
-  it.each(['#/practice', '#/library', '#/progress', '#/about', '#/repair', '#/logic', '#/play/daily'])('does not replace a first-time deep link to %s with setup', (hash) => {
-    if (hash === '#/play/daily') {
-      startCustomSession({ key: 'daily:2026-10-23', mode: 'daily', dateKey: '2026-10-23',
-        itemIds: [sound.id], seed: 'setup-deep-link' });
-    }
+  it.each(['#/practice', '#/library', '#/progress', '#/about', '#/repair', '#/logic', '#/play/daily'])('keeps the first-time deep link %s directly accessible', (hash) => {
+    if (hash === '#/play/daily') startCustomSession({ key: 'daily:2026-10-23', mode: 'daily', dateKey: '2026-10-23',
+      itemIds: [sound.id], seed: 'preferences-deep-link' });
     replaceRoute(hash);
     render(<App />);
-    expect(screen.queryByRole('heading', { name: 'What interests you?' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Practice preferences' })).toBeNull();
     expect(location.hash).toBe(hash);
   });
 
-  it('allows a returning visitor to open setup explicitly', () => {
-    progress.value = { ...defaultProgress(), onboarded: true };
+  it('opens preferences explicitly inside normal app navigation', () => {
     replaceRoute('#/setup');
     render(<App />);
-    expect(screen.getByRole('heading', { name: 'What interests you?' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Practice preferences' })).toBeTruthy();
+    expect(screen.getAllByRole('navigation', { name: 'Primary' })).toHaveLength(2);
     expect(screen.getByRole('button', { name: 'Cancel' })).toBeTruthy();
   });
 
-  it('remounts an open setup after an import so old drafts cannot overwrite the imported preferences', () => {
+  it.each(['import', 'reset'] as const)('discards old drafts after a %s instead of writing them over the replaced save', (operation) => {
     replaceRoute('#/setup');
     render(<App />);
     fireEvent.click(checkbox('Technology'));
-    click('Continue');
     fireEvent.click(radio('Some experience'));
-    act(() => replaceProgress({ ...defaultProgress(), onboarded: true,
-      settings: { ...defaultProgress().settings, theme: 'dark', interests: ['work'] } }));
-    expect(screen.getByRole('heading', { name: 'What interests you?' })).toBeTruthy();
-    expect(checkbox('Work').checked).toBe(true);
+    const replacement: Progress = operation === 'import'
+      ? { ...defaultProgress(), onboarded: true, settings: { ...defaultProgress().settings,
+        theme: 'dark', interests: ['work'], startingExperience: 'comfortable' } }
+      : defaultProgress();
+    act(() => replaceProgress(replacement));
     expect(checkbox('Technology').checked).toBe(false);
-    click('Continue');
+    expect(checkbox('Work').checked).toBe(operation === 'import');
     expect(radio('Some experience').checked).toBe(false);
-    click('Start 5 questions');
-    expect(progress.peek().settings.interests).toEqual(['work']);
-    expect(progress.peek().settings.theme).toBe('dark');
-    expect(loadProgress(localStorage).settings.interests).toEqual(['work']);
+    expect(radio(operation === 'import' ? 'Comfortable' : 'Let the app choose').checked).toBe(true);
+    click('Save preferences');
+    expect(progress.peek().settings).toEqual(replacement.settings);
+    expect(loadProgress(localStorage).settings).toEqual(replacement.settings);
+  });
+
+  it('keeps a reset home visit on Today rather than starting preferences again', () => {
+    progress.value = { ...defaultProgress(), onboarded: true };
+    render(<App />);
+    act(() => replaceProgress(defaultProgress()));
+    expect(screen.getByRole('heading', { name: /^Daily Forge/ })).toBeTruthy();
+    expect(screen.queryByRole('heading', { name: 'Practice preferences' })).toBeNull();
   });
 });

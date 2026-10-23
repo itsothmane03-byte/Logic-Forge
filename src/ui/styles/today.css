@@ -126,46 +126,42 @@
 
 /* ---------- Daily Forge hero ---------- */
 
+/* Same surface and ink as the other cards in both themes; a thin orange edge marks it. */
 .daily-hero {
-  --hero-good: #4cc38a;
-  --hero-warn: #f2c14e;
-  --hero-bad: #ff8a80;
-  position: relative;
-  isolation: isolate;
   display: grid;
   grid-column: 1 / -1;
-  overflow: hidden;
   padding: 28px 24px;
+  border: 1px solid var(--line);
   border-radius: var(--r-sheet);
-  background: var(--hero-bg);
-  color: var(--hero-ink);
-  box-shadow: var(--shadow-3);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: inset 4px 0 0 var(--accent), var(--shadow-1);
 }
 
-.daily-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.08) 1.2px, transparent 0);
-  background-size: 20px 20px;
-  -webkit-mask-image: linear-gradient(100deg, transparent 30%, #000 85%);
-  mask-image: linear-gradient(100deg, transparent 30%, #000 85%);
-}
+.daily-hero__body { min-width: 0; }
 
 @media (min-width: 768px) {
   .daily-hero {
-    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-    min-height: 300px;
-    padding: 36px 40px;
+    padding: 32px 40px;
   }
+
+  .daily-hero__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 32px;
+    align-items: center;
+  }
+
+  .daily-hero__body > :not(.daily-hero__actions) { grid-column: 1; }
+  .daily-hero__actions { grid-column: 2; grid-row: 1 / span 4; justify-content: flex-end; }
+  .daily-hero .pips { margin-bottom: 0; }
 }
 
 .daily-hero__eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent);
+  color: var(--accent-strong);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -174,19 +170,19 @@
 
 .daily-hero__title {
   margin-top: 10px;
-  color: var(--hero-ink);
+  color: var(--ink);
   font-size: clamp(2.25rem, 1.7rem + 2.2vw, 3.25rem);
   font-weight: 800;
   letter-spacing: -0.035em;
 }
 
 .daily-hero__num {
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 
 .daily-hero__meta {
   margin-top: 6px;
-  color: var(--hero-ink-2);
+  color: var(--ink-2);
   font-weight: 500;
 }
 
@@ -200,12 +196,12 @@
   width: 24px;
   height: 8px;
   border-radius: var(--r-pill);
-  background: var(--hero-line);
+  background: var(--line-strong);
 }
 
-.pip--correct { background: var(--hero-good); }
-.pip--partial { background: var(--hero-warn); }
-.pip--wrong { background: var(--hero-bad); }
+.pip--correct { background: var(--good); }
+.pip--partial { background: var(--warn); }
+.pip--wrong { background: var(--bad); }
 
 .daily-hero__actions {
   display: flex;
@@ -213,55 +209,13 @@
   gap: 12px;
 }
 
-.daily-hero .btn--secondary {
-  --btn-bg: rgb(255 255 255 / 0.06);
-  --btn-fg: var(--hero-ink);
-  --btn-border: var(--hero-line);
-  --btn-edge: #000;
-  --btn-hover: rgb(255 255 255 / 0.12);
-}
-
 .daily-hero__next {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 16px;
-  color: var(--hero-ink-2);
+  color: var(--ink-2);
   font-size: 0.9375rem;
-}
-
-.daily-hero__art {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .daily-hero__art {
-    position: relative;
-    display: grid;
-    place-items: center;
-  }
-
-  .daily-hero__mark {
-    color: var(--hero-ink);
-    filter: drop-shadow(0 24px 30px rgb(255 107 61 / 0.28));
-    transform: rotate(-8deg);
-  }
-
-  .daily-hero__spark {
-    position: absolute;
-    color: var(--accent);
-  }
-
-  .daily-hero__spark--a {
-    top: 12%;
-    right: 18%;
-  }
-
-  .daily-hero__spark--b {
-    top: 30%;
-    right: 8%;
-    opacity: 0.7;
-  }
 }
 
 /* ---------- Tiles: activities and fallacy of the day ---------- */
