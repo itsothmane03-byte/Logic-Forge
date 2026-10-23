@@ -16,7 +16,7 @@ npm ci
 npm run dev
 ```
 
-Node 22 (22.22+) or 24 is required.
+Node 22.22+ or 24.15+ is required. See [the architecture notes](docs/ARCHITECTURE.md) for the app's structure and data flow.
 
 ## Adding or editing content
 
@@ -60,12 +60,7 @@ Content is the product, so it follows [`docs/CONTENT-SPEC.md`](docs/CONTENT-SPEC
   ```
 
 - Keep source files focused (roughly 800 lines at most).
-- **Browser checks (optional, dev only).** `scripts/dev/` has Playwright scripts that serve `dist/` and capture screenshots (`screenshots.mjs`), slice long pages for review (`review.mjs`) and verify scroll reveals, reduced motion, keyboard-only play, console errors and 320px layouts (`verify.mjs`). Playwright is not a dependency; point `PLAYWRIGHT_MODULE` at an installed copy:
-
-  ```bash
-  npm run build
-  PLAYWRIGHT_MODULE=/path/to/node_modules/playwright/index.mjs node scripts/dev/verify.mjs
-  ```
+- For UI changes, check the affected flow in a browser with keyboard controls, light and dark themes, and a 320px layout. Check reduced motion when changing animations.
 
 ## Commits and pull requests
 

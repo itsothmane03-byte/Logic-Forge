@@ -106,7 +106,7 @@ kbd {
   color: var(--ink);
 }
 
-/* Focus ring (UI-SPEC): orange alone is under 3:1 on paper, so ink + soft halo. */
+/* Orange alone is under 3:1 on paper, so focus uses ink + a soft halo. */
 :focus-visible {
   outline: 3px solid var(--ink);
   outline-offset: 2px;

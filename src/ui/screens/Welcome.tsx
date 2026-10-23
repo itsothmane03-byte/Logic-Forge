@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { AUTHOR, REPO_URL } from '../../config';
 import { pickDemoItem, pickFormatSamples } from '../../engine/select';
 import type { Item, SpotChoice } from '../../engine/types';
-import { bank, fallacyName, welcomeShown } from '../../state/store';
+import { bank, fallacyName } from '../../state/store';
 import { ButtonLink } from '../components/Button';
 import { Icon, type IconName } from '../components/Icon';
 import { LogoMark } from '../components/Logo';
@@ -186,10 +186,6 @@ export function WelcomeScreen(): JSX.Element {
   const demo = useMemo(() => pickDemoItem(bank), []);
   const samples = useMemo(() => pickFormatSamples(bank.items, ['post', 'headline', 'email']), []);
   const count = bank.fallacies.length;
-
-  useEffect(() => {
-    welcomeShown.value = true;
-  }, []);
 
   return (
     <div class="welcome">

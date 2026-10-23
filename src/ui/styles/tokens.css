@@ -1,4 +1,4 @@
-/* Design tokens (UI-SPEC). Light is the default; dark applies with
+/* Design tokens. Light is the default; dark applies with
    [data-theme=dark], or with prefers-color-scheme: dark when theme = system. */
 
 :root {

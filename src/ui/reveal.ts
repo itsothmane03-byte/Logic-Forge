@@ -1,4 +1,4 @@
-// Scroll reveals as progressive enhancement (UI-SPEC "Scroll-reveal motion").
+// Scroll reveals as progressive enhancement, respecting reduced motion.
 //
 // Content is visible by default. Only when IntersectionObserver exists AND the
 // user has not asked for reduced motion do we add html.reveal-ready, which lets

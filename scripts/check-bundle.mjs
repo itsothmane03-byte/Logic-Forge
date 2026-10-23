@@ -1,4 +1,4 @@
-// Bundle budget check (TECH-SPEC quality gates): the app's JavaScript must be
+// Bundle budget check: the app's JavaScript must be
 // 150 KB gzip or less, excluding the generated question bank chunk.
 
 import { readdirSync, readFileSync, statSync } from 'node:fs';
