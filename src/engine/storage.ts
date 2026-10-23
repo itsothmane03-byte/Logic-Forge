@@ -3,6 +3,7 @@
 
 import { isDateKey } from './dates';
 import { INTEREST_IDS } from './interests';
+import { isStartingExperience } from './starting';
 import type {
   ActivityProgress, Attempt, Box, DailyRecord, Outcome, Progress, SessionRecord, Settings, Tally, ThemeSetting,
 } from './types';
@@ -55,7 +56,9 @@ function cleanSettings(raw: unknown): Settings {
   // Older saves have no interests. Unknown or repeated ids drop out; order is canonical.
   const chosen: unknown[] = Array.isArray(raw.interests) ? raw.interests : [];
   const interests = INTEREST_IDS.filter((id) => chosen.includes(id));
-  return { theme, showDefinitions, interests };
+  // No answer stays absent rather than becoming a default level.
+  const experience = isStartingExperience(raw.startingExperience) ? { startingExperience: raw.startingExperience } : {};
+  return { theme, showDefinitions, interests, ...experience };
 }
 
 function cleanTally(raw: unknown): Tally | null {

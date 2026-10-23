@@ -1,8 +1,9 @@
 // Shared domain types. The bank shape mirrors scripts/build-bank.mjs output.
 
 import type { InterestId } from './interests';
+import type { StartingExperience } from './starting';
 
-export type { InterestId };
+export type { InterestId, StartingExperience };
 export type FamilyId = 'distraction' | 'emotion' | 'appeals' | 'evidence' | 'framing' | 'language';
 export type Level = 'beginner' | 'intermediate' | 'advanced';
 export type Format = 'post' | 'email' | 'chat' | 'headline' | 'ad' | 'review' | 'speech' | 'quote';
@@ -66,6 +67,8 @@ export interface Settings {
   showDefinitions: boolean;
   /** Familiar topics for Practice and Focus; empty means "Mix everything". */
   interests: InterestId[];
+  /** Self-reported comfort, used only for the first set; absent means no answer. */
+  startingExperience?: StartingExperience;
 }
 
 export interface Tally {

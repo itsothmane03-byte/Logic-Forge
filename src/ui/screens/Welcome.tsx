@@ -206,8 +206,8 @@ export function WelcomeScreen(): JSX.Element {
               Practice on short, realistic arguments: spot the flaw, fix the argument, and work out what follows.
             </p>
             <div class="hero__ctas">
-              <ButtonLink href="#/play/daily" variant="primary" size="lg" iconRight="arrow-right">
-                Start today's forge
+              <ButtonLink href="#/setup" variant="primary" size="lg" iconRight="arrow-right">
+                Make it yours
               </ButtonLink>
               <a class="text-link text-link--strong" href="#/library">
                 Browse the {count} fallacies

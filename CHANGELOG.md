@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 2.5.0 — 2026-10-23
+
+- **A personal welcome.** First-time home visitors choose interests and an optional starting comfort in two short steps. Large choice cards, keyboard focus, Back, Skip, and phone-sized controls keep setup easy to navigate. Returning learners can reopen it from Practice or Progress.
+- **A shorter first set.** Finishing setup starts five practice questions. Comfort guides the starting mix without awarding mastery or assigning a measured level. Later practice continues to adapt to actual answers.
+- **Respect saved work.** Setup drafts save only on completion; skip/cancel discard them. Existing practice in any activity is preserved, older learning records bypass setup, and imports rebuild open drafts from the replacement data. No account needed.
+
 ## 2.4.0 — 2026-10-22
 
 - **Familiar topics.** Optional Everyday life, Work and Technology preferences for new Spot the flaw and Focus sets. Reasoning skill, difficulty and freshness come before topic preference; missing topic coverage falls back to the wider collection. Preferences save locally and support older imports.

@@ -229,6 +229,7 @@ export function ProgressScreen(): JSX.Element {
           />
         </div>
         <DataSettings />
+        <p><a class="text-link" href="#/setup">Change your setup</a></p>
         {!storageOk.value && (
           <p class="form-note" role="status">
             This browser isn't letting us save right now (private mode or full storage). Progress will reset when you close the tab.

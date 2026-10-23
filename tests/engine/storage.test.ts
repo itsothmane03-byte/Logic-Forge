@@ -174,6 +174,32 @@ describe('familiar topic preferences', () => {
   });
 });
 
+describe('starting experience', () => {
+  const withExperience = (startingExperience: unknown) => ({ ...sample(), settings: { ...sample().settings, startingExperience } });
+
+  it('stays absent by default, in older saves and in their exports', () => {
+    expect(defaultProgress().settings).not.toHaveProperty('startingExperience');
+    expect(loadProgress(memoryStorage(JSON.stringify(sample()))).settings).not.toHaveProperty('startingExperience');
+    expect(JSON.parse(serializeExport(loadProgress(memoryStorage(JSON.stringify(sample()))))).settings).not.toHaveProperty('startingExperience');
+  });
+
+  it('keeps the three answers through save, export and import', () => {
+    for (const value of ['new', 'some', 'comfortable'] as const) {
+      const chosen: Progress = { ...sample(), settings: { ...sample().settings, startingExperience: value } };
+      expect(loadProgress(memoryStorage(JSON.stringify(chosen))).settings.startingExperience).toBe(value);
+      expect(parseImport(serializeExport(chosen))).toEqual({ ok: true, progress: chosen });
+    }
+  });
+
+  it('drops invalid answers instead of guessing a level', () => {
+    for (const value of ['auto', 'expert', 'New', '', null, 2, {}]) {
+      const clean = sanitizeProgress(withExperience(value))!;
+      expect(clean.settings).not.toHaveProperty('startingExperience');
+      expect(clean.settings).toEqual(sample().settings);
+    }
+  });
+});
+
 describe('activity progress compatibility', () => {
   it('loads pre-activity saves and exports without losing any existing quiz progress', () => {
     const { repair: _repair, logic: _logic, ...legacy } = sample();

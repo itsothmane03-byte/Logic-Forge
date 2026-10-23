@@ -425,3 +425,37 @@ describe('selectAlternativeExample', () => {
     expect(selectAlternativeExample({ bank: tiny, current: shown, excludeIds: skipped, attempts: [], rng: rngFrom('end') })).toBeUndefined();
   });
 });
+
+describe('starter sets with topics and background knowledge', () => {
+  const topics = topicBank();
+  const slots = (ids: string[]) => ids.map((id) => slotOf(topics, id));
+  const profiles = ['new', 'auto', 'some', 'comfortable'] as const;
+
+  it('prefer familiar topics without changing skills, difficulties or random draws', () => {
+    for (const starter of profiles) {
+      for (let s = 0; s < 20; s++) {
+        const plainRun = counting(`st${starter}${s}`);
+        const plain = selectPractice({ bank: topics, boxes: {}, attempts: [], rng: plainRun.rng, starter });
+        const run = counting(`st${starter}${s}`);
+        const ids = selectPractice({ bank: topics, boxes: {}, attempts: [], rng: run.rng, starter, interests: ['work'] });
+        expect(slots(ids)).toEqual(slots(plain));
+        expect(run.draws()).toBe(plainRun.draws());
+        expect(ids.map((id) => itemOf(topics, id)).filter((i) => !i.isSound).every((i) => i.tags.includes('workplace'))).toBe(true);
+      }
+    }
+  });
+
+  it('leave specialist passages out, even when they are the only familiar match', () => {
+    const marked: Bank = {
+      ...topics,
+      items: topics.items.map((i) => (!i.isSound && i.tags.includes('workplace') ? { ...i, backgroundKnowledge: 'specialist' as const } : i)),
+    };
+    for (const starter of profiles) {
+      for (let s = 0; s < 10; s++) {
+        const ids = selectPractice({ bank: marked, boxes: {}, attempts: [], rng: rngFrom(`ss${s}`), starter, interests: ['work'] });
+        expect(ids).toHaveLength(5);
+        expect(ids.some((id) => itemOf(marked, id).backgroundKnowledge === 'specialist')).toBe(false);
+      }
+    }
+  });
+});
