@@ -2,6 +2,7 @@
 // corrupt or missing data falls back to defaults and never crashes the app.
 
 import { isDateKey } from './dates';
+import { INTEREST_IDS } from './interests';
 import type {
   ActivityProgress, Attempt, Box, DailyRecord, Outcome, Progress, SessionRecord, Settings, Tally, ThemeSetting,
 } from './types';
@@ -25,7 +26,7 @@ type StorageLike = Pick<Storage, 'getItem' | 'setItem'>;
 export function defaultProgress(): Progress {
   return {
     version: 1,
-    settings: { theme: 'system', showDefinitions: true },
+    settings: { theme: 'system', showDefinitions: true, interests: [] },
     onboarded: false,
     boxes: {},
     stats: {},
@@ -51,7 +52,10 @@ function cleanSettings(raw: unknown): Settings {
     ? (raw.theme as ThemeSetting)
     : fallback.theme;
   const showDefinitions = typeof raw.showDefinitions === 'boolean' ? raw.showDefinitions : fallback.showDefinitions;
-  return { theme, showDefinitions };
+  // Older saves have no interests. Unknown or repeated ids drop out; order is canonical.
+  const chosen: unknown[] = Array.isArray(raw.interests) ? raw.interests : [];
+  const interests = INTEREST_IDS.filter((id) => chosen.includes(id));
+  return { theme, showDefinitions, interests };
 }
 
 function cleanTally(raw: unknown): Tally | null {

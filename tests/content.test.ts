@@ -86,6 +86,7 @@ describe('validator: schema and limits', () => {
     ['an unknown resembles', (p) => { p.items[6]!.resembles = 'fal_imaginary'; }, /unknown resembles|resembles: must be/],
     ['an explanation over 240', (p) => { p.items[0]!.explanation = 'x'.repeat(241); }, /explanation: 241/],
     ['an unknown tag', (p) => { p.items[0]!.tags = ['politics']; }, /tags: unknown politics/],
+    ['invalid background knowledge', (p) => { (p.items[0] as unknown as Record<string, unknown>).backgroundKnowledge = 'easy'; }, /backgroundKnowledge: must be/],
     ['four tags', (p) => { p.items[0]!.tags = ['food', 'money', 'tech', 'school']; }, /tags: must list 1-3/],
     ['a sound item at difficulty 1', (p) => { p.items[6]!.difficulty = 1; }, /sound items must be 2 or 3/],
     ['a flawed item with the wrong fallacy id', (p) => { p.items[0]!.fallacyId = 'fal_ad_hominem'; }, /does not belong in fal_straw_man.json/],
@@ -198,6 +199,8 @@ describe('shipped bank (src/data/bank.json)', () => {
 
   it.runIf(complete)('is the full release bank: 38 fallacies x 8 items', () => {
     expect(bank.items).toHaveLength(304);
+    // Background knowledge is reviewed separately from reasoning difficulty.
+    expect(bank.items.every((item) => ['general', 'explained'].includes(item.backgroundKnowledge ?? ''))).toBe(true);
   });
 });
 

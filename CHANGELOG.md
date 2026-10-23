@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 2.4.0 — 2026-10-22
+
+- **Familiar topics.** Optional Everyday life, Work and Technology preferences for new Spot the flaw and Focus sets. Reasoning skill, difficulty and freshness come before topic preference; missing topic coverage falls back to the wider collection. Preferences save locally and support older imports.
+- **Show another.** Replace an unanswered Practice or Focus example without recording an attempt or changing scores. Replacements keep the difficulty and question mix, avoid all planned and replaced IDs, and preserve earlier answers. Daily Forge and mistake review retain their original questions.
+- **Plain language.** Revised 40 passages to explain or remove specialist terms and provide needed facts. All 304 questions now label background knowledge separately from reasoning difficulty; specialist content is excluded from adaptive practice.
+
 ## 2.3.0 — 2026-10-22
 
 - **Look back during practice.** Previous and Next let you revisit answered questions in all three activities. Your original choices and explanations stay visible, and Return to current restores your unfinished answer without changing scores.

@@ -28,7 +28,7 @@ const FALLACY_KEYS = [
 ];
 const ITEM_KEYS = [
   'id', 'fallacyId', 'isSound', 'resembles', 'difficulty', 'format', 'source',
-  'title', 'passage', 'cue', 'explanation', 'whyNot', 'tags',
+  'title', 'passage', 'cue', 'explanation', 'whyNot', 'tags', 'backgroundKnowledge',
 ];
 const CHAT_LINE = /^[^:\n]{1,40}: \S/;
 
@@ -87,9 +87,9 @@ function createReporter() {
   };
 }
 
-function checkKeys(r, where, obj, allowed) {
+function checkKeys(r, where, obj, allowed, optional = []) {
   for (const key of allowed) {
-    if (!(key in obj)) r.error(where, `missing field "${key}"`);
+    if (!(key in obj) && !optional.includes(key)) r.error(where, `missing field "${key}"`);
   }
   for (const key of Object.keys(obj)) {
     if (!allowed.includes(key)) r.error(where, `unknown field "${key}"`);
@@ -171,7 +171,10 @@ function validateItem(r, file, fallacyId, item, index, seenItemIds) {
     r.error(where, 'item must be an object');
     return null;
   }
-  checkKeys(r, where, item, ITEM_KEYS);
+  checkKeys(r, where, item, ITEM_KEYS, ['backgroundKnowledge']);
+  if (item.backgroundKnowledge !== undefined && !['general', 'explained', 'specialist'].includes(item.backgroundKnowledge)) {
+    r.error(where, 'backgroundKnowledge: must be general, explained or specialist');
+  }
 
   if (!isText(item.id)) {
     r.error(where, 'id: must be a non-empty string');

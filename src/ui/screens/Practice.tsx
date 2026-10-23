@@ -2,11 +2,15 @@
 // ActivityCard are shared with Today and Welcome, so the copy lives here once.
 
 import type { JSX } from 'preact';
+import { INTERESTS } from '../../engine/interests';
+import { progress, setInterests, storageOk } from '../../state/store';
 import { logicSession } from '../../state/logic';
 import { repairSession } from '../../state/repair';
 import { session } from '../../state/session';
 import { ButtonLink } from '../components/Button';
 import { Icon, type IconName } from '../components/Icon';
+import { Button } from '../components/Button';
+import '../styles/interests.css';
 
 export type ActivityId = 'spot' | 'repair' | 'logic';
 
@@ -61,6 +65,27 @@ export function PracticeScreen(): JSX.Element {
           Choose your practice.
         </h1>
       </header>
+      <details class="topic-preferences">
+        <summary>Familiar topics</summary>
+        <p>Optional topics for new Spot the flaw and Focus sets. We still mix in other topics to cover the skills you need.</p>
+        <fieldset>
+          <legend class="sr-only">Preferred topics</legend>
+          <div class="topic-preferences__choices">
+            <Button variant="ghost" size="sm" aria-pressed={progress.value.settings.interests.length === 0} onClick={() => setInterests([])}>Mix everything</Button>
+            {INTERESTS.map((interest) => (
+              <label class="topic-preferences__choice" key={interest.id}>
+                <input type="checkbox" checked={progress.value.settings.interests.includes(interest.id)}
+                  onChange={(event) => setInterests(event.currentTarget.checked
+                    ? [...progress.value.settings.interests, interest.id]
+                    : progress.value.settings.interests.filter((id) => id !== interest.id))} />
+                <span>{interest.label}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        <p class="topic-preferences__note" role="status">{progress.value.settings.interests.length ? 'Preferences saved for your next set.' : 'Mixing all topics.'} Daily Forge stays the same for everyone.</p>
+        {!storageOk.value && <p role="status">Your choice works here, but this browser could not save it.</p>}
+      </details>
       <div class="practice-hub__grid">
         {ACTIVITIES.map((activity) => (
           <ActivityCard key={activity.id} activity={activity} />

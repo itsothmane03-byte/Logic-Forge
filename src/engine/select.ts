@@ -1,6 +1,8 @@
-// Session selection: Practice (adaptive), Focus on one fallacy, Review mistakes.
+// Session selection: Practice (adaptive), Focus on one fallacy, Review mistakes,
+// and "Show another" replacements.
 
-import { pickOne, shuffle, weightedIndex, type Rng } from './rng';
+import { isAdaptiveEligible, matchesInterests, type InterestId } from './interests';
+import { shuffle, weightedIndex, type Rng } from './rng';
 import type { Attempt, Box, Fallacy, Item } from './types';
 
 export const SESSION_SIZE = 10;
@@ -42,12 +44,45 @@ function groupFlawed(items: readonly Item[]): Map<string, Item[]> {
   return map;
 }
 
-/** Fresh (not recent) items first; otherwise the least recently seen. */
-function chooseItem(candidates: readonly Item[], recent: Set<string>, lastSeen: Map<string, number>, rng: Rng): Item | undefined {
+/** Index of each item's latest attempt. */
+function lastSeenIndex(attempts: readonly Attempt[]): Map<string, number> {
+  const lastSeen = new Map<string, number>();
+  attempts.forEach((a, i) => lastSeen.set(a.itemId, i));
+  return lastSeen;
+}
+
+/** The skill a passage practices: its fallacy, or the one a sound passage resembles. */
+const skillOf = (item: Item): string | null => (item.isSound ? item.resembles : item.fallacyId);
+
+const sameSlot = (a: Item, b: Item): boolean =>
+  a.isSound === b.isSound && skillOf(a) === skillOf(b) && a.difficulty === b.difficulty;
+
+/** Element at a [0, 1) draw, so one draw can be reused across lists. */
+const at = <T>(list: readonly T[], r: number): T | undefined => list[Math.floor(r * list.length)];
+
+/** Fresh (not recent) items; otherwise the least recently seen. */
+function freshnessTier(candidates: readonly Item[], recent: Set<string>, lastSeen: Map<string, number>): Item[] {
   const fresh = candidates.filter((i) => !recent.has(i.id));
-  if (fresh.length) return pickOne(fresh, rng);
+  if (fresh.length) return fresh;
   const oldest = Math.min(...candidates.map((i) => lastSeen.get(i.id) ?? -1));
-  return pickOne(candidates.filter((i) => (lastSeen.get(i.id) ?? -1) === oldest), rng);
+  return candidates.filter((i) => (lastSeen.get(i.id) ?? -1) === oldest);
+}
+
+/**
+ * Picks from the freshness tier with one draw. Familiar topics may only swap
+ * the provisional pick for one of the same skill and difficulty in that tier,
+ * reusing the draw so later picks see the same random sequence.
+ */
+function chooseItem(
+  candidates: readonly Item[], recent: Set<string>, lastSeen: Map<string, number>, rng: Rng,
+  interests: readonly InterestId[] = [],
+): Item | undefined {
+  const tier = freshnessTier(candidates, recent, lastSeen);
+  if (tier.length === 0) return undefined;
+  const r = rng();
+  const provisional = at(tier, r);
+  if (!provisional || matchesInterests(provisional, interests)) return provisional;
+  return at(tier.filter((i) => sameSlot(i, provisional) && matchesInterests(i, interests)), r) ?? provisional;
 }
 
 const fallacyKey = (item: Item): string | null => (item.isSound ? null : item.fallacyId);
@@ -88,18 +123,21 @@ export interface PracticeInput {
   boxes: Readonly<Record<string, Box>>;
   attempts: readonly Attempt[];
   rng: Rng;
+  /** Familiar topics: a soft preference after skill, difficulty and freshness. */
+  interests?: readonly InterestId[];
 }
 
 /**
  * Practice: 10 items, 2 of them sound. Fallacies are drawn by Leitner weight
  * without replacement; items seen in the last 40 attempts are avoided when the
- * pool allows, and the same fallacy never appears twice in a row.
+ * pool allows, and the same fallacy never appears twice in a row. Interests
+ * only choose between examples of the same skill and difficulty; specialist
+ * passages are left out.
  */
-export function selectPractice({ bank, boxes, attempts, rng }: PracticeInput): string[] {
-  const items = [...bank.items].sort(byId);
+export function selectPractice({ bank, boxes, attempts, rng, interests = [] }: PracticeInput): string[] {
+  const items = bank.items.filter(isAdaptiveEligible).sort(byId);
   const recent = recentItemIds(attempts);
-  const lastSeen = new Map<string, number>();
-  attempts.forEach((a, i) => lastSeen.set(a.itemId, i));
+  const lastSeen = lastSeenIndex(attempts);
   const flawedByFallacy = groupFlawed(items);
   const fallacies = bank.fallacies.filter((f) => (flawedByFallacy.get(f.id)?.length ?? 0) > 0);
   const sound = items.filter((i) => i.isSound);
@@ -125,7 +163,7 @@ export function selectPractice({ bank, boxes, attempts, rng }: PracticeInput): s
     const index = weightedIndex(pool.map((f) => fallacyWeight(f, boxes, attempts.length)), rng);
     const fallacy = pool[index] ?? pool[0];
     if (!fallacy) break;
-    const item = chooseItem(unused(fallacy), recent, lastSeen, rng);
+    const item = chooseItem(unused(fallacy), recent, lastSeen, rng, interests);
     if (!item) break;
     flawed.push(item);
     used.add(item.id);
@@ -134,14 +172,14 @@ export function selectPractice({ bank, boxes, attempts, rng }: PracticeInput): s
 
   const soundPicks: Item[] = [];
   while (soundPicks.length < SESSION_SIZE - flawed.length) {
-    const item = chooseItem(sound.filter((i) => !used.has(i.id)), recent, lastSeen, rng);
+    const item = chooseItem(sound.filter((i) => !used.has(i.id)), recent, lastSeen, rng, interests);
     if (!item) break;
     soundPicks.push(item);
     used.add(item.id);
   }
 
   const lastAttempt = attempts[attempts.length - 1];
-  const previous = lastAttempt ? (items.find((i) => i.id === lastAttempt.itemId)?.fallacyId ?? null) : null;
+  const previous = lastAttempt ? (bank.items.find((i) => i.id === lastAttempt.itemId)?.fallacyId ?? null) : null;
   return arrangeNoRepeats(shuffle([...flawed, ...soundPicks], rng), previous).map((i) => i.id);
 }
 
@@ -149,21 +187,33 @@ export interface FocusInput {
   bank: BankLike;
   fallacyId: string;
   rng: Rng;
+  /** Familiar topics: a soft preference after the Focus quotas, skill and difficulty. */
+  interests?: readonly InterestId[];
 }
 
 /**
  * Focus on X: 5 flawed of X + 2 flawed from X's confusables + 2 sound items
  * resembling X (or any sound) + 1 more flawed of X, shuffled. Short pools are
- * topped up from the same family, then any family.
+ * topped up from the same family, then any family. Interests only swap a pick
+ * for an unpicked one of the same skill and difficulty; specialist passages
+ * are left out.
  */
-export function selectFocus({ bank, fallacyId, rng }: FocusInput): string[] {
-  const items = [...bank.items].sort(byId);
+export function selectFocus({ bank, fallacyId, rng, interests = [] }: FocusInput): string[] {
+  const items = bank.items.filter(isAdaptiveEligible).sort(byId);
   const target = bank.fallacies.find((f) => f.id === fallacyId);
   if (!target) return [];
   const flawedByFallacy = groupFlawed(items);
   const used = new Set<string>();
   const take = (pool: readonly Item[], n: number): Item[] => {
-    const picks = shuffle(pool.filter((i) => !used.has(i.id)), rng).slice(0, Math.max(0, n));
+    const order = shuffle(pool.filter((i) => !used.has(i.id)), rng);
+    const count = Math.max(0, n);
+    // Swaps come from the shuffled remainder, so no extra draws are made.
+    const spare = order.slice(count);
+    const picks = order.slice(0, count).map((provisional) => {
+      if (matchesInterests(provisional, interests)) return provisional;
+      const index = spare.findIndex((i) => sameSlot(i, provisional) && matchesInterests(i, interests));
+      return index === -1 ? provisional : (spare.splice(index, 1)[0] ?? provisional);
+    });
     picks.forEach((i) => used.add(i.id));
     return picks;
   };
@@ -211,6 +261,37 @@ export function reviewQueue(attempts: readonly Attempt[], validIds?: ReadonlySet
     if (attempt.outcome !== 'correct' && (!validIds || validIds.has(attempt.itemId))) out.push(attempt.itemId);
   }
   return out;
+}
+
+export interface AlternativeInput {
+  bank: BankLike;
+  /** The unanswered passage being replaced. */
+  current: Item;
+  /** Every id already in the session, plus earlier replacements. */
+  excludeIds: Iterable<string>;
+  attempts: readonly Attempt[];
+  interests?: readonly InterestId[];
+  rng: Rng;
+}
+
+/**
+ * "Show another": an unused passage with the same verdict (sound or flawed)
+ * and difficulty, so swapping reveals nothing about the answer. The same skill
+ * comes first, then any other skill. Within that tier, fresh items come first,
+ * then familiar topics. Undefined when the pool is exhausted.
+ */
+export function selectAlternativeExample({
+  bank, current, excludeIds, attempts, interests = [], rng,
+}: AlternativeInput): Item | undefined {
+  const excluded = new Set([...excludeIds, current.id]);
+  const eligible = bank.items
+    .filter((i) => !excluded.has(i.id) && isAdaptiveEligible(i) && i.isSound === current.isSound && i.difficulty === current.difficulty)
+    .sort(byId);
+  const sameSkill = eligible.filter((i) => skillOf(i) === skillOf(current));
+  const tier = freshnessTier(sameSkill.length ? sameSkill : eligible, recentItemIds(attempts), lastSeenIndex(attempts));
+  if (tier.length === 0) return undefined;
+  const familiar = tier.filter((i) => matchesInterests(i, interests));
+  return at(familiar.length ? familiar : tier, rng());
 }
 
 /** Review session: up to 10 recent misses. Empty means the mode is disabled. */
