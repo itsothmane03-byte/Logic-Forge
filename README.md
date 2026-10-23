@@ -43,9 +43,14 @@ In **What follows?**, treat a few facts as given and classify a claim. Every all
 
 Both activities offer a missed-only retry after a set. Retries count as new attempts in that activity’s scores. Checked answers save immediately; unfinished sets resume during navigation, while refreshing starts a new set.
 
+In all three activities, **Previous** revisits answered questions and their feedback. **Next** moves forward through that review; **Return to current** goes straight back to your unfinished question, preserving any selection. Earlier answers stay read only and do not change your score. Reopened Daily sets retain results but may no longer have the original choices to display.
+
+![An earlier quiz answer with Previous, Next, and Return to current controls](docs/screenshots/question-review.png)
+
 ## Features
 
 - **Practice hub.** Three short activity cards: spot a flaw, repair an argument, or practice deduction. All are available from Today; the original practice URL still works.
+- **Question review.** Look back through answered questions during a set, with original feedback and a quick return to your current answer.
 - **Argument repair.** 15 exercises across 15 fallacies in all six families. Short sets of five, feedback for each selected revision, library links, and separate local scores/history. Repairs do not change quiz mastery, quiz accuracy, or Daily streaks.
 - **Deduction.** 18 exercises with computed answers, optional help and examples, separate scores, and missed-only retries. Deduction does not change quiz mastery or Daily streaks.
 - **Daily Forge.** The same ten questions for everyone each day (seeded by date: 8 flawed from 8 different fallacies across three difficulty levels, plus 2 sound), resumable, with a Wordle-style share grid.

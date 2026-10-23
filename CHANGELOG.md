@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 2.3.0 — 2026-10-22
+
+- **Look back during practice.** Previous and Next let you revisit answered questions in all three activities. Your original choices and explanations stay visible, and Return to current restores your unfinished answer without changing scores.
+- **Clear review boundaries.** Earlier answers are read only. Reopened Daily sets explain when an original choice is unavailable rather than inventing one.
+- **Installed icon.** Enlarged the existing orange eye inside Android's maskable safe zone for clearer home-screen display.
+
 ## 2.2.0 — 2026-10-22
 
 - **What follows?** 18 fictional deduction puzzles in sets of five. Classify a claim as necessarily true, necessarily false, or possible either way. Answers are checked across every permitted combination of facts, with optional concrete examples.

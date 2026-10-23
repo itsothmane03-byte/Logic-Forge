@@ -12,6 +12,7 @@ import { ConfirmDialog } from '../components/Dialog';
 import { FallacySheet, FeedbackSheet } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { PassageCard } from '../components/PassageCard';
+import { QuestionReview, useQuestionReview } from '../components/QuestionReview';
 import { OptionGroup, ProgressSegments, SpotButtons } from '../components/SessionParts';
 import { isShortcutEvent, useKeydown } from '../hooks';
 import { FORMAT_ICONS, FORMAT_LABELS } from '../util';
@@ -54,7 +55,13 @@ function useDockHeight(ref: { current: HTMLElement | null }, deps: unknown[]): v
 }
 
 export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
-  const state = session.value;
+  const live = session.value;
+  const review = useQuestionReview(live?.index ?? 0, live?.itemIds);
+  const reviewedPick = live?.picks[review.index];
+  const state: SessionState | null = live && review.reviewing ? {
+    ...live, index: review.index, phase: 'feedback',
+    spot: reviewedPick?.spot ?? null, selected: reviewedPick?.named ?? null,
+  } : live;
   const settings = progress.value.settings;
   const item = currentItem(state);
   const [sheetFallacyId, setSheetFallacyId] = useState<string | null>(null);
@@ -76,10 +83,14 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
       firstRender.current = false;
       return;
     }
-    if (phase === 'spot') headingRef.current?.focus({ preventScroll: true });
+    if (phase === 'spot' || review.reviewing) headingRef.current?.focus({ preventScroll: true });
   }, [item?.id]);
 
   useEffect(() => {
+    if (review.reviewing) {
+      window.scrollTo(0, 0);
+      return;
+    }
     if (phase === 'name') {
       namePromptRef.current?.focus({ preventScroll: true });
       // On small screens the options start below the fold: bring them up.
@@ -94,6 +105,10 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
   }, [phase, item?.id]);
 
   const onContinue = () => {
+    if (review.reviewing) {
+      review.returnToCurrent();
+      return;
+    }
     const mode = state?.mode;
     const result = next();
     if (result !== 'finished') return;
@@ -160,7 +175,7 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
       <header class="session-top">
         <div class="session-top__inner">
           <IconButton icon="x" label={closeLabel} class="session-top__close" onClick={requestClose} />
-          <ProgressSegments total={total} outcomes={state.outcomes} index={state.index} />
+          <ProgressSegments total={total} outcomes={state.outcomes} index={live?.index ?? state.index} />
           <span class="session-top__count" aria-hidden="true">
             {number} / {total}
           </span>
@@ -171,6 +186,10 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
         <h1 class="sr-only" ref={headingRef} tabIndex={-1}>
           {title}: question {number} of {total}
         </h1>
+        <QuestionReview review={review} currentIndex={live?.index ?? 0} total={total} />
+        {review.reviewing && <p class="question-review__answer">{pick
+          ? `Your answer: ${pick.spot === 'sound' ? 'Sound' : 'Flawed'}${pick.named ? ` · ${fallacyName(pick.named)}` : ''}.`
+          : 'Your result is saved; the original choice is unavailable after reopening this set.'}</p>}
         <p class="session-eyebrow">
           <span class="session-eyebrow__mode">{title}</span>
           <span class="session-eyebrow__format">
@@ -227,7 +246,8 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
             outcome={outcome}
             pick={pick}
             isLast={state.index >= total - 1}
-            onContinue={onContinue}
+            onContinue={review.reviewing ? review.returnToCurrent : onContinue}
+            continueLabel={review.reviewing ? 'Return to current' : undefined}
             onOpenFallacy={setSheetFallacyId}
           />
         )}

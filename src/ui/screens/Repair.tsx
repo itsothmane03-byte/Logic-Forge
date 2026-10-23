@@ -5,12 +5,17 @@ import { checkRepair, nextRepair, repairSession, retryRepairMisses, selectRepair
 import { fallacyName, storageOk } from '../../state/store';
 import { Button, ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
+import { QuestionReview, useQuestionReview } from '../components/QuestionReview';
 import { ProgressSegments } from '../components/SessionParts';
 import { isShortcutEvent, useKeydown } from '../hooks';
 import { cx } from '../util';
 
 export function RepairScreen(): JSX.Element {
-  const state = repairSession.value;
+  const live = repairSession.value;
+  const review = useQuestionReview(live?.index ?? 0, live?.items);
+  const state = live && review.reviewing ? {
+    ...live, index: review.index, checked: true, selected: live.answers[review.index]?.optionId ?? null,
+  } : live;
   const item = state?.items[state.index];
   const options = useMemo(() => item && state ? repairOptions(item, state.seed) : [], [item?.id, state?.seed]);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -23,7 +28,7 @@ export function RepairScreen(): JSX.Element {
 
   useEffect(() => {
     if (!state) return;
-    if (state.checked && !state.finished) {
+    if (state.checked && !state.finished && !review.reviewing) {
       feedbackRef.current?.focus({ preventScroll: true });
       feedbackRef.current?.scrollIntoView?.({ block: 'nearest' });
     } else {
@@ -43,7 +48,8 @@ export function RepairScreen(): JSX.Element {
     } else if (event.key === 'Enter' && !(event.target instanceof HTMLButtonElement)
       && !(event.target instanceof HTMLAnchorElement) && !(event.target instanceof HTMLElement && event.target.closest('summary'))) {
       event.preventDefault();
-      if (state.checked) nextRepair();
+      if (review.reviewing) review.returnToCurrent();
+      else if (state.checked) nextRepair();
       else checkRepair();
     }
   });
@@ -76,10 +82,11 @@ export function RepairScreen(): JSX.Element {
     <div class="repair-session">
       <header class="repair-top">
         <ButtonLink href="#/practice" variant="ghost" icon="arrow-left" size="sm">Practice</ButtonLink>
-        <ProgressSegments total={total} outcomes={state.answers.map((answer) => answer.correct ? 'correct' : 'wrong')} index={state.index} />
+        <ProgressSegments total={total} outcomes={state.answers.map((answer) => answer.correct ? 'correct' : 'wrong')} index={live?.index ?? state.index} />
         <span class="repair-top__count">{state.index + 1} / {total}</span>
       </header>
       <div class="repair-body" data-repair-id={item.id}>
+        <QuestionReview review={review} currentIndex={live?.index ?? 0} total={total} />
         <p class="eyebrow">Fix the argument</p>
         <h1 class="repair-heading" ref={headingRef} tabIndex={-1}>{item.title}</h1>
         <section class="repair-original" aria-labelledby="original-title">
@@ -123,7 +130,7 @@ export function RepairScreen(): JSX.Element {
               <p class="repair-feedback__principle">{item.principle}</p>
               <a class="text-link" href={`#/library/${item.fallacyId}`}>Explore {fallacyName(item.fallacyId)} <Icon name="arrow-right" size={16} /></a>
             </details>
-            <Button variant="primary" size="lg" block kbd="Enter" onClick={nextRepair}>{state.index === total - 1 ? 'See results' : 'Next argument'}</Button>
+            <Button variant="primary" size="lg" block kbd="Enter" onClick={review.reviewing ? review.returnToCurrent : nextRepair}>{review.reviewing ? 'Return to current' : state.index === total - 1 ? 'See results' : 'Next argument'}</Button>
           </div>
         )}
         {!storageOk.value && <p class="repair-save-notice" role="status">You can keep practicing. This browser could not save your latest progress.</p>}

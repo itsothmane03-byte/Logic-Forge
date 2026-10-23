@@ -51,9 +51,10 @@ interface SheetProps {
   isLast: boolean;
   onContinue: () => void;
   onOpenFallacy: (id: string) => void;
+  continueLabel?: string;
 }
 
-export function FeedbackSheet({ item, outcome, pick, isLast, onContinue, onOpenFallacy }: SheetProps): JSX.Element {
+export function FeedbackSheet({ item, outcome, pick, isLast, onContinue, onOpenFallacy, continueLabel }: SheetProps): JSX.Element {
   const actionsRef = useRef<HTMLSpanElement>(null);
   const copy = copyFor(item, outcome, pick);
   const why = whyNotFor(item, outcome, pick);
@@ -111,7 +112,7 @@ export function FeedbackSheet({ item, outcome, pick, isLast, onContinue, onOpenF
               aria-describedby="sheet-title sheet-answer"
               onClick={onContinue}
             >
-              {isLast ? 'See results' : 'Continue'}
+              {continueLabel ?? (isLast ? 'See results' : 'Continue')}
             </Button>
           </span>
         </div>
