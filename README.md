@@ -2,7 +2,7 @@
 
 **Short activities for clearer thinking.**
 
-[Try the live app](https://itsothmane03-byte.github.io/Logic-Forge/) · [MIT license](LICENSE)
+[Try the live app](https://fallacyforge.com/) · [MIT license](LICENSE)
 
 [![CI](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml/badge.svg)](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml)
 

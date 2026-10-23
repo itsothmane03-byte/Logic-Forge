@@ -1,11 +1,11 @@
 {
   "name": "fallacy-forge",
-  "version": "2.6.2",
+  "version": "2.6.3",
   "private": true,
   "description": "Spot weak arguments, choose stronger revisions, and practice deduction. Free reasoning activities, all in the browser.",
   "license": "MIT",
   "author": "itsothmane03-byte",
-  "homepage": "https://itsothmane03-byte.github.io/Logic-Forge/",
+  "homepage": "https://fallacyforge.com/",
   "repository": {
     "type": "git",
     "url": "https://github.com/itsothmane03-byte/Logic-Forge.git"

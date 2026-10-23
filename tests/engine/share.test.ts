@@ -16,7 +16,7 @@ describe('share text', () => {
   });
 
   it('points at the live site', () => {
-    expect(SITE_URL).toBe('https://itsothmane03-byte.github.io/Logic-Forge/');
+    expect(SITE_URL).toBe('https://fallacyforge.com/');
   });
 });
 
