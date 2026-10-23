@@ -38,6 +38,6 @@ for (const size of [16, 32]) {
   await writeFile(new URL(`favicon_${size}.png`, brand), await square(source, size, 0.94, '#FAF8F4'));
 }
 await writeFile(new URL('logo-512.png', brand), await square(source, 512, 0.76, '#FAF8F4'));
-await writeFile(new URL('maskable-512.png', icons), await square(source, 512, 0.60, '#FAF8F4'));
+await writeFile(new URL('maskable-512.png', icons), await square(source, 512, 0.80, '#FAF8F4'));
 await writeFile(new URL('apple-touch-icon.png', icons), await square(source, 180, 0.70, '#FAF8F4'));
 console.log(`Exported brand and install icons to ${fileURLToPath(brand)}`);

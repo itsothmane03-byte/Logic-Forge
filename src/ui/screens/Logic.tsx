@@ -5,6 +5,7 @@ import { checkLogic, logicSession, nextLogic, retryLogicMisses, selectLogicVerdi
 import { storageOk } from '../../state/store';
 import { Button, ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
+import { QuestionReview, useQuestionReview } from '../components/QuestionReview';
 import { ProgressSegments } from '../components/SessionParts';
 import { isShortcutEvent, useKeydown } from '../hooks';
 import { cx } from '../util';
@@ -41,7 +42,11 @@ function Examples({ item }: { item: LogicItem }): JSX.Element {
 }
 
 export function LogicScreen(): JSX.Element {
-  const state = logicSession.value;
+  const live = logicSession.value;
+  const review = useQuestionReview(live?.index ?? 0, live?.items);
+  const state = live && review.reviewing ? {
+    ...live, index: review.index, checked: true, selected: live.answers[review.index]?.selected ?? null,
+  } : live;
   const item = state?.items[state.index];
   const headingRef = useRef<HTMLHeadingElement>(null);
   const feedbackRef = useRef<HTMLDivElement>(null);
@@ -53,7 +58,7 @@ export function LogicScreen(): JSX.Element {
 
   useEffect(() => {
     if (!state) return;
-    if (state.checked && !state.finished) {
+    if (state.checked && !state.finished && !review.reviewing) {
       feedbackRef.current?.focus({ preventScroll: true });
       feedbackRef.current?.scrollIntoView?.({ block: 'nearest' });
     } else {
@@ -71,7 +76,8 @@ export function LogicScreen(): JSX.Element {
     } else if (event.key === 'Enter' && !(event.target instanceof HTMLButtonElement)
       && !(event.target instanceof HTMLAnchorElement) && !(event.target instanceof HTMLElement && event.target.closest('summary'))) {
       event.preventDefault();
-      if (state.checked) nextLogic();
+      if (review.reviewing) review.returnToCurrent();
+      else if (state.checked) nextLogic();
       else checkLogic();
     }
   });
@@ -103,10 +109,11 @@ export function LogicScreen(): JSX.Element {
     <div class="repair-session logic-session">
       <header class="repair-top">
         <ButtonLink href="#/practice" variant="ghost" icon="arrow-left" size="sm">Practice</ButtonLink>
-        <ProgressSegments total={total} outcomes={state.answers.map((outcome) => outcome.correct ? 'correct' : 'wrong')} index={state.index} />
+        <ProgressSegments total={total} outcomes={state.answers.map((outcome) => outcome.correct ? 'correct' : 'wrong')} index={live?.index ?? state.index} />
         <span class="repair-top__count">{state.index + 1} / {total}</span>
       </header>
       <div class="repair-body" data-logic-id={item.id}>
+        <QuestionReview review={review} currentIndex={live?.index ?? 0} total={total} />
         <p class="eyebrow">What follows?</p>
         <h1 class="repair-heading" ref={headingRef} tabIndex={-1}>{item.title}</h1>
         <p class="logic-rule">Treat the facts as true. Use only those facts.</p>
@@ -157,7 +164,7 @@ export function LogicScreen(): JSX.Element {
             {!correct && <p class="logic-choice">Your choice: {labelFor(state.selected)}.</p>}
             <p>{item.explanation}</p>
             <Examples key={item.id} item={item} />
-            <Button variant="primary" size="lg" block kbd="Enter" onClick={nextLogic}>{state.index === total - 1 ? 'See results' : 'Next puzzle'}</Button>
+            <Button variant="primary" size="lg" block kbd="Enter" onClick={review.reviewing ? review.returnToCurrent : nextLogic}>{review.reviewing ? 'Return to current' : state.index === total - 1 ? 'See results' : 'Next puzzle'}</Button>
           </div>
         )}
         {!storageOk.value && <p class="repair-save-notice" role="status">You can keep practicing. This browser could not save your latest progress.</p>}
