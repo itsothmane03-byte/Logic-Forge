@@ -18,9 +18,11 @@ function sectionOf(route: Route): Section | null {
     case 'setup':
       return 'practice';
     case 'today':
-    case 'welcome':
     case 'summary':
       return 'today';
+    case 'welcome':
+      // The explainer belongs with About; Today stays the only home.
+      return 'about';
     case 'play':
       return route.mode === 'practice' ? 'practice' : null;
     case 'practice':
@@ -35,6 +37,12 @@ function sectionOf(route: Route): Section | null {
     case 'about':
       return 'about';
   }
+}
+
+/** Welcome sits under About without being the About page, so its link marks the location. */
+function currentOf(route: Route, active: Section | null, id: Section): 'page' | 'location' | undefined {
+  if (active !== id) return undefined;
+  return route.name === 'welcome' ? 'location' : 'page';
 }
 
 const LINKS: Array<{ id: Section; href: string; label: string; icon: IconName }> = [
@@ -75,7 +83,7 @@ export function TopBar({ route }: { route: Route }): JSX.Element {
               key={link.id}
               href={link.href}
               class={cx('topbar__link', active === link.id && 'is-active')}
-              aria-current={active === link.id ? 'page' : undefined}
+              aria-current={currentOf(route, active, link.id)}
             >
               {link.label}
             </a>
@@ -126,7 +134,7 @@ export function TabBar({ route }: { route: Route }): JSX.Element {
           key={link.id}
           href={link.href}
           class={cx('tabbar__link', active === link.id && 'is-active')}
-          aria-current={active === link.id ? 'page' : undefined}
+          aria-current={currentOf(route, active, link.id)}
         >
           <span class="tabbar__icon">
             <Icon name={link.icon} size={22} />

@@ -56,6 +56,7 @@
 
 .hero__inner {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   gap: 44px;
   max-width: var(--content-max);
@@ -73,9 +74,14 @@
   }
 }
 
-.hero__mark {
-  margin-bottom: 22px;
-  color: var(--ink);
+.hero__back {
+  margin-bottom: 14px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.hero__eyebrow {
+  margin-bottom: 10px;
 }
 
 .hero__title {
@@ -94,12 +100,23 @@
   line-height: 1.55;
 }
 
+.hero__daily {
+  max-width: 44ch;
+  margin-top: 14px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .hero__ctas {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px 22px;
-  margin-top: 28px;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero__more {
+  margin-top: 14px;
 }
 
 /* ---------- Live mini-demo ---------- */
