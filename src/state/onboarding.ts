@@ -8,7 +8,7 @@ import { replaceRoute } from '../router';
 import { logicSession } from './logic';
 import { repairSession } from './repair';
 import { session, startCustomSession } from './session';
-import { bank, progress, showToast, storageOk, updateProgress, welcomeShown } from './store';
+import { bank, progress, showToast, storageOk, updateProgress } from './store';
 
 export interface SetupChoices {
   interests: readonly InterestId[];
@@ -31,7 +31,6 @@ function applyChoices(choices: SetupChoices): void {
       return { ...p, onboarded: true, settings: { ...settings, interests,
         ...(experience ? { startingExperience: experience } : {}) } };
     });
-    welcomeShown.value = true;
   });
   if (!storageOk.peek()) showToast('You can continue, but this browser could not save your choices.', 6000);
 }

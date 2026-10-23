@@ -4,7 +4,7 @@ import { SITE_URL } from '../../src/config';
 import { buildShareText, copyText, shareGrid } from '../../src/engine/share';
 
 describe('share text', () => {
-  it('matches the UI-SPEC format', () => {
+  it('formats the Daily score, outcomes and site link', () => {
     const outcomes = ['correct', 'correct', 'partial', 'correct', 'wrong', 'correct', 'correct', 'correct', 'correct', 'correct'] as const;
     expect(buildShareText(12, outcomes, SITE_URL)).toBe(
       `Fallacy Forge #12 · 8/10\n🟩🟩🟨🟩🟥🟩🟩🟩🟩🟩\n${SITE_URL}`,

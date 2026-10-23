@@ -8,7 +8,7 @@ import type { Progress } from '../src/engine/types';
 import { replaceRoute, route } from '../src/router';
 import { invalidateSessionCaches } from '../src/state/lifecycle';
 import { session, startCustomSession } from '../src/state/session';
-import { bank, commit, progress, replaceProgress, setTheme, storageOk, toast, welcomeShown } from '../src/state/store';
+import { bank, commit, progress, replaceProgress, setTheme, storageOk, toast } from '../src/state/store';
 import { SetupScreen } from '../src/ui/screens/Setup';
 
 const flawed = bank.items.find((item) => !item.isSound && item.format !== 'chat')!;
@@ -25,7 +25,6 @@ beforeEach(() => {
   progress.value = defaultProgress();
   storageOk.value = true;
   toast.value = null;
-  welcomeShown.value = false;
   replaceRoute('#/');
   window.scrollTo = vi.fn() as unknown as typeof window.scrollTo;
 });

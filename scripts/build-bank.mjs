@@ -1,4 +1,4 @@
-// Validates content and writes src/data/bank.json (TECH-SPEC "Content pipeline").
+// Validates authored content and writes the committed src/data/bank.json.
 //
 //   npm run content                                   real content, strict (CI gate)
 //   node scripts/build-bank.mjs --allow-partial       while content is being written

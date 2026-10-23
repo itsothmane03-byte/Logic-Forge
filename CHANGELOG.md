@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 2.6.1 — 2026-10-23
+
+- **Smaller repository.** Replaced obsolete planning specifications with a short current architecture guide, removed superseded content snapshots and unused browser tooling, and condensed the README to four current screenshots.
+- **Fewer unused assets.** Removed redundant logo exports and the archived concept bitmap from the working tree; the icon generator now produces only the retained assets. Provenance remains documented and recoverable in Git history.
+- **Dead-code cleanup.** Removed an unread welcome flag and an unused progress helper. Saved-progress data and practice behavior are unchanged.
+
 ## 2.6.0 — 2026-10-23
 
 - **Start with the activities.** Today opens immediately for every visitor. The former welcome questionnaire is an optional, single-page Practice preferences form with normal navigation, Save, Cancel, and an explicit five-question warm-up. Saving preferences never starts or replaces an exercise.

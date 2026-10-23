@@ -9,5 +9,5 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 
-# Local development screenshots (README images live in docs/screenshots/*.png)
+# Local development screenshots (the README uses four committed PNGs)
 docs/screenshots/dev/

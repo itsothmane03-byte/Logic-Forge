@@ -3,7 +3,7 @@
 Content is the product. A beautiful app with obvious or wrong questions is worthless.
 
 ## 1. Canonical fallacy list (38 fallacies in 6 families)
-IDs are final. `content/source/fallacies.v1.json` is OLD reference material: reuse good definitions and tips, but it has duplicates and mislabels.
+The canonical IDs, families and confusable lists are maintained in [`scripts/canonical.mjs`](../scripts/canonical.mjs).
 
 | Family id | Label | Fallacy id | Confusable with (first = closest) |
 |---|---|---|---|

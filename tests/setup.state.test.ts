@@ -9,7 +9,7 @@ import { logicSession, selectLogicVerdict, startLogic } from '../src/state/logic
 import { cancelSetup, finishSetup, hasActivePractice, saveSetup } from '../src/state/onboarding';
 import { repairSession, selectRepairOption, startRepair } from '../src/state/repair';
 import { next, session, spot, startCustomSession, summary } from '../src/state/session';
-import { bank, commit, progress, setTheme, storageOk, welcomeShown } from '../src/state/store';
+import { bank, commit, progress, setTheme, storageOk } from '../src/state/store';
 
 const AT = new Date('2026-10-23T14:00:00Z').getTime();
 const sound = bank.items.find((item) => item.isSound)!;
@@ -19,7 +19,6 @@ beforeEach(() => {
   localStorage.clear();
   invalidateSessionCaches();
   progress.value = defaultProgress();
-  welcomeShown.value = false;
   storageOk.value = true;
   replaceRoute('#/setup');
   vi.spyOn(Date, 'now').mockReturnValue(AT);
@@ -68,7 +67,6 @@ describe('optional practice preferences', () => {
     expect(new Set(progress.peek().settings.interests)).toEqual(new Set(['tech', 'work']));
     expect(learning(progress.peek())).toEqual(before);
     expect(loadProgress(localStorage)).toEqual(progress.peek());
-    expect(welcomeShown.peek()).toBe(true);
     expect(route.peek()).toEqual({ name: 'play', mode: 'practice' });
     expect(session.peek()).toMatchObject({ mode: 'practice', index: 0, phase: 'spot', outcomes: [], picks: [], finished: false });
     expect(session.peek()!.itemIds).toHaveLength(5);

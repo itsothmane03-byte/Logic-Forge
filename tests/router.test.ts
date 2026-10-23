@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { hrefFor, matchHash, parseHash, type Route } from '../src/router';
 
 describe('hash router', () => {
-  it('parses every route in UI-SPEC', () => {
+  it('parses every supported route', () => {
     expect(parseHash('')).toEqual({ name: 'today' });
     expect(parseHash('#/')).toEqual({ name: 'today' });
     expect(parseHash('#/welcome')).toEqual({ name: 'welcome' });

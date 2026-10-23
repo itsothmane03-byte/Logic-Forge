@@ -113,6 +113,3 @@ export function showToast(text: string, ms = 2800): void {
     toast.value = null;
   }, ms);
 }
-
-/** True once the Welcome page has been shown in this page session. */
-export const welcomeShown = signal(false);

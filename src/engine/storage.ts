@@ -188,17 +188,6 @@ export function saveProgress(storage: StorageLike | null | undefined, progress: 
   }
 }
 
-/** Caps the unbounded lists before saving. */
-export function trimProgress(progress: Progress): Progress {
-  return {
-    ...progress,
-    attempts: progress.attempts.slice(-MAX_ATTEMPTS),
-    sessions: progress.sessions.slice(-MAX_SESSIONS),
-    repair: { ...progress.repair, recent: progress.repair.recent.slice(-MAX_REPAIR_RECENT) },
-    logic: { ...progress.logic, recent: progress.logic.recent.slice(-MAX_ACTIVITY_RECENT) },
-  };
-}
-
 /** Pretty JSON for the "Export" download. */
 export function serializeExport(progress: Progress): string {
   return `${JSON.stringify(progress, null, 2)}\n`;
