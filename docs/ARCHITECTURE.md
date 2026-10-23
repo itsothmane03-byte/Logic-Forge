@@ -10,6 +10,7 @@ account system, analytics or runtime AI. Progress stays in the learner's browser
   Today (`#/`) is the entry point. Other screens are `#/practice`, `#/setup`,
   `#/repair`, `#/logic`, `#/library`, `#/library/:id`, `#/progress`, `#/about`,
   `#/welcome` and `#/summary`. Quizzes use `#/play/:mode` or `#/play/focus/:id`.
+  The welcome URL is an optional introduction within About, not a second home.
 - [Engine modules](../src/engine) handle selection, scoring, deduction, storage
   and progress. [State modules](../src/state) connect them to the UI.
 - Daily Forge is shared by date. Practice adapts to quiz history; familiar topics

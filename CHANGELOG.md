@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here.
 
+## 2.6.2 — 2026-10-23
+
+- **A clearer introduction.** “What is Fallacy Forge?” opens an introduction under About, while Today remains the home. The introduction offers Daily Forge first, explains the shared ten-question challenge, and keeps personal practice as a separate choice.
+- **Readable on small phones.** Fixed the introduction grid clipping text at 320px and removed its duplicate hero logo to keep the main action closer to the top.
+
 ## 2.6.1 — 2026-10-23
 
 - **Smaller repository.** Replaced obsolete planning specifications with a short current architecture guide, removed superseded content snapshots and unused browser tooling, and condensed the README to four current screenshots.

@@ -1,10 +1,11 @@
-// Welcome landing (#/welcome, and #/ on the first visit). The hero and its
-// primary call to action are never hidden or animated in; below-the-fold
-// sections use progressive-enhancement scroll reveals.
+// How Fallacy Forge works (#/welcome), linked from the footer and About; Today
+// stays the home page. The hero and its calls to action are never hidden or
+// animated in; below-the-fold sections use progressive-enhancement scroll reveals.
 
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { AUTHOR, REPO_URL } from '../../config';
+import { DAILY_SIZE } from '../../engine/daily';
 import { pickDemoItem, pickFormatSamples } from '../../engine/select';
 import type { Item, SpotChoice } from '../../engine/types';
 import { bank, fallacyName } from '../../state/store';
@@ -79,7 +80,7 @@ function MiniDemo({ item }: { item: Item }) {
           <p class="mini-demo__exp">{item.explanation}</p>
           <div class="mini-demo__actions">
             <ButtonLink href="#/play/daily" variant="primary" iconRight="arrow-right">
-              Start today's forge
+              Open Daily Forge
             </ButtonLink>
             <button type="button" class="text-link" onClick={() => setChoice(null)}>
               Try again
@@ -194,21 +195,31 @@ export function WelcomeScreen(): JSX.Element {
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__inner">
           <div class="hero__copy">
-            <LogoMark size={72} class="hero__mark" />
+            <a class="text-link hero__back" href="#/">
+              <Icon name="arrow-left" size={16} />
+              Back to Today
+            </a>
+            <p class="eyebrow hero__eyebrow">How Fallacy Forge works</p>
             <h1 id="hero-title" class="hero__title" tabIndex={-1}>
               Spot bad arguments in five minutes a day.
             </h1>
             <p class="hero__sub">
               Practice on short, realistic arguments: spot the flaw, fix the argument, and work out what follows.
             </p>
+            <p class="hero__daily">Daily Forge: the same {DAILY_SIZE} questions for everyone, new each day.</p>
             <div class="hero__ctas">
-              <ButtonLink href="#/practice" variant="primary" size="lg" iconRight="arrow-right">
+              <ButtonLink href="#/play/daily" variant="primary" size="lg" iconRight="arrow-right">
+                Open Daily Forge
+              </ButtonLink>
+              <ButtonLink href="#/practice" variant="secondary" size="lg">
                 Choose practice
               </ButtonLink>
+            </div>
+            <p class="hero__more">
               <a class="text-link text-link--strong" href="#/library">
                 Browse the {count} fallacies
               </a>
-            </div>
+            </p>
           </div>
           {demo && (
             <div class="hero__demo">
@@ -296,7 +307,7 @@ export function WelcomeScreen(): JSX.Element {
           </h2>
           <p class="final-cta__text">Free and open source.</p>
           <ButtonLink href="#/play/daily" variant="primary" size="lg" iconRight="arrow-right">
-            Start today's forge
+            Open Daily Forge
           </ButtonLink>
         </Reveal>
       </section>

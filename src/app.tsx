@@ -33,7 +33,7 @@ function titleFor(r: Route): string {
     case 'today':
       return `Today · ${SUFFIX}`;
     case 'welcome':
-      return `Welcome · ${SUFFIX}`;
+      return `How Fallacy Forge works · ${SUFFIX}`;
     case 'practice':
       return `Practice · ${SUFFIX}`;
     case 'repair':
