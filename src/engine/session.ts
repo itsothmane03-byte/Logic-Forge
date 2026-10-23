@@ -23,6 +23,8 @@ export interface SessionState {
   dateKey: string | null;
   seed: string;
   itemIds: string[];
+  /** Unanswered examples replaced in this set; kept out of later replacements. */
+  skippedItemIds: string[];
   outcomes: Outcome[];
   picks: Array<AnswerPick | null>;
   index: number;
@@ -54,6 +56,7 @@ export function createSession(input: CreateSessionInput): SessionState {
     dateKey: input.dateKey ?? null,
     seed: input.seed,
     itemIds: input.itemIds.slice(),
+    skippedItemIds: [],
     outcomes,
     picks: outcomes.map(() => null),
     index: outcomes.length,

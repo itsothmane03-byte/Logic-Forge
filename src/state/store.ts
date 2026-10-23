@@ -2,6 +2,7 @@
 
 import { batch, signal } from '@preact/signals';
 import { invalidateSessionCaches } from './lifecycle';
+import { INTERESTS, type InterestId } from '../engine/interests';
 import bankJson from '../data/bank.json';
 import { defaultProgress, loadProgress, saveProgress, STORAGE_KEY } from '../engine/storage';
 import type { Bank, Family, Fallacy, Item, Progress, ThemeSetting } from '../engine/types';
@@ -58,6 +59,12 @@ export function setTheme(theme: ThemeSetting): void {
 
 export function setShowDefinitions(showDefinitions: boolean): void {
   updateProgress((p) => ({ ...p, settings: { ...p.settings, showDefinitions } }));
+}
+
+/** Topic preferences apply when a new set starts; never discard a live draft. */
+export function setInterests(interests: readonly InterestId[]): void {
+  const selected = INTERESTS.map((interest) => interest.id).filter((id) => interests.includes(id));
+  updateProgress((p) => ({ ...p, settings: { ...p.settings, interests: selected } }));
 }
 
 export function markOnboarded(): void {

@@ -5,7 +5,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'preact/ho
 import { dailyNumber } from '../../engine/daily';
 import type { SessionState } from '../../engine/session';
 import { navigate, replaceRoute, type PlayRoute } from '../../router';
-import { check, currentItem, endSession, next, optionsFor, pickOption, session, spot, wouldLoseAnswers } from '../../state/session';
+import { check, currentItem, endSession, next, optionsFor, pickOption, session, spot, swapUnfamiliarExample, wouldLoseAnswers } from '../../state/session';
 import { fallacyById, fallacyName, progress, showToast } from '../../state/store';
 import { Button, IconButton } from '../components/Button';
 import { ConfirmDialog } from '../components/Dialog';
@@ -16,6 +16,7 @@ import { QuestionReview, useQuestionReview } from '../components/QuestionReview'
 import { OptionGroup, ProgressSegments, SpotButtons } from '../components/SessionParts';
 import { isShortcutEvent, useKeydown } from '../hooks';
 import { FORMAT_ICONS, FORMAT_LABELS } from '../util';
+import '../styles/interests.css';
 
 export function sessionTitle(state: Pick<SessionState, 'mode' | 'dateKey' | 'focusId'> | null, route?: PlayRoute): string {
   const mode = state?.mode ?? route?.mode;
@@ -63,6 +64,7 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
     spot: reviewedPick?.spot ?? null, selected: reviewedPick?.named ?? null,
   } : live;
   const settings = progress.value.settings;
+  const [swapHelpOpen, setSwapHelpOpen] = useState(false);
   const item = currentItem(state);
   const [sheetFallacyId, setSheetFallacyId] = useState<string | null>(null);
   const [confirmLeave, setConfirmLeave] = useState(false);
@@ -199,6 +201,19 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
         </p>
 
         <PassageCard item={item} highlight={phase === 'feedback'} />
+
+        {phase === 'spot' && (state.mode === 'practice' || state.mode === 'focus') && (
+          <details class="unfamiliar-topic" open={swapHelpOpen} onToggle={(event) => setSwapHelpOpen(event.currentTarget.open)}>
+            <summary>Unfamiliar topic?</summary>
+            <p>Your score stays the same.</p>
+            <Button variant="ghost" size="sm" onClick={() => {
+              const result = swapUnfamiliarExample();
+              setSwapHelpOpen(false);
+              if (result === 'changed') showToast('Another example. Your score is unchanged.');
+              else if (result === 'unavailable') showToast('No more examples are available in this set. You can leave and start another.');
+            }}>Show another</Button>
+          </details>
+        )}
 
         {showOptions && (
           <section class="name-step" aria-labelledby="name-prompt" ref={nameStepRef}>

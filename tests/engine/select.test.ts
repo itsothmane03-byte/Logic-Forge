@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest';
+import bankJson from '../../src/data/bank.json';
+import type { InterestId } from '../../src/engine/interests';
 import { rngFrom } from '../../src/engine/rng';
 import {
   arrangeNoRepeats,
@@ -6,11 +8,12 @@ import {
   fallacyWeight,
   pickDemoItem,
   reviewQueue,
+  selectAlternativeExample,
   selectFocus,
   selectPractice,
   selectReview,
 } from '../../src/engine/select';
-import type { Attempt, Box, Item } from '../../src/engine/types';
+import type { Attempt, Bank, Box, Item } from '../../src/engine/types';
 import { attempt, fallacyOf, fixtureBank, fullBank, itemOf } from '../helpers';
 
 const bank = fullBank();
@@ -208,5 +211,217 @@ describe('pickDemoItem', () => {
     expect(demo.isSound).toBe(false);
     expect(demo.difficulty).toBe(1);
     expect(bank.fallacies.find((f) => f.id === demo.fallacyId)?.difficulty).toBe('beginner');
+  });
+});
+
+const shipped = bankJson as unknown as Bank;
+const PREFS: InterestId[][] = [['work'], ['everyday'], ['tech'], ['everyday', 'work', 'tech']];
+
+/** Each same-difficulty pair differs only in topic: odd examples school, even ones workplace. */
+function topicBank(): Bank {
+  const base = fullBank();
+  const topic = (item: Item) => (Number(item.id.slice(-1)) % 2 ? 'school' : 'workplace');
+  return { ...base, items: base.items.map((item) => (item.isSound ? item : { ...item, tags: [topic(item)] })) };
+}
+
+/** topicBank plus a tech-tagged twin of every sound item, with the same resemblance and difficulty. */
+function soundTwinBank(): Bank {
+  const base = topicBank();
+  const twins = base.items.filter((item) => item.isSound).map((item) => ({ ...item, id: `${item.id}_tech`, tags: ['tech'] }));
+  return { ...base, items: [...base.items, ...twins] };
+}
+
+/** What a question practices: verdict, skill and reasoning difficulty. */
+function slotOf(source: Bank, id: string): string {
+  const item = itemOf(source, id);
+  return `${item.isSound ? 'sound' : 'flawed'}|${item.isSound ? item.resembles : item.fallacyId}|${item.difficulty}`;
+}
+
+function counting(seed: string): { rng: () => number; draws: () => number } {
+  const rng = rngFrom(seed);
+  let draws = 0;
+  return { rng: () => { draws++; return rng(); }, draws: () => draws };
+}
+
+describe('familiar topics in Practice', () => {
+  const topics = topicBank();
+  const slots = (ids: string[]) => ids.map((id) => slotOf(topics, id));
+
+  it('keeps the same skills, difficulties, order and random draws for every interest choice', () => {
+    for (let s = 0; s < 40; s++) {
+      const plainRun = counting(`pref${s}`);
+      const plain = selectPractice({ bank: topics, boxes: {}, attempts: [], rng: plainRun.rng });
+      for (const interests of PREFS) {
+        const run = counting(`pref${s}`);
+        const ids = selectPractice({ bank: topics, boxes: {}, attempts: [], rng: run.rng, interests });
+        expect(slots(ids)).toEqual(slots(plain));
+        expect(run.draws()).toBe(plainRun.draws());
+        expect(new Set(ids).size).toBe(10);
+      }
+    }
+  });
+
+  it('prefers a familiar example within each skill and difficulty', () => {
+    const flawedTags = (ids: string[]) => ids.map((id) => itemOf(topics, id)).filter((i) => !i.isSound).map((i) => i.tags[0]);
+    for (let s = 0; s < 20; s++) {
+      const work = selectPractice({ bank: topics, boxes: {}, attempts: [], rng: rngFrom(`fam${s}`), interests: ['work'] });
+      const everyday = selectPractice({ bank: topics, boxes: {}, attempts: [], rng: rngFrom(`fam${s}`), interests: ['everyday'] });
+      expect(new Set(flawedTags(work))).toEqual(new Set(['workplace']));
+      expect(new Set(flawedTags(everyday))).toEqual(new Set(['school']));
+    }
+  });
+
+  it('never trades freshness for a familiar topic', () => {
+    const recentWork = topics.items.filter((i) => !i.isSound && i.tags.includes('workplace')).slice(0, 40);
+    const attempts = recentWork.map((item, i) => attempt(item.id, 'correct', i));
+    const recentIds = new Set(attempts.map((a) => a.itemId));
+    for (let s = 0; s < 20; s++) {
+      const plain = selectPractice({ bank: topics, boxes: {}, attempts, rng: rngFrom(`stale${s}`) });
+      const ids = selectPractice({ bank: topics, boxes: {}, attempts, rng: rngFrom(`stale${s}`), interests: ['work'] });
+      expect(ids.filter((id) => recentIds.has(id))).toEqual([]);
+      expect(slots(ids)).toEqual(slots(plain));
+    }
+  });
+
+  it('falls back to the usual set when no interest is chosen or nothing matches', () => {
+    // fullBank tags flawed items "everyday" and sound ones "workplace": nothing is Technology.
+    for (let s = 0; s < 10; s++) {
+      const plain = selectPractice({ bank, boxes: {}, attempts: [], rng: rngFrom(`none${s}`) });
+      expect(selectPractice({ bank, boxes: {}, attempts: [], rng: rngFrom(`none${s}`), interests: [] })).toEqual(plain);
+      expect(selectPractice({ bank, boxes: {}, attempts: [], rng: rngFrom(`none${s}`), interests: ['tech'] })).toEqual(plain);
+    }
+  });
+
+  it("keeps a sound pick's resemblance and difficulty while preferring its topic", () => {
+    const twins = soundTwinBank();
+    for (let s = 0; s < 20; s++) {
+      const plain = selectPractice({ bank: twins, boxes: {}, attempts: [], rng: rngFrom(`snd${s}`) });
+      const ids = selectPractice({ bank: twins, boxes: {}, attempts: [], rng: rngFrom(`snd${s}`), interests: ['tech'] });
+      expect(ids.map((id) => slotOf(twins, id))).toEqual(plain.map((id) => slotOf(twins, id)));
+      const sound = ids.filter((id) => itemOf(twins, id).isSound);
+      expect(sound).toHaveLength(2);
+      // Familiar unless its tech twin is already in the set.
+      for (const id of sound) expect(id.endsWith('_tech') || ids.includes(`${id}_tech`)).toBe(true);
+    }
+  });
+});
+
+describe('familiar topics in Focus', () => {
+  const topics = topicBank();
+  const target = topics.fallacies.find((f) => f.id === 'fal_ad_hominem')!;
+  const slots = (ids: string[]) => ids.map((id) => slotOf(topics, id));
+
+  it('keeps quotas, skills, difficulties and random draws while preferring familiar examples', () => {
+    for (let s = 0; s < 20; s++) {
+      const plainRun = counting(`fx${s}`);
+      const plain = selectFocus({ bank: topics, fallacyId: target.id, rng: plainRun.rng });
+      for (const interests of PREFS) {
+        const run = counting(`fx${s}`);
+        const ids = selectFocus({ bank: topics, fallacyId: target.id, rng: run.rng, interests });
+        expect(slots(ids)).toEqual(slots(plain));
+        expect(run.draws()).toBe(plainRun.draws());
+        expect(new Set(ids).size).toBe(10);
+      }
+      const work = selectFocus({ bank: topics, fallacyId: target.id, rng: rngFrom(`fx${s}`), interests: ['work'] }).map((id) => itemOf(topics, id));
+      const confusables = work.filter((i) => !i.isSound && i.fallacyId !== target.id);
+      expect(work.filter((i) => i.fallacyId === target.id)).toHaveLength(6);
+      expect(work.filter((i) => i.isSound && i.resembles === target.id)).toHaveLength(2);
+      expect(confusables).toHaveLength(2);
+      expect(confusables.every((i) => i.tags.includes('workplace'))).toBe(true);
+    }
+  });
+});
+
+describe('specialist passages', () => {
+  it('stay out of Practice and Focus, even when they are the only familiar match', () => {
+    const topics = topicBank();
+    const marked: Bank = {
+      ...topics,
+      items: topics.items.map((i) => (!i.isSound && i.tags.includes('workplace') ? { ...i, backgroundKnowledge: 'specialist' as const } : i)),
+    };
+    const specialist = new Set(marked.items.filter((i) => i.backgroundKnowledge === 'specialist').map((i) => i.id));
+    for (let s = 0; s < 20; s++) {
+      for (const interests of [[], ['work']] as InterestId[][]) {
+        const practice = selectPractice({ bank: marked, boxes: {}, attempts: [], rng: rngFrom(`sp${s}`), interests });
+        const focus = selectFocus({ bank: marked, fallacyId: 'fal_ad_hominem', rng: rngFrom(`sp${s}`), interests });
+        expect(practice).toHaveLength(10);
+        expect(focus).toHaveLength(10);
+        expect([...practice, ...focus].filter((id) => specialist.has(id))).toEqual([]);
+      }
+    }
+  });
+});
+
+describe('selectAlternativeExample', () => {
+  const topics = topicBank();
+  const current = itemOf(topics, 'itm_ad_hominem_01');
+  const alternative = (input: Partial<Parameters<typeof selectAlternativeExample>[0]>) =>
+    selectAlternativeExample({ bank: topics, current, excludeIds: [], attempts: [], rng: rngFrom('alt'), ...input });
+
+  it('offers the unused example with the same verdict, skill and difficulty first', () => {
+    expect(alternative({})?.id).toBe('itm_ad_hominem_02');
+  });
+
+  it('falls back to another skill but keeps the verdict and difficulty', () => {
+    for (let s = 0; s < 20; s++) {
+      const alt = alternative({ excludeIds: ['itm_ad_hominem_02'], rng: rngFrom(`other${s}`) })!;
+      expect(alt.isSound).toBe(false);
+      expect(alt.difficulty).toBe(1);
+      expect(alt.fallacyId).not.toBe('fal_ad_hominem');
+    }
+  });
+
+  it('prefers fresh passages, then familiar topics', () => {
+    const work = topics.items.filter((i) => !i.isSound && i.difficulty === 1 && i.fallacyId !== current.fallacyId && i.tags.includes('workplace'));
+    const seenAll = work.map((item, i) => attempt(item.id, 'correct', i));
+    for (let s = 0; s < 10; s++) {
+      // Only one Work passage is still fresh: it wins over fresh School ones.
+      const familiar = alternative({ excludeIds: ['itm_ad_hominem_02'], attempts: seenAll.slice(1), interests: ['work'], rng: rngFrom(`fresh${s}`) });
+      expect(familiar?.id).toBe(work[0]!.id);
+      // Every Work passage is recent: freshness wins over the topic.
+      const stale = alternative({ excludeIds: ['itm_ad_hominem_02'], attempts: seenAll, interests: ['work'], rng: rngFrom(`stale${s}`) })!;
+      expect(stale.tags).toEqual(['school']);
+    }
+  });
+
+  it('lets every shipped question swap without changing its verdict or difficulty', () => {
+    for (const item of shipped.items.filter((i) => i.isSound)) {
+      const alt = selectAlternativeExample({ bank: shipped, current: item, excludeIds: [], attempts: [], rng: rngFrom(item.id) });
+      expect(alt?.isSound).toBe(true);
+      expect(alt?.difficulty).toBe(item.difficulty);
+    }
+    for (let s = 0; s < 10; s++) {
+      const ids = selectPractice({ bank: shipped, boxes: {}, attempts: [], rng: rngFrom(`real${s}`) });
+      for (const id of ids) {
+        const item = itemOf(shipped, id);
+        const alt = selectAlternativeExample({ bank: shipped, current: item, excludeIds: ids, attempts: [], rng: rngFrom(`real${s}:${id}`) })!;
+        expect(ids).not.toContain(alt.id);
+        expect([alt.isSound, alt.difficulty]).toEqual([item.isSound, item.difficulty]);
+      }
+    }
+  });
+
+  it('returns undefined once a tiny pool is exhausted, without repeats or specialist passages', () => {
+    const tiny: Bank = {
+      ...topics,
+      items: [
+        current,
+        { ...current, id: 'itm_tiny_same' },
+        { ...current, id: 'itm_tiny_other', fallacyId: 'fal_straw_man' },
+        { ...current, id: 'itm_tiny_specialist', backgroundKnowledge: 'specialist' },
+        { ...current, id: 'itm_tiny_harder', difficulty: 2 },
+        { ...current, id: 'itm_tiny_sound', isSound: true, fallacyId: null, resembles: current.fallacyId },
+      ],
+    };
+    const skipped: string[] = [];
+    let shown = current;
+    for (let step = 0; step < 6; step++) {
+      const alt = selectAlternativeExample({ bank: tiny, current: shown, excludeIds: skipped, attempts: [], rng: rngFrom(`tiny${step}`) });
+      if (!alt) break;
+      skipped.push(shown.id);
+      shown = alt;
+    }
+    expect([...skipped.slice(1), shown.id]).toEqual(['itm_tiny_same', 'itm_tiny_other']);
+    expect(selectAlternativeExample({ bank: tiny, current: shown, excludeIds: skipped, attempts: [], rng: rngFrom('end') })).toBeUndefined();
   });
 });

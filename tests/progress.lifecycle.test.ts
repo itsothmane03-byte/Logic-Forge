@@ -36,7 +36,7 @@ afterEach(() => {
 
 /** A past summary plus three active activities, each with an answer already saved. */
 function populateActivities(): void {
-  commit({ ...defaultProgress(), settings: { theme: 'dark', showDefinitions: false }, onboarded: true });
+  commit({ ...defaultProgress(), settings: { theme: 'dark', showDefinitions: false, interests: [] }, onboarded: true });
   startCustomSession({ key: 'practice', mode: 'practice', itemIds: [sound.id], seed: 'previous-summary' });
   spot('sound');
   next();
@@ -117,7 +117,7 @@ describe('progress replacement lifecycle', () => {
     const imported: Progress = {
       ...defaultProgress(),
       onboarded: true,
-      settings: { theme: 'light', showDefinitions: true },
+      settings: { theme: 'light', showDefinitions: true, interests: [] },
       daily: { [TODAY]: { itemIds: [sound.id], answers: ['correct'], done: true } },
       sessions: [{ mode: 'daily', at: AT - 1000, total: 1, correct: 1 }],
       repair: { recent: [], answered: 20, correct: 15, sets: 4 },
@@ -158,7 +158,7 @@ describe('progress replacement lifecycle', () => {
     stopWatching = watchOtherTabs();
     const cached = cachedActivities();
     const epoch = dataEpoch.peek();
-    const external = { ...progress.peek(), settings: { theme: 'light' as const, showDefinitions: true } };
+    const external = { ...progress.peek(), settings: { theme: 'light' as const, showDefinitions: true, interests: [] } };
 
     otherTabSaves(external);
 

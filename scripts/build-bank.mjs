@@ -20,7 +20,7 @@ const FALLACY_FIELDS = [
 ];
 const ITEM_FIELDS = [
   'id', 'fallacyId', 'isSound', 'resembles', 'difficulty', 'format', 'source',
-  'title', 'passage', 'cue', 'explanation', 'whyNot', 'tags',
+  'title', 'passage', 'cue', 'explanation', 'whyNot', 'tags', 'backgroundKnowledge',
 ];
 
 const pick = (obj, fields) => Object.fromEntries(fields.map((k) => [k, obj[k]]));

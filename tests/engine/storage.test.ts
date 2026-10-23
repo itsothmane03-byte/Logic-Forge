@@ -26,7 +26,7 @@ function memoryStorage(initial?: string) {
 function sample(): Progress {
   return {
     ...defaultProgress(),
-    settings: { theme: 'dark', showDefinitions: false },
+    settings: { theme: 'dark', showDefinitions: false, interests: ['work'] },
     onboarded: true,
     boxes: { fal_straw_man: 3, fal_ad_hominem: 5 },
     stats: { fal_straw_man: { seen: 6, correct: 4 } },
@@ -82,7 +82,7 @@ describe('loadProgress', () => {
       bestStreak: 'lots',
     };
     const clean = sanitizeProgress(JSON.parse(JSON.stringify(raw)))!;
-    expect(clean.settings).toEqual({ theme: 'system', showDefinitions: true });
+    expect(clean.settings).toEqual({ theme: 'system', showDefinitions: true, interests: [] });
     expect(clean.boxes).toEqual({ fal_straw_man: 3 });
     expect(Object.getPrototypeOf(clean.boxes)).toBe(Object.prototype);
     expect(clean.stats).toEqual({ fal_straw_man: { seen: 2, correct: 2 } });
@@ -144,6 +144,33 @@ describe('import / export', () => {
       expect(wrong.error).toContain('boxes');
       expect(wrong.error).toContain('bestStreak');
     }
+  });
+});
+
+describe('familiar topic preferences', () => {
+  const withSettings = (settings: unknown) => ({ ...sample(), settings });
+
+  it('loads saves and imports from before interests with "Mix everything"', () => {
+    const legacy = withSettings({ theme: 'dark', showDefinitions: false });
+    const expected = { ...sample(), settings: { theme: 'dark', showDefinitions: false, interests: [] } };
+    expect(loadProgress(memoryStorage(JSON.stringify(legacy)))).toEqual(expected);
+    expect(parseImport(JSON.stringify(legacy))).toEqual({ ok: true, progress: expected });
+    expect(defaultProgress().settings.interests).toEqual([]);
+  });
+
+  it('drops unknown, repeated and malformed interests and keeps a stable order', () => {
+    const messy = withSettings({ theme: 'light', showDefinitions: true, interests: ['tech', 'Work', 'work', 'tech', 3, null, 'everyday'] });
+    expect(sanitizeProgress(messy)!.settings).toEqual({ theme: 'light', showDefinitions: true, interests: ['everyday', 'work', 'tech'] });
+    for (const interests of ['work', { work: true }, null, 7]) {
+      expect(sanitizeProgress(withSettings({ theme: 'light', showDefinitions: true, interests }))!.settings.interests).toEqual([]);
+    }
+  });
+
+  it('includes interests in the export and restores them on import', () => {
+    const chosen: Progress = { ...sample(), settings: { ...sample().settings, interests: ['everyday', 'tech'] } };
+    const text = serializeExport(chosen);
+    expect(JSON.parse(text).settings.interests).toEqual(['everyday', 'tech']);
+    expect(parseImport(text)).toEqual({ ok: true, progress: chosen });
   });
 });
 

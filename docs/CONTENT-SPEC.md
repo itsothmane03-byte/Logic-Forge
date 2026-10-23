@@ -100,7 +100,8 @@ Limits:
   "cue": "Priya's been here four months",
   "explanation": "Marcus dismisses the cost evidence by pointing to Priya's short tenure instead of answering the comparables.",
   "whyNot": { "fal_genetic_fallacy": "It's not about where the claim came from historically; it's a jab at the person making it." },
-  "tags": ["workplace", "money"]
+  "tags": ["workplace", "money"],
+  "backgroundKnowledge": "general"
 }
 ```
 Sound near-miss: `"isSound": true, "fallacyId": null, "resembles": "fal_ad_hominem"`, ids `itm_snd_<slug>_01` and `_02`, where `<slug>` is the fallacy id without `fal_`. `whyNot` has exactly one key, the `resembles` id, explaining why it is NOT that fallacy.
@@ -124,6 +125,9 @@ Field rules:
 - `explanation`: 240 characters or less, plain language, says why it is this fallacy (or why it is sound).
 - `whyNot`: exactly 1 key. For flawed items, normally the closest confusable; it must be a fallacy id. 180 characters or less.
 - `tags`: 1–3 of: everyday, workplace, school, health, fitness, food, money, tech, science, sports, parenting, local-news, shopping, travel, media, environment, housing.
+- `backgroundKnowledge`: separate from reasoning difficulty. `general` means ordinary language with all necessary facts supplied; `explained` means a domain term appears but its relevant meaning is supplied; `specialist` means outside expertise is still needed. Adaptive Practice and Focus exclude specialist items. Legacy fixtures may omit this field; every shipped item must carry a reviewed label. Never infer a label from the topic or difficulty alone.
+
+Familiar topics are soft preferences after the chosen reasoning skill, difficulty and freshness. Everyday life covers the existing tags except workplace, tech and science; Work matches workplace; Technology matches tech and science. A preference must never remove a skill from practice. Keep IDs stable when simplifying wording so saved history continues to refer to the same exercise. A no-penalty replacement keeps the verdict and difficulty, prefers the same skill, and may use a different skill when the collection has no unused match.
 
 ## 3. Writing standard (what "good" means)
 1. **Realism first.** It must sound like something a real person would post, say or write. Vary the voice: casual posts, polite emails, punchy ads, earnest speeches.

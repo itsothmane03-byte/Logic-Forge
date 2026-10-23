@@ -7,7 +7,7 @@ import { buildOptions } from '../engine/distractors';
 import { masteryChanges, type MasteryChange } from '../engine/mastery';
 import { rngFrom } from '../engine/rng';
 import { sessionScore } from '../engine/score';
-import { pickDemoItem, selectFocus, selectPractice, selectReview } from '../engine/select';
+import { pickDemoItem, selectAlternativeExample, selectFocus, selectPractice, selectReview } from '../engine/select';
 import * as S from '../engine/session';
 import type { Item, Mode, Outcome, SpotChoice } from '../engine/types';
 import type { PlayRoute } from '../router';
@@ -68,12 +68,12 @@ export function prepareSession(route: PlayRoute, now = Date.now()): PrepareResul
       break;
     }
     case 'practice':
-      itemIds = selectPractice({ bank, boxes: p.boxes, attempts: p.attempts, rng: rngFrom(seed) });
+      itemIds = selectPractice({ bank, boxes: p.boxes, attempts: p.attempts, interests: p.settings.interests, rng: rngFrom(seed) });
       break;
     case 'focus':
       if (!fallacyById.has(route.fallacyId)) return { status: 'unknown-fallacy' };
       focusId = route.fallacyId;
-      itemIds = selectFocus({ bank, fallacyId: route.fallacyId, rng: rngFrom(seed) });
+      itemIds = selectFocus({ bank, fallacyId: route.fallacyId, interests: p.settings.interests, rng: rngFrom(seed) });
       break;
     case 'review':
       itemIds = selectReview(p.attempts, bankItemIds);
@@ -138,6 +138,31 @@ export function spot(choice: SpotChoice): void {
 export function pickOption(fallacyId: string): void {
   const state = session.value;
   if (state) session.value = S.selectOption(state, fallacyId);
+}
+
+/** Replace only an unseen question. No attempt, score, mastery or streak write. */
+export function swapUnfamiliarExample(): 'changed' | 'unavailable' | 'not-allowed' {
+  const state = session.peek();
+  const item = currentItem(state);
+  if (!state || !item || state.finished || state.phase !== 'spot'
+    || (state.mode !== 'practice' && state.mode !== 'focus')) return 'not-allowed';
+  const skipped = state.skippedItemIds;
+  // A fallback skill must not introduce adjacent repeats in adaptive Practice.
+  const neighbors = new Set(state.mode === 'practice'
+    ? [state.itemIds[state.index - 1], state.itemIds[state.index + 1]]
+      .map((id) => id ? itemById.get(id)?.fallacyId : null).filter(Boolean)
+    : []);
+  const alternative = selectAlternativeExample({
+    bank: { ...bank, items: bank.items.filter((candidate) => !candidate.fallacyId || !neighbors.has(candidate.fallacyId)) },
+    current: item, excludeIds: [...state.itemIds, ...skipped],
+    attempts: progress.peek().attempts, interests: progress.peek().settings.interests,
+    rng: rngFrom(`${state.seed}:swap:${state.index}:${skipped.join(',')}`),
+  });
+  if (!alternative) return 'unavailable';
+  const itemIds = state.itemIds.slice();
+  itemIds[state.index] = alternative.id;
+  session.value = { ...state, itemIds, skippedItemIds: [...skipped, item.id] };
+  return 'changed';
 }
 
 export function check(): void {

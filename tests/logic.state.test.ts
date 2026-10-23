@@ -11,7 +11,7 @@ beforeEach(() => {
   clearLogicSession();
   progress.value = {
     ...defaultProgress(),
-    settings: { theme: 'dark', showDefinitions: false },
+    settings: { theme: 'dark', showDefinitions: false, interests: [] },
     boxes: { fal_ad_hominem: 4 },
     days: { '2026-10-20': 10 },
     repair: { recent: ['rep_old_car'], answered: 7, correct: 3, sets: 1 },
@@ -112,7 +112,7 @@ describe('logic activity state', () => {
     resetProgress();
     expect(logicSession.peek()).toBeNull();
     expect(progress.peek().logic).toEqual(defaultProgress().logic);
-    expect(progress.peek().settings).toEqual({ theme: 'dark', showDefinitions: false });
+    expect(progress.peek().settings).toEqual({ theme: 'dark', showDefinitions: false, interests: [] });
     checkLogic();
     expect(progress.peek().logic.answered).toBe(0);
   });
