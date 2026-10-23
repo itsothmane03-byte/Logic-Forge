@@ -6,6 +6,7 @@ describe('hash router', () => {
     expect(parseHash('')).toEqual({ name: 'today' });
     expect(parseHash('#/')).toEqual({ name: 'today' });
     expect(parseHash('#/welcome')).toEqual({ name: 'welcome' });
+    expect(parseHash('#/setup')).toEqual({ name: 'setup' });
     expect(parseHash('#/practice')).toEqual({ name: 'practice' });
     expect(parseHash('#/repair')).toEqual({ name: 'repair' });
     expect(parseHash('#/logic')).toEqual({ name: 'logic' });
@@ -42,6 +43,7 @@ describe('hash router', () => {
     const routes: Route[] = [
       { name: 'today' },
       { name: 'welcome' },
+      { name: 'setup' },
       { name: 'practice' },
       { name: 'repair' },
       { name: 'logic' },

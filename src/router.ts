@@ -10,6 +10,7 @@ export type PlayMode = 'daily' | 'practice' | 'review' | 'demo';
 export type Route =
   | { name: 'today' }
   | { name: 'welcome' }
+  | { name: 'setup' }
   | { name: 'practice' }
   | { name: 'repair' }
   | { name: 'logic' }
@@ -40,6 +41,7 @@ export function matchHash(hash: string): Route | null {
   if (parts.length === 0) return { name: 'today' };
   if (parts.length === 1) {
     if (head === 'welcome') return { name: 'welcome' };
+    if (head === 'setup') return { name: 'setup' };
     if (head === 'practice') return { name: 'practice' };
     if (head === 'repair') return { name: 'repair' };
     if (head === 'logic') return { name: 'logic' };
@@ -65,6 +67,7 @@ export function hrefFor(route: Route): string {
   switch (route.name) {
     case 'today': return '#/';
     case 'welcome': return '#/welcome';
+    case 'setup': return '#/setup';
     case 'practice': return '#/practice';
     case 'repair': return '#/repair';
     case 'logic': return '#/logic';

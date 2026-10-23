@@ -3,6 +3,7 @@
 
 import { isAdaptiveEligible, matchesInterests, type InterestId } from './interests';
 import { shuffle, weightedIndex, type Rng } from './rng';
+import { STARTER_PROFILES, type StarterProfile, type StarterProfileId } from './starting';
 import type { Attempt, Box, Fallacy, Item } from './types';
 
 export const SESSION_SIZE = 10;
@@ -125,6 +126,14 @@ export interface PracticeInput {
   rng: Rng;
   /** Familiar topics: a soft preference after skill, difficulty and freshness. */
   interests?: readonly InterestId[];
+  /** First-set profile: 5 questions instead of 10. Omitted means normal Practice. */
+  starter?: StarterProfileId;
+}
+
+/** The fallacy of the last answered item, so a new set doesn't open with it. */
+function previousFallacy(bank: BankLike, attempts: readonly Attempt[]): string | null {
+  const lastAttempt = attempts[attempts.length - 1];
+  return lastAttempt ? (bank.items.find((i) => i.id === lastAttempt.itemId)?.fallacyId ?? null) : null;
 }
 
 /**
@@ -132,9 +141,14 @@ export interface PracticeInput {
  * without replacement; items seen in the last 40 attempts are avoided when the
  * pool allows, and the same fallacy never appears twice in a row. Interests
  * only choose between examples of the same skill and difficulty; specialist
- * passages are left out.
+ * passages are left out. With `starter`, a 5-question first set is returned
+ * instead, or normal Practice when that profile can't be filled.
  */
-export function selectPractice({ bank, boxes, attempts, rng, interests = [] }: PracticeInput): string[] {
+export function selectPractice(input: PracticeInput): string[] {
+  const profile = input.starter ? STARTER_PROFILES[input.starter] : undefined;
+  const starter = profile ? selectStarter(input, profile) : undefined;
+  if (starter) return starter;
+  const { bank, boxes, attempts, rng, interests = [] } = input;
   const items = bank.items.filter(isAdaptiveEligible).sort(byId);
   const recent = recentItemIds(attempts);
   const lastSeen = lastSeenIndex(attempts);
@@ -178,9 +192,51 @@ export function selectPractice({ bank, boxes, attempts, rng, interests = [] }: P
     used.add(item.id);
   }
 
-  const lastAttempt = attempts[attempts.length - 1];
-  const previous = lastAttempt ? (bank.items.find((i) => i.id === lastAttempt.itemId)?.fallacyId ?? null) : null;
-  return arrangeNoRepeats(shuffle([...flawed, ...soundPicks], rng), previous).map((i) => i.id);
+  return arrangeNoRepeats(shuffle([...flawed, ...soundPicks], rng), previousFallacy(bank, attempts)).map((i) => i.id);
+}
+
+/**
+ * Starter: one flawed question per profile difficulty plus one sound near-miss,
+ * shuffled. Skills follow the usual box weights, with distinct fallacies first,
+ * then fresh items, then familiar topics; the sound passage resembles a chosen
+ * skill when it can. Undefined when the profile can't be filled.
+ */
+function selectStarter({ bank, boxes, attempts, rng, interests = [] }: PracticeInput, profile: StarterProfile): string[] | undefined {
+  const items = bank.items.filter(isAdaptiveEligible).sort(byId);
+  const recent = recentItemIds(attempts);
+  const lastSeen = lastSeenIndex(attempts);
+  const flawedByFallacy = groupFlawed(items);
+  const fallacies = bank.fallacies.filter((f) => !profile.beginnerOnly || f.difficulty === 'beginner');
+  const used = new Set<string>();
+  const usedFallacies = new Set<string>();
+  const picks: Item[] = [];
+
+  for (const difficulty of profile.flawed) {
+    const unused = (f: Fallacy) => (flawedByFallacy.get(f.id) ?? []).filter((i) => i.difficulty === difficulty && !used.has(i.id));
+    const hasFresh = (f: Fallacy) => unused(f).some((i) => !recent.has(i.id));
+    const tiers: Array<(f: Fallacy) => boolean> = [
+      (f) => !usedFallacies.has(f.id) && hasFresh(f),
+      (f) => !usedFallacies.has(f.id) && unused(f).length > 0,
+      (f) => hasFresh(f),
+      (f) => unused(f).length > 0,
+    ];
+    const pool = tiers.map((test) => fallacies.filter(test)).find((list) => list.length > 0);
+    if (!pool) return undefined;
+    const fallacy = pool[weightedIndex(pool.map((f) => fallacyWeight(f, boxes, attempts.length)), rng)] ?? pool[0];
+    const item = fallacy ? chooseItem(unused(fallacy), recent, lastSeen, rng, interests) : undefined;
+    if (!fallacy || !item) return undefined;
+    picks.push(item);
+    used.add(item.id);
+    usedFallacies.add(fallacy.id);
+  }
+
+  const sound = items.filter((i) => i.isSound && i.difficulty === profile.sound);
+  const resembling = sound.filter((i) => i.resembles !== null && usedFallacies.has(i.resembles));
+  const soundPool = [resembling, sound].find((pool) => pool.some((i) => !recent.has(i.id)))
+    ?? [resembling, sound].find((pool) => pool.length > 0);
+  const soundPick = soundPool ? chooseItem(soundPool, recent, lastSeen, rng, interests) : undefined;
+  if (!soundPick) return undefined;
+  return arrangeNoRepeats(shuffle([...picks, soundPick], rng), previousFallacy(bank, attempts)).map((i) => i.id);
 }
 
 export interface FocusInput {

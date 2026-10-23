@@ -9,7 +9,7 @@
 [![CI](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml/badge.svg)](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
 
-![The Welcome page: headline, call to action and a live question you can answer](docs/screenshots/welcome.png)
+![The first-visit welcome: optional familiar topics, followed by a starting preference](docs/screenshots/setup.png)
 
 Fallacy Forge offers three ways to practice clear thinking. **Spot the flaw** uses short, realistic passages mixed with **sound near-misses**: arguments that only look broken. **Fix the argument** asks you to choose a stronger revision. **What follows?** gives you facts and a claim: must it be true, must it be false, or could it be either?
 
@@ -28,6 +28,10 @@ Fallacy Forge offers three ways to practice clear thinking. **Spot the flaw** us
 | ![Library: 38 fallacies grouped by family with search and filters](docs/screenshots/library.png) | ![Fallacy detail: definition, tips, example and practice button](docs/screenshots/detail.png) | ![Progress: stats, practice heatmap and accuracy trend](docs/screenshots/progress.png) |
 
 ## How it works
+
+On your first home visit, a short welcome asks about **interests** and an optional **starting comfort**. Back keeps your draft choices, and Skip setup leaves them unsaved. Finishing starts five questions, with the starting mix informed by your answer; this is a preference, not a level assessment. No answer means a gentle mix. Normal adaptive Practice follows, and Daily Forge keeps its shared questions. Choices stay in the browser and can be changed from Practice or Progress → Change your setup ([open setup directly](https://itsothmane03-byte.github.io/Logic-Forge/#/setup)).
+
+Existing learning history bypasses the welcome. Reopening setup prefills your choices; Cancel changes nothing. If any activity is already open, Save and return preserves its draft instead of replacing it. Progress export/import includes the optional starting preference, older saves remain compatible, and reset keeps your settings.
 
 In **Spot the flaw**, each question is two small steps, then the lesson:
 

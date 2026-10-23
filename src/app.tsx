@@ -4,7 +4,7 @@ import type { JSX } from 'preact';
 import { useEffect, useMemo } from 'preact/hooks';
 import { navigate, route, type Route } from './router';
 import { session, sessionKey } from './state/session';
-import { fallacyById, progress, welcomeShown } from './state/store';
+import { fallacyById, progress } from './state/store';
 import { AppFooter, MobileHeader, TabBar, TopBar } from './ui/components/Nav';
 import { ShortcutsDialog, shortcutsOpen, Toast } from './ui/components/Overlays';
 import { isShortcutEvent, useKeydown } from './ui/hooks';
@@ -22,11 +22,16 @@ import { LogicScreen } from './ui/screens/Logic';
 import { dataEpoch } from './state/lifecycle';
 import { cx } from './ui/util';
 import { dateKey } from './engine/dates';
+import { shouldOfferSetup } from './state/onboarding';
+import { SetupScreen } from './ui/screens/Setup';
 
 const SUFFIX = 'Fallacy Forge';
 
-function titleFor(r: Route, welcome: boolean): string {
+function titleFor(r: Route, welcome: boolean, setup: boolean): string {
+  if (setup) return `Make it yours · ${SUFFIX}`;
   switch (r.name) {
+    case 'setup':
+      return `Make it yours · ${SUFFIX}`;
     case 'today':
       return welcome ? `Welcome · ${SUFFIX}` : `Today · ${SUFFIX}`;
     case 'welcome':
@@ -74,21 +79,23 @@ function useSameHashLinks(): void {
 export function App(): JSX.Element {
   const r = route.value;
   const p = progress.value;
-  // Decided once per navigation, so showing the Welcome page doesn't flip itself off.
+  const epoch = dataEpoch.value;
+  // Keep a setup draft stable during settings edits, but rebuild after import/reset.
   const showWelcome = useMemo(
-    () => r.name === 'welcome' || (r.name === 'today' && !welcomeShown.peek()
-      && p.attempts.length === 0 && p.repair.answered === 0 && p.logic.answered === 0 && !p.onboarded),
+    () => r.name === 'welcome',
     [r],
   );
-  const epoch = dataEpoch.value;
+  const showSetup = useMemo(() => r.name === 'setup'
+    || (r.name === 'today' && shouldOfferSetup(p)), [r, epoch]);
   const inSession = r.name === 'play' || r.name === 'repair' || r.name === 'logic';
+  const focused = inSession || showSetup;
   const playKey = r.name === 'play' ? sessionKey(r, dateKey()) : '';
-  const key = `${showWelcome ? 'welcome' : r.name === 'play' ? `play:${playKey}` : r.name === 'fallacy' ? `fallacy:${r.fallacyId}` : r.name}:${epoch}`;
+  const key = `${showSetup ? 'setup' : showWelcome ? 'welcome' : r.name === 'play' ? `play:${playKey}` : r.name === 'fallacy' ? `fallacy:${r.fallacyId}` : r.name}:${epoch}`;
 
   useSameHashLinks();
 
   useEffect(() => {
-    document.title = titleFor(r, showWelcome);
+    document.title = titleFor(r, showWelcome, showSetup);
     window.scrollTo(0, 0);
     const heading = document.querySelector<HTMLElement>('#main h1');
     if (heading) {
@@ -105,7 +112,8 @@ export function App(): JSX.Element {
   });
 
   let screen: JSX.Element;
-  if (showWelcome) screen = <WelcomeScreen />;
+  if (showSetup) screen = <SetupScreen />;
+  else if (showWelcome) screen = <WelcomeScreen />;
   else {
     switch (r.name) {
       case 'practice':
@@ -141,7 +149,7 @@ export function App(): JSX.Element {
   }
 
   return (
-    <div class={cx('app', !inSession && 'app--tabs')}>
+    <div class={cx('app', !focused && 'app--tabs')}>
       <a
         class="skip-link"
         href="#main"
@@ -154,15 +162,15 @@ export function App(): JSX.Element {
       >
         Skip to content
       </a>
-      {!inSession && <TopBar route={r} />}
-      {!inSession && <MobileHeader />}
+      {!focused && <TopBar route={r} />}
+      {!focused && <MobileHeader />}
       <main id="main" class="app-main" tabIndex={-1}>
         <div class={cx('route', inSession && 'route--session')} key={key}>
           {screen}
         </div>
       </main>
-      {!inSession && !showWelcome && <AppFooter />}
-      {!inSession && <TabBar route={r} />}
+      {!focused && !showWelcome && <AppFooter />}
+      {!focused && <TabBar route={r} />}
       <Toast />
       <ShortcutsDialog />
     </div>
