@@ -6,7 +6,7 @@
 
 [![CI](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml/badge.svg)](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml)
 
-![Today: Daily Forge and the practice activities](docs/screenshots/today.png)
+![Today: Daily Forge and the practice activities](docs/screenshots/today.jpg)
 
 ## Practice
 
