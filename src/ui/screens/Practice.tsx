@@ -85,7 +85,7 @@ export function PracticeScreen(): JSX.Element {
         </fieldset>
         <p class="topic-preferences__note" role="status">{progress.value.settings.interests.length ? 'Preferences saved for your next set.' : 'Mixing all topics.'} Daily Forge stays the same for everyone.</p>
         {!storageOk.value && <p role="status">Your choice works here, but this browser could not save it.</p>}
-        <p><a class="text-link" href="#/setup">Change your setup</a></p>
+        <p><a class="text-link" href="#/setup">Practice preferences</a></p>
       </details>
       <div class="practice-hub__grid">
         {ACTIVITIES.map((activity) => (

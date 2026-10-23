@@ -2,14 +2,14 @@
 
 **Spot weak reasoning. Practice making it stronger.**
 
-[**Try it live →**](https://itsothmane03-byte.github.io/Logic-Forge/) · Free · No account · Works offline
+[**Try it live →**](https://itsothmane03-byte.github.io/Logic-Forge/)
 
 > Fallacy Forge lives in the [Logic-Forge](https://github.com/itsothmane03-byte/Logic-Forge) repository. Version 2 is a full rebuild of the 2025 MVP.
 
 [![CI](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml/badge.svg)](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
 
-![The first-visit welcome: optional familiar topics, followed by a starting preference](docs/screenshots/setup.png)
+![Today: the Daily challenge and three activities, available immediately](docs/screenshots/today.png)
 
 Fallacy Forge offers three ways to practice clear thinking. **Spot the flaw** uses short, realistic passages mixed with **sound near-misses**: arguments that only look broken. **Fix the argument** asks you to choose a stronger revision. **What follows?** gives you facts and a claim: must it be true, must it be false, or could it be either?
 
@@ -29,9 +29,13 @@ Fallacy Forge offers three ways to practice clear thinking. **Spot the flaw** us
 
 ## How it works
 
-On your first home visit, a short welcome asks about **interests** and an optional **starting comfort**. Back keeps your draft choices, and Skip setup leaves them unsaved. Finishing starts five questions, with the starting mix informed by your answer; this is a preference, not a level assessment. No answer means a gentle mix. Normal adaptive Practice follows, and Daily Forge keeps its shared questions. Choices stay in the browser and can be changed from Practice or Progress → Change your setup ([open setup directly](https://itsothmane03-byte.github.io/Logic-Forge/#/setup)).
+Today opens straight to the activities. **Daily Forge** gives everyone the same ten questions for that date. **Spot the flaw** practice adapts to previous answers and prefers familiar topics when suitable examples are available; Fix the argument and What follows? have their own exercise collections.
 
-Existing learning history bypasses the welcome. Reopening setup prefills your choices; Cancel changes nothing. If any activity is already open, Save and return preserves its draft instead of replacing it. Progress export/import includes the optional starting preference, older saves remain compatible, and reset keeps your settings.
+Optional **Practice preferences**, linked from Practice and Progress ([open directly](https://itsothmane03-byte.github.io/Logic-Forge/#/setup)), put topics and a starting comfort on one plain page. Save preferences returns to the activities without starting a quiz; Cancel discards drafts. Try 5 questions explicitly starts a short warm-up, informed by the comfort choice without treating it as a measured level. Without a choice, the app uses a gentle mix. Normal Practice has ten questions; results name that length and offer Resume practice when an unfinished set exists.
+
+![Optional practice preferences, with separate Save and warm-up actions](docs/screenshots/setup.png)
+
+Preferences preserve every active exercise, including unanswered drafts. The short-set action is hidden while an activity is unfinished. Progress export/import includes the optional starting preference, older saves remain compatible, imports rebuild open preference drafts, and reset keeps your settings.
 
 In **Spot the flaw**, each question is two small steps, then the lesson:
 

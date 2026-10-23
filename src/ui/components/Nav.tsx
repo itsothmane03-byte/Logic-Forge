@@ -16,7 +16,7 @@ type Section = 'today' | 'practice' | 'library' | 'progress' | 'about';
 function sectionOf(route: Route): Section | null {
   switch (route.name) {
     case 'setup':
-      return null;
+      return 'practice';
     case 'today':
     case 'welcome':
     case 'summary':

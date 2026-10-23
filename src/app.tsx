@@ -1,10 +1,10 @@
 // App shell: skip link, landmarks, chrome, routed screen, toast, shortcuts.
 
 import type { JSX } from 'preact';
-import { useEffect, useMemo } from 'preact/hooks';
+import { useEffect } from 'preact/hooks';
 import { navigate, route, type Route } from './router';
 import { session, sessionKey } from './state/session';
-import { fallacyById, progress } from './state/store';
+import { fallacyById } from './state/store';
 import { AppFooter, MobileHeader, TabBar, TopBar } from './ui/components/Nav';
 import { ShortcutsDialog, shortcutsOpen, Toast } from './ui/components/Overlays';
 import { isShortcutEvent, useKeydown } from './ui/hooks';
@@ -22,18 +22,16 @@ import { LogicScreen } from './ui/screens/Logic';
 import { dataEpoch } from './state/lifecycle';
 import { cx } from './ui/util';
 import { dateKey } from './engine/dates';
-import { shouldOfferSetup } from './state/onboarding';
 import { SetupScreen } from './ui/screens/Setup';
 
 const SUFFIX = 'Fallacy Forge';
 
-function titleFor(r: Route, welcome: boolean, setup: boolean): string {
-  if (setup) return `Make it yours · ${SUFFIX}`;
+function titleFor(r: Route): string {
   switch (r.name) {
     case 'setup':
-      return `Make it yours · ${SUFFIX}`;
+      return `Practice preferences · ${SUFFIX}`;
     case 'today':
-      return welcome ? `Welcome · ${SUFFIX}` : `Today · ${SUFFIX}`;
+      return `Today · ${SUFFIX}`;
     case 'welcome':
       return `Welcome · ${SUFFIX}`;
     case 'practice':
@@ -78,24 +76,19 @@ function useSameHashLinks(): void {
 
 export function App(): JSX.Element {
   const r = route.value;
-  const p = progress.value;
   const epoch = dataEpoch.value;
-  // Keep a setup draft stable during settings edits, but rebuild after import/reset.
-  const showWelcome = useMemo(
-    () => r.name === 'welcome',
-    [r],
-  );
-  const showSetup = useMemo(() => r.name === 'setup'
-    || (r.name === 'today' && shouldOfferSetup(p)), [r, epoch]);
+  // Preferences are optional; home always opens Today.
+  const showWelcome = r.name === 'welcome';
+  const showSetup = r.name === 'setup';
   const inSession = r.name === 'play' || r.name === 'repair' || r.name === 'logic';
-  const focused = inSession || showSetup;
+  const focused = inSession;
   const playKey = r.name === 'play' ? sessionKey(r, dateKey()) : '';
   const key = `${showSetup ? 'setup' : showWelcome ? 'welcome' : r.name === 'play' ? `play:${playKey}` : r.name === 'fallacy' ? `fallacy:${r.fallacyId}` : r.name}:${epoch}`;
 
   useSameHashLinks();
 
   useEffect(() => {
-    document.title = titleFor(r, showWelcome, showSetup);
+    document.title = titleFor(r);
     window.scrollTo(0, 0);
     const heading = document.querySelector<HTMLElement>('#main h1');
     if (heading) {

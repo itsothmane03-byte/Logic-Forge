@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 2.6.0 — 2026-10-23
+
+- **Start with the activities.** Today opens immediately for every visitor. The former welcome questionnaire is an optional, single-page Practice preferences form with normal navigation, Save, Cancel, and an explicit five-question warm-up. Saving preferences never starts or replaces an exercise.
+- **Clearer next steps.** Results offer “Practice 10 more” or “Resume practice” when a set is already open, without claiming weaknesses after a perfect score. Daily Forge explains that everyone gets the same dated questions; topic preferences apply to new Spot the flaw and Focus sets.
+- **Consistent themes and quieter copy.** Daily Forge now follows light and dark surfaces, with matching answer indicators and buttons. Removed its oversized artwork and repeated account/offline slogans. About explains browser storage, exports and offline use in one place.
+
 ## 2.5.0 — 2026-10-23
 
 - **A personal welcome.** First-time home visitors choose interests and an optional starting comfort in two short steps. Large choice cards, keyboard focus, Back, Skip, and phone-sized controls keep setup easy to navigate. Returning learners can reopen it from Practice or Progress.
