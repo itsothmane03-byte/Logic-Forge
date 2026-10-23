@@ -1,12 +1,13 @@
 # Architecture
 
-Fallacy Forge is a static browser app hosted on GitHub Pages. There is no backend,
+Fallacy Forge is a static browser app hosted on GitHub Pages at
+[fallacyforge.com](https://fallacyforge.com/). There is no backend,
 account system, analytics or runtime AI. Progress stays in the learner's browser.
 
 ## App and routes
 
 - Vite builds strict TypeScript and Preact; `@preact/signals` holds app state.
-- The [hash router](../src/router.ts) works under the repository's Pages path.
+- The [hash router](../src/router.ts) works at the custom domain or a subpath.
   Today (`#/`) is the entry point. Other screens are `#/practice`, `#/setup`,
   `#/repair`, `#/logic`, `#/library`, `#/library/:id`, `#/progress`, `#/about`,
   `#/welcome` and `#/summary`. Quizzes use `#/play/:mode` or `#/play/focus/:id`.
@@ -32,6 +33,8 @@ account system, analytics or runtime AI. Progress stays in the learner's browser
 - [storage.ts](../src/engine/storage.ts) validates and migrates browser-local
   progress under `fallacyforge:v1`, including preferences and activity scores.
   Export/import uses JSON; no progress is uploaded. Keep older saves compatible.
+  Saves belong to the browser origin; moving domains requires exporting from the
+  old origin and importing at the new one.
 - Checked answers save immediately. Active drafts live in memory; Daily results
   can resume after a refresh. Reset, import and learning changes in another tab
   invalidate active sessions; preference-only changes preserve them.

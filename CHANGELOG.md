@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 2.6.3 — 2026-10-23
+
+- **Official address.** Public links, Daily Forge share text and social previews now use https://fallacyforge.com/. GitHub Pages continues to host the app; the name and saved-progress format are unchanged. Existing progress can move between addresses using Export and Import on the Progress page.
+
 ## 2.6.2 — 2026-10-23
 
 - **A clearer introduction.** “What is Fallacy Forge?” opens an introduction under About, while Today remains the home. The introduction offers Daily Forge first, explains the shared ten-question challenge, and keeps personal practice as a separate choice.
