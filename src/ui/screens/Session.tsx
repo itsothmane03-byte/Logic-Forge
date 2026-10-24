@@ -117,7 +117,7 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
     if (mode === 'demo') {
       endSession();
       showToast("That's the whole loop. Today's forge is ready when you are.", 4200);
-      replaceRoute('#/');
+      replaceRoute('#/today');
     } else {
       replaceRoute('#/summary');
     }
@@ -127,7 +127,7 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
     const focusId = state?.focusId;
     setConfirmLeave(false);
     endSession();
-    replaceRoute(focusId ? `#/library/${focusId}` : '#/');
+    replaceRoute(focusId ? `#/library/${focusId}` : '#/today');
   };
 
   const requestClose = () => {
@@ -286,13 +286,13 @@ export function SessionScreen({ route }: { route: PlayRoute }): JSX.Element {
 export function playFallback(status: string, focusId?: string): void {
   if (status === 'review-empty') {
     showToast('No mistakes to review right now. Nice work.');
-    replaceRoute('#/');
+    replaceRoute('#/today');
   } else if (status === 'unknown-fallacy') {
     replaceRoute('#/library');
   } else if (status === 'no-items') {
     showToast('No questions are available yet.');
-    replaceRoute(focusId ? `#/library/${focusId}` : '#/');
+    replaceRoute(focusId ? `#/library/${focusId}` : '#/today');
   } else {
-    navigate('#/');
+    navigate('#/today');
   }
 }

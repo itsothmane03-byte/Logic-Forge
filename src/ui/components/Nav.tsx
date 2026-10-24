@@ -21,8 +21,8 @@ function sectionOf(route: Route): Section | null {
     case 'summary':
       return 'today';
     case 'welcome':
-      // The explainer belongs with About; Today stays the only home.
-      return 'about';
+      // The introduction is Home: the logo marks it, no section does.
+      return null;
     case 'play':
       return route.mode === 'practice' ? 'practice' : null;
     case 'practice':
@@ -39,14 +39,11 @@ function sectionOf(route: Route): Section | null {
   }
 }
 
-/** Welcome sits under About without being the About page, so its link marks the location. */
-function currentOf(route: Route, active: Section | null, id: Section): 'page' | 'location' | undefined {
-  if (active !== id) return undefined;
-  return route.name === 'welcome' ? 'location' : 'page';
-}
+/** Home (#/, or the old #/welcome alias) is marked on the logo link. */
+const homeCurrent = (route?: Route) => (route?.name === 'welcome' ? 'page' : undefined);
 
 const LINKS: Array<{ id: Section; href: string; label: string; icon: IconName }> = [
-  { id: 'today', href: '#/', label: 'Today', icon: 'home' },
+  { id: 'today', href: '#/today', label: 'Today', icon: 'calendar' },
   { id: 'practice', href: '#/practice', label: 'Practice', icon: 'target' },
   { id: 'library', href: '#/library', label: 'Library', icon: 'book' },
   { id: 'progress', href: '#/progress', label: 'Progress', icon: 'chart' },
@@ -71,7 +68,7 @@ export function TopBar({ route }: { route: Route }): JSX.Element {
   return (
     <header class="topbar">
       <div class="topbar__inner">
-        <a class="topbar__brand" href="#/" aria-label="Fallacy Forge, Today">
+        <a class="topbar__brand" href="#/" aria-label="Fallacy Forge, Home" aria-current={homeCurrent(route)}>
           <LogoMark size={36} />
           <span class="topbar__wordmark" aria-hidden="true">
             Fallacy Forge
@@ -83,7 +80,7 @@ export function TopBar({ route }: { route: Route }): JSX.Element {
               key={link.id}
               href={link.href}
               class={cx('topbar__link', active === link.id && 'is-active')}
-              aria-current={currentOf(route, active, link.id)}
+              aria-current={active === link.id ? 'page' : undefined}
             >
               {link.label}
             </a>
@@ -106,10 +103,10 @@ export function TopBar({ route }: { route: Route }): JSX.Element {
   );
 }
 
-export function MobileHeader(): JSX.Element {
+export function MobileHeader({ route }: { route?: Route }): JSX.Element {
   return (
     <header class="mobile-header">
-      <a class="mobile-header__brand" href="#/" aria-label="Fallacy Forge, Today">
+      <a class="mobile-header__brand" href="#/" aria-label="Fallacy Forge, Home" aria-current={homeCurrent(route)}>
         <LogoMark size={34} />
         <span class="mobile-header__name" aria-hidden="true">
           Fallacy Forge
@@ -134,7 +131,7 @@ export function TabBar({ route }: { route: Route }): JSX.Element {
           key={link.id}
           href={link.href}
           class={cx('tabbar__link', active === link.id && 'is-active')}
-          aria-current={currentOf(route, active, link.id)}
+          aria-current={active === link.id ? 'page' : undefined}
         >
           <span class="tabbar__icon">
             <Icon name={link.icon} size={22} />
@@ -150,7 +147,7 @@ export function AppFooter(): JSX.Element {
   return (
     <footer class="app-footer">
       <div class="app-footer__inner">
-        <a href="#/welcome">What is Fallacy Forge?</a>
+        <a href="#/">What is Fallacy Forge?</a>
         <a href="#/about">About</a>
         <a href={REPO_URL} rel="noopener">
           GitHub

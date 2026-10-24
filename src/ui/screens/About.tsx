@@ -76,7 +76,7 @@ export function AboutScreen(): JSX.Element {
           <ButtonLink href={REPO_URL} variant="secondary" icon="code" rel="noopener">
             Source on GitHub
           </ButtonLink>
-          <ButtonLink href="#/welcome" variant="ghost" iconRight="arrow-right">
+          <ButtonLink href="#/" variant="ghost" iconRight="arrow-right">
             What is Fallacy Forge?
           </ButtonLink>
         </div>

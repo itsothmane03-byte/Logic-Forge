@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 2.6.4 — 2026-10-23
+
+- **The introduction is now home.** Opening fallacyforge.com shows the full introduction with direct Daily Forge and practice links. Today remains the daily dashboard at `#/today`; navigation and exercise return links point there. Existing `#/welcome` links still work, and saved progress is unchanged.
+
 ## 2.6.3 — 2026-10-23
 
 - **Official address.** Public links, Daily Forge share text and social previews now use https://fallacyforge.com/. GitHub Pages continues to host the app; the name and saved-progress format are unchanged. Existing progress can move between addresses using Export and Import on the Progress page.

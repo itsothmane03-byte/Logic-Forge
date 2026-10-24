@@ -7,7 +7,7 @@ import { defaultProgress, loadProgress, STORAGE_KEY } from '../src/engine/storag
 import type { Progress } from '../src/engine/types';
 import { replaceRoute, route } from '../src/router';
 import { invalidateSessionCaches } from '../src/state/lifecycle';
-import { session, startCustomSession } from '../src/state/session';
+import { next, pickOption, prepareSession, session, spot, startCustomSession } from '../src/state/session';
 import { bank, commit, progress, replaceProgress, setTheme, storageOk, toast } from '../src/state/store';
 import { SetupScreen } from '../src/ui/screens/Setup';
 
@@ -137,11 +137,26 @@ describe('optional practice preferences', () => {
 });
 
 describe('open home and optional preferences routing', () => {
-  it('shows Today immediately for a new visitor with normal navigation and no setup gate', () => {
+  it.each(['#/', '#/welcome'])('shows the introduction at %s with Home current and no setup gate', (hash) => {
+    replaceRoute(hash);
     render(<App />);
-    expect(screen.getByRole('heading', { name: /^Daily Forge/ })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeTruthy();
+    for (const link of screen.getAllByRole('link', { name: 'Open Daily Forge' })) {
+      expect(link.getAttribute('href')).toBe('#/play/daily');
+    }
+    expect(screen.getByRole('link', { name: 'Choose practice' }).getAttribute('href')).toBe('#/practice');
     expect(screen.queryByRole('heading', { name: 'Practice preferences' })).toBeNull();
     expect(screen.getAllByRole('navigation', { name: 'Primary' })).toHaveLength(2);
+    const homeLinks = screen.getAllByRole('link', { name: 'Fallacy Forge, Home' });
+    expect(homeLinks).toHaveLength(2);
+    for (const link of homeLinks) {
+      expect(link.getAttribute('href')).toBe('#/');
+      expect(link.getAttribute('aria-current')).toBe('page');
+    }
+    for (const link of screen.getAllByRole('link', { name: /^(Today|About)$/ })) {
+      expect(link.getAttribute('aria-current')).toBeNull();
+      if (link.textContent === 'Today') expect(link.getAttribute('href')).toBe('#/today');
+    }
     expect(progress.peek()).toEqual(defaultProgress());
   });
 
@@ -150,16 +165,33 @@ describe('open home and optional preferences routing', () => {
     ['old repair use', (p) => { p.repair.answered = 1; }],
     ['old logic use', (p) => { p.logic.answered = 1; }],
   ];
-  it.each(legacyVisitors)('continues to show Today for a returning visitor with %s', (_, addHistory) => {
+  it.each(legacyVisitors)('also shows Home for a returning visitor with %s', (_, addHistory) => {
     const p = defaultProgress();
     addHistory(p);
     progress.value = p;
     render(<App />);
-    expect(screen.getByRole('heading', { name: /^Daily Forge/ })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeTruthy();
     expect(screen.queryByRole('heading', { name: 'Practice preferences' })).toBeNull();
   });
 
-  it.each(['#/practice', '#/library', '#/progress', '#/about', '#/repair', '#/logic', '#/play/daily'])('keeps the first-time deep link %s directly accessible', (hash) => {
+  it('keeps the Today dashboard directly accessible with its own current navigation links', () => {
+    replaceRoute('#/today');
+    render(<App />);
+    expect(screen.getByRole('heading', { name: /^Daily Forge/ })).toBeTruthy();
+    expect(screen.queryByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeNull();
+    const todayLinks = screen.getAllByRole('link', { name: 'Today', exact: true });
+    expect(todayLinks).toHaveLength(2);
+    for (const link of todayLinks) {
+      expect(link.getAttribute('href')).toBe('#/today');
+      expect(link.getAttribute('aria-current')).toBe('page');
+    }
+    for (const link of screen.getAllByRole('link', { name: 'Fallacy Forge, Home' })) {
+      expect(link.getAttribute('href')).toBe('#/');
+      expect(link.getAttribute('aria-current')).toBeNull();
+    }
+  });
+
+  it.each(['#/today', '#/practice', '#/library', '#/progress', '#/about', '#/repair', '#/logic', '#/play/daily'])('keeps the first-time deep link %s directly accessible', (hash) => {
     if (hash === '#/play/daily') startCustomSession({ key: 'daily:2026-10-23', mode: 'daily', dateKey: '2026-10-23',
       itemIds: [sound.id], seed: 'preferences-deep-link' });
     replaceRoute(hash);
@@ -195,11 +227,45 @@ describe('open home and optional preferences routing', () => {
     expect(loadProgress(localStorage).settings).toEqual(replacement.settings);
   });
 
-  it('keeps a reset home visit on Today rather than starting preferences again', () => {
+  it('keeps a reset home visit on the introduction rather than starting preferences again', () => {
     progress.value = { ...defaultProgress(), onboarded: true };
     render(<App />);
     act(() => replaceProgress(defaultProgress()));
-    expect(screen.getByRole('heading', { name: /^Daily Forge/ })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeTruthy();
     expect(screen.queryByRole('heading', { name: 'Practice preferences' })).toBeNull();
+  });
+
+  it('preserves an active quiz draft and saved progress across Home and Today navigation', () => {
+    startCustomSession({ key: 'practice', mode: 'practice', itemIds: [sound.id, flawed.id], seed: 'home-today-draft' });
+    spot('sound');
+    next();
+    spot('flawed');
+    pickOption(flawed.fallacyId!);
+    const draft = session.peek();
+    const saved = progress.peek();
+    const serialized = localStorage.getItem(STORAGE_KEY);
+    replaceRoute('#/play/practice');
+    render(<App />);
+
+    act(() => replaceRoute('#/'));
+    expect(screen.getByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeTruthy();
+    expect(session.peek()).toBe(draft);
+    expect(progress.peek()).toBe(saved);
+    expect(localStorage.getItem(STORAGE_KEY)).toBe(serialized);
+
+    act(() => replaceRoute('#/today'));
+    expect(screen.getByRole('heading', { name: /^Daily Forge/ })).toBeTruthy();
+    expect(session.peek()).toBe(draft);
+    expect(progress.peek()).toBe(saved);
+    expect(localStorage.getItem(STORAGE_KEY)).toBe(serialized);
+
+    expect(prepareSession({ name: 'play', mode: 'practice' })).toEqual({ status: 'ready', session: draft });
+    act(() => replaceRoute('#/play/practice'));
+    expect(screen.getByText('Which fallacy?')).toBeTruthy();
+    const selected = screen.getAllByRole('radio').find((input) => (input as HTMLInputElement).checked) as HTMLInputElement;
+    expect(selected.value).toBe(flawed.fallacyId);
+    expect(session.peek()).toBe(draft);
+    expect(progress.peek()).toBe(saved);
+    expect(localStorage.getItem(STORAGE_KEY)).toBe(serialized);
   });
 });
