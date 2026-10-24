@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 // Feedback must describe the learner's actual answer, never an unrelated fallback.
 
-import { cleanup, render, screen } from '@testing-library/preact';
+import { cleanup, render, screen, within } from '@testing-library/preact';
 import { afterEach, describe, expect, it } from 'vitest';
 import type { AnswerPick } from '../src/engine/session';
 import type { Item, Outcome } from '../src/engine/types';
@@ -36,6 +36,13 @@ describe('answer-specific feedback', () => {
     const feedback = show(flawed, 'partial', { spot: 'flawed', named: nearbyId });
     expect(feedback.querySelector('.sheet__why')?.textContent).toContain(`Why not ${fallacyName(nearbyId)}?`);
     expect(feedback.querySelector('.sheet__why')?.textContent).toContain(nearbyText);
+    const comparison = screen.getByRole('region', { name: `Why not ${fallacyName(nearbyId)}?` });
+    expect(within(comparison).getByText('The flaw here')).toBeTruthy();
+    expect(within(comparison).getByText(truth.name)).toBeTruthy();
+    expect(within(comparison).getByText(truth.shortDef)).toBeTruthy();
+    expect(within(comparison).getByText('Your pick')).toBeTruthy();
+    expect(within(comparison).getByText(fallacyName(nearbyId))).toBeTruthy();
+    expect(within(comparison).getByText(fallacyById.get(nearbyId)!.shortDef)).toBeTruthy();
   });
 
   it('can explain another selected near miss using the library contrast', () => {
@@ -68,5 +75,25 @@ describe('answer-specific feedback', () => {
     const feedback = show(flawed, 'partial', null);
     expect(feedback.textContent).toContain(flawed.explanation);
     expect(feedback.querySelector('.sheet__why')).toBeNull();
+  });
+
+  it('replaces or removes the comparison when the reviewed answer changes', () => {
+    const common = { item: flawed, isLast: false, onContinue: () => {}, onOpenFallacy: () => {} };
+    const view = render(<FeedbackSheet {...common} outcome="partial" pick={{ spot: 'flawed', named: nearbyId }} />);
+    expect(screen.getByRole('region', { name: `Why not ${fallacyName(nearbyId)}?` })).toBeTruthy();
+
+    view.rerender(<FeedbackSheet {...common} outcome="partial" pick={{ spot: 'flawed', named: contrastId }} />);
+    const nextComparison = screen.getByRole('region', { name: `Why not ${fallacyName(contrastId)}?` });
+    expect(nextComparison.textContent).toContain(truth.contrast[contrastId]);
+    expect(screen.queryByRole('region', { name: `Why not ${fallacyName(nearbyId)}?` })).toBeNull();
+
+    view.rerender(<FeedbackSheet {...common} outcome="partial" pick={{ spot: 'flawed', named: unrelatedId }} />);
+    expect(screen.queryByRole('region')).toBeNull();
+    expect(screen.getByRole('status').textContent).toContain(`You picked ${fallacyName(unrelatedId)}.`);
+
+    view.rerender(<FeedbackSheet {...common} outcome="wrong" pick={{ spot: 'sound', named: null }} />);
+    expect(screen.queryByRole('region')).toBeNull();
+    expect(screen.queryByText(/You picked/)).toBeNull();
+    expect(screen.getByRole('status').textContent).toContain(flawed.explanation);
   });
 });

@@ -126,7 +126,7 @@
   color: var(--good);
 }
 
-.repair-feedback > p, .repair-feedback__better p {
+.repair-feedback > p {
   margin-bottom: 16px;
 }
 
@@ -137,14 +137,43 @@
   background: var(--good-soft);
 }
 
-.repair-feedback__better h3 {
+.repair-feedback__better h3, .repair-feedback__next h3 {
   margin-bottom: 8px;
   font-family: var(--font-body);
   font-size: 0.875rem;
 }
 
-.repair-feedback__better p:last-child {
-  margin-bottom: 0;
+.repair-revision__legend {
+  margin-bottom: 8px;
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
+}
+
+/* Key changes: tint, underline and weight, with the legend above, so the
+   emphasis never rests on colour alone. */
+.repair-revision__text mark {
+  padding: 0 2px;
+  border-radius: 3px;
+  background-color: color-mix(in srgb, var(--good) 24%, var(--surface));
+  box-shadow: inset 0 -2px 0 var(--good);
+  color: inherit;
+  font-weight: 700;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+@media (forced-colors: active) {
+  .repair-revision__text mark {
+    forced-color-adjust: none;
+    background-color: Mark;
+    color: MarkText;
+  }
+}
+
+.repair-feedback__next {
+  padding: 14px 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-control);
 }
 
 .repair-feedback__principle {
@@ -230,6 +259,9 @@
   }
   .repair-original, .repair-feedback {
     padding: 18px;
+  }
+  .repair-feedback__better, .repair-feedback__next {
+    padding: 14px;
   }
   .repair-options .option__card {
     padding: 14px 12px;

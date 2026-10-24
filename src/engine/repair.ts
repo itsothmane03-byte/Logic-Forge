@@ -25,6 +25,13 @@ export interface RepairItem {
   principle: string;
   /** Three rewrites; exactly one is correct. */
   options: RepairOption[];
+  /** Authored teaching notes, revealed only after checking an answer. */
+  review?: {
+    /** Exact, unique excerpts of the strongest revision, in reading order. */
+    highlights: string[];
+    /** A remaining question to check; a stronger argument is not proof. */
+    question: string;
+  };
 }
 
 export const REPAIR_SESSION_SIZE = 5;

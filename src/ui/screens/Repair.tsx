@@ -6,6 +6,7 @@ import { fallacyName, storageOk } from '../../state/store';
 import { Button, ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
 import { QuestionReview, useQuestionReview } from '../components/QuestionReview';
+import { RepairRevision } from '../components/RepairRevision';
 import { ProgressSegments } from '../components/SessionParts';
 import { isShortcutEvent, useKeydown } from '../hooks';
 import { cx } from '../util';
@@ -19,7 +20,8 @@ export function RepairScreen(): JSX.Element {
   const item = state?.items[state.index];
   const options = useMemo(() => item && state ? repairOptions(item, state.seed) : [], [item?.id, state?.seed]);
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const feedbackRef = useRef<HTMLDivElement>(null);
+  const feedbackRef = useRef<HTMLElement>(null);
+  const feedbackTitleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const active = repairSession.peek();
@@ -29,7 +31,9 @@ export function RepairScreen(): JSX.Element {
   useEffect(() => {
     if (!state) return;
     if (state.checked && !state.finished && !review.reviewing) {
-      feedbackRef.current?.focus({ preventScroll: true });
+      // Checking removes the Check button, so focus moves to the verdict: one short
+      // announcement at the top of the feedback, read on from there.
+      feedbackTitleRef.current?.focus({ preventScroll: true });
       feedbackRef.current?.scrollIntoView?.({ block: 'nearest' });
     } else {
       headingRef.current?.focus({ preventScroll: true });
@@ -119,11 +123,17 @@ export function RepairScreen(): JSX.Element {
         </div>
         {!state.checked && <Button variant="primary" size="lg" block kbd="Enter" disabled={!selected} onClick={checkRepair}>Check my revision</Button>}
         {state.checked && selected && (
-          <div class={cx('repair-feedback', selected.correct ? 'repair-feedback--correct' : 'repair-feedback--wrong')}
-            role="status" ref={feedbackRef} tabIndex={-1} aria-labelledby="repair-feedback-title">
-            <h2 id="repair-feedback-title"><Icon name={selected.correct ? 'check' : 'refresh'} size={22} />{selected.correct ? 'That makes it stronger.' : 'This still leaves a problem.'}</h2>
+          <section class={cx('repair-feedback', selected.correct ? 'repair-feedback--correct' : 'repair-feedback--wrong')}
+            ref={feedbackRef} aria-labelledby="repair-feedback-title">
+            <h2 id="repair-feedback-title" ref={feedbackTitleRef} tabIndex={-1}><Icon name={selected.correct ? 'check' : 'refresh'} size={22} />{selected.correct ? 'That makes it stronger.' : 'This still leaves a problem.'}</h2>
             <p>{selected.explanation}</p>
-            {!selected.correct && correct && <div class="repair-feedback__better"><h3>A stronger revision</h3><p>{correct.text}</p></div>}
+            {correct && <RepairRevision text={correct.text} review={item.review} chosen={selected.correct} />}
+            {item.review?.question && (
+              <div class="repair-feedback__next">
+                <h3>Check next</h3>
+                <p>{item.review.question}</p>
+              </div>
+            )}
             <details class="activity-details" key={item.id}>
               <summary>Why this repair helps</summary>
               {!selected.correct && correct && <p>{correct.explanation}</p>}
@@ -131,9 +141,12 @@ export function RepairScreen(): JSX.Element {
               <a class="text-link" href={`#/library/${item.fallacyId}`}>Explore {fallacyName(item.fallacyId)} <Icon name="arrow-right" size={16} /></a>
             </details>
             <Button variant="primary" size="lg" block kbd="Enter" onClick={review.reviewing ? review.returnToCurrent : nextRepair}>{review.reviewing ? 'Return to current' : state.index === total - 1 ? 'See results' : 'Next argument'}</Button>
-          </div>
+          </section>
         )}
-        {!storageOk.value && <p class="repair-save-notice" role="status">You can keep practicing. This browser could not save your latest progress.</p>}
+        {/* Always mounted, so the save warning is announced when it appears. */}
+        <div role="status">
+          {!storageOk.value && <p class="repair-save-notice">You can keep practicing. This browser could not save your latest progress.</p>}
+        </div>
         <p class="repair-footnote">Checked answers save as you go. Use 1–3 to choose and Enter to continue.</p>
       </div>
     </div>

@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 2.7.0 — 2026-10-24
+
+- **See what makes a repair stronger.** After checking a revision, all 15 repair exercises highlight the key change and offer a concrete question to check next. Choices stay neutral before answering, and existing passages, answers and scores are unchanged.
+- **Compare the fallacies.** When a chosen name has a written comparison, feedback puts the actual flaw beside that selection with short definitions and the relevant explanation. Longer feedback scrolls while Continue stays visible.
+- **Clearer keyboard feedback.** Checking a repair moves focus to its verdict. Save warnings use a separate notification, and earlier answers remain read only.
+
 ## 2.6.4 — 2026-10-23
 
 - **The introduction is now home.** Opening fallacyforge.com shows the full introduction with direct Daily Forge and practice links. Today remains the daily dashboard at `#/today`; navigation and exercise return links point there. Existing `#/welcome` links still work, and saved progress is unchanged.
