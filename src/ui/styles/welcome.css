@@ -74,12 +74,6 @@
   }
 }
 
-.hero__back {
-  margin-bottom: 14px;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-}
-
 .hero__eyebrow {
   margin-bottom: 10px;
 }

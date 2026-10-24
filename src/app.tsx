@@ -77,7 +77,7 @@ function useSameHashLinks(): void {
 export function App(): JSX.Element {
   const r = route.value;
   const epoch = dataEpoch.value;
-  // Preferences are optional; home always opens Today.
+  // The introduction is home; practice preferences remain optional.
   const showWelcome = r.name === 'welcome';
   const showSetup = r.name === 'setup';
   const inSession = r.name === 'play' || r.name === 'repair' || r.name === 'logic';
@@ -156,7 +156,7 @@ export function App(): JSX.Element {
         Skip to content
       </a>
       {!focused && <TopBar route={r} />}
-      {!focused && <MobileHeader />}
+      {!focused && <MobileHeader route={r} />}
       <main id="main" class="app-main" tabIndex={-1}>
         <div class={cx('route', inSession && 'route--session')} key={key}>
           {screen}

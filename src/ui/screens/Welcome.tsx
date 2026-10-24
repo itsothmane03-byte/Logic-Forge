@@ -1,6 +1,6 @@
-// How Fallacy Forge works (#/welcome), linked from the footer and About; Today
-// stays the home page. The hero and its calls to action are never hidden or
-// animated in; below-the-fold sections use progressive-enhancement scroll reveals.
+// The introduction and home page (#/, with #/welcome kept as an old alias); Today
+// lives at #/today. The hero and its calls to action are never hidden or animated
+// in; below-the-fold sections use progressive-enhancement scroll reveals.
 
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
@@ -195,10 +195,6 @@ export function WelcomeScreen(): JSX.Element {
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__inner">
           <div class="hero__copy">
-            <a class="text-link hero__back" href="#/">
-              <Icon name="arrow-left" size={16} />
-              Back to Today
-            </a>
             <p class="eyebrow hero__eyebrow">How Fallacy Forge works</p>
             <h1 id="hero-title" class="hero__title" tabIndex={-1}>
               Spot bad arguments in five minutes a day.

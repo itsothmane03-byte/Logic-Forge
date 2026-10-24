@@ -1,7 +1,7 @@
 // Tiny hash router (GitHub Pages friendly).
-//   #/  #/welcome  #/play/daily|practice|review|demo  #/play/focus/:id
+//   #/ (home)  #/welcome (home alias)  #/today  #/play/daily|practice|review|demo  #/play/focus/:id
 //   #/practice  #/repair  #/summary  #/library  #/library/:id  #/progress  #/about
-// Unknown routes go to Today.
+// Unknown routes go to the home page.
 
 import { signal } from '@preact/signals';
 
@@ -38,9 +38,10 @@ export function matchHash(hash: string): Route | null {
     return null;
   }
   const [head, a, b] = parts;
-  if (parts.length === 0) return { name: 'today' };
+  if (parts.length === 0) return { name: 'welcome' };
   if (parts.length === 1) {
     if (head === 'welcome') return { name: 'welcome' };
+    if (head === 'today') return { name: 'today' };
     if (head === 'setup') return { name: 'setup' };
     if (head === 'practice') return { name: 'practice' };
     if (head === 'repair') return { name: 'repair' };
@@ -60,13 +61,13 @@ export function matchHash(hash: string): Route | null {
 }
 
 export function parseHash(hash: string): Route {
-  return matchHash(hash) ?? { name: 'today' };
+  return matchHash(hash) ?? { name: 'welcome' };
 }
 
 export function hrefFor(route: Route): string {
   switch (route.name) {
-    case 'today': return '#/';
-    case 'welcome': return '#/welcome';
+    case 'today': return '#/today';
+    case 'welcome': return '#/';
     case 'setup': return '#/setup';
     case 'practice': return '#/practice';
     case 'repair': return '#/repair';
@@ -88,7 +89,7 @@ export const route = signal<Route>(parseHash(initialHash));
 function sync(): void {
   const matched = matchHash(location.hash);
   if (!matched) history.replaceState(null, '', '#/');
-  route.value = matched ?? { name: 'today' };
+  route.value = matched ?? { name: 'welcome' };
 }
 
 /** Starts listening to hash changes and normalizes unknown routes. */
