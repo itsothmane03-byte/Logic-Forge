@@ -4,7 +4,7 @@ Thanks for helping. Fallacy Forge is a free, MIT-licensed practice app with no b
 
 ## Ground rules
 
-- No accounts, analytics, trackers or runtime network calls. Everything runs in the browser.
+- No accounts, analytics, trackers or external runtime APIs. The app and content load as static files and run in the browser.
 - Accessibility is a requirement, not a feature: WCAG 2.2 AA, full keyboard support, visible focus, nothing conveyed by color alone.
 - Keep the app's JavaScript under 150 KB gzip (the build checks this).
 - Be kind in reviews and in the content itself: the voice is friendly, precise and never sarcastic.
@@ -46,6 +46,11 @@ Content is the product, so it follows [`docs/CONTENT-SPEC.md`](docs/CONTENT-SPEC
 
    The validator prints a numbered list of errors (file, item id and rule) plus distribution stats. CI fails on any error, and a test fails if `bank.json` is out of date with the content.
 6. **Blind review.** New or changed items are labeled by an independent reviewer who sees only the passage and the list of fallacies. Items the reviewer disagrees with, or flags as ambiguous, stacked, inaccurate or sensitive, are rewritten or dropped.
+
+Repair exercises live in `src/data/repairs.ts`. Their post-answer notes use exact,
+unique excerpts of the strongest revision, in reading order, plus a question to
+check next. `npm run content` validates these notes too. Keep answer choices
+neutral before checking; never store HTML or infer highlights from keywords.
 
 ## Changing code
 

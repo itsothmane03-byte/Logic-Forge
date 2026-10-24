@@ -121,7 +121,13 @@ describe('read-only question navigation', () => {
     click('Previous');
     click('Previous');
     const original = items[0]!.options.find((option) => !option.correct)!;
-    expect(screen.getByRole('status').textContent).toContain(original.explanation);
+    expect(screen.getByRole('region', { name: 'This still leaves a problem.' }).textContent).toContain(original.explanation);
+    expect(screen.getByText(items[0]!.review!.question)).toBeTruthy();
+    const firstFeedback = screen.getByText(original.explanation).closest('.repair-feedback')!;
+    const highlights = [...firstFeedback.querySelectorAll('strong, mark')].map((node) => node.textContent);
+    for (const highlight of items[0]!.review!.highlights) {
+      expect(highlights.some((text) => text?.includes(highlight)), highlight).toBe(true);
+    }
     const originalRadio = screen.getAllByRole('radio').find((radio) => (radio as HTMLInputElement).value === original.id) as HTMLInputElement;
     expect(originalRadio.checked).toBe(true);
     expect(screen.getAllByRole('radio').every((radio) => (radio as HTMLInputElement).disabled)).toBe(true);
@@ -132,8 +138,11 @@ describe('read-only question navigation', () => {
     expect(repairSession.peek()).toBe(draft);
     click('Next');
     expect(screen.getByRole('heading', { name: items[1]!.title, exact: true })).toBeTruthy();
+    expect(screen.getByText(items[1]!.review!.question)).toBeTruthy();
+    expect(screen.queryByText(items[0]!.review!.question)).toBeNull();
     click('Next');
     expect((screen.getByRole('radio', { name: draftOption.text }) as HTMLInputElement).checked).toBe(true);
+    for (const item of items.slice(0, 3)) expect(screen.queryByText(item.review!.question)).toBeNull();
     expect(repairSession.peek()).toBe(draft);
     expect(progress.peek()).toBe(saved);
     click(/^Check my revision/);

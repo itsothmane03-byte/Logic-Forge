@@ -31,6 +31,11 @@ account system, analytics or runtime AI. Progress stays in the learner's browser
   Review evidence lives in [content/review](../content/review).
 - [repairs.ts](../src/data/repairs.ts) and [logic.ts](../src/data/logic.ts) are
   authored separately. Deduction answers are computed from the stated facts.
+- Repair teaching notes contain exact excerpts of the strongest revision and a
+  remaining question to check. They appear only after an answer is checked;
+  choices remain neutral beforehand. `scripts/validate-repairs.mjs` checks the
+  excerpts against the authored text. No HTML or inferred argument structure is
+  stored in these notes, and they do not change the saved-progress schema.
 - [storage.ts](../src/engine/storage.ts) validates and migrates browser-local
   progress under `fallacyforge:v1`, including preferences and activity scores.
   Export/import uses JSON; no progress is uploaded. Keep older saves compatible.

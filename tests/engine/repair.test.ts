@@ -83,6 +83,22 @@ describe('selectRepairs', () => {
     expect(selectRepairs(items, recent, 'seed', 0)).toEqual([]);
     expect(idsOf(items)).toEqual(idsOf(pool(6)));
   });
+
+  it('keeps question selection and option order unchanged when teaching notes are added', () => {
+    const legacy = pool(8);
+    const annotated = legacy.map((exercise) => ({
+      ...exercise,
+      review: { highlights: ['Option A'], question: 'What evidence would support this?' },
+    }));
+    const recent = ['rep_2', 'rep_4', 'rep_6'];
+    const picked = selectRepairs(annotated, recent, 'review-compatibility');
+    expect(idsOf(picked)).toEqual(idsOf(selectRepairs(legacy, recent, 'review-compatibility')));
+    for (const exercise of picked) {
+      const original = legacy.find((candidate) => candidate.id === exercise.id)!;
+      expect(repairOptions(exercise, 'review-compatibility')).toEqual(repairOptions(original, 'review-compatibility'));
+      expect(exercise.review).toEqual({ highlights: ['Option A'], question: 'What evidence would support this?' });
+    }
+  });
 });
 
 describe('repairOptions', () => {

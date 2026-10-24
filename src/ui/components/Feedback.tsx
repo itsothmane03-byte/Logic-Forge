@@ -44,6 +44,20 @@ function whyNotFor(item: Item, outcome: Outcome, pick: AnswerPick | null): { id:
   return contrast ? { id: pick.named, text: contrast } : null;
 }
 
+/** One side of the "Why not?" comparison: a label, the fallacy and its short definition. */
+function CompareSide({ label, id, actual = false }: { label: string; id: string; actual?: boolean }): JSX.Element {
+  const shortDef = fallacyById.get(id)?.shortDef;
+  return (
+    <div class={cx('sheet__compare-side', actual && 'sheet__compare-side--actual')}>
+      <dt>{label}</dt>
+      <dd>
+        <span class="sheet__compare-name">{fallacyName(id)}</span>
+        {shortDef && <span class="sheet__compare-def">{shortDef}</span>}
+      </dd>
+    </div>
+  );
+}
+
 interface SheetProps {
   item: Item;
   outcome: Outcome;
@@ -87,12 +101,16 @@ export function FeedbackSheet({ item, outcome, pick, isLast, onContinue, onOpenF
         <p class="sheet__explanation">{item.explanation}</p>
         <p class="sr-only">Key phrase: “{item.cue}”.</p>
         {why && (
-          <p class="sheet__why">
-            <span class="sheet__why-q">
-              Why not <strong>{fallacyName(why.id)}</strong>?
-            </span>{' '}
-            {why.text}
-          </p>
+          <section class="sheet__why" aria-labelledby="sheet-why-title">
+            <h3 id="sheet-why-title" class="sheet__why-q">
+              Why not {fallacyName(why.id)}?
+            </h3>
+            <dl class="sheet__compare">
+              {copy.nameId && <CompareSide label="The flaw here" id={copy.nameId} actual />}
+              <CompareSide label="Your pick" id={why.id} />
+            </dl>
+            <p class="sheet__why-text">{why.text}</p>
+          </section>
         )}
         <div class="sheet__actions">
           <span class="spark-anchor" ref={actionsRef}>

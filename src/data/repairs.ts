@@ -6,6 +6,9 @@
 //   that swaps in a different fallacy;
 // - options stay close in length, and the strongest is not always the longest;
 // - a repair makes a claim fair to check; never say it proves the claim.
+// - review appears only after checking; highlights are exact, unique excerpts
+//   from the correct revision, in reading order;
+// - review questions check remaining uncertainty, not proof of the conclusion.
 // Option order is shuffled at runtime (see repairOptions).
 
 import type { RepairItem } from '../engine/repair';
@@ -17,6 +20,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_hasty_generalization',
     passage: "I've made two recipes from this cookbook and both flopped. The whole book is useless, so don't waste your money on it.",
     principle: 'Make the claim only as big as the evidence behind it.',
+    review: {
+      highlights: ['two is too few to judge a whole book', "I'll try more before deciding."],
+      question: 'Would a wider range of recipes, followed carefully, still fail?',
+    },
     options: [
       {
         id: 'a',
@@ -44,6 +51,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_post_hoc',
     passage: 'We got standing desks in March, and in April the team shipped twice as many features. The desks clearly made us more productive.',
     principle: '"After" is a clue, not a cause. Check what else changed.',
+    review: {
+      highlights: ['what else changed', 'how other teams did'],
+      question: 'Did similar teams without new desks also ship more during the same period?',
+    },
     options: [
       {
         id: 'a',
@@ -71,6 +82,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_ad_hominem',
     passage: "Marco wants to cut the team snack budget to pay for a coffee machine? He can't even keep his own desk clean. I'm not taking budget advice from him.",
     principle: 'Judge the plan, not the person proposing it.',
+    review: {
+      highlights: ['do the savings actually cover it?'],
+      question: "Would the proposed savings cover the machine's purchase and running costs?",
+    },
     options: [
       {
         id: 'a',
@@ -98,6 +113,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_straw_man',
     passage: 'Priya wants to cap our weekly meeting at 30 minutes. So she thinks we should just stop talking to each other? Good luck running a team with zero communication.',
     principle: 'Restate the other view fairly before you push back.',
+    review: {
+      highlights: ["My worry is that project updates won't fit.", 'Could we try it for a month?'],
+      question: 'During the trial, are important updates being missed or handled another way?',
+    },
     options: [
       {
         id: 'a',
@@ -125,6 +144,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_false_dichotomy',
     passage: "Either we stay up all night and finish the whole project tonight, or we fail the class. There's no other way.",
     principle: 'Before choosing between two options, check whether there are more.',
+    review: {
+      highlights: ["split what's left, ask for a short extension, or hand in what's done."],
+      question: 'Which options fit the deadline and grading rules?',
+    },
     options: [
       {
         id: 'a',
@@ -152,6 +175,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_slippery_slope',
     passage: 'If we let one student hand in homework a day late, soon everyone will, deadlines will mean nothing, and the whole class will fall apart.',
     principle: 'Check each step of a predicted chain instead of assuming the slide.',
+    review: {
+      highlights: ['a few more students may ask.', 'One late pass per term, checked after a month'],
+      question: 'Does the trial show more missed deadlines than usual, rather than just more requests?',
+    },
     options: [
       {
         id: 'a',
@@ -179,6 +206,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_appeal_to_authority',
     passage: 'Lena Park is a three-time national swimming champion, and she says the Coastline 5 is the best laptop for students. That settles it.',
     principle: 'Trust expertise on its own subject, and ask what evidence it rests on.',
+    review: {
+      highlights: ["swimming isn't laptop testing.", 'Independent reviews of battery life and price'],
+      question: "Do independent tests show it meets students' needs better than other laptops at a similar price?",
+    },
     options: [
       {
         id: 'a',
@@ -206,6 +237,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_bandwagon',
     passage: 'Everyone in our year uses CueCrate to study, so it must be the best way to prepare for exams.',
     principle: "Popularity alone doesn't establish which method works best.",
+    review: {
+      highlights: ['compare independent studies of learning outcomes and other methods'],
+      question: 'Do fair comparisons show better learning with CueCrate, or do other methods work as well?',
+    },
     options: [
       {
         id: 'a',
@@ -233,6 +268,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_sunk_cost',
     passage: "We've already spent $3,000 fixing this old car. If we sell it now, all that money is wasted, so we have to keep repairing it.",
     principle: "Decide on what's ahead, not on what's already spent.",
+    review: {
+      highlights: ['gone whether we keep the car or not.', 'next year versus a replacement.'],
+      question: 'Which option has the lower expected cost from today, including repairs, running costs and resale value?',
+    },
     options: [
       {
         id: 'a',
@@ -260,6 +299,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_red_herring',
     passage: "You're saying I never do the dishes? I'm the one who found this apartment and set up the internet, so I don't think I'm the problem here.",
     principle: 'Answer the question that was asked before raising a new one.',
+    review: {
+      highlights: ['I did the dishes Monday and Wednesday', 'A rotation on the fridge'],
+      question: 'Does the record show both roommates taking a fair share of the dishes over time?',
+    },
     options: [
       {
         id: 'a',
@@ -287,6 +330,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_cherry_picking',
     passage: 'Sure, weekday sales are down, but Saturday and Sunday were our two best days ever. The new menu is clearly a hit.',
     principle: 'Weigh all the results, not just the ones you like.',
+    review: {
+      highlights: ['but weekdays dipped.', 'compare all days over similar periods'],
+      question: 'Across comparable periods, do overall sales improve, and could something besides the menu explain the change?',
+    },
     options: [
       {
         id: 'a',
@@ -314,6 +361,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_tu_quoque',
     passage: "Coach Diaz told me to stop staying up late before games. Coming from her? She answers team emails at midnight. I'm not listening.",
     principle: "Weigh advice on its merits, even when the adviser doesn't follow it.",
+    review: {
+      highlights: ['Whatever her habits', "whether I play better rested, so I'll track it."],
+      question: 'Across similar games, does the player perform better after more sleep?',
+    },
     options: [
       {
         id: 'a',
@@ -341,6 +392,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_appeal_to_ignorance',
     passage: "Nobody has ever proven that my lucky socks don't help me win, so they obviously work. I'm wearing them for the final.",
     principle: "Not disproven isn't the same as true. Ask what evidence would count.",
+    review: {
+      highlights: ["aren't enough to show they help.", "I'd need a fair test"],
+      question: 'Across similar games, are results better with the socks than without them?',
+    },
     options: [
       {
         id: 'a',
@@ -368,6 +423,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_equivocation',
     passage: "Our analytics show a statistically significant rise in how long visitors stay on the new homepage. That's a significant improvement, so the redesign was a huge win.",
     principle: 'When a key word does two jobs, pin down which meaning you need.',
+    review: {
+      highlights: ['the extra seconds', 'whether they help visitors'],
+      question: 'Do those extra seconds help visitors finish what they came to do, or just take longer?',
+    },
     options: [
       {
         id: 'a',
@@ -395,6 +454,10 @@ export const repairs: RepairItem[] = [
     fallacyId: 'fal_appeal_to_fear',
     passage: 'If you let Mia walk to school on her own, something terrible will happen. Do you really want to read about her on the news?',
     principle: 'Name the specific risk and how likely it is, not just the fear.',
+    review: {
+      highlights: ['Elm Street, which has no crossing guard', 'see how she handles that crossing'],
+      question: 'Can Mia handle that crossing safely under the conditions she would face on her own?',
+    },
     options: [
       {
         id: 'a',

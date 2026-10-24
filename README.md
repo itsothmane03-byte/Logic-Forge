@@ -11,12 +11,12 @@
 ## Practice
 
 - **Spot the flaw:** decide whether an argument is sound, then identify its fallacy. Includes 304 fictional questions across 38 fallacies, with explanations for your answers.
-- **Fix the argument:** choose a stronger revision in five-exercise sets.
+- **Fix the argument:** choose a stronger revision in five-exercise sets, then see the key change and a question worth checking next.
 - **What follows?:** use the given facts to decide whether a claim must be true, must be false, or could be either.
 
 | Spot the flaw | Fix the argument | What follows? |
 | --- | --- | --- |
-| ![Quiz answer and explanation](docs/screenshots/session.png) | ![Argument repair exercise](docs/screenshots/repair.png) | ![Deduction exercise](docs/screenshots/logic.png) |
+| ![Quiz answer and explanation](docs/screenshots/session.png) | ![Repair feedback with highlighted changes](docs/screenshots/repair.png) | ![Deduction exercise](docs/screenshots/logic.png) |
 
 **Daily Forge** gives everyone the same ten questions for that date. Ordinary quiz practice adapts to previous answers. Optional topic preferences favor familiar examples in new Spot the flaw and Focus sets; all topics can still appear. A five-question warm-up is available from Practice preferences.
 
@@ -44,7 +44,7 @@ npm test
 npm run build
 ```
 
-`npm run content` validates the authored JSON and rebuilds the committed question bank. `npm run preview` serves the production build. Pushing to `main` deploys through GitHub Pages.
+`npm run content` validates the authored JSON, rebuilds the committed question bank, and checks the repair teaching notes. `npm run preview` serves the production build. Pushing to `main` deploys through GitHub Pages.
 
 ## Project notes
 

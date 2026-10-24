@@ -3,7 +3,7 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/preact';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { repairs } from '../src/data/repairs';
-import { repairOptions } from '../src/engine/repair';
+import { repairOptions, type RepairItem } from '../src/engine/repair';
 import { defaultProgress } from '../src/engine/storage';
 import { checkRepair, clearRepairSession, nextRepair, repairSession, selectRepairOption, startRepair } from '../src/state/repair';
 import { progress, storageOk } from '../src/state/store';
@@ -19,7 +19,96 @@ beforeEach(() => {
 
 afterEach(cleanup);
 
+function reviewItem(id = 'rep_review_fixture'): RepairItem {
+  return {
+    id,
+    title: `The book recommendation ${id}`,
+    fallacyId: 'fal_hasty_generalization',
+    passage: 'Two classmates liked this book, so everyone will love it.',
+    principle: 'Check a wider range of readers before generalizing.',
+    options: [
+      { id: 'a', text: 'Two classmates liked the book. Ask more readers before calling it a favorite.', correct: true,
+        explanation: 'A small group can suggest a possibility, but a wider sample is needed.' },
+      { id: 'b', text: 'Two classmates really liked the book, so everyone will definitely love it.', correct: false,
+        explanation: 'Enthusiasm does not make two classmates representative of everyone.' },
+      { id: 'c', text: 'The author is famous, so everyone will love this book.', correct: false,
+        explanation: 'Fame does not establish what every reader will enjoy.' },
+    ],
+    review: { highlights: ['Two classmates', 'Ask more readers'], question: 'Would a larger and more varied group agree?' },
+  };
+}
+
+function useItems(items: RepairItem[]): void {
+  repairSession.value = {
+    seed: 'annotated-review', items, index: 0, selected: null, checked: false, finished: false, answers: [],
+  };
+}
+
 describe('argument repair flow', () => {
+  it('keeps review hints out of the page until an answer is checked', () => {
+    const item = reviewItem();
+    useItems([item, reviewItem('rep_next_fixture')]);
+    const { container } = render(<RepairScreen />);
+    const question = item.review!.question;
+    expect(screen.queryByText(question)).toBeNull();
+    expect(screen.queryByText(item.principle)).toBeNull();
+    expect(container.querySelectorAll('.repair-options strong, .repair-options mark')).toHaveLength(0);
+
+    fireEvent.click(screen.getByRole('radio', { name: item.options[0]!.text }));
+    expect(screen.queryByText(question)).toBeNull();
+    expect(container.querySelectorAll('.repair-options strong, .repair-options mark')).toHaveLength(0);
+    expect(progress.peek().repair.answered).toBe(0);
+  });
+
+  it.each([true, false])('shows the annotated strongest revision after a %s answer, then clears it for the next argument', (chooseCorrect) => {
+    const item = reviewItem();
+    const next = { ...reviewItem('rep_next_fixture'), review: {
+      highlights: ['Ask more readers'], question: 'Who else should we ask about this book?',
+    } };
+    useItems([item, next]);
+    const { container } = render(<RepairScreen />);
+    const selected = item.options.find((option) => option.correct === chooseCorrect)!;
+    const correct = item.options.find((option) => option.correct)!;
+    fireEvent.click(screen.getByRole('radio', { name: selected.text }));
+    fireEvent.click(screen.getByRole('button', { name: /^Check my revision/ }));
+
+    const verdict = chooseCorrect ? 'That makes it stronger.' : 'This still leaves a problem.';
+    const feedback = screen.getByRole('region', { name: verdict });
+    expect(document.activeElement).toBe(screen.getByRole('heading', { name: verdict }));
+    expect(feedback.getAttribute('aria-live')).toBeNull();
+    expect(feedback.textContent).toContain(selected.explanation);
+    expect(feedback.textContent).toContain(correct.text);
+    expect(feedback.textContent).toContain(item.review!.question);
+    const emphasized = [...feedback.querySelectorAll('strong, mark')].map((node) => node.textContent);
+    for (const highlight of item.review!.highlights) {
+      expect(emphasized.some((text) => text?.includes(highlight)), highlight).toBe(true);
+    }
+    expect(container.querySelectorAll('.repair-options strong, .repair-options mark')).toHaveLength(0);
+    expect(progress.peek().repair).toMatchObject({ answered: 1, correct: chooseCorrect ? 1 : 0, sets: 0 });
+
+    fireEvent.click(screen.getByRole('button', { name: /^Next argument/ }));
+    expect(screen.queryByText(item.review!.question)).toBeNull();
+    expect(screen.queryByText(next.review.question)).toBeNull();
+    expect(container.querySelector('.repair-feedback')).toBeNull();
+    expect(container.querySelectorAll('.repair-options strong, .repair-options mark')).toHaveLength(0);
+    expect(screen.getByRole('heading', { name: next.title })).toBeTruthy();
+  });
+
+  it('still checks and explains an older exercise with no review metadata', () => {
+    const { review: _review, ...legacy } = reviewItem();
+    useItems([legacy]);
+    render(<RepairScreen />);
+    const correct = legacy.options.find((option) => option.correct)!;
+    fireEvent.click(screen.getByRole('radio', { name: correct.text }));
+    fireEvent.click(screen.getByRole('button', { name: /^Check my revision/ }));
+    expect(screen.getByText(correct.explanation)).toBeTruthy();
+    expect(screen.getByText(legacy.principle)).toBeTruthy();
+    expect(screen.queryByText(_review!.question)).toBeNull();
+    expect(progress.peek().repair).toMatchObject({ answered: 1, correct: 1, sets: 1 });
+    fireEvent.click(screen.getByRole('button', { name: /^See results/ }));
+    expect(screen.getByRole('heading', { name: 'A little more thoughtful.' })).toBeTruthy();
+  });
+
   it('explains the actual selected revision and locks it after checking', () => {
     startRepair('pointer-feedback');
     const item = repairSession.peek()!.items[0]!;
@@ -30,7 +119,7 @@ describe('argument repair flow', () => {
     expect(check.disabled).toBe(true);
     fireEvent.click(screen.getByRole('radio', { name: wrong.text }));
     fireEvent.click(check);
-    const feedback = screen.getByRole('status');
+    const feedback = screen.getByRole('region', { name: 'This still leaves a problem.' });
     expect(feedback.textContent).toContain(wrong.explanation);
     expect(feedback.textContent).toContain(correct.text);
     expect(feedback.textContent).toContain(correct.explanation);
@@ -132,9 +221,15 @@ describe('argument repair flow', () => {
     vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('QuotaExceededError'); });
     startRepair('storage-failure');
     render(<RepairScreen />);
+    const saveAnnouncement = screen.getByRole('status');
+    expect(saveAnnouncement.textContent).toBe('');
     fireEvent.click(screen.getAllByRole('radio')[0]!);
     fireEvent.click(screen.getByRole('button', { name: /^Check my revision/ }));
     expect(screen.getByText(/This browser could not save/)).toBeTruthy();
+    expect(screen.getByRole('status')).toBe(saveAnnouncement);
+    expect(saveAnnouncement.textContent).toContain('This browser could not save');
+    expect(saveAnnouncement.textContent).not.toContain('That makes it stronger.');
+    expect(saveAnnouncement.textContent).not.toContain('This still leaves a problem.');
     expect(progress.peek().repair.answered).toBe(1);
     fireEvent.click(screen.getByRole('button', { name: /^Next argument/ }));
     expect(screen.getByText('2 / 5')).toBeTruthy();

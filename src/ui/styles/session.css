@@ -544,22 +544,70 @@
   line-height: 1.55;
 }
 
+/* "Why not?": the actual flaw beside the learner's pick (stacked on narrow screens). */
 .sheet__why {
-  margin-top: 12px;
-  padding: 12px 14px;
-  border: 1px solid color-mix(in srgb, var(--tone) 28%, transparent);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  margin-top: 14px;
   font-size: 0.9375rem;
   line-height: 1.5;
 }
 
 .sheet__why-q {
-  font-weight: 650;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.sheet__compare {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 10px;
+}
+
+@media (min-width: 560px) {
+  .sheet__compare {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.sheet__compare-side {
+  padding: 10px 14px;
+  border: 1px solid color-mix(in srgb, var(--tone) 28%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+}
+
+.sheet__compare-side--actual {
+  border-left: 4px solid var(--tone);
+}
+
+.sheet__compare-side dt {
+  color: var(--ink-2);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sheet__compare-name {
+  display: block;
+  font-weight: 750;
+}
+
+.sheet__compare-def {
+  display: block;
+  color: var(--ink-2);
+  font-size: var(--fs-sm);
 }
 
 .sheet__actions {
   margin-top: 16px;
+  /* Keep the focused Continue control visible while longer feedback scrolls. */
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  padding: 12px 0 10px;
+  border-top: 1px solid var(--line);
+  background: var(--tone-soft);
 }
 
 .spark-anchor {
