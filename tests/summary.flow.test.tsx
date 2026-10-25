@@ -63,7 +63,7 @@ describe('summary continuation', () => {
     expect(screen.getByRole('img', { name: `Score: ${score} out of 5` })).toBeTruthy();
     const continuation = screen.getByRole('link', { name: 'Practice 10 more' });
     expect(screen.queryByRole('link', { name: /weak spots|Review mistakes/i })).toBeNull();
-    expect(screen.getByRole('link', { name: 'Back to Today' }).getAttribute('href')).toBe('#/today');
+    expect(screen.getByRole('link', { name: 'Back to Daily Forge' }).getAttribute('href')).toBe('#/today');
     expect(continuation.getAttribute('href')).toBe('#/play/practice');
 
     // Use the same public route-entry operation as main.tsx after following the link.
@@ -129,7 +129,7 @@ describe('summary continuation', () => {
     render(<SummaryScreen />);
     expect(screen.getByRole('img', { name: 'Score: 10 out of 10' })).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Share' })).toBeTruthy();
-    expect(screen.getByRole('link', { name: 'Back to Today' }).getAttribute('href')).toBe('#/today');
+    expect(screen.getByRole('link', { name: 'Back to Daily Forge' }).getAttribute('href')).toBe('#/today');
     expect(screen.getByRole('link', { name: 'Practice 10 more' }).getAttribute('href')).toBe('#/play/practice');
     expect(progress.peek()).toBe(saved);
   });

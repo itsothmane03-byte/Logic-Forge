@@ -6,7 +6,11 @@
 
 [![CI](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml/badge.svg)](https://github.com/itsothmane03-byte/Logic-Forge/actions/workflows/ci.yml)
 
-![Today: Daily Forge and the practice activities](docs/screenshots/today.jpg)
+![Home: try a fictional argument or open the shared Daily Forge](docs/screenshots/home.jpg)
+
+Try the unscored sample immediately, or open the shared challenge. The
+[Daily Forge screen](docs/screenshots/today.jpg) shows today's saved progress;
+Practice lets you choose a skill before optional topic preferences.
 
 ## Practice
 
@@ -18,7 +22,7 @@
 | --- | --- | --- |
 | ![Quiz answer and explanation](docs/screenshots/session.png) | ![Repair feedback with highlighted changes](docs/screenshots/repair.png) | ![Deduction exercise](docs/screenshots/logic.png) |
 
-Mobile quiz previews: [light](docs/screenshots/mobile-quiz-light.png) · [dark](docs/screenshots/mobile-quiz-dark.png).
+Mobile sample previews: [light question](docs/screenshots/mobile-quiz-light.png) · [dark explanation](docs/screenshots/mobile-quiz-dark.png).
 
 **Daily Forge** gives everyone the same ten questions for that date. Ordinary quiz practice adapts to previous answers. Optional topic preferences favor familiar examples in new Spot the flaw and Focus sets; all topics can still appear. A five-question warm-up is available from Practice preferences.
 
@@ -53,6 +57,7 @@ npm run build
 A static Preact, TypeScript and Vite app with browser-local storage. No backend is required. The build checks a 150 KB gzip budget for app JavaScript, with the quiz bank in its own chunk.
 
 - [Architecture and UI conventions](docs/ARCHITECTURE.md)
+- [Product requirements](PRODUCT.md) · [Design system](DESIGN.md)
 - [Contributing and content workflow](CONTRIBUTING.md)
 - [Content specification](docs/CONTENT-SPEC.md)
 - [Content review records](content/review/README.md)

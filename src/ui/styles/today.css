@@ -1,336 +1,40 @@
-/* Today: greeting, optional how-to, Daily Forge hero, review banner and the
-   activity tiles (the Practice hub reuses the tiles). Base .tile rules come
-   before their variants so a variant's layout always wins. */
-
-/* ---------- Header ---------- */
-
-.today-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.today-head__greeting {
-  font-size: var(--fs-display);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-}
-
-.today-head__date {
-  margin-top: 6px;
-  color: var(--ink-2);
-  font-weight: 500;
-}
-
-/* ---------- How it works (collapsed by default) ---------- */
-
-.howto {
-  margin-bottom: 20px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-card);
-  background: var(--surface);
-}
-
-.howto__summary {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 10px 16px;
-  border-radius: var(--r-card);
-  font-weight: 700;
-  list-style: none;
-  cursor: pointer;
-}
-
-.howto__summary::-webkit-details-marker {
-  display: none;
-}
-
-.howto__icon {
-  flex: none;
-  color: var(--accent-strong);
-}
-
-.howto__chev {
-  flex: none;
-  margin-left: auto;
-  color: var(--ink-3);
-  transition: transform var(--dur) var(--ease);
-}
-
-.howto[open] .howto__chev {
-  transform: rotate(180deg);
-}
-
-.howto__body {
-  padding: 2px 16px 16px;
-}
-
-.howto__steps {
-  display: grid;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-@media (min-width: 768px) {
-  .howto__steps {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-}
-
-.howto__steps li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  line-height: 1.45;
-}
-
-.howto__n {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--ink);
-  color: var(--bg);
-  font-size: 0.875rem;
-  font-weight: 800;
-}
-
-.howto__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 12px;
-}
-
-/* ---------- Grid: hero and review span the row; tiles form a 2 x 2 ---------- */
-
-.today-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 16px;
-}
-
-@media (min-width: 720px) {
-  .today-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* ---------- Daily Forge hero ---------- */
-
-/* Same surface and ink as the other cards in both themes; a thin orange edge marks it. */
-.daily-hero {
-  display: grid;
-  grid-column: 1 / -1;
-  padding: 28px 24px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-sheet);
-  background: var(--surface);
-  color: var(--ink);
-  box-shadow: inset 4px 0 0 var(--accent), var(--shadow-1);
-}
-
+/* Shared challenge and skill selection: reading fields and connected progress. */
+.today { max-width: 960px; }
+.today-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 28px; }
+.today-head__date { color: var(--ink-2); font-size: var(--fs-sm); }
+.daily-hero { min-width: 0; padding: 28px; border: 1px solid var(--line-strong); border-radius: var(--r-card); background: var(--surface); }
 .daily-hero__body { min-width: 0; }
-
-@media (min-width: 768px) {
-  .daily-hero {
-    padding: 32px 40px;
-  }
-
-  .daily-hero__body {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    column-gap: 32px;
-    align-items: center;
-  }
-
-  .daily-hero__body > :not(.daily-hero__actions) { grid-column: 1; }
-  .daily-hero__actions { grid-column: 2; grid-row: 1 / span 4; justify-content: flex-end; }
-  .daily-hero .pips { margin-bottom: 0; }
-}
-
-.daily-hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--accent-strong);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.daily-hero__title {
-  margin-top: 10px;
-  color: var(--ink);
-  font-size: clamp(2.25rem, 1.7rem + 2.2vw, 3.25rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-}
-
-.daily-hero__num {
-  color: var(--accent-strong);
-}
-
-.daily-hero__meta {
-  margin-top: 6px;
-  color: var(--ink-2);
-  font-weight: 500;
-}
-
-.pips {
-  display: flex;
-  gap: 6px;
-  margin: 22px 0 24px;
-}
-
-.pip {
-  width: 24px;
-  height: 8px;
-  border-radius: var(--r-pill);
-  background: var(--line-strong);
-}
-
-.pip--correct { background: var(--good); }
-.pip--partial { background: var(--warn); }
-.pip--wrong { background: var(--bad); }
-
-.daily-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.daily-hero__next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-  color: var(--ink-2);
-  font-size: 0.9375rem;
-}
-
-/* ---------- Tiles: activities and fallacy of the day ---------- */
-
-.tile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-card);
-  background: var(--surface);
-  box-shadow: var(--shadow-1);
-}
-
-.tile__icon {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 44px;
-  height: 44px;
-  margin-bottom: 6px;
-  border-radius: 12px;
-  background: var(--surface-2);
-  color: var(--ink);
-}
-
-.tile--spot .tile__icon {
-  background: var(--accent-soft);
-  color: var(--accent-strong);
-}
-
-.tile--repair .tile__icon {
-  background: var(--good-soft);
-  color: var(--good);
-}
-
-.tile--logic .tile__icon {
-  background: color-mix(in srgb, var(--fam-framing) 14%, var(--surface));
-  color: var(--fam-framing);
-}
-
-.tile__title {
-  font-size: 1.375rem;
-  font-weight: 750;
-}
-
-.tile__count,
-.tile__sub {
-  color: var(--ink-2);
-}
-
-.tile__foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px 20px;
-  margin-top: auto;
-  padding-top: 12px;
-}
-
-.tile--fotd {
-  border-top: 4px solid var(--accent);
-}
-
-.tile__eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 2px;
-}
-
-/* ---------- Review banner: slim row on wide screens, stacked on phones ---------- */
-
-.tile--review {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-areas:
-    'icon body'
-    'cta cta';
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
-  gap: 12px 14px;
-  padding: 16px;
-}
-
-.tile--review .tile__icon {
-  grid-area: icon;
-  margin: 0;
-  background: var(--warn-soft);
-  color: var(--warn);
-}
-
-.tile--review .tile__body {
-  display: grid;
-  grid-area: body;
-  gap: 2px;
-}
-
-.tile--review .tile__title {
-  font-size: 1.1875rem;
-}
-
-.tile--review .tile__cta {
-  grid-area: cta;
-  justify-self: start;
-}
-
-@media (min-width: 720px) {
-  .tile--review {
-    grid-template-areas: 'icon body cta';
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    gap: 4px 16px;
-    padding: 14px 20px;
-  }
+.daily-hero__title { font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.03em; }
+.daily-hero__num { color: var(--ink-3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.daily-hero__meta { max-width: 42ch; margin-top: 10px; color: var(--ink-2); font-size: var(--fs-sm); }
+.daily-path { display: flex; align-items: center; margin: 26px 0 14px; isolation: isolate; }
+.daily-path__node { position: relative; display: grid; place-items: center; flex: 1; min-width: 0; color: var(--ink-2); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.daily-path__node > span:first-child { display: grid; place-items: center; width: 24px; height: 24px; border: 1px solid var(--line-strong); border-radius: 50%; background: var(--surface); }
+.daily-path__node:not(:last-child)::after { content: ''; position: absolute; z-index: -1; width: 100%; left: 50%; top: 12px; height: 1px; background: var(--line-strong); }
+.daily-path__node--correct > span:first-child { background: var(--good-soft); border-color: var(--good); color: var(--good); }
+.daily-path__node--partial > span:first-child { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); }
+.daily-path__node--wrong > span:first-child { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
+.daily-hero__status { color: var(--ink-2); font-size: var(--fs-sm); }
+.daily-hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.daily-hero__next { margin-top: 14px; color: var(--ink-2); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+.daily-review { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.daily-review h2, .daily-explore h2 { font-size: 1.25rem; }
+.daily-review p, .daily-explore p { margin-top: 8px; color: var(--ink-2); }
+.daily-explore { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; padding-top: 40px; }
+.daily-explore .text-link { margin-top: 12px; font-size: var(--fs-sm); }
+.practice-activities { border-top: 1px solid var(--line-strong); }
+.activity-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.activity-row__title { font-size: 1.5rem; margin-bottom: 8px; }
+.activity-row__text { max-width: 60ch; color: var(--ink-2); }
+.activity-row__action { flex-shrink: 0; }
+.practice-hub > .topic-preferences { margin-top: 32px; }
+@media (max-width: 600px) {
+  .daily-hero { padding: 20px 16px; }
+  .daily-hero__title { font-size: 1.5rem; }
+  .daily-path__node > span:first-child { width: 21px; height: 21px; font-size: 0.6875rem; }
+  .daily-path__node:not(:last-child)::after { top: 10px; }
+  .daily-explore { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 32px; }
+  .activity-row { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px 0; }
+  .activity-row__title { font-size: 1.25rem; }
+  .activity-row__action { justify-self: start; }
 }

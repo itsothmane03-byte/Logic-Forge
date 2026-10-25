@@ -1,12 +1,11 @@
-/* Controls: tactile buttons, chips, tags, badges, mastery bar, streak chip. */
+/* Shared controls, status labels and progress. */
 
-/* ---------- Buttons (tactile: darker bottom edge that compresses) ---------- */
+/* ---------- Buttons ---------- */
 
 .btn {
   --btn-bg: var(--surface);
   --btn-fg: var(--ink);
   --btn-border: var(--line-strong);
-  --btn-edge: var(--line-strong);
   --btn-hover: var(--surface-2);
   position: relative;
   display: inline-flex;
@@ -24,11 +23,9 @@
   font-weight: 650;
   line-height: 1.1;
   text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 2px 0 0 var(--btn-edge);
+  white-space: normal;
+  text-align: center;
   transition:
-    transform 110ms var(--ease),
-    box-shadow 110ms var(--ease),
     background-color var(--dur) var(--ease),
     border-color var(--dur) var(--ease);
   -webkit-tap-highlight-color: transparent;
@@ -42,21 +39,17 @@
 }
 
 .btn:active:not(:disabled) {
-  transform: translateY(2px);
-  box-shadow: 0 0 0 0 var(--btn-edge);
+  background: color-mix(in srgb, var(--btn-bg) 88%, var(--btn-fg));
 }
 
 .btn:focus-visible {
-  box-shadow:
-    0 2px 0 0 var(--btn-edge),
-    0 0 0 6px var(--accent-soft);
+  box-shadow: 0 0 0 6px var(--accent-soft);
 }
 
 .btn--primary {
   --btn-bg: var(--accent);
   --btn-fg: var(--accent-ink);
   --btn-border: var(--accent-edge);
-  --btn-edge: var(--accent-edge);
   --btn-hover: color-mix(in oklab, var(--accent) 86%, white);
 }
 
@@ -64,14 +57,12 @@
   --btn-bg: var(--ink);
   --btn-fg: var(--bg);
   --btn-border: var(--ink);
-  --btn-edge: color-mix(in oklab, var(--ink) 60%, var(--bg));
   --btn-hover: color-mix(in oklab, var(--ink) 88%, var(--bg));
 }
 
 .btn--ghost {
   --btn-bg: transparent;
   --btn-border: transparent;
-  --btn-edge: transparent;
   box-shadow: none;
 }
 
@@ -84,7 +75,7 @@
   padding: 0 26px;
   font-size: 1.0625rem;
   font-weight: 700;
-  border-radius: 12px;
+  border-radius: var(--r-control);
 }
 
 .btn--sm {
@@ -101,7 +92,6 @@
   --btn-bg: var(--surface-2);
   --btn-fg: var(--ink-3);
   --btn-border: var(--line);
-  --btn-edge: var(--line);
   cursor: not-allowed;
 }
 
@@ -129,7 +119,7 @@
   height: 44px;
   padding: 0;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: var(--r-control);
   background: transparent;
   color: var(--ink-2);
   text-decoration: none;

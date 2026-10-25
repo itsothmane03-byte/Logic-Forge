@@ -1,16 +1,4 @@
-/* Argument repair uses the same tokens and controls as the identification quiz.
-   The Practice hub cards reuse the Today tiles (today.css). */
-.practice-hub__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 16px;
-}
-
-@media (min-width: 860px) {
-  .practice-hub__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
+/* Argument repair uses the shared tokens and controls. */
 
 .repair-result__icon {
   display: grid;

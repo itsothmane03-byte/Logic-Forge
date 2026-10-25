@@ -1,493 +1,61 @@
-/* Welcome sections: three ways to practice, real-world formats, features bento, final call to action, footer. */
+/* Home, continued: compact activity rows (ink rules, not nested cards) and
+   the footer. The old marketing hero/bento/fan sections are gone. */
 
-/* ---------- Three ways to practice ---------- */
+.workbench-activities {
+  margin-top: 28px;
+}
 
-.how {
+.workbench-activities__list {
   border-top: 1px solid var(--line);
 }
 
-.steps {
-  display: grid;
-  gap: 16px;
-}
-
-@media (min-width: 860px) {
-  .steps {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-}
-
-.step-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 20px 20px 22px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--surface);
-  box-shadow: var(--shadow-2);
-}
-
-.step-card__title {
-  margin-top: 18px;
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.step-card__text {
-  margin-top: 6px;
-  color: var(--ink-2);
-  line-height: 1.55;
-}
-
-.step-card__link {
-  align-self: flex-start;
-  margin-top: auto;
-  padding-top: 10px;
-}
-
-.step-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 116px;
-  padding: 14px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--surface-2);
-}
-
-.step-visual--spot {
-  gap: 10px;
-}
-
-.sv-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
-  border: 1.5px solid var(--line-strong);
-  border-radius: 12px;
-  background: var(--surface);
-  font-weight: 750;
-  box-shadow: 0 2px 0 var(--line-strong);
-}
-
-.sv-pill--on {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  box-shadow: 0 2px 0 var(--accent-edge);
-}
-
-.sv-opt {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 10px;
-  border: 1.5px solid var(--line-strong);
-  border-radius: 10px;
-  background: var(--surface);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.sv-opt--on {
-  border-color: var(--good);
-  background: var(--good-soft);
-  color: var(--good);
-}
-
-/* Fix the argument: a weak line struck through, a stronger one checked.
-   What follows?: two facts, a claim and the three verdicts. */
-.step-visual--fix,
-.step-visual--logic {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 8px;
-}
-
-.sv-line {
-  padding: 7px 10px;
-  border-radius: 10px;
-  font-family: var(--font-serif);
-  font-size: 0.9375rem;
-  line-height: 1.4;
-}
-
-.sv-line--weak {
-  color: var(--ink-3);
-  text-decoration: line-through;
-  text-decoration-color: var(--bad);
-}
-
-.sv-line--strong {
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
-  border: 1.5px solid var(--good);
-  background: var(--good-soft);
-}
-
-.sv-line--strong .icon {
-  flex: none;
-  margin-top: 3px;
-  color: var(--good);
-}
-
-.sv-facts,
-.sv-claim {
-  font-size: 0.9375rem;
-  line-height: 1.4;
-  text-align: center;
-}
-
-.sv-facts {
-  font-family: var(--font-serif);
-}
-
-.sv-claim {
-  font-weight: 750;
-}
-
-.sv-verdicts {
+.workbench-activity {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-}
-
-/* ---------- Real-world formats (fanned stack) ---------- */
-
-.formats {
-  border-block: 1px solid var(--line);
-  background: var(--surface-2);
-}
-
-.formats__grid {
-  display: grid;
   align-items: center;
-  gap: 44px;
-}
-
-@media (min-width: 960px) {
-  .formats__grid {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: 64px;
-  }
-}
-
-.format-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 22px;
-}
-
-.format-list li {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 12px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-pill);
-  background: var(--surface);
-  font-size: 0.875rem;
-  font-weight: 650;
-}
-
-.fan {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 8px 4px 12px;
-}
-
-.fan__card {
-  position: relative;
-  transition: transform 320ms var(--ease);
-}
-
-.fan__card + .fan__card {
-  margin-top: -26px;
-}
-
-.fan__card--0 {
-  z-index: 1;
-  margin-right: 28px;
-  transform: rotate(-2.2deg);
-}
-
-.fan__card--1 {
-  z-index: 2;
-  margin-left: 36px;
-  transform: rotate(1.6deg);
-}
-
-.fan__card--2 {
-  z-index: 3;
-  margin-right: 14px;
-  margin-left: 8px;
-  transform: rotate(-0.8deg);
-}
-
-.fan .passage {
-  box-shadow: var(--shadow-3);
-}
-
-@media (hover: hover) {
-  .fan__card:hover {
-    z-index: 4;
-    transform: rotate(0deg) translateY(-6px);
-  }
-}
-
-@media (max-width: 520px) {
-  .fan__card--0 {
-    margin-right: 12px;
-  }
-
-  .fan__card--1 {
-    margin-left: 14px;
-  }
-
-  .fan__card--2 {
-    margin-right: 6px;
-    margin-left: 4px;
-  }
-}
-
-/* ---------- Features bento ---------- */
-
-.bento {
-  display: grid;
   gap: 14px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--line);
 }
 
-/* Four tiles: 2 x 2 on tablets; on desktop Daily is a 2 x 2 block beside
-   Adaptive (wide) above Library and Progress. */
-@media (min-width: 720px) {
-  .bento {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1000px) {
-  .bento {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-auto-rows: minmax(170px, auto);
-  }
-
-  .bento__tile--daily {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-
-  .bento__tile--adaptive {
-    grid-column: span 2;
-  }
-}
-
-.bento__tile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  overflow: hidden;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--surface);
-  box-shadow: var(--shadow-1);
-}
-
-.bento__icon {
+.workbench-activity__icon {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
-  margin-bottom: 6px;
-  border-radius: 12px;
-  background: var(--surface-2);
-  color: var(--ink);
-}
-
-.bento__title {
-  font-size: 1.25rem;
-  font-weight: 750;
-  letter-spacing: -0.02em;
-}
-
-.bento__text {
+  flex: none;
+  width: 20px;
   color: var(--ink-2);
-  line-height: 1.5;
 }
 
-.bento__tile--daily {
-  border-color: transparent;
-  background: var(--hero-bg);
-  color: var(--hero-ink);
-  box-shadow: var(--shadow-3);
-}
-
-.bento__tile--daily .bento__icon {
-  background: rgb(255 255 255 / 0.08);
-  color: var(--accent);
-}
-
-.bento__tile--daily .bento__title {
-  font-size: 1.75rem;
-  font-weight: 800;
-}
-
-.bento__tile--daily .bento__text {
-  color: var(--hero-ink-2);
-}
-
-.bento__tile--adaptive .bento__icon,
-.bento__tile--progress .bento__icon {
-  background: var(--accent-soft);
-  color: var(--accent-strong);
-}
-
-.fv-share {
-  margin: auto 0 0;
-  padding: 16px 18px;
-  overflow-x: auto;
-  border: 1px solid var(--hero-line);
-  border-radius: 14px;
-  background: rgb(255 255 255 / 0.05);
-  color: var(--hero-ink);
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  line-height: 1.7;
-  white-space: pre;
-}
-
-.bento__tile--daily .bento__text {
-  margin-bottom: 18px;
-}
-
-.fv-boxes {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
-  height: 70px;
-  margin-top: 12px;
-}
-
-.fv-box {
+.workbench-activity__body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 4px;
-  height: 100%;
+  gap: 2px;
+  min-width: min(200px, 100%);
 }
 
-.fv-box i {
-  width: 100%;
-  height: calc(var(--box) * 16%);
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--accent) calc(var(--box) * 19%), var(--surface-2));
+.workbench-activity__title {
+  font-weight: 700;
 }
 
-.fv-box b {
+.workbench-activity__text {
   color: var(--ink-2);
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
 }
 
-.fv-library {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 10px;
-}
-
-.fv-count {
-  color: var(--accent-strong);
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.fv-chips {
+.workbench-activities__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 8px 24px;
+  margin-top: 18px;
 }
 
-.fv-chips span {
-  padding: 2px 8px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-pill);
-  background: var(--surface-2);
-  font-size: 0.6875rem;
-  font-weight: 650;
-}
-
-.fv-heat {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
-  max-width: 190px;
-  margin-top: 12px;
-}
-
-/* ---------- Final call to action + footer ---------- */
-
-.final-cta {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: var(--hero-bg);
-  color: var(--hero-ink);
-  text-align: center;
-}
-
-.final-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.07) 1.2px, transparent 0);
-  background-size: 22px 22px;
-  -webkit-mask-image: radial-gradient(ellipse 60% 80% at 50% 50%, #000 20%, transparent 75%);
-  mask-image: radial-gradient(ellipse 60% 80% at 50% 50%, #000 20%, transparent 75%);
-}
-
-.final-cta__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  max-width: 660px;
-  margin: 0 auto;
-}
-
-.final-cta .logomark {
-  color: var(--hero-ink);
-}
-
-.final-cta__title {
-  color: var(--hero-ink);
-  font-size: clamp(2rem, 1.5rem + 2.4vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-}
-
-.final-cta__text {
-  margin-bottom: 8px;
-  color: var(--hero-ink-2);
-  font-size: 1.125rem;
-}
+/* ---------- Footer ---------- */
 
 .welcome-footer {
-  padding: 20px var(--gutter);
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
 }
 
 .welcome-footer__inner {

@@ -7,15 +7,13 @@
   top: 0;
   z-index: 30;
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 84%, transparent);
-  -webkit-backdrop-filter: saturate(1.4) blur(14px);
-  backdrop-filter: saturate(1.4) blur(14px);
+  background: var(--bg);
 }
 
 .topbar__inner {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   max-width: calc(var(--content-max) + 2 * var(--gutter));
   height: var(--topbar-h);
   margin: 0 auto;
@@ -43,7 +41,7 @@
 .topbar__nav {
   display: flex;
   gap: 2px;
-  margin-left: 12px;
+  margin-left: 4px;
 }
 
 .topbar__link {
@@ -51,8 +49,8 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding: 0 14px;
-  border-radius: 10px;
+  padding: 0 10px;
+  border-radius: var(--r-control);
   color: var(--ink-2);
   font-size: 0.9375rem;
   font-weight: 600;
@@ -107,9 +105,7 @@
     height: 56px;
     padding: 0 6px 0 var(--gutter);
     border-bottom: 1px solid var(--line);
-    background: color-mix(in srgb, var(--bg) 86%, transparent);
-    -webkit-backdrop-filter: saturate(1.4) blur(14px);
-    backdrop-filter: saturate(1.4) blur(14px);
+    background: var(--bg);
   }
 
   .mobile-header__brand {
@@ -143,9 +139,7 @@
     height: calc(var(--tabbar-h) + var(--safe-bottom));
     padding-bottom: var(--safe-bottom);
     border-top: 1px solid var(--line);
-    background: color-mix(in srgb, var(--surface) 92%, transparent);
-    -webkit-backdrop-filter: saturate(1.4) blur(14px);
-    backdrop-filter: saturate(1.4) blur(14px);
+    background: var(--surface);
   }
 
   .tabbar__link {
@@ -163,9 +157,9 @@
   .tabbar__icon {
     display: grid;
     place-items: center;
-    width: 54px;
+    width: 44px;
     height: 28px;
-    border-radius: var(--r-pill);
+    border-radius: var(--r-control);
     transition: background-color var(--dur) var(--ease);
   }
 
@@ -174,8 +168,8 @@
   }
 
   .tabbar__link.is-active .tabbar__icon {
-    background: var(--accent-soft);
-    color: var(--accent-strong);
+    background: var(--surface-2);
+    color: var(--ink);
   }
 }
 

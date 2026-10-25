@@ -1,0 +1,470 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T15:29:36.752Z",
+  "title": "Design System: Fallacy Forge",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f4f7f7",
+        "tonalRamp": [
+          "oklch(15% 0.0011 197.1)",
+          "oklch(27% 0.0021 197.1)",
+          "oklch(39% 0.0029 197.1)",
+          "oklch(51% 0.0032 197.1)",
+          "oklch(63% 0.0032 197.1)",
+          "oklch(75% 0.0026 197.1)",
+          "oklch(87% 0.0016 197.1)",
+          "oklch(95% 0.0006 197.1)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Reading White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.9)",
+          "oklch(27% 0.0000 89.9)",
+          "oklch(39% 0.0000 89.9)",
+          "oklch(51% 0.0000 89.9)",
+          "oklch(63% 0.0000 89.9)",
+          "oklch(75% 0.0000 89.9)",
+          "oklch(87% 0.0000 89.9)",
+          "oklch(95% 0.0000 89.9)"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Quiet Field",
+        "canonical": "#eaf0f0",
+        "tonalRamp": [
+          "oklch(15% 0.0022 197.0)",
+          "oklch(27% 0.0042 197.0)",
+          "oklch(39% 0.0058 197.0)",
+          "oklch(51% 0.0064 197.0)",
+          "oklch(63% 0.0064 197.0)",
+          "oklch(75% 0.0051 197.0)",
+          "oklch(87% 0.0032 197.0)",
+          "oklch(95% 0.0013 197.0)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Reading Ink",
+        "canonical": "#142023",
+        "tonalRamp": [
+          "oklch(15% 0.0062 214.9)",
+          "oklch(27% 0.0116 214.9)",
+          "oklch(39% 0.0160 214.9)",
+          "oklch(51% 0.0178 214.9)",
+          "oklch(63% 0.0178 214.9)",
+          "oklch(75% 0.0142 214.9)",
+          "oklch(87% 0.0089 214.9)",
+          "oklch(95% 0.0036 214.9)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Supporting Ink",
+        "canonical": "#46585c",
+        "tonalRamp": [
+          "oklch(15% 0.0081 212.7)",
+          "oklch(27% 0.0150 212.7)",
+          "oklch(39% 0.0208 212.7)",
+          "oklch(51% 0.0231 212.7)",
+          "oklch(63% 0.0231 212.7)",
+          "oklch(75% 0.0185 212.7)",
+          "oklch(87% 0.0116 212.7)",
+          "oklch(95% 0.0046 212.7)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#586a6e",
+        "tonalRamp": [
+          "oklch(15% 0.0079 212.7)",
+          "oklch(27% 0.0147 212.7)",
+          "oklch(39% 0.0203 212.7)",
+          "oklch(51% 0.0226 212.7)",
+          "oklch(63% 0.0226 212.7)",
+          "oklch(75% 0.0180 212.7)",
+          "oklch(87% 0.0113 212.7)",
+          "oklch(95% 0.0045 212.7)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Fine Rule",
+        "canonical": "#dbe3e4",
+        "tonalRamp": [
+          "oklch(15% 0.0031 205.9)",
+          "oklch(27% 0.0057 205.9)",
+          "oklch(39% 0.0079 205.9)",
+          "oklch(51% 0.0087 205.9)",
+          "oklch(63% 0.0087 205.9)",
+          "oklch(75% 0.0070 205.9)",
+          "oklch(87% 0.0044 205.9)",
+          "oklch(95% 0.0017 205.9)"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Control Rule",
+        "canonical": "#809497",
+        "tonalRamp": [
+          "oklch(15% 0.0081 207.6)",
+          "oklch(27% 0.0151 207.6)",
+          "oklch(39% 0.0209 207.6)",
+          "oklch(51% 0.0233 207.6)",
+          "oklch(63% 0.0233 207.6)",
+          "oklch(75% 0.0186 207.6)",
+          "oklch(87% 0.0116 207.6)",
+          "oklch(95% 0.0047 207.6)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Forge Orange",
+        "canonical": "#ff6b3d",
+        "tonalRamp": [
+          "oklch(15% 0.0667 37.5)",
+          "oklch(27% 0.1239 37.5)",
+          "oklch(39% 0.1716 37.5)",
+          "oklch(51% 0.1907 37.5)",
+          "oklch(63% 0.1907 37.5)",
+          "oklch(75% 0.1525 37.5)",
+          "oklch(87% 0.0953 37.5)",
+          "oklch(95% 0.0381 37.5)"
+        ]
+      },
+      "accent-ink": {
+        "role": "neutral",
+        "displayName": "Action Ink",
+        "canonical": "#121212",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.9)",
+          "oklch(27% 0.0000 89.9)",
+          "oklch(39% 0.0000 89.9)",
+          "oklch(51% 0.0000 89.9)",
+          "oklch(63% 0.0000 89.9)",
+          "oklch(75% 0.0000 89.9)",
+          "oklch(87% 0.0000 89.9)",
+          "oklch(95% 0.0000 89.9)"
+        ]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Soft Orange",
+        "canonical": "#ffe6dc",
+        "tonalRamp": [
+          "oklch(15% 0.0107 43.1)",
+          "oklch(27% 0.0199 43.1)",
+          "oklch(39% 0.0276 43.1)",
+          "oklch(51% 0.0307 43.1)",
+          "oklch(63% 0.0307 43.1)",
+          "oklch(75% 0.0245 43.1)",
+          "oklch(87% 0.0153 43.1)",
+          "oklch(95% 0.0061 43.1)"
+        ]
+      },
+      "accent-edge": {
+        "role": "primary",
+        "displayName": "Orange Edge",
+        "canonical": "#c4461d",
+        "tonalRamp": [
+          "oklch(15% 0.0592 37.2)",
+          "oklch(27% 0.1100 37.2)",
+          "oklch(39% 0.1523 37.2)",
+          "oklch(51% 0.1692 37.2)",
+          "oklch(63% 0.1692 37.2)",
+          "oklch(75% 0.1353 37.2)",
+          "oklch(87% 0.0846 37.2)",
+          "oklch(95% 0.0338 37.2)"
+        ]
+      },
+      "accent-strong": {
+        "role": "primary",
+        "displayName": "Orange Text",
+        "canonical": "#a43b17",
+        "tonalRamp": [
+          "oklch(15% 0.0513 37.9)",
+          "oklch(27% 0.0952 37.9)",
+          "oklch(39% 0.1318 37.9)",
+          "oklch(51% 0.1465 37.9)",
+          "oklch(63% 0.1465 37.9)",
+          "oklch(75% 0.1172 37.9)",
+          "oklch(87% 0.0732 37.9)",
+          "oklch(95% 0.0293 37.9)"
+        ]
+      },
+      "structure": {
+        "role": "secondary",
+        "displayName": "Petrol Structure",
+        "canonical": "#1f6971",
+        "tonalRamp": [
+          "oklch(15% 0.0249 205.5)",
+          "oklch(27% 0.0463 205.5)",
+          "oklch(39% 0.0641 205.5)",
+          "oklch(51% 0.0712 205.5)",
+          "oklch(63% 0.0712 205.5)",
+          "oklch(75% 0.0570 205.5)",
+          "oklch(87% 0.0356 205.5)",
+          "oklch(95% 0.0142 205.5)"
+        ]
+      },
+      "good": {
+        "role": "semantic",
+        "displayName": "Correct",
+        "canonical": "#157a43",
+        "tonalRamp": [
+          "oklch(15% 0.0431 153.3)",
+          "oklch(27% 0.0801 153.3)",
+          "oklch(39% 0.1109 153.3)",
+          "oklch(51% 0.1232 153.3)",
+          "oklch(63% 0.1232 153.3)",
+          "oklch(75% 0.0985 153.3)",
+          "oklch(87% 0.0616 153.3)",
+          "oklch(95% 0.0246 153.3)"
+        ]
+      },
+      "good-soft": {
+        "role": "semantic",
+        "displayName": "Correct Field",
+        "canonical": "#e3f4ea",
+        "tonalRamp": [
+          "oklch(15% 0.0078 160.2)",
+          "oklch(27% 0.0145 160.2)",
+          "oklch(39% 0.0201 160.2)",
+          "oklch(51% 0.0223 160.2)",
+          "oklch(63% 0.0223 160.2)",
+          "oklch(75% 0.0178 160.2)",
+          "oklch(87% 0.0111 160.2)",
+          "oklch(95% 0.0045 160.2)"
+        ]
+      },
+      "bad": {
+        "role": "semantic",
+        "displayName": "Incorrect",
+        "canonical": "#b3261e",
+        "tonalRamp": [
+          "oklch(15% 0.0624 28.7)",
+          "oklch(27% 0.1159 28.7)",
+          "oklch(39% 0.1605 28.7)",
+          "oklch(51% 0.1783 28.7)",
+          "oklch(63% 0.1783 28.7)",
+          "oklch(75% 0.1427 28.7)",
+          "oklch(87% 0.0892 28.7)",
+          "oklch(95% 0.0357 28.7)"
+        ]
+      },
+      "bad-soft": {
+        "role": "semantic",
+        "displayName": "Incorrect Field",
+        "canonical": "#fce8e6",
+        "tonalRamp": [
+          "oklch(15% 0.0077 24.4)",
+          "oklch(27% 0.0143 24.4)",
+          "oklch(39% 0.0199 24.4)",
+          "oklch(51% 0.0221 24.4)",
+          "oklch(63% 0.0221 24.4)",
+          "oklch(75% 0.0177 24.4)",
+          "oklch(87% 0.0110 24.4)",
+          "oklch(95% 0.0044 24.4)"
+        ]
+      },
+      "warn": {
+        "role": "semantic",
+        "displayName": "Partial",
+        "canonical": "#8a5a00",
+        "tonalRamp": [
+          "oklch(15% 0.0378 73.3)",
+          "oklch(27% 0.0702 73.3)",
+          "oklch(39% 0.0972 73.3)",
+          "oklch(51% 0.1080 73.3)",
+          "oklch(63% 0.1080 73.3)",
+          "oklch(75% 0.0864 73.3)",
+          "oklch(87% 0.0540 73.3)",
+          "oklch(95% 0.0216 73.3)"
+        ]
+      },
+      "warn-soft": {
+        "role": "semantic",
+        "displayName": "Partial Field",
+        "canonical": "#fff3d6",
+        "tonalRamp": [
+          "oklch(15% 0.0140 88.2)",
+          "oklch(27% 0.0260 88.2)",
+          "oklch(39% 0.0360 88.2)",
+          "oklch(51% 0.0400 88.2)",
+          "oklch(63% 0.0400 88.2)",
+          "oklch(75% 0.0320 88.2)",
+          "oklch(87% 0.0200 88.2)",
+          "oklch(95% 0.0080 88.2)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Page Headline",
+        "purpose": "Desktop general page titles; Home uses a separate fluid size."
+      },
+      "title": {
+        "displayName": "Daily Title",
+        "purpose": "Daily card heading and mobile general page-title size."
+      },
+      "body": {
+        "displayName": "Reading Body",
+        "purpose": "Base reading text; passage and form contexts retain their documented size overrides."
+      },
+      "label": {
+        "displayName": "Filter Label",
+        "purpose": "Filter chips; navigation and metadata have context-specific sizes."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-1",
+        "value": "0 1px 2px rgb(0 0 0 / 0.06)",
+        "purpose": "Light-theme low shadow for search and selected segmented controls; use var(--shadow-1) to follow the theme."
+      },
+      {
+        "name": "shadow-2",
+        "value": "0 10px 30px -14px rgb(18 18 18 / 0.28), 0 2px 6px rgb(0 0 0 / 0.05)",
+        "purpose": "Light-theme existing passage depth, explicitly removed inside Home; use var(--shadow-2) in existing passage contexts."
+      },
+      {
+        "name": "shadow-3",
+        "value": "0 24px 60px -24px rgb(18 18 18 / 0.35), 0 4px 12px rgb(0 0 0 / 0.06)",
+        "purpose": "Light-theme dialog depth; var(--shadow-3) supplies the active-theme version."
+      },
+      {
+        "name": "shadow-sheet",
+        "value": "0 -18px 50px -20px rgb(18 18 18 / 0.3)",
+        "purpose": "Light-theme exercise feedback depth; var(--shadow-sheet) supplies the active-theme version."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Shared state-transition easing."
+      },
+      {
+        "name": "dur-fast",
+        "value": "160ms",
+        "purpose": "Route entry duration."
+      },
+      {
+        "name": "dur",
+        "value": "200ms",
+        "purpose": "Shared button and chip state duration."
+      },
+      {
+        "name": "dur-slow",
+        "value": "240ms",
+        "purpose": "Slower dialog, feedback and segment transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "daily-and-practice-stack",
+        "value": "600px"
+      },
+      {
+        "name": "mobile-chrome-max",
+        "value": "767px"
+      },
+      {
+        "name": "home-columns-min",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shared orange action. Hover, pressed, focus and native disabled states use the implemented button rules.",
+      "html": "<button type=\"button\" class=\"ds-btn ds-btn-primary\"><span>Start Daily Forge</span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-btn {\n  --btn-bg: var(--surface);\n  --btn-fg: var(--ink);\n  --btn-border: var(--line-strong);\n  --btn-hover: var(--surface-2);\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 48px;\n  padding: 0 20px;\n  border: 1.5px solid var(--btn-border);\n  border-radius: var(--r-control);\n  background: var(--btn-bg);\n  color: var(--btn-fg);\n  font-family: var(--font-body);\n  font-size: 1rem;\n  font-weight: 650;\n  line-height: 1.1;\n  text-decoration: none;\n  white-space: normal;\n  text-align: center;\n  transition:\n    background-color var(--dur) var(--ease),\n    border-color var(--dur) var(--ease);\n  -webkit-tap-highlight-color: transparent;\n  user-select: none;\n  cursor: pointer;\n}\n.ds-btn:hover {\n  background: var(--btn-hover);\n  text-decoration: none;\n}\n.ds-btn:active:not(:disabled) {\n  background: color-mix(in srgb, var(--btn-bg) 88%, var(--btn-fg));\n}\n.ds-btn:disabled {\n  --btn-bg: var(--surface-2);\n  --btn-fg: var(--ink-3);\n  --btn-border: var(--line);\n  cursor: not-allowed;\n}\n.ds-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 6px var(--accent-soft); }\n.ds-btn svg { display: block; flex: none; }\n@media (prefers-reduced-motion: reduce) { .ds-btn, .ds-chip { transition-duration: 0.01ms; } }\n.ds-btn-primary {\n  --btn-bg: var(--accent);\n  --btn-fg: var(--accent-ink);\n  --btn-border: var(--accent-edge);\n  --btn-hover: color-mix(in oklab, var(--accent) 86%, white);\n}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Neutral bordered action for secondary choices, with the same state and size baseline as the primary button.",
+      "html": "<button type=\"button\" class=\"ds-btn\"><span>Review</span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-btn {\n  --btn-bg: var(--surface);\n  --btn-fg: var(--ink);\n  --btn-border: var(--line-strong);\n  --btn-hover: var(--surface-2);\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 48px;\n  padding: 0 20px;\n  border: 1.5px solid var(--btn-border);\n  border-radius: var(--r-control);\n  background: var(--btn-bg);\n  color: var(--btn-fg);\n  font-family: var(--font-body);\n  font-size: 1rem;\n  font-weight: 650;\n  line-height: 1.1;\n  text-decoration: none;\n  white-space: normal;\n  text-align: center;\n  transition:\n    background-color var(--dur) var(--ease),\n    border-color var(--dur) var(--ease);\n  -webkit-tap-highlight-color: transparent;\n  user-select: none;\n  cursor: pointer;\n}\n.ds-btn:hover {\n  background: var(--btn-hover);\n  text-decoration: none;\n}\n.ds-btn:active:not(:disabled) {\n  background: color-mix(in srgb, var(--btn-bg) 88%, var(--btn-fg));\n}\n.ds-btn:disabled {\n  --btn-bg: var(--surface-2);\n  --btn-fg: var(--ink-3);\n  --btn-border: var(--line);\n  cursor: not-allowed;\n}\n.ds-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 6px var(--accent-soft); }\n.ds-btn svg { display: block; flex: none; }\n@media (prefers-reduced-motion: reduce) { .ds-btn, .ds-chip { transition-duration: 0.01ms; } }"
+    },
+    {
+      "name": "Library Search",
+      "kind": "input",
+      "refersTo": "search",
+      "description": "Retained 52px search field with an inline SVG, placeholder, keyboard hint, low shadow and visible keyboard focus.",
+      "html": "<div class=\"ds-search\"><svg class=\"ds-search-icon\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11 4.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM20 20l-4.3-4.3\"/></svg><input class=\"ds-search-input\" type=\"search\" aria-label=\"Search fallacies\" placeholder=\"Search fallacies\"/><span class=\"ds-search-kbd\" aria-hidden=\"true\">/</span></div>",
+      "css": ".ds-search {\n  position: relative;\n  width: 100%;\n  max-width: 420px;\n}\n.ds-search-icon {\n  position: absolute;\n  top: 50%;\n  left: 15px;\n  color: var(--ink-2);\n  transform: translateY(-50%);\n  pointer-events: none;\n}\n.ds-search-input {\n  width: 100%;\n  height: 52px;\n  padding: 0 48px 0 46px;\n  border: 1.5px solid var(--line-strong);\n  border-radius: 14px;\n  background: var(--surface);\n  font-size: 1rem;\n  box-shadow: var(--shadow-1);\n  appearance: none;\n}\n.ds-search-input { box-sizing: border-box; color: var(--ink); font-family: var(--font-body); }\n.ds-search-input::placeholder {\n  color: var(--ink-3);\n}\n.ds-search-input:focus-visible {\n  border-color: var(--ink);\n}\n.ds-search-input::-webkit-search-cancel-button {\n  display: none;\n}\n.ds-search-kbd {\n  position: absolute;\n  top: 50%;\n  right: 12px;\n  display: grid;\n  place-items: center;\n  width: 26px;\n  height: 26px;\n  border: 1px solid var(--line-strong);\n  border-bottom-width: 2px;\n  border-radius: 7px;\n  color: var(--ink-2);\n  font: 650 0.8125rem/1 var(--font-mono);\n  transform: translateY(-50%);\n  pointer-events: none;\n}\n.ds-search-input:not(:placeholder-shown) ~ .ds-search-kbd {\n  display: none;\n}\n.ds-search-input:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 6px var(--accent-soft); }\n@media (hover: none) { .ds-search-kbd { display: none; } }"
+    },
+    {
+      "name": "Desktop Section Navigation",
+      "kind": "nav",
+      "refersTo": "navigation-link",
+      "description": "Desktop text navigation with an orange current-section underline, neutral hover state and aria-current. Mobile uses the separate labelled tab bar described in DESIGN.md.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><a class=\"ds-nav-link ds-is-active\" href=\"#/today\" aria-current=\"page\">Daily Forge</a><a class=\"ds-nav-link\" href=\"#/practice\">Practice</a><a class=\"ds-nav-link\" href=\"#/library\">Library</a><a class=\"ds-nav-link\" href=\"#/progress\">Progress</a></nav>",
+      "css": ".ds-nav {\n  display: flex;\n  gap: 2px;\n  margin-left: 4px;\n}\n.ds-nav { flex-wrap: wrap; font-family: var(--font-body); background: var(--bg); }\n.ds-nav-link {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  min-height: 44px;\n  padding: 0 10px;\n  border-radius: var(--r-control);\n  color: var(--ink-2);\n  font-size: 0.9375rem;\n  font-weight: 600;\n  text-decoration: none;\n}\n.ds-nav-link:hover {\n  background: var(--surface-2);\n  color: var(--ink);\n}\n.ds-nav-link.ds-is-active {\n  color: var(--ink);\n}\n.ds-nav-link.ds-is-active::after {\n  content: '';\n  position: absolute;\n  right: 14px;\n  bottom: 3px;\n  left: 14px;\n  height: 3px;\n  border-radius: 3px;\n  background: var(--accent);\n}\n.ds-nav-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 6px var(--accent-soft); }"
+    },
+    {
+      "name": "Library Filter Chips",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Pill filters shown in unselected and selected states. The native button aria-pressed value communicates selection; preview state is static.",
+      "html": "<div class=\"ds-chip-row\"><button type=\"button\" class=\"ds-chip\" aria-pressed=\"false\">Beginner</button><button type=\"button\" class=\"ds-chip ds-is-on\" aria-pressed=\"true\">Intermediate</button></div>",
+      "css": ".ds-chip-row {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.ds-chip {\n  display: inline-flex;\n  align-items: center;\n  gap: 8px;\n  min-height: 44px;\n  padding: 0 16px;\n  border: 1px solid var(--line);\n  border-radius: var(--r-pill);\n  background: var(--surface);\n  color: var(--ink);\n  font-size: 0.875rem;\n  font-weight: 650;\n  line-height: 1.2;\n  text-decoration: none;\n  transition:\n    background-color var(--dur) var(--ease),\n    border-color var(--dur) var(--ease),\n    color var(--dur) var(--ease);\n}\n.ds-chip { font-family: var(--font-body); cursor: pointer; }\n.ds-chip:hover { border-color: var(--line-strong); background: var(--surface-2); }\n.ds-chip.ds-is-on {\n  border-color: var(--ink);\n  background: var(--ink);\n  color: var(--bg);\n}\n.ds-chip:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 6px var(--accent-soft); }\n@media (prefers-reduced-motion: reduce) { .ds-btn, .ds-chip { transition-duration: 0.01ms; } }"
+    },
+    {
+      "name": "Daily Challenge Card",
+      "kind": "card",
+      "refersTo": "daily-card",
+      "description": "Neutral card and ten connected question nodes, showing correct, partly correct, incorrect and unanswered states. This illustrative state is not stored progress; runtime actions and dates remain owned by the app.",
+      "html": "<section class=\"ds-daily\" aria-labelledby=\"ds-daily-title\"><h2 id=\"ds-daily-title\" class=\"ds-daily-title\">Daily Forge</h2><p class=\"ds-daily-meta\">The same 10 questions for everyone today. About 5 minutes.</p><ol class=\"ds-daily-path\" aria-label=\"3 of 10 questions answered\"><li class=\"ds-daily-node ds-correct\"><span aria-hidden=\"true\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4.5 12.5l5 5L19.5 7\"/></svg></span><span class=\"ds-sr-only\">Question 1: correct</span></li><li class=\"ds-daily-node ds-partial\"><span aria-hidden=\"true\">2</span><span class=\"ds-sr-only\">Question 2: partly correct</span></li><li class=\"ds-daily-node ds-wrong\"><span aria-hidden=\"true\">3</span><span class=\"ds-sr-only\">Question 3: wrong</span></li><li class=\"ds-daily-node\"><span aria-hidden=\"true\">4</span><span class=\"ds-sr-only\">Question 4: unanswered</span></li><li class=\"ds-daily-node\"><span aria-hidden=\"true\">5</span><span class=\"ds-sr-only\">Question 5: unanswered</span></li><li class=\"ds-daily-node\"><span aria-hidden=\"true\">6</span><span class=\"ds-sr-only\">Question 6: unanswered</span></li><li class=\"ds-daily-node\"><span aria-hidden=\"true\">7</span><span class=\"ds-sr-only\">Question 7: unanswered</span></li><li class=\"ds-daily-node\"><span aria-hidden=\"true\">8</span><span class=\"ds-sr-only\">Question 8: unanswered</span></li><li class=\"ds-daily-node\"><span aria-hidden=\"true\">9</span><span class=\"ds-sr-only\">Question 9: unanswered</span></li><li class=\"ds-daily-node\"><span aria-hidden=\"true\">10</span><span class=\"ds-sr-only\">Question 10: unanswered</span></li></ol><p class=\"ds-daily-status\">3 of 10 answered.</p><div class=\"ds-daily-actions\"><a class=\"ds-btn ds-btn-primary\" href=\"#/play/daily\"><span>Resume 3/10</span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div></section>",
+      "css": ".ds-daily { min-width: 0; padding: 28px; border: 1px solid var(--line-strong); border-radius: var(--r-card); background: var(--surface); }\n.ds-daily { color: var(--ink); font-family: var(--font-body); line-height: 1.55; }\n.ds-daily-title { font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.03em; }\n.ds-daily-title { margin: 0; font-family: var(--font-display); font-weight: 700; }\n.ds-daily-meta { max-width: 42ch; margin-top: 10px; color: var(--ink-2); font-size: var(--fs-sm); }\n.ds-daily-path { display: flex; align-items: center; margin: 26px 0 14px; isolation: isolate; }\n.ds-daily-meta { margin: 10px 0 0; }\n.ds-daily-path { padding: 0; list-style: none; }\n.ds-daily-node { position: relative; display: grid; place-items: center; flex: 1; min-width: 0; color: var(--ink-2); font-size: 0.75rem; font-variant-numeric: tabular-nums; }\n.ds-daily-node > span:first-child { display: grid; place-items: center; width: 24px; height: 24px; border: 1px solid var(--line-strong); border-radius: 50%; background: var(--surface); }\n.ds-daily-node:not(:last-child)::after { content: ''; position: absolute; z-index: -1; width: 100%; left: 50%; top: 12px; height: 1px; background: var(--line-strong); }\n.ds-daily-node.ds-correct > span:first-child { background: var(--good-soft); border-color: var(--good); color: var(--good); }\n.ds-daily-node.ds-partial > span:first-child { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); }\n.ds-daily-node.ds-wrong > span:first-child { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }\n.ds-daily-status { color: var(--ink-2); font-size: var(--fs-sm); }\n.ds-daily-status { margin: 0; }\n.ds-daily-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 22px; }\n.ds-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }\n.ds-btn {\n  --btn-bg: var(--surface);\n  --btn-fg: var(--ink);\n  --btn-border: var(--line-strong);\n  --btn-hover: var(--surface-2);\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 48px;\n  padding: 0 20px;\n  border: 1.5px solid var(--btn-border);\n  border-radius: var(--r-control);\n  background: var(--btn-bg);\n  color: var(--btn-fg);\n  font-family: var(--font-body);\n  font-size: 1rem;\n  font-weight: 650;\n  line-height: 1.1;\n  text-decoration: none;\n  white-space: normal;\n  text-align: center;\n  transition:\n    background-color var(--dur) var(--ease),\n    border-color var(--dur) var(--ease);\n  -webkit-tap-highlight-color: transparent;\n  user-select: none;\n  cursor: pointer;\n}\n.ds-btn:hover {\n  background: var(--btn-hover);\n  text-decoration: none;\n}\n.ds-btn:active:not(:disabled) {\n  background: color-mix(in srgb, var(--btn-bg) 88%, var(--btn-fg));\n}\n.ds-btn:disabled {\n  --btn-bg: var(--surface-2);\n  --btn-fg: var(--ink-3);\n  --btn-border: var(--line);\n  cursor: not-allowed;\n}\n.ds-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 6px var(--accent-soft); }\n.ds-btn svg { display: block; flex: none; }\n@media (prefers-reduced-motion: reduce) { .ds-btn, .ds-chip { transition-duration: 0.01ms; } }\n.ds-btn-primary {\n  --btn-bg: var(--accent);\n  --btn-fg: var(--accent-ink);\n  --btn-border: var(--accent-edge);\n  --btn-hover: color-mix(in oklab, var(--accent) 86%, white);\n}\n@media (max-width: 600px) { .ds-daily { padding: 20px 16px; } .ds-daily-title { font-size: 1.5rem; } .ds-daily-node > span:first-child { width: 21px; height: 21px; font-size: 0.6875rem; } .ds-daily-node:not(:last-child)::after { top: 10px; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Argument workbench",
+    "overview": "Crisp reading fields, strong ink, restrained petrol structure and the retained orange eye make reasoning the focus. The interface is direct and compact, with plain headings, visible rules and a clear next action. It follows the owner's preference to avoid a playful, game-like feel.\n\nThis is a record of the implemented static Preact app, derived from its CSS and components. Home, Daily Forge and practice selection establish the current entry patterns; focused exercises and passage formats retain some older depth and geometry. This is a code-led system, with no selected external visual catalogue or generated raster composition. CSS remains the source of truth. The frontmatter captures the reused light-theme vocabulary, not every format-specific value; live custom properties supply both themes.",
+    "keyCharacteristics": [
+      "Neutral reading fields with ink rules.",
+      "Orange actions and identity; petrol task structure.",
+      "Labelled progress and explicit feedback states.",
+      "Compact entry controls alongside retained exercise-specific rendering."
+    ],
+    "rules": [
+      {
+        "name": "The Semantic Colour Rule",
+        "body": "Use orange for identity and actions, petrol for the Home task path, and the feedback pairs for outcomes; an outcome must have a text equivalent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading Order Rule",
+        "body": "Preserve argument, decision, explanation and next action in the document order; responsive layouts must keep that order legible without horizontal scrolling.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "**Do** use the live CSS custom properties so controls follow both themes.",
+      "**Do** use flat fields and ink rules for new entry surfaces, with the shared control radius for their actions.",
+      "**Do** keep keyboard focus, explicit outcome labels and progress text alongside visual states.",
+      "**Do** preserve the nearby fictional/unscored disclosure and delay answer-specific highlights until checking.",
+      "**Do** reuse the existing passage renderers and focused exercise behaviour when extending those activities."
+    ],
+    "donts": [
+      "**Don't** introduce a playful, game-like treatment or a paid-app onboarding funnel.",
+      "**Don't** make the Daily region permanently dark or turn petrol into a competing primary action colour.",
+      "**Don't** generalise Home's flat controls into a claim that all existing screens have no shadows or identical corners.",
+      "**Don't** inherit the legacy offset verdict-button edge, uppercase eyebrow helpers or keyboard-shortcut glyph as new system motifs."
+    ]
+  }
+}

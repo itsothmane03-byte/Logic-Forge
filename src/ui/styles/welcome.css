@@ -1,283 +1,234 @@
-/* Welcome landing page. */
+/* Home: a compact working entry (not a marketing page). A short head, the
+   real demo question beside the real Daily Forge card, then the activities
+   and footer live in welcome-sections.css. Flat, neutral reading fields with
+   ink rules; orange stays the one primary accent. 4-8px corners throughout. */
 
-.welcome {
-  overflow-x: clip;
-}
-
-/* Scroll-linked accent: a thin forge-orange reading-progress line.
-   Decorative, only where scroll-driven animations exist and motion is OK. */
-.welcome-progress {
-  display: none;
-}
-
-@supports (animation-timeline: scroll()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .welcome-progress {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 50;
-      display: block;
-      height: 3px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: 0 50%;
-      animation: welcome-progress linear both;
-      animation-timeline: scroll(root block);
-    }
-
-    @keyframes welcome-progress {
-      to {
-        transform: scaleX(1);
-      }
-    }
-  }
-}
-
-/* ---------- Hero (never hidden, never animated in) ---------- */
-
-.hero {
-  position: relative;
-  isolation: isolate;
-  padding: 36px var(--gutter) 56px;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(circle at 1px 1px, var(--dot-grid) 1.3px, transparent 0);
-  background-size: 22px 22px;
-  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 28% 34%, #000 25%, transparent 72%);
-  mask-image: radial-gradient(ellipse 75% 70% at 28% 34%, #000 25%, transparent 72%);
-}
-
-.hero__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: center;
-  gap: 44px;
-  max-width: var(--content-max);
+.welcome-workbench {
+  max-width: calc(var(--content-max) + 2 * var(--gutter));
   margin: 0 auto;
+  padding: 28px var(--gutter) 48px;
 }
 
-@media (min-width: 960px) {
-  .hero {
-    padding: 72px var(--gutter) 96px;
-  }
+/* ---------- Head ---------- */
 
-  .hero__inner {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 64px;
-  }
+.workbench-head {
+  max-width: 62ch;
+  margin-bottom: 28px;
 }
 
-.hero__eyebrow {
-  margin-bottom: 10px;
-}
-
-.hero__title {
-  max-width: 13ch;
-  font-size: var(--fs-display);
+.workbench-head__title {
+  font-size: clamp(1.75rem, 1.5rem + 1vw, 2.25rem);
   font-weight: 800;
-  line-height: 1.04;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
-.hero__sub {
-  max-width: 44ch;
-  margin-top: 18px;
+.workbench-head__sub {
+  max-width: 48ch;
+  margin-top: 10px;
   color: var(--ink-2);
-  font-size: 1.1875rem;
+  font-size: 1rem;
   line-height: 1.55;
 }
 
-.hero__daily {
-  max-width: 44ch;
-  margin-top: 14px;
-  color: var(--ink);
-  font-weight: 600;
+/* ---------- Grid: the demo beside the real Daily Forge card ---------- */
+
+.workbench-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
 }
 
-.hero__ctas {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.hero__more {
-  margin-top: 14px;
-}
-
-/* ---------- Live mini-demo ---------- */
-
-.hero__demo {
-  position: relative;
-}
-
-.mini-demo {
-  position: relative;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: var(--surface-2);
-  box-shadow: var(--shadow-3);
-}
-
-.mini-demo::before {
-  content: '';
-  position: absolute;
-  inset: 18px -12px -14px 18px;
-  z-index: -1;
-  border-radius: 28px;
-  background: var(--accent-soft);
-  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-}
-
-@media (min-width: 960px) {
-  .mini-demo {
-    padding: 22px;
+@media (min-width: 900px) {
+  .workbench-grid {
+    grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr);
+    gap: 40px;
   }
 }
 
-.mini-demo__label {
+/* A plain section heading, not an overline: it IS the heading for its panel. */
+.workbench-panel__title {
+  margin-bottom: 14px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+/* ---------- Demo panel ---------- */
+
+.demo-workbench {
+  min-width: 0;
+}
+
+.demo-workbench__head {
   display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-bottom: 16px;
+}
+
+.demo-workbench__head .workbench-panel__title { margin-bottom: 0; }
+.demo-workbench__note { color: var(--ink-3); font-size: 0.8125rem; }
+
+.demo-workbench .spot__btn {
+  border-radius: var(--r-control);
+  box-shadow: none;
+  transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.demo-workbench .spot__btn:active:not(:disabled) {
+  transform: none;
+  box-shadow: none;
+}
+
+.demo-workbench .passage {
+  box-shadow: none;
+  border: 1px solid var(--line);
+}
+
+.demo-workbench .passage__text {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* ---------- Reasoning path: Read -> Decide -> Understand ---------- */
+
+.reasoning-path {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 2px 16px;
+}
+
+.reasoning-path::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  left: 9px;
+  z-index: 0;
+  height: 2px;
+  background: var(--line-strong);
+}
+
+.reasoning-path__step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  margin: 2px 4px 12px;
-  color: var(--ink-2);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  gap: 6px;
 }
 
-.live-dot {
-  width: 8px;
-  height: 8px;
+.reasoning-path__node {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--line-strong);
   border-radius: 50%;
-  background: var(--good);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--good) 22%, transparent);
+  background: var(--surface);
+  color: var(--surface);
 }
 
-.mini-demo .passage {
-  box-shadow: var(--shadow-1);
+.reasoning-path__step--done .reasoning-path__node {
+  border-color: var(--structure);
+  background: var(--structure);
 }
 
-.mini-demo__ask {
+.reasoning-path__step--current .reasoning-path__node {
+  border-color: var(--structure);
+  background: var(--surface);
+}
+
+.reasoning-path__label {
+  color: var(--ink-3);
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.reasoning-path__step--done .reasoning-path__label,
+.reasoning-path__step--current .reasoning-path__label {
+  color: var(--ink);
+}
+
+/* ---------- Ask / result ---------- */
+
+.demo-workbench__ask {
   margin-top: 16px;
 }
 
-.mini-demo__ask .step-prompt {
+.demo-workbench__ask .step-prompt {
   margin-bottom: 12px;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   text-align: center;
 }
 
 .spot--compact .spot__btn {
   min-height: 56px;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
 }
 
-.mini-demo__result {
+.demo-workbench__result {
   margin-top: 16px;
   padding: 16px 18px;
-  border-top: 3px solid var(--good);
-  border-radius: 16px;
+  border: 1px solid var(--good);
+  border-radius: 8px;
   background: var(--good-soft);
-  animation: demo-in var(--dur-slow) var(--ease) both;
 }
 
-.mini-demo__result.is-wrong {
+.demo-workbench__result.is-wrong {
   border-color: var(--bad);
   background: var(--bad-soft);
 }
 
-.mini-demo__result:focus {
+.demo-workbench__result:focus {
   outline: none;
 }
 
-@keyframes demo-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-}
-
-.mini-demo__verdict {
+.demo-workbench__verdict {
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--good);
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.1875rem;
   font-weight: 800;
 }
 
-.is-wrong .mini-demo__verdict {
+.is-wrong .demo-workbench__verdict {
   color: var(--bad);
 }
 
-.mini-demo__icon {
+.demo-workbench__icon {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: currentColor;
 }
 
-.mini-demo__icon .icon {
-  color: var(--surface);
+.demo-workbench__icon .icon {
+  color: var(--bg);
 }
 
-.mini-demo__name {
+.demo-workbench__name {
   margin-top: 6px;
   font-size: 1.0625rem;
 }
 
-.mini-demo__exp {
+.demo-workbench__exp {
   margin-top: 6px;
   line-height: 1.55;
 }
 
-.mini-demo__actions {
+.demo-workbench__actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 18px;
   margin-top: 14px;
-}
-
-/* ---------- Sections ---------- */
-
-.w-section {
-  padding: 80px var(--gutter);
-}
-
-@media (max-width: 767px) {
-  .w-section {
-    padding: 56px var(--gutter);
-  }
-}
-
-.w-inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
-}
-
-.w-head {
-  max-width: 660px;
-  margin-bottom: 32px;
-}
-
-.w-title {
-  margin-top: 8px;
-  font-size: clamp(1.875rem, 1.35rem + 2.1vw, 2.75rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
 }
