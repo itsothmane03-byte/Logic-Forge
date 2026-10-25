@@ -18,6 +18,8 @@
 | --- | --- | --- |
 | ![Quiz answer and explanation](docs/screenshots/session.png) | ![Repair feedback with highlighted changes](docs/screenshots/repair.png) | ![Deduction exercise](docs/screenshots/logic.png) |
 
+Mobile quiz previews: [light](docs/screenshots/mobile-quiz-light.png) · [dark](docs/screenshots/mobile-quiz-dark.png).
+
 **Daily Forge** gives everyone the same ten questions for that date. Ordinary quiz practice adapts to previous answers. Optional topic preferences favor familiar examples in new Spot the flaw and Focus sets; all topics can still appear. A five-question warm-up is available from Practice preferences.
 
 Earlier answers can be revisited during a set without changing the score. Practice includes focused sets, mistake review, and a searchable fallacy library.
@@ -59,4 +61,4 @@ A static Preact, TypeScript and Vite app with browser-local storage. No backend 
 
 All exercise scenarios are fictional. The repository keeps the content sources, validation rules, and documented AI review records alongside the application.
 
-Built by Othmane. [MIT](LICENSE) © 2025 itsothmane03-byte.
+[MIT](LICENSE) © 2025 itsothmane03-byte.

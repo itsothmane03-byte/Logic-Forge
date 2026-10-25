@@ -138,16 +138,17 @@
 
 .spot {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 12px;
 }
 
 .spot__btn {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px 12px;
   min-height: 64px;
   padding: 10px 16px;
   border: 1.5px solid var(--line-strong);

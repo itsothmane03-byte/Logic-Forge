@@ -4,7 +4,7 @@
 
 import type { JSX } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
-import { AUTHOR, REPO_URL } from '../../config';
+import { REPO_URL } from '../../config';
 import { DAILY_SIZE } from '../../engine/daily';
 import { pickDemoItem, pickFormatSamples } from '../../engine/select';
 import type { Item, SpotChoice } from '../../engine/types';
@@ -317,7 +317,6 @@ export function WelcomeScreen(): JSX.Element {
             <Icon name="code" size={16} /> GitHub
           </a>
           <span>MIT license</span>
-          <span>Built by {AUTHOR}</span>
         </div>
       </footer>
     </div>

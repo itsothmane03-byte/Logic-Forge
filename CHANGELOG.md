@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here.
 
+## 2.7.1 — 2026-10-25
+
+- **Cleaner mobile post headers.** Social handles stay on one line and decorative timestamps keep their width, leaving more room for the argument.
+- **Answer controls that fit.** Sound and Flawed remain fully visible on small screens, including the homepage sample.
+- **Immediate keyboard visibility.** Focused sections bypass scroll-reveal transitions, so practice links are visible as soon as keyboard focus reaches them.
+- Removed the personal builder credit from Home and About. Added concise guidance for verifying development skills and tools within the existing Codex–Claude workflow.
+
 ## 2.7.0 — 2026-10-24
 
 - **See what makes a repair stronger.** After checking a revision, all 15 repair exercises highlight the key change and offer a concrete question to check next. Choices stay neutral before answering, and existing passages, answers and scores are unchanged.
