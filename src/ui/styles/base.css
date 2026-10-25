@@ -269,6 +269,11 @@ html.reveal-ready [data-reveal]:not(.is-revealed):not(:focus-within) {
   transform: translateY(16px);
 }
 
+/* Focused content must be visible immediately, without a fade or stagger. */
+html.reveal-ready [data-reveal]:focus-within {
+  transition: none;
+}
+
 /* ---------- Reduced motion: everything static ---------- */
 
 @media (prefers-reduced-motion: reduce) {

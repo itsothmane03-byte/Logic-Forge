@@ -1,5 +1,5 @@
 import type { JSX } from 'preact';
-import { APP_VERSION, AUTHOR, REPO_URL } from '../../config';
+import { APP_VERSION, REPO_URL } from '../../config';
 import { bank } from '../../state/store';
 import { ButtonLink } from '../components/Button';
 import { Icon } from '../components/Icon';
@@ -70,7 +70,7 @@ export function AboutScreen(): JSX.Element {
         <h2 id="about-open">Open source</h2>
         <p>
           Fallacy Forge is free and MIT licensed. All scenarios are fictional. The original quiz bank has automated validation
-          and documented independent AI blind reviews. Repair exercises are checked separately; deduction answers are computed from every situation allowed by their facts. Built by {AUTHOR}.
+          and documented independent AI blind reviews. Repair exercises are checked separately; deduction answers are computed from every situation allowed by their facts.
         </p>
         <div class="about-actions">
           <ButtonLink href={REPO_URL} variant="secondary" icon="code" rel="noopener">

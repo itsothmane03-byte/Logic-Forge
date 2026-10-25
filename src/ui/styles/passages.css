@@ -72,6 +72,7 @@
 
 .post__who {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   min-width: 0;
   line-height: 1.25;
@@ -83,15 +84,20 @@
 }
 
 .post__handle {
+  overflow: hidden;
   color: var(--ink-2);
   font-size: 0.9375rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .post__time {
   align-self: flex-start;
+  flex: none;
   margin-left: auto;
   color: var(--ink-3);
   font-size: 0.875rem;
+  white-space: nowrap;
 }
 
 .post__actions {
