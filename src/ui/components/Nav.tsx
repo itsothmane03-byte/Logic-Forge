@@ -43,7 +43,7 @@ function sectionOf(route: Route): Section | null {
 const homeCurrent = (route?: Route) => (route?.name === 'welcome' ? 'page' : undefined);
 
 const LINKS: Array<{ id: Section; href: string; label: string; icon: IconName }> = [
-  { id: 'today', href: '#/today', label: 'Today', icon: 'calendar' },
+  { id: 'today', href: '#/today', label: 'Daily Forge', icon: 'calendar' },
   { id: 'practice', href: '#/practice', label: 'Practice', icon: 'target' },
   { id: 'library', href: '#/library', label: 'Library', icon: 'book' },
   { id: 'progress', href: '#/progress', label: 'Progress', icon: 'chart' },

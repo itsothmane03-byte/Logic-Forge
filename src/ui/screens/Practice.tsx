@@ -1,5 +1,5 @@
 // Practice hub (#/practice): the three practice activities. ACTIVITIES and
-// ActivityCard are shared with Today and Welcome, so the copy lives here once.
+// Activity metadata is also used on Home.
 
 import type { JSX } from 'preact';
 import { INTERESTS } from '../../engine/interests';
@@ -8,7 +8,7 @@ import { logicSession } from '../../state/logic';
 import { repairSession } from '../../state/repair';
 import { session } from '../../state/session';
 import { ButtonLink } from '../components/Button';
-import { Icon, type IconName } from '../components/Icon';
+import type { IconName } from '../components/Icon';
 import { Button } from '../components/Button';
 import '../styles/interests.css';
 
@@ -39,15 +39,14 @@ export function inProgress(id: ActivityId): boolean {
 export function ActivityCard({ activity }: { activity: Activity }): JSX.Element {
   const titleId = `activity-${activity.id}`;
   return (
-    <section class={`tile tile--${activity.id}`} aria-labelledby={titleId}>
-      <span class="tile__icon" aria-hidden="true">
-        <Icon name={activity.icon} size={22} />
-      </span>
-      <h2 id={titleId} class="tile__title">
-        {activity.title}
-      </h2>
-      <p class="tile__sub">{activity.text}</p>
-      <div class="tile__foot">
+    <section class="activity-row" aria-labelledby={titleId}>
+      <div>
+        <h2 id={titleId} class="activity-row__title">
+          {activity.title}
+        </h2>
+        <p class="activity-row__text">{activity.text}</p>
+      </div>
+      <div class="activity-row__action">
         <ButtonLink href={activity.href} variant="secondary" iconRight="arrow-right">
           {inProgress(activity.id) ? 'Resume' : 'Start'}
           <span class="sr-only"> {activity.title}</span>
@@ -62,9 +61,14 @@ export function PracticeScreen(): JSX.Element {
     <div class="page practice-hub">
       <header class="page-head">
         <h1 class="page-title" tabIndex={-1}>
-          Choose your practice.
+          Practice
         </h1>
       </header>
+      <div class="practice-activities">
+        {ACTIVITIES.map((activity) => (
+          <ActivityCard key={activity.id} activity={activity} />
+        ))}
+      </div>
       <details class="topic-preferences">
         <summary>Familiar topics</summary>
         <p>Optional topics for new Spot the flaw and Focus sets. We still mix in other topics to cover the skills you need.</p>
@@ -87,11 +91,6 @@ export function PracticeScreen(): JSX.Element {
         {!storageOk.value && <p role="status">Your choice works here, but this browser could not save it.</p>}
         <p><a class="text-link" href="#/setup">Practice preferences</a></p>
       </details>
-      <div class="practice-hub__grid">
-        {ACTIVITIES.map((activity) => (
-          <ActivityCard key={activity.id} activity={activity} />
-        ))}
-      </div>
     </div>
   );
 }

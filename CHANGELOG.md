@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented here.
 
+## 2.8.0 — 2026-10-25
+
+- **Start with an argument.** Home becomes a working entry with an unscored fictional sample,
+  a Read / Decide / Understand path, and the shared Daily Forge beside it.
+  Existing Daily progress determines whether to start, resume, or view results.
+- **Clearer destinations.** Daily Forge has its own focused screen. Practice
+  presents the three skills before optional topic preferences.
+- **A coherent visual revision.** Flatter reading surfaces, tighter controls,
+  and connected progress replace the floating demo, decorative feature grids,
+  and oversized greeting. Light and dark remain supported.
+- Existing routes, exercises, scoring, answer drafts, and saved progress remain
+  compatible. No account, subscription, or runtime service was added.
+
 ## 2.7.1 — 2026-10-25
 
 - **Cleaner mobile post headers.** Social handles stay on one line and decorative timestamps keep their width, leaving more room for the argument.

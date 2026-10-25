@@ -140,8 +140,8 @@ describe('open home and optional preferences routing', () => {
   it.each(['#/', '#/welcome'])('shows the introduction at %s with Home current and no setup gate', (hash) => {
     replaceRoute(hash);
     render(<App />);
-    expect(screen.getByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeTruthy();
-    for (const link of screen.getAllByRole('link', { name: 'Open Daily Forge' })) {
+    expect(screen.getByRole('heading', { name: 'Examine an argument.' })).toBeTruthy();
+    for (const link of screen.getAllByRole('link', { name: 'Start Daily Forge' })) {
       expect(link.getAttribute('href')).toBe('#/play/daily');
     }
     expect(screen.getByRole('link', { name: 'Choose practice' }).getAttribute('href')).toBe('#/practice');
@@ -153,9 +153,9 @@ describe('open home and optional preferences routing', () => {
       expect(link.getAttribute('href')).toBe('#/');
       expect(link.getAttribute('aria-current')).toBe('page');
     }
-    for (const link of screen.getAllByRole('link', { name: /^(Today|About)$/ })) {
+    for (const link of screen.getAllByRole('link', { name: /^(Daily Forge|About)$/ })) {
       expect(link.getAttribute('aria-current')).toBeNull();
-      if (link.textContent === 'Today') expect(link.getAttribute('href')).toBe('#/today');
+      if (link.textContent === 'Daily Forge') expect(link.getAttribute('href')).toBe('#/today');
     }
     expect(progress.peek()).toEqual(defaultProgress());
   });
@@ -170,7 +170,7 @@ describe('open home and optional preferences routing', () => {
     addHistory(p);
     progress.value = p;
     render(<App />);
-    expect(screen.getByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Examine an argument.' })).toBeTruthy();
     expect(screen.queryByRole('heading', { name: 'Practice preferences' })).toBeNull();
   });
 
@@ -178,8 +178,8 @@ describe('open home and optional preferences routing', () => {
     replaceRoute('#/today');
     render(<App />);
     expect(screen.getByRole('heading', { name: /^Daily Forge/ })).toBeTruthy();
-    expect(screen.queryByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeNull();
-    const todayLinks = screen.getAllByRole('link', { name: 'Today', exact: true });
+    expect(screen.queryByRole('heading', { name: 'Examine an argument.' })).toBeNull();
+    const todayLinks = screen.getAllByRole('link', { name: 'Daily Forge', exact: true });
     expect(todayLinks).toHaveLength(2);
     for (const link of todayLinks) {
       expect(link.getAttribute('href')).toBe('#/today');
@@ -231,7 +231,7 @@ describe('open home and optional preferences routing', () => {
     progress.value = { ...defaultProgress(), onboarded: true };
     render(<App />);
     act(() => replaceProgress(defaultProgress()));
-    expect(screen.getByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Examine an argument.' })).toBeTruthy();
     expect(screen.queryByRole('heading', { name: 'Practice preferences' })).toBeNull();
   });
 
@@ -248,7 +248,7 @@ describe('open home and optional preferences routing', () => {
     render(<App />);
 
     act(() => replaceRoute('#/'));
-    expect(screen.getByRole('heading', { name: 'Spot bad arguments in five minutes a day.' })).toBeTruthy();
+    expect(screen.getByRole('heading', { name: 'Examine an argument.' })).toBeTruthy();
     expect(session.peek()).toBe(draft);
     expect(progress.peek()).toBe(saved);
     expect(localStorage.getItem(STORAGE_KEY)).toBe(serialized);

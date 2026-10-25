@@ -123,7 +123,7 @@ function Content({ data }: { data: SummaryData }) {
           {resumePractice ? 'Resume practice' : 'Practice 10 more'}
         </ButtonLink>
         <ButtonLink href="#/today" variant="secondary" size="lg">
-          Back to Today
+          Back to Daily Forge
         </ButtonLink>
       </div>
     </div>
@@ -140,7 +140,7 @@ export function SummaryScreen(): JSX.Element {
         </h1>
         <p class="lead">Finish a set of questions and your results will show up here.</p>
         <ButtonLink href="#/today" variant="primary" size="lg">
-          Back to Today
+          Back to Daily Forge
         </ButtonLink>
       </div>
     );

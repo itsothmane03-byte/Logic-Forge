@@ -3,7 +3,7 @@
 
 import type { ThemeSetting } from '../engine/types';
 
-const META_COLORS = { light: '#FAF8F4', dark: '#0F1012' } as const;
+const META_COLORS = { light: '#F4F7F7', dark: '#111516' } as const;
 
 function prefersDark(): boolean {
   return typeof matchMedia === 'function' && matchMedia('(prefers-color-scheme: dark)').matches;

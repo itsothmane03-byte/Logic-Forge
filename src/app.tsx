@@ -31,9 +31,9 @@ function titleFor(r: Route): string {
     case 'setup':
       return `Practice preferences · ${SUFFIX}`;
     case 'today':
-      return `Today · ${SUFFIX}`;
+      return `Daily Forge · ${SUFFIX}`;
     case 'welcome':
-      return `How Fallacy Forge works · ${SUFFIX}`;
+      return `Reasoning practice · ${SUFFIX}`;
     case 'practice':
       return `Practice · ${SUFFIX}`;
     case 'repair':

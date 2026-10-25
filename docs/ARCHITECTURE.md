@@ -8,7 +8,8 @@ account system, analytics or runtime AI. Progress stays in the learner's browser
 
 - Vite builds strict TypeScript and Preact; `@preact/signals` holds app state.
 - The [hash router](../src/router.ts) works at the custom domain or a subpath.
-  Home (`#/`) opens the introduction; Today is the dashboard at `#/today`.
+  Home (`#/`) opens an argument to try alongside the shared Daily Forge.
+  The dedicated Daily Forge screen remains at `#/today`.
   Other screens are `#/practice`, `#/setup`,
   `#/repair`, `#/logic`, `#/library`, `#/library/:id`, `#/progress`, `#/about`,
   `#/welcome` and `#/summary`. Quizzes use `#/play/:mode` or `#/play/focus/:id`.
@@ -49,6 +50,9 @@ account system, analytics or runtime AI. Progress stays in the learner's browser
 
 - Plain CSS and [design tokens](../src/ui/styles/tokens.css); self-hosted fonts.
   Keep the orange eye identity. See [brand notes](brand/README.md) for exports.
+- Home, Daily Forge and Practice have separate jobs: try an argument, take the
+  shared challenge, or choose a skill. Optional topics follow the activities.
+  Product requirements live in [PRODUCT.md](../PRODUCT.md).
 - Target WCAG 2.2 AA: semantic controls, keyboard access, visible focus, labelled
   feedback and dialogs, and text or icons alongside result colours. Check 320px
   layouts, zoom, and both themes when changing the UI.
