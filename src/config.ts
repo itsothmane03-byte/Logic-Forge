@@ -2,4 +2,4 @@
 export const SITE_URL = 'https://fallacyforge.com/';
 export const REPO_URL = 'https://github.com/itsothmane03-byte/Logic-Forge';
 export const APP_NAME = 'Fallacy Forge';
-export const APP_VERSION = '2.8';
+export const APP_VERSION = '2.9';

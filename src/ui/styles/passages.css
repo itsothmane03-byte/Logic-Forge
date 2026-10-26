@@ -9,10 +9,9 @@
   margin: 0;
   padding: 20px;
   overflow-wrap: anywhere;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: var(--r-card);
   background: var(--surface);
-  box-shadow: var(--shadow-2);
   color: var(--ink);
   font-size: var(--fs-md);
   line-height: 1.6;
@@ -174,10 +173,8 @@
 .email__label {
   margin-right: 4px;
   color: var(--ink-2);
-  font-size: 0.75rem;
-  font-weight: 750;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 .email__to {
@@ -363,10 +360,8 @@
   border: 1px solid var(--line-strong);
   border-radius: 6px;
   color: var(--ink-2);
-  font-size: 0.6875rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .ad__title {
@@ -490,20 +485,23 @@
   }
 }
 
-/* ---------- The cue: accent-soft highlight with a drawn underline ---------- */
+/* ---------- The cue: the editor's mark ----------
+   After a decision (never before), the orange pencil line is drawn under the
+   exact words that carry the flaw, over a soft tint. The words themselves are
+   readable from the first frame; only the line and tint arrive. */
 
 mark.cue {
   padding: 0 2px;
-  border-radius: 3px;
+  border-radius: 2px;
   background-color: var(--accent-soft);
   background-image: linear-gradient(var(--accent), var(--accent));
   background-position: 0 100%;
   background-repeat: no-repeat;
-  background-size: 100% 2px;
+  background-size: 100% 3px;
   color: inherit;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  animation: cue-draw 560ms var(--ease) 60ms both;
+  animation: cue-draw 720ms var(--ease-expo) 160ms both;
 }
 
 .chat__row--right mark.cue {
@@ -513,6 +511,6 @@ mark.cue {
 @keyframes cue-draw {
   from {
     background-color: transparent;
-    background-size: 0% 2px;
+    background-size: 0% 3px;
   }
 }

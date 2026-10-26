@@ -106,9 +106,7 @@
 }
 
 .session-eyebrow__mode {
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
 }
 
 .session-eyebrow__format {
@@ -151,49 +149,47 @@
   gap: 8px 12px;
   min-height: 64px;
   padding: 10px 16px;
-  border: 1.5px solid var(--line-strong);
-  border-radius: 14px;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--r-control);
   background: var(--surface);
   color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 1.3125rem;
-  font-weight: 750;
-  letter-spacing: -0.01em;
-  box-shadow: 0 2px 0 0 var(--line-strong);
+  font-family: var(--font-body);
+  font-size: 1.1875rem;
+  font-weight: 650;
   transition:
-    transform 110ms var(--ease),
-    box-shadow 110ms var(--ease),
-    border-color var(--dur) var(--ease),
-    background-color var(--dur) var(--ease);
+    transform var(--t-press) var(--ease-out),
+    background-color var(--t-hover) ease,
+    color var(--t-hover) ease;
   -webkit-tap-highlight-color: transparent;
 }
 
-.spot__btn:hover {
-  border-color: var(--ink-3);
-  background: color-mix(in srgb, var(--surface) 70%, var(--surface-2));
+@media (hover: hover) and (pointer: fine) {
+  .spot__btn:hover {
+    background: var(--ink);
+    color: var(--surface);
+  }
+
+  .spot__btn:hover .spot__icon {
+    color: inherit;
+  }
 }
 
 .spot__btn:active:not(:disabled) {
-  transform: translateY(2px);
-  box-shadow: 0 0 0 0 var(--line-strong);
+  transform: scale(0.97);
 }
 
+/* Plain outline icons; the word beside them carries the meaning. */
 .spot__icon {
   display: grid;
   place-items: center;
   flex: none;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
 }
 
 .spot__btn--sound .spot__icon {
-  background: var(--good-soft);
   color: var(--good);
 }
 
 .spot__btn--flawed .spot__icon {
-  background: var(--bad-soft);
   color: var(--bad);
 }
 
@@ -264,7 +260,7 @@
   border: 1.5px solid var(--line-strong);
   border-radius: var(--r-card);
   background: var(--surface);
-  box-shadow: 0 2px 0 0 var(--line-strong);
+  box-shadow: none;
   transition:
     transform 110ms var(--ease),
     box-shadow 110ms var(--ease),
@@ -278,8 +274,7 @@
 }
 
 .options:not(.options--locked) .option:active .option__card {
-  transform: translateY(2px);
-  box-shadow: 0 0 0 0 transparent;
+  transform: scale(0.99);
 }
 
 .option__input:focus-visible + .option__card {
@@ -343,7 +338,7 @@
 .option--selected .option__card {
   border-color: var(--accent);
   background: var(--accent-soft);
-  box-shadow: 0 2px 0 0 var(--accent-edge);
+  box-shadow: none;
 }
 
 .option--selected .option__num {
@@ -362,7 +357,7 @@
 .option--correct .option__card {
   border-color: var(--good);
   background: var(--good-soft);
-  box-shadow: 0 2px 0 0 var(--good-edge);
+  box-shadow: none;
 }
 
 .option--correct .option__badge {
@@ -373,7 +368,7 @@
 .option--wrong .option__card {
   border-color: var(--bad);
   background: var(--bad-soft);
-  box-shadow: 0 2px 0 0 var(--bad);
+  box-shadow: none;
 }
 
 .option--wrong .option__badge {
@@ -529,15 +524,14 @@
   background: var(--surface);
   color: var(--ink);
   font-weight: 750;
-  box-shadow: 0 2px 0 0 var(--ink);
+  box-shadow: none;
   transition:
     transform 110ms var(--ease),
     box-shadow 110ms var(--ease);
 }
 
 .answer-link:active {
-  transform: translateY(2px);
-  box-shadow: 0 0 0 0 var(--ink);
+  transform: scale(0.97);
 }
 
 .sheet__explanation {
@@ -583,10 +577,8 @@
 
 .sheet__compare-side dt {
   color: var(--ink-2);
-  font-size: 0.75rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.8125rem;
+  font-weight: 600;
 }
 
 .sheet__compare-name {

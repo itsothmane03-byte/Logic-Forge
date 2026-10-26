@@ -38,8 +38,8 @@
 
 .repair-heading {
   margin: 10px 0 24px;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(1.625rem, 1.3rem + 1.1vw, 2rem);
+  letter-spacing: -0.02em;
 }
 
 .repair-original {
@@ -55,10 +55,8 @@
   margin-bottom: 14px;
   color: var(--ink-3);
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 .repair-original > p {
@@ -230,8 +228,31 @@
 }
 
 .repair-progress__stats dd {
+  font-family: var(--font-display);
   font-size: 1.75rem;
-  font-weight: 750;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Desktop: the figures on the left, the action closing the row on the right. */
+@media (min-width: 768px) {
+  .repair-progress {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 32px;
+    align-items: end;
+  }
+
+  .repair-progress > * {
+    grid-column: 1;
+  }
+
+  .repair-progress > .btn {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self: end;
+    margin-bottom: 18px;
+  }
 }
 
 @media (max-width: 639px) {

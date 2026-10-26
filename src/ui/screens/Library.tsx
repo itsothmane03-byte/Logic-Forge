@@ -17,6 +17,11 @@ const levelFilter = signal<Level | null>(null);
 
 const LEVELS: Level[] = ['beginner', 'intermediate', 'advanced'];
 
+/** Opens the library on one family (Home's family index links here). */
+export function showFamily(id: FamilyId): void {
+  familyFilter.value = id;
+}
+
 export function matchesQuery(fallacy: Fallacy, q: string): boolean {
   const needle = normalize(q);
   if (!needle) return true;

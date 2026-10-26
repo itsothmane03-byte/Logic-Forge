@@ -2,6 +2,23 @@
 
 All notable changes to this project are documented here.
 
+## 2.9.0 — 2026-10-26
+
+- **An editorial home.** Home and About are set as a printed edition: the sample argument sits on a
+  paper sheet on a Forge-orange field, followed by the shared Daily Forge, a contents sheet of
+  activities, the library's families, the plain facts and a back cover.
+- **The editor's mark.** After you decide, an orange pencil line is drawn under the exact words that
+  carry the flaw. Questions, answers and feedback are never delayed or hidden by motion; sections
+  arrive once in reading order, and reduced motion shows everything at once.
+- **One typographic voice.** Newsreader, an editorial serif, sets headings and reading text; Inter
+  stays for controls and figures. Both are self-hosted, so the app still works offline.
+- **Quieter practice screens.** Flat surfaces without resting shadows, square controls, sentence-case
+  labels, and progress figures in one ruled panel. Feedback is the only motion while answering.
+- **Archival pictures without figures.** A medieval manuscript of the square of opposition and an
+  Encyclopédie-era forge etching, credited on the page and on About.
+- Existing routes, exercises, scoring, answer drafts, exports and saved progress remain compatible.
+  No account, subscription or runtime service was added.
+
 ## 2.8.0 — 2026-10-25
 
 - **Start with an argument.** Home becomes a working entry with an unscored fictional sample,

@@ -35,30 +35,6 @@
   gap: 8px;
 }
 
-@media (max-width: 767px) {
-  .filters {
-    gap: 0;
-  }
-
-  .filters__group {
-    flex-wrap: nowrap;
-    margin: 0 calc(-1 * var(--gutter));
-    padding: 6px var(--gutter);
-    overflow-x: auto;
-    scroll-padding-inline: var(--gutter);
-    scrollbar-width: none;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 28px), transparent);
-    mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 28px), transparent);
-  }
-
-  .filters__group::-webkit-scrollbar {
-    display: none;
-  }
-
-  .filters__group .chip {
-    flex: none;
-  }
-}
 
 .lib-group {
   margin-top: 28px;

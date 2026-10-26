@@ -53,9 +53,9 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   line-height: var(--lh-display);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
@@ -80,6 +80,13 @@ textarea {
 
 button {
   cursor: pointer;
+}
+
+a,
+button,
+label,
+summary {
+  touch-action: manipulation;
 }
 
 a {
@@ -128,6 +135,7 @@ kbd {
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+  font-size: 1rem;
 }
 
 .skip-link {
@@ -177,17 +185,17 @@ kbd {
   margin-top: var(--s-4);
 }
 
+/* A plain context line above a title, in sentence case (never tracked capitals). */
 .eyebrow {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.9375rem;
+  font-weight: 600;
   color: var(--ink-2);
 }
 
 .page-title {
   font-size: var(--fs-2xl);
-  font-weight: 800;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .lead {
@@ -213,7 +221,7 @@ kbd {
   }
 
   .page-title {
-    font-size: var(--fs-xl);
+    font-size: 1.625rem;
   }
 }
 
@@ -259,14 +267,14 @@ html {
 
 html.reveal-ready [data-reveal] {
   transition:
-    opacity 420ms var(--ease),
-    transform 420ms var(--ease);
-  transition-delay: calc(min(var(--reveal-i, 0), 4) * 60ms);
+    opacity 700ms var(--ease-out),
+    transform var(--t-reveal) var(--ease-expo);
+  transition-delay: calc(min(var(--reveal-i, 0), 4) * 80ms);
 }
 
 html.reveal-ready [data-reveal]:not(.is-revealed):not(:focus-within) {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(24px);
 }
 
 /* Focused content must be visible immediately, without a fade or stagger. */
