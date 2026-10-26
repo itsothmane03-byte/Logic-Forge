@@ -76,10 +76,8 @@
   margin-bottom: 12px;
   color: var(--ink-2);
   font-family: var(--font-body);
-  font-size: 0.8125rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.9375rem;
+  font-weight: 650;
 }
 
 .info-block__intro {
@@ -225,12 +223,11 @@
   border-radius: var(--r-pill);
   background: var(--surface);
   font-weight: 700;
-  box-shadow: 0 2px 0 0 var(--line-strong);
+  transition: transform var(--t-press) var(--ease-out);
 }
 
 .wild__toggle:active {
-  transform: translateY(2px);
-  box-shadow: none;
+  transform: scale(0.97);
 }
 
 .wild__answer {
@@ -280,10 +277,8 @@
 
 .detail-cta__label {
   color: var(--ink-2);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 650;
 }
 
 .detail-cta__meta {

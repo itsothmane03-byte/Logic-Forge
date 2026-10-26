@@ -1,5 +1,5 @@
 import '@fontsource-variable/inter/wght.css';
-import '@fontsource-variable/bricolage-grotesque/wght.css';
+import '@fontsource-variable/newsreader/wght.css';
 import './ui/styles/tokens.css';
 import './ui/styles/base.css';
 import './ui/styles/controls.css';
@@ -13,7 +13,6 @@ import './ui/styles/library.css';
 import './ui/styles/detail.css';
 import './ui/styles/pages.css';
 import './ui/styles/welcome.css';
-import './ui/styles/welcome-sections.css';
 import './ui/styles/repair.css';
 import './ui/styles/logic.css';
 

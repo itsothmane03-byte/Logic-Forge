@@ -1,6 +1,6 @@
 ---
 name: Fallacy Forge
-description: A restrained workbench for reading arguments and practising reasoning.
+description: An editorial workbench for reading arguments and practising reasoning.
 colors:
   bg: "#f4f7f7"
   surface: "#ffffff"
@@ -15,7 +15,8 @@ colors:
   accent-soft: "#ffe6dc"
   accent-edge: "#c4461d"
   accent-strong: "#a43b17"
-  structure: "#1f6971"
+  field: "#ff6b3d"
+  desk: "#142023"
   good: "#157a43"
   good-soft: "#e3f4ea"
   bad: "#b3261e"
@@ -23,18 +24,29 @@ colors:
   warn: "#8a5a00"
   warn-soft: "#fff3d6"
 typography:
-  headline:
-    fontFamily: "'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "2.25rem"
-    fontWeight: 800
-    lineHeight: 1.1
-    letterSpacing: "-0.02em"
-  title:
-    fontFamily: "'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.75rem"
-    fontWeight: 700
-    lineHeight: 1.2
+  display:
+    fontFamily: "'Newsreader Variable', ui-serif, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(2.75rem, 1.6rem + 4.2vw, 5.5rem)"
+    fontWeight: 500
+    lineHeight: 0.95
     letterSpacing: "-0.03em"
+  headline:
+    fontFamily: "'Newsreader Variable', ui-serif, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(2rem, 1.3rem + 3.2vw, 4rem)"
+    fontWeight: 600
+    lineHeight: 1.05
+    letterSpacing: "-0.03em"
+  title:
+    fontFamily: "'Newsreader Variable', ui-serif, Georgia, 'Times New Roman', serif"
+    fontSize: "2rem"
+    fontWeight: 600
+    lineHeight: 1.05
+    letterSpacing: "-0.02em"
+  lead:
+    fontFamily: "'Inter Variable', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)"
+    fontWeight: 400
+    lineHeight: 1.35
   body:
     fontFamily: "'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
     fontSize: "1rem"
@@ -42,14 +54,14 @@ typography:
     lineHeight: 1.55
     fontFeature: "'cv11', 'ss03'"
   label:
-    fontFamily: "'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    fontFamily: "'Inter Variable', ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.875rem"
-    fontWeight: 650
+    fontWeight: 600
     lineHeight: 1.2
 rounded:
-  control: "6px"
-  card: "8px"
-  sheet: "12px"
+  control: "3px"
+  card: "4px"
+  sheet: "8px"
   pill: "999px"
 spacing:
   s-1: "4px"
@@ -71,166 +83,148 @@ components:
     textColor: "{colors.ink}"
     rounded: "{rounded.control}"
     padding: "0 20px"
-  button-ink:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.bg}"
-    rounded: "{rounded.control}"
-    padding: "0 20px"
-  button-ghost:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "0 20px"
-  search:
+  verdict-choice:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
-    rounded: "14px"
-    padding: "0 48px 0 46px"
-    height: "52px"
-  navigation-link:
-    textColor: "{colors.ink-2}"
     rounded: "{rounded.control}"
-    padding: "0 10px"
-  filter-chip:
+    height: "64px"
+  paper-sheet:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    padding: "0 16px"
-  filter-chip-selected:
+    rounded: "0"
+    padding: "64px"
+  cell:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.bg}"
-    rounded: "{rounded.pill}"
-    padding: "0 16px"
-  daily-card:
+    rounded: "0"
+    height: "72px"
+  stat-panel:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
     rounded: "{rounded.card}"
-    padding: "28px"
+    padding: "18px 20px"
 ---
 
 # Design System: Fallacy Forge
 
 ## Overview
 
-**Creative North Star: "Argument workbench"**
+**Creative North Star: "The day's edition"**
 
-Crisp reading fields, strong ink, restrained petrol structure and the retained orange eye make reasoning the focus. The interface is direct and compact, with plain headings, visible rules and a clear next action. It follows the owner's preference to avoid a playful, game-like feel.
+Fallacy Forge reads like a well-made printed edition rather than a game. Home and About are pages, set as
+pieces of stationery: a paper sheet on the Forge-orange field holds a real argument to judge, a contents
+sheet on the ink desk lists the activities, and the back cover closes the page. Daily Forge, Practice, the
+quizzes, the Library and Progress are app screens: quiet chrome, flat surfaces, colour on data and outcomes.
 
-This is a record of the implemented static Preact app, derived from its CSS and components. Home, Daily Forge and practice selection establish the current entry patterns; focused exercises and passage formats retain some older depth and geometry. This is a code-led system, with no selected external visual catalogue or generated raster composition. CSS remains the source of truth. The frontmatter captures the reused light-theme vocabulary, not every format-specific value; live custom properties supply both themes.
+The direction was dealt by the Taste Skill (`page-is-the-object`, seed 964925646) and adapted to the
+project rules. CSS custom properties in `src/ui/styles/tokens.css` are the source of truth; this file
+records the shipped system.
 
-**Key Characteristics:**
+**Key characteristics**
 
-- Neutral reading fields with ink rules.
-- Orange actions and identity; petrol task structure.
-- Labelled progress and explicit feedback states.
-- Compact entry controls alongside retained exercise-specific rendering.
+- An editorial serif (Newsreader) for headings, passages and statements; Inter for controls, labels and figures.
+- One accent: Forge Orange on the eye mark, primary actions, the editor's mark and data.
+- Filled shapes with real edges (scooped corners, serrated tear-off edges) instead of hairlines and shadows.
+- Motion that confirms and orients; never motion that delays a question, an answer or feedback.
 
 ## Colors
 
-The palette combines cool neutral paper and ink with one warm action accent, a quieter structural colour and semantic feedback pairs.
+- **Forge Orange** (`accent`): identity, primary actions, the drawn mark under a flaw, progress data.
+  `accent-strong` is readable orange text on light surfaces; `accent-soft` is the mark's tint and the focus halo.
+- **Field** (`field`): the ground Home and About print on. Forge Orange in light; a dark ember (#3a2219) in dark.
+- **Desk** (`desk`): the ink ground under the contents sheet; near-black in dark.
+- **Paper and ink**: `surface` for sheets and panels, `bg` for app pages, `surface-2` for one tone step.
+  Running text is full `ink`; `ink-2` is for supporting notes only.
+- **Outcomes**: `good`, `bad` and `warn` with their soft pairs. Every outcome also has words or an accessible label.
 
-### Primary
-
-- **Forge Orange** (`accent`): the eye mark, primary actions, navigation underline and progress emphasis. `accent-ink` is the dark text used on orange controls; `accent-edge` defines their border. `accent-soft` supplies selection and focus halos; `accent-strong` supplies readable orange text on neutral surfaces.
-
-### Secondary
-
-- **Petrol Structure** (`structure`): connected Home reasoning stages. It identifies task position rather than correctness.
-
-### Neutral
-
-- **Cool Paper** (`bg`), **Reading White** (`surface`) and **Quiet Field** (`surface-2`): page, reading region and secondary field respectively.
-- **Reading Ink** (`ink`), **Supporting Ink** (`ink-2`) and **Muted Ink** (`ink-3`): primary content, supporting copy and quieter metadata.
-- **Fine Rule** (`line`) and **Control Rule** (`line-strong`): dividers, region boundaries and stronger control edges.
-
-Correct, incorrect and partial outcomes use `good`, `bad` and `warn`, each with its paired soft background. Keep outcome words or accessible labels alongside colour. The existing family-dot and activity-heat scales remain defined in `tokens.css`; they are specialised vocabularies, not additional action accents.
-
-**The Semantic Colour Rule.** Use orange for identity and actions, petrol for the Home task path, and the feedback pairs for outcomes; an outcome must have a text equivalent.
-
-Theme switching replaces the same custom properties through `data-theme` or the system colour preference. Dark mode changes surfaces, ink, accent, structure and feedback together. Daily Forge uses the theme's neutral surface in both modes.
-
-The sidecar's tonal strips are generated preview aids, not additional application tokens or approved colour scales.
+Dark mode replaces the same properties through `data-theme` or the system preference. Both themes are
+checked at 320, 390, 640 (200% zoom of 1280), 768 and 1440px.
 
 ## Typography
 
-**Display Font:** Bricolage Grotesque Variable, with UI sans-serif fallbacks.
-**Body Font:** Inter Variable, with platform sans-serif fallbacks.
-**Label/Mono Font:** the body face for ordinary labels; the platform monospace stack for keyboard hints. Some retained headline and quotation passage treatments use the existing system serif stack.
-
-The display face gives headings a compact, firm character. The body face supports sustained reading and dense controls without decorative casing.
-
-### Hierarchy
-
-- **Headline:** the frontmatter headline role is the desktop page title; mobile page titles step down to the title size. Home has its own fluid heading (`clamp(1.75rem, 1.5rem + 1vw, 2.25rem)`), weight (800) and tighter tracking (-0.03em).
-- **Title:** the Daily card heading uses the frontmatter title role. Home panel headings are smaller (1.0625rem, 700); practice activity headings are larger (1.5rem).
-- **Body:** the frontmatter body role is the base. Home's passage is slightly enlarged (1.0625rem, line-height 1.6); focused passages use the shared medium size (1.125rem). Home introduction copy is capped at (48ch), and practice descriptions at (60ch).
-- **Label:** the frontmatter label role describes filter chips. Navigation uses (0.9375rem, 600), Home sample metadata (0.8125rem), and path labels (0.75rem, 650). Numbers used for progress have tabular figures.
+- **Display** (Home and About titles): Newsreader 500, -0.03em, leading 0.95. The Home title is staggered on two lines.
+- **Headline** (Home sections): Newsreader 600 at the head step, up to 64px.
+- **Title** (app screens): Newsreader 600 at 32px, 26px on phones. App titles stay within 18–32px.
+- **Lead** (one sentence under a title): Inter at 20–26px.
+- **Body**: Inter 16px and up, leading 1.55; passages at 18px.
+- **Label**: Inter 14px, sentence case. No tracked capitals, no eyebrow labels above headings.
+- Figures use tabular numerals. Two typefaces in all; both self-hosted through Fontsource for the offline PWA.
 
 ## Layout
 
-The shared content width is (1080px), with desktop gutters (20px) and mobile gutters (16px). General pages use top and bottom spacing from the shared scale; focused sessions use a narrower reading width (680px). The shared scale is based on four-pixel steps with larger jumps for section separation; local values such as (28px) and (40px) remain intentional CSS decisions.
+One frame for the whole site: the content width (1080px) and gutters (20px, 16px on phones) shared with
+the top bar. Home sections are 96–160px apart and each has its own composition: the argument sheet, a
+square Daily plate with spare text, the contents sheet, a statement with the families pushed right, side
+facts with a wide paragraph, and the back cover. App screens keep a single reading column for sessions
+(680px) and the content width elsewhere. The reading order is argument, decision, explanation, next action.
 
-Home reads as one column before (900px), then places the argument and Daily card in a (1.8fr / 1fr) grid with a minimum Daily column (300px) and gap (40px). Activities below use compact rows and horizontal rules. Daily and practice supporting regions stack at (600px). Desktop chrome switches to the mobile header and four-item fixed bottom navigation at (767px); content accounts for the tab bar and safe-area inset.
+## Elevation and edges
 
-**The Reading Order Rule.** Preserve argument, decision, explanation and next action in the document order; responsive layouts must keep that order legible without horizontal scrolling.
-
-## Elevation & Depth
-
-Home's argument and verdict controls, the Daily card, new practice rows and shared buttons are flat at rest. Fine rules and surface changes separate regions. Home explicitly removes the passage shadow and the focused session's offset button treatment, including its pressed movement. Focus remains visible with an ink outline (3px, offset 2px); shared controls can also carry the soft accent halo (6px).
-
-The application is not uniformly shadow-free. Existing passages use `shadow-2`; search and selected segmented controls use `shadow-1`; dialogs use `shadow-3`; exercise feedback uses `shadow-sheet`. These diffuse depth tokens have dark-theme counterparts. The focused session's existing verdict buttons also retain a hard offset edge and pressed translation. That exception is recorded as legacy drift, not the rule for new entry controls.
-
-Shared state transitions use the shared easing with standard duration (200ms); route entry uses the fast duration (160ms), and slower transitions use (240ms). Existing reveals and charts have their own animations. Reduced-motion styles suppress animation and transition duration across the app.
+Nothing rests on a shadow: `shadow-1` and `shadow-2` are empty. Only what floats casts one: dialogs
+(`shadow-3`) and the answer sheet docked over a session (`shadow-sheet`). Pages separate surfaces with
+tone steps and filled edges; app screens may use one quiet 1px border on panels, tables and controls.
+Focus is a 3px ink outline with a soft accent halo; programmatic focus targets (headings) show none.
 
 ## Shapes
 
-The shared radius vocabulary separates compact controls, reading cards, sheets and pills. Buttons and new navigation controls use `control`; Daily and passage containers use `card`; dialogs use `sheet`; chips, tags and progress tracks use `pill`. Circles identify path nodes and outcome icons.
-
-These tokens do not imply a universal radius. Search retains (14px), segmented controls retain (14px) with (10px) inner options, and focused verdict controls retain (14px). Chat passages retain asymmetric bubble corners. New Home verdict controls explicitly use the shared control radius instead.
+Controls use a 3px radius and cards 4px; sheets on pages are square, with scooped or serrated edges cut by
+`clip-path` or field-coloured circles. Pills remain for filter chips and tags only.
 
 ## Components
 
-### Buttons
+- **Verdict choices** (Sound / Flawed): 64px, 1.5px ink border, plain coloured icons beside the word,
+  inverting on hover and scaling to 0.97 on press. The same control on Home and in sessions.
+- **Paper sheet** (Home, About): white on the field, scooped top corners, centred letterpress setting.
+- **Contents sheet**: activities as a printed contents list with 4px round dot leaders and values.
+- **Cells**: full-width ink and tone blocks for paired actions on Home.
+- **Stat panel**: one container split by rules, label under value, values in the serif at 24–30px.
+- **Daily plate**: the shared Daily card set square; outcome fills on its ten nodes.
 
-Clear, flat actions with a visible edge. Shared buttons have a minimum height (48px), border (1.5px), body type (1rem, 650) and the control radius. Primary uses orange with dark text; secondary uses a neutral surface; ink uses the main text colour as its fill; ghost removes the visible fill and border. Small and large variants use minimum heights (44px / 56px) and horizontal padding (14px / 26px).
+## Motion
 
-Hover changes fill and edge treatment; pressing mixes the fill with the text colour. Focus uses the shared ink outline and accent halo. Disabled buttons replace fill, text and border with subdued theme roles and use a not-allowed cursor. Home's Sound / Flawed pair is a distinct inherited exercise control: (56px) minimum height, labelled outcome icons, the control radius, no resting or pressed shadow, and no pressed translation.
+- **Signature: the editor's mark.** After a decision, an orange pencil line draws under the exact words
+  that carry the flaw (720ms, expo out). The words are readable from the first frame.
+- **Section entrances** on pages: heading, text, then details, rising 24px once in reading order
+  (`data-reveal`, staggered 80ms, four steps at most). Nothing above the fold waits; nothing is hidden
+  without script.
+- **Feedback under the hand**: press scale on buttons and cells (140ms), hover colour behind
+  `(hover: hover)` (180ms), arrows that move 4px on hover.
+- **Quiz screens**: only feedback motion (the verdict settles 10px, the mark draws).
+- **Reduced motion**: all durations collapse and every revealed block is shown at once.
 
-### Chips
+Transform and opacity only, except the mark's underline, which grows its background size because a
+transform cannot follow text across line breaks.
 
-Filters use pill geometry, minimum height (44px), a neutral surface and fine border. Hover strengthens the border and changes the surface. A selected filter reverses ink and background, with selection also exposed by its native control or `aria-pressed` state. Noninteractive tags and outcome badges are smaller; they must not imply a filter action.
+## Pictures
 
-### Cards / Containers
-
-The Daily card is a neutral reading container with the card radius, strong one-pixel border and padding (28px); mobile padding becomes (20px 16px). Home result panels use semantic soft fill and matching border, with an icon, written verdict, fallacy name when applicable and explanation. Home's sample has a nearby, truthful “Fictional scenario · not scored” disclosure. Passage renderers keep their format-specific structure; answer cues appear only after checking.
-
-### Inputs / Fields
-
-Search is a surface-filled field (52px high), with a strong (1.5px) border, a retained rounded shape and low shadow. Its inline search icon leaves space for text; an optional keyboard hint appears only where appropriate. Focus strengthens the border and uses the shared focus treatment. Existing form errors use a bad-soft field with bad text; form notes use the warning pair. Segmented options are native radios; switches are native checkboxes with visible checked states.
-
-### Navigation
-
-Desktop uses a sticky neutral top bar (64px) and text links with minimum height (44px). Hover changes the background; the current section has an orange underline and `aria-current`. Home is identified by the linked eye and wordmark. Mobile uses a sticky header (56px) and four labelled SVG tabs; the current tab changes both label colour and icon background. Keep visible labels with the symbols.
-
-### Connected progress
-
-Home's Read / Decide / Understand path uses three labelled nodes, a connecting rule, filled completed nodes and an outlined current node. The path tracks the actual stage, never the answer. The Daily card displays ten connected nodes whose checked-answer states use outcome fills and accessible question labels. Empty, in-progress and completed Daily states change the status and action copy; the visual path is not a separate scoring mechanism.
+Pictures show documents, tools and places, never faces or living beings. They are archival, credited on
+the page and on About, greyscale WebP under 80 KB, and precached for offline use. The software's own
+pictures are its interface fragments (`data-ui`): the live argument and the Daily plate.
 
 ## Do's and Don'ts
 
-### Do:
+### Do
 
-- **Do** use the live CSS custom properties so controls follow both themes.
-- **Do** use flat fields and ink rules for new entry surfaces, with the shared control radius for their actions.
-- **Do** keep keyboard focus, explicit outcome labels and progress text alongside visual states.
-- **Do** preserve the nearby fictional/unscored disclosure and delay answer-specific highlights until checking.
-- **Do** reuse the existing passage renderers and focused exercise behaviour when extending those activities.
+- Use the live custom properties so every surface follows both themes.
+- Keep questions, answers and feedback immediate; let motion confirm, not decide.
+- Keep outcome words and accessible labels beside colour.
+- Reveal answer-specific highlights only after checking.
 
-### Don't:
+### Don't
 
-- **Don't** introduce a playful, game-like treatment or a paid-app onboarding funnel.
-- **Don't** make the Daily region permanently dark or turn petrol into a competing primary action colour.
-- **Don't** generalise Home's flat controls into a claim that all existing screens have no shadows or identical corners.
-- **Don't** inherit the legacy offset verdict-button edge, uppercase eyebrow helpers or keyboard-shortcut glyph as new system motifs.
+- Don't introduce a playful, game-like treatment, a paid-app funnel, or decorative loops.
+- Don't use eyebrow labels, tracked capitals, hairline dividers, gradients or resting shadows on pages.
+- Don't use pictures of faces or figures, or stock photography that stands in for the product.
+- Don't load fonts or images from another host.
 
-Not canonized: the focused session's hard offset verdict-button edge, existing uppercase eyebrow helpers and the desktop shortcut glyph remain outside this documentation-only change; their presence is not permission to reproduce them on new surfaces.
+## Recorded allowances
+
+Taste Skill inspector findings that stay, with the project rule that keeps them:
+
+- `font-not-dealt` (all screens): the dealt faces are served from a third-party CDN; the app loads every
+  asset from its own host and works offline, so Newsreader replaces them.
+- `few-pictures` (About): pictures appear only where they serve the subject and contain no faces; About
+  is reference text with one archival plate.
+- `no-footage`, `size-count`, `ragged-edges`, `unused-canvas`: no honest clip fits reasoning practice;
+  exercise components keep their own sizes; centred sheets and narrow session columns are deliberate.
+- `covered-text` on phones may appear where a heading scrolls under the fixed tab bar, the primary navigation.
